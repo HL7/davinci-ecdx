@@ -32,6 +32,7 @@
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <definition>
+        <!--
         <resource>
             <reference>
                 <reference value="StructureDefinition/davinci-cdex-communication"/>
@@ -39,6 +40,7 @@
             </reference>
             <exampleBoolean value="false"/>
         </resource>
+        -->
         <page>
             <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-page-auto-generate-toc">
                 <valueBoolean value="true"/>
