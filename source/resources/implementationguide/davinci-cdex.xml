@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ImplementationGuide
-    xmlns="http://hl7.org/fhir">
+<ImplementationGuide xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
         <versionId value="6"/>
@@ -22,18 +21,27 @@
         <valueString value="master"/>
     </extension>
     <extension url="https://trifolia-fhir.lantanagroup.com/stu3/StructureDefinition/github-path">
-        <valueString value="HL7/davinci-ecdx/source/resources/implementationguide/davinci-cdex.xml"/>
+        <valueString value="HL7/davinci-ecdx/source/resources/implementationguide/davinci-cdex.xml"
+        />
     </extension>
     <url value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
     <name value="Da Vinci Clinical Data Exchange"/>
     <status value="draft"/>
-    <description value="The Clinical Data exchange (CDex) is part of the larger Da Vinci use case for Health Record exchange (HRex).&#xA;&#xA;After careful evaluation, the eHRx project was decomposed into four independent efforts (and tied to 4 separate PSSs). The exchange of Quality Measures was included in the existing work on the Data Exchange for Quality Measures (DEQM) that is sponsored by the CQI workgroup. The exchange of Payer Data (PDex) is sponsored by Financial Management. The overall HRex Framework is planned to be sponsored by the Clinical Interoperability Council (CIC) and we looking to a combination of Structured Documents, Patient Care and Attachments to sponsor the work on e Clinical Data exchange (CDex).&#xA;&#xA;The scope of the CDex project is to defined combinations of exchange methods (push, pull, subscribe, CDS Hooks, ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support specific exchanges of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain very specific patterns of exchange so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, specific resources, and bulk data exchange. This list is intended to be illustrative and not prescriptive.&#xA;&#xA;This project will reference, where possible the &quot;standards&quot; defined by the Health Record exchange (HRex) Framework Implementation Guide which in turn will utilize prior work from Argonaut, US Core and QI Core effort for FHIR DSTU2, STU3, and R4. &#xA;&#xA;The ultimate goal is to support the exchange of provider data on specific patients/members for better patient care with other providers and payers using technology that support FHIR DSTU2, STU3, and R4 releases of the FHIR standard.&#xA;&#xA;The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via tracker items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles."/>
-    <packageId value="hl7.fhir.us.davinci-cdex"/> 
+    <!--
+    <description
+        value="The Clinical Data exchange (CDex) is part of the larger Da Vinci use case for Health Record exchange (HRex).&#xA;&#xA;After careful evaluation, the eHRx project was decomposed into four independent efforts (and tied to 4 separate PSSs). The exchange of Quality Measures was included in the existing work on the Data Exchange for Quality Measures (DEQM) that is sponsored by the CQI workgroup. The exchange of Payer Data (PDex) is sponsored by Financial Management. The overall HRex Framework is planned to be sponsored by the Clinical Interoperability Council (CIC) and we looking to a combination of Structured Documents, Patient Care and Attachments to sponsor the work on e Clinical Data exchange (CDex).&#xA;&#xA;The scope of the CDex project is to defined combinations of exchange methods (push, pull, subscribe, CDS Hooks, ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support specific exchanges of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain very specific patterns of exchange so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, specific resources, and bulk data exchange. This list is intended to be illustrative and not prescriptive.&#xA;&#xA;This project will reference, where possible the &quot;standards&quot; defined by the Health Record exchange (HRex) Framework Implementation Guide which in turn will utilize prior work from Argonaut, US Core and QI Core effort for FHIR DSTU2, STU3, and R4. &#xA;&#xA;The ultimate goal is to support the exchange of provider data on specific patients/members for better patient care with other providers and payers using technology that support FHIR DSTU2, STU3, and R4 releases of the FHIR standard.&#xA;&#xA;The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via tracker items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles."/>
+    -->
+    
+    <description
+        value="This Use Case provides guidance to implementers regarding exchange of a patients eHealth Records. The Use Case is very broad encompassing the following scenarios: &#xA;&#xA;* Exchange of quality measure data to support HEDIS/Stars quality measures,&#xA;* Exchange of clinical information generated by providers during the course of care, and &#xA;* Exchange of clinical information gathered during the claims process by payers. &#xA;&#xA;The exchange of quality measure data can be from Provider to Payer, or Payer to Provider. The exchange of clinical information can be from Provider to Provider, Provider to Payer or Payer to Provider. This Use Case defines a broad set of profiles and interactions that may be utilized to accomplish this wide range of **eHealth Record exchange**. It also includes narrower implementation guidance that demonstrates how to use elements of the framework to accomplish each specific type of information exchange.&#xA;"/>
+    
+    <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <definition>
         <page>
-            <extension url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-page-auto-generate-toc">
+            <extension
+                url="https://trifolia-on-fhir.lantanagroup.com/StructureDefinition/extension-ig-page-auto-generate-toc">
                 <valueBoolean value="true"/>
             </extension>
             <nameUrl value="toc.md"/>
