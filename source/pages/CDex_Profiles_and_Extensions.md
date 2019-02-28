@@ -29,11 +29,11 @@ active: CDex Profiles and Extensions
 ## Da Vinci CDex Profiles
 * Da Vinci CDex Bundle Profile
 * Da Vinci CDex Composition Profile
-* This profile will support documents that correspond to the xDocs template
-* 3.2.3	Da Vinci Communication Profile
-* 3.2.4	Da Vinci CommunicationRequest Profile
+  - This profile will support documents that correspond to the xDocs template
+* Da Vinci Communication Profile
+* Da Vinci CommunicationRequest Profile
 
-## EXTENSIONS
+## Da Vinci CDex Extensions
 The PDex IG uses extensions defined in the US Core IG:
 - US Core Race Extension
 - US Core Ethnicity Extension

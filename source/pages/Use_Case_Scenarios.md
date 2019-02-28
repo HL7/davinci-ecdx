@@ -4,25 +4,22 @@ layout: default
 active: Use Case Scenarios
 ---
 
-## CDex Improve Care Coordination
-Payers want to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care (e.g. reduce redundant care, shift to more proactive/timely care, make better informed, more accurate medical treatment recommendations). They are looking to find new conditions or a change in the status existing conditions (based on HCC model) (regular data feeds is better). In order for the record to be complete, the information needs to come from many/all providers, but typically from outpatient providers and usually from network providers. Payers may use HIEs as a source of information, if available. The information is available as information gathered in the patient medical record through use of an electronic medical record (EMR) system. The information may be shared with or accessed by the payer as a progress note or visit summary. Standard C-CDAs of various types (information supporting care planning). Payers find information such as Medications, lab results, assessments for diagnoses, vital signs (BP)and information in narrative clinical notes to be useful to care coordination for their members.
+Use case scenarios set the scope and form the foundation for this Implementation Guide.  Each use case is designed around a benefit resulting from the information exchange interaction. The following use cases are addressed:
 
-## CDex Build Accurate Risk Profiles
-Payers need to create complete, accurate risk profiles for members to support value-based care contracts and population health adjustments. They gather information for this purpose on an annual contracting basis, on a monthly basis, and update it as new claims are paid. Risk adjustments are submitted to CMS annually, but receiving this information after each visit would make it more useful. The information can come from any provider (a vist  at a time), but typically from outpatient providers and usually from network providers. Data needs to come from the Provider of Record, not from an aggregation created by an HIE. Medical records, a progress note or visit summary would be useful. C-CDAs of various types would be ideal when they include Medications, lab results, Assessment for Diagnoses, vital signs (BP), and Narrative (clinical notes).
-## CDex Support Quality Management
-Payers need to augment claims data to satisfy quality reporting requirements and improve quality care scores, and to reduce preventable medical errors. Currently, they gather this clinical information a minimum of twice per year, sometimes monthly. Receiving information more frequently would help improve scores. The information can come from any provider. However, it typically comes from outpatient providers who are network providers. Payers use a combination of claims and clinical info to assess care quality. The may use information gathered from HIEs if available to Payers. However, some auditing issues exhist when getting data from an HIEs because more work is required for proper attestation. Information from the patients medical record can be used, as well as progress notes or visit summaries. C-CDAs of various types may be useful, but in this use case, Payers are more oriented toward specific data points. They are looking for Medications, lab results, Assessment for Diagnoses, vital signs (BP), and Narrative (clinical notes) that contain information that is pertinent to a quality measurement program.
-## CDex Confirm Medical Necessity
-Payers need clinical documentation to support prior authorization, claims processing, audit submitted claims, and to confirm medical necessity and appropriateness. The information is needed at the time prior authorization is requested, or during care planning. Clinical information may be needed asynchronously to support an audit or claims processing. It also is needed when providers are ordering a service. The information used when ordering the service needs to be shared with the provider referred to render the service because they need it to support the claim. Consulting providers may need to request additional information from the ordering physician in order to support their claim. The information can be supplied in a standard exchange document format such as a progress note, or encounter summary. However, in some cases, just a specific subset of information may be needed such as certain results from diagnostic testing including diagnosis codes, assessment and diagnoses, or records of certain treatments.
+* Improve Care Coordination
+* Collect More Accurate Risk Profiles
+* Improve Support for Quality Management
+* Confirm Medical Necessity More Efficiently
+* Improve Memeber Experience
+* Track Referrals and Orders More Effectively
 
-
-## CDex Improve Member Experience
-Payers want to improve member experience by improving processes between the payer and provider so members have fewer issues, less waiting, better planning information, and more cost transparency. Access to clinical information allows the payer to have a more informed conversation with the member. This use case requires the payer to have real-time or ongoing access to information that is closely tied to the point of care. This isnt another ask that adds burden for providers. Its about using the existing clinical information shared with other care team members to make the total process of care (which includes payment) run more smoothly. As clinical information flows from the ordering provider to a servicing provider, or as documentation passes to a consulting providers to support care, this same clinical information can flow into payer systems to improve the members experience of care. (Note: Direct collection of Patient info is out of scope for this use case.)
+Each Use Case includes an overall description. It provides technical specifications for one or more options showing how FHIR-based mechanisms can be used to accomplish the needed information exchange.
 
 
 
-## CDex Track Referrals and Orders
 
-Sharing clinical information also supports providers as they place orders and  complete referrals for care. The receiving provider needs the order and supporting documentation as soon as it is signed. And the referring/ordering provider needs the results from the referral / order in a clinically significant time after the resulting work is completed.  There may be a need to receive intermediate information with each visit or at the end of some defined period for an extended process (e.g. home health). Initially, information comes from the ordering/referring  provider. Then, once services begin to be provided, information comes from the performing provider. The signed order/referral and documentation is needed to demonstrate medical necessity of the ordered services. This information must be supplied by the ordering provider to the performing provider so that the performing provider has what is needed to submit their claim for performing the services.
+
+
 
 
 
