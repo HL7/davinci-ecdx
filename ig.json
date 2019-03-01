@@ -1,14 +1,14 @@
 {
 	"tool": "jekyll",
 	"source": "implementationguide/davinci-cdex.xml",
-	"npm-name": "davinci-cdex-npm",
+	"npm-name": "hl7.fhir.us.davinci-cdex",
 	"license": "CC0-1.0",
 	"paths": {
 		"qa": "generated_output/qa",
 		"temp": "generated_output/temp",
 		"output": "output",
 		"txCache": "generated_output/txCache",
-		"specification": "http://hl7.org/fhir/STU3",
+		"specification": "http://hl7.org/fhir/R4/",
 		"pages": [
 			"framework",
 			"source/pages"
@@ -93,6 +93,27 @@
 			"template-base": "ex.html"
 		}
 	},
-	"resources": {},
+	"resources": {
+		"StructureDefinition/cdex-collection-bundle": {
+			"base": "StructureDefinition-cdex-collection-bundle.html",
+			"defns": "StructureDefinition-cdex-collection-bundle-definitions.html"
+		},
+		"StructureDefinition/cdex-communication": {
+			"base": "StructureDefinition-cdex-communication.html",
+			"defns": "StructureDefinition-cdex-communication-definitions.html"
+		},
+		"StructureDefinition/cdex-communicationrequest": {
+			"base": "StructureDefinition-cdex-communicationrequest.html",
+			"defns": "StructureDefinition-cdex-communicationrequest-definitions.html"
+		},
+		"StructureDefinition/cdex-document-bundle": {
+			"base": "StructureDefinition-cdex-document-bundle.html",
+			"defns": "StructureDefinition-cdex-document-bundle-definitions.html"
+		},
+		"StructureDefinition/cdex-payload-type-code": {
+			"base": "StructureDefinition-cdex-payload-type-code.html",
+			"defns": "StructureDefinition-cdex-payload-type-code-definitions.html"
+		}
+	},
 	"dependencyList": []
 }

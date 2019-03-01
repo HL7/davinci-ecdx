@@ -49,4 +49,6 @@ Document.
  A header paired with a nonXMLBody element will be referred to as an CDA Unstructured
 Document2.
 
+See <a href="Structured_and_Unstructured_Documents.html">Structured and Unstructured Documents</a> for more information.
+
 ## C-CDA on FHIR

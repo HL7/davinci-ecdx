@@ -16,3 +16,51 @@ active: profiles
 ---
 <br />
 
+### Profiles
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="StructureDefinition-cdex-collection-bundle.html">CDex Collection Bundle</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-cdex-communication.html">CDex Communication</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-cdex-communicationrequest.html">CDex CommunicationRequest</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-cdex-document-bundle.html">CDex Document Bundle</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+### Extensions
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="StructureDefinition-cdex-payload-type-code.html">CDex Payload Type Code</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
