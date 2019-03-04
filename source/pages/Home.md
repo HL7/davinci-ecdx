@@ -4,9 +4,7 @@ layout: default
 active: Home
 ---
 
-
 This is a pre-release version (Ballot 1) of Clinical Data exchange  (CDex) R1/STU. There is no current official version. 
-
 
 This specification is currently undergoing ballot and FHIR Connectathon testing. It is expected to evolve, possibly significantly, as part of that process.
 
