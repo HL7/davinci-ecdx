@@ -6,38 +6,18 @@ active: CDex Profiles and Extensions
 
 ## Profiles Used by Reference
 
-* TODO: add C-CDA on FHIR Document Profiles
+The CDex implementation guide defines only a few new FHIR profiles and extensions that are specific to this guide.  The CDex specific Profiles include:
+CDex Collection Bundle
+CDex Communication
+CDex CommunicationRequest
+CDex Document Bundle
 
-* 	US Core Patient Profile
-* 	US Core Condition Profile
-* 	US Core Medication Profile
-* 	US Core MedicationStatement Profile
-* 	US Core AllergyIntolerance Profile
-* 	US Core Procedure Profile
-* 	US Core Device Profile
-* 	US Core Immunization Profile
-* 	US Core DocumentReference Profile
-* 	US Core ObservationResults Profile
-* 	US Core Practitioner Profile
-* 	US Core PractitionerRole Profile
-* 	US Core Organization Profile
-* 	US Core Location Profile
-* 	US Core Encounter Profile
-* 	US Core Provenance Profile
-* 	Any additional US Core Profiles that are being developed
+The CDex specific extensions include:
+CDex Payload Type Code
 
-## Da Vinci CDex Profiles
-* Da Vinci CDex Bundle Profile
-* Da Vinci CDex Composition Profile
-  - This profile will support documents that correspond to the xDocs template
-* Da Vinci Communication Profile
-* Da Vinci CommunicationRequest Profile
+The majority of the content profiles, extensions, and information exchange mechanisms used by the CDex implementation guide are incorporated by reference from the broader HRex implementation guide and from other FHIR implementation guides including:
+1. US Core R4 and STU3
+3. Argonaut DSTU2
+4. C-CDA on FHIR for R4 and STU3
 
-## Da Vinci CDex Extensions
-The PDex IG uses extensions defined in the US Core IG:
-- US Core Race Extension
-- US Core Ethnicity Extension
-- US Core Birth Sex Extension.
-In cases where Health Plans do not have a record of Birth Sex the field will be assigned the UNK/Unknown  NullFlavor.
 
-Also will need extensions on Communication and CommunicationRequest for LOINC codes for the request and the response.

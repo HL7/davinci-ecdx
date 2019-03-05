@@ -13,14 +13,14 @@ active: toc
         * <a href="About_Supporting_Specifications.html">About Supporting Specifications</a>
         * <a href="About_Payload_Types.html">About Payload Types</a>
         * <a href="Understanding_C-CDA_and_C-CDA_on_FHIR.html">Understanding C-CDA and C-CDA on FHIR</a>
-        * <a href="URLs_URIs_and_OIDs.html">URLs URIs and OIDs</a>
+        * <a href="Resource_Identifiers_-_OIDS_URLs_and_URIs.html">Resource Identifiers - OIDS URLs and URIs</a>
         * <a href="Structured_and_Unstructured_Documents.html">Structured and Unstructured Documents</a>
         * <a href="Base64_Encoded_Content.html">Base64 Encoded Content</a>
         * <a href="Versioning_Mechanisms.html">Versioning Mechanisms</a>
         * <a href="Code_Systems_-_Value_Sets_-_Request_Codes_and_Response_Codes.html">Code Systems - Value Sets - Request Codes and Response Codes</a>
     * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
         * <a href="CDex_Improve_Care_Coordination.html">CDex Improve Care Coordination</a>
-        * <a href="CDex_Build_Accurate_Risk_Profiles.html">CDex Build Accurate Risk Profiles</a>
+        * <a href="CDex_Build_Accurate_Risk_Profiles_and_Health_Records.html">CDex Build Accurate Risk Profiles and Health Records</a>
         * <a href="CDex_Support_Quality_Management.html">CDex Support Quality Management</a>
         * <a href="CDex_Confirm_Medical_Necessity.html">CDex Confirm Medical Necessity</a>
         * <a href="CDex_Improve_Member_Experience.html">CDex Improve Member Experience</a>
@@ -30,9 +30,9 @@ active: toc
         * <a href="Information_Exchange_Option_3__Pull--GET.html">Information Exchange Option 3  Pull--GET</a>
         * <a href="Information_Exchange_Option_4__Request--Solicited_Communication.html">Information Exchange Option 4  Request--Solicited Communication</a>
     * <a href="CDex_Profiles_and_Extensions.html">CDex Profiles and Extensions</a>
-        * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
         * <a href="HRex_Profiles.html">HRex Profiles</a>
             * <a href="HRex_Profiles_for_FHIR_DSTU2.html">HRex Profiles for FHIR DSTU2</a>
+        * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
         * <a href="US_Core_STU_2_(FHIR_STU3)_Profiles.html">US Core STU 2 (FHIR STU3) Profiles</a>
         * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
         * <a href="Extensions.html">Extensions</a>
