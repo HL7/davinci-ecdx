@@ -18,9 +18,17 @@ documents to identify changes).
 submission)
 
 ### Document Succession in C-CDA on FHIR
-[ToDo]
+For FHIR Documents,  the Composition Resource includes a RelatesTo field that functions the same way that ClinicalDocument/relatedDocument functions in C-CDA.  However, in FHIR you can do a restful reference to the document being replaced or appended.
 
 ## Data Succession
-CDA was designed to exchange information where the "unit of exchange" was a document. For that reason, it does not address how to represent of facilitate versioning of individual elements of the data which may comprise the document. FHIR on the other hand supports mechanisms for versioning individual data resources. 
+CDA was designed to exchange information where the "unit of exchange" was a document. For that reason, it does not address how to represent or facilitate versioning of individual elements of the data which may comprise the document. FHIR on the other hand supports mechanisms for versioning individual data resources. 
+
+In FHIR there are 3 different type of versioning that may be relevant for a resource:
+
+* The Record Version: changes each time the resource changes (usually managed by a server)
+* The Business version: changes each time the content in the resources changes (managed by a human author or by business policy)
+* The FHIR Version: the version of FHIR in which the resource is represented (controlled by the author of the resource)
+
+See the FHIR documentation for more information about <a href="http://hl7.org/FHIR/resource.html#metadata">Resource versioning.</a>
 
 

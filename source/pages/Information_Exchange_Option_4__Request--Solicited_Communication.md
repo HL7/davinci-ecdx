@@ -27,8 +27,8 @@ An Information Sender is a system that delivers a message to an Information Reci
 ### Information Recipient
 An Information Recipient is a system that receives a message from an Information Sender.
 
-### Actor-Interaction Diagram
-[Rick: Images for UC#4 slide 6]
+### Actor Interaction Diagram
+See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Request_(Solicited_Communication).html">Request (Solicited Communication) Actor Interaction Diagram</a> for an illustration.
 
 ## Processing Steps
 ### Preconditions
@@ -38,7 +38,7 @@ The Information Request Sender needs certain information and the messaging addre
 Something in the Information Requester Senders workflow happens to cause the need for information to be collected from an external entity.
 
 ### Main Flow
-The Information Request Sender sends a communication request message to the Information Request Recipient (or Recipients) asking for health record information. The communication request message includes information about the person, the type of information requested, and the timeframe for the expected response. 
+The Information Request Sender sends a communication request message to the Information Request Recipient (or Recipients) asking for health record information. The communication request message includes information about the person, the type of information requested, and the time frame for the expected response. 
 
 Each Information Request Recipient receives and processes the request. A task or set of tasks are created for information communications that need to be completed. 
 

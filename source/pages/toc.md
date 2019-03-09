@@ -13,7 +13,7 @@ active: toc
         * <a href="About_Supporting_Specifications.html">About Supporting Specifications</a>
         * <a href="About_Payload_Types.html">About Payload Types</a>
         * <a href="Understanding_C-CDA_and_C-CDA_on_FHIR.html">Understanding C-CDA and C-CDA on FHIR</a>
-        * <a href="Resource_Identifiers_-_OIDS_URLs_and_URIs.html">Resource Identifiers - OIDS URLs and URIs</a>
+        * <a href="Resource_Identifiers_-_URIs_URNs_URLs_and_OIDs.html">Resource Identifiers - URIs URNs URLs and OIDs</a>
         * <a href="Structured_and_Unstructured_Documents.html">Structured and Unstructured Documents</a>
         * <a href="Base64_Encoded_Content.html">Base64 Encoded Content</a>
         * <a href="Versioning_Mechanisms.html">Versioning Mechanisms</a>

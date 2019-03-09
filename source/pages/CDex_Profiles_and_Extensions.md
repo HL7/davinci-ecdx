@@ -11,6 +11,8 @@ CDex Collection Bundle
 CDex Communication
 CDex CommunicationRequest
 CDex Document Bundle
+CDex Task (Lloyd todo)
+CDex Composition (Rick todo)
 
 The CDex specific extensions include:
 CDex Payload Type Code

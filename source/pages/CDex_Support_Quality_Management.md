@@ -9,3 +9,5 @@ Payers need to augment claims data to satisfy quality reporting requirements and
 
 ## Examples
 Payers review member information to identify gaps in care. They work with providers and hunt down information showing the gap in care has been closed. Improving HEDIS measure scores has a positive impact on revenue for payers and reimbursements for providers.
+
+Clinical data, especially that which is not typically found in health plan claims, creates a more accurate picture of each member's health. This is turn allows payers to more accurately assess quality of care. For example, if a member had a double mastectomy years before starting coverage with their current health plan, the payer may not know that member no longer needs to receive a mammogram. Without the additional clinical data of the members mastectomy, the payer would show the lack of recent mammogram as an open care gap and may engage the member in an effort to close a gap that really doesn't exist. Care quality assessment measures would be improved if health plan quality management programs had accurate data about each member's health status.  

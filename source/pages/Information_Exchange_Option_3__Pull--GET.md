@@ -9,8 +9,8 @@ active: Information Exchange Option 3  Pull--GET
 The Information Client initiates a query for information from an Information Server.
 ### Information Server
 The Information Server responds to a query for information, returning the query results to the Information Requester.
-### Actor-Interaction Diagram
-[Rick: Images for UC #4 - slide 2]
+### Actor Interaction Diagram
+See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Pull_(GET).html">Pull (Get) Actor Interaction Diagram</a> for an illustration.
 
 ## Processing Steps
 ### Preconditions

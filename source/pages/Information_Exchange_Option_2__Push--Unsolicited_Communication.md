@@ -15,8 +15,8 @@ This information exchange method can be used when: the Information Sender does n
 An Information Sender is a system that delivers a message to an Information Recipient.
 ### Information Recipient
 An Information Recipient is a system that receives a message from an Information Sender.
-### Actor-Interaction Diagram
-[Rick: Images for UC#4 slide 4]
+### Actor Interaction Diagram
+See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Push_(Unsolicited_Communication).html">Push (Unsolicited) Actor Interaction Diagram</a> for an illustration.
 
 ## Processing Steps
 ### Preconditions
