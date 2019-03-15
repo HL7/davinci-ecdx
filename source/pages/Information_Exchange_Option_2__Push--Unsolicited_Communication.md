@@ -20,17 +20,18 @@ See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Push_(Unsol
 
 ## Processing Steps
 ### Preconditions
-The Information Sender has established rules about information sharing requirements after various types of service events occur, 
+The Information Sender has established rules about information sharing requirements after various types of service events occur. 
 
 The Information Sender has access to look-up digital addresses for Information Recipients or has previously been given the address information for the Information Recipient.
 
+A secure information transport mechanism exists between the Information Sender and all Information Recipients.
+
 ### Trigger
-Something in the Information Sender's workflow happens to cause the need for information to be shared with an external entity.
+Something (a process step, event or request) in the Information Sender's workflow happens, causing the need for information to be shared with an external entity.
 
 ### Main Flow
 The Information Sender sends a communication message with the agreed health record information to the Information Recipient(s) who are known to need the information.
 
 ### Post Conditions
-Each Information Recipient receives the communication message and processes it according to their business logic. 
+Each Information Recipient receives the communication message and processes it according to their business logic and optional support of associated tasks. 
 
-## Sequence Diagram

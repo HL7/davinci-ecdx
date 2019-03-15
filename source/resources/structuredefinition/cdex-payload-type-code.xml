@@ -1,1 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><StructureDefinition xmlns="http://hl7.org/fhir"><id value="cdex-payload-type-code"/><meta><versionId value="19"/><lastUpdated value="2019-03-01T18:25:01.000-05:00"/></meta><url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/><name value="CDex Payload Type Code"/><status value="draft"/><fhirVersion value="4.0.0"/><kind value="complex-type"/><abstract value="false"/><type value="Extension"/><baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/><derivation value="constraint"/><differential><element id="Extension"><path value="Extension"/><definition value="A LOINC code defining the requested response payload type when used in a CommunicationRequest, and the actual payload type when used in a Communication resource"/><isModifier value="false"/></element><element id="Extension.url"><path value="Extension.url"/><fixedUri value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/></element><element id="Extension.value[x]"><path value="Extension.value[x]"/><min value="1"/><type><code value="CodeableConcept"/></type></element></differential></StructureDefinition>
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-payload-type-code"/>
+    <meta>
+        <versionId value="19"/>
+        <lastUpdated value="2019-03-01T18:25:01.000-05:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/>
+    <name value="CDex Payload Type Code"/>
+    <status value="draft"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <definition value="A LOINC code defining the requested response payload type when used in a CommunicationRequest, and the actual payload type when used in a Communication resource"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+        </element>
+    </differential>
+</StructureDefinition>

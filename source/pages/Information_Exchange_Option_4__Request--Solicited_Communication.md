@@ -19,13 +19,13 @@ An Information Request Recipient is a system that receives a communication reque
 
 The Information Request Recipient processes the communication request message and creates an associated task to gather or generate the requested information and return it within a defined or requested period of time.  The task remains unfinished until the Information Request Recipient returns the requested information. It is then marked completed.
 
-Acting as a Information Sender, the requested information is communicated to the Information Recipient (or Information Recipients) indicated in the previously delivered communication request.
+Acting as an Information Sender, the requested information is communicated to the Information Recipient (or Information Recipients) indicated in the previously delivered communication request.
 
 ### Information Sender
-An Information Sender is a system that delivers a message to an Information Recipient.
+An Information Sender is a system that delivers a communication message to an Information Recipient.
 
 ### Information Recipient
-An Information Recipient is a system that receives a message from an Information Sender.
+An Information Recipient is a system that receives a communication message from an Information Sender.
 
 ### Actor Interaction Diagram
 See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Request_(Solicited_Communication).html">Request (Solicited Communication) Actor Interaction Diagram</a> for an illustration.
@@ -33,19 +33,18 @@ See <a href="https://trifolia-fhir.lantanagroup.com/igs/davinci-cdex/Request_(So
 ## Processing Steps
 ### Preconditions
 The Information Request Sender needs certain information and the messaging address for the Information Request Recipient (or Information Request Recipients) is known.
-
 ### Trigger
 Something in the Information Requester Senders workflow happens to cause the need for information to be collected from an external entity.
-
 ### Main Flow
-The Information Request Sender sends a communication request message to the Information Request Recipient (or Recipients) asking for health record information. The communication request message includes information about the person, the type of information requested, and the time frame for the expected response. 
+The Information Request Sender sends a communication request message to the Information Request Recipient (or Recipients) asking for health record information. The communication request message includes information about the person, the type of information requested, and the timeframe for the expected response.
 
-Each Information Request Recipient receives and processes the request. A task or set of tasks are created for information communications that need to be completed. 
+Each Information Request Recipient receives and processes the request. A task or set of tasks are created for information communications that need to be completed. The specification includes expected processing tasks to be completed by the Information Request Recipient.
 
-As the information becomes available the Information Request Recipient (acting as an Information Sender) communicates the information back to the indicated Information Recipients, referencing the id of the original communication request for reference. The Information Request Recipient only gathers and sends information it determines is appropriate to return to the specified Information Recipient(s).
+The Information Request Recipient performs the requested tasks, based on their own governance, business logic and workflows.
+
+As the information becomes available the Information Request Recipient (acting as an Information Sender) communicates information back to the indicated Information Recipients, referencing the id of the original communication request for reference, until the tasks associated with the communication request are completed. The Information Request Recipient only gathers and sends information it determines is appropriate to return to the specified Information Recipient(s), based on its own governance, business logic and workflows.
 
 The Information Request Recipient closes communication request related tasks once the response has been sent.
 
 ### Post Conditions
-Information Recipients receive requested information that the Information Request Recipient agrees to provide.
-## Sequence Diagram
+Information Recipients receive information that the Information Request Recipient agrees to provide in response to the communication request.

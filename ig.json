@@ -1,6 +1,7 @@
 {
 	"tool": "jekyll",
 	"source": "implementationguide/davinci-cdex.xml",
+	"version": "4.0.0",
 	"npm-name": "hl7.fhir.us.davinci-cdex",
 	"license": "CC0-1.0",
 	"paths": {
@@ -27,7 +28,7 @@
 		"https://trifolia-on-fhir.lantanagroup.com"
 	],
 	"sct-edition": "http://snomed.info/sct/731000124108",
-	"canonicalBase": "http://hl7.org/fhir/us/davinci-hrex",
+	"canonicalBase": "http://hl7.org/fhir/us/davinci-cdex",
 	"defaults": {
 		"Location": {
 			"template-base": "ex.html"

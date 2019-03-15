@@ -20,8 +20,10 @@ The Information Server adheres to business rules that govern which patients can 
 
 The Information Client is authorized to query the Information Server. 
 
+A secure information transport mechanism exists between the Information Sender and all Information Recipients (https)
+
 ### Trigger
-Something in the Information Requester's member-centered workflow happens which causes the need for externally available information.
+Something in the Information Client's  workflow happens which causes the need for externally available information.
 
 ### Main Flow
 A query is made by the Information Client to the Information Source for the needed health record information. Query parameters allow the query to be tailored for the specific member and the specific Information needed. 
@@ -37,4 +39,3 @@ If the patient indicated in the query parameters did not match or was not permit
 
 If the type of information requested was not permitted to be shared (based on the business rules of the Information Server), an error condition resulted or that information simply was not returned.
 
-## Sequence Diagram
