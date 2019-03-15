@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="140"/>
-        <lastUpdated value="2019-03-15T07:22:46.000-04:00"/>
+        <versionId value="145"/>
+        <lastUpdated value="2019-03-15T07:54:10.000-04:00"/>
     </meta>
     <contained>
         <Binary>
@@ -289,8 +289,23 @@
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
     <name value="Da Vinci Clinical Data Exchange (CDex)"/>
+    <title value="Da Vinci Clinical Data Exchange (CDex)"/>
     <status value="draft"/>
-    <description value="The Clinical Data exchange (CDex) is part of the larger Da Vinci use case for Health Record exchange (HRex).&#xA;&#xA;After careful evaluation, the eHRx project was decomposed into four independent efforts (and tied to 4 separate PSSs). The exchange of Quality Measures was included in the existing work on the Data Exchange for Quality Measures (DEQM) that is sponsored by the CQI workgroup. The exchange of Payer Data (PDex) is sponsored by Financial Management. The overall HRex Framework is planned to be sponsored by the Clinical Interoperability Council (CIC) and we looking to a combination of Structured Documents, Patient Care and Attachments to sponsor the work on e Clinical Data exchange (CDex).&#xA;&#xA;The scope of the CDex project is to defined combinations of exchange methods (push, pull, subscribe, CDS Hooks, ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support specific exchanges of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain very specific patterns of exchange so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, specific resources, and bulk data exchange. This list is intended to be illustrative and not prescriptive.&#xA;&#xA;This project will reference, where possible the &quot;standards&quot; defined by the Health Record exchange (HRex) Framework Implementation Guide which in turn will utilize prior work from Argonaut, US Core and QI Core effort for FHIR DSTU2, STU3, and R4. &#xA;&#xA;The ultimate goal is to support the exchange of provider data on specific patients/members for better patient care with other providers and payers using technology that support FHIR DSTU2, STU3, and R4 releases of the FHIR standard.&#xA;&#xA;The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via tracker items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles.&#xA;&#xA;This implementation guide depends on &lt;a href=&quot;../davinci-ehrx&quot;&gt;Da Vinci HRex&lt;/a&gt;. Please see that guide for more info. &#xA;&#xA;"/>
+    <contact>
+        <name value="Lisa Nelson"/>
+        <telecom>
+            <system value="email"/>
+            <value value="lnelson@maxmd.com"/>
+        </telecom>
+    </contact>
+    <contact>
+        <name value="Rick Geimer"/>
+        <telecom>
+            <system value="email"/>
+            <value value="rick.geimer@lantanagroup.com"/>
+        </telecom>
+    </contact>
+    <description value="The Clinical Data exchange (CDex) is part of the larger Da Vinci use case for Health Record exchange (HRex).&#xA;&#xA;After careful evaluation, the eHRx project was decomposed into four independent efforts (and tied to 4 separate PSSs). The exchange of Quality Measures was included in the existing work on the Data Exchange for Quality Measures (DEQM) that is sponsored by the CQI workgroup. The exchange of Payer Data (PDex) is sponsored by Financial Management. The overall HRex Framework is planned to be sponsored by the Clinical Interoperability Council (CIC) and we looking to a combination of Structured Documents, Patient Care and Attachments to sponsor the work on e Clinical Data exchange (CDex).&#xA;&#xA;The scope of the CDex project is to defined combinations of exchange methods (push, pull, subscribe, CDS Hooks, ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support specific exchanges of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain very specific patterns of exchange so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, specific resources, and bulk data exchange. This list is intended to be illustrative and not prescriptive.&#xA;&#xA;This project will reference, where possible the &quot;standards&quot; defined by the Health Record exchange (HRex) Framework Implementation Guide which in turn will utilize prior work from Argonaut, US Core and QI Core effort for FHIR DSTU2, STU3, and R4. &#xA;&#xA;The ultimate goal is to support the exchange of provider data on specific patients/members for better patient care with other providers and payers using technology that support FHIR DSTU2, STU3, and R4 releases of the FHIR standard.&#xA;&#xA;The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via tracker items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles.&#xA;&#xA;This implementation guide depends on the Da Vinci HRex Implementation Guide. Please see that guide for more info. &#xA;&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <definition>

@@ -29,7 +29,29 @@ The ultimate goal is to support the exchange of provider data on specific patien
 
 The project team plans to work with existing FHIR artifacts where possible. If changes are necessary, the project team will work with the responsible Work Group to review and implement (via tracker items or new PSS) any necessary enhancements to base FHIR resources, extensions, and/or profiles.
 
-This implementation guide depends on <a href="../davinci-ehrx">Da Vinci HRex</a>. Please see that guide for more info. 
+This implementation guide depends on the Da Vinci HRex Implementation Guide. Please see that guide for more info. 
 
+
+
+### Authors
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lisa Nelson</td>
+<td><a href="mailto:lnelson@maxmd.com">lnelson@maxmd.com</a></td>
+</tr>
+<tr>
+<td>Rick Geimer</td>
+<td><a href="mailto:rick.geimer@lantanagroup.com">rick.geimer@lantanagroup.com</a></td>
+</tr>
+</tbody>
+</table>
 
 
