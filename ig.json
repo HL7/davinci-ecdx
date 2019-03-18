@@ -1,7 +1,6 @@
 {
 	"tool": "jekyll",
 	"source": "implementationguide/davinci-cdex.xml",
-	"version": "4.0.0",
 	"npm-name": "hl7.fhir.us.davinci-cdex",
 	"license": "CC0-1.0",
 	"paths": {
@@ -116,5 +115,7 @@
 			"defns": "StructureDefinition-cdex-payload-type-code-definitions.html"
 		}
 	},
+	"version": "4.0.0",
+	"fixed-business-version": "4.0.0",
 	"dependencyList": []
 }
