@@ -18,6 +18,7 @@ active: toc
         * <a href="Base64_Encoded_Content.html">Base64 Encoded Content</a>
         * <a href="Versioning_Mechanisms.html">Versioning Mechanisms</a>
         * <a href="Code_Systems_-_Value_Sets_-_Request_Codes_and_Response_Codes.html">Code Systems - Value Sets - Request Codes and Response Codes</a>
+        * <a href="About_Workflow_Support_in_FHIR.html">About Workflow Support in FHIR</a>
     * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
         * <a href="CDex_Improve_Care_Coordination.html">CDex Improve Care Coordination</a>
         * <a href="CDex_Build_Accurate_Risk_Profiles_and_Health_Records.html">CDex Build Accurate Risk Profiles and Health Records</a>
