@@ -27,19 +27,19 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-cdex-collection-bundle.html">CDex Collection Bundle</a></td>
+<td><a href="StructureDefinition-cdex-collection-bundle.html">CDexCollectionBundle</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-cdex-communication.html">CDex Communication</a></td>
+<td><a href="StructureDefinition-cdex-communication.html">CDexCommunication</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-cdex-communicationrequest.html">CDex CommunicationRequest</a></td>
+<td><a href="StructureDefinition-cdex-communicationrequest.html">CDexCommunicationRequest</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="StructureDefinition-cdex-document-bundle.html">CDex Document Bundle</a></td>
+<td><a href="StructureDefinition-cdex-document-bundle.html">CDexDocumentBundle</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -57,7 +57,7 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-cdex-payload-type-code.html">CDex Payload Type Code</a></td>
+<td><a href="StructureDefinition-cdex-payload-type-code.html">CDexPayloadTypeCode</a></td>
 <td></td>
 </tr>
 </tbody>

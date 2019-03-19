@@ -3,11 +3,12 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-type-code"/>
     <meta>
-        <versionId value="20"/>
-        <lastUpdated value="2019-03-15T07:39:34.000-04:00"/>
+        <versionId value="21"/>
+        <lastUpdated value="2019-03-19T11:21:32.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/>
-    <name value="CDex Payload Type Code"/>
+    <name value="CDexPayloadTypeCode"/>
+    <title value="CDex Payload Type Code"/>
     <status value="draft"/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>

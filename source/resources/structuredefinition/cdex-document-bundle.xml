@@ -3,12 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-document-bundle"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-03-01T14:34:00.000-05:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-03-19T11:20:29.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-document-bundle"/>
-    <name value="CDex Document Bundle"/>
+    <name value="CDexDocumentBundle"/>
+    <title value="CDex Document Bundle"/>
     <status value="draft"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Bundle"/>

@@ -3,12 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communication"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-03-01T14:13:19.000-05:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-03-19T11:20:49.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
-    <name value="CDex Communication"/>
+    <name value="CDexCommunication"/>
+    <title value="CDex Communication"/>
     <status value="draft"/>
+    <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
     <type value="Communication"/>

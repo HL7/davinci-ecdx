@@ -117,5 +117,11 @@
 	},
 	"version": "4.0.0",
 	"fixed-business-version": "4.0.0",
-	"dependencyList": []
+	"dependencyList": [
+		{
+			"location": "http://hl7.org/fhir/us/davinci-hrex",
+			"name": "DaVinciHRex",
+			"version": "current"
+		}
+	]
 }
