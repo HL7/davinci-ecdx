@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-type-code"/>
     <meta>
-        <versionId value="21"/>
-        <lastUpdated value="2019-03-19T11:21:32.000-04:00"/>
+        <versionId value="22"/>
+        <lastUpdated value="2019-03-22T14:07:30.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/>
     <name value="CDexPayloadTypeCode"/>
@@ -15,11 +15,11 @@
     <abstract value="false"/>
     <context>
         <type value="element"/>
-        <expression value="Communication"/>
+        <expression value="Communication.payload"/>
     </context>
     <context>
         <type value="element"/>
-        <expression value="CommunicationRequest"/>
+        <expression value="CommunicationRequest.payload"/>
     </context>
     <type value="Extension"/>
     <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>

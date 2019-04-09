@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="170"/>
-        <lastUpdated value="2019-03-19T11:45:55.000-04:00"/>
+        <versionId value="191"/>
+        <lastUpdated value="2019-04-09T11:14:39.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -64,6 +64,78 @@
                 <display value="CDex Payload Type Code"/>
             </reference>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Claim/cdex-example-claim"/>
+                <display value="cdex-example-claim"/>
+            </reference>
+            <name value="cdex-example-claim"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/cdex-example-unsolicited-attachment"/>
+                <display value="cdex-example-unsolicited-attachment"/>
+            </reference>
+            <name value="cdex-example-unsolicited-attachment"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Coverage/cdex-example-coverage"/>
+                <display value="cdex-example-coverage"/>
+            </reference>
+            <name value="cdex-example-coverage"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/cdex-example-encounter"/>
+                <display value="cdex-example-encounter"/>
+            </reference>
+            <name value="cdex-example-encounter"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/cdex-example-clearinghouse"/>
+                <display value="cdex-example-clearinghouse"/>
+            </reference>
+            <name value="cdex-example-clearinghouse"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/cdex-example-payer"/>
+                <display value="cdex-example-payer"/>
+            </reference>
+            <name value="cdex-example-payer"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/cdex-example-provider"/>
+                <display value="cdex-example-provider"/>
+            </reference>
+            <name value="cdex-example-provider"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/cdex-example-patient"/>
+                <display value="Patient Amy V. Shaw"/>
+            </reference>
+            <name value="Patient Amy V. Shaw"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/cdex-example-practitioner"/>
+                <display value="Practitioner Ronald Bone"/>
+            </reference>
+            <name value="Practitioner Ronald Bone"/>
+            <exampleBoolean value="true"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -83,13 +155,13 @@
                 <title value="Introduction"/>
                 <generation value="markdown"/>
                 <page>
-                    <nameUrl value="About_FHIR.html"/>
-                    <title value="About FHIR"/>
+                    <nameUrl value="Purpose_Content_and_Organization.html"/>
+                    <title value="Purpose Content and Organization"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="About_this_Implementation_Guide--Content_and_Organization.html"/>
-                    <title value="About this Implementation Guide--Content and Organization"/>
+                    <nameUrl value="About_FHIR.html"/>
+                    <title value="About FHIR"/>
                     <generation value="markdown"/>
                 </page>
                 <page>
@@ -172,26 +244,6 @@
                     <title value="CDex Track Referrals and Orders"/>
                     <generation value="markdown"/>
                 </page>
-                <page>
-                    <nameUrl value="Information_Exchange_Option_1__Push--POST_and_PUT.html"/>
-                    <title value="Information Exchange Option 1  Push--POST and PUT"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="Information_Exchange_Option_2__Push--Unsolicited_Communication.html"/>
-                    <title value="Information Exchange Option 2  Push--Unsolicited Communication"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="Information_Exchange_Option_3__Pull--GET.html"/>
-                    <title value="Information Exchange Option 3  Pull--GET"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="Information_Exchange_Option_4__Request--Solicited_Communication.html"/>
-                    <title value="Information Exchange Option 4  Request--Solicited Communication"/>
-                    <generation value="markdown"/>
-                </page>
             </page>
             <page>
                 <nameUrl value="CDex_Profiles_and_Extensions.html"/>
@@ -229,8 +281,8 @@
                 </page>
             </page>
             <page>
-                <nameUrl value="Information_Exchange_Interactions.html"/>
-                <title value="Information Exchange Interactions"/>
+                <nameUrl value="Information_Exchange_Interactions_and_Specifications.html"/>
+                <title value="Information Exchange Interactions and Specifications"/>
                 <generation value="markdown"/>
                 <page>
                     <nameUrl value="Push_(POST_and_PUT).html"/>

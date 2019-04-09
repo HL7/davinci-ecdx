@@ -113,10 +113,46 @@
 		"StructureDefinition/cdex-payload-type-code": {
 			"base": "StructureDefinition-cdex-payload-type-code.html",
 			"defns": "StructureDefinition-cdex-payload-type-code-definitions.html"
+		},
+		"Claim/cdex-example-claim": {
+			"base": "Claim-cdex-example-claim.html",
+			"defns": "Claim-cdex-example-claim-definitions.html"
+		},
+		"Communication/cdex-example-unsolicited-attachment": {
+			"base": "Communication-cdex-example-unsolicited-attachment.html",
+			"defns": "Communication-cdex-example-unsolicited-attachment-definitions.html"
+		},
+		"Coverage/cdex-example-coverage": {
+			"base": "Coverage-cdex-example-coverage.html",
+			"defns": "Coverage-cdex-example-coverage-definitions.html"
+		},
+		"Encounter/cdex-example-encounter": {
+			"base": "Encounter-cdex-example-encounter.html",
+			"defns": "Encounter-cdex-example-encounter-definitions.html"
+		},
+		"Organization/cdex-example-clearinghouse": {
+			"base": "Organization-cdex-example-clearinghouse.html",
+			"defns": "Organization-cdex-example-clearinghouse-definitions.html"
+		},
+		"Organization/cdex-example-payer": {
+			"base": "Organization-cdex-example-payer.html",
+			"defns": "Organization-cdex-example-payer-definitions.html"
+		},
+		"Organization/cdex-example-provider": {
+			"base": "Organization-cdex-example-provider.html",
+			"defns": "Organization-cdex-example-provider-definitions.html"
+		},
+		"Patient/cdex-example-patient": {
+			"base": "Patient-cdex-example-patient.html",
+			"defns": "Patient-cdex-example-patient-definitions.html"
+		},
+		"Practitioner/cdex-example-practitioner": {
+			"base": "Practitioner-cdex-example-practitioner.html",
+			"defns": "Practitioner-cdex-example-practitioner-definitions.html"
 		}
 	},
 	"version": "4.0.0",
-	"fixed-business-version": "0.1.0",
+	"fixed-business-version": "0.0.1",
 	"dependencyList": [
 		{
 			"location": "http://hl7.org/fhir/us/davinci-hrex",

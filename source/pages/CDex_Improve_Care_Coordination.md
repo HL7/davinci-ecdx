@@ -11,3 +11,6 @@ Payers want to create a complete clinical record for each of their members to im
 Some payers create a complete clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions. 
 
 They also use clinical information gathered from providers to support the HEDIS/Stars quality program. For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.  
+
+## Information Exchange Mechanism to Support
+Need to explain what exchange mechanisms are SHALL, SHOULD, or MAY to be able to support this use case?

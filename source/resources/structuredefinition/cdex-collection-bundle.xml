@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-collection-bundle"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-03-19T11:18:59.000-04:00"/>
+        <versionId value="5"/>
+        <lastUpdated value="2019-03-22T13:26:12.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-collection-bundle"/>
     <name value="CDexCollectionBundle"/>
@@ -23,6 +23,10 @@
         <element id="Bundle.type">
             <path value="Bundle.type"/>
             <fixedCode value="collection"/>
+        </element>
+        <element id="Bundle.signature">
+            <path value="Bundle.signature"/>
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>
