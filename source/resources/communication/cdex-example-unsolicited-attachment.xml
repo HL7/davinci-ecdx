@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Communication
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-example-unsolicited-attachment"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">Attachment which is unsolicited
+        </div>
+    </text>
+    <identifier>
+        <system value="http://www.providerco.com/communication"/>
+        <value value="12345"/>
+    </identifier>
+    <status value="completed"/>
+    <category>
+        <coding>
+            <system value="http://acme.org/messagetypes"/>
+            <code value="UnsolicitedAttachment"/>
+        </coding>
+    </category>
+    <subject>
+        <reference value="Patient/cdex-example-patient"/>
+    </subject>
+    <about>
+        <reference value="Claim/cdex-example-claim"/>
+    </about>
+    <sent value="2016-06-12T18:01:10-08:00"/>
+    <recipient>
+        <reference value="Organization/cdex-example-payer"/>
+    </recipient>
+    <sender>
+        <reference value="Organization/cdex-example-provider"/>
+    </sender>
+    <payload>
+        <contentAttachment>
+            <contentType value="application/pdf"/>
+            <data value="SGVsbG8="/>
+            <title value="Discharge Summary 20100201.pdf"/>
+            <creation value="2010-02-01T11:50:23-05:00"/>
+        </contentAttachment>
+    </payload>
+</Communication>

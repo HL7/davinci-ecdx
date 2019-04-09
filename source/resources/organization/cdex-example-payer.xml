@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-example-payer"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+    </meta>
+    <identifier>
+        <system value="http://www.Anthem.com/edi"/>
+        <value value="Anthem-Inc"/>
+    </identifier>
+    <telecom id="1">
+        <system value="phone"/>
+        <value value="800-444-5555"/>
+        <use value="work"/>
+    </telecom>
+    <address id="1">
+        <use value="work"/>
+        <type value="postal"/>
+        <text value="111 Monument Cir, Indianapolis, IN 46077, US"/>
+        <line value="111 Monument Cir "/>
+        <city value="Indianapolis"/>
+        <state value="IN"/>
+        <postalCode value="46077"/>
+        <country value="US"/>
+    </address>
+</Organization>

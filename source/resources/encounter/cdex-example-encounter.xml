@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-example-encounter"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
+    </meta>
+    <status value="finished"/>
+    <class>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+        <code value="AMB"/>
+        <display value="ambulatory"/>
+    </class>
+    <type>
+        <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="99201"/>
+        </coding>
+        <text value="Office Visit"/>
+    </type>
+    <subject>
+        <reference value="Patient/cdex-example-patient"/>
+    </subject>
+    <participant>
+        <individual>
+            <reference value="Practitioner/cdex-example-practitioner"/>
+        </individual>
+    </participant>
+    <period>
+        <start value="2015-11-01T17:00:14-05:00"/>
+        <end value="2015-11-01T18:00:14-05:00"/>
+    </period>
+</Encounter>
