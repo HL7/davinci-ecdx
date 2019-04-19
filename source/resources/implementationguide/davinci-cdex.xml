@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="195"/>
-        <lastUpdated value="2019-04-19T11:52:35.000-04:00"/>
+        <versionId value="197"/>
+        <lastUpdated value="2019-04-19T14:27:43.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -149,6 +149,22 @@
             </reference>
             <name value="CDexTask"/>
             <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CommunicationRequest/cdex-example-resource-request"/>
+                <display value="cdex-example-resource-request"/>
+            </reference>
+            <name value="cdex-example-resource-request"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CommunicationRequest/cdex-example-attachment-request"/>
+                <display value="cdex-example-attachment-request"/>
+            </reference>
+            <name value="cdex-example-attachment-request"/>
+            <exampleBoolean value="true"/>
         </resource>
         <page>
             <nameUrl value="toc.md"/>

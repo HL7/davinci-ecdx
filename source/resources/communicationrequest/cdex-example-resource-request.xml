@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommunicationRequest xmlns="http://hl7.org/fhir">
+    <id value="cdex-example-resource-request"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2019-04-09T11:10:06.000-04:00"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">Request for Condition resources</div>
+    </text>
+    <identifier>
+        <system value="http://www.jurisdiction.com/insurer/123456"/>
+        <value value="ABC123"/>
+    </identifier>
+    <groupIdentifier>
+        <value value="12345"/>
+    </groupIdentifier>
+    <status value="active"/>
+    <category>
+        <coding>
+            <system value="http://acme.org/messagetypes"/>
+            <code value="SolicitedAttachmentRequest"/>
+        </coding>
+    </category>
+    <priority value="routine"/>
+    <medium>
+        <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationMode"/>
+            <code value="WRITTEN"/>
+            <display value="written"/>
+        </coding>
+        <text value="written"/>
+    </medium>
+    <subject>
+        <reference value="Patient/cdex-example-patient"/>
+    </subject>
+    <about>
+        <reference value="Claim/cdex-example-claim"/>
+    </about>
+    <encounter>
+        <reference value="Encounter/cdex-example-encounter"/>
+    </encounter>
+    <payload>
+        <extension url="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-query-string">
+            <valueString value="Condition?patient=cdex-example-patient"></valueString>
+        </extension>
+        <contentString value="Please provide the patient's conditions."/>
+    </payload>
+    <occurrenceDateTime value="2016-06-10T11:01:10-08:00"/>
+    <authoredOn value="2016-06-10T11:01:10-08:00"/>
+    <requester>
+        <reference value="Practitioner/cdex-example-practitioner"/>
+    </requester>
+    <recipient>
+        <reference value="Organization/cdex-example-provider"/>
+    </recipient>
+    <sender>
+        <reference value="Organization/cdex-example-payer"/>
+    </sender>
+</CommunicationRequest>
