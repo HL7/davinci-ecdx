@@ -1,4 +1,4 @@
-{ 
+{
 	"tool": "jekyll",
 	"source": "implementationguide/davinci-cdex.xml",
 	"npm-name": "hl7.fhir.us.davinci-cdex",
@@ -110,9 +110,9 @@
 			"base": "StructureDefinition-cdex-document-bundle.html",
 			"defns": "StructureDefinition-cdex-document-bundle-definitions.html"
 		},
-		"StructureDefinition/cdex-payload-type-code": {
-			"base": "StructureDefinition-cdex-payload-type-code.html",
-			"defns": "StructureDefinition-cdex-payload-type-code-definitions.html"
+		"StructureDefinition/cdex-payload-clinical-note-type": {
+			"base": "StructureDefinition-cdex-payload-clinical-note-type.html",
+			"defns": "StructureDefinition-cdex-payload-clinical-note-type-definitions.html"
 		},
 		"Claim/cdex-example-claim": {
 			"base": "Claim-cdex-example-claim.html",
@@ -149,6 +149,14 @@
 		"Practitioner/cdex-example-practitioner": {
 			"base": "Practitioner-cdex-example-practitioner.html",
 			"defns": "Practitioner-cdex-example-practitioner-definitions.html"
+		},
+		"StructureDefinition/cdex-payload-query-string": {
+			"base": "StructureDefinition-cdex-payload-query-string.html",
+			"defns": "StructureDefinition-cdex-payload-query-string-definitions.html"
+		},
+		"StructureDefinition/cdex-task": {
+			"base": "StructureDefinition-cdex-task.html",
+			"defns": "StructureDefinition-cdex-task-definitions.html"
 		}
 	},
 	"version": "4.0.0",

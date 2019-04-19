@@ -42,6 +42,10 @@ active: profiles
 <td><a href="StructureDefinition-cdex-document-bundle.html">CDexDocumentBundle</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="StructureDefinition-cdex-task.html">CDexTask</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -57,7 +61,11 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-cdex-payload-type-code.html">CDexPayloadTypeCode</a></td>
+<td><a href="StructureDefinition-cdex-payload-clinical-note-type.html">CDexPayloadClinicalNoteType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-cdex-payload-query-string.html">CDexPayloadQueryString</a></td>
 <td></td>
 </tr>
 </tbody>

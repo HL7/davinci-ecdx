@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-payload-clinical-note-type"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2019-04-19T11:52:02.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-clinical-note-type"/>
+    <name value="CDexPayloadClinicalNoteType"/>
+    <title value="CDex Payload Clinica lNote Type"/>
+    <status value="draft"/>
+    <fhirVersion value="4.0.0"/>
+    <kind value="complex-type"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Communication.payload"/>
+    </context>
+    <context>
+        <type value="element"/>
+        <expression value="CommunicationRequest.payload"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <definition value="A LOINC code defining the requested response payload type when used in a CommunicationRequest, and the actual payload type when used in a Communication resource"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <fixedUri value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-type-code"/>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <min value="1"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://loinc.org"/>
+                </coding>
+            </patternCodeableConcept>
+        </element>
+    </differential>
+</StructureDefinition>

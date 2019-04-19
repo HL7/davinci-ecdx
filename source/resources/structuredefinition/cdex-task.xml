@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-task"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2019-04-19T00:03:30.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task"/>
+    <name value="CDexTask"/>
+    <title value="CDex Task"/>
+    <status value="draft"/>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <type value="Task"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Task"/>
+    <derivation value="constraint"/>
+    <differential>
+        <element id="Task">
+            <path value="Task"/>
+        </element>
+        <element id="Task.identifier">
+            <path value="Task.identifier"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.basedOn">
+            <path value="Task.basedOn"/>
+            <slicing>
+                <discriminator>
+                    <type value="type"/>
+                    <path value="resolve()"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Task.basedOn:claim">
+            <path value="Task.basedOn"/>
+            <representation value="xmlText"/>
+            <sliceName value="claim"/>
+            <short value="in support of claim/pre-auth/pre-determination"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Claim"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.status">
+            <path value="Task.status"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.businessStatus">
+            <path value="Task.businessStatus"/>
+            <comment value="...&#xA;Allows description of the current status of resolving the issue."/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.intent">
+            <path value="Task.intent"/>
+            <fixedCode value="order"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.code">
+            <path value="Task.code"/>
+            <patternCodeableConcept>
+                <coding>
+                    <system value="http://hl7.org/fhir/CodeSystem/task-code"/>
+                    <code value="fulfill"/>
+                </coding>
+            </patternCodeableConcept>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.focus">
+            <path value="Task.focus"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.for">
+            <path value="Task.for"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.authoredOn">
+            <path value="Task.authoredOn"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.lastModified">
+            <path value="Task.lastModified"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.requester">
+            <path value="Task.requester"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Task.owner">
+            <path value="Task.owner"/>
+            <min value="1"/>
+            <mustSupport value="true"/>
+        </element>
+    </differential>
+</StructureDefinition>
