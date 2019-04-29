@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communication"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2019-04-29T10:47:05.000-04:00"/>
+        <versionId value="11"/>
+        <lastUpdated value="2019-04-29T11:15:55.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
     <name value="CDexCommunication"/>
@@ -27,7 +27,7 @@
             <mustSupport value="true"/>
         </element>
         <element id="Communication.payload.extension:payloadQueryString">
-            <path value="Patient.payload.extension"/>
+            <path value="Communication.payload.extension"/>
             <sliceName value="payloadQueryString"/>
             <min value="0"/>
             <max value="1"/>
@@ -38,7 +38,7 @@
             <mustSupport value="true"/>
         </element>
         <element id="Communication.payload.extension:payloadClinicalNoteType">
-            <path value="Patient.payload.extension"/>
+            <path value="Communication.payload.extension"/>
             <sliceName value="payloadClinicalNoteType"/>
             <min value="0"/>
             <max value="1"/>
