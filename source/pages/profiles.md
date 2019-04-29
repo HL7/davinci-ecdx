@@ -27,10 +27,6 @@ active: profiles
 </thead>
 <tbody>
 <tr>
-<td><a href="StructureDefinition-cdex-collection-bundle.html">CDexCollectionBundle</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="StructureDefinition-cdex-communication.html">CDexCommunication</a></td>
 <td></td>
 </tr>
@@ -40,6 +36,10 @@ active: profiles
 </tr>
 <tr>
 <td><a href="StructureDefinition-cdex-document-bundle.html">CDexDocumentBundle</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StructureDefinition-cdex-searchset-bundle.html">CDexSearchSetBundle</a></td>
 <td></td>
 </tr>
 <tr>

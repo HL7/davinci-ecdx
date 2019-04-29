@@ -162,10 +162,6 @@
 			"base": "StructureDefinition-cdex-payload-clinical-note-type.html",
 			"defns": "StructureDefinition-cdex-payload-clinical-note-type-definitions.html"
 		},
-		"StructureDefinition/cdex-collection-bundle": {
-			"base": "StructureDefinition-cdex-collection-bundle.html",
-			"defns": "StructureDefinition-cdex-collection-bundle-definitions.html"
-		},
 		"StructureDefinition/cdex-communication": {
 			"base": "StructureDefinition-cdex-communication.html",
 			"defns": "StructureDefinition-cdex-communication-definitions.html"
@@ -177,6 +173,10 @@
 		"StructureDefinition/cdex-communicationrequest": {
 			"base": "StructureDefinition-cdex-communicationrequest.html",
 			"defns": "StructureDefinition-cdex-communicationrequest-definitions.html"
+		},
+		"StructureDefinition/cdex-searchset-bundle": {
+			"base": "StructureDefinition-cdex-searchset-bundle.html",
+			"defns": "StructureDefinition-cdex-searchset-bundle-definitions.html"
 		}
 	},
 	"version": "4.0.0",

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="205"/>
-        <lastUpdated value="2019-04-27T10:13:04.000-04:00"/>
+        <versionId value="208"/>
+        <lastUpdated value="2019-04-29T11:08:13.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -36,8 +36,8 @@
     <definition>
         <resource>
             <reference>
-                <reference value="StructureDefinition/cdex-collection-bundle"/>
-                <display value="CDex Collection Bundle"/>
+                <reference value="StructureDefinition/cdex-searchset-bundle"/>
+                <display value="CDex Search Set Bundle"/>
             </reference>
         </resource>
         <resource>

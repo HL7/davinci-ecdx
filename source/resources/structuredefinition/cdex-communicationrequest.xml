@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communicationrequest"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-03-19T11:21:11.000-04:00"/>
+        <versionId value="7"/>
+        <lastUpdated value="2019-04-29T10:53:36.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communicationrequest"/>
     <name value="CDexCommunicationRequest"/>
@@ -19,6 +19,38 @@
     <differential>
         <element id="CommunicationRequest">
             <path value="CommunicationRequest"/>
+        </element>
+        <element id="CommunicationRequest.payload">
+            <path value="Communication.payload"/>
+            <min value="1"/>
+            <max value="*"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="CommunicationRequest.payload.extension:payloadQueryString">
+            <path value="Patient.payload.extension"/>
+            <sliceName value="payloadQueryString"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-query-string"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="CommunicationRequest.payload.extension:payloadClinicalNoteType">
+            <path value="Patient.payload.extension"/>
+            <sliceName value="payloadClinicalNoteType"/>
+            <min value="0"/>
+            <max value="1"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-clinical-note-type"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.payload.content[x]">
+            <path value="Communication.payload.content[x]"/>
+            <mustSupport value="true"/>
         </element>
     </differential>
 </StructureDefinition>
