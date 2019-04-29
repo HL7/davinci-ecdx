@@ -19,14 +19,15 @@ active: toc
         * <a href="Versioning_Mechanisms.html">Versioning Mechanisms</a>
         * <a href="Code_Systems_-_Value_Sets_-_Request_Codes_and_Response_Codes.html">Code Systems - Value Sets - Request Codes and Response Codes</a>
         * <a href="About_Workflow_Support_in_FHIR.html">About Workflow Support in FHIR</a>
-    * <a href="Use_Case_Scenarios.html">Use Case Scenarios</a>
+    * <a href="Use_Cases,_Personas_and_Patient_Story.html">Use Cases, Personas and Patient Story</a>
         * <a href="CDex_Improve_Care_Coordination.html">CDex Improve Care Coordination</a>
         * <a href="CDex_Build_Accurate_Risk_Profiles_and_Health_Records.html">CDex Build Accurate Risk Profiles and Health Records</a>
         * <a href="CDex_Support_Quality_Management.html">CDex Support Quality Management</a>
         * <a href="CDex_Confirm_Medical_Necessity.html">CDex Confirm Medical Necessity</a>
         * <a href="CDex_Improve_Member_Experience.html">CDex Improve Member Experience</a>
         * <a href="CDex_Track_Referrals_and_Orders.html">CDex Track Referrals and Orders</a>
-    * <a href="CDex_Profiles_and_Extensions.html">CDex Profiles and Extensions</a>
+    * <a href="Profiles_and_Extensions.html">Profiles and Extensions</a>
+        * <a href="CDex_Profiles_and_Extensions.html">CDex Profiles and Extensions</a>
         * <a href="HRex_Profiles.html">HRex Profiles</a>
             * <a href="HRex_Profiles_for_FHIR_DSTU2.html">HRex Profiles for FHIR DSTU2</a>
         * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>

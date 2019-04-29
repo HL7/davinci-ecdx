@@ -3,13 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-example-attachment-request"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-09T11:10:06.000-04:00"/>
+        <versionId value="4"/>
+        <lastUpdated value="2019-04-19T13:08:24.000-04:00"/>
     </meta>
     <text>
         <status value="generated"/>
         <div
             xmlns="http://www.w3.org/1999/xhtml">Request for Discharge Summary
+        
         </div>
     </text>
     <identifier>

@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="197"/>
-        <lastUpdated value="2019-04-19T14:27:43.000-04:00"/>
+        <versionId value="205"/>
+        <lastUpdated value="2019-04-27T10:13:04.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -166,6 +166,30 @@
             <name value="cdex-example-attachment-request"/>
             <exampleBoolean value="true"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Condition/cdex-condition-example"/>
+                <display value="cdex-condition-example"/>
+            </reference>
+            <name value="cdex-condition-example"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/cdex-example-solicited-attachment"/>
+                <display value="cdex-example-solicited-attachment"/>
+            </reference>
+            <name value="cdex-example-solicited-attachment"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/cdex-example-resource-request-response"/>
+                <display value="cdex-example-resource-request-response"/>
+            </reference>
+            <name value="cdex-example-resource-request-response"/>
+            <exampleBoolean value="true"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -241,8 +265,8 @@
                 </page>
             </page>
             <page>
-                <nameUrl value="Use_Case_Scenarios.html"/>
-                <title value="Use Case Scenarios"/>
+                <nameUrl value="Use_Cases,_Personas_and_Patient_Story.html"/>
+                <title value="Use Cases, Personas and Patient Story"/>
                 <generation value="markdown"/>
                 <page>
                     <nameUrl value="CDex_Improve_Care_Coordination.html"/>
@@ -276,9 +300,14 @@
                 </page>
             </page>
             <page>
-                <nameUrl value="CDex_Profiles_and_Extensions.html"/>
-                <title value="CDex Profiles and Extensions"/>
+                <nameUrl value="Profiles_and_Extensions.html"/>
+                <title value="Profiles and Extensions"/>
                 <generation value="markdown"/>
+                <page>
+                    <nameUrl value="CDex_Profiles_and_Extensions.html"/>
+                    <title value="CDex Profiles and Extensions"/>
+                    <generation value="markdown"/>
+                </page>
                 <page>
                     <nameUrl value="HRex_Profiles.html"/>
                     <title value="HRex Profiles"/>

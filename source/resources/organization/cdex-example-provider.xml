@@ -3,9 +3,25 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-example-provider"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-04-29T10:19:05.000-04:00"/>
     </meta>
+    <contained>
+        <Endpoint>
+            <id value="cdex-provider-endpoint"/>
+            <status value="active"/>
+            <connectionType>
+                <system value="http://terminology.hl7.org/CodeSystem/endpoint-connection-type"/>
+                <code value="hl7-fhir-rest"/>
+            </connectionType>
+            <payloadType>
+                <text value="FHIR"/>
+            </payloadType>
+            <payloadMimeType value="application/fhir+xml"/>
+            <payloadMimeType value="application/fhir+json"/>
+            <address value="https://api-v8-r4.hspconsortium.org/DaVinciCDexProvider/open/"/>
+        </Endpoint>
+    </contained>
     <identifier>
         <system value="http://www.GoodHelath.com/edi"/>
         <value value="Good Health"/>
@@ -25,4 +41,7 @@
         <postalCode value="46077"/>
         <country value="US"/>
     </address>
+    <endpoint>
+        <reference value="#cdex-provider-endpoint"/>
+    </endpoint>
 </Organization>

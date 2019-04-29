@@ -4,7 +4,7 @@
     <id value="cdex-document-bundle"/>
     <meta>
         <versionId value="4"/>
-        <lastUpdated value="2019-03-19T11:20:29.000-04:00"/>
+        <lastUpdated value="2019-03-19T11:19:23.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-document-bundle"/>
     <name value="CDexDocumentBundle"/>

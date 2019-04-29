@@ -5,21 +5,33 @@ active: CDex Profiles and Extensions
 ---
 
 ## Profiles and Extensions Defined in CDex
-The CDex implementation guide defines only a few new FHIR profiles and extensions that are specific to this guide.  The CDex specific Profiles include:
-* CDex Collection Bundle
-* CDex Communication
-* CDex CommunicationRequest
-* CDex Composition (Rick todo)
-* CDex Document Bundle
-* CDex Document Reference
-* CDex Task (Lloyd todo)
 
-The CDex specific extensions include:
-* CDex Payload Type Code
+### CDex CommunicationRequest Profile
+The CDex CommunicationRequest profile constrains the FHIR CommunicationRequest resource. It describes information being requested, or optionally describes an actionable communication request to be fulfilled. This profile includes extensions on the payload element which enable a specific type of document or particular set of data to be provided. This profile is used to describe a request for information, or when actionable, it is used to request specific information.
 
-## Profiles Used by Reference
-The majority of the content profiles, extensions, and information exchange mechanisms used by the CDex implementation guide are incorporated by reference from the broader HRex implementation guide and from other FHIR implementation guides including:
-* US Core R4 and STU3, Argonaut DSTU2 for Content
-* C-CDA on FHIR for R4 and STU3 for document payloads
+### CDex Communication Profile
+The CDex Communication profile constrains the FHIR Communication resource. It describes information being provided. The communication may be based on a previous request for information (solicited communication) or it may be unsolicited (unsolicited communication). This profile includes extensions on the payload element which enable the communication to identify the specific type of document or particular set of data included. This profile is used to supply information in a solicited or unsolicited fashion. Note that there is no requirement that the information supplied in response to a communication request exactly match the requested document type or data query requested.
 
-For a more detailed description of the <a href="https://build.fhir.org/ig/HL7/davinci-ehrx/HRex_Interactions.html">profiles used by reference</a>, consult the HRex implementation guide.
+### CDex SearchSet Bundle Profile
+The CDex SearchSet Bundle profile constrains the FHIR Bundle resource. The profile establishes a bundle that can be used to contain a set of data resources provided in a Communication.
+
+### CDex Document Bundle Profile
+The CDex Document Bundle profile constrains the FHIR Bundle resource. The profile establishes a bundle that can be used to contain the set of resources associated with a persisted structured document. It is used to provided a structured FHIR document in a communication.
+
+### CDex Composition Profile
+The CDex Composition profile constrains the FHIR Composition resource. The profile requires the Composition Resource to include at least one authenticator. The profile is used to represents a structured document that includes attested information.
+
+### CDex Task Profile
+The CDex Task profile constrains the FHIR Task resource. The profiles defines task called "fulfill" used to ask a system to fulfill a communication request. It is used when systems support a task-based workflow to orchestrate communication requests.  The task progresses through a set of status defined by FHIR and associated with specified business status defined for the task.  Currently, the profile does not constrain the associated business status states.
+
+### CommunicationRequest.Payload.typeCode extension
+The CDex CommunicationRequest Payload TypeCode extension extends the FHIR CommunicationRequest resource. It adds an codeable concept element which is used to describe the type of document being requested in a CommunicationRequest. 
+
+### CommunicationRequest.Payload.SearchString extension
+The CDex CommunicationRequest Payload SearchString extension extends the FHIR CommunicationRequest resource. It adds a string element which is used to describe a data search (request) being requested in a CommunicationRequest. 
+
+### Communication.Payload.typeCode extension
+The CDex Communication Payload TypeCode extension extends the FHIR Communication resource. It adds an codeable concept element which is used to describe the type of document being requested in a Communication. 
+
+### Communication.Payload.SearchString extension
+The CDex Communication Payload SearchString extension extends the FHIR Communication resource. It adds a string element which is used to describe a data search (request) that was used to gather data supplied in a Communication. 

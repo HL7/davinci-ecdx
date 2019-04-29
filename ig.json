@@ -94,37 +94,9 @@
 		}
 	},
 	"resources": {
-		"StructureDefinition/cdex-collection-bundle": {
-			"base": "StructureDefinition-cdex-collection-bundle.html",
-			"defns": "StructureDefinition-cdex-collection-bundle-definitions.html"
-		},
-		"StructureDefinition/cdex-communication": {
-			"base": "StructureDefinition-cdex-communication.html",
-			"defns": "StructureDefinition-cdex-communication-definitions.html"
-		},
-		"StructureDefinition/cdex-communicationrequest": {
-			"base": "StructureDefinition-cdex-communicationrequest.html",
-			"defns": "StructureDefinition-cdex-communicationrequest-definitions.html"
-		},
-		"StructureDefinition/cdex-document-bundle": {
-			"base": "StructureDefinition-cdex-document-bundle.html",
-			"defns": "StructureDefinition-cdex-document-bundle-definitions.html"
-		},
-		"StructureDefinition/cdex-payload-clinical-note-type": {
-			"base": "StructureDefinition-cdex-payload-clinical-note-type.html",
-			"defns": "StructureDefinition-cdex-payload-clinical-note-type-definitions.html"
-		},
-		"Claim/cdex-example-claim": {
-			"base": "Claim-cdex-example-claim.html",
-			"defns": "Claim-cdex-example-claim-definitions.html"
-		},
-		"Communication/cdex-example-unsolicited-attachment": {
-			"base": "Communication-cdex-example-unsolicited-attachment.html",
-			"defns": "Communication-cdex-example-unsolicited-attachment-definitions.html"
-		},
-		"Coverage/cdex-example-coverage": {
-			"base": "Coverage-cdex-example-coverage.html",
-			"defns": "Coverage-cdex-example-coverage-definitions.html"
+		"StructureDefinition/cdex-task": {
+			"base": "StructureDefinition-cdex-task.html",
+			"defns": "StructureDefinition-cdex-task-definitions.html"
 		},
 		"Encounter/cdex-example-encounter": {
 			"base": "Encounter-cdex-example-encounter.html",
@@ -138,9 +110,29 @@
 			"base": "Organization-cdex-example-payer.html",
 			"defns": "Organization-cdex-example-payer-definitions.html"
 		},
+		"CommunicationRequest/cdex-example-resource-request": {
+			"base": "CommunicationRequest-cdex-example-resource-request.html",
+			"defns": "CommunicationRequest-cdex-example-resource-request-definitions.html"
+		},
 		"Organization/cdex-example-provider": {
 			"base": "Organization-cdex-example-provider.html",
 			"defns": "Organization-cdex-example-provider-definitions.html"
+		},
+		"Condition/cdex-condition-example": {
+			"base": "Condition-cdex-condition-example.html",
+			"defns": "Condition-cdex-condition-example-definitions.html"
+		},
+		"Communication/cdex-example-unsolicited-attachment": {
+			"base": "Communication-cdex-example-unsolicited-attachment.html",
+			"defns": "Communication-cdex-example-unsolicited-attachment-definitions.html"
+		},
+		"Communication/cdex-example-resource-request-response": {
+			"base": "Communication-cdex-example-resource-request-response.html",
+			"defns": "Communication-cdex-example-resource-request-response-definitions.html"
+		},
+		"Coverage/cdex-example-coverage": {
+			"base": "Coverage-cdex-example-coverage.html",
+			"defns": "Coverage-cdex-example-coverage-definitions.html"
 		},
 		"Patient/cdex-example-patient": {
 			"base": "Patient-cdex-example-patient.html",
@@ -150,13 +142,41 @@
 			"base": "Practitioner-cdex-example-practitioner.html",
 			"defns": "Practitioner-cdex-example-practitioner-definitions.html"
 		},
+		"Claim/cdex-example-claim": {
+			"base": "Claim-cdex-example-claim.html",
+			"defns": "Claim-cdex-example-claim-definitions.html"
+		},
+		"Communication/cdex-example-solicited-attachment": {
+			"base": "Communication-cdex-example-solicited-attachment.html",
+			"defns": "Communication-cdex-example-solicited-attachment-definitions.html"
+		},
+		"CommunicationRequest/cdex-example-attachment-request": {
+			"base": "CommunicationRequest-cdex-example-attachment-request.html",
+			"defns": "CommunicationRequest-cdex-example-attachment-request-definitions.html"
+		},
+		"StructureDefinition/cdex-document-bundle": {
+			"base": "StructureDefinition-cdex-document-bundle.html",
+			"defns": "StructureDefinition-cdex-document-bundle-definitions.html"
+		},
+		"StructureDefinition/cdex-payload-clinical-note-type": {
+			"base": "StructureDefinition-cdex-payload-clinical-note-type.html",
+			"defns": "StructureDefinition-cdex-payload-clinical-note-type-definitions.html"
+		},
+		"StructureDefinition/cdex-collection-bundle": {
+			"base": "StructureDefinition-cdex-collection-bundle.html",
+			"defns": "StructureDefinition-cdex-collection-bundle-definitions.html"
+		},
+		"StructureDefinition/cdex-communication": {
+			"base": "StructureDefinition-cdex-communication.html",
+			"defns": "StructureDefinition-cdex-communication-definitions.html"
+		},
 		"StructureDefinition/cdex-payload-query-string": {
 			"base": "StructureDefinition-cdex-payload-query-string.html",
 			"defns": "StructureDefinition-cdex-payload-query-string-definitions.html"
 		},
-		"StructureDefinition/cdex-task": {
-			"base": "StructureDefinition-cdex-task.html",
-			"defns": "StructureDefinition-cdex-task-definitions.html"
+		"StructureDefinition/cdex-communicationrequest": {
+			"base": "StructureDefinition-cdex-communicationrequest.html",
+			"defns": "StructureDefinition-cdex-communicationrequest-definitions.html"
 		}
 	},
 	"version": "4.0.0",

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CommunicationRequest xmlns="http://hl7.org/fhir">
+<CommunicationRequest
+    xmlns="http://hl7.org/fhir">
     <id value="cdex-example-resource-request"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-09T11:10:06.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-04-19T14:19:05.000-04:00"/>
     </meta>
     <text>
         <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">Request for Condition resources</div>
+        <div
+            xmlns="http://www.w3.org/1999/xhtml">Request for Condition resources
+        </div>
     </text>
     <identifier>
         <system value="http://www.jurisdiction.com/insurer/123456"/>
@@ -43,7 +46,7 @@
     </encounter>
     <payload>
         <extension url="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-query-string">
-            <valueString value="Condition?patient=cdex-example-patient"></valueString>
+            <valueString value="Condition?patient=cdex-example-patient"/>
         </extension>
         <contentString value="Please provide the patient's conditions."/>
     </payload>

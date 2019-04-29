@@ -3,12 +3,28 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-example-payer"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-04-29T10:17:48.000-04:00"/>
     </meta>
+    <contained>
+        <Endpoint>
+            <id value="cdex-payer-endpoint"/>
+            <status value="active"/>
+            <connectionType>
+                <system value="http://terminology.hl7.org/CodeSystem/endpoint-connection-type"/>
+                <code value="hl7-fhir-rest"/>
+            </connectionType>
+            <payloadType>
+                <text value="FHIR"/>
+            </payloadType>
+            <payloadMimeType value="application/fhir+xml"/>
+            <payloadMimeType value="application/fhir+json"/>
+            <address value="https://api-v8-r4.hspconsortium.org/DaVinciCDexPayer/open/"/>
+        </Endpoint>
+    </contained>
     <identifier>
-        <system value="http://www.Anthem.com/edi"/>
-        <value value="Anthem-Inc"/>
+        <system value="http://www.example.com/cdex-payer"/>
+        <value value="CDex Payer"/>
     </identifier>
     <telecom id="1">
         <system value="phone"/>
@@ -25,4 +41,7 @@
         <postalCode value="46077"/>
         <country value="US"/>
     </address>
+    <endpoint>
+        <reference value="#cdex-payer-endpoint"/>
+    </endpoint>
 </Organization>

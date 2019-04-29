@@ -29,7 +29,27 @@ active: other
 </tr>
 <tr>
 <td>Communication</td>
+<td><a href="Communication-cdex-example-resource-request-response.html">cdex-example-resource-request-response</a></td>
+</tr>
+<tr>
+<td>Communication</td>
+<td><a href="Communication-cdex-example-solicited-attachment.html">cdex-example-solicited-attachment</a></td>
+</tr>
+<tr>
+<td>Communication</td>
 <td><a href="Communication-cdex-example-unsolicited-attachment.html">cdex-example-unsolicited-attachment</a></td>
+</tr>
+<tr>
+<td>CommunicationRequest</td>
+<td><a href="CommunicationRequest-cdex-example-attachment-request.html">cdex-example-attachment-request</a></td>
+</tr>
+<tr>
+<td>CommunicationRequest</td>
+<td><a href="CommunicationRequest-cdex-example-resource-request.html">cdex-example-resource-request</a></td>
+</tr>
+<tr>
+<td>Condition</td>
+<td><a href="Condition-cdex-condition-example.html">cdex-condition-example</a></td>
 </tr>
 <tr>
 <td>Coverage</td>

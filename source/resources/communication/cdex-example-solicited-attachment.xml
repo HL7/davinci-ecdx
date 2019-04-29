@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Communication
     xmlns="http://hl7.org/fhir">
-    <id value="cdex-example-unsolicited-attachment"/>
+    <id value="cdex-example-solicited-attachment"/>
     <meta>
         <versionId value="3"/>
-        <lastUpdated value="2019-04-23T17:17:51.000-04:00"/>
+        <lastUpdated value="2019-04-23T17:17:14.000-04:00"/>
     </meta>
     <text>
         <status value="generated"/>
         <div
-            xmlns="http://www.w3.org/1999/xhtml">Attachment which is unsolicited
+            xmlns="http://www.w3.org/1999/xhtml">Attachment which is solicited
         
         </div>
     </text>
     <identifier>
         <system value="http://www.providerco.com/communication"/>
-        <value value="12345"/>
+        <value value="123456"/>
     </identifier>
+    <basedOn>
+        <reference value="CommunicationRequest/cdex-example-attachment-request"/>
+    </basedOn>
     <status value="completed"/>
     <category>
         <coding>
