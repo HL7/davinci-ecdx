@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communication"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2019-04-29T11:15:55.000-04:00"/>
+        <versionId value="17"/>
+        <lastUpdated value="2019-04-29T11:43:46.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
     <name value="CDexCommunication"/>
@@ -50,6 +50,36 @@
         </element>
         <element id="Communication.payload.content[x]">
             <path value="Communication.payload.content[x]"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.subject">
+            <path value="Communication.subject"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.recipient">
+            <path value="Communication.recipient"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.sender">
+            <path value="Communication.sender"/>
+            <min value="1"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+            </type>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.note">
+            <path value="Communication.note"/>
             <mustSupport value="true"/>
         </element>
     </differential>
