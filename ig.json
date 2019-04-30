@@ -186,6 +186,11 @@
 			"location": "http://hl7.org/fhir/us/davinci-hrex",
 			"name": "DaVinciHRex",
 			"version": "current"
+		},
+		{
+			"location": "http://hl7.org/fhir/us/core",
+			"name": "USCoreR4",
+			"version": "current"
 		}
 	]
 }

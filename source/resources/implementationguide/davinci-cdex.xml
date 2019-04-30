@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="208"/>
-        <lastUpdated value="2019-04-29T11:08:13.000-04:00"/>
+        <versionId value="209"/>
+        <lastUpdated value="2019-04-30T13:35:48.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -31,6 +31,11 @@
     <dependsOn>
         <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
         <packageId value="hl7.fhir.us.davinci-hrex"/>
+        <version value="current"/>
+    </dependsOn>
+    <dependsOn>
+        <uri value="http://hl7.org/fhir/us/core-r4/ImplementationGuide/ig"/>
+        <packageId value="hl7.fhir.us.core.r4"/>
         <version value="current"/>
     </dependsOn>
     <definition>

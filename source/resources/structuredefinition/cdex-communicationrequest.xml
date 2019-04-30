@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communicationrequest"/>
     <meta>
-        <versionId value="11"/>
-        <lastUpdated value="2019-04-29T11:44:11.000-04:00"/>
+        <versionId value="15"/>
+        <lastUpdated value="2019-04-30T13:30:24.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communicationrequest"/>
     <name value="CDexCommunicationRequest"/>
@@ -19,6 +19,14 @@
     <differential>
         <element id="CommunicationRequest">
             <path value="CommunicationRequest"/>
+        </element>
+        <element id="CommunicationRequest.subject">
+            <path value="CommunicationRequest.subject"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
+            </type>
+            <mustSupport value="true"/>
         </element>
         <element id="CommunicationRequest.payload">
             <path value="CommunicationRequest.payload"/>
@@ -48,16 +56,8 @@
             </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Communication.payload.content[x]">
-            <path value="Communication.payload.content[x]"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="CommunicationRequest.subject">
-            <path value="CommunicationRequest.subject"/>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
-            </type>
+        <element id="CommunicationRequest.payload.content[x]">
+            <path value="CommunicationRequest.payload.content[x]"/>
             <mustSupport value="true"/>
         </element>
         <element id="CommunicationRequest.recipient">
@@ -65,7 +65,7 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -74,7 +74,7 @@
             <min value="1"/>
             <type>
                 <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"/>
             </type>
             <mustSupport value="true"/>
         </element>
