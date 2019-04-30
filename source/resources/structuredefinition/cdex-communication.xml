@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communication"/>
     <meta>
-        <versionId value="18"/>
-        <lastUpdated value="2019-04-29T14:34:47.000-04:00"/>
+        <versionId value="19"/>
+        <lastUpdated value="2019-04-30T13:45:29.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
     <name value="CDexCommunication"/>
@@ -80,6 +80,14 @@
         </element>
         <element id="Communication.note">
             <path value="Communication.note"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Communication.basedOn">
+            <path value="Communication.basedOn"/>
+            <type>
+                <code value="Reference"/>
+                <targetProfile value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communicationrequest"/>
+            </type>
             <mustSupport value="true"/>
         </element>
     </differential>
