@@ -3,13 +3,14 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-clinical-note-type"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2019-04-19T12:42:16.000-04:00"/>
+        <versionId value="6"/>
+        <lastUpdated value="2019-05-04T15:42:37.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-clinical-note-type"/>
     <name value="CDexPayloadClinicalNoteType"/>
-    <title value="CDex Payload Clinica lNote Type"/>
+    <title value="CDex Payload Clinical Note Type"/>
     <status value="draft"/>
+    <description value="The context for this extension is Communication.payload or CommunicationRequest.payload. "/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
     <abstract value="false"/>
@@ -40,13 +41,6 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-			<!--
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                </coding>
-            </patternCodeableConcept>
-			-->
         </element>
     </differential>
 </StructureDefinition>

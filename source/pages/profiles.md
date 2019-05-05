@@ -62,11 +62,11 @@ active: profiles
 <tbody>
 <tr>
 <td><a href="StructureDefinition-cdex-payload-clinical-note-type.html">CDexPayloadClinicalNoteType</a></td>
-<td></td>
+<td>The context for this extension is Communication.payload or CommunicationRequest.payload. </td>
 </tr>
 <tr>
 <td><a href="StructureDefinition-cdex-payload-query-string.html">CDexPayloadQueryString</a></td>
-<td></td>
+<td>The context for this extension is Communication.payload or CommunicationRequest.payload. </td>
 </tr>
 </tbody>
 </table>
