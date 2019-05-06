@@ -41,13 +41,11 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-			<!--
 			<patternCodeableConcept>
                 <coding>
                     <system value="http://loinc.org"/>
                 </coding>
             </patternCodeableConcept>
-			-->
         </element>
     </differential>
 </StructureDefinition>
