@@ -13,5 +13,5 @@ The HRex implementation guides has a chapter on LOINC codes and how to specify t
 The LOINC Document Ontology is a special set of LOINC codes that are built on a framework for naming and classifying the key attributes of clinical documents. They provide consistent semantics for documents exchanged between systems for many uses. See the <a href="https://loinc.org/document-ontology/">LOINC Document Ontology website</a> for for more information.
 
 
-The HRex implementation guide also explains the MIME types that can be used to encode the attachments. MIME stands for Multipurpose Internet Mail Extensions. MIME is a standard for formatting files of different types, such as text, graphics, or audio, so they can be sent over the Internet and seen or played by a web browser or email application.
+The HRex implementation guide also explains the MIME format types that can be used for the encoded attachments. MIME stands for Multipurpose Internet Mail Extensions. The MIME type is metadata which indicates what sort of content (file format) has been attached, such as text, graphics, or audio. The MIME type is used to tell systems such as a web browser or email application how to render or play the associated information. 
 

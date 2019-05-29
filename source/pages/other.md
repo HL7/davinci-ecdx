@@ -24,6 +24,14 @@ active: other
 </thead>
 <tbody>
 <tr>
+<td>Bundle</td>
+<td><a href="Bundle-cdex-example-searchset.html">cdex-example-searchset</a></td>
+</tr>
+<tr>
+<td>Bundle</td>
+<td><a href="Bundle-cdex-example-transaction.html">cdex-example-transaction</a></td>
+</tr>
+<tr>
 <td>Claim</td>
 <td><a href="Claim-cdex-example-claim.html">cdex-example-claim</a></td>
 </tr>

@@ -6,6 +6,10 @@
         <versionId value="2"/>
         <lastUpdated value="2019-04-09T11:17:04.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <text>
         <status value="generated"/>

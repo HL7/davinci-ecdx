@@ -5,7 +5,7 @@ active: Introduction
 ---
 
 ## Purpose
-The CDex Implementation Guide (IG) defines combinations of exchange methods (push, pull, subscribe, CDS Hooks), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchanges of clinical information between provider and other providers and/or payers. 
+The CDex Implementation Guide (IG) defines combinations of exchange methods (push, pull, subscribe), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchanges of clinical information between provider and other providers and/or payers. 
 
 The IG provides specific guidance showing patterns of exchange so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, and quality reporting, and other uses that may be documented as part of this effort. 
 Clinical data payloads include C-CDA, C-CDA on FHIR, compositions, bundles, specific resources, and bulk data exchange. This list is intended to be illustrative and not prescriptive.

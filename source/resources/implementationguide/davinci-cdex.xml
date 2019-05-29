@@ -3,8 +3,12 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="211"/>
-        <lastUpdated value="2019-05-04T20:37:45.000-04:00"/>
+        <versionId value="223"/>
+        <lastUpdated value="2019-05-29T01:35:19.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -195,6 +199,22 @@
             <name value="cdex-example-resource-request-response"/>
             <exampleBoolean value="true"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/cdex-example-searchset"/>
+                <display value="cdex-example-searchset"/>
+            </reference>
+            <name value="cdex-example-searchset"/>
+            <exampleBoolean value="true"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/cdex-example-transaction"/>
+                <display value="cdex-example-transaction"/>
+            </reference>
+            <name value="cdex-example-transaction"/>
+            <exampleBoolean value="true"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -380,13 +400,13 @@
                 </page>
             </page>
             <page>
-                <nameUrl value="CDS-Hooks.html"/>
-                <title value="CDS-Hooks"/>
+                <nameUrl value="Credits.html"/>
+                <title value="Credits"/>
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="Credits.html"/>
-                <title value="Credits"/>
+                <nameUrl value="Examples.html"/>
+                <title value="Examples"/>
                 <generation value="markdown"/>
             </page>
         </page>

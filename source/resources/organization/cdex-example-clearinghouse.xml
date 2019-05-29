@@ -5,6 +5,10 @@
     <meta>
         <versionId value="1"/>
         <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <identifier>
         <system value="http://www.ACME.com/edi"/>

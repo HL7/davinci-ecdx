@@ -41,5 +41,5 @@ active: toc
         * <a href="Request_(Solicited_Communication).html">Request (Solicited Communication)</a>
         * <a href="Subscribe.html">Subscribe</a>
         * <a href="Bulk_Data.html">Bulk Data</a>
-    * <a href="CDS-Hooks.html">CDS-Hooks</a>
     * <a href="Credits.html">Credits</a>
+    * <a href="Examples.html">Examples</a>

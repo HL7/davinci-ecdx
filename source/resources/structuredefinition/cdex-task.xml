@@ -5,6 +5,10 @@
     <meta>
         <versionId value="2"/>
         <lastUpdated value="2019-04-19T00:03:30.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task"/>
     <name value="CDexTask"/>
