@@ -37,11 +37,11 @@
         <packageId value="hl7.fhir.us.davinci-hrex"/>
         <version value="current"/>
     </dependsOn>
-    <dependsOn>
-        <uri value="http://hl7.org/fhir/us/core-r4/ImplementationGuide/ig"/>
-        <packageId value="hl7.fhir.us.core.r4"/>
-        <version value="current"/>
-    </dependsOn>
+	<dependsOn>
+		<uri value="http://hl7.org/fhir/us/core"/>
+		<packageId value="hl7.fhir.us.core.r4"/>
+		<version value="current"/>
+	</dependsOn>
     <definition>
         <resource>
             <reference>
