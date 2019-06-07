@@ -18,7 +18,7 @@
         <system value="urn:ietf:rfc:3986"/>
         <value value="urn:uuid:112a9303-8879-4e3e-8f66-c25f113fa8bd"/>
     </identifier>
-    <type value="collection"/>
+    <type value="transaction"/>
     <entry>
         <fullUrl value="urn:uuid:2a1bf29c-5847-422f-819f-391de77db463"/>
         <resource>
