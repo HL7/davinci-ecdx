@@ -1,12 +1,20 @@
-<Bundle xmlns="http://hl7.org/fhir">
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle
+    xmlns="http://hl7.org/fhir">
     <id value="cdex-example-searchset"/>
     <meta>
-        <lastUpdated value="2019-05-29T02:11:10.316+00:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-06-06T23:15:21.000-04:00"/>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="user^s7DIn2HM^read"/>
+        </security>
     </meta>
-    <type value="searchset"/>
-	<!--
     <type value="collection"/>
-	-->
     <total value="4"/>
     <link>
         <relation value="self"/>
@@ -15,13 +23,8 @@
     <entry>
         <fullUrl value="https://api-v8-r4.hspconsortium.org/DaVinciCDexProvider/open/DocumentReference/21"/>
         <resource>
-            <DocumentReference xmlns="http://hl7.org/fhir">
+            <DocumentReference>
                 <id value="21"/>
-                <meta>
-                    <versionId value="2"/>
-                    <lastUpdated value="2019-04-16T16:13:12.000+00:00"/>
-                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
-                </meta>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:uuid:a8928f02-d317-46de-a6b9-da8813447f99"/>
@@ -31,7 +34,7 @@
                     <coding>
                         <system value="http://loinc.org"/>
                         <code value="34117-2"/>
-                        <display value="History and Physical"/>
+                        <display value="History and physical note"/>
                     </coding>
                     <text value="History and Physical"/>
                 </type>
@@ -44,12 +47,12 @@
                     <text value="Clinical Note"/>
                 </category>
                 <subject>
-                    <reference value="Patient/15"/>
-                    <display value="Theodore Leven"/>
+                    <reference value="Patient/cdex-example-patient"/>
+                    <display value="Amy Shaw"/>
                 </subject>
                 <date value="2018-03-05T10:30:00-05:00"/>
                 <author>
-                    <reference value="Practitioner/17"/>
+                    <reference value="Practitioner/cdex-example-practitioner"/>
                     <display value="John Smith"/>
                 </author>
                 <content>
@@ -58,7 +61,6 @@
                         <url value="/Binary/20"/>
                         <title value="Uri where the data can be found: [base]/Binary/20"/>
                     </attachment>
-                    <!--  http://wiki.hl7.org/index.php?title=CDA_Format_Codes_for_IHE_XDS   -->
                     <format>
                         <system value="urn:oid:1.3.6.1.4.1.19376.1.2.3"/>
                         <code value="urn:hl7-org:sdwg:ccda-structuredBody:2.1"/>
@@ -67,7 +69,7 @@
                 </content>
                 <context>
                     <encounter>
-                        <reference value="Encounter/16"/>
+                        <reference value="Encounter/cdex-example-encounter"/>
                     </encounter>
                 </context>
             </DocumentReference>
@@ -75,21 +77,12 @@
         <search>
             <mode value="match"/>
         </search>
-        <response>
-            <status value="200 OK"/>
-            <etag value="W/&quot;2&quot;"/>
-        </response>
     </entry>
     <entry>
         <fullUrl value="https://api-v8-r4.hspconsortium.org/DaVinciCDexProvider/open/DocumentReference/22"/>
         <resource>
-            <DocumentReference xmlns="http://hl7.org/fhir">
+            <DocumentReference>
                 <id value="22"/>
-                <meta>
-                    <versionId value="1"/>
-                    <lastUpdated value="2019-04-16T15:08:18.000+00:00"/>
-                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
-                </meta>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:uuid:693b2024-624c-4c13-b2a5-5008e91f5b14"/>
@@ -99,7 +92,7 @@
                     <coding>
                         <system value="http://loinc.org"/>
                         <code value="34117-2"/>
-                        <display value="History and Physical"/>
+                        <display value="History and physical note"/>
                     </coding>
                     <text value="History and Physical"/>
                 </type>
@@ -112,12 +105,12 @@
                     <text value="Clinical Note"/>
                 </category>
                 <subject>
-                    <reference value="Patient/15"/>
-                    <display value="Theodore Leven"/>
+                    <reference value="Patient/cdex-example-patient"/>
+                    <display value="Amy Shaw"/>
                 </subject>
                 <date value="2018-03-05T10:30:00-05:00"/>
                 <author>
-                    <reference value="Practitioner/17"/>
+                    <reference value="Practitioner/cdex-example-practitioner"/>
                     <display value="John Smith"/>
                 </author>
                 <content>
@@ -129,7 +122,7 @@
                 </content>
                 <context>
                     <encounter>
-                        <reference value="Encounter/16"/>
+                        <reference value="Encounter/cdex-example-encounter"/>
                     </encounter>
                 </context>
             </DocumentReference>
@@ -137,21 +130,12 @@
         <search>
             <mode value="match"/>
         </search>
-        <response>
-            <status value="201 Created"/>
-            <etag value="W/&quot;1&quot;"/>
-        </response>
     </entry>
     <entry>
         <fullUrl value="https://api-v8-r4.hspconsortium.org/DaVinciCDexProvider/open/DocumentReference/24"/>
         <resource>
-            <DocumentReference xmlns="http://hl7.org/fhir">
+            <DocumentReference>
                 <id value="24"/>
-                <meta>
-                    <versionId value="2"/>
-                    <lastUpdated value="2019-04-16T15:35:45.000+00:00"/>
-                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
-                </meta>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:uuid:52b4e77d-5a86-4e05-b061-7efad74d90ba"/>
@@ -161,7 +145,7 @@
                     <coding>
                         <system value="http://loinc.org"/>
                         <code value="34117-2"/>
-                        <display value="History and Physical"/>
+                        <display value="History and physical note"/>
                     </coding>
                     <text value="History and Physical"/>
                 </type>
@@ -174,12 +158,12 @@
                     <text value="Clinical Note"/>
                 </category>
                 <subject>
-                    <reference value="Patient/15"/>
-                    <display value="Theodore Leven"/>
+                    <reference value="Patient/cdex-example-patient"/>
+                    <display value="Amy Shaw"/>
                 </subject>
                 <date value="2018-03-05T10:30:00-05:00"/>
                 <author>
-                    <reference value="Practitioner/17"/>
+                    <reference value="Practitioner/cdex-example-practitioner"/>
                     <display value="John Smith"/>
                 </author>
                 <content>
@@ -191,7 +175,7 @@
                 </content>
                 <context>
                     <encounter>
-                        <reference value="Encounter/16"/>
+                        <reference value="Encounter/cdex-example-encounter"/>
                     </encounter>
                 </context>
             </DocumentReference>
@@ -199,21 +183,12 @@
         <search>
             <mode value="match"/>
         </search>
-        <response>
-            <status value="200 OK"/>
-            <etag value="W/&quot;2&quot;"/>
-        </response>
     </entry>
     <entry>
         <fullUrl value="https://api-v8-r4.hspconsortium.org/DaVinciCDexProvider/open/DocumentReference/25"/>
         <resource>
-            <DocumentReference xmlns="http://hl7.org/fhir">
+            <DocumentReference>
                 <id value="25"/>
-                <meta>
-                    <versionId value="2"/>
-                    <lastUpdated value="2019-04-16T15:34:04.000+00:00"/>
-                    <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"/>
-                </meta>
                 <identifier>
                     <system value="urn:ietf:rfc:3986"/>
                     <value value="urn:uuid:e9f61375-cc32-43e0-98b9-d5e15767bbf0"/>
@@ -223,7 +198,7 @@
                     <coding>
                         <system value="http://loinc.org"/>
                         <code value="34117-2"/>
-                        <display value="History and Physical"/>
+                        <display value="History and physical note"/>
                     </coding>
                     <text value="History and Physical"/>
                 </type>
@@ -236,12 +211,12 @@
                     <text value="Clinical Note"/>
                 </category>
                 <subject>
-                    <reference value="Patient/15"/>
-                    <display value="Theodore Leven"/>
+                    <reference value="Patient/cdex-example-patient"/>
+                    <display value="Amy Shaw"/>
                 </subject>
                 <date value="2018-03-05T10:30:00-05:00"/>
                 <author>
-                    <reference value="Practitioner/17"/>
+                    <reference value="Practitioner/cdex-example-practitioner"/>
                     <display value="John Smith"/>
                 </author>
                 <content>
@@ -252,7 +227,7 @@
                 </content>
                 <context>
                     <encounter>
-                        <reference value="Encounter/16"/>
+                        <reference value="Encounter/cdex-example-encounter"/>
                     </encounter>
                 </context>
             </DocumentReference>
@@ -260,9 +235,5 @@
         <search>
             <mode value="match"/>
         </search>
-        <response>
-            <status value="200 OK"/>
-            <etag value="W/&quot;2&quot;"/>
-        </response>
     </entry>
 </Bundle>

@@ -122,9 +122,17 @@
 			"base": "Condition-cdex-condition-example.html",
 			"defns": "Condition-cdex-condition-example-definitions.html"
 		},
+		"Bundle/cdex-example-searchset": {
+			"base": "Bundle-cdex-example-searchset.html",
+			"defns": "Bundle-cdex-example-searchset-definitions.html"
+		},
 		"Communication/cdex-example-unsolicited-attachment": {
 			"base": "Communication-cdex-example-unsolicited-attachment.html",
 			"defns": "Communication-cdex-example-unsolicited-attachment-definitions.html"
+		},
+		"Bundle/cdex-example-transaction": {
+			"base": "Bundle-cdex-example-transaction.html",
+			"defns": "Bundle-cdex-example-transaction-definitions.html"
 		},
 		"Communication/cdex-example-resource-request-response": {
 			"base": "Communication-cdex-example-resource-request-response.html",
@@ -185,10 +193,12 @@
 		{
 			"location": "http://hl7.org/fhir/us/davinci-hrex",
 			"name": "DaVinciHRex",
-			"version": "current"
+			"version": "current",
+			"package": "hl7.fhir.us.davinci-hrex"
 		},
 		{
-			"name": "core",
+			"location": "http://hl7.org/fhir/us/core",
+			"name": "USCoreR4",
 			"version": "current",
 			"package": "hl7.fhir.us.core.r4"
 		}

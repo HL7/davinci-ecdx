@@ -3,11 +3,15 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-example-provider"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-04-29T10:19:05.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-06-06T21:54:34.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
         </security>
     </meta>
     <contained>
@@ -39,7 +43,7 @@
         <use value="work"/>
         <type value="postal"/>
         <text value="8866 S 17th St, Indianapolis, IN 46077, US"/>
-        <line value="8866 S 17th St "/>
+        <line value="8866 S 17th St"/>
         <city value="Indianapolis"/>
         <state value="IN"/>
         <postalCode value="46077"/>

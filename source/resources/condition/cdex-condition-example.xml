@@ -3,12 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-condition-example"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-19T14:35:33.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-06-06T22:48:11.000-04:00"/>
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
         </security>
     </meta>
     <text>
@@ -20,32 +24,40 @@
             </p>
             <p>
                 <b>id</b>: cdex-condition-example
+            
             </p>
             <p>
                 <b>meta</b>: 
+            
             </p>
             <p>
                 <b>clinicalStatus</b>: Active 
+                
                 <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/condition-clinical code 'active' = 'Active', given as 'Active'})</span>
             </p>
             <p>
                 <b>verificationStatus</b>: Confirmed 
+                
                 <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/condition-ver-status code 'confirmed' = 'Confirmed', given as 'Confirmed'})</span>
             </p>
             <p>
                 <b>category</b>: Health Concern 
+                
                 <span style="background: LightGoldenRodYellow">(Details : {http://hl7.org/fhir/us/core/CodeSystem/condition-category code 'health-concern' = 'Health Concern', given as 'Health Concern'})</span>
             </p>
             <p>
                 <b>code</b>: Cost of medications 
+                
                 <span style="background: LightGoldenRodYellow">(Details )</span>
             </p>
             <p>
                 <b>subject</b>: 
-                <a href="Patient-example.html">Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007</a>
+                Amy Shaw. Generated Summary: id: example; Medical Record Number = 1032702 (USUAL); active; Amy V. Shaw ; ph: 555-555-5555(HOME), amy.shaw@example.com; gender: female; birthDate: Feb 20, 2007
+            
             </p>
             <p>
                 <b>onset</b>: Dec 14, 2007 12:00:00 AM
+            
             </p>
         </div>
     </text>
@@ -77,7 +89,7 @@
         <text value="Cost of medications"/>
     </code>
     <subject>
-        <reference value="Patient/example"/>
+        <reference value="Patient/cdex-example-patient"/>
         <display value="Amy Shaw"/>
     </subject>
     <onsetDateTime value="2007-12-14"/>

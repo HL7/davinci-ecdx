@@ -10,7 +10,7 @@ Use case scenarios set the scope and form the foundation for this Implementation
 * Collect More Accurate Risk Profiles
 * Improve Support for Quality Management
 * Confirm Medical Necessity More Efficiently
-* Improve Memeber Experience
+* Improve Member Experience
 * Track Referrals and Orders More Effectively
 
 Each Use Case includes an overall description. It provides technical specifications for one or more options showing how FHIR-based mechanisms can be used to accomplish the needed information exchange.

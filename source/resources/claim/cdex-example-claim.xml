@@ -3,17 +3,22 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-example-claim"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2019-04-09T10:59:17.000-04:00"/>
+        <versionId value="2"/>
+        <lastUpdated value="2019-06-06T21:52:49.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
         </security>
     </meta>
     <text>
         <status value="generated"/>
         <div
             xmlns="http://www.w3.org/1999/xhtml">A human-readable rendering of the Claim
+        
         </div>
     </text>
     <identifier>
@@ -23,7 +28,7 @@
     <status value="active"/>
     <type>
         <coding>
-            <system value="http://hl7.org/fhir/ex-claimtype"/>
+            <system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
             <code value="professional"/>
         </coding>
     </type>
@@ -35,6 +40,9 @@
     <insurer>
         <reference value="Organization/cdex-example-payer"/>
     </insurer>
+    <provider>
+        <reference value="Practitioner/cdex-example-practitioner"/>
+    </provider>
     <priority>
         <coding>
             <code value="normal"/>
@@ -70,6 +78,13 @@
     </insurance>
     <item>
         <sequence value="1"/>
+        <productOrService>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/ex-USCLS"/>
+                <code value="1101"/>
+                <display value="Exam, comp, primary"/>
+            </coding>
+        </productOrService>
         <servicedDate value="2018-08-16"/>
         <unitPrice>
             <value value="75"/>

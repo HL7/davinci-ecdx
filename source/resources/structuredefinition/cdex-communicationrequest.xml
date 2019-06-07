@@ -3,11 +3,15 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communicationrequest"/>
     <meta>
-        <versionId value="17"/>
-        <lastUpdated value="2019-05-05T11:02:35.000-04:00"/>
+        <versionId value="18"/>
+        <lastUpdated value="2019-05-31T13:22:09.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^write"/>
         </security>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communicationrequest"/>
@@ -88,6 +92,7 @@
         </element>
         <element id="CommunicationRequest.requester">
             <path value="CommunicationRequest.requester"/>
+            <short value="The person or organization creating the CommunicationRequest"/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
