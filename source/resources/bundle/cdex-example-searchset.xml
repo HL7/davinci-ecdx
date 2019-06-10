@@ -22,7 +22,7 @@
             <code value="user^t1^read"/>
         </security>
     </meta>
-    <type value="collection"/>
+    <type value="searchset"/>
     <total value="4"/>
     <link>
         <relation value="self"/>
