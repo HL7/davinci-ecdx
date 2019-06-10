@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communicationrequest"/>
     <meta>
-        <versionId value="19"/>
-        <lastUpdated value="2019-06-10T14:59:29.000-04:00"/>
+        <versionId value="24"/>
+        <lastUpdated value="2019-06-10T18:46:15.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -30,6 +30,7 @@
         </element>
         <element id="CommunicationRequest.subject">
             <path value="CommunicationRequest.subject"/>
+            <min value="1"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
@@ -70,6 +71,7 @@
         </element>
         <element id="CommunicationRequest.recipient">
             <path value="CommunicationRequest.recipient"/>
+            <short value="The recipient(s) of the Communication resulting from this request (not the recipient of the request). "/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
@@ -79,6 +81,7 @@
         </element>
         <element id="CommunicationRequest.sender">
             <path value="CommunicationRequest.sender"/>
+            <short value="The sender of the Communication resulting from this request (not the sender of the request). "/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
@@ -88,6 +91,7 @@
         </element>
         <element id="CommunicationRequest.note">
             <path value="CommunicationRequest.note"/>
+            <short value="Additional human readable info about the request, such as &quot;Requesting discharge summary but if unavailable please send alternative documentation supporting the claim&quot;."/>
             <mustSupport value="true"/>
         </element>
         <element id="CommunicationRequest.requester">

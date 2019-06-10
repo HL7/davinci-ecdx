@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="246"/>
-        <lastUpdated value="2019-06-10T15:04:35.000-04:00"/>
+        <versionId value="258"/>
+        <lastUpdated value="2019-06-10T19:18:38.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -27,6 +27,7 @@
     <name value="DaVinciClinicalDataExchangeCDex"/>
     <title value="Da Vinci Clinical Data Exchange (CDex)"/>
     <status value="draft"/>
+    <publisher value="HL7"/>
     <contact>
         <name value="Lisa Nelson"/>
         <telecom>
@@ -41,7 +42,7 @@
             <value value="rick.geimer@lantanagroup.com"/>
         </telecom>
     </contact>
-    <description value="The  CDex implementation guide defines combinations of exchange methods (push, pull, etc. ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchange of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain  specific exchange patterns so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, and discrete resources conforming to the US Core specification. &#xA;&#xA;Ultimately this IG is expected to support multiple versions of FHIR (DSTU2/Argonaught, STU3, and R4), but the current version of this IG only supports for FHIR R4. &#xA;&#xA;The [Credits](Credits.html) page lists the primary contributors to this Implementation Guide. &#xA;&#xA;&#xA;&#xA;"/>
+    <description value="The  CDex implementation guide defines combinations of exchange methods (push, pull, etc. ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchange of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain  specific exchange patterns so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, and discrete resources conforming to the US Core specification. &#xA;&#xA;Ultimately this IG is expected to support multiple versions of FHIR (DSTU2/Argonaught, STU3, and R4), but the current version of this IG only supports for FHIR R4. &#xA;&#xA;The implementation guide is organized into the following major sections:&#xA;&#xA;* **[Introduction](Introduction.html)**: describes the HL7 FHIR standard, and explains the content covered in this implementation guide (IG) and how it is organized to help payers understand how to access and use the specification. It also identifies other supporting specifications that are utilized to address the use cases covered in this IG.&#xA;* **[Use Cases, Personas and Patient Story](Use_Cases,_Personas_and_Patient_Story.html)**: describes specific information exchange scenarios that are covered by the CDex IG and demonstrates steps and information exchange mechanisms employed to accomplish the data exchange required for each use case. Each use case includes one or more variants to demonstrate different exchange interactions that may be used to accomplish the information sharing objective of the use case.  Each use case variant defines the technical roles (actors) played by systems involved in the information exchange, explains the steps involved with any preconditions or post conditions defined, and provides a sequence diagram illustration to show the flow of information in the exchange. Details about the content payloads are explained in the CDex Profiles and Extensions chapter. Details about the interaction mechanisms are defined in the Information Exchange Interactions chapter. Details about CDS-Hooks used to trigger activity are described in the CDS-Hooks chapter.&#xA;* **[CDex Profiles and Extensions](CDex_Profiles_and_Extensions.html)**: introduces and provides links to the FHIR R4, STU3 and DSTU2 profiles, search parameters and other FHIR artifacts used in this implementation guide as well as in the Health Record exchange IG. It provides the technical conformance details for profiles that are defined within and used only by the CDex IG. &#xA;* **[Information Exchange Interactions and Specifications](Information_Exchange_Interactions_and_Specifications.html)**: describes how each information exchange interaction is implemented in FHIR. Readers will be directed to reference documentation in the HRex IG for  information about interactions fully defined in that guide. &#xA;* **[Credits](Credits.html)**: identifies the individuals and organizations involved in developing this implementation guide&#xA;&#xA;&#xA;&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
@@ -246,11 +247,6 @@
                 <nameUrl value="Introduction.html"/>
                 <title value="Introduction"/>
                 <generation value="markdown"/>
-                <page>
-                    <nameUrl value="Purpose_Content_and_Organization.html"/>
-                    <title value="Purpose Content and Organization"/>
-                    <generation value="markdown"/>
-                </page>
                 <page>
                     <nameUrl value="About_FHIR.html"/>
                     <title value="About FHIR"/>

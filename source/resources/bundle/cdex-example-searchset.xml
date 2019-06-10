@@ -7,6 +7,10 @@
         <lastUpdated value="2019-06-07T04:08:52.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^write"/>
         </security>
         <security>
@@ -18,7 +22,7 @@
             <code value="user^t1^read"/>
         </security>
     </meta>
-    <type value="searchset"/>
+    <type value="collection"/>
     <total value="4"/>
     <link>
         <relation value="self"/>

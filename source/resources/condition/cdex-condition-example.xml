@@ -8,6 +8,10 @@
         <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
+            <code value="everyone^read"/>
+        </security>
+        <security>
+            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="user^t1^read"/>
         </security>
         <security>
