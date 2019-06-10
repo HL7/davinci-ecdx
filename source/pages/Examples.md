@@ -8,10 +8,14 @@ active: Examples
 The examples below show RESTful queries that utilize a standard FHIR API that conforms to the CDex Implementation Guide to exchange clinical information. The examples show queries for specific data elements or specific types of data. They also show queries that utilize the FHIR DocumentReference resource to find a patient's available documents and then retrieve just the documents or document that is needed.
 
 ### Pull (Get) for Data Queries
-[insert examples]
+The following example shows a query for all Condition resources associated with the Patient resource where Patient.id=cdex-example-patient on the FHIR server "example.org/fhir". 
+
+http://example.org/fhir/Condition?patient=cdex-example-patient
 
 ### Pull (Get) for Document Queries
-[insert examples]
+The following example shows a query for all DocumentReference resources where DocumentReference.type contains the LOINC code "34117-2" on the FHIR server "example.org/fhir". 
+
+http://example.org/fhir/DocumentReference?type=http://loinc.org|34117-2
 
 ## Request (Solicited Communication) Examples
 The examples below show the exchange of an actionable CommunicationRequest coming from a Payer's system to an EHR system to request clinical information for the purpose of care management, and the Communication that is returned from the EHR system to the Payer, based on the request. The examples show queries for specific data elements or specific types of data. They also show a request for a specific type of document. 

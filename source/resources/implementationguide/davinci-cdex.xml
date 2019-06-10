@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="230"/>
-        <lastUpdated value="2019-06-06T22:45:25.000-04:00"/>
+        <versionId value="246"/>
+        <lastUpdated value="2019-06-10T15:04:35.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -41,16 +41,16 @@
             <value value="rick.geimer@lantanagroup.com"/>
         </telecom>
     </contact>
-    <description value="The  CDex implementation guide defines combinations of exchange methods (push, pull, etc. ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchange of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain  specific exchange patterns so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, and discrete resources conforming to the US Core specifiation. "/>
+    <description value="The  CDex implementation guide defines combinations of exchange methods (push, pull, etc. ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchange of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain  specific exchange patterns so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, and discrete resources conforming to the US Core specification. &#xA;&#xA;Ultimately this IG is expected to support multiple versions of FHIR (DSTU2/Argonaught, STU3, and R4), but the current version of this IG only supports for FHIR R4. &#xA;&#xA;The [Credits](Credits.html) page lists the primary contributors to this Implementation Guide. &#xA;&#xA;&#xA;&#xA;"/>
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
-        <uri value="http://hl7.org/fhir/us/davinci-hrex"/>
+        <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
         <packageId value="hl7.fhir.us.davinci-hrex"/>
         <version value="current"/>
     </dependsOn>
     <dependsOn>
-        <uri value="http://hl7.org/fhir/us/core"/>
+        <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core.r4-4.0.0"/>
         <packageId value="hl7.fhir.us.core.r4"/>
         <version value="current"/>
     </dependsOn>
@@ -59,6 +59,12 @@
             <reference>
                 <reference value="StructureDefinition/cdex-searchset-bundle"/>
                 <display value="CDex Search Set Bundle"/>
+            </reference>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/cdex-transaction-bundle"/>
+                <display value="CDex Transaction Bundle"/>
             </reference>
         </resource>
         <resource>
@@ -235,11 +241,6 @@
                 <nameUrl value="Home.html"/>
                 <title value="Home"/>
                 <generation value="markdown"/>
-                <page>
-                    <nameUrl value="Overview.html"/>
-                    <title value="Overview"/>
-                    <generation value="markdown"/>
-                </page>
             </page>
             <page>
                 <nameUrl value="Introduction.html"/>
@@ -349,11 +350,6 @@
                     <nameUrl value="HRex_Profiles.html"/>
                     <title value="HRex Profiles"/>
                     <generation value="markdown"/>
-                    <page>
-                        <nameUrl value="HRex_Profiles_for_FHIR_DSTU2.html"/>
-                        <title value="HRex Profiles for FHIR DSTU2"/>
-                        <generation value="markdown"/>
-                    </page>
                 </page>
                 <page>
                     <nameUrl value="US_Core_STU3_(FHIR_R4)_Profiles.html"/>
@@ -361,18 +357,8 @@
                     <generation value="markdown"/>
                 </page>
                 <page>
-                    <nameUrl value="US_Core_STU_2_(FHIR_STU3)_Profiles.html"/>
-                    <title value="US Core STU 2 (FHIR STU3) Profiles"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
                     <nameUrl value="Argonaut_FHIR_(DSTU2)_Profiles.html"/>
                     <title value="Argonaut FHIR (DSTU2) Profiles"/>
-                    <generation value="markdown"/>
-                </page>
-                <page>
-                    <nameUrl value="Extensions.html"/>
-                    <title value="Extensions"/>
                     <generation value="markdown"/>
                 </page>
             </page>

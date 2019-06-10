@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition
     xmlns="http://hl7.org/fhir">
-    <id value="cdex-searchset-bundle"/>
+    <id value="cdex-transaction-bundle"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2019-06-10T14:59:12.000-04:00"/>
+        <versionId value="1"/>
+        <lastUpdated value="2019-06-10T15:02:23.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
+            <code value="user^t1^read"/>
         </security>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
+            <code value="user^t1^write"/>
         </security>
     </meta>
-    <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-searchset-bundle"/>
-    <name value="CDexSearchSetBundle"/>
-    <title value="CDex Search Set Bundle"/>
+    <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-transaction-bundle"/>
+    <name value="CDexTransactionBundle"/>
+    <title value="CDex Transaction Bundle"/>
     <status value="active"/>
     <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
@@ -30,11 +30,7 @@
         </element>
         <element id="Bundle.type">
             <path value="Bundle.type"/>
-            <fixedCode value="searchset"/>
-        </element>
-        <element id="Bundle.signature">
-            <path value="Bundle.signature"/>
-            <mustSupport value="true"/>
+            <fixedCode value="transaction"/>
         </element>
     </differential>
 </StructureDefinition>

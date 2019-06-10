@@ -158,6 +158,10 @@
 			"base": "Communication-cdex-example-solicited-attachment.html",
 			"defns": "Communication-cdex-example-solicited-attachment-definitions.html"
 		},
+		"StructureDefinition/cdex-transaction-bundle": {
+			"base": "StructureDefinition-cdex-transaction-bundle.html",
+			"defns": "StructureDefinition-cdex-transaction-bundle-definitions.html"
+		},
 		"CommunicationRequest/cdex-example-attachment-request": {
 			"base": "CommunicationRequest-cdex-example-attachment-request.html",
 			"defns": "CommunicationRequest-cdex-example-attachment-request-definitions.html"

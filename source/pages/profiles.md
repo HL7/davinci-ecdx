@@ -46,6 +46,10 @@ active: profiles
 <td><a href="StructureDefinition-cdex-task.html">CDexTask</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="StructureDefinition-cdex-transaction-bundle.html">CDexTransactionBundle</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 

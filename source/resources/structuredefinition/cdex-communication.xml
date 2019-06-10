@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-communication"/>
     <meta>
-        <versionId value="19"/>
-        <lastUpdated value="2019-04-30T13:45:29.000-04:00"/>
+        <versionId value="25"/>
+        <lastUpdated value="2019-06-10T15:28:58.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -17,7 +17,7 @@
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communication"/>
     <name value="CDexCommunication"/>
     <title value="CDex Communication"/>
-    <status value="draft"/>
+    <status value="active"/>
     <fhirVersion value="4.0.0"/>
     <kind value="resource"/>
     <abstract value="false"/>
@@ -37,6 +37,7 @@
         <element id="Communication.payload.extension:payloadQueryString">
             <path value="Communication.payload.extension"/>
             <sliceName value="payloadQueryString"/>
+            <short value="Allows determination of which payloads are to satisfy which requests"/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -48,6 +49,7 @@
         <element id="Communication.payload.extension:payloadClinicalNoteType">
             <path value="Communication.payload.extension"/>
             <sliceName value="payloadClinicalNoteType"/>
+            <short value="Allows determination of which payloads are to satisfy which requests"/>
             <min value="0"/>
             <max value="1"/>
             <type>
@@ -62,6 +64,7 @@
         </element>
         <element id="Communication.subject">
             <path value="Communication.subject"/>
+            <min value="1"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"/>
@@ -88,10 +91,22 @@
         </element>
         <element id="Communication.note">
             <path value="Communication.note"/>
+            <short value="Additional info for the recipient such as &quot;Request was for Discharge Summary but sending Procedure Note instead since patient has not been discharged yet&quot;. "/>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.basedOn">
             <path value="Communication.basedOn"/>
+            <slicing>
+                <discriminator>
+                    <type value="profile"/>
+                    <path value="reference"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+        </element>
+        <element id="Communication.basedOn:communication_request_slice">
+            <path value="Communication.basedOn"/>
+            <sliceName value="communication_request_slice"/>
             <type>
                 <code value="Reference"/>
                 <targetProfile value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-communicationrequest"/>

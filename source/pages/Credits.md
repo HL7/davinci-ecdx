@@ -4,4 +4,7 @@ layout: default
 active: Credits
 ---
 
-No page content yet
+Authors
+* Lisa Nelson (MaxMD)
+* Lloyd McKenzie (Gevity)
+* Rick Geimer (Lantana Consulting Group)

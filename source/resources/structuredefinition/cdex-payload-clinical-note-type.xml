@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-clinical-note-type"/>
     <meta>
-        <versionId value="8"/>
-        <lastUpdated value="2019-06-06T21:52:03.000-04:00"/>
+        <versionId value="9"/>
+        <lastUpdated value="2019-06-10T14:59:58.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -17,7 +17,7 @@
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-clinical-note-type"/>
     <name value="CDexPayloadClinicalNoteType"/>
     <title value="CDex Payload Clinical Note Type"/>
-    <status value="draft"/>
+    <status value="active"/>
     <description value="The context for this extension is Communication.payload or CommunicationRequest.payload. "/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>

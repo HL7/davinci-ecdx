@@ -6,7 +6,6 @@ active: toc
 
 * Table of Contents
     * <a href="Home.html">Home</a>
-        * <a href="Overview.html">Overview</a>
     * <a href="Introduction.html">Introduction</a>
         * <a href="Purpose_Content_and_Organization.html">Purpose Content and Organization</a>
         * <a href="About_FHIR.html">About FHIR</a>
@@ -29,11 +28,8 @@ active: toc
     * <a href="Profiles_and_Extensions.html">Profiles and Extensions</a>
         * <a href="CDex_Profiles_and_Extensions.html">CDex Profiles and Extensions</a>
         * <a href="HRex_Profiles.html">HRex Profiles</a>
-            * <a href="HRex_Profiles_for_FHIR_DSTU2.html">HRex Profiles for FHIR DSTU2</a>
         * <a href="US_Core_STU3_(FHIR_R4)_Profiles.html">US Core STU3 (FHIR R4) Profiles</a>
-        * <a href="US_Core_STU_2_(FHIR_STU3)_Profiles.html">US Core STU 2 (FHIR STU3) Profiles</a>
         * <a href="Argonaut_FHIR_(DSTU2)_Profiles.html">Argonaut FHIR (DSTU2) Profiles</a>
-        * <a href="Extensions.html">Extensions</a>
     * <a href="Information_Exchange_Interactions_and_Specifications.html">Information Exchange Interactions and Specifications</a>
         * <a href="Push_(POST_and_PUT).html">Push (POST and PUT)</a>
         * <a href="Push_(Unsolicited_Communication).html">Push (Unsolicited Communication)</a>

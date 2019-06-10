@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-query-string"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2019-05-04T15:40:55.000-04:00"/>
+        <versionId value="3"/>
+        <lastUpdated value="2019-06-10T15:00:15.000-04:00"/>
         <security>
             <system value="https://trifolia-fhir.lantanagroup.com/security"/>
             <code value="everyone^read"/>
@@ -17,7 +17,7 @@
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-query-string"/>
     <name value="CDexPayloadQueryString"/>
     <title value="CDex Payload Query String"/>
-    <status value="draft"/>
+    <status value="active"/>
     <description value="The context for this extension is Communication.payload or CommunicationRequest.payload. "/>
     <fhirVersion value="4.0.0"/>
     <kind value="complex-type"/>
