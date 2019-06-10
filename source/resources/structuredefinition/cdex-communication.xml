@@ -91,7 +91,7 @@
         </element>
         <element id="Communication.note">
             <path value="Communication.note"/>
-            <short value="Additional info for the recipient such as &quot;Request was for Discharge Summary but sending Procedure Note instead since patient has not been discharged yet&quot;. "/>
+            <short value="Additional info for the recipient such as &quot;Request was for Discharge Summary but sending Procedure Note instead since patient has not been discharged yet&quot;."/>
             <mustSupport value="true"/>
         </element>
         <element id="Communication.basedOn">
