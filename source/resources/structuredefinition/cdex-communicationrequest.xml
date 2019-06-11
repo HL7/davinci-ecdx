@@ -71,7 +71,7 @@
         </element>
         <element id="CommunicationRequest.recipient">
             <path value="CommunicationRequest.recipient"/>
-            <short value="The recipient(s) of the Communication resulting from this request (not the recipient of the request). "/>
+            <short value="The recipient(s) of the Communication resulting from this request (not the recipient of the request)."/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
@@ -81,7 +81,7 @@
         </element>
         <element id="CommunicationRequest.sender">
             <path value="CommunicationRequest.sender"/>
-            <short value="The sender of the Communication resulting from this request (not the sender of the request). "/>
+            <short value="The sender of the Communication resulting from this request (not the sender of the request)."/>
             <min value="1"/>
             <type>
                 <code value="Reference"/>
