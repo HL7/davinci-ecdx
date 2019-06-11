@@ -32,7 +32,6 @@ This implementation guide is dependent on other specifications. Please submit an
 		<td></td>
 		<td>FHIR gForge tracker with US Core as the specification.</td>
 	</tr>
-	</tr>
 		<tr>
 		<td>C-CDA on FHIR</td>
 		<td></td>
