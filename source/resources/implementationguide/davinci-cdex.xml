@@ -34,6 +34,11 @@
         <packageId value="hl7.fhir.us.davinci-hrex"/>
         <version value="current"/>
     </dependsOn>
+    <dependsOn>
+        <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.0.0"/>
+        <packageId value="hl7.fhir.us.core"/>
+        <version value="current"/>
+    </dependsOn>
     <definition>
         <resource>
             <reference>
