@@ -94,10 +94,6 @@
 		}
 	},
 	"resources": {
-		"StructureDefinition/cdex-task": {
-			"base": "StructureDefinition-cdex-task.html",
-			"defns": "StructureDefinition-cdex-task-definitions.html"
-		},
 		"Encounter/cdex-example-encounter": {
 			"base": "Encounter-cdex-example-encounter.html",
 			"defns": "Encounter-cdex-example-encounter-definitions.html"
@@ -110,17 +106,9 @@
 			"base": "Organization-cdex-example-payer.html",
 			"defns": "Organization-cdex-example-payer-definitions.html"
 		},
-		"CommunicationRequest/cdex-example-resource-request": {
-			"base": "CommunicationRequest-cdex-example-resource-request.html",
-			"defns": "CommunicationRequest-cdex-example-resource-request-definitions.html"
-		},
 		"Organization/cdex-example-provider": {
 			"base": "Organization-cdex-example-provider.html",
 			"defns": "Organization-cdex-example-provider-definitions.html"
-		},
-		"Condition/cdex-condition-example": {
-			"base": "Condition-cdex-condition-example.html",
-			"defns": "Condition-cdex-condition-example-definitions.html"
 		},
 		"Bundle/cdex-example-searchset": {
 			"base": "Bundle-cdex-example-searchset.html",
@@ -134,10 +122,6 @@
 			"base": "Bundle-cdex-example-transaction.html",
 			"defns": "Bundle-cdex-example-transaction-definitions.html"
 		},
-		"Communication/cdex-example-resource-request-response": {
-			"base": "Communication-cdex-example-resource-request-response.html",
-			"defns": "Communication-cdex-example-resource-request-response-definitions.html"
-		},
 		"Coverage/cdex-example-coverage": {
 			"base": "Coverage-cdex-example-coverage.html",
 			"defns": "Coverage-cdex-example-coverage-definitions.html"
@@ -150,6 +134,10 @@
 			"base": "Practitioner-cdex-example-practitioner.html",
 			"defns": "Practitioner-cdex-example-practitioner-definitions.html"
 		},
+		"CapabilityStatement/cdex-capabilitystatement-server": {
+			"base": "CapabilityStatement-cdex-capabilitystatement-server.html",
+			"defns": "CapabilityStatement-cdex-capabilitystatement-server-definitions.html"
+		},
 		"Claim/cdex-example-claim": {
 			"base": "Claim-cdex-example-claim.html",
 			"defns": "Claim-cdex-example-claim-definitions.html"
@@ -161,6 +149,14 @@
 		"StructureDefinition/cdex-transaction-bundle": {
 			"base": "StructureDefinition-cdex-transaction-bundle.html",
 			"defns": "StructureDefinition-cdex-transaction-bundle-definitions.html"
+		},
+		"CapabilityStatement/cdex-capabilitystatement-client": {
+			"base": "CapabilityStatement-cdex-capabilitystatement-client.html",
+			"defns": "CapabilityStatement-cdex-capabilitystatement-client-definitions.html"
+		},
+		"Communication/cdex-example-unsolicited-resource": {
+			"base": "Communication-cdex-example-unsolicited-resource.html",
+			"defns": "Communication-cdex-example-unsolicited-resource-definitions.html"
 		},
 		"CommunicationRequest/cdex-example-attachment-request": {
 			"base": "CommunicationRequest-cdex-example-attachment-request.html",
@@ -189,6 +185,22 @@
 		"StructureDefinition/cdex-searchset-bundle": {
 			"base": "StructureDefinition-cdex-searchset-bundle.html",
 			"defns": "StructureDefinition-cdex-searchset-bundle-definitions.html"
+		},
+		"StructureDefinition/cdex-task": {
+			"base": "StructureDefinition-cdex-task.html",
+			"defns": "StructureDefinition-cdex-task-definitions.html"
+		},
+		"CommunicationRequest/cdex-example-resource-request": {
+			"base": "CommunicationRequest-cdex-example-resource-request.html",
+			"defns": "CommunicationRequest-cdex-example-resource-request-definitions.html"
+		},
+		"Condition/cdex-condition-example": {
+			"base": "Condition-cdex-condition-example.html",
+			"defns": "Condition-cdex-condition-example-definitions.html"
+		},
+		"Communication/cdex-example-resource-request-response": {
+			"base": "Communication-cdex-example-resource-request-response.html",
+			"defns": "Communication-cdex-example-resource-request-response-definitions.html"
 		}
 	},
 	"version": "4.0.0",

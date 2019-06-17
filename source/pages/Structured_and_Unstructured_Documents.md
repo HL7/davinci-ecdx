@@ -4,12 +4,14 @@ layout: default
 active: Structured and Unstructured Documents
 ---
 
+[Previous Page](Resource_Identifiers_-_URIs_URNs_URLs_and_OIDs.html)
+
 ## Definitions of Structured Document and Unstructured Document
 The terms "structured document" and "unstructured document" apply to both CDA documents and FHIR documents.
 
 In CDA, a document with a header paired with a structuredBody element is referred to as a CDA structured document. A header paired with a nonXMLBody element is referred to as an CDA unstructured document. It is important to note that the header in either structured or unstructured document is always structured, and as such, provides valuable data for computer processing (parsing) to occur. 
 
-In FHIR, an unstractured document is represented using the DocumentReference resource to hold the structured header information associated with the document.  An attachment element within the DocumentReference holds or points to the the document content which is stored as encoded data.
+In FHIR, an unstructured document is represented using the DocumentReference resource to hold the structured header information associated with the document.  An attachment element within the DocumentReference holds or points to the the document content which is stored as encoded data.
 
 ## Bundles, Compositions and DocumentReferences
 In FHIR, a Bundle with type=Document is used to represent the actual content of a document. 
@@ -28,12 +30,12 @@ In addition to the clinical document types described in Appendix C: CDA R2.1 and
 Unstructured documents fill an important role where structured information is inappropriate, impractical, or otherwise unavailable.
 
 Use of the unstructured document is intended to accommodate attachment types for which a structured
-format hasnt been developed (e.g., new policies) or is not supported by the sender. Clinical document types that are supported as Structured Documents may also be sent in an unstructured format (e.g., History and Physical Scanned Image, Discharge Summary PDF).
+format hasn't been developed (e.g., new policies) or is not supported by the sender. Clinical document types that are supported as Structured Documents may also be sent in an unstructured format (e.g., History and Physical Scanned Image, Discharge Summary PDF).
 
 [TODO - add link]
 Refer to About Code Systems for appropriate Document Type Codes.
 
-The following table reflects the value set of the file formats supported by unstuctured documents
+The following table reflects the value set of the file formats supported by unstructured documents
 in C-CDA.
 
 ### Supported File Formats in C-CDA Unsturctured Documents
@@ -52,3 +54,5 @@ image/png Media Type 2.16.840.1.113883.5.79 PNG Image
 
 ### Supported File Formats in C-CDA Unsturctured Documents
 [ToDo: add a table with the corresponding FHIR Value Set and concepts
+
+[Next Page](Base64_Encoded_Content.html)

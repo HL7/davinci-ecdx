@@ -4,6 +4,8 @@ layout: default
 active: CDex Profiles and Extensions
 ---
 
+[Previous Page](Profiles_and_Extensions.html)
+
 ## Profiles and Extensions Defined in CDex
 
 ### CDex CommunicationRequest Profile
@@ -35,3 +37,6 @@ The CDex Payload Clinical Note Type extension extends the FHIR CommunicationRequ
 The CDex Payload Query String extension extends the FHIR CommunicationRequest and Communication resource. It adds a string element which is used to describe a data search (request) being requested in a CommunicationRequest or Communication. 
 
 
+
+
+[Next Page](HRex_Profiles.html)

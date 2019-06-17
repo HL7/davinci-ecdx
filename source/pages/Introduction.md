@@ -4,6 +4,8 @@ layout: default
 active: Introduction
 ---
 
+[Previous Page](Home.html)
+
 ## Purpose
 The CDex Implementation Guide (IG) defines combinations of exchange methods (push, pull, subscribe), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchanges of clinical information between provider and other providers and/or payers. 
 
@@ -15,3 +17,5 @@ The Clinical Data Exchange (CDex) IG is part of a set of IGs developed to suppor
 
 ## Value Proposition
 The goal of this implementer guidance is to rapidly improve available computer processing methods that can be used between payers, providers, and service supplier systems. The project will accelerate the shift toward value-based care and support value-based reimbursement models. More efficient and effective exchange of health record information will improve coordinated care and network performance, increase operational efficiencies, improve delivery of patient care and care outcomes, and reduce the burden of quality reporting.
+
+[Next Page](About_FHIR.html)

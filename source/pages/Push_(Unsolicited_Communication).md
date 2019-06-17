@@ -4,8 +4,10 @@ layout: default
 active: Push (Unsolicited Communication)
 ---
 
+[Previous Page](Push_(POST_and_PUT).html)
+
 ## Information Exchange Interaction Description
-The Push (Unsolicited Communication) information exchange interaction is a alternative way to handle a Push interation for a FHIR APIs. It uses the Communication Resource to send a message that communicates information to a recipient system.  A system should send a Communication task to the recipient system to notify the system of the available communication. This approach allows the recipient system to determine if the task will be performed or not, and when it will be performed. Alternatively, a system may send a Communication resource directly to the recipient system if a task-based workflow is not supported.
+The Push (Unsolicited Communication) information exchange interaction is a alternative way to handle a Push interaction for a FHIR APIs. It uses the Communication Resource to send a message that communicates information to a recipient system.  A system should send a Communication task to the recipient system to notify the system of the available communication. This approach allows the recipient system to determine if the task will be performed or not, and when it will be performed. Alternatively, a system may send a Communication resource directly to the recipient system if a task-based workflow is not supported.
 
 This information exchange mechanism includes useful differences from the Push (POST and PUT) method also used to create and update information on an external system. This is a curated (or processed) information exchange. It encompasses a task to accept/process the response. The task may be completed by a system or a human or a combined effort. 
 
@@ -56,3 +58,5 @@ Alternatively, If the Information Recipient supports a task-based workflow, the 
 Each Information Recipient receives the communication message and processes it according to their business logic and optional support of associated tasks. 
 ## Detailed Specification
 For a more detailed specification of the <a href="https://build.fhir.org/ig/HL7/davinci-ehrx/HRex_Interactions.html">Push (Unsolicited Communication) Interaction</a>, consult the HRex implementation guide.
+
+[Next Page](Pull_(GET).html)

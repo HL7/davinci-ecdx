@@ -4,6 +4,8 @@ layout: default
 active: Pull (GET)
 ---
 
+[Previous Page](Push_(Unsolicited_Communication).html)
+
 ## Information Exchange Interaction Description
 The Pull (GET) information exchange interaction is a RESTful option for FHIR APIs. It uses the GET mechanisms to query information through a FHIR API. A system acting as the Information Client queries a System acting as an Information Server using the FHIR API available on the Information Server. The query results are returned to the Information Client.
 ## Actor Descriptions
@@ -49,3 +51,5 @@ If the patient indicated in the query parameters did not match or was not permit
 If the type of information requested was not permitted to be shared (based on the business rules of the Information Server), an error condition resulted or that information simply was not returned.
 ## Detailed Specification
 For a more detailed specification of the <a href="https://build.fhir.org/ig/HL7/davinci-ehrx/HRex_Interactions.html">Pull (GET) Interaction</a>, consult the HRex implementation guide.
+
+[Next Page](Request_(Solicited_Communication).html)

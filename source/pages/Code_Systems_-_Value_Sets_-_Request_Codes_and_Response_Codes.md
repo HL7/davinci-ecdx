@@ -4,9 +4,11 @@ layout: default
 active: Code Systems - Value Sets - Request Codes and Response Codes
 ---
 
+[Previous Page](Versioning_Mechanisms.html)
+
 ## Common Code Systems Used in C-CDA and C-CDA on FHIR
 ### Code Systems
-Several code systems are used by the C-CDA and C-CDA on FHIR, and US Core Implementation Guides.  A code system is ...[Todo add definition] . See the <a href="http://hl7.org/fhir/terminologies-systems.html">Code System </a>information in FHIR to learn more.
+Several code systems are used by the C-CDA and C-CDA on FHIR, and US Core Implementation Guides.  A code system defines concepts and give them meaning through formal definitions, and assign codes that represent the concepts. See the <a href="http://hl7.org/fhir/terminologies-systems.html">Code System </a>information in FHIR to learn more.
 
 * LOINC
 * SNOMED CT
@@ -23,3 +25,5 @@ A value set is a defined set of codes established for a specific data representa
 Vocabulary binding syntax controls the expectations of use for concepts available in the value set expansion.  
 
 See the <a href="http://hl7.org/fhir/terminologies-valuesets.html">Value Sets </a>page in the FHIR specification for a listing of value sets used in FHIR, HL7 V3, and HL7 V2.
+
+[Next Page](About_Workflow_Support_in_FHIR.html)

@@ -48,6 +48,10 @@ active: other
 <td><a href="Communication-cdex-example-unsolicited-attachment.html">cdex-example-unsolicited-attachment</a></td>
 </tr>
 <tr>
+<td>Communication</td>
+<td><a href="Communication-cdex-example-unsolicited-resource.html">cdex-example-unsolicited-resource</a></td>
+</tr>
+<tr>
 <td>CommunicationRequest</td>
 <td><a href="CommunicationRequest-cdex-example-attachment-request.html">cdex-example-attachment-request</a></td>
 </tr>

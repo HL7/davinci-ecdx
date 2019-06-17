@@ -3,24 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="261"/>
-        <lastUpdated value="2019-06-11T18:38:12.000-04:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="group^716^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="group^716^write"/>
-        </security>
+        <versionId value="275"/>
+        <lastUpdated value="2019-06-17T04:34:41.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -234,6 +218,30 @@
             <name value="cdex-example-transaction"/>
             <exampleBoolean value="true"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/cdex-capabilitystatement-server"/>
+                <display value="CDexInformationServerCapabilityStatement"/>
+            </reference>
+            <name value="CDexInformationServerCapabilityStatement"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/cdex-capabilitystatement-client"/>
+                <display value="CDexInformationClientCapabilityStatement"/>
+            </reference>
+            <name value="CDexInformationClientCapabilityStatement"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Communication/cdex-example-unsolicited-resource"/>
+                <display value="cdex-example-unsolicited-resource"/>
+            </reference>
+            <name value="cdex-example-unsolicited-resource"/>
+            <exampleBoolean value="true"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -401,6 +409,11 @@
             <page>
                 <nameUrl value="Examples.html"/>
                 <title value="Examples"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="Terminology.html"/>
+                <title value="Terminology"/>
                 <generation value="markdown"/>
             </page>
         </page>

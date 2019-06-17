@@ -1,13 +1,9 @@
 ---
 title: Terminology
 layout: default
-active: terminology
+active: Terminology
 ---
-<!-- { :.no_toc } -->
-<!-- TOC  the css styling for this is \pages\assets\css\project.css under 'markdown-toc'-->
-<!-- * Do not remove this line (it will not be displayed)
-{:toc} -->
-<!-- end TOC -->
 
-<br/>
+[Previous Page](Examples.html)
 
+There are no value sets or code systems defined by this IG. All the value sets and code systems used in this IG are the defaults defined in the base resources or profiles.null

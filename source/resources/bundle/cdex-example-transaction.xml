@@ -5,18 +5,6 @@
     <meta>
         <versionId value="2"/>
         <lastUpdated value="2019-06-06T23:05:18.000-04:00"/>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^read"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="everyone^write"/>
-        </security>
-        <security>
-            <system value="https://trifolia-fhir.lantanagroup.com/security"/>
-            <code value="user^s7DIn2HM^read"/>
-        </security>
     </meta>
     <identifier>
         <system value="urn:ietf:rfc:3986"/>

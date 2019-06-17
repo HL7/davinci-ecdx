@@ -4,6 +4,8 @@ layout: default
 active: Understanding C-CDA and C-CDA on FHIR
 ---
 
+[Previous Page](About_Payload_Types.html)
+
 ## Clinical Document Architecture (CDA)
 The HL7 Version 3 Clinical Document Architecture (CDA) is a document markup standard that specifies the structure and semantics of "clinical documents" for the purpose of exchange between health care entities. It defines a clinical document as having the following six characteristics:
 1. Persistence
@@ -13,7 +15,7 @@ The HL7 Version 3 Clinical Document Architecture (CDA) is a document markup stan
 5. Wholeness
 6. Human readability
 
-A CDA document can contain any type of clinical content. The standard is considered a "base standard" becuase this HL7 standard is very broad to enable it to support a wide range of use cases.
+A CDA document can contain any type of clinical content. The standard is considered a "base standard" because this HL7 standard is very broad to enable it to support a wide range of use cases.
 
 ## Consolidated CDA (C-CDA)
 The HL7 Consolidated CDA (C-CDA)implementation guide is a CDA implementation guide that defines 12 document templates for exchanging the information from a variety of clinical note types -- typical CDA encounter summary documents include: Discharge Summary, Imaging Report, History & Physical, Progress Note and others. A CDA patient summary document called a Continuity of Care Document (CCD) provides a summarized longitudinal medical history over a defined span of time. The implementation guide was named "Consolidated CDA" because it resulted from a large-scale harmonization of CDA templates that had been developed by IHE, HITSP, and HL7. 
@@ -50,6 +52,8 @@ Document2.
 See <a href="Structured_and_Unstructured_Documents.html">Structured and Unstructured Documents</a> for more information.
 
 ## C-CDA on FHIR
-C-CDA on FHIR is a FHIR implementation guide that explains how to create FHIR Documents with the same informational content as specified for the types of documents defined in the C-CDA CDA implementation guide.  It includes profiles on the FHIR Composition resource for encounter summary documents such as: Discharge Summary, Imaging Report, History & Physical, Progress Note and others. A patient summary document called a Continutiy of Care Document (CCD) provides a summarized longitudinal medical history over a defined span of time. The implementation guide was named "C-CDA on FHIR" because the document specification resulted from the prior work done in the HL7 C-CDA specification to define information exchange structures for these standard document types.
+C-CDA on FHIR is a FHIR implementation guide that explains how to create FHIR Documents with the same informational content as specified for the types of documents defined in the C-CDA CDA implementation guide.  It includes profiles on the FHIR Composition resource for encounter summary documents such as: Discharge Summary, Imaging Report, History & Physical, Progress Note and others. A patient summary document called a Continuity of Care Document (CCD) provides a summarized longitudinal medical history over a defined span of time. The implementation guide was named "C-CDA on FHIR" because the document specification resulted from the prior work done in the HL7 C-CDA specification to define information exchange structures for these standard document types.
 
 The C-CDA on FHIR implementation guide show how to use all the same concepts from the LOINC document ontology to specify the standard document types with their expected and recommended standard sections.  FHIR profiles from the US Core implementation guide are used to specify the machine processable data to accompany the human readable text in each section.
+
+[Next Page](Resource_Identifiers_-_URIs_URNs_URLs_and_OIDs.html)

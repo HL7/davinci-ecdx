@@ -4,6 +4,8 @@ layout: default
 active: Profiles and Extensions
 ---
 
+[Previous Page](CDex_Track_Referrals_and_Orders.html)
+
 ## Profiles Defined in CDex and Profiles Used by Reference
 
 The CDex implementation guide defines only a few new FHIR profiles and extensions that are specific to this guide.  The CDex specific Profiles include:
@@ -23,3 +25,5 @@ The majority of the content profiles, extensions, and information exchange mecha
 For a more detailed description of the <a href="https://build.fhir.org/ig/HL7/davinci-ehrx/HRex_Interactions.html">profiles used by reference</a>, consult the HRex implementation guide.
 * US Core R4 and STU3, Argonaut DSTU2 - define data payload profiles for FHIR R4, FHIR STU3, and FHIR DSTU2
 * C-CDA on FHIR for R4 and STU3 - defines structured document payloads for FHIR R4 and FHIR STU3
+
+[Next Page](CDex_Profiles_and_Extensions.html)

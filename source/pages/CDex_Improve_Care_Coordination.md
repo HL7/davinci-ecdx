@@ -4,6 +4,8 @@ layout: default
 active: CDex Improve Care Coordination
 ---
 
+[Previous Page](Use_Cases,_Personas_and_Patient_Story.html)
+
 ## Use Case Description 
 Payers want to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care (e.g. reduce redundant care, shift to more proactive/timely care, make better informed, more accurate medical treatment recommendations). They are looking to find new conditions, change in the status of existing conditions (based on HCC model), or predisposition for or risk of developing a condition, i.e. prediabetes. For this use case, receiving clinical information as it becomes available is better because the information is more timely and can be acted upon sooner. In order for the record to be complete, the information needs to come from many/all providers, but typically from outpatient providers and usually from network providers. Payers may use HIEs as a source of information, if available. The information is available as information gathered in the patient medical record through use of an electronic medical record (EMR) system. The information may be shared with or accessed by the payer as a progress note or visit summary. Standard C-CDAs of various types (information supporting care planning). Payers find information such as Medications, lab results, assessments for diagnoses, vital signs (BP)and information in narrative clinical notes to be useful to care coordination for their members.
 
@@ -14,3 +16,5 @@ They also use clinical information gathered from providers to support the HEDIS/
 
 ## Information Exchange Mechanism to Support
 Need to explain what exchange mechanisms are SHALL, SHOULD, or MAY to be able to support this use case?
+
+[Next Page](CDex_Build_Accurate_Risk_Profiles_and_Health_Records.html)

@@ -4,7 +4,7 @@ layout: default
 active: toc
 ---
 
-* Table of Contents
+* <a href="toc.html">Table of Contents</a>
     * <a href="Home.html">Home</a>
     * <a href="Introduction.html">Introduction</a>
         * <a href="About_FHIR.html">About FHIR</a>
@@ -38,3 +38,4 @@ active: toc
         * <a href="Bulk_Data.html">Bulk Data</a>
     * <a href="Credits.html">Credits</a>
     * <a href="Examples.html">Examples</a>
+    * <a href="Terminology.html">Terminology</a>

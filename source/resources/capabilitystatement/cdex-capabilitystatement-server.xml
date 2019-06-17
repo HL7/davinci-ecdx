@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement
+    xmlns="http://hl7.org/fhir">
+    <id value="cdex-capabilitystatement-server"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2019-06-17T14:01:15.000-04:00"/>
+    </meta>
+    <url value="http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/cdex-capabilitystatement-server"/>
+    <version value="1.0.0"/>
+    <name value="CDexInformationServerCapabilityStatement"/>
+    <title value="CDex Information Server CapabilityStatement"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-06-17"/>
+    <description value="This Section describes the expected capabilities of the CDex Information Server actor which is responsible for receiving Push and Pull interactions using any of the profiles supported by the CDex IG.&#xA;"/>
+    <kind value="requirements"/>
+    <fhirVersion value="4.0.0"/>
+    <format value="application/fhir+json"/>
+    <format value="application/fhir+xml"/>
+    <rest>
+        <mode value="server"/>
+        <documentation value="The CDex Information Server **SHALL**:&#xA;* support receiving a Push (POST/PUT) interaction using any of the profiles supposed by the CDex IG&#xA;* support receiving a Pull (GET) interaction using any of the profiles supported by the CDex IG&#xA;* implement the RESTful behavior according to the FHIR specification"/>
+    </rest>
+</CapabilityStatement>

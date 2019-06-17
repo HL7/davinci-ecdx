@@ -4,6 +4,8 @@ layout: default
 active: Versioning Mechanisms
 ---
 
+[Previous Page](Base64_Encoded_Content.html)
+
 ## Document Succession
 Document succession management is required to permit updates to previously created documents. 
 
@@ -32,3 +34,6 @@ In FHIR there are 3 different type of versioning that may be relevant for a reso
 See the FHIR documentation for more information about <a href="http://hl7.org/FHIR/resource.html#metadata">Resource versioning.</a>
 
 
+
+
+[Next Page](Code_Systems_-_Value_Sets_-_Request_Codes_and_Response_Codes.html)

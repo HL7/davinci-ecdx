@@ -4,6 +4,8 @@ layout: default
 active: Use Cases, Personas and Patient Story
 ---
 
+[Previous Page](About_Workflow_Support_in_FHIR.html)
+
 Use case scenarios set the scope and form the foundation for this Implementation Guide.  Each use case is designed around a benefit resulting from the information exchange interaction. The following use cases are addressed:
 
 * Improve Care Coordination
@@ -32,3 +34,6 @@ A collection of data can be any set of resources or a single resource that match
 
 
 
+
+
+[Next Page](CDex_Improve_Care_Coordination.html)

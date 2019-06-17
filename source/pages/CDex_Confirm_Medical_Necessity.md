@@ -4,6 +4,8 @@ layout: default
 active: CDex Confirm Medical Necessity
 ---
 
+[Previous Page](CDex_Support_Quality_Management.html)
+
 ## Use Case Description
 Payers review select medical claims and associated medical documentation to ensure the services billed were medical necessary and in compliance with Payer rules.  Such reviews safeguard the Payers programs by measuring, identifying and preventing improper payments. To gather information necessary to complete a review, the Payer may request the patients medical record from the provider.  When requesting documentation, the payer must specify the claim and member (patient) details including PHI.  Therefore, both the secure channel used to send the request and the destination to which the request is being sent need to be agreed upon by the Payer and Provider in advance. 
 
@@ -24,3 +26,6 @@ The information can be supplied in a standard exchange document format such as a
 3. The provider receives the Additional Documentation Request (ADR) from the payer requesting specific documentation.  
 
 4. The Provider sends the requested medical documentation (via a secure channel that both the Provider, and the Payer have agreed upon) to the Payer.
+
+
+[Next Page](CDex_Improve_Member_Experience.html)

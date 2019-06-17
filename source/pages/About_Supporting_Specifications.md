@@ -4,6 +4,8 @@ layout: default
 active: About Supporting Specifications
 ---
 
+[Previous Page](About_FHIR.html)
+
 This implementation guide is dependent on other specifications. Please submit any comments you have on these base specifications as follows:
 
 <table>
@@ -40,3 +42,6 @@ This implementation guide is dependent on other specifications. Please submit an
 	</table>
 
 
+
+
+[Next Page](About_Payload_Types.html)

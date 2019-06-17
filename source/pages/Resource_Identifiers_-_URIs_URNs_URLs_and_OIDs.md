@@ -4,15 +4,17 @@ layout: default
 active: Resource Identifiers - URIs URNs URLs and OIDs
 ---
 
-## Resource Identification in FHIR
-The FHIR standard uses Uniform Resource Indentifiers (URIs), Uniform Resource Names (URNs), and Uniform Resource Locators (URLs). Usage for URIs, URNs, and URLs is covered in the FHIR data types chapter. See <a href="http://hl7.org/FHIR/datatypes.htmll">documentation on FHIR datatypes</a> for more information.
+[Previous Page](Understanding_C-CDA_and_C-CDA_on_FHIR.html)
 
-A <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifierl">Uniform Resource Identifier (URI)</a> is a string of characters that unambiguously identifies a particular resource. A <a> href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Name (URN)</a> is a Uniform Resource Identifier (URI) that uses the urn scheme. A <a href="https://en.wikipedia.org/wiki/URL">Uniform Resource Locator (URL)</a>, colloquially termed a web address,[1] is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI),[2][3] although many people use the two terms interchangeably.[4][a] URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications.
+## Resource Identification in FHIR
+The FHIR standard uses Uniform Resource Identifiers (URIs), Uniform Resource Names (URNs), and Uniform Resource Locators (URLs). Usage for URIs, URNs, and URLs is covered in the FHIR data types chapter. See <a href="http://hl7.org/FHIR/datatypes.html">documentation on FHIR datatypes</a> for more information.
+
+A <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">Uniform Resource Identifier (URI)</a> is a string of characters that unambiguously identifies a particular resource. A <a> href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Name (URN)</a> is a Uniform Resource Identifier (URI) that uses the urn scheme. A <a href="https://en.wikipedia.org/wiki/URL">Uniform Resource Locator (URL)</a>, colloquially termed a web address,[1] is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI),[2][3] although many people use the two terms interchangeably.[4][a] URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications.
 
 ## ISO Object Identifiers (OIDs) in CDA
 In CDA, resources are identified using Object Identifiers (OIDs). <a href="https://en.wikipedia.org/wiki/Object_identifier">OIDs</a> are an identifier mechanism standardized by the International Telecommunications Union (ITU) and ISO/IEC for naming any object, concept, or "thing" with a globally unambiguous persistent name.
 
-In FHIR, an OID is represented using a URN, e.g urn:oid: 1.2.3.4.5.
+In FHIR, an OID is represented using a URN, e.g urn:oid:1.2.3.4.5. If converting from CDA to FHIR, implementers will need to prepend "urn:oid:" to the front of the OID. 
 
 The HL7 OID registry, mentioned below, can be used to find or create OIDs. 
 
@@ -46,3 +48,5 @@ If a provider or payer does not have an OID for their organization to establish 
 	
 
 	
+
+[Next Page](Structured_and_Unstructured_Documents.html)

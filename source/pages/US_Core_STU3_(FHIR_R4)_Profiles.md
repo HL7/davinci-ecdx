@@ -4,6 +4,8 @@ layout: default
 active: US Core STU3 (FHIR R4) Profiles
 ---
 
+[Previous Page](HRex_Profiles.html)
+
 ## Profiles used by Reference
 ### People and Places
 
@@ -33,3 +35,6 @@ active: US Core STU3 (FHIR R4) Profiles
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a>
 
 
+
+
+[Next Page](Argonaut_FHIR_(DSTU2)_Profiles.html)

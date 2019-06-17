@@ -4,6 +4,8 @@ layout: default
 active: Information Exchange Interactions and Specifications
 ---
 
+[Previous Page](Argonaut_FHIR_(DSTU2)_Profiles.html)
+
 ## Actor Requirements to Support CDex Implementation Guide
 
 ## Information Server
@@ -34,3 +36,5 @@ A system acting as an Information Request Recipient SHALL support receiving a Pu
 
 ## Information Request Recipient with task-based workflow option
 When supporting the task-based workflow option, the Information Request Recipient SHALL support receiving a Push (POST/PUT) interaction of a Communication Request Task from an Information Request Sender. The system SHALL support initiating a Pull (GET) interaction to retrieve the Communication Request Resource identified in the Communication Request Task.
+
+[Next Page](Push_(POST_and_PUT).html)

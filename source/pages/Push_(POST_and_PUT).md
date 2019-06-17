@@ -4,6 +4,8 @@ layout: default
 active: Push (POST and PUT)
 ---
 
+[Previous Page](Information_Exchange_Interactions_and_Specifications.html)
+
 ## Information Exchange Interaction Description
 The Push (POST and PUT) information exchange interaction is a RESTful option for FHIR APIs. It uses POST and PUT mechanisms to create and update information through a FHIR API. A system acting as the Information Client POSTs or PUTs information onto a system acting as an Information Server using the FHIR API on the Information Server.  
 
@@ -48,3 +50,5 @@ If the type of information provided was not permitted to be received (based on t
 
 ## HRex Detailed Description
 For a more detailed description of the <a href="https://build.fhir.org/ig/HL7/davinci-ehrx/HRex_Interactions.html">Push (POST and PUT) Interaction</a>, consult the HRex implementation guide.
+
+[Next Page](Push_(Unsolicited_Communication).html)

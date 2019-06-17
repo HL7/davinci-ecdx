@@ -4,6 +4,8 @@ layout: default
 active: About Payload Types
 ---
 
+[Previous Page](About_Supporting_Specifications.html)
+
 This implementation guide addresses the possibility of exchanging information as documents using standard document types defined in the HL7 C-CDA and C-CDA on FHIR implementation guides. It also supports the possibility of exchanging collections of data elements or specific data elements retrieved most likely as resources through the use of a restful query.
 
 The expected content payload types include: C-CDA, FHIR document or collection bundles, pdfs, or individual resources when using REST API interactions.
@@ -15,3 +17,6 @@ The LOINC Document Ontology is a special set of LOINC codes that are built on a 
 
 The HRex implementation guide also explains the MIME format types that can be used for the encoded attachments. MIME stands for Multipurpose Internet Mail Extensions. The MIME type is metadata which indicates what sort of content (file format) has been attached, such as text, graphics, or audio. The MIME type is used to tell systems such as a web browser or email application how to render or play the associated information. 
 
+
+
+[Next Page](Understanding_C-CDA_and_C-CDA_on_FHIR.html)
