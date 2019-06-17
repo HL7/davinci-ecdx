@@ -56,4 +56,4 @@ At any point in time, one system can push a communication to another system, inc
 
 <a href="Communication-cdex-example-unsolicited-attachment.html">cdex-example-unsolicited-attachment</a>
 
-[Next Page](Terminology.html)
+[Next Page](terminology.html)
