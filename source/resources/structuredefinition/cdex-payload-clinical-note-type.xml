@@ -43,7 +43,7 @@
             </type>
             <binding>
                 <strength value="extensible"/>
-                <valueSet value="http://hl7.org/fhir/us/davinci-cdex/ValueSet/clinical-note-type"/>
+                <valueSet value="http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-clinical-note-type"/>
             </binding>
         </element>
     </differential>
