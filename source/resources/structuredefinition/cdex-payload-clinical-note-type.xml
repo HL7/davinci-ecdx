@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="cdex-payload-clinical-note-type"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2019-06-10T14:59:58.000-04:00"/>
+        <versionId value="11"/>
+        <lastUpdated value="2019-06-17T22:21:10.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-payload-clinical-note-type"/>
     <name value="CDexPayloadClinicalNoteType"/>
@@ -41,11 +41,10 @@
             <type>
                 <code value="CodeableConcept"/>
             </type>
-            <patternCodeableConcept>
-                <coding>
-                    <system value="http://loinc.org"/>
-                </coding>
-            </patternCodeableConcept>
+            <binding>
+                <strength value="extensible"/>
+                <valueSet value="http://hl7.org/fhir/us/davinci-cdex/ValueSet/clinical-note-type"/>
+            </binding>
         </element>
     </differential>
 </StructureDefinition>

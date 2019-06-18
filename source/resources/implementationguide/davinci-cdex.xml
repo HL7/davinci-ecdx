@@ -3,8 +3,8 @@
     xmlns="http://hl7.org/fhir">
     <id value="davinci-cdex"/>
     <meta>
-        <versionId value="275"/>
-        <lastUpdated value="2019-06-17T04:34:41.000-04:00"/>
+        <versionId value="281"/>
+        <lastUpdated value="2019-06-17T22:58:16.000-04:00"/>
     </meta>
     <url value="http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/davinci-cdex"/>
     <version value="0.0.1"/>
@@ -30,12 +30,12 @@
     <packageId value="hl7.fhir.us.davinci-cdex"/>
     <fhirVersion value="4.0.0"/>
     <dependsOn>
-        <uri value="http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/davinci-hrex"/>
+        <uri value="http://hl7.org/fhir/us/davinci-hrex"/>
         <packageId value="hl7.fhir.us.davinci-hrex"/>
         <version value="current"/>
     </dependsOn>
     <dependsOn>
-        <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core-3.0.0"/>
+        <uri value="http://hl7.org/fhir/us/core"/>
         <packageId value="hl7.fhir.us.core"/>
         <version value="current"/>
     </dependsOn>
@@ -242,6 +242,14 @@
             <name value="cdex-example-unsolicited-resource"/>
             <exampleBoolean value="true"/>
         </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/cdex-clinical-note-type"/>
+                <display value="ClinicalNoteType"/>
+            </reference>
+            <name value="ClinicalNoteType"/>
+            <exampleBoolean value="false"/>
+        </resource>
         <page>
             <nameUrl value="toc.md"/>
             <title value="Table of Contents"/>
@@ -412,8 +420,8 @@
                 <generation value="markdown"/>
             </page>
             <page>
-                <nameUrl value="Terminology.html"/>
-                <title value="Terminology"/>
+                <nameUrl value="Value_Sets.html"/>
+                <title value="Value Sets"/>
                 <generation value="markdown"/>
             </page>
         </page>

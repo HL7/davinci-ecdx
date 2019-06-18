@@ -170,6 +170,10 @@
 			"base": "StructureDefinition-cdex-payload-clinical-note-type.html",
 			"defns": "StructureDefinition-cdex-payload-clinical-note-type-definitions.html"
 		},
+		"ValueSet/cdex-clinical-note-type": {
+			"base": "ValueSet-cdex-clinical-note-type.html",
+			"defns": "ValueSet-cdex-clinical-note-type-definitions.html"
+		},
 		"StructureDefinition/cdex-communication": {
 			"base": "StructureDefinition-cdex-communication.html",
 			"defns": "StructureDefinition-cdex-communication-definitions.html"
@@ -211,7 +215,7 @@
 			"name": "DaVinciHRex",
 			"version": "current",
 			"package": "hl7.fhir.us.davinci-hrex"
-		},		
+		},
 		{
 			"location": "http://hl7.org/fhir/us/core",
 			"name": "USCoreR4",

@@ -39,6 +39,7 @@ The payload(s) of the communication indicates the query that was performed and i
 ### Request (Solicited Communication) for Documents
 The payload(s) of the request show the use of the cdex-payload-type-code extension to express the type of document the payer is requesting to have returned. The payload.valueCodeableConcept holds the LOINC code that describes the type of documentation. This can be a specific document type or a general document type.  When a general document type is requested, any more specific document of that same general type may be returned.  The payload.contentString.value holds human readable information indicating the type of document. 
 
+<a href="CommunicationRequest-cdex-example-resource-request-response.html">cdex-example-resource-request-response</a>
 
 The payload(s) of the communication indicates the type of document being returned and includes the document. The payload.contentAttachment.contentType.value indicates the format for the returned data. Again, the CDex Implementation Guide permits the system processing the communication request to determine what type of information it will return in the solicited communication. Even if the request indicates the type of document that is requested, the system may return a different type of document if the requested type is not available, or if the organization determines that a different type of document should be returned. It is the responsibility of the sending system to send the right format for the document, given the endpoint processing preferences of the receiving system.
 
@@ -55,4 +56,4 @@ At any point in time, one system can push a communication to another system, inc
 
 <a href="Communication-cdex-example-unsolicited-attachment.html">cdex-example-unsolicited-attachment</a>
 
-[Next Page](terminology.html)
+[Next Page](Value_Sets.html)

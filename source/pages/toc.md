@@ -38,4 +38,4 @@ active: toc
         * <a href="Bulk_Data.html">Bulk Data</a>
     * <a href="Credits.html">Credits</a>
     * <a href="Examples.html">Examples</a>
-    * <a href="terminology.html">Terminology</a>
+    * <a href="Value_Sets.html">Value Sets</a>
