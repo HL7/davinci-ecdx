@@ -10,7 +10,7 @@
     <version value="0.1.0"/>
     <name value="DaVinciClinicalDataExchangeCDex"/>
     <title value="Da Vinci Clinical Data Exchange (CDex)"/>
-    <status value="draft"/>
+    <status value="active"/>
     <publisher value="HL7"/>
     <contact>
         <name value="Lisa Nelson"/>
