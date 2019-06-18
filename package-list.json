@@ -16,7 +16,7 @@
       "desc": "June 2019 Ballot for Da Vinci CDex",
       "date": "2019-06-18",
       "sequence": "STU1",
-      "path": "http://hl7.org/fhir/us/davinci-cdex",
+      "path": "http://hl7.org/fhir/us/davinci-cdex/2019Jun",
       "status": "ci-build",
       "fhir-version": "4.0.0",
       "current": false 
