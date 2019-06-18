@@ -10,6 +10,13 @@
       "path": "http://build.fhir.org/ig/HL7/davinci-ecdx",
       "status": "ci-build",
       "current": true
+    },
+    {
+      "version": "0.1.0",
+      "desc": "June 2019 Ballot for Da Vinci CDex",
+      "path": "http://build.fhir.org/ig/HL7/davinci-ecdx",
+      "status": "ci-build",
+      "current": false 
     }
   ]
 }
