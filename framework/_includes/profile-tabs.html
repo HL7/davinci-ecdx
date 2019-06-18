@@ -1,4 +1,4 @@
-<script src="assets/js/jquery.js"> </script>
+<script src="assets/js/jquery.min.js"> </script>
 <script src="assets/js/jquery-ui.min.js"> </script>
 <script>
 try {
@@ -8,7 +8,11 @@ catch(exception){
 }
 
 if (!currentTabIndex)
-  currentTabIndex = '0';
+  {% if site.default_profile_view %}
+  currentTabIndex = '{{site.default_profile_view}}';
+  {% else %}
+  currentTabIndex = '1';
+  {% endif %}
 
 $( '#tabs' ).tabs({
          active: currentTabIndex,
