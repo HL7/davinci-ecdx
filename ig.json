@@ -1,4 +1,4 @@
-{
+{ 
 	"tool": "jekyll",
   
 	"source": "implementationguide/davinci-cdex.xml",
@@ -8,6 +8,7 @@
 		"qa": "generated_output/qa",
 		"temp": "generated_output/temp",
 		"output": "output",
+		"history": "http://hl7.org/fhir/us/davinci-cdex/history.html",
 		"txCache": "generated_output/txCache",
 		"specification": "http://hl7.org/fhir/R4/",
 		"pages": [
@@ -175,21 +176,53 @@
 			"base": "ValueSet-cdex-clinical-note-type.html",
 			"defns": "ValueSet-cdex-clinical-note-type-definitions.html"
 		},
+		"Media/PullGET": {
+			"base": "Media-PullGET.html",
+			"defns": "Media-PullGET-definitions.html"
+		},
 		"StructureDefinition/cdex-communication": {
 			"base": "StructureDefinition-cdex-communication.html",
 			"defns": "StructureDefinition-cdex-communication-definitions.html"
+		},
+		"Media/PushPOSTandPUT": {
+			"base": "Media-PushPOSTandPUT.html",
+			"defns": "Media-PushPOSTandPUT-definitions.html"
 		},
 		"StructureDefinition/cdex-payload-query-string": {
 			"base": "StructureDefinition-cdex-payload-query-string.html",
 			"defns": "StructureDefinition-cdex-payload-query-string-definitions.html"
 		},
+		"Media/PushUnsolicitednoTask": {
+			"base": "Media-PushUnsolicitednoTask.html",
+			"defns": "Media-PushUnsolicitednoTask-definitions.html"
+		},
+		"Media/RequestSolicitedwithTaskp2": {
+			"base": "Media-RequestSolicitedwithTaskp2.html",
+			"defns": "Media-RequestSolicitedwithTaskp2-definitions.html"
+		},
 		"StructureDefinition/cdex-communicationrequest": {
 			"base": "StructureDefinition-cdex-communicationrequest.html",
 			"defns": "StructureDefinition-cdex-communicationrequest-definitions.html"
 		},
+		"Media/RequestSolicitednoTask": {
+			"base": "Media-RequestSolicitednoTask.html",
+			"defns": "Media-RequestSolicitednoTask-definitions.html"
+		},
 		"StructureDefinition/cdex-searchset-bundle": {
 			"base": "StructureDefinition-cdex-searchset-bundle.html",
 			"defns": "StructureDefinition-cdex-searchset-bundle-definitions.html"
+		},
+		"Media/RequestSolicitedwithTaskp1": {
+			"base": "Media-RequestSolicitedwithTaskp1.html",
+			"defns": "Media-RequestSolicitedwithTaskp1-definitions.html"
+		},
+		"Media/PushUnsolicitedwithTask": {
+			"base": "Media-PushUnsolicitedwithTask.html",
+			"defns": "Media-PushUnsolicitedwithTask-definitions.html"
+		},
+		"Media/RequestSolicitedwithTask": {
+			"base": "Media-RequestSolicitedwithTask.html",
+			"defns": "Media-RequestSolicitedwithTask-definitions.html"
 		},
 		"StructureDefinition/cdex-task": {
 			"base": "StructureDefinition-cdex-task.html",
@@ -209,7 +242,7 @@
 		}
 	},
 	"version": "4.0.0",
-	"fixed-business-version": "0.0.1",
+	"fixed-business-version": "0.1.0",
 	"dependencyList": [
 		{
 			"location": "http://hl7.org/fhir/us/davinci-hrex",

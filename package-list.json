@@ -1,0 +1,25 @@
+{
+  "package-id": "hl7.fhir.us.davinci-cdex",
+  "title": "Da Vinci CDex",
+  "canonical": "http://hl7.org/fhir/us/davinci-cdex",
+  "introduction": "The CDex implementation guide defines combinations of exchange methods (push, pull, etc. ), specific payloads (Documents, Bundles, and Individual Resources), search criteria, conformance, provenance, and other relevant requirements to support the exchange of clinical information between provider and other providers and/or payers. The goal is to identify, document and constrain specific exchange patterns so that providers and payers can reliably exchange information for patient care (including coordination of care), risk adjustment, quality reporting, identifying that requested services are necessary and appropriate (e.g. should be covered by the payer) and other uses that may be documented as part of this effort. Clinical data payloads will include C-CDA, C-CDA on FHIR, compositions, bundles, and discrete resources conforming to the US Core specification.",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build for Da Vinci CDex (latest in version control)",
+      "path": "http://build.fhir.org/ig/HL7/davinci-ecdx",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "0.1.0",
+      "desc": "June 2019 Ballot for Da Vinci CDex",
+      "date": "2019-06-18",
+      "sequence": "STU1",
+      "path": "http://hl7.org/fhir/us/davinci-cdex/2019Jun",
+      "status": "ballot",
+      "fhir-version": "4.0.0",
+      "current": false 
+    }
+  ]
+}
