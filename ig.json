@@ -247,7 +247,7 @@
 		{
 			"location": "http://hl7.org/fhir/us/davinci-hrex",
 			"name": "DaVinciHRex",
-			"version": "0.1.0",
+			"version": "current",
 			"package": "hl7.fhir.us.davinci-hrex"
 		},
 		{
