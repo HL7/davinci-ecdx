@@ -26,12 +26,14 @@ active: US Core STU3 (FHIR R4) Profiles
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-allergyintolerance.html">US Core AllergyIntolerance Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-condition.html">US Core Condition Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-device.html">US Core Device Profile</a>
+* <a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport-lab.html">US Core DiagnosticReport Profile for Laboratory Results Reporting</a>
+* <a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-diagnosticreport-note.html">US Core DiagnosticReport Profile for Report and Note exchange</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-diagnosticreport.html">US Core DiagnosticReport Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-encounter.html">US Core Encounter Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-immunization.html">US Core Immunization Profile</a>
+* <a href="http://hl7.org/fhir/us/core/STU3/StructureDefinition-us-core-observation-lab.html">US Core Laboratory Result Observation Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medication.html">US Core Medication Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-medicationstatement.html">US Core MedicationStatement Profile </a>
-* <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-observationresults.html">US Core ObservationResults Profile</a>
 * <a href="http://hl7.org/fhir/us/core/2019Jan/StructureDefinition-us-core-procedure.html">US Core Procedure Profile</a>
 
 
