@@ -1,6 +1,5 @@
 {
 	"tool": "jekyll",
-  "foo":"bar"
 	"source": "implementationguide/davinci-cdex.xml",
 	"npm-name": "hl7.fhir.us.davinci-cdex",
 	"license": "CC0-1.0",
