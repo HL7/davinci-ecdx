@@ -1,0 +1,49 @@
+{
+    "resourceType": "ValueSet",
+    "id": "notification-transfer-event",
+    "url": "http://hl7.org/fhir/us/davinci-alerts/ValueSet/notification-transfer-event",
+    "version": "1.0.0",
+    "name": "NotificationTransferEventValueSet",
+    "title": "Da Vinci Notification Transfer Event ValueSet",
+    "status": "active",
+    "experimental": false,
+    "date": "2019-07-12",
+    "publisher": "HL7 International - Infrastructure and Messaging Work Group",
+    "contact": [
+        {
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "http://www.hl7.org/Special/committees/inm/index.cfm"
+                }
+            ]
+        }
+    ],
+    "description": "Concepts describing Da Vinci Unsolicited Notification transfer notification events.",
+    "jurisdiction": [
+        {
+            "coding": [
+                {
+                    "system": "urn:iso:std:iso:3166",
+                    "code": "US"
+                }
+            ]
+        }
+    ],
+    "purpose": "Provide Notification Receivers with coded notification context",
+    "copyright": "This Content is created by the Da Vinci project and HL7. No copyright acknowledgement is needed, nor are there any license terms to adhere to",
+    "compose": {
+        "include": [
+            {
+                "system": "http://hl7.org/fhir/us/davinci-alerts/CodeSystem/notification-event",
+                "filter": [
+                    {
+                        "property": "concept",
+                        "op": "is-a",
+                        "value": "notification-transfer"
+                    }
+                ]
+            }
+        ]
+    }
+}

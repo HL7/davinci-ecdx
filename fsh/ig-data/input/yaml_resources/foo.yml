@@ -1,0 +1,5 @@
+StructureDefinition-MyPatient.html:
+  type: StructureDefinition
+Patient-example.html:
+  type: Patient
+  example: true

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-cdex/2019Jun" ciUrl="http://build.fhir.org/ig/HL7/davinci-ecdx" defaultVersion="current" defaultWorkgroup="" gitUrl="https://github.com/HL7/davinci-ecdx" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/us/davinci-cdex"><version code="current" url="http://build.fhir.org/ig/HL7/davinci-ecdx"/>
+<version code="0.1.0" url="http://hl7.org/fhir/us/davinci-cdex/2019Jun"/>
+<version code="0.1" deprecated="true"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/notification-transfer-event" key="ValueSet-notification-transfer-event" name="Da Vinci Notification Transfer Event ValueSet"/>
+<artifact id="StructureDefinition/MyPatient" key="StructureDefinition-MyPatient" name="MyPatient"/>
+<artifact id="Patient/example" key="Patient-example" name="example"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="building-accurate-risk-profiles" name="Building Accurate Risk Profiles"/>
+<page key="capabilitystatements" name="Capabilitystatements"/>
+<page key="confirming-medical-necessity" name="Confirming Medical Necessity"/>
+<page key="direct-query" name="Direct Query"/>
+<page key="downloads" name="Downloads"/>
+<page key="examples" name="Examples"/>
+<page key="framework-introduction" name="Framework Introduction"/>
+<page key="index" name="Home"/>
+<page key="improving-care-coordination" name="Improving Care Coordination"/>
+<page key="improving-member-experience" name="Improving Member Experience"/>
+<page key="profiles" name="Profiles"/>
+<page key="support-quality-management" name="Support Quality Management"/>
+<page key="toc" name="Table of Contents"/>
+<page key="terminology" name="Terminology"/>
+<page key="tracking-referrals-and-orders" name="Tracking Referrals and Orders"/>
+<page key="usecases" name="Usecases"/>
+<page key="using-subscriptions" name="Using Subscriptions"/>
+<page key="using-task" name="Using Task"/>
+</specification>
