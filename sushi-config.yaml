@@ -23,6 +23,12 @@ dependencies:
   hl7.fhir.us.core: 3.1.1
   hl7.fhir.us.davinci-hrex: 0.2.0
 parameters:
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+  path-pages:
+    - input/pagecontent
+    - fsh-generated/includes
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
@@ -35,15 +41,11 @@ parameters:
   excludettl: 'true'
   excludemap: 'true'
   excludeexample: 'true'
-  generate: [xml, json]
+  generate:
+    - xml
+    - json
 copyrightyear: '2020+'
 releaselabel: CI Build
-
-
-# ╭─────────────────────────────────────────────ig.ini─────────────────────────────────────────────╮
-# │  To use a provided ig-data/ig.ini file, delete the "template" property below.                  │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-template: hl7.davinci.template#current
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
@@ -55,7 +57,7 @@ menu:
       Direct Query: direct-query.html
       Using Task: using-task.html
       Using Subscriptions: using-subscriptions.html
-  Use Cases:
+  Example Scenarios:
       Improving Care Coordination: improving-care-coordination.html
       Building Accurate Risk Profiles and Health Records: building-accurate-risk-profiles.html
       Supporting Quality Management: support-quality-management.html
@@ -67,5 +69,5 @@ menu:
       Profiles: profiles.html
       Terminology: terminology.html
       CapabilityStatements: capabilitystatements.html
-  Examples: examples.html
+      Examples: examples.html
   Downloads: downloads.html
