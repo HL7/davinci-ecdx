@@ -53,7 +53,7 @@ releaselabel: CI Build
 menu:
   Home: index.html
   Framework:
-      Introduction: framework-introduction.html
+      General Guidance: general-guidance.html
       Direct Query: direct-query.html
       Using Task: using-task.html
       Using Subscriptions: using-subscriptions.html
