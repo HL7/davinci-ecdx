@@ -1,9 +1,8 @@
-# davinci-ecdx
-FHIR IG Electronic Clinical Data Exchange
+# Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 
 ## View the IG
 
-### (Current build (FHIR Version R4)](https://build.fhir.org/ig/HL7/davinci-ecdx)
+### [Current build](https://build.fhir.org/ig/HL7/davinci-ecdx)
 
 ## scope
 
