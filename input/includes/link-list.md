@@ -1,4 +1,3 @@
-
 [Bundle]: {{site.data.fhir.path}}bundle.html
 [Capability Statements]: capabilitystatements.html
 [Downloads]: downloads.html "Downloads Page"

@@ -4,18 +4,21 @@ Punch list:
 - [ ] Remove contained guidance and Task Profile
 - [ ] Add content about non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
-- [ ] Review Trackers for specific adds to this Version
+- [X] Review Trackers for specific adds to this Version
+  - The vast majority of these trackers won't apply to a rewritten IG. We  can just resolve them en bloc?
 - [ ] Review what Profiling needs to be done
+  - Task ,  CommunicationRequest ??
 - [X] Reviewed example scenarios
+  - [ ] Answer question: how do we convert these Benefits into actual scenarios
   - [ ] Answer question: Is supporting Quality Management not handled by DEQM/GIC?
   - [ ] Answer question: Is confirming-medical-necessity already handled by DME?
   - [ ] Answer question: Is improving member experience really separate from improving care coordination?
   - [ ] Answer question: Are the questions of when and who what really differ amongst these example benefits do we need 6 examples use cases?
-  - [ ] Answer question: how do we convert these Benefits into actual scenarios that we can provide examples for
+ that we can provide examples for
 - [ ] review what examples are needed and if RI can do it
+   - Logica Sandbox connectivity issues
 - [X] Reviewed first version for any salient content to add
-  - [ ] CCDA to FHIR?
-  - [ ] Profiles or Extensions or  Terminology?
+   -  some content from use benefits carried over but even that is questionable
 - [ ] fix bad dependency to hrex - check with GG
 </div>
 
