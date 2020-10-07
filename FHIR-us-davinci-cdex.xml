@@ -5,9 +5,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="ValueSet/notification-transfer-event" key="ValueSet-notification-transfer-event" name="Da Vinci Notification Transfer Event ValueSet"/>
-<artifact id="StructureDefinition/MyPatient" key="StructureDefinition-MyPatient" name="MyPatient"/>
-<artifact id="Patient/example" key="Patient-example" name="example"/>
+<artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
+<artifact id="Task/query-complete-contained" key="Task-query-complete-contained" name="query-complete-contained"/>
+<artifact id="Task/query-request-contained" key="Task-query-request-contained" name="query-request-contained"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
@@ -16,8 +16,10 @@
 <page key="confirming-medical-necessity" name="Confirming Medical Necessity"/>
 <page key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
+<page key="example-scenarios" name="Example Scenarios"/>
 <page key="examples" name="Examples"/>
-<page key="framework-introduction" name="Framework Introduction"/>
+<page key="framework" name="Framework"/>
+<page key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
 <page key="improving-care-coordination" name="Improving Care Coordination"/>
 <page key="improving-member-experience" name="Improving Member Experience"/>
@@ -26,7 +28,6 @@
 <page key="toc" name="Table of Contents"/>
 <page key="terminology" name="Terminology"/>
 <page key="tracking-referrals-and-orders" name="Tracking Referrals and Orders"/>
-<page key="usecases" name="Usecases"/>
 <page key="using-subscriptions" name="Using Subscriptions"/>
 <page key="using-task" name="Using Task"/>
 </specification>
