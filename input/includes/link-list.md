@@ -38,7 +38,7 @@
 [Using Task]: using-task.html
 [Using Subscriptions]: using-subscriptions.html
 [HL7 Da Vinci Guiding Principles]: https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf
-[Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.hrex}}/index.html
+[Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
 [Patient Care (PC)]: http://www.hl7.org/Special/committees/pateintcare/index.cfm
 [Propose a Change]: https://jira.hl7.org/issues
 [ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/sites/isa/files/2020-07/USCDI-Version-1-July-2020-Errata-Final.pdf

@@ -19,9 +19,9 @@ The elements `Task.focus` is constrained to only reference a contained Communica
 
 ### Examples
 
-- [Task minimal example]({{site.data.fhir.hrex}}/2020Sep/Task-min.html#root)
+- [Task minimal example]({{site.data.fhir.ver.hrex}}/2020Sep/Task-min.html#root)
 - [Task minimal example with contained CommunicationRequest](Task-query-request-contained.json.html)
-- [Task Data Request - completed query example]({{site.data.fhir.hrex}}/2020Sep/Task-query-complete.html)
+- [Task Data Request - completed query example]({{site.data.fhir.ver.hrex}}/2020Sep/Task-query-complete.html)
 - [Task Data Request - completed query example with contained CommunicationRequest](Task-query-complete-contained.html)
 
 - [Bundle Discharge Notification Message Bundle 01]
