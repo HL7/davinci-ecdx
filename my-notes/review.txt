@@ -56,3 +56,18 @@ update sushi to latest ver.
 start with only hrex and US Core artifacts for now.
 
 create CapStatements in xcel
+
+create a branch for the old stuff and start from scratch in new branch
+
+Task profiles   tighten down codes  -
+See CapabilityStatement for changes -
+CommunicationRequest ServiceRequest for authorization Question ?
+
+these are scenarios in how might use this ig. = Background sections
+
+Decision base on Authorization, Accesss, knowledge of codes
+may need to protect user data/ filter it
+
+UM/CM systems? How do those systems receive clinical information?
+
+Use Case:  A payer generates clinical data in their Utilization and Case Management systems. For example, a Payer could be coaching a member on a diabetes management. Another potential stream is data in support of a prior auth request.

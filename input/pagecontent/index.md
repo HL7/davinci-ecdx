@@ -1,25 +1,26 @@
 <div class="bg-info" markdown="1">
-Punch list:
+Publishing Punch list for Jan Ballot:
 
 - [ ] Remove contained guidance and Task Profile
-- [ ] Add content about non-FHIR resources
+- [ ] Add content to make clear in data includes non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
+- [ ] Add Section on Background and include the 6 use cases
 - [X] Review Trackers for specific adds to this Version
-  - The vast majority of these trackers won't apply to a rewritten IG. We  can just resolve them en bloc?
-- [ ] Review what Profiling needs to be done
-  - Task ,  CommunicationRequest ??
-- [X] Reviewed example scenarios
-  - [ ] Answer question: how do we convert these Benefits into actual scenarios
-  - [ ] Answer question: Is supporting Quality Management not handled by DEQM/GIC?
-  - [ ] Answer question: Is confirming-medical-necessity already handled by DME?
-  - [ ] Answer question: Is improving member experience really separate from improving care coordination?
-  - [ ] Answer question: Are the questions of when and who what really differ amongst these example benefits do we need 6 examples use cases?
- that we can provide examples for
-- [ ] review what examples are needed and if RI can do it
-   - Logica Sandbox connectivity issues
-- [X] Reviewed first version for any salient content to add
-   -  some content from use benefits carried over but even that is questionable
-- [ ] fix bad dependency to hrex - check with GG
+  - The vast majority of these trackers won't apply to a rewritten IG and we resolve them en bloc? A few may require edits to the background section
+- [ ] Task Profile
+  - [ ] tighten down codes  - e.g. LOINC for document types
+- [ ] Establish CapabilityStatements for roles
+    - data source
+    - data requester
+- [ ] Describe and show how CommunicationRequest ServiceRequest for authorization
+- [ ] Create Decision Tree/Section for when to use Task
+  - Decision based on Authorization, Access/Privacy, Appropriateness or knowledge of Codes/free text request
+- [X] Review what examples are needed and whether RI can do it for Task based approach ( will repeat for direct query )
+  1. [X] Patient's Active Conditions
+  1. [X] Patient's a1c results
+  1. [X] Pateint's Latest H&P
+- [ ] QA
+  - [ ] fix bad dependency to hrex - check with GG
 </div>
 
 Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.
