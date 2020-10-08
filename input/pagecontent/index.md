@@ -15,6 +15,8 @@ Publishing Punch list for Jan Ballot:
 - [ ] Describe and show how CommunicationRequest ServiceRequest for authorization
 - [ ] Create Decision Tree/Section for when to use Task
   - Decision based on Authorization, Access/Privacy, Appropriateness or knowledge of Codes/free text request
+- [ ] Decision on whether to Bulk Data is in scope for this version
+  - e.g. `POST [base]/Patient/$everything` for all patients in Group
 - [X] Review what examples are needed and whether RI can do it for Task based approach ( will repeat for direct query )
   1. [X] Patient's Active Conditions
   1. [X] Patient's a1c results
