@@ -2,7 +2,7 @@
 Publishing Punch list for Jan Ballot:
 
 - [X] Remove contained guidance and Task Profile
-- [ ] Add content to make clear in data includes non-FHIR resources
+- [X] Add content to make clear in data includes non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
 - [ ] Add Section on Background and include the 6 use cases
 - [X] Review Trackers for specific adds to this Version
@@ -39,7 +39,7 @@ This Implementation Guide is supported by the [Da Vinci] initiative which is a p
 This Guide is divided into several pages which are listed at the top of each page in the menu bar.
 
 - [Home]\: The home page provides the introduction and background for the Da Vinci Clinical Data Exchange Project.
-- [Framework]\: These pages provide guidance on the set of FHIR transactions and the FHIR artifacts used in a general framework to support exchange of clinical information between provider and payers.
+- [Framework]\: This page provide detailed guidance on the set of FHIR transactions and the FHIR artifacts used in a general framework to support exchange of clinical information between provider and payers.
 - [Example Scenarios]\: The IG describes 6 example scenarios using the framework defined in this guide. Each use case is designed around a benefit resulting from the information exchange interaction.
 - [FHIR Artifacts]\: These pages provide detailed descriptions and examples for the FHIR objects defined in this guide.
   - [Profiles]\: This page lists the set of Profiles that are defined in this guide.

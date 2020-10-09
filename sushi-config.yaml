@@ -71,7 +71,7 @@ releaselabel: CI Build
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Framework: general-guidance.html
+  Framework: framework.html
       #General Guidance: general-guidance.html
       #Direct Query: direct-query.html
       #Using Task: using-task.html

@@ -14,7 +14,7 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="general-guidance.html">Framework</a>
+    <a href="framework.html">Framework</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
