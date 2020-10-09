@@ -113,15 +113,13 @@ definition:
     -   code: path-history
         value: http://hl7.org/fhir/us/davinci-cdex/history.html
     resource:
-    -   description: This Task profile is based upon the [Da Vinci Hrex Task Data
-            Request Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).
-            It is constrained to require `Task.focus` to reference a *contained**
-            CommunicationRequest when an authorization is required for requesting
-            the exchange of clinical data.
+    -   description: This CapabilityStatement describes the expected capabilities
+            of a Da Vinci CDex Data Consumer (often a Payer)  when requesting clinical
+            data from the Data Source (often an EHR).
         exampleBoolean: false
-        name: CDex Task Data Request Profile
+        name: Data Consumer CapabilityStatement
         reference:
-            reference: StructureDefinition/cdex-task-data-request
+            reference: CapabilityStatement/data-consumer
     -   exampleBoolean: true
         name: query-complete-contained
         reference:

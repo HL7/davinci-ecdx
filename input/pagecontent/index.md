@@ -21,6 +21,7 @@ Publishing Punch list for Jan Ballot:
   1. [X] Patient's Active Conditions
   1. [X] Patient's a1c results
   1. [X] Pateint's Latest H&P
+- [ ] Add Example Scenarios
 - [ ] QA
   - [X] fix bad dependency to hrex - check with GG
 </div>
@@ -68,7 +69,7 @@ A sampling of the type of information needed by Payers includes:
 - Vital Signs - for example Blood Pressure measurements
 - Narrative - such as written or transcribed clinical notes
 
-### Example Scenarios
+#### Example Scenarios
 
 - Some payers create a complete clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.
 

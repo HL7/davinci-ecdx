@@ -5,7 +5,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
+<artifact id="CapabilityStatement/data-consumer" key="CapabilityStatement-data-consumer" name="Data Consumer CapabilityStatement"/>
 <artifact id="Task/query-complete-contained" key="Task-query-complete-contained" name="query-complete-contained"/>
 <artifact id="Task/query-request-contained" key="Task-query-request-contained" name="query-request-contained"/>
 <page key="NA" name="(NA)"/>
@@ -19,6 +19,7 @@
 <page key="example-scenarios" name="Example Scenarios"/>
 <page key="examples" name="Examples"/>
 <page key="framework" name="Framework"/>
+<page key="framework_old" name="Framework Old"/>
 <page key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
 <page key="improving-care-coordination" name="Improving Care Coordination"/>
