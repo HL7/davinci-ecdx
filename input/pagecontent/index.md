@@ -1,7 +1,7 @@
 <div class="bg-info" markdown="1">
 Publishing Punch list for Jan Ballot:
 
-- [xml_escape] Remove contained guidance and Task Profile
+- [X] Remove contained guidance and Task Profile
 - [ ] Add content to make clear in data includes non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
 - [ ] Add Section on Background and include the 6 use cases
@@ -22,7 +22,7 @@ Publishing Punch list for Jan Ballot:
   1. [X] Patient's a1c results
   1. [X] Pateint's Latest H&P
 - [ ] QA
-  - [ ] fix bad dependency to hrex - check with GG
+  - [X] fix bad dependency to hrex - check with GG
 </div>
 
 Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.
