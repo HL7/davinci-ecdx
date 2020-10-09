@@ -62,6 +62,30 @@
       },
       {
         "reference": {
+          "reference": "CapabilityStatement/data-consumer-server"
+        },
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in Server mode when *reponding\" to a  Data Source  (often an EHR) or one of its proxies is acting as a Client during a clnical data exchange *using the Task based approach*.   This includes the following interactions:\n\n1. Responding to a query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to Subscription Notification posted to it endpoint updating the status of a Task",
+        "exampleBoolean": false,
+        "name": "Data Consumer Server CapabilityStatement"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/data-source-client"
+        },
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in Client mode when during a clnical data exchange with a Data Consumer using either Direct Query or the Task based approach. This includes the following interactions:\n\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Postiing a subscription notification to a Data Consumer endpoint updating the status of a Task",
+        "exampleBoolean": false,
+        "name": "Data Source Client CapabilityStatement"
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/data-source-server"
+        },
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in Server mode when *reponding\" to a Data Consumer (often a Payer)  acting as a Client during a clnical data exchange using either Direct Query or the Task based approach. This includes the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST of a  Task resource representing a request for clinical data\n1. Responding to polling of a Task resource\n",
+        "exampleBoolean": false,
+        "name": "Data Source Server CapabilityStatement"
+      },
+      {
+        "reference": {
           "reference": "Task/query-complete-contained"
         },
         "name": "query-complete-contained",
