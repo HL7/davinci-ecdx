@@ -70,8 +70,8 @@ releaselabel: CI Build
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Framework:
-      General Guidance: general-guidance.html
+  Framework: general-guidance.html
+      #General Guidance: general-guidance.html
       #Direct Query: direct-query.html
       #Using Task: using-task.html
       #Using Subscriptions: using-subscriptions.html
