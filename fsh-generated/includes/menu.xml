@@ -21,40 +21,6 @@
       <li>
         <a href="general-guidance.html">General Guidance</a>
       </li>
-      <li>
-        <a href="direct-query.html">Direct Query</a>
-      </li>
-      <li>
-        <a href="using-task.html">Using Task</a>
-      </li>
-      <li>
-        <a href="using-subscriptions.html">Using Subscriptions</a>
-      </li>
-    </ul>
-  </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Example Scenarios
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="improving-care-coordination.html">Improving Care Coordination</a>
-      </li>
-      <li>
-        <a href="building-accurate-risk-profiles.html">Building Accurate Risk Profiles and Health Records</a>
-      </li>
-      <li>
-        <a href="support-quality-management.html">Supporting Quality Management</a>
-      </li>
-      <li>
-        <a href="confirming-medical-necessity.html">Confirming Medical Necessity</a>
-      </li>
-      <li>
-        <a href="improving-member-experience.html">Improving Member Experience</a>
-      </li>
-      <li>
-        <a href="tracking-referrals-and-orders.html">Tracking Referrals and Orders</a>
-      </li>
     </ul>
   </li>
   <li class="dropdown">
