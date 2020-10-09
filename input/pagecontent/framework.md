@@ -1,4 +1,4 @@
-This sections provides specific guidance on exchanging clinical data between Payers and Providers.  For general Background on FHIR, Conformance Expectations, and Security and Privacy considerations, refers to the corresponding sections in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
+This sections provides specific guidance on exchanging clinical data between Payers and Providers.  For general *Background on FHIR*, *Conformance Expectations*, and *Security and Privacy* considerations, refer to the corresponding sections in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
 
 ### Exchanging Clinical Data
 
@@ -23,7 +23,7 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 
 The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR  query and retrieve the requested data using a direct query:
 
-{% include img-small.html img="todo.png" caption="Figure 2" %}
+{% include img.html img="search-sequencediagram.svg" caption="Figure 2" %}
 
 
 #### Example Transactions:
@@ -98,7 +98,7 @@ Note
 </div>
 
 
-This project recognizes the major revisions to the reworked R5 subscription"topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions.
+This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions.
 {:.note-to-balloters}
 
 #### Example Transactions:

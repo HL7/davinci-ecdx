@@ -4,7 +4,7 @@ Publishing Punch list for Jan Ballot:
 - [X] Remove contained guidance and Task Profile
 - [X] Add content to make clear in data includes non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
-- [ ] Add Section on Background and include the 6 use cases
+- [X] Add Section on Background and include the 6 use cases
 - [X] Review Trackers for specific adds to this Version
   - The vast majority of these trackers won't apply to a rewritten IG and we resolve them en bloc? A few may require edits to the background section
 - [ ] Task Profile?
@@ -48,13 +48,13 @@ This Guide is divided into several pages which are listed at the top of each pag
   - [Examples]\: List of links to all the examples used in this guide.
 - [Downloads]\: This page provides links to downloadable artifacts.
 
-### background
+### Background
 
 #### What do Payers do with clinical information?
 
 Payers want to create a complete clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to a more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations.  Improve processes between the payer and provider improves member experience.  The member has fewer issues, such as shorter wait times and better planning/cost information. It allows the payer to have a more informed conversation with the member.
 
-Payers also require clinical data from the provider ordering or providing services to document prior authorization, claims processing, audit submitted claims, to confirm medical necessity and appropriateness.  Clinical data is also used by Payers to create complete, accurate risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data. This data helps to reduce preventable medical errors.  Payers review member information to identify gaps in care. They work with providers and hunt down information showing the gap in care has been closed. Improving HEDIS measure scores has a positive impact on revenue for payers and reimbursements for providers.
+Payers also require clinical data from the provider ordering or providing services to document prior authorization, claims processing, audit submitted claims, to confirm medical necessity and appropriateness.  Clinical data is also used by Payers to create complete, accurate risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data. Importantly, this data helps to reduce preventable medical errors.  Payers review member information to identify gaps in care. They work with providers and hunt down information showing the gap in care has been closed. Improving HEDIS measure scores has a positive impact on revenue for payers and reimbursements for providers.
 
 #### What information is needed?
 
@@ -66,7 +66,7 @@ A sampling of the type of information needed by Payers includes:
 - Laboratory results
 - Clinical Assessments for Diagnoses
 - Vital Signs - for example Blood Pressure measurements
-- Narrative - such as clinical notes
+- Narrative - such as written or transcribed clinical notes
 
 ### Example Scenarios
 
@@ -91,7 +91,7 @@ Figure 1 below illustrates the general workflow for the exchange of clinical dat
 #### Actors and Roles:
 
 - The Payer system (Payer) acts in the role of a *data consumer*
-- The Provider systemt (Provider) acts in the role of a *data source*
+- The Provider system (Provider) acts in the role of a *data source*
 
 #### Steps
 1. The Payer system initiates a request for clinical information
@@ -103,17 +103,17 @@ Figure 1 below illustrates the general workflow for the exchange of clinical dat
 
 ---
 
- **This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations:**
+**This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations:**
 
- - *The twenty-two founding [Da Vinci Project](http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.*
+- *The twenty-two founding [Da Vinci Project](http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.*
 
- - *Eric Haas, Health eData Inc*
- - *Lisa Nelson (MaxMD)*
- - *Rick Geimer (Lantana Consulting Group)*
- - *Lloyd Mckenzie, Gevity*
- - *Robert Dieterle, EnableCare*
- - *Viet Nguyen, Stratametrics*
- - *Jocelyn Keegan, Point of Care Partners*
+- *Eric Haas, Health eData Inc*
+- *Lloyd Mckenzie, Gevity*
+- *Robert Dieterle, EnableCare*
+- *Viet Nguyen, Stratametrics*
+- *Jocelyn Keegan, Point of Care Partners*
+- *Lisa Nelson MaxMD*
+- *Rick Geimer Lantana Consulting Group*
 
 ---
 
