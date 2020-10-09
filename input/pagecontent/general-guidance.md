@@ -74,8 +74,6 @@ The sequence diagram in Figure 2 below outlines the interaction between the Paye
 
 The most common scenario is where Task can (and even should) exist without an authorization. Task is used alone when there is no need for a formal authorization (order). In other situations when an authorization is needed, the `Task.basedOn` element references either a [CommunicationRequest] or [ServiceRequest] to represent the authorization for data to flow. Both of these use cases ( with and without authorization) are illustrated in the examples below.
 
-For CDex Task based transaction the [Hrex Task Data Request Profile] **SHALL** be used.
-
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.note-to-balloters}
 
