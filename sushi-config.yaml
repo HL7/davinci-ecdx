@@ -14,7 +14,11 @@ jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
   Used by permission of HL7 International all rights reserved Creative Commons License
 description: >-
-  This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers.  The types of clinical data is not limited to FHIR and includes C-CDA documents, pdfs, or othe binary files. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets such a FHIR bundles, and clinical data such as specific FHIR resources. By using FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Examples scenarios are used to demonstrate how using these exchange methods can:
+  This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers.  It focuses on two FHIR transaction approaches for requesting information:
+
+   - Direct Query
+   - Task Based Approach:
+  The types of clinical data is not limited to FHIR and includes C-CDA documents, pdfs, or othe binary files. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets such a FHIR bundles, and clinical data such as specific FHIR resources. By using FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:
 
     - improve care coordination
     - support risk adjustment
