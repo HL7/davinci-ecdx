@@ -123,7 +123,7 @@ The following example transactions show scenarios of using direct query to get c
 
 ### Bulk Data
 
-If Payers are requesting data for many patients/members or anticipate large payloads from the Provider, [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] may be considered. However there has not been enough implementation experience with this use case to provide specific guidance in this guide.
+Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using `POST [base]/Patient/$everything`.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
 {:.note-to-balloters}
 
 {% include link-list.md %}
