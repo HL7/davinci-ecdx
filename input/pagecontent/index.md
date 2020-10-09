@@ -1,19 +1,19 @@
 <div class="bg-info" markdown="1">
 Publishing Punch list for Jan Ballot:
 
-- [ ] Remove contained guidance and Task Profile
+- [xml_escape] Remove contained guidance and Task Profile
 - [ ] Add content to make clear in data includes non-FHIR resources
 - [ ] Flesh out the Scope and Usage section
 - [ ] Add Section on Background and include the 6 use cases
 - [X] Review Trackers for specific adds to this Version
   - The vast majority of these trackers won't apply to a rewritten IG and we resolve them en bloc? A few may require edits to the background section
-- [ ] Task Profile
+- [ ] Task Profile?
   - [ ] tighten down codes  - e.g. LOINC for document types
 - [ ] Establish CapabilityStatements for roles
     - data source
     - data requester
-- [ ] Describe and show how CommunicationRequest ServiceRequest for authorization
-- [ ] Create Decision Tree/Section for when to use Task
+- [X] Describe and show how CommunicationRequest ServiceRequest for authorization
+- [X] Create Decision Tree/Section for when to use Task
   - Decision based on Authorization, Access/Privacy, Appropriateness or knowledge of Codes/free text request
 - [ ] Decision on whether to Bulk Data is in scope for this version
   - e.g. `POST [base]/Patient/$everything` for all patients in Group
