@@ -21,7 +21,7 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 
 #### Sequence Diagram
 
-The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR to query and retrieve the requested data:
+The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR  query and retrieve the requested data using a direct query:
 
 {% include img-small.html img="todo.png" caption="Figure 2" %}
 
@@ -66,9 +66,9 @@ All of the following except the last of these benefits are relevant whether huma
 
 #### Sequence Diagram
 
-The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR to query and retrieve the requested data:
+The sequence diagram in Figure 3 below outlines the interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction:
 
-{% include img-small.html img="todo.png" caption="Figure 2" %}
+{% include img-small.html img="todo.png" caption="Figure 3" %}
 
 #### Authorization
 
