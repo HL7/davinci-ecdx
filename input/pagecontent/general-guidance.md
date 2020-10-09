@@ -19,7 +19,12 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
  - Authorization/Authentication protocols established
  - No Human intervention needed
 
-The sequence diagram below outlines the interaction between the Payer and EHR to query and retrieve the requested data.
+#### Sequence Diagram
+
+The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR to query and retrieve the requested data:
+
+{% include img-small.html img="todo.png" caption="Figure 2" %}
+
 
 #### Example Transactions:
 
@@ -58,6 +63,12 @@ All of the following except the last of these benefits are relevant whether huma
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status doesn't require a change in workflow from monitoring for final results - i.e. there's no increase in complexity for the receiver whether status updates occur or not
    - Note automated processes typically won't have status updates.
+
+#### Sequence Diagram
+
+The sequence diagram in Figure 2 below outlines the interaction between the Payer and EHR to query and retrieve the requested data:
+
+{% include img-small.html img="todo.png" caption="Figure 2" %}
 
 #### Authorization
 
