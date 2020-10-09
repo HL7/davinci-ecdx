@@ -47,4 +47,6 @@
 [Task]: {{site.data.fhir.path}}task.html
 [CommunicationRequest]: {{site.data.fhir.path}}communicationrequest.html
 [contained]: {{site.data.fhir.path}}contained.html
-[CDex Task Data Request Profile]: StructureDefinition-cdex-task-data-request.html
+[HRex Task Data Request Profile]: StructureDefinition-hrex-task-data-request.html
+[CommunicationRequest]: {{site.data.fhir.path}}communicationrequest.html
+[ServiceRequest]: {{site.data.fhir.path}}servicerequest.html
