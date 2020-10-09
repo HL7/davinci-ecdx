@@ -60,14 +60,21 @@ create CapStatements in xcel
 create a branch for the old stuff and start from scratch in new branch
 
 Task profiles   tighten down codes  -
-See CapabilityStatement for changes -
-CommunicationRequest ServiceRequest for authorization Question ?
+Establish CapabilityStatements for different roles
+Describe and show hoe CommunicationRequest ServiceRequest for authorization
+
+
+ Question
 
 these are scenarios in how might use this ig. = Background sections
 
-Decision base on Authorization, Accesss, knowledge of codes
+Decision base on Authorization, Access, knowledge of codes
 may need to protect user data/ filter it
 
 UM/CM systems? How do those systems receive clinical information?
 
 Use Case:  A payer generates clinical data in their Utilization and Case Management systems. For example, a Payer could be coaching a member on a diabetes management. Another potential stream is data in support of a prior auth request.
+
+Please confirm Bulk data is not within scope.
+Capability statements – Payer side and EHR sides – how tight should we get to say they are conformant with this IG?
+Once Eric sends a summary, please review and let us know if this is aligned with scope expectations for an updated version to send to Ballot.  From there, we can confirm (or not) if a January ballot cycle is still feasible. ß
