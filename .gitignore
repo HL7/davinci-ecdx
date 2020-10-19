@@ -10,5 +10,6 @@ Thumbs.db
 /target/
 /docs/
 publish.sh
+push_to_autobuild.sh
 SUSHI-GENERATED-FILES.mdv
 /my-notes/
