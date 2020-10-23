@@ -14,7 +14,7 @@ jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
   Used by permission of HL7 International all rights reserved Creative Commons License
 description: >-
-  This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers.  It focuses on two FHIR transaction approaches for requesting information:
+  This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers (or other providers).  What is unique about this guide is that is provides additional technical guidance on two FHIR transaction approaches for requesting information:
 
    - Direct Query
    - Task Based Approach:
@@ -47,6 +47,7 @@ parameters:
     - fsh-generated/resources
   path-pages:
     - input/pagecontent
+    - input/intro-notes
     - fsh-generated/includes
   active-tables: 'false'
   apply-contact: 'true'
@@ -71,7 +72,8 @@ releaselabel: CI Build
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Framework: framework.html
+  Background: background.html
+  Specification: specification.html
       #General Guidance: general-guidance.html
       #Direct Query: direct-query.html
       #Using Task: using-task.html
@@ -84,9 +86,9 @@ menu:
       #Improving Member Experience: improving-member-experience.html
       #Tracking Referrals and Orders: tracking-referrals-and-orders.html
   #Table of Contents: toc.html
-  FHIR Artifacts:
-      Profiles: profiles.html
-      Terminology: terminology.html
-      CapabilityStatements: capabilitystatements.html
-      Examples: examples.html
+  FHIR Artifacts: #artifacts.html
+      CapabilityStatements: artifacts.html#1
+      Profiles: artifacts.html#2
+      #Terminology: terminology.html
+      Examples: artifacts.html#3
   Downloads: downloads.html

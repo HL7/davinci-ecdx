@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "description": "This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers.  It focuses on two FHIR transaction approaches for requesting information:\n\n - Direct Query\n - Task Based Approach:\n\nThe types of clinical data is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR bundles, and clinical data such as a specific FHIR resource. By using the FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:\n\n  - improve care coordination\n  - support risk adjustment\n  - ease quality management\n  - facilitate claims auditing and confirm medical necessity\n  - improve member experience\n  - support orders and referrals",
+  "description": "This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers (or other providers).  What is unique about this guide is that is provides additional technical guidance on two FHIR transaction approaches for requesting information:\n\n - Direct Query\n - Task Based Approach:\n\nThe types of clinical data is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR bundles, and clinical data such as a specific FHIR resource. By using the FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:\n\n  - improve care coordination\n  - support risk adjustment\n  - ease quality management\n  - facilitate claims auditing and confirm medical necessity\n  - improve member experience\n  - support orders and referrals",
   "jurisdiction": [
     {
       "coding": [
@@ -52,6 +52,14 @@
   ],
   "definition": {
     "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/cdex-task-data-request"
+        },
+        "name": "CDex Task Data Request Profile",
+        "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).  It extensibly binds `Task.input.value` codes to LOINC® Document types.",
+        "exampleBoolean": false
+      },
       {
         "reference": {
           "reference": "CapabilityStatement/data-consumer"
@@ -110,18 +118,13 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "building-accurate-risk-profiles.html",
-          "title": "Building Accurate Risk Profiles",
+          "nameUrl": "background.html",
+          "title": "Background",
           "generation": "markdown"
         },
         {
           "nameUrl": "capabilitystatements.html",
           "title": "Capabilitystatements",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "confirming-medical-necessity.html",
-          "title": "Confirming Medical Necessity",
           "generation": "markdown"
         },
         {
@@ -135,18 +138,8 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "example-scenarios.html",
-          "title": "Example Scenarios",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "examples.html",
           "title": "Examples",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "framework.html",
-          "title": "Framework",
           "generation": "markdown"
         },
         {
@@ -160,33 +153,18 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "improving-care-coordination.html",
-          "title": "Improving Care Coordination",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "improving-member-experience.html",
-          "title": "Improving Member Experience",
-          "generation": "markdown"
-        },
-        {
           "nameUrl": "profiles.html",
           "title": "Profiles",
           "generation": "markdown"
         },
         {
-          "nameUrl": "support-quality-management.html",
-          "title": "Support Quality Management",
+          "nameUrl": "specification.html",
+          "title": "Specification",
           "generation": "markdown"
         },
         {
           "nameUrl": "terminology.html",
           "title": "Terminology",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "tracking-referrals-and-orders.html",
-          "title": "Tracking Referrals and Orders",
           "generation": "markdown"
         },
         {
@@ -221,6 +199,10 @@
       {
         "code": "path-pages",
         "value": "input/pagecontent"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/intro-notes"
       },
       {
         "code": "path-pages",

@@ -78,3 +78,32 @@ Use Case:  A payer generates clinical data in their Utilization and Case Managem
 Please confirm Bulk data is not within scope.
 Capability statements – Payer side and EHR sides – how tight should we get to say they are conformant with this IG?
 Once Eric sends a summary, please review and let us know if this is aligned with scope expectations for an updated version to send to Ballot.  From there, we can confirm (or not) if a January ballot cycle is still feasible. ß
+
+
+
+Add section WHERE does CDEX it fits into the DAVINCI Picture:
+
+cut and paste from confluence:
+
+add provider to provider section
+
+What is unique about this - above and beyond to USCore
+
+CDEX provides additional technical guidance.
+What is unique.
+
+What is the Reason for the Query
+
+REST:  OAuth for reason for information Query (is this even necessary at this level either you have access or you don't)
+
+"If they're wanting to restrict auth based on a reason then that's a different way than we've thought of auth today"
+
+"So I would go back to "what level" they're wanting to know re:what data is being accessed/why, then to who is going to know that and when. That would help us figure out where in the process it would be available for input"
+
+Where do you stick PurposeOfUse in OAuth? Is there any guidance about how that can/should be computable?
+
+hack using X-Provenance header
+
+TASK:  Task reason (coded vs text)
+
+Can we have a 'Background' and 'Spec' tab in the menu?  (Use cases should appear under Background.)  Also, can we change the name 'Framework' to 'Exchange approaches' or something like that that might be clearer to people?  Finally, Artifacts should be pointing to the overall artifacts list rather than separate pages for each category, though you can have menu links that jump to the specific sections if you like.

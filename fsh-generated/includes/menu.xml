@@ -14,7 +14,10 @@
     <a href="index.html">Home</a>
   </li>
   <li>
-    <a href="framework.html">Framework</a>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="specification.html">Specification</a>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
@@ -22,16 +25,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="profiles.html">Profiles</a>
+        <a href="artifacts.html#1">CapabilityStatements</a>
       </li>
       <li>
-        <a href="terminology.html">Terminology</a>
+        <a href="artifacts.html#2">Profiles</a>
       </li>
       <li>
-        <a href="capabilitystatements.html">CapabilityStatements</a>
-      </li>
-      <li>
-        <a href="examples.html">Examples</a>
+        <a href="artifacts.html#3">Examples</a>
       </li>
     </ul>
   </li>

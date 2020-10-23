@@ -19,6 +19,11 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
  - Authorization/Authentication protocols established
  - No Human intervention needed
 
+#### Purpose of Use
+
+In some cases it may be important to transmit the *Purpose of Use* in the Authorization Framework (OAuth) when querying for data.  The details of incorporating the reason for a query into OAuth is an area of active discussion. Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.
+{:.note-to-balloters}
+
 #### Sequence Diagram
 
 The sequence diagram in Figure 2 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
@@ -29,7 +34,7 @@ The sequence diagram in Figure 2 below outlines a successful interaction between
 
 The following example transactions show scenarios of using direct query to get clinical data from an EHR.
 
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
+{% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
 {% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Direct Query for Patient's HBA1C Results after 2020-01-01" %}
 
@@ -49,7 +54,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
 
 In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the *CommunicationRequest plus Task* section and the *Requesting Exchange using Task* sections of the Da Vinci HRex Implementation Guide.
 
-For CDex Task based transactions the [Hrex Task Data Request Profile] **SHALL** be used by the Payer
+For CDex Task based transactions the [CDex Task Data Request Profile] **SHALL** be used by the Payer
 {:.bg-warning}
 
 #### Benefits this Approach
@@ -57,6 +62,7 @@ For CDex Task based transactions the [Hrex Task Data Request Profile] **SHALL** 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
 
 - Easy ability to say 'yes' or 'no', including providing a reason for refusal.
+- Provides the ability to represent the reason (*Purpose of Use*) in the `Task.reasonCode` element using either codes or free text.
 - Allows linking the request to its associated outputs without creating a new resource
 - Can be polled or subscribed to to retrieve the results
 - Allows conveying the 'status' of a request in progress
@@ -82,7 +88,7 @@ Task Based exchanges can take one of two forms - *subscription* or *polling* as 
 
 ##### Polling
 
-Polling is a mechanism for conveying new data to a Payer as (or shortly after) the data is created or updated without requiring the Provider to be aware of the specific needs of the Payer.  The Payer repeatedly queries the Provider to see if there is new data. In the Da Vinci CDex use case, the Payer would poll the Provider by fetching the Task resource to see if has been updated.
+Polling is a mechanism for conveying new data to a Payer as (or shortly after) the data is created or updated without requiring the Provider to be aware of the specific needs of the Payer.  The Payer repeatedly queries the Provider to see if there is new data. In the Da Vinci CDex use case, the Payer would poll the Provider by fetching the Task resource to see if has been updated.  Polling is the *default option* if the Provider does not support subscribing to the Task as described below.
 
 ##### Subscription
 
@@ -90,14 +96,12 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 
 <div markdown="1" class="bg-info">
 Note
-
 - The subscription notification could contain the Task and associated data in the response but this approach imposes excessive privacy and security risks on the sender.
 
 - Subscriptions need not be created independently for each Task -- a payer could subscribe to all Tasks where they are the requester.  It's also possible that subscriptions could be established automatically or out-of-band.  However, these are implementation details that are out of scope for this guide.
 </div>
 
-
-This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions.
+This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
 {:.note-to-balloters}
 
 #### Example Transactions:

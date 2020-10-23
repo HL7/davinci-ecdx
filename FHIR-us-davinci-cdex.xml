@@ -5,6 +5,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CapabilityStatement/data-consumer" key="CapabilityStatement-data-consumer" name="Data Consumer CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
@@ -14,24 +15,18 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="building-accurate-risk-profiles" name="Building Accurate Risk Profiles"/>
+<page key="background" name="Background"/>
 <page key="capabilitystatements" name="Capabilitystatements"/>
-<page key="confirming-medical-necessity" name="Confirming Medical Necessity"/>
 <page key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
-<page key="example-scenarios" name="Example Scenarios"/>
 <page key="examples" name="Examples"/>
-<page key="framework" name="Framework"/>
 <page key="framework_old" name="Framework Old"/>
 <page key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
-<page key="improving-care-coordination" name="Improving Care Coordination"/>
-<page key="improving-member-experience" name="Improving Member Experience"/>
 <page key="profiles" name="Profiles"/>
-<page key="support-quality-management" name="Support Quality Management"/>
+<page key="specification" name="Specification"/>
 <page key="toc" name="Table of Contents"/>
 <page key="terminology" name="Terminology"/>
-<page key="tracking-referrals-and-orders" name="Tracking Referrals and Orders"/>
 <page key="using-subscriptions" name="Using Subscriptions"/>
 <page key="using-task" name="Using Task"/>
 </specification>
