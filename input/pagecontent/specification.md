@@ -36,9 +36,9 @@ The following example transactions show scenarios of using direct query to get c
 
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Direct Query for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="direct-query2-scenario" b_title = "Click Here To See Example Direct Query for Patient's HbA1c Results after 2020-01-01" %}
 
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
 
 ### Task Based Approach
 
@@ -110,7 +110,7 @@ The following example transactions show scenarios of using direct query to get c
 
 #### No Authorization Needed
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
+{% include examplebutton_default.html example="task1-scenario" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
 
 {% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
@@ -118,11 +118,11 @@ The following example transactions show scenarios of using direct query to get c
 
 #### With Authorization
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
+{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
 ### Bulk Data
 
