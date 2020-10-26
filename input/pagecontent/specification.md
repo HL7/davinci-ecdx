@@ -120,7 +120,7 @@ The following example transactions show scenarios of using direct query to get c
 
 {% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
 
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="todo b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
 {% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
