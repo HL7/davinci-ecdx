@@ -4,7 +4,7 @@ Da Vinci is a private sector initiative that addresses the needs of the Value Ba
 
 ### What do Payers do with clinical information?
 
-Payers want to create a complete clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to a more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations.  Improve processes between the payer and provider improves member experience.  The member has fewer issues, such as shorter wait times and better planning/cost information. It allows the payer to have a more informed conversation with the member.
+Payers want to create a complete clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to a more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations.  Improve processes between the payer and provider improves member experience.  The member has fewer issues, such as shorter wait times and better planning/cost information. It allows the payer to have a more informed conversation with the member.  Payers may use this clinical record to give providers information that may assist in care coordination.
 
 Payers also require clinical data from the provider ordering or providing services to document prior authorization, claims processing, audit submitted claims, to confirm medical necessity and appropriateness.  Clinical data is also used by Payers to create complete, accurate risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data. Importantly, this data helps to reduce preventable medical errors.  Payers review member information to identify gaps in care. They work with providers and hunt down information showing the gap in care has been closed. Improving HEDIS measure scores has a positive impact on revenue for payers and reimbursements for providers.
 
@@ -20,6 +20,8 @@ A sampling of the type of information needed by Payers includes:
 - Vital Signs - for example Blood Pressure measurements
 - Narrative - such as written or transcribed clinical notes
 
+Any request should be limited to information necessary and  only for those purposes of use be made in light of existing regulations including HIPAA restrictions on access to information for payment and when information is shared for one or more specific purposes of use, the recipient is expected to use the information only for those purposes of use or as allowed by federal and state statutes and regulations. and must conform to the guidance provided in the *Security and Privacy* section in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
+{:.bg-info}
 
 ### Where Does CDEX Fit in the Da Vinci Project?
 
