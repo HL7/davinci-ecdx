@@ -54,8 +54,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
 
 In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the *CommunicationRequest plus Task* section and the *Requesting Exchange using Task* sections of the Da Vinci HRex Implementation Guide.
 
-For CDex Task based transactions the [CDex Task Data Request Profile] **SHALL** be used by the Payer
-{:.bg-warning}
+**For CDex Task based transactions the [CDex Task Data Request Profile] **SHALL** be used by the Payer
 
 #### Benefits this Approach
 
@@ -98,7 +97,7 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 Note
 - The subscription notification could contain the Task and associated data in the response but this approach imposes excessive privacy and security risks on the sender.
 
-- Subscriptions need not be created independently for each Task -- a payer could subscribe to all Tasks where they are the requester.  It's also possible that subscriptions could be established automatically or out-of-band.  However, these are implementation details that are out of scope for this guide.
+- Subscriptions need not be created independently for each Task - a payer could subscribe to all Tasks where they are the requester.  It's also possible that subscriptions could be established automatically or out-of-band.  However, these are implementation details that are out of scope for this guide.
 </div>
 
 This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
