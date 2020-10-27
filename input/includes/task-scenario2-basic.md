@@ -6,7 +6,7 @@ In this example:
 1. No formal authorization (order) is needed
 1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
 1. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
-1. **In this example there is no matching data**. The `Task.status` is "completed" and 'Task.output' is absent.
+1. **In this example there is no matching data**. The `Task.status` is "failed" with a `Task.statusReason` of "no matching results" and the 'Task.output' is absent.
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example2-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET Task/cdex-example2-query-completed
+GET Task/cdex-example2-query-failed
 ~~~
 
 {% include request-headers.md %}
