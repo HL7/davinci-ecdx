@@ -103,7 +103,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
 - Whether a specific Authorization is needed
 - The Access to the data is limited (for example due to patient privacy concerns the data needs to be reviewed and/or filtered )
 - The Appropriateness of the request needs to be determined
-- The data needed is described in an unstructured or noncomputable form.
+- The data needed is described in an unstructured or non-computable form.
   - Because the payor does not have knowledge of specific codes or identifiers to make a direct query
   - Because there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible

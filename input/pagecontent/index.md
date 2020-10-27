@@ -24,7 +24,7 @@ Publishing Punch list for Jan Ballot:
   1. [X] Patient's Active Conditions
   1. [X] Patient's a1c results
   1. [X] Pateint's Latest H&P
-- [ ] Add Example Scenarios
+- [X] Add Example Scenarios
 - [ ] QA
   - [ ] fix bad dependency to hrex - check with GG
 - [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm
