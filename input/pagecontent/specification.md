@@ -205,7 +205,7 @@ Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="task-scenario2-basic" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
 ---
 

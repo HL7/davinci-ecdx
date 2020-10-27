@@ -4,9 +4,9 @@
 In this example:
 
 1. No formal authorization (order) is needed
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-2. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
-3. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
+1. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
+1. **In this example there is no matching data**. The `Task.status` is "completed" and there is no data for the Payer to fetch.
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -20,7 +20,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example1-query-request.json %}
+{% include cdex-example2-query-request.json %}
 ~~~
 
 **Response Headers**
@@ -28,7 +28,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example2-query-completed/_history/1
 ...(other headers)
 ~~~
 
@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET Task/cdex-example1-query-completed
+GET Task/cdex-example2-query-completed
 ~~~
 
 {% include request-headers.md %}
@@ -46,22 +46,5 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1-query-completed.json %}
-~~~
-
-###### Step 3 - Fetch Active Conditions
-
-**Request**
-~~~
-POST [base]Condition/858
-~~~
-
-{% include request-headers.md %}
-
-{% include response-headers.md %}
-
-**Response Body**
-
-~~~
-{% include condition-858.json %}
+{% include_relative Task-cdex-example2-query-completed.json %}
 ~~~

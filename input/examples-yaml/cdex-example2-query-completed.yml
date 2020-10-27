@@ -1,9 +1,10 @@
 resourceType: Task
+id: cdex-example2-query-requested
 meta:
   profile:
     - >-
       http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-status: requested
+status: completed
 intent: order
 code:
   coding:
@@ -11,20 +12,17 @@ code:
       code: data-request
 for:
   reference: http://example.org/fhir/Patient/cdex-example-patient
-authoredOn: '2020-10-26T02:58:55.179Z'
-lastModified: '2020-10-26T02:58:55.179Z'
+authoredOn: '2020-10-27T11:05:34-07:00'
+lastModified: '2020-10-27T18:23:27-07:00'
 requester:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 owner:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 reasonCode:
-  text: Support prior authorization decision-making
-reasonReference:
-  reference: http://example.org/fhir/Claim/cdex-example-claim
+  text: Quality reporting requirements and quality care scoring
 input:
   - type:
       coding:
         - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
           code: data-query
-    valueString: >-
-      Condition?patient=cdex-example-patient&clinical-status=active,recurrance,remission
+    valueString: Observation?patient=cdex-example-patient&date=gt2018-01-01&code=4548-4

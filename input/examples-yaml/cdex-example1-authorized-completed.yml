@@ -8,7 +8,6 @@ meta:
     - >-
       http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
 basedOn:
-  - reference: http://example.org/fhir/Claim/cdex-example-claim
   - reference: http://example.org/fhir/CommunicationRequest/cdex-example1-authorization
 status: completed
 businessStatus:
