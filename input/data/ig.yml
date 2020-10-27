@@ -155,14 +155,26 @@ definition:
         name: Data Source Server CapabilityStatement
         reference:
             reference: CapabilityStatement/data-source-server
-    -   exampleBoolean: true
-        name: query-complete-contained
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-free-text-completed
         reference:
-            reference: Task/query-complete-contained
-    -   exampleBoolean: true
-        name: query-request-contained
+            reference: Task/cdex-example1-free-text-completed
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-free-text-request
         reference:
-            reference: Task/query-request-contained
+            reference: Task/cdex-example1-free-text-request
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-query-completed-contained
+        reference:
+            reference: Task/cdex-example1-query-completed-contained
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-query-completed
+        reference:
+            reference: Task/cdex-example1-query-completed
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-query-requested
+        reference:
+            reference: Task/cdex-example1-query-requested
 dependsOn:
 -   id: uscore
     packageId: hl7.fhir.us.core

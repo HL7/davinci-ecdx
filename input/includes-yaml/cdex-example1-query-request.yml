@@ -1,0 +1,32 @@
+resourceType: Task
+meta:
+  profile:
+    - >-
+      http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+basedOn:
+  - reference: http://example.org/fhir/Claim/cdex-example-claim
+status: requested
+intent: order
+code:
+  coding:
+    - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+      code: data-request
+for:
+  reference: http://example.org/fhir/Patient/cdex-example-patient
+authoredOn: '2020-10-26T02:58:55.179Z'
+lastModified: '2020-10-26T02:58:55.179Z'
+requester:
+  reference: http://example.org/fhir/Organization/cdex-example-payer
+owner:
+  reference: http://example.org/fhir/Organization/cdex-example-payer
+reasonCode:
+  text: Support prior authorization decision-making
+reasonReference:
+  reference: http://example.org/fhir/Claim/cdex-example-claim
+input:
+  - type:
+      coding:
+        - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+          code: data-query
+    valueString: >-
+      Condition?patient=cdex-example-patient&clinical-status=active,recurrance,remission

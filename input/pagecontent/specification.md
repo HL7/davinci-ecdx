@@ -70,7 +70,8 @@ All of the following except the last of these benefits are relevant whether huma
 
 #### Sequence Diagram
 
-The sequence diagram in Figure 3 below outlines the interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction:
+The sequence diagram in Figure 3 below summarizes the basic interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction.   However, there are three implementation variations with Task Based Exchange discussed below:
+
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 3" %}
 
@@ -103,29 +104,57 @@ Note
 This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
 {:.note-to-balloters}
 
+#### Fetching the Data
+
+When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle isn't something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
+
 #### Example Transactions:
 
-The following example transactions show scenarios of using direct query to get clinical data from an EHR.
+As discussed above, there are 4 basic implementation variations in any combination with task based exchanges:
 
-#### No Authorization Needed
+1. structured vs free text request
+1. Whether a formal authorization is needed
+1. Subscription vs polling
+1. Fetching contained vs external data
 
-{% include examplebutton_default.html example="task1-scenario" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
+The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
+
+##### Scenario 1
+
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
+
+Preconditions and Assumptions:
+- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+
+Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
+
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Basic interaction using no formal authorization, Structured data for request, Polling, External resource references for output' %}
+
+{% include examplebutton_default.html example="todo2" b_title = 'Interaction with a formal authorization' %}
+
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text for the request instead of structured data.' %}
+
+{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling.' %}
+
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction using contained resource references for output instead of external references.' %}
+
+---
+
+##### Scenario 2
 
 {% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
+---
+
+##### Scenario 3
+
 {% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
-
-#### With Authorization
-
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Active Conditions" %}
-
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
-
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
 ### Bulk Data
 
 Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using `POST [base]/Patient/$everything`.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
 {:.note-to-balloters}
+
+<br />
 
 {% include link-list.md %}
