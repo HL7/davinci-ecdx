@@ -143,9 +143,9 @@
       },
       {
         "reference": {
-          "reference": "Task/cdex-example2-query-completed"
+          "reference": "Task/cdex-example2-query-failed"
         },
-        "name": "cdex-example2-query-completed",
+        "name": "cdex-example2-query-failed",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
@@ -153,6 +153,20 @@
           "reference": "Task/cdex-example2-query-requested"
         },
         "name": "cdex-example2-query-requested",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-example3-query-completed"
+        },
+        "name": "cdex-example3-query-completed",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-example3-query-requested"
+        },
+        "name": "cdex-example3-query-requested",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       }
     ],

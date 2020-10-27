@@ -162,7 +162,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Fetching the Data
 
-When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle isn't something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
+When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle isn't something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.  If there is no data found by the Provider the The `Task.status` is "failed" with a reason in `Task.statusReason` (e.g.,"no matching results") and the 'Task.output' is absent.
 
 #### Example Transactions:
 

@@ -6,7 +6,7 @@
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ]
     },
-    "status": "completed",
+    "status": "requested",
     "intent": "order",
     "code": {
         "coding": [

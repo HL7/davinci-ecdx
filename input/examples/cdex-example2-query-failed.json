@@ -1,12 +1,15 @@
 {
     "resourceType": "Task",
-    "id": "cdex-example2-query-completed",
+    "id": "cdex-example2-query-failed",
     "meta": {
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ]
     },
-    "status": "completed",
+    "status": "failed",
+    "statusReason": {
+        "text": "No matching results"
+    },
     "intent": "order",
     "code": {
         "coding": [
