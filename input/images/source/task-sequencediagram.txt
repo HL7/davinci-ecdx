@@ -16,8 +16,7 @@ EHR (Data Source)-->Payer (Data Consumer):3) Return HTTP 200 code to indicate ac
 
 note over Payer (Data Consumer),EHR (Data Source): 4) Payer polls or subscribes to Task to see if data request is completed
 
-note over EHR (Data Source):5) Payer locates requested data\npossibly with human involvement\n to find/aggregate/filter/approve it
-
+note over EHR (Data Source):5) Locates requested data\npossibly with human involvement\n to find/aggregate/filter/approve it
 
 Payer (Data Consumer)->EHR (Data Source):6) GET updated Task when request is completed
 

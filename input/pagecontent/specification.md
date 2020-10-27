@@ -34,9 +34,65 @@ The sequence diagram in Figure 2 below outlines a successful interaction between
 
 The following example transactions show scenarios of using direct query to get clinical data from an EHR.
 
+##### Scenario 1
+
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
+
+**Preconditions and Assumptions:**
+
+- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
+- Payer A knows the *logical id* of the resource for Patient B
+- Payer A knows the appropriate codes for searching for active conditions
+
+Following guidance in US Core searches for all active conditions using the combination of the patient and clinical-status search parameters:
+
+`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
+
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
+---
+
+##### Scenario 2
+
+Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+
+**Preconditions and Assumptions:**
+
+- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
+- Payer A knows the *logical id* of the resource for Patient B
+- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 *Hemoglobin A1c/Hemoglobin.total in Blood*)
+
+Following guidance in US Core searches for all HbA1c test results by a date range using using the combination of the patient and code and date search parameters:
+
+`GET [base]/Observation?patient=[reference]&code=[code]&date=gt[date]`
+
 {% include examplebutton_default.html example="direct-query2-scenario" b_title = "Click Here To See Example Direct Query for Patient's HbA1c Results after 2020-01-01" %}
+
+---
+
+##### Scenario 3
+
+Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C to improve care coordination.
+
+**Preconditions and Assumptions:**
+
+- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
+- Payer A knows the *logical id* of the resource for Patient B
+- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 *History & Physical Note*)
+- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case then the Payer can search using the date parameter and select the most recent history and physical exam notes for the query results.)
+
+Getting the latest History and Physical is typically a two step process:
+
+1. Query DocumentReference which references the actual notes file
+2. Fetch the notes file
+
+Following the US Core Clinical Notes Guidance section, Payer searches for History and Physical CCDA document using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets a particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
+
+`GET [base]/DocumentReference?patient=[id]&type=[type-code]&_sort=-period&_count=1`
+
+The actual CCDA document is referenced in `DocumentReference.content.attachment.url` and can be fetched using a RESTful GET.
+
+`GET [DocumentReference.content.attachment.url]`
 
 {% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
 
@@ -113,9 +169,9 @@ When the task is complete, the Payer fetches the data of interest which is refer
 As discussed above, there are 4 basic implementation variations in any combination with task based exchanges:
 
 1. structured vs free text request
-1. Whether a formal authorization is needed
 1. Subscription vs polling
 1. Fetching contained vs external data
+1. Whether a formal authorization is needed
 
 The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
 
@@ -130,23 +186,37 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 {% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Basic interaction using no formal authorization, Structured data for request, Polling, External resource references for output' %}
 
-{% include examplebutton_default.html example="todo2" b_title = 'Interaction with a formal authorization' %}
-
 {% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text for the request instead of structured data.' %}
 
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling.' %}
 
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction using contained resource references for output instead of external references.' %}
 
+{% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Interaction with a formal authorization' %}
+
 ---
 
 ##### Scenario 2
+
+Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+
+Preconditions and Assumptions:
+
+- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
 
 {% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
 ---
 
 ##### Scenario 3
+
+Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+
+Preconditions and Assumptions:
+
+- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
 {% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 

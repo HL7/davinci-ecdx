@@ -27,6 +27,12 @@ Publishing Punch list for Jan Ballot:
 - [ ] Add Example Scenarios
 - [ ] QA
   - [ ] fix bad dependency to hrex - check with GG
+- [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm
+- [ ] trackers
+   - [ ] Block Vote 5
+   - [ ] Reopen FHIR-23441
+   - [ ] Reconciliation Spreadsheet  
+-
 </div>
 
 Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.

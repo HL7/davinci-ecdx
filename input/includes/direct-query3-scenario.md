@@ -1,3 +1,4 @@
+<!--
 #### Scenario
 
 Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C to improve care coordination.
@@ -21,7 +22,7 @@ Following the US Core Clinical Notes Guidance section, Payer searches for Histor
 The actual CCDA document is referenced in `DocumentReference.content.attachment.url` and can be fetched using a RESTful GET.
 
 `GET [DocumentReference.content.attachment.url]`
-
+-->
 ##### Example:
 
 ###### Step 1 - Search for DocumentReference

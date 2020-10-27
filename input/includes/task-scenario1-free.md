@@ -53,7 +53,7 @@ GET Task/cdex-example1-free-text-completed
 
 **Request**
 ~~~
-POST [base]Condition/858
+GET [base]Condition/858
 ~~~
 
 {% include request-headers.md %}

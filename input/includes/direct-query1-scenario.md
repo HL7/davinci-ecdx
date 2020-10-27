@@ -1,3 +1,4 @@
+<!--
 #### Scenario
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
@@ -10,7 +11,9 @@ Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to co
 
 Following guidance in US Core searches for all active conditions using the combination of the patient and clinical-status search parameters:
 
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
+`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission
+`
+-->
 
 ##### Example:
 

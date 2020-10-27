@@ -1,3 +1,4 @@
+<!--
 #### Scenario
 
 Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
@@ -11,7 +12,7 @@ Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test result
 Following guidance in US Core searches for all HbA1c test results by a date range using using the combination of the patient and code and date search parameters:
 
 `GET [base]/Observation?patient=[reference]&code=[code]&date=gt[date]`
-
+-->
 ##### Example:
 
 **Request**

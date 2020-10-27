@@ -156,6 +156,14 @@ definition:
         reference:
             reference: CapabilityStatement/data-source-server
     -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-authorized-completed
+        reference:
+            reference: Task/cdex-example1-authorized-completed
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: cdex-example1-authorized-request
+        reference:
+            reference: Task/cdex-example1-authorized-request
+    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: cdex-example1-free-text-completed
         reference:
             reference: Task/cdex-example1-free-text-completed
