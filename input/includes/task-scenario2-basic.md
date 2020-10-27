@@ -28,7 +28,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example2-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example2-query-failed/_history/1
 ...(other headers)
 ~~~
 
@@ -46,5 +46,5 @@ GET Task/cdex-example2-query-failed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example2-query-completed.json %}
+{% include_relative Task-cdex-example2-query-failed.json %}
 ~~~
