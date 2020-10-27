@@ -1,12 +1,12 @@
 
-##### Example 1:
+##### Example:
 
 In this example:
 
 1. No formal authorization (order) is needed
 1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
 2. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
-3. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+3. The Patient B's Documents referenced by Task.output are *contained* resources and the actual documents are base64 pdf files in the `DocumentReference.content.attachment.data` elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them. A Document from the resource is rendered below.
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -20,7 +20,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example1-query-request.json %}
+{% include cdex-example3-query-request.json %}
 ~~~
 
 **Response Headers**
@@ -28,7 +28,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example3-query-completed/_history/1
 ...(other headers)
 ~~~
 
@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET Task/cdex-example1-query-completed
+GET [base]Task/cdex-example3-query-completed
 ~~~
 
 {% include request-headers.md %}
@@ -46,22 +46,9 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1-query-completed.json %}
+{% include_relative Task-cdex-example3-query-completed.json %}
 ~~~
 
-###### Step 3 - Fetch Active Conditions
+###### Step 3 - Rendered Documents
 
-**Request**
-~~~
-POST [base]Condition/858
-~~~
-
-{% include request-headers.md %}
-
-{% include response-headers.md %}
-
-**Response Body**
-
-~~~
-{% include condition-858.json %}
-~~~
+<embed  type="application/pdf" frameborder="1" width="640" height="480" src="data:application/pdf;base64,{{site.data.cdex-example3-query-completed.contained[0].entry[0].resource.content[0].attachment.data}}"/>

@@ -11,6 +11,8 @@
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
+<artifact id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Example Task - cdex-example3-query-completed"/>
+<artifact id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Example Task - cdex-example3-query-requested"/>
 <artifact id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="cdex-example1-authorized-completed"/>
 <artifact id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="cdex-example1-authorized-request"/>
 <artifact id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="cdex-example1-free-text-completed"/>
@@ -18,6 +20,8 @@
 <artifact id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="cdex-example1-query-completed"/>
 <artifact id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="cdex-example1-query-completed-contained"/>
 <artifact id="Task/cdex-example1-query-requested" key="Task-cdex-example1-query-requested" name="cdex-example1-query-requested"/>
+<artifact id="Task/cdex-example2-query-completed" key="Task-cdex-example2-query-completed" name="cdex-example2-query-completed"/>
+<artifact id="Task/cdex-example2-query-requested" key="Task-cdex-example2-query-requested" name="cdex-example2-query-requested"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

@@ -1,10 +1,10 @@
 resourceType: Task
-id: cdex-example2-query-completed
+id: cdex-example3-query-requested
 meta:
   profile:
     - >-
       http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-status: completed
+status: requested
 intent: order
 code:
   coding:
@@ -13,16 +13,20 @@ code:
 for:
   reference: http://example.org/fhir/Patient/cdex-example-patient
 authoredOn: '2020-10-27T11:05:34-07:00'
-lastModified: '2020-10-27T18:23:27-07:00'
+lastModified: '2020-10-27T11:05:34-07:00'
 requester:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 owner:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 reasonCode:
-  text: Quality reporting requirements and quality care scoring
+  text: To improve care coordination
 input:
   - type:
       coding:
         - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-          code: data-query
-    valueString: Observation?patient=cdex-example-patient&date=gt2018-01-01&code=4548-4
+          code: data-code
+    valueCodeableConcept:
+      coding:
+        - system: 'http://loinc.org'
+          code: 34117-2
+      text: History and Physical Notes

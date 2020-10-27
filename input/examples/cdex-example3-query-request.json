@@ -1,18 +1,12 @@
 {
     "resourceType": "Task",
-    "id": "cdex-example1-free-text-completed",
+    "id": "cdex-example3-query-requested",
     "meta": {
-        "versionId": "3",
-        "lastUpdated": "2020-10-26T04:04:52.000+00:00",
-        "source": "#tgH2FoPFuCq0yjw5",
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ]
     },
-    "status": "completed",
-    "businessStatus": {
-        "text": "Results reviewed for release"
-    },
+    "status": "requested",
     "intent": "order",
     "code": {
         "coding": [
@@ -25,8 +19,8 @@
     "for": {
         "reference": "http://example.org/fhir/Patient/cdex-example-patient"
     },
-    "authoredOn": "2020-10-26T02:58:55.179Z",
-    "lastModified": "2020-10-26T04:04:52.019Z",
+    "authoredOn": "2020-10-27T11:05:34-07:00",
+    "lastModified": "2020-10-27T11:05:34-07:00",
     "requester": {
         "reference": "http://example.org/fhir/Organization/cdex-example-payer"
     },
@@ -34,10 +28,7 @@
         "reference": "http://example.org/fhir/Organization/cdex-example-payer"
     },
     "reasonCode": {
-        "text": "Support prior authorization decision-making"
-    },
-    "reasonReference": {
-        "reference": "http://example.org/fhir/Claim/cdex-example-claim"
+        "text": "To improve care coordination"
     },
     "input": [
         {
@@ -50,22 +41,13 @@
                 ]
             },
             "valueCodeableConcept": {
-                "text": "request for patient's active conditions"
-            }
-        }
-    ],
-    "output": [
-        {
-            "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-                        "code": "data-value"
+                        "system": "http://loinc.org",
+                        "code": "34117-2"
                     }
-                ]
-            },
-            "valueReference": {
-                "reference": "http://example.org/fhir/Condition/858"
+                ],
+                "text": "History and Physical Notes"
             }
         }
     ]

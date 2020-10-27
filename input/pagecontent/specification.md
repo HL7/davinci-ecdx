@@ -218,7 +218,7 @@ Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
-{% include examplebutton_default.html example="todo2" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
 ### Bulk Data
 

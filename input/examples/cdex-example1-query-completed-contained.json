@@ -74,11 +74,6 @@
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ]
     },
-    "basedOn": [
-        {
-            "reference": "http://example.org/fhir/Claim/cdex-example-claim"
-        }
-    ],
     "status": "completed",
     "businessStatus": {
         "text": "Results reviewed for release"

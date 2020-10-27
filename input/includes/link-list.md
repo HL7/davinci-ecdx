@@ -55,3 +55,4 @@
 [Background]: background.html
 [Da Vinci Overview]: http://www.hl7.org/about/davinci/index.cfm
 [Data Exchange For Quality Measures (DEQM) Implementation Guide]: http://hl7.org/fhir/us/davinci-deqm/
+[batch]: {{site.data.fhir.path}}http.html#transaction

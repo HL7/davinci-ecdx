@@ -1,12 +1,12 @@
 
-##### Example 1:
+##### Example:
 
 In this example:
 
 1. No formal authorization (order) is needed
 1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
 1. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
-1. **In this example there is no matching data**. The `Task.status` is "completed" and there is no data for the Payer to fetch.
+1. **In this example there is no matching data**. The `Task.status` is "completed" and 'Task.output' is absent.
 
 ###### Step 1 - POST Task to Provider endpoint
 
