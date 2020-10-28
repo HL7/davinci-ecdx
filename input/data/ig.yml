@@ -105,18 +105,29 @@ definition:
         name: CDex Task Data Request Profile
         reference:
             reference: StructureDefinition/cdex-task-data-request
-    -   description: This CapabilityStatement describes the expected capabilities
-            of a Da Vinci CDex Data Consumer (often a Payer)  when requesting clinical
-            data from the Data Source (often an EHR).
-        exampleBoolean: false
-        name: Data Consumer CapabilityStatement
-        reference:
-            reference: CapabilityStatement/data-consumer
     -   description: 'This CapabilityStatement describes the expected capabilities
-            of a Da Vinci CDex Data Consumer (often a Payer) in Server mode when *reponding"
-            to a  Data Source  (often an EHR) or one of its proxies is acting as a
-            Client during a clnical data exchange *using the Task based approach*.   This
-            includes the following interactions:
+            of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when
+            requesting clinical data from the Data Source (often an EHR) during a
+            clinical data exchange.  This includes the following interactions:
+
+
+            1. Requesting Clinical Data using a FHIR RESTful query
+
+            1. POSTing a Task resource representing a request for clinical data
+
+            1. POSTing a Subscription resource
+
+            1. Polling a Task resource
+
+            '
+        exampleBoolean: false
+        name: Data Consumer Client CapabilityStatement
+        reference:
+            reference: CapabilityStatement/data-consumer-client
+    -   description: 'This CapabilityStatement describes the expected capabilities
+            of a Da Vinci CDex Data Consumer (often a Payer) in *Server* mode when  responding
+            to a  Data Source  (often an EHR) or one of its proxies during a clinical
+            data exchange.   This includes the following interactions:
 
 
             1. Responding to a query for Authorization information represented by
@@ -129,9 +140,9 @@ definition:
         reference:
             reference: CapabilityStatement/data-consumer-server
     -   description: 'This CapabilityStatement describes the expected capabilities
-            of a Da Vinci CDex Data Source (often an EHR) in Client mode when during
-            a clnical data exchange with a Data Consumer using either Direct Query
-            or the Task based approach. This includes the following interactions:
+            of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during
+            a clinical data exchange with a Data Consumer. This includes the following
+            interactions:
 
 
             1. Query for Authorization information represented by a CommunicationRequest
@@ -144,13 +155,13 @@ definition:
         reference:
             reference: CapabilityStatement/data-source-client
     -   description: "This CapabilityStatement describes the expected capabilities\
-            \ of a Da Vinci CDex Data Source (often an EHR) in Server mode when *reponding\"\
-            \ to a Data Consumer (often a Payer)  acting as a Client during a clnical\
-            \ data exchange using either Direct Query or the Task based approach.\
-            \ This includes the following interactions:\n\n1. Responding to a FHIR\
-            \ RestFul Query for Clinical Data \n1. Responding to a POST of a  Task\
-            \ resource representing a request for clinical data\n1. Responding to\
-            \ polling of a Task resource\n"
+            \ of a Da Vinci CDex Data Source (often an EHR) in *Server* mode when\
+            \ responding to a Data Consumer (often a Payer)  during a clinical data\
+            \ exchange. This includes the following interactions:\n\n1. Responding\
+            \ to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST\
+            \ of a  Task resource representing a request for clinical data\n1. Responding\
+            \ to a POST of a  Subscription  resource\n1. Responding to polling of\
+            \ a Task resource\n"
         exampleBoolean: false
         name: Data Source Server CapabilityStatement
         reference:

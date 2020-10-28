@@ -7,7 +7,7 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
-<artifact id="CapabilityStatement/data-consumer" key="CapabilityStatement-data-consumer" name="Data Consumer CapabilityStatement"/>
+<artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
