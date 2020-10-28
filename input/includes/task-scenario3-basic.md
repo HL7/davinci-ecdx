@@ -5,7 +5,7 @@ In this example:
 
 1. No formal authorization (order) is needed
 1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-2. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
+2. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
 3. The Patient B's Documents referenced by Task.output are *contained* resources and the actual documents are base64 pdf files in the `DocumentReference.content.attachment.data` elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them. A Document from the resource is rendered below.
 
 ###### Step 1 - POST Task to Provider endpoint
@@ -32,7 +32,7 @@ Location: http://example.org/FHIR/Task/cdex-example3-query-completed/_history/1
 ...(other headers)
 ~~~
 
-###### Step 2 - Repeatedly Poll until Task.status is updated to "completed"
+###### Step 2 - Poll Task
 
 **Polling Request**
 ~~~

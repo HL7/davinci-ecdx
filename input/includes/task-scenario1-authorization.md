@@ -9,7 +9,7 @@ In this example:
 1. The Payer creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
 1. The Payer POSTS a Task to the Provider endpoint, the CommunicationRequest is referenced in `Task.basedOn`
 1. The Provider fetches and inspects the CommunicationRequest to review the authorization.  
-1. The Payer polls the Task resource until the `Task.status` indicates it is completed or rejected.
+1. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
 1. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
 ###### Step 1 - Create CommunicationRequest (on Payer system)
@@ -59,7 +59,7 @@ POST [base]CommunicationRequest/cdex-example1-authorization
 {% include cdex-example1-authorization.json %}
 ~~~
 
-###### Step 4 - Repeatedly Poll until Task.status is updated to "completed"
+###### Step 4 - Poll Task
 
 **Polling Request**
 ~~~
