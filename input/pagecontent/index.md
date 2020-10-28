@@ -3,7 +3,7 @@ Publishing Punch list for Jan Ballot:
 
 - [X] Remove contained guidance and Task Profile
 - [X] Add content to make clear in data includes non-FHIR resources
-- [ ] Flesh out the Scope and Usage section
+- [X] Flesh out the Scope and Usage section
   - [X] how does this IG fit into the family of Da Vinci IGs
   - [X] List potential scenarios where it could be Used
   - [X] explain the value it adds over HRex and US Core
@@ -12,9 +12,11 @@ Publishing Punch list for Jan Ballot:
   - The vast majority of these trackers won't apply to a rewritten IG and we resolve them en bloc? A few may require edits to the background section
 - [X] Task Profile?
   - [X] tighten down codes  - e.g. LOINC for document types
-- [ ] Establish CapabilityStatements for roles
-    - data source
-    - data requester
+- [X] Establish CapabilityStatements for roles
+    - [X] data source client
+    - [X] data source server
+    - [X] data requester client
+    - [X] data source server
 - [X] Describe and show how CommunicationRequest ServiceRequest for authorization
 - [X] Create Decision Tree/Section for when to use Task
   - Decision based on Authorization, Access/Privacy, Appropriateness or knowledge of Codes/free text request
@@ -27,12 +29,14 @@ Publishing Punch list for Jan Ballot:
 - [X] Add Example Scenarios
 - [ ] QA
   - [ ] fix bad dependency to hrex - check with GG
-- [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm
+  - [ ] QA editing ( typos/ grammar )
+- [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm  (scheduled for 11/8/2020  PC WG Call)
 - [ ] trackers
-   - [ ] Block Vote 5
-   - [ ] Reopen FHIR-23441
+   - [X] applied all dispositioned trackers - (The refactoring has been sufficiently large that it is not practical/useful to apply all the trackers as dispositioned - noted where the changes essentially satisfied the tracker.)
+   - [ ] Block Vote 5 - preapplied (scheduled for 11/8/2020  PC WG Call)
+   - [ ] Reopen FHIR-23441 - (scheduled for 11/8/2020  PC WG Call)
    - [ ] Reconciliation Spreadsheet  
--
+
 </div>
 
 Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.
