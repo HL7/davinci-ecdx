@@ -30,7 +30,7 @@ Publishing Punch list for Jan Ballot:
 - [ ] QA
   - [ ] fix bad dependency to hrex - check with GG
   - [ ] QA editing ( typos/ grammar )
-- [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm  (scheduled for 11/8/2020  PC WG Call)
+- [ ] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm  (vote 11/1/2020  PC WG Call  provisionally to Block Vote, see below )
 - [ ] trackers
    - [X] applied all dispositioned trackers - (The refactoring has been sufficiently large that it is not practical/useful to apply all the trackers as dispositioned - noted where the changes essentially satisfied the tracker.)
    - [ ] Block Vote 5 - preapplied (scheduled for 11/8/2020  PC WG Call)
