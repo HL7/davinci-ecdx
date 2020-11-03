@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "description": "This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers (or other providers).  What is unique about this guide is that is provides additional technical guidance on two FHIR transaction approaches for requesting information:\n\n - Direct Query\n - Task Based Approach:\n\nThe types of clinical data is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR bundles, and clinical data such as a specific FHIR resource. By using the FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:\n\n  - improve care coordination\n  - support risk adjustment\n  - ease quality management\n  - facilitate claims auditing and confirm medical necessity\n  - improve member experience\n  - support orders and referrals",
+  "description": "This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical information between provider and payers (or other providers).  What is unique about this guide is that is provides additional technical guidance on two FHIR transaction approaches for requesting information:\n\n - Direct Query\n - Task Based Approach:\n\nThe types of clinical data is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR bundles, and clinical data such as a specific FHIR resource. By using the FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:\n\n  - Improve care coordination\n  - Support risk adjustment\n  - Ease quality management\n  - Facilitate claims auditing\n  - Confirm medical necessity\n  - Support orders and referrals",
   "jurisdiction": [
     {
       "coding": [
@@ -47,7 +47,7 @@
       "id": "hrex",
       "packageId": "hl7.fhir.us.davinci-hrex",
       "uri": "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
-      "version": "current"
+      "version": "0.2.0"
     }
   ],
   "definition": {
@@ -64,7 +64,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n1. POSTing a Task resource representing a request for clinical data\n1. POSTing a Subscription resource\n1. Polling a Task resource\n",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n1. POSTing a Task resource representing a request for clinical data\n1. POSTing a Subscription resource\n1. Polling a Task resource",
         "exampleBoolean": false,
         "name": "Data Consumer Client CapabilityStatement"
       },
@@ -80,7 +80,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during a clinical data exchange with a Data Consumer. This includes the following interactions:\n\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Postiing a subscription notification to a Data Consumer endpoint updating the status of a Task",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during a clinical data exchange with a Data Consumer. This includes the following interactions:\n\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Posting a subscription notification to a Data Consumer endpoint updating the status of a Task",
         "exampleBoolean": false,
         "name": "Data Source Client CapabilityStatement"
       },
@@ -88,7 +88,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-server"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Server* mode when responding to a Data Consumer (often a Payer)  during a clinical data exchange. This includes the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST of a  Task resource representing a request for clinical data\n1. Responding to a POST of a  Subscription  resource\n1. Responding to polling of a Task resource\n",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Server* mode when responding to a Data Consumer (often a Payer)  during a clinical data exchange. This includes the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST of a  Task resource representing a request for clinical data\n1. Responding to a POST of a  Subscription  resource\n1. Responding to polling of a Task resource",
         "exampleBoolean": false,
         "name": "Data Source Server CapabilityStatement"
       },

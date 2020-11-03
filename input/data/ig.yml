@@ -117,9 +117,7 @@ definition:
 
             1. POSTing a Subscription resource
 
-            1. Polling a Task resource
-
-            '
+            1. Polling a Task resource'
         exampleBoolean: false
         name: Data Consumer Client CapabilityStatement
         reference:
@@ -148,7 +146,7 @@ definition:
             1. Query for Authorization information represented by a CommunicationRequest
             or ServiceRequest
 
-            1. Postiing a subscription notification to a Data Consumer endpoint updating
+            1. Posting a subscription notification to a Data Consumer endpoint updating
             the status of a Task'
         exampleBoolean: false
         name: Data Source Client CapabilityStatement
@@ -161,7 +159,7 @@ definition:
             \ to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST\
             \ of a  Task resource representing a request for clinical data\n1. Responding\
             \ to a POST of a  Subscription  resource\n1. Responding to polling of\
-            \ a Task resource\n"
+            \ a Task resource"
         exampleBoolean: false
         name: Data Source Server CapabilityStatement
         reference:
@@ -218,7 +216,7 @@ dependsOn:
 -   id: hrex
     packageId: hl7.fhir.us.davinci-hrex
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
-    version: current
+    version: 0.2.0
 description: "This IG provides detailed guidance that helps implementers use FHIR-based\
     \ interactions and resources relevant to support specific exchanges of clinical\
     \ information between provider and payers (or other providers).  What is unique\
@@ -233,9 +231,9 @@ description: "This IG provides detailed guidance that helps implementers use FHI
     \ explicit about the data they are requesting, as opposed to general requests\
     \ which often result in providers sending more information than might be necessary\
     \ to make sure claims are supported. Benefits resulting from the information exchange\
-    \ interaction include:\n\n  - improve care coordination\n  - support risk adjustment\n\
-    \  - ease quality management\n  - facilitate claims auditing and confirm medical\
-    \ necessity\n  - improve member experience\n  - support orders and referrals"
+    \ interaction include:\n\n  - Improve care coordination\n  - Support risk adjustment\n\
+    \  - Ease quality management\n  - Facilitate claims auditing\n  - Confirm medical\
+    \ necessity\n  - Support orders and referrals"
 fhirVersion:
 - 4.0.1
 id: hl7.fhir.us.davinci-cdex

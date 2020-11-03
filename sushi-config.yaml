@@ -21,12 +21,12 @@ description: >-
 
   The types of clinical data is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR bundles, and clinical data such as a specific FHIR resource. By using the FHIR standard and implementing this guide the quality of information shared can be improved.   Payers can be explicit about the data they are requesting, as opposed to general requests which often result in providers sending more information than might be necessary to make sure claims are supported. Benefits resulting from the information exchange interaction include:
 
-    - improve care coordination
-    - support risk adjustment
-    - ease quality management
-    - facilitate claims auditing and confirm medical necessity
-    - improve member experience
-    - support orders and referrals
+    - Improve care coordination
+    - Support risk adjustment
+    - Ease quality management
+    - Facilitate claims auditing
+    - Confirm medical necessity
+    - Support orders and referrals
 
 license: CC0-1.0
 date: 2020-10-01
@@ -39,7 +39,7 @@ dependencies:
     id: uscore
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: current
+    version: 0.2.0
     id: hrex
 parameters:
   path-resource:

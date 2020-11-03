@@ -19,7 +19,7 @@ contained:
             coding:
               - system: 'http://loinc.org'
                 code: 34117-2
-                display: History and Physical
+                display: History and physical note
             text: History and Physical
           category:
             - coding:
@@ -47,7 +47,7 @@ contained:
             coding:
               - system: 'http://loinc.org'
                 code: 34117-2
-                display: History and Physical
+                display: History and physical note
             text: History and Physical
           category:
             - coding:
