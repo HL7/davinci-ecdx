@@ -30,7 +30,7 @@ Publishing Punch list for Jan Ballot:
 - [ ] QA
   - [ ] CapabilityStatement	error	URL value 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide-hl7.fhir.us.davinci-hrex|0.2.0' does not resolve)- check with GG [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/hrex.20references.20not.20resolving)
   - [ ] The link 'history.html' for "History" cannot be resolved - See [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/searchform.20issue.20--.20how.20to.20resolve.3F)
-  - [ ] Warnings: fix Jira issues
+  - [X] Warnings: [fix Jira issues](https://confluence.hl7.org/display/HL7/Configuring+Specification+Feedback) PR Cdex #93
   - [ ] Warnings: add Name and Descriptions to instances
   - [ ] QA editing ( typos/ grammar )
   - [ ] compare for consistency with [Da Vinci - Payer Coverage Decision Exchange](http://build.fhir.org/ig/HL7/davinci-pcde/usecases.html)
