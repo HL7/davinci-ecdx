@@ -110,7 +110,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
 
 In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the *CommunicationRequest plus Task* section and the *Requesting Exchange using Task* sections of the Da Vinci HRex Implementation Guide.
 
-**For CDex Task based transactions the [CDex Task Data Request Profile] **SHALL** be used by the Payer
+**For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
 #### Benefits this Approach
 
@@ -168,10 +168,10 @@ When the task is complete, the Payer fetches the data of interest which is refer
 
 As discussed above, there are 4 basic implementation variations in any combination with task based exchanges:
 
-1. structured vs free text request
-1. Subscription vs polling
-1. Fetching contained vs external data
-1. Whether a formal authorization is needed
+1. Structured vs Free Text Request
+1. Subscription vs Polling
+1. Fetching Contained vs External Data
+1. Whether Formal Authorization is Needed
 
 The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
 
