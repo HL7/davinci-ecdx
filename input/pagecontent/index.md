@@ -35,11 +35,11 @@ Publishing Punch list for Jan Ballot:
   - [ ] QA editing ( typos/ grammar )
   - [X] compare for consistency with [Da Vinci - Payer Coverage Decision Exchange](http://build.fhir.org/ig/HL7/davinci-pcde/usecases.html)
 - [X] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm  (vote 11/1/2020  PC WG Call  provisionally to Block Vote, see below )
-- [ ] trackers
+- [X] trackers
    - [X] applied all dispositioned trackers - (The refactoring has been sufficiently large that it is not practical/useful to apply all the trackers as dispositioned - noted where the changes essentially satisfied the tracker.)
-   - [ ] Block Vote 5 - preapplied (scheduled for 11/8/2020  PC WG Call)
-   - [ ] Reopen FHIR-23441 - (scheduled for 11/8/2020  PC WG Call)
-   - [ ] Reconciliation Spreadsheet
+   - [X] Block Vote 5 - preapplied (scheduled for 11/8/2020  PC WG Call)
+   - [X] Reopen FHIR-23441 - (scheduled for 11/8/2020  PC WG Call)
+   - [X] Reconciliation Spreadsheet
 
 </div>
 

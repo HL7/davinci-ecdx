@@ -11,13 +11,13 @@ FHIR offers numerous architectural approaches for sharing data between systems. 
 
 For Direct Query, the Payer directly queries the EHR for specific data using the standard FHIR RESTful search. *This is the preferred option*. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
-#### Benefits this Approach
+#### Benefits
 
- - "Out of the Box" FHIR Transaction
- - Widely implemented
- - Simplest Workflow
- - Authorization/Authentication protocols established
- - No Human intervention needed
+- "Out of the Box" FHIR transaction
+- Widely implemented
+- Simplest workflow
+- Authorization/Authentication protocols established
+- No human intervention needed
 
 #### Purpose of Use
 
@@ -112,7 +112,7 @@ In most of these situation, there is human involvement needed to find the data, 
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
-#### Benefits this Approach
+#### Benefits
 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
 
@@ -133,7 +133,7 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 #### Authorization
 
-The most common scenario is where Task can (and even should) exist without an authorization. Task is used alone when there is no need for a formal authorization (order). In other situations when an authorization is needed, the `Task.basedOn` element references either a [CommunicationRequest] or [ServiceRequest] to represent the authorization for data to flow. Both of these use cases ( with and without authorization) are illustrated in the examples below.
+The *most common* scenario is where Task can (and even should) exist without an authorization. Task is used alone when there is no need for a formal authorization (order). In other situations when an authorization is needed, the `Task.basedOn` element references either a [CommunicationRequest] or [ServiceRequest] to represent the authorization for data to flow. Both of these use cases ( with and without authorization) are illustrated in the examples below.
 
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.note-to-balloters}
