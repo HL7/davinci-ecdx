@@ -1,1 +1,6 @@
 == Suppressed Messages ==
+# the example demonstrate the legitimate use case for using free text instead of codes:
+WARNING: Task/cdex-example1-free-text-completed: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
+WARNING: Task/cdex-example1-free-text-request: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
+# Jira has been updated however this warning persists:
+WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jiraspec.tmp.xml' (currently in Github) and 'jira.xml' (reflects current IG content)

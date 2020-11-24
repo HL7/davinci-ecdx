@@ -2,6 +2,16 @@
     "resourceType": "Task",
     "id": "cdex-example1-authorized-completed",
     "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Scenario 1 Completed Authorization Example"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Completed Task to seek a patient active conditions with a reference to a formal authorization."
+            }
+        ],
         "versionId": "3",
         "lastUpdated": "2020-10-26T04:04:52.000+00:00",
         "source": "#tgH2FoPFuCq0yjw5",

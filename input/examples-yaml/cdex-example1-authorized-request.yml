@@ -1,6 +1,11 @@
 resourceType: Task
 id: cdex-example1-authorized-request
 meta:
+  extension:
+    - url: 'http://hl7.org/fhir/StructureDefinition/instance-name'
+      valueString: Scenario 1 Authorization Example
+    - url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
+      valueMarkdown: Task to seek a patient active conditions with a reference to a formal authorization.
   profile:
     - >-
       http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request

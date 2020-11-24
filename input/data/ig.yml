@@ -164,48 +164,65 @@ definition:
         name: Data Source Server CapabilityStatement
         reference:
             reference: CapabilityStatement/data-source-server
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-authorized-completed
+    -   description: Completed Task to seek a patient active conditions with a reference
+            to a formal authorization.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Completed Authorization Example
         reference:
             reference: Task/cdex-example1-authorized-completed
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-authorized-request
+    -   description: Task to seek a patient active conditions with a reference to
+            a formal authorization.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Authorization Example
         reference:
             reference: Task/cdex-example1-authorized-request
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-free-text-completed
+    -   description: Completed Task to seek a patient active conditions using free
+            text for the input.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Completed Free Text Example
         reference:
             reference: Task/cdex-example1-free-text-completed
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-free-text-request
+    -   description: Task to seek a patient active conditions using free text for
+            the input.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Free Text Example
         reference:
             reference: Task/cdex-example1-free-text-request
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-query-completed-contained
+    -   description: Completed Task to seek a patient active conditions using a contained
+            resource for output.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Contained Example
         reference:
             reference: Task/cdex-example1-query-completed-contained
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-query-completed
+    -   description: Completed Task to seek a patient active conditions.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Completed Example
         reference:
             reference: Task/cdex-example1-query-completed
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example1-query-requested
+    -   description: Task to seek a patient active conditions.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1 Example
         reference:
             reference: Task/cdex-example1-query-requested
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example2-query-failed
+    -   description: Task to seek a patient's HbA1c test results.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 2 Failed Task Example
         reference:
             reference: Task/cdex-example2-query-failed
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example2-query-requested
+    -   description: Task to seek a patient HbA1c) test results.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 2 Task Example
         reference:
             reference: Task/cdex-example2-query-requested
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example3-query-completed
+    -   description: Completed Task to seek a patient's latest history and physical
+            exam notes.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 3 Completed Task Example
         reference:
             reference: Task/cdex-example3-query-completed
-    -   exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: cdex-example3-query-requested
+    -   description: Task to seek a patient's latest history and physical exam notes.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 3 Task Example
         reference:
             reference: Task/cdex-example3-query-requested
 dependsOn:

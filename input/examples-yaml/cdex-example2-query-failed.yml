@@ -1,6 +1,11 @@
 resourceType: Task
 id: cdex-example2-query-failed
 meta:
+  extension:
+    - url: 'http://hl7.org/fhir/StructureDefinition/instance-name'
+      valueString: Scenario 2 Failed Task Example
+    - url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
+      valueMarkdown: Task to seek a patient's HbA1c test results.
   profile:
     - >-
       http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request

@@ -29,11 +29,13 @@ Publishing Punch list for Jan Ballot:
 - [X] Add Example Scenarios
 - [ ] QA
   - [ ] CapabilityStatement	error	URL value 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide-hl7.fhir.us.davinci-hrex|0.2.0' does not resolve)- check with GG [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/hrex.20references.20not.20resolving)
-  - [ ] The link 'history.html' for "History" cannot be resolved - See [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/searchform.20issue.20--.20how.20to.20resolve.3F)
+  - [X] The link 'history.html' for "History" cannot be resolved - See [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/searchform.20issue.20--.20how.20to.20resolve.3F)
   - [X] Warnings: [fix Jira issues](https://confluence.hl7.org/display/HL7/Configuring+Specification+Feedback) PR Cdex #93
-  - [ ] Warnings: add Name and Descriptions to instances
+  - [X] Warnings: add Name and Descriptions to instances
   - [ ] QA editing ( typos/ grammar )
   - [X] compare for consistency with [Da Vinci - Payer Coverage Decision Exchange](http://build.fhir.org/ig/HL7/davinci-pcde/usecases.html)
+  - [X] update JIRA
+  - [ ] update 'input/ignoreWarnings.txt'
 - [X] NIB: http://www.hl7.org/special/committees/tsc/ballotmanagement/ConfirmNIB.cfm  (vote 11/1/2020  PC WG Call  provisionally to Block Vote, see below )
 - [X] trackers
    - [X] applied all dispositioned trackers - (The refactoring has been sufficiently large that it is not practical/useful to apply all the trackers as dispositioned - noted where the changes essentially satisfied the tracker.)

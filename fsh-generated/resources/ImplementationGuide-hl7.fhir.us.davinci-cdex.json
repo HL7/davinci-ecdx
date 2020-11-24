@@ -96,77 +96,88 @@
         "reference": {
           "reference": "Task/cdex-example1-authorized-completed"
         },
-        "name": "cdex-example1-authorized-completed",
+        "description": "Completed Task to seek a patient active conditions with a reference to a formal authorization.",
+        "name": "Scenario 1 Completed Authorization Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-authorized-request"
         },
-        "name": "cdex-example1-authorized-request",
+        "description": "Task to seek a patient active conditions with a reference to a formal authorization.",
+        "name": "Scenario 1 Authorization Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-free-text-completed"
         },
-        "name": "cdex-example1-free-text-completed",
+        "description": "Completed Task to seek a patient active conditions using free text for the input.",
+        "name": "Scenario 1 Completed Free Text Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-free-text-request"
         },
-        "name": "cdex-example1-free-text-request",
+        "description": "Task to seek a patient active conditions using free text for the input.",
+        "name": "Scenario 1 Free Text Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-query-completed-contained"
         },
-        "name": "cdex-example1-query-completed-contained",
+        "description": "Completed Task to seek a patient active conditions using a contained resource for output.",
+        "name": "Scenario 1 Contained Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-query-completed"
         },
-        "name": "cdex-example1-query-completed",
+        "description": "Completed Task to seek a patient active conditions.",
+        "name": "Scenario 1 Completed Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example1-query-requested"
         },
-        "name": "cdex-example1-query-requested",
+        "description": "Task to seek a patient active conditions.",
+        "name": "Scenario 1 Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example2-query-failed"
         },
-        "name": "cdex-example2-query-failed",
+        "description": "Task to seek a patient's HbA1c test results.",
+        "name": "Scenario 2 Failed Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example2-query-requested"
         },
-        "name": "cdex-example2-query-requested",
+        "description": "Task to seek a patient HbA1c) test results.",
+        "name": "Scenario 2 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example3-query-completed"
         },
-        "name": "cdex-example3-query-completed",
+        "description": "Completed Task to seek a patient's latest history and physical exam notes.",
+        "name": "Scenario 3 Completed Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
         "reference": {
           "reference": "Task/cdex-example3-query-requested"
         },
-        "name": "cdex-example3-query-requested",
+        "description": "Task to seek a patient's latest history and physical exam notes.",
+        "name": "Scenario 3 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       }
     ],

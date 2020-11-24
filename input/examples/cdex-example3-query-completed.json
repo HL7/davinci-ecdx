@@ -2,6 +2,16 @@
     "resourceType": "Task",
     "id": "cdex-example3-query-completed",
     "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Scenario 3 Completed Task Example"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Completed Task to seek a patient's latest history and physical exam notes."
+            }
+        ],
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ]
