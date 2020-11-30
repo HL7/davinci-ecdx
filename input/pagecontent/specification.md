@@ -103,9 +103,9 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
 - Whether a specific Authorization is needed
 - The Access to the data is limited (for example due to patient privacy concerns the data needs to be reviewed and/or filtered )
 - The Appropriateness of the request needs to be determined
-- The data needed is described in an unstructured or non-computable form.
-  - Because the payor does not have knowledge of specific codes or identifiers to make a direct query
-  - Because there is no way to describe the data in a structure format it is described in free text.
+- The data needed is described in an unstructured or non-computable form. For example:
+  - the payor may not have knowledge of specific codes or identifiers to make a direct query
+  - there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible
 
 In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the *CommunicationRequest plus Task* section and the *Requesting Exchange using Task* sections of the Da Vinci HRex Implementation Guide.
@@ -119,10 +119,10 @@ All of the following except the last of these benefits are relevant whether huma
 - Easy ability to say 'yes' or 'no', including providing a reason for refusal.
 - Provides the ability to represent the reason (*Purpose of Use*) in the `Task.reasonCode` element using either codes or free text.
 - Allows linking the request to its associated outputs without creating a new resource
-- Can be polled or subscribed to to retrieve the results
+- Can use polling or subscriptions to retrieve the results
 - Allows conveying the 'status' of a request in progress
-   - Monitoring for status doesn't require a change in workflow from monitoring for final results - i.e. there's no increase in complexity for the receiver whether status updates occur or not
-   - Note automated processes typically won't have status updates.
+   - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
+   - Note that fully automated processes typically will not have status updates.
 
 #### Sequence Diagram
 
@@ -162,7 +162,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Fetching the Data
 
-When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle isn't something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.  If there is no data found by the Provider the The `Task.status` is "failed" with a reason in `Task.statusReason` (e.g.,"no matching results") and the `Task.output` is absent.
+When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.  If there is no data found by the Provider the The `Task.status` is "failed" with a reason in `Task.statusReason` (e.g.,"no matching results") and the `Task.output` is absent.
 
 #### Example Transactions:
 
@@ -184,13 +184,13 @@ Preconditions and Assumptions:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Basic interaction using no formal authorization, Structured data for request, Polling, External resource references for output' %}
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: Structured data (codes) for request, Polling, Output references to external resources, No formal authorization' %}
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text for the request instead of structured data.' %}
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text for the request instead of codes.' %}
 
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling.' %}
 
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction using contained resource references for output instead of external references.' %}
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
 
 {% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Interaction with a formal authorization' %}
 

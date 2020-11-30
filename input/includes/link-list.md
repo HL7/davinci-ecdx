@@ -56,3 +56,4 @@
 [Da Vinci Overview]: http://www.hl7.org/about/davinci/index.cfm
 [Data Exchange For Quality Measures (DEQM) Implementation Guide]: http://hl7.org/fhir/us/davinci-deqm/
 [batch]: {{site.data.fhir.path}}http.html#transaction
+ [HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
