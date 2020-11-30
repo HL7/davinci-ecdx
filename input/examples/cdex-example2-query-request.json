@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Task to seek a patient HbA1c) test results."
+                "valueMarkdown": "Task to seek a patient HbA1c test results."
             }
         ],
         "profile": [

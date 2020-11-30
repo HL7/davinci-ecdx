@@ -209,7 +209,7 @@ definition:
         name: Scenario 2 Failed Task Example
         reference:
             reference: Task/cdex-example2-query-failed
-    -   description: Task to seek a patient HbA1c) test results.
+    -   description: Task to seek a patient HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: Scenario 2 Task Example
         reference:
