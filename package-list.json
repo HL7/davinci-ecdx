@@ -13,9 +13,9 @@
     },
     {
       "version": "0.2.0",
-      "desc": "Jan 2021 Ballot for Da Vinci CDex:Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.",
+      "desc": "Jan 2021 Ballot for Da Vinci CDex: Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.",
       "date": "2020-10-23",
-      "sequence": "STU2",
+      "sequence": "STU1",
       "path": "http://hl7.org/fhir/us/davinci-cdex/2021Jan",
       "status": "ballot",
       "fhirversion": "4.0.1",

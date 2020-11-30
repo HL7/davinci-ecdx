@@ -1,3 +1,4 @@
+<!-- {% raw %}
 <div class="bg-info" markdown="1">
 Publishing Punch list for Jan Ballot:
 
@@ -28,7 +29,7 @@ Publishing Punch list for Jan Ballot:
   1. [X] Pateint's Latest H&P
 - [X] Add Example Scenarios
 - [ ] QA
-  - [ ] CapabilityStatement	error	URL value 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide-hl7.fhir.us.davinci-hrex|0.2.0' does not resolve)- check with GG [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/hrex.20references.20not.20resolving)
+  - [X] CapabilityStatement	error	URL value 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide-hl7.fhir.us.davinci-hrex|0.2.0' does not resolve)- check with GG [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/hrex.20references.20not.20resolving)
   - [X] The link 'history.html' for "History" cannot be resolved - See [Zulip](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/searchform.20issue.20--.20how.20to.20resolve.3F)
   - [X] Warnings: [fix Jira issues](https://confluence.hl7.org/display/HL7/Configuring+Specification+Feedback) PR Cdex #93
   - [X] Warnings: add Name and Descriptions to instances
@@ -44,6 +45,8 @@ Publishing Punch list for Jan Ballot:
    - [X] Reconciliation Spreadsheet
 
 </div>
+
+{% endraw %} -->
 
 Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.
 {:.note-to-balloters}

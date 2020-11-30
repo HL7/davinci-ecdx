@@ -25,7 +25,7 @@
     "implementationGuide": [
         "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex|0.2.0",
         "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|3.1.1",
-        "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide-hl7.fhir.us.davinci-hrex|0.2.0"
+        "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|0.2.0"
     ],
     "jurisdiction": [
         {
