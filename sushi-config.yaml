@@ -65,7 +65,7 @@ parameters:
     - xml
     - json
 copyrightyear: '2020+'
-releaselabel: STU1 - 2nd ballot
+releaselabel: ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
