@@ -30,12 +30,6 @@ definition:
             nameUrl: examples.html
             title: Examples
         -   generation: markdown
-            nameUrl: framework_old.html
-            title: Framework Old
-        -   generation: markdown
-            nameUrl: general-guidance.html
-            title: General Guidance
-        -   generation: markdown
             nameUrl: profiles.html
             title: Profiles
         -   generation: markdown
@@ -44,12 +38,6 @@ definition:
         -   generation: markdown
             nameUrl: terminology.html
             title: Terminology
-        -   generation: markdown
-            nameUrl: using-subscriptions.html
-            title: Using Subscriptions
-        -   generation: markdown
-            nameUrl: using-task.html
-            title: Using Task
         title: Table of Contents
     parameter:
     -   code: copyrightyear
