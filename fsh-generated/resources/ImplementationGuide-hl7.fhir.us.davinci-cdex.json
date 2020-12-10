@@ -263,6 +263,10 @@
         "value": "fsh-generated/includes"
       },
       {
+        "code": "path-expansion-params",
+        "value": "../../input/_resources/exp-params.json"
+      },
+      {
         "code": "active-tables",
         "value": "false"
       },

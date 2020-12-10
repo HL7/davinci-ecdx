@@ -44,6 +44,7 @@ Publishing Punch list for Jan Ballot:
    - [X] Block Vote 5 - preapplied (scheduled for 11/8/2020  PC WG Call)
    - [X] Reopen FHIR-23441 - (scheduled for 11/8/2020  PC WG Call)
    - [X] Reconciliation Spreadsheet
+  - [ ] publication checklist
 
 </div>
 

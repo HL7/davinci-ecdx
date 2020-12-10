@@ -49,6 +49,7 @@ parameters:
     - input/pagecontent
     - input/intro-notes
     - fsh-generated/includes
+  path-expansion-params: '../../input/_resources/exp-params.json'  # for using US ed of SNOMED
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
