@@ -34,7 +34,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
  1. A Provider has not implemented DEQM
  1. Additional information is required for audit of the Quality Measure.
 
-{% include img.html img="image2020-8-18_14-10-46.png" caption="Figure 1" %}
+{% include img.html img="davinci-use-cases.svg" caption="Figure 1" %}
 
 #### Example Scenarios
 
@@ -54,30 +54,22 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 See the [Specification] page for a detailed description of the technical workflow and API guidance.
 
-Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer system and a Provider system.
+Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
 
-{% include img.html img="image2020-9-25_14-15-22.png" caption="Figure 2" %}
+{% include img.html img="workflow-overview.svg" caption="Figure 2" %}
 
 #### Actors and Roles
 
-- The Payer system (Payer) acts in the role of a *data consumer*
-- The Provider system (Provider) acts in the role of a *data source*
+- The Payer or Provider system acts in the role of a *data consumer*
+- The Provider system acts in the role of a *data source*
 - A human practitioner involved in approving/filtering the information provided.
   - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
 
 #### Steps
-1. The Payer system initiates a request for clinical information
+1. The Payer or Provider system initiates a request for clinical information
 1. The Provider system retrieves the the requested data.
-1. The data may be review by the provider prior to sending back to the Payer system
+1. The data may be reviewed by a provider prior to sending back to the Payer system
 1. The data is sent back to the Payer system
 
-#### Provider to Provider
-
-This project scope includes exchanges of clinical information between provider and other providers.  However, this use case has not been sufficiently explored and tested to provide guidance in this version of the guide.
-{:.note-to-balloters}
-
----
-
-<br />
 
 {% include link-list.md %}
