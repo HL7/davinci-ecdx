@@ -81,13 +81,7 @@ Listed below are the resolved trackers for this version:
 1. **Triaged**: clarify when attribution is not present or non-repudiable (FHIR-30870) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
 1. **Triaged**: correct last example bullet (FHIR-31050) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
 
-
 </div>
-
-{% endraw %} -->
-
-Based on balloter feedback, this IG has been completely re-written. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes.
-{:.note-to-balloters}
 
 {{ site.data.ig.description }}
 
