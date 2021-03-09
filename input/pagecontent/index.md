@@ -19,7 +19,7 @@ January 2021 Ballot comments and links to the updated content
 
 Listed below are the resolved trackers for this version:
 
-**Status: Summary (Jira Issue) **[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/) LInk to Change**
+**Status: Summary (Jira Issue) Link to Change**
 1. **Triaged**: CDex documents require signature, but don't explain how used (FHIR-26855) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
 1. **Triaged**: Add C-CDA documents section (from HRex) (FHIR-28158) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
 1. **Triaged**: Interop Framework for Payer2Payer and Internal Systems (FHIR-29683) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
