@@ -90,7 +90,7 @@ list:
       1. **Triaged**: Perhaps just call for current published version? ([FHIR-30858](https://jira.hl7.org/browse/FHIR-30858)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: It seems inappropriate to require support for an unpublished IG. ([FHIR-30859](https://jira.hl7.org/browse/FHIR-30859)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: No content on this page. ([FHIR-30860](https://jira.hl7.org/browse/FHIR-30860)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Resolved - change required**: This page has no content. ([FHIR-30861](https://jira.hl7.org/browse/FHIR-30861)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Remove empty page ([FHIR-30861](https://jira.hl7.org/browse/FHIR-30861))
       1. **Resolved - change required**: There is no content on this page. ([FHIR-30862](https://jira.hl7.org/browse/FHIR-30862)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Is it purely a workflo decision whether a request is required to release patient data? ([FHIR-30863](https://jira.hl7.org/browse/FHIR-30863)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Remove '?' or correct the section name if it is in question ([FHIR-30864](https://jira.hl7.org/browse/FHIR-30864)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)

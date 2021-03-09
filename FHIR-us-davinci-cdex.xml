@@ -27,17 +27,17 @@
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="background" name="Background"/>
-<page key="capabilitystatements" name="Capabilitystatements"/>
-<page key="direct-query" name="Direct Query"/>
+<page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
+<page deprecated="true" key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
 <page key="examples" name="Examples"/>
 <page deprecated="true" key="framework_old" name="Framework Old"/>
 <page deprecated="true" key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
-<page key="profiles" name="Profiles"/>
+<page deprecated="true" key="profiles" name="Profiles"/>
 <page key="specification" name="Specification"/>
 <page key="toc" name="Table of Contents"/>
-<page key="terminology" name="Terminology"/>
+<page deprecated="true" key="terminology" name="Terminology"/>
 <page deprecated="true" key="using-subscriptions" name="Using Subscriptions"/>
 <page deprecated="true" key="using-task" name="Using Task"/>
 </specification>

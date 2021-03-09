@@ -35,6 +35,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
  1. Additional information is required for audit of the Quality Measure.
 
 {% include img.html img="davinci-use-cases.svg" caption="Figure 1" %}
+{:.new-content}
 
 #### Example Scenarios
 

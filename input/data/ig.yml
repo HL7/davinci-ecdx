@@ -18,26 +18,14 @@ definition:
             nameUrl: background.html
             title: Background
         -   generation: markdown
-            nameUrl: capabilitystatements.html
-            title: Capabilitystatements
-        -   generation: markdown
-            nameUrl: direct-query.html
-            title: Direct Query
-        -   generation: markdown
             nameUrl: downloads.html
             title: Downloads
         -   generation: markdown
             nameUrl: examples.html
             title: Examples
         -   generation: markdown
-            nameUrl: profiles.html
-            title: Profiles
-        -   generation: markdown
             nameUrl: specification.html
             title: Specification
-        -   generation: markdown
-            nameUrl: terminology.html
-            title: Terminology
         title: Table of Contents
     parameter:
     -   code: copyrightyear
