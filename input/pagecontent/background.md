@@ -54,22 +54,21 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 See the [Specification] page for a detailed description of the technical workflow and API guidance.
 
-Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
-
-{% include img.html img="workflow-overview.svg" caption="Figure 2" %}
-
 #### Actors and Roles
 
-- The Payer or Provider system acts in the role of a *data consumer*
+- The Payer or External Provider System acts in the role of a *data consumer*
 - The Provider system acts in the role of a *data source*
 - A human practitioner involved in approving/filtering the information provided.
   - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
 
-#### Steps
-1. The Payer or Provider system initiates a request for clinical information
-1. The Provider system retrieves the the requested data.
-1. The data may be reviewed by a provider prior to sending back to the Payer system
-1. The data is sent back to the Payer system
+Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
 
+{% include img.html img="workflow-overview.svg" caption="Figure 2" %}
+
+#### Steps
+1. The data consumer initiates a request for clinical information.
+1. The data source retrieves the the requested data.
+1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
+1. The data is sent back to the the data consumer.
 
 {% include link-list.md %}
