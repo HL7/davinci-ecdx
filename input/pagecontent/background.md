@@ -40,7 +40,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 - Some payers create a complete clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.
 
-- Clinical information gathered from providers to support the HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
+- Clinical information is gathered from providers to support the HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
 
 - Payers need information that helps them meet new regulatory requirements that promote patient access and exchange of information.
 
