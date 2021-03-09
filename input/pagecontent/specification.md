@@ -151,7 +151,7 @@ Polling is a mechanism for conveying new data to a Payer as (or shortly after) t
 
 ##### Subscription
 
-Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the the Task instance.  The notification does not expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
+Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance.  The notification does not expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
 
 <div markdown="1" class="bg-info">
 Note
@@ -165,7 +165,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Fetching the Data
 
-When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.  If there is no data found by the Provider the The `Task.status` is "failed" with a reason in `Task.statusReason` (e.g.,"no matching results") and the `Task.output` is absent.
+When the task is complete, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.  If there is no data found by the Provider the  `Task.status` is "failed" with a reason in `Task.statusReason` (e.g.,"no matching results") and the `Task.output` is absent.
 
 #### Example Transactions:
 
