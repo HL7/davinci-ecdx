@@ -86,7 +86,7 @@ list:
       1. **Applied**: Typo ([FHIR-30854](https://jira.hl7.org/browse/FHIR-30854)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
       1. **Applied**: Typo ([FHIR-30855](https://jira.hl7.org/browse/FHIR-30855)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
       1. **Applied**: Typo ([FHIR-30856](https://jira.hl7.org/browse/FHIR-30856)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#steps)
-      1. **Resolved - change required**: Substitute “reviewed.” ([FHIR-30857](https://jira.hl7.org/browse/FHIR-30857)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Typo ([FHIR-30857](https://jira.hl7.org/browse/FHIR-30857)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#steps)
       1. **Triaged**: Perhaps just call for current published version? ([FHIR-30858](https://jira.hl7.org/browse/FHIR-30858)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: It seems inappropriate to require support for an unpublished IG. ([FHIR-30859](https://jira.hl7.org/browse/FHIR-30859)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: No content on this page. ([FHIR-30860](https://jira.hl7.org/browse/FHIR-30860)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
