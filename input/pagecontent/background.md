@@ -34,8 +34,9 @@ There are over a dozen use cases and corresponding Implementation guides being d
  1. A Provider has not implemented DEQM
  1. Additional information is required for audit of the Quality Measure.
 
+<div markdown='1' class="new-content">
 {% include img.html img="davinci-use-cases.svg" caption="Figure 1" %}
-{:.new-content}
+</div>
 
 #### Example Scenarios
 
