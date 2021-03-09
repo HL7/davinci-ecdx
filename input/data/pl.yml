@@ -33,7 +33,6 @@ list:
       1. **Triaged**: HRex link broken CapabilityStatement: Data Consumer Client CapabilityStatement - and reference needs description (FHIR-30147) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Failed task or task without result? (FHIR-30148) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: VOTE A-S    FHIR_IG_CDex_R1_D2_2021JAN  Section 1 (FHIR-30440) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Resolved - change required**: CLONE - VOTE A-S    FHIR_IG_CDex_R1_D2_2021JAN  Section 1 (FHIR-30441) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Vote A-S    FHIR_IG_CDex_R1_D2_2021JAN (FHIR-30442) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: FHIR_IG_CDex_R1_D2_2021JAN  (FHIR-30445) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Scenarios to include the Payer's ability to use CDex to request additional information from the Provider that will be used to support claim submission - Attachments.  (FHIR-30446) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
