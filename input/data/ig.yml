@@ -217,7 +217,7 @@ description: "This IG provides detailed guidance that helps implementers use FHI
     \ information between provider and payers (or other providers).  What is unique\
     \ about this guide is that is provides additional technical guidance on two FHIR\
     \ transaction approaches for requesting information:\n\n - Direct Query\n - Task\
-    \ Based Approach:\n\nThe types of clinical data are not limited to FHIR resources,\
+    \ Based Approach:\n\nThe types of clinical and or administrative data is not limited to FHIR resources\
     \ but includes C-CDA documents, pdfs, text files and other types of data. There\
     \ may be requests for payloads of clinical records of care such as CCD Documents\
     \ (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)),\
@@ -228,8 +228,8 @@ description: "This IG provides detailed guidance that helps implementers use FHI
     \ which often result in providers sending more information than might be necessary\
     \ to make sure claims are supported. Benefits resulting from the information exchange\
     \ interaction include:\n\n  - Improve care coordination\n  - Support risk adjustment\n\
-    \  - Ease quality management\n  - Facilitate claims auditing\n  - Confirm medical\
-    \ necessity\n  - Support orders and referrals"
+    \  - Ease quality management\n  - Facilitate claims auditing\n  - Support claim adjudication\n\
+    \ - Confirm medical necessity\n  - Support orders and referrals"
 fhirVersion:
 - 4.0.1
 id: hl7.fhir.us.davinci-cdex
