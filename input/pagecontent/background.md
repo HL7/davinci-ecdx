@@ -50,6 +50,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 - Allow a referred-to provider to solicit additional clinical information through a payer to support performing the requested service.
 
+<div markdown='1' class="new-content">
 ### Workflow Overview
 
 See the [Specification] page for a detailed description of the technical workflow and API guidance.
@@ -70,5 +71,7 @@ Figure 2 below illustrates the general workflow for the exchange of clinical dat
 1. The data source retrieves the the requested data.
 1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
 1. The data is sent back to the the data consumer.
+
+</div>
 
 {% include link-list.md %}
