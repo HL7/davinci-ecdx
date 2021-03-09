@@ -2,8 +2,8 @@
 <div class="bg-info" markdown="1">
 Publishing Punch list:
 
-- [ ]Finish [Resolving Trackers](https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801)
-- [ ]Finish Applying Resolved Trackers
+- [ ] Finish [Resolving Trackers](https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801)
+- [ ] Finish Applying Resolved Trackers
 - [ ] QA
 - [ ] Reconciliation Spreadsheet
 - [ ] publication checklist
