@@ -31,7 +31,7 @@ In some cases it may be important to transmit the *Purpose of Use* in the Author
 
 The sequence diagram in Figure 2 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
 
-{% include img.html img="search-sequencediagram.svg" caption="Figure 2" %}
+{% include img.html img="search-sequencediagram.svg" caption="Figure 3" %}
 
 #### Example Transactions:
 
@@ -132,7 +132,7 @@ All of the following except the last of these benefits are relevant whether huma
 The sequence diagram in Figure 3 below summarizes the basic interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction.   However, there are three implementation variations with Task Based Exchange discussed below:
 
 
-{% include img.html img="task-sequencediagram.svg" caption="Figure 3" %}
+{% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
 
 #### Authorization
 

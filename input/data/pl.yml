@@ -30,8 +30,8 @@ list:
       1. **Applied**: Add reference to C-CDA on FHIR ([FHIR-28158](https://jira.hl7.org/browse/FHIR-28158)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Triaged**: Interop Framework for Payer2Payer and Internal Systems ([FHIR-29683](https://jira.hl7.org/browse/FHIR-29683)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Provide another example of a use case not covered by another Da Vinci IG ([FHIR-30146](https://jira.hl7.org/browse/FHIR-30146)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html##where-does-cdex-fit-in-the-da-vinci-project)
-      1. **Triaged**: HRex link broken CapabilityStatement: Data Consumer Client CapabilityStatement - and reference needs description ([FHIR-30147](https://jira.hl7.org/browse/FHIR-30147)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Triaged**: Failed task or task without result? ([FHIR-30148](https://jira.hl7.org/browse/FHIR-30148)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Resolved - change required**: HRex link broken CapabilityStatement: Data Consumer Client CapabilityStatement - and reference needs description ([FHIR-30147](https://jira.hl7.org/browse/FHIR-30147)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Resolved - change required**: Failed task or task without result? ([FHIR-30148](https://jira.hl7.org/browse/FHIR-30148)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: add item to list of benefits ([FHIR-30440](https://jira.hl7.org/browse/FHIR-30440)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Triaged**: Vote A-S    FHIR_IG_CDex_R1_D2_2021JAN ([FHIR-30442](https://jira.hl7.org/browse/FHIR-30442)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: FHIR_IG_CDex_R1_D2_2021JAN  ([FHIR-30445](https://jira.hl7.org/browse/FHIR-30445)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
@@ -98,7 +98,7 @@ list:
       1. **Triaged**: Confidentiality protection in a Direct Query must be conveyed in some manner. ([FHIR-30868](https://jira.hl7.org/browse/FHIR-30868)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: The Sensitivity of the information in a Direct Query must be conveyed in some manner. ([FHIR-30869](https://jira.hl7.org/browse/FHIR-30869)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: clarify when attribution is not present or non-repudiable ([FHIR-30870](https://jira.hl7.org/browse/FHIR-30870)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Resolved - change required**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: correct last example bullet ([FHIR-31050](https://jira.hl7.org/browse/FHIR-31050)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
 
     path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
