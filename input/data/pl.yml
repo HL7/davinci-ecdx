@@ -41,7 +41,7 @@ list:
       1. **Triaged**: Delete use of word  ([FHIR-30494](https://jira.hl7.org/browse/FHIR-30494)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Change should to SHALL as required by minimum necessary. ([FHIR-30497](https://jira.hl7.org/browse/FHIR-30497)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Explicitly reference the Da Vinci Guiding Principles in new Privacy and Security section. ([FHIR-30498](https://jira.hl7.org/browse/FHIR-30498)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html)
-      1. **Triaged**: Update Figure 1 ([FHIR-30500](https://jira.hl7.org/browse/FHIR-30500)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Update Figure 1 ([FHIR-30500](https://jira.hl7.org/browse/FHIR-30500)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
       1. **Triaged**: Affirmative vote on specificaton. ([FHIR-30811](https://jira.hl7.org/browse/FHIR-30811)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Typo. ([FHIR-30812](https://jira.hl7.org/browse/FHIR-30812)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Triaged**: Remove word complete. ([FHIR-30813](https://jira.hl7.org/browse/FHIR-30813)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
