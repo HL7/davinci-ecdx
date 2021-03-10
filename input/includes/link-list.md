@@ -57,3 +57,5 @@
 [Data Exchange For Quality Measures (DEQM) Implementation Guide]: http://hl7.org/fhir/us/davinci-deqm/
 [batch]: {{site.data.fhir.path}}http.html#transaction
  [HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
+[HRex Security & Privacy]: {{site.data.fhir.ver.hrex}}/security.html
+[Security and Privacy considerations]: security.html
