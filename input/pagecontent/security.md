@@ -13,5 +13,6 @@ This implementation guide inherits all of the mandatory requirements and recomme
 At present, no additional CDex specific security and privacy requirements have been identified.
 {bg-warning}
 
-
 </div>
+
+{% include link-list.md %}
