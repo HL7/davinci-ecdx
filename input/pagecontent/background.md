@@ -21,8 +21,7 @@ A sampling of the type of information needed by Payers includes:
 - Vital Signs - for example Blood Pressure measurements
 - Narrative - such as written or transcribed clinical notes
 
-Any request should be limited to information necessary and when information is shared for one or more specific purposes of use, the recipient is expected to use the information only for those purposes of use or as allowed by existing federal and state statutes and regulations including HIPAA restrictions on access to information for payment. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.  See the [Security and Privacy considerations] for guidance on patient privacy.
-{:.bg-warning}
+For Security and Privacy considerations refer to the [Security and Privacy] page.
 
 ### Where Does CDEX Fit in the Da Vinci Project?
 
