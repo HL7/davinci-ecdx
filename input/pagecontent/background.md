@@ -48,16 +48,6 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 <div markdown='1' class="new-content">
 
-### Actors and Roles
-
-- The Payer or External Provider System acts in the role of a *data consumer*.
-- The Provider system acts in the role of a *data source*.\*
-- A human practitioner involved in approving/filtering the information provided.
-  - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
-
-\* The payer's health record needs to be attributed based on the actual contributing provider.  In other words, the record needs to be attributed to the individual that made the assertion.  If an *Electronic Health Information Exchange* (HIE) retains that information in a non-repudiable manner, then it would be acceptable for a payer's health record to be based on an aggregation created by an HIE (in other words the HIE acts in the role of the *data source*).  However, not all HIEs do this (and not for all records).  Where attribution is not present or non-repudiable, then HIE content is *not acceptable* for most payer use-cases.
-{:.bg-warning}
-
 ### Workflow Overview
 
 See the [Specification] page for a detailed description of the technical workflow and API guidance.
@@ -65,6 +55,16 @@ See the [Specification] page for a detailed description of the technical workflo
 Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
 
 {% include img.html img="workflow-overview.svg" caption="Figure 2" %}
+
+#### Actors and Roles
+
+- The Payer or External Provider System acts in the role of a *data consumer*.
+- The Provider system acts in the role of a *data source*.\*
+- A human practitioner involved in approving/filtering the information provided.
+  - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
+
+\* The payer's health record needs to be attributed based on the actual contributing provider.  In other words, the record needs to be attributed to the individual that made the assertion.  If an *Electronic Health Information Exchange* (HIE) retains that information in a non-repudiable manner, then it would be acceptable for a payer's health record to be based on an aggregation created by an HIE and the HIE could act in the role of the data source.  However, not all HIEs do this (and not for all records).  Where attribution is not present or non-repudiable, then the HIE is *not acceptable* as the data source for most payer use-cases.
+{:.bg-warning}
 
 #### Steps
 1. The data consumer initiates a request for clinical or administrative information.
