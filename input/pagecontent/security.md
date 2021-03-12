@@ -10,8 +10,8 @@ This implementation guide inherits all of the mandatory requirements and recomme
 - Additionally Protected Information
 - Security Contexts for Da Vinci IGs
 
-At present, no additional CDex specific security and privacy requirements have been identified.
-{:.bg-warning}
+**At present, no additional CDex specific security and privacy requirements have been identified.**
+
 
 </div>
 
