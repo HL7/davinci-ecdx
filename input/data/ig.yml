@@ -226,11 +226,11 @@ description: "This IG provides detailed guidance that helps implementers use FHI
     \ such as CCD Documents, clinical data sets that may be represented in a FHIR\
     \ Bundle (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)), and clinical\
     \ data such as a specific FHIR resource. By using the FHIR standard and implementing\
-    \ this guide the quality of information shared can be improved.   Payers can be\
-    \ explicit about the data they are requesting, as opposed to general requests\
-    \ which often result in providers sending more information than might be necessary\
-    \ to make sure claims are supported. Benefits resulting from the information exchange\
-    \ interaction include:\n\n  - Improve care coordination\n  - Support risk adjustment\n\
+    \ this guide payers can be explicit about the data they are requesting as opposed\
+    \ to general requests which often result in providers sending more information\
+    \ than necessary. The anticipated benefit of using FHIR is more efficient and\
+    \ effective exchange of health record information.  This improved interoperability\
+    \ in healthcare would:\n\n  - Improve care coordination\n  - Support risk adjustment\n\
     \  - Ease quality management\n  - Facilitate claims auditing\n  - Confirm medical\
     \ necessity\n  - Support orders and referrals"
 fhirVersion:

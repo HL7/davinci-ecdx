@@ -70,7 +70,7 @@ list:
       1. **Applied**: Typo ([FHIR-30840](https://jira.hl7.org/browse/FHIR-30840)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Typo ([FHIR-30841](https://jira.hl7.org/browse/FHIR-30841)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Typo ([FHIR-30842](https://jira.hl7.org/browse/FHIR-30842)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
-      1. **Triaged**: Standards may help with consistency during exchange, but they can’t fix errors and omissions in the sources. ([FHIR-30843](https://jira.hl7.org/browse/FHIR-30843)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Updated anticipated benefits of standard ([FHIR-30843](https://jira.hl7.org/browse/FHIR-30843)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Typo ([FHIR-30844](https://jira.hl7.org/browse/FHIR-30844)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#what-do-payers-do-with-clinical-information)
       1. **Applied**: Correct Grammar ([FHIR-30845](https://jira.hl7.org/browse/FHIR-30845)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#what-do-payers-do-with-clinical-information)
       1. **Applied**: Correct Grammar ([FHIR-30846](https://jira.hl7.org/browse/FHIR-30846)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#what-do-payers-do-with-clinical-information)
@@ -96,10 +96,9 @@ list:
       1. **Triaged**: Confidentiality protection in a Direct Query must be conveyed in some manner. ([FHIR-30868](https://jira.hl7.org/browse/FHIR-30868)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: The Sensitivity of the information in a Direct Query must be conveyed in some manner. ([FHIR-30869](https://jira.hl7.org/browse/FHIR-30869)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: clarify when attribution is not present or non-repudiable ([FHIR-30870](https://jira.hl7.org/browse/FHIR-30870)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Applied**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html)
       1. **Triaged**: correct last example bullet ([FHIR-31050](https://jira.hl7.org/browse/FHIR-31050)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/davinci-ecdx/specification.html)
-      1. **Applied**: Remove reference to HREX CommunicationRequest plus Task transaction ([FHIR-31516](https://jira.hl7.org/browse/FHIR-31516)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/davinci-ecdx/specification.html#task-based-approach)
-
+      1. **Applied**: Remove reference to HREX CommunicationRequest plus Task transaction ([FHIR-31516](https://jira.hl7.org/browse/FHIR-31516)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#task-based-approach)
 
     path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
     status: ci-build
