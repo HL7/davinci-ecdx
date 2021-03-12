@@ -58,10 +58,11 @@
 [batch]: {{site.data.fhir.path}}http.html#transaction
 [HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
 [HRex Security and Privacy]: {{site.data.fhir.ver.hrex}}/security.html
-[Security and Privacy considerations]: security.html
+[Security and Privacy]: security.html
 [Approaches to Exchanging FHIR Data]: {{site.data.fhir.ver.hrex}}exchanging.html
 [Requesting Exchange using Task]: {{site.data.fhir.ver.hrex}}exchanging-request.html#task
-[Exchanging with polling]:{{site.data.fhir.ver.hrex}}exchanging-polling.html
-[Exchanging with FHIR Subscription]:{{site.data.fhir.ver.hrex}}exchanging-subscription.html
-[Background on FHIR]:{{site.data.fhir.ver.hrex}}fhir.html
-[Conformance Expectations]:{{site.data.fhir.ver.hrex}}conformance.html
+[Exchanging with polling]: {{site.data.fhir.ver.hrex}}exchanging-polling.html
+[Exchanging with FHIR Subscription]: {{site.data.fhir.ver.hrex}}exchanging-subscription.html
+[Background on FHIR]: {{site.data.fhir.ver.hrex}}fhir.html
+[Conformance Expectations]: {{site.data.fhir.ver.hrex}}conformance.html
+[Subscription Capabilities]: {{site.data.fhir.ver.hrex}}exchanging.html#subscription-capability
