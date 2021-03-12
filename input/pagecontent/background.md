@@ -21,7 +21,7 @@ A sampling of the type of information needed by Payers includes:
 - Vital Signs - for example Blood Pressure measurements
 - Narrative - such as written or transcribed clinical notes
 
-Any request should be limited to information necessary and when information is shared for one or more specific purposes of use, the recipient is expected to use the information only for those purposes of use or as allowed by existing federal and state statutes and regulations including HIPAA restrictions on access to information for payment. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.  For more about patient privacy, Review the guidance in the *Security and Privacy* section in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
+Any request should be limited to information necessary and when information is shared for one or more specific purposes of use, the recipient is expected to use the information only for those purposes of use or as allowed by existing federal and state statutes and regulations including HIPAA restrictions on access to information for payment. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.  See the [Security and Privacy considerations] for guidance on patient privacy.
 {:.bg-warning}
 
 ### Where Does CDEX Fit in the Da Vinci Project?
@@ -47,19 +47,20 @@ There are over a dozen use cases and corresponding Implementation guides being d
 - Allow a referred-to provider to solicit additional clinical information through a payer to support performing the requested service.
 
 <div markdown='1' class="new-content">
-### Workflow Overview
 
-See the [Specification] page for a detailed description of the technical workflow and API guidance.
-
-#### Actors and Roles
+### Actors and Roles
 
 - The Payer or External Provider System acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.\*
 - A human practitioner involved in approving/filtering the information provided.
   - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
 
-\* Using an HIE as a data source:  The payer's health record needs to be attributed based on the actual contributing provider.  In other words, the record needs to be attributed to the individual that made the assertion.  If an *Electronic Health Information Exchange* (HIE) retains that information in a non-repudiable manner, then it would be acceptable for a payer's health record to be based on an aggregation created by an HIE.  However, not all HIEs do this (and not for all records).  Where attribution is not present or non-repudiable, then HIE content is *not acceptable* for most payer use-cases.
+\* The payer's health record needs to be attributed based on the actual contributing provider.  In other words, the record needs to be attributed to the individual that made the assertion.  If an *Electronic Health Information Exchange* (HIE) retains that information in a non-repudiable manner, then it would be acceptable for a payer's health record to be based on an aggregation created by an HIE (in other words the HIE acts in the role of the *data source*).  However, not all HIEs do this (and not for all records).  Where attribution is not present or non-repudiable, then HIE content is *not acceptable* for most payer use-cases.
 {:.bg-warning}
+
+### Workflow Overview
+
+See the [Specification] page for a detailed description of the technical workflow and API guidance.
 
 Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
 
