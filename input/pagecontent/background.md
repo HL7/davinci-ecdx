@@ -43,7 +43,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 - Payers need to provide CMS with Risk Adjustment submissions annually.
 
-- Allow a referred-to provider to solicit additional clinical information through a payer to support performing the requested service.
+- Allow a referred-to provider to solicit additional clinical information from referring provider to support performing the requested service.
 
 <div markdown='1' class="new-content">
 
