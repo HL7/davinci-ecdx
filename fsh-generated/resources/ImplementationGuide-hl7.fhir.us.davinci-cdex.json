@@ -225,7 +225,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "ballot"
+        "value": "CI Build"
       },
       {
         "code": "path-resource",

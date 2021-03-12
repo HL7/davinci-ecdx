@@ -56,6 +56,12 @@
 [Da Vinci Overview]: http://www.hl7.org/about/davinci/index.cfm
 [Data Exchange For Quality Measures (DEQM) Implementation Guide]: http://hl7.org/fhir/us/davinci-deqm/
 [batch]: {{site.data.fhir.path}}http.html#transaction
- [HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
-[HRex Security & Privacy]: {{site.data.fhir.ver.hrex}}/security.html
+[HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
+[HRex Security and Privacy]: {{site.data.fhir.ver.hrex}}/security.html
 [Security and Privacy considerations]: security.html
+[Approaches to Exchanging FHIR Data]: {{site.data.fhir.ver.hrex}}exchanging.html
+[Requesting Exchange using Task]: {{site.data.fhir.ver.hrex}}exchanging-request.html#task
+[Exchanging with polling]:{{site.data.fhir.ver.hrex}}exchanging-polling.html
+[Exchanging with FHIR Subscription]:{{site.data.fhir.ver.hrex}}exchanging-subscription.html
+[Background on FHIR]:{{site.data.fhir.ver.hrex}}fhir.html
+[Conformance Expectations]:{{site.data.fhir.ver.hrex}}conformance.html

@@ -34,7 +34,7 @@ definition:
     -   code: copyrightyear
         value: 2020+
     -   code: releaselabel
-        value: ballot
+        value: CI Build
     -   code: path-resource
         value: input/resources
     -   code: path-resource

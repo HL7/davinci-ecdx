@@ -1,8 +1,8 @@
-This sections provides specific guidance on exchanging clinical data between Payers and Providers.  For general *Background on FHIR*, *Conformance Expectations*, and [Security and Privacy] considerations, refer to the corresponding sections in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
+This sections provides specific guidance on exchanging clinical data between Payers and Providers.  For general [Background on FHIR], [Conformance Expectations], and [Security and Privacy] considerations, refer to the corresponding sections in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.
 
 ### Exchanging Clinical Data
 
-FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the *Approaches to Exchanging FHIR Data* in the Da Vinci HRex Implementation Guide for more guidance and background.)  The guide focuses on **two** FHIR transaction approaches for requesting information:
+FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  The guide focuses on **two** FHIR transaction approaches for requesting information:
 
 1. **Direct Query (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
 1. **Task Based Approach:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
@@ -111,7 +111,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
   - there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible
 
-In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the *CommunicationRequest plus Task* section and the *Requesting Exchange using Task* sections of the Da Vinci HRex Implementation Guide.
+In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
@@ -143,7 +143,7 @@ The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circ
 
 #### Polling vs Subscriptions
 
-Task Based exchanges can take one of two forms - *subscription* or *polling* as described in the *Exchanging with polling* and *Exchanging with FHIR Subscription* sections of the Da Vinci HRex Implementation Guide.  General guidance on whether to use polling or subscription can be found in the *Subscription capability?* section.
+Task Based exchanges can take one of two forms - *subscription* or *polling* as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] sections of the Da Vinci HRex Implementation Guide.  General guidance on whether to use polling or subscription can be found in the *Subscription capability?* section.
 
 ##### Polling
 
@@ -225,8 +225,8 @@ Preconditions and Assumptions:
 
 ### Bulk Data
 
-Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using `POST [base]/Patient/$everything`.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
-{:.note-to-balloters}
+Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using <span markdown='1' class="bg-success">`POST [base]/Group/$export`</span>.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
+{:.bg-info}
 
 <br />
 
