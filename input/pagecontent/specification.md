@@ -111,7 +111,7 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
   - there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible
 
-In most of these situation, there is human involvement needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+In most of these situation, there is human involvement (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
