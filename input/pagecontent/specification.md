@@ -29,10 +29,15 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 - Authorization/Authentication protocols established
 - No human intervention needed
 
+</div markdown="1" class="new-content">
+
 #### Purpose of Use
 
-In some cases it may be important to transmit the *Purpose of Use* in the Authorization Framework (OAuth) when querying for data.  The details of incorporating the reason for a query into OAuth is an area of active discussion. Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.
-{:.stu-note}
+In some cases, it may be important to transmit the *Purpose of Use* when soliciting data.  Specifically, if the *Purpose of Use* differs from the 'default' purpose of use for that data consuming system (generally 'payment and operations' for payers and 'treatment' for providers), the data source needs to be able to make decisions about whether to provide the information at all or whether/how to filter the information.
+
+When using the Task mechanism described below, the *Purpose of Use* can be conveyed in Task.reason.  When using standard RESTful queries, such information cannot be conveyed directly in the query.  There is work in progress in [FHIR SMART v2 (Granular Controls)](https://confluence.hl7.org/pages/viewpage.action?pageId=97479739) on standardizing how purpose of use can be conveyed using OAuth.  Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
+
+</div>
 
 #### Sequence Diagram
 
@@ -148,7 +153,7 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
 {:.new-content}
 
-The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
+The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. <span class="bg-success"> This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers.</span>  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.stu-note}
 
 #### Polling vs Subscriptions
