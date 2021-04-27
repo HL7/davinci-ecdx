@@ -1,6 +1,6 @@
 This sections provides specific guidance on exchanging clinical data between Payers and Providers.  For general [Background on FHIR], [Conformance Expectations], refer to the corresponding sections in the [Da Vinci Health Record Exchange (HRex)] Implementation Guide.  For Security and Privacy considerations refer to the [Security and Privacy] page.
 
-</div markdown="1" class="new-content">
+<div markdown="1" class="new-content">
 
 When we say “Payer” on this page, we don’t mean to limit ourselves to only Payers. The same technology can be used for other data consumers like Providers.  Consider “Payer” here as a short-hand notation for "data consumer”
 {:.bg-info}
@@ -15,7 +15,7 @@ FHIR offers numerous architectural approaches for sharing data between systems. 
 1. **Task Based Approach:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
 
 Depending on the reason for the request, Payers may require signatures from EHRs *attesting* to the fulfillment of the data request.  However, there has not been enough implementation experience with this to provide specific guidance on how this is done.  We are seeking implementer feedback and comments on this issue.
-{:.note-to-balloters}
+{:.stu-note}
 
 ### Direct Query
 
@@ -32,7 +32,7 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 #### Purpose of Use
 
 In some cases it may be important to transmit the *Purpose of Use* in the Authorization Framework (OAuth) when querying for data.  The details of incorporating the reason for a query into OAuth is an area of active discussion. Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.
-{:.note-to-balloters}
+{:.stu-note}
 
 #### Sequence Diagram
 
@@ -149,7 +149,7 @@ There are situations where one must provide formal authorization for each indivi
 {:.new-content}
 
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
-{:.note-to-balloters}
+{:.stu-note}
 
 #### Polling vs Subscriptions
 
@@ -171,7 +171,7 @@ Note
 </div>
 
 This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
-{:.note-to-balloters}
+{:.stu-note}
 
 #### Fetching the Data
 
@@ -243,7 +243,7 @@ Preconditions and Assumptions:
 ### Bulk Data
 
 Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using <span markdown='1' class="bg-success">`POST [base]/Group/$export`</span>.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
-{:.bg-info}
+{:.stu-note}
 
 <br />
 
