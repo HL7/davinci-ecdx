@@ -60,7 +60,7 @@ list:
       1. **Triaged**: Better standardize Task.reasonReference by formalizing (but not limiting) the current scenarios ([FHIR-30826](https://jira.hl7.org/browse/FHIR-30826)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: replace /Patient/$everything with /Group/$export in the bulk example ([FHIR-30827](https://jira.hl7.org/browse/FHIR-30827)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#bulk-data)
       1. **Applied**: Remove empty pages ([FHIR-30828](https://jira.hl7.org/browse/FHIR-30828))
-      1. **Triaged**: When would Task.reasonReference be a ServiceRequest? ([FHIR-30829](https://jira.hl7.org/browse/FHIR-30829)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Resolved - change required**: When would Task.reasonReference be a ServiceRequest? ([FHIR-30829](https://jira.hl7.org/browse/FHIR-30829)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#formal-request-to-share-data)
       1. **Triaged**: Data Consumer Server SHOULD support Claim. ([FHIR-30830](https://jira.hl7.org/browse/FHIR-30830)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: More missing content. ([FHIR-30831](https://jira.hl7.org/browse/FHIR-30831)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: The content of this IG wasn't quite ready for ballot. What HL7 process improvement is needed to prevent this in the future? ([FHIR-30832](https://jira.hl7.org/browse/FHIR-30832)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
