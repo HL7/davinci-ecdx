@@ -179,9 +179,9 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 <div markdown="1" class="new-content">
 
-##### How Long the Data Available
+##### How Long is the Data Available
 
-Ultimately, the Data Source determines how long they will allow the Data Consuner access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
+Ultimately, the Data Source determines how long the Data Consumer has access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
 </div>
 
 #### Example Transactions:
