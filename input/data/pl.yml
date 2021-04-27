@@ -94,6 +94,7 @@ list:
       1. **Applied**: Remove reference to HREX CommunicationRequest plus Task transaction ([FHIR-31516](https://jira.hl7.org/browse/FHIR-31516)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#task-based-approach)
       1. **Applied**: Clarify human involvementRemove in Task transaction ([FHIR-31886](https://jira.hl7.org/browse/FHIR-31886) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#task-based-approach)
       1. **Applied**: Add supplemental security guidance on user scopes ([FHIR-31885](https://jira.hl7.org/browse/FHIR-31885) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html)
+      1. **Applied**: Remove reference to CommunicationRequest plus Task ([FHIR-31516](https://jira.hl7.org/browse/FHIR-31516)
 
     path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
     status: ci-build
