@@ -161,11 +161,11 @@ Polling is a mechanism for conveying new data to a Payer as (or shortly after) t
 
 ##### Subscription
 
-Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance.  The notification does not expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
+Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance.  <span class="bg-success">Typically,</span> the notification *does not* expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
 
 <div markdown="1" class="bg-info">
-Note
-- The subscription notification could contain the Task and associated data in the response but this approach imposes excessive privacy and security risks on the sender.
+
+- {:.bg-success}The publisher can not guarantee who has access to the nominated subscription endpoint.  By omitting the payload, the client is forced to authenticate before accessing the data which mitigates privacy and security risks on the publisher.
 
 - Subscriptions need not be created independently for each Task - a payer could subscribe to all Tasks where they are the requester.  It's also possible that subscriptions could be established automatically or out-of-band.  However, these are implementation details that are out of scope for this guide.
 </div>
