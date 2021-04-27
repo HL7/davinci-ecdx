@@ -46,7 +46,7 @@ The following example transactions show scenarios of using direct query to get c
 
 ##### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to confirm Payer A’s coverage criteria have been met for a service.</span>
 
 **Preconditions and Assumptions:**
 
@@ -197,7 +197,7 @@ The following example transactions show scenarios using task based exchanges to 
 
 ##### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to confirm Payer A’s coverage criteria have been met for a service.</span>
 
 Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
