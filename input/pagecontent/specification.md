@@ -138,7 +138,7 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 #### Formal Request To Share Data
 
-There are situations where one must provide formal authorization for each individual data request. In other cases an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed, it is represented by either a CommunicationRequest or ServiceRequest and referenced by Task using the the Task.basedOn element.  Use cases with and without authorization are illustrated in the examples below.
+There are situations where one must provide formal authorization for each individual data request. In other cases an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed, it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the Task.basedOn element.  Use cases with and without authorization are illustrated in the examples below.
 {:.new-content}
 
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
