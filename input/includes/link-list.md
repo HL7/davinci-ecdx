@@ -67,3 +67,5 @@
 [Conformance Expectations]: {{site.data.fhir.ver.hrex}}conformance.html
 [Subscription Capabilities]: {{site.data.fhir.ver.hrex}}exchanging.html#subscription-capability
 [Task state machine diagram]: {{site.data.fhir.path}}task.html#statemachine
+[SMART on FHIR Framework]: http://hl7.org/fhir/smart-app-launch/index.html
+[Bulk Data exchange IG]: https://hl7.org/fhir/uv/bulkdata/authorization/index.html
