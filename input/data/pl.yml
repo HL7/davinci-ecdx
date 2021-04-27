@@ -51,7 +51,7 @@ list:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#workflow-overview)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider)
       1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Triaged**: Rephrase. ([FHIR-30817](https://jira.hl7.org/browse/FHIR-30817)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Rephrase. ([FHIR-30817](https://jira.hl7.org/browse/FHIR-30817)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#scenario-1)
       1. **Triaged**: When and how are subscriptions terminated? ([FHIR-30818](https://jira.hl7.org/browse/FHIR-30818)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Unclear how this imposes  ([FHIR-30819](https://jira.hl7.org/browse/FHIR-30819)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Add section on termination of access to request([FHIR-30820](https://jira.hl7.org/browse/FHIR-30820)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#how-long-the-data-available)
