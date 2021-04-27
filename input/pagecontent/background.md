@@ -9,6 +9,14 @@ Payers want to create a clinical record of their members to improve care coordin
 Payers also require clinical data from the provider ordering or providing services to document prior authorization, claims processing, audit submitted claims, to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes.
 {:.new-content}
 
+<div markdown="1" class="new-content">
+
+### Provider to Provider Data Exchange
+
+ Providers commonly need and request information from other providers about their patients.  For example, when referring a patient, the referred-to provider needs the order and supporting documentation and the referring provider needs the results from the referral.  Although this guide focuses on payor to provider to interactions, the technical exchange is no different than a provider to provider interaction.
+
+</div>
+
 ### What Information is Needed?
 
 A sampling of the type of information needed by Payers includes:
@@ -33,6 +41,9 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 #### Example Scenarios
 
+##### Payer to Provider
+{:.bg-success}
+
 - Some payers create a clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.
 
 - Clinical information is gathered from providers to support the HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
@@ -42,6 +53,9 @@ There are over a dozen use cases and corresponding Implementation guides being d
 - A Durable Medical Equipment supplier submits a claim for a wheelchair. The Payer reviews the claim and assesses that the documentation submitted by the Provider is insufficient to support medical necessity or Payer coverage rules.
 
 - Payers need to provide CMS with Risk Adjustment submissions annually.
+
+##### Provider to Provider
+{:.bg-success}
 
 - Allow a referred-to provider to solicit additional clinical information from referring provider to support performing the requested service.
 

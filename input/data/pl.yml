@@ -45,7 +45,11 @@ list:
       1. **Applied**: Typo. ([FHIR-30812](https://jira.hl7.org/browse/FHIR-30812)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Remove word complete. ([FHIR-30813](https://jira.hl7.org/browse/FHIR-30813)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
       1. **Applied**: Corrects and clarifies direct provider to provider scenario. ([FHIR-30814](https://jira.hl7.org/browse/FHIR-30814)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
-      1. **Triaged**: Provider to Provider use case should be out of scope as it has not been tested. ([FHIR-30815](https://jira.hl7.org/browse/FHIR-30815)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Provider to Provider use case should be out of scope as it has not been tested. ([FHIR-30815](https://jira.hl7.org/browse/FHIR-30815)) See Changes:
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider-data-exchange)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#workflow-overview)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider)
       1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Rephrase. ([FHIR-30817](https://jira.hl7.org/browse/FHIR-30817)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: When and how are subscriptions terminated? ([FHIR-30818](https://jira.hl7.org/browse/FHIR-30818)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
