@@ -148,7 +148,7 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
 
-#### Formal Request To Share Data
+#### Formal Authorization
 
 In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
 {:.new-content}
