@@ -29,7 +29,7 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 - Authorization/Authentication protocols established
 - No human intervention needed
 
-</div markdown="1" class="new-content">
+<div markdown="1" class="new-content">
 
 #### Purpose of Use
 
