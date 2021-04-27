@@ -66,3 +66,4 @@
 [Background on FHIR]: {{site.data.fhir.ver.hrex}}fhir.html
 [Conformance Expectations]: {{site.data.fhir.ver.hrex}}conformance.html
 [Subscription Capabilities]: {{site.data.fhir.ver.hrex}}exchanging.html#subscription-capability
+[Task state machine diagram]: {{site.data.fhir.path}}task.html#statemachine

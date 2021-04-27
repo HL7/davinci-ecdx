@@ -51,7 +51,7 @@ list:
       1. **Triaged**: When and how are subscriptions terminated? ([FHIR-30818](https://jira.hl7.org/browse/FHIR-30818)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Unclear how this imposes  ([FHIR-30819](https://jira.hl7.org/browse/FHIR-30819)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: When a task is complete what triggers the termination of a payer's ability to fetch data? ([FHIR-30820](https://jira.hl7.org/browse/FHIR-30820)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Triaged**: When and how do data servers terminate a client's set of requests? ([FHIR-30821](https://jira.hl7.org/browse/FHIR-30821)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Update how a client's set of requests is terminated([FHIR-30821](https://jira.hl7.org/browse/FHIR-30821)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#fetching-the-data)
       1. **Triaged**: What method is used to determine the end of a client's access to a data server? ([FHIR-30822](https://jira.hl7.org/browse/FHIR-30822)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Recommendation for exchanging purpose of use. ([FHIR-30824](https://jira.hl7.org/browse/FHIR-30824)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: Better standardize Task.reasonReference by formalizing (but not limiting) the current scenarios ([FHIR-30826](https://jira.hl7.org/browse/FHIR-30826)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
