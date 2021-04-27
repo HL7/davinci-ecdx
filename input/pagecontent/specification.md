@@ -111,7 +111,8 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
   - there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible
 
-In most of these situation, there is human involvement <span class="bg-success">(e.g., a provider or designated staff)</span> needed to find the data, aggregate the data, filter the data and/or approve its release.  The details for these transaction are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+In most of these situations, there is still human intervention (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data and/or approve its release.  In other use cases, mutually agreed upon data sets for specific purposes can already be requested and automatically fulfilled without human intervention.  The details for these Task based transaction are described in detail the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+{:.new-content}
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
@@ -126,6 +127,7 @@ All of the following except the last of these benefits are relevant whether huma
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
+- {:.new-content}As trust and infrastructure enabling direct queries evolves, enables a transition strategy towards direct queries to gather data of interest
 
 #### Sequence Diagram
 
