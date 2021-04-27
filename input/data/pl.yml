@@ -63,7 +63,7 @@ list:
       1. **Triaged**: The content of this IG wasn't quite ready for ballot. What HL7 process improvement is needed to prevent this in the future? ([FHIR-30832](https://jira.hl7.org/browse/FHIR-30832)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Add hyperlinks. ([FHIR-30834](https://jira.hl7.org/browse/FHIR-30834)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specifications)
       1. **Applied**: Add benefit of transition towards direct queries to Task benefits. ([FHIR-30835](https://jira.hl7.org/browse/FHIR-30835)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#task-based-approach)
-      1. **Triaged**: Suggest to remove the statements as there always is authorization somewhere ([FHIR-30836](https://jira.hl7.org/browse/FHIR-30836)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Triaged**: Update section on Authoization requirements ([FHIR-30836](https://jira.hl7.org/browse/FHIR-30836)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#formal-request-to-share-data)
       1. **Triaged**: Messaging not reflected in data flow. ([FHIR-30837](https://jira.hl7.org/browse/FHIR-30837)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Typo ([FHIR-30840](https://jira.hl7.org/browse/FHIR-30840)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Typo ([FHIR-30841](https://jira.hl7.org/browse/FHIR-30841)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)

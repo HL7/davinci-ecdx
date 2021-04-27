@@ -120,14 +120,14 @@ In most of these situations, there is still human intervention (e.g., a provider
 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
 
-- Easy ability to say 'yes' or 'no', including providing a reason for refusal.
+- Easy ability to say 'yes' or 'no', including providing a reason for refusal
 - Provides the ability to represent the reason (*Purpose of Use*) in the `Task.reasonCode` element using either codes or free text.
 - Allows linking the request to its associated outputs without creating a new resource
 - Can use polling or subscriptions to retrieve the results
+- {:.new-content}As trust and infrastructure enabling direct queries evolve, enables a transition strategy towards direct queries to gather data of interest
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
-- {:.new-content}As trust and infrastructure enabling direct queries evolves, enables a transition strategy towards direct queries to gather data of interest
 
 #### Sequence Diagram
 
@@ -136,9 +136,10 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
 
-#### Authorization
+#### Formal Request To Share Data
 
-The *most common* scenario is where Task can (and even should) exist without an authorization. Task is used alone when there is no need for a formal authorization (order). In other situations when an authorization is needed, the `Task.basedOn` element references either a [CommunicationRequest] or [ServiceRequest] to represent the authorization for data to flow. Both of these use cases ( with and without authorization) are illustrated in the examples below.
+There are situations where one must provide formal authorization for each individual data request. In other cases an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed, it is represented by either a CommunicationRequest or ServiceRequest and referenced by Task using the the Task.basedOn element.  Use cases with and without authorization are illustrated in the examples below.
+{:.new-content}
 
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource.  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.note-to-balloters}
