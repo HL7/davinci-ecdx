@@ -17,7 +17,7 @@ Where possible, new and updated content will be highlighted with green text and 
 
 {{ site.data.ig.description }}
 
-Although this IG provides several example to demonstrate the general approach to data exchange using the Task based approach, it *does not* document specific use cases in detail.  The Da Vinci project plans to publish supplemental material to provide examples and additional documentation covering specific use cases.
+This IG provides several *general* examples to illustrate the different approaches for exchanging clinical data, but it does not to document specific use cases.  We plan to create a set of [Clinical Data Exchange- Supplemental Guides] which will document and provide examples for specific use cases.
 {:.bg-info}
 
 ### About This Guide
