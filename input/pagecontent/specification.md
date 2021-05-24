@@ -29,16 +29,6 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 - Authorization/Authentication protocols established
 - No human intervention needed
 
-<div markdown="1" class="new-content">
-
-#### Purpose of Use
-
-In some cases, it may be important to transmit the *Purpose of Use* when soliciting data.  Specifically, if the *Purpose of Use* differs from the 'default' purpose of use for that data consuming system (generally 'payment and operations' for payers and 'treatment' for providers), the data source needs to be able to make decisions about whether to provide the information at all or whether/how to filter the information.
-
-When using the Task mechanism described below, the *Purpose of Use* can be conveyed in Task.reason.  When using standard RESTful queries, such information cannot be conveyed directly in the query.  There is work in progress in [FHIR SMART v2 (Granular Controls)](https://confluence.hl7.org/pages/viewpage.action?pageId=97479739) on standardizing how purpose of use can be conveyed using OAuth.  Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
-
-</div>
-
 #### Sequence Diagram
 
 The sequence diagram in Figure 2 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:

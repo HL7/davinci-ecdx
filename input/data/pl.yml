@@ -98,7 +98,7 @@ list:
       1. **Applied**: Remove '?' or correct the section name if it is in question ([FHIR-30864](https://jira.hl7.org/browse/FHIR-30864)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#polling-vs-subscriptions)
       1. **Applied**: Typo ([FHIR-30865](https://jira.hl7.org/browse/FHIR-30865)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#fetching-the-data)
       1. **Applied**: Updated Purpose of Use section for Direct Query. ([FHIR-30867](https://jira.hl7.org/browse/FHIR-30867)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#purpose-of-use)
-      1. **Triaged**: Confidentiality protection in a Direct Query must be conveyed in some manner. ([FHIR-30868](https://jira.hl7.org/browse/FHIR-30868)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Updated Confidentiality protection guidance. ([FHIR-30868](https://jira.hl7.org/browse/FHIR-30868)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#purpose-of-use-confidentiality)
       1. **Triaged**: The Sensitivity of the information in a Direct Query must be conveyed in some manner. ([FHIR-30869](https://jira.hl7.org/browse/FHIR-30869)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Triaged**: clarify when attribution is not present or non-repudiable ([FHIR-30870](https://jira.hl7.org/browse/FHIR-30870)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html)

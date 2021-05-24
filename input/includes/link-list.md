@@ -71,3 +71,5 @@
 [Bulk Data exchange IG]: https://hl7.org/fhir/uv/bulkdata/authorization/index.html
 [Da Vinci - Prior Authorization Support]: http://hl7.org/fhir/us/davinci-pas/usecases.html#submit-additional-information
 [Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
+[FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
+[FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021May/
