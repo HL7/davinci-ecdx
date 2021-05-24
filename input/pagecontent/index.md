@@ -17,6 +17,9 @@ Where possible, new and updated content will be highlighted with green text and 
 
 {{ site.data.ig.description }}
 
+Although this IG provides several example to demonstrate the general approach to data exchange using the Task based approach, it *does not* document specific use cases in detail.  The Da Vinci project plans to publish supplemental material to provide examples and additional documentation covering specific use cases.
+{:.bg-info}
+
 ### About This Guide
 
 This Implementation Guide is supported by the [Da Vinci] initiative which is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. Like all Da Vinci Implementation Guides, it follows the [HL7 Da Vinci Guiding Principles] for exchange of patient health information.  The guide is based upon the prior work from the [US Core] and [Da Vinci Health Record Exchange (HRex)] Implementation Guides. Changes to this specification are managed by the sponsoring HL7 [Patient Care (PC)] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.

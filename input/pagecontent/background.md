@@ -11,10 +11,34 @@ Payers also require clinical data from the provider ordering or providing servic
 
 <div markdown="1" class="new-content">
 
+#### Example Scenarios
+
+- Payer requests *attachments* to support a claim submission.
+
+- Payer requests *attachments* to support medical necessity or a coverage rule.
+
+- Payer requests *attachments* to support a claims audit.
+
+- Payer requests additional information for prior authorization.  (See the [Da Vinci - Prior Authorization Support] for more information)
+
+- Payer requests patient health record information to support a HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
+
+- Payer requests patient health record information to support their Risk Adjustment submissions to CMS.
+
+- Payer requests patient health record information to support their member records. (Some payers create a clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.)
+
+- Payers requests patient health record information to meet new regulatory requirements (e.g., promoting patient access)
+</div>
+
+<div markdown="1" class="new-content">
+
 ### Provider to Provider Data Exchange
 
  Providers commonly need and request information from other providers about their patients.  For example, when referring a patient, the referred-to provider needs the order and supporting documentation and the referring provider needs the results from the referral.  Although this guide focuses on payor to provider to interactions, the technical exchange is no different than a provider to provider interaction.
 
+#### Example Scenario
+
+ - Referred-to provider solicits additional clinical information from referring provider to support performing the requested service.
 </div>
 
 ### What Information is Needed?
@@ -38,26 +62,6 @@ There are over a dozen use cases and corresponding Implementation guides being d
 <div markdown='1' class="new-content">
 {% include img.html img="davinci-use-cases.svg" caption="Figure 1" %}
 </div>
-
-#### Example Scenarios
-
-##### Payer to Provider
-{:.bg-success}
-
-- Some payers create a clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.
-
-- Clinical information is gathered from providers to support the HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
-
-- Payers need information that helps them meet new regulatory requirements that promote patient access and exchange of information.
-
-- A Durable Medical Equipment supplier submits a claim for a wheelchair. The Payer reviews the claim and assesses that the documentation submitted by the Provider is insufficient to support medical necessity or Payer coverage rules.
-
-- Payers need to provide CMS with Risk Adjustment submissions annually.
-
-##### Provider to Provider
-{:.bg-success}
-
-- Allow a referred-to provider to solicit additional clinical information from referring provider to support performing the requested service.
 
 <div markdown='1' class="new-content">
 
