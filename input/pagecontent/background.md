@@ -80,7 +80,7 @@ Figure 2 below illustrates the general workflow for the exchange of clinical dat
 - A human practitioner involved in approving/filtering the information provided.
   - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
 
-\* The payer's health record needs to be attributed based on the actual contributing provider.  In other words, the record needs to be attributed to the individual that made the assertion.  If an *Electronic Health Information Exchange* (HIE) retains that information in a non-repudiable manner, then it would be acceptable for a payer's health record to be based on an aggregation created by an HIE and the HIE could act in the role of the data source.  However, not all HIEs do this (and not for all records).  Where attribution is not present or non-repudiable, then the HIE is *not acceptable* as the data source for most payer use-cases.
+\* For most payer use-cases, payers can not use the data if they cannot identify who is responsible for the clinical event (for example an observation, diagnosis, order, etc).  Therefore, payer's health records needs to identify the provider who is making the assertion. This information is typically supplied by provider systems.  An *Electronic Health Information Exchange* (HIE) that has the ability to validate the authorship of the information would also be an acceptable data source.  However, not all HIEs do this (and not for all records) and they would *not* be acceptable data sources.
 {:.bg-warning}
 
 #### Steps
