@@ -73,7 +73,7 @@ list:
       1. **Applied**: Remove empty pages ([FHIR-30828](https://jira.hl7.org/browse/FHIR-30828))
       1. **Resolved - change required**: Clarify When Task.basedOn be a ServiceRequest? ([FHIR-30829](https://jira.hl7.org/browse/FHIR-30829)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#formal-authorization)
       1. **Triaged**: Data Consumer Server SHOULD support Claim. ([FHIR-30830](https://jira.hl7.org/browse/FHIR-30830)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
-      1. **Resolved - change required**: Modify CapabilityStatement summary table header ([FHIR-30831](https://jira.hl7.org/browse/FHIR-30831)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Modify CapabilityStatement Rest summary table ([FHIR-30831](https://jira.hl7.org/browse/FHIR-30831)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/CapabilityStatement-data-consumer-server.html#resource--details)
       1. **Applied**: Add hyperlinks. ([FHIR-30834](https://jira.hl7.org/browse/FHIR-30834)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specifications)
       1. **Applied**: Add benefit of transition towards direct queries to Task benefits. ([FHIR-30835](https://jira.hl7.org/browse/FHIR-30835)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#task-based-approach)
       1. **Appied**: Update section on Authoization requirements ([FHIR-30836](https://jira.hl7.org/browse/FHIR-30836)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#formal-authorization)
