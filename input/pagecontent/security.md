@@ -17,8 +17,6 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
-1. Any request for patient data should be limited to information necessary and when information is shared for one or more specific purposes of use, the data consumer is expected to use the information only for those purposes of use or as allowed by existing federal and state statutes and regulations including HIPAA restrictions on access to information for payment.
-
 1. User scopes **SHALL** be used as defined in the the [SMART on FHIR Framework] and/or the [Bulk Data exchange IG] to restrict access to the relevant patients for a given Data Consumer.
 
 1. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.
