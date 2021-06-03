@@ -1,478 +1,546 @@
 {
-    "id": "data-consumer-client",
-    "text": {
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2 id=\"title\">Data Consumer Client CapabilityStatement</h2><ul><li>Implementation Guide Version: 0.2.0</li><li>FHIR Version: 4.0.1</li><li>Supported formats: xml, json</li><li>Published: 2020-11-04</li><li>Published by: HL7 International - Patient Care Work Group</li></ul><p>This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in <em>Client</em> mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:</p><ol><li>Requesting Clinical Data using a FHIR RESTful query</li><li>POSTing a Task resource representing a request for clinical data</li><li>POSTing a Subscription resource</li><li>Polling a Task resource</li></ol><h3 class=\"no_toc\" id=\"igs\">SHALL Support the Following Implementation Guides:</h3><ul><li><a href=\"http://hl7.org/fhir/us/core/index.html\">HL7 FHIR\u00ae US Core Implementation Guide STU3 Release 3.1.1</a></li></ul><ul><li><a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep/index.html\">Da Vinci Health Record Exchange (HRex) 0.2.0 - STU R1 - 2nd ballot</a></li></ul><h3 id=\"behavior\">FHIR RESTful Capabilities</h3><p>The  Da Vinci CDex Data Consumer  <strong>SHALL</strong>:</p><ol><li>Support at least one of the two FHIR transaction approaches for requesting information as defined in this Guide:\n<ol><li>Direct Query</li><li>Task Based Approachs</li></ol>\n</li><li>Support json source formats for all Da Vinci CDex interactions.</li><li>Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.</li></ol><p>The  Da Vinci CDex Data Consumer  <strong>SHOULD</strong>:</p><ol><li>Support xml source formats for all Da Vinci CDex interactions.</li></ol><p id=\"security\"><strong>Security:</strong></p><ol><li>For general security consideration refer to the <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li><li>For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on <a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html\">Security and Privacy</a></li></ol><p><strong>Summary of System Wide Interactions</strong></p><li><strong>MAY</strong> support the\t<code>transaction</code> interaction.</li><li><strong>MAY</strong> support the\t<code>batch</code> interaction.</li><li><strong>MAY</strong> support the\t<code>search-system</code> interaction.</li><li><strong>MAY</strong> support the\t<code>history-system</code> interaction.</li><h3 class=\"no_toc\" id=\"resource--details\">RESTful Capabilities by Resource/Profile:</h3><p><strong>Summary of Search Criteria</strong></p><table class=\"grid\"><thead><tr><th>Resource Type</th><th>Supported Profiles</th><th>Supported Searches</th><th>Supported <code>_includes</code></th><th>Supported <code>_revincludes</code></th><th>Supported Operations</th></tr></thead><tbody><tr><td><a href=\"#bundle\">Bundle</a></td><td>\n\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n              \n            </td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td></tr><tr><td><a href=\"#coverage\">Coverage</a></td><td><a href=\"http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage\">\nHRex Coverage Profile</a></td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n              \n            </td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td></tr><tr><td><a href=\"#subscription\">Subscription</a></td><td>\n\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n              \n            </td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td></tr><tr><td><a href=\"#task\">Task</a></td><td><a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a></td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td><td>\n              \n            </td><td>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</td></tr></tbody></table><br></br><h4 class=\"no_toc\" id=\"bundle\">Bundle</h4><p>Conformance Expectation:\t<strong>SHOULD</strong></p><p>Resource Specific Documentation:</p><blockquote><p>Required resource type to fetch Clinical Information from data source</p></blockquote><p>Profile Interaction Summary:</p><ul><li><strong>SHOULD</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>search-type</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>read</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>vread</code>.</li><li><strong>MAY</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>create</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>update</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>patch</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>delete</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-instance</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>\n\t\t\t\t\tA Client <strong>SHOULD</strong> be capable of fetching a Bundle resource using:\n\t\t\t\t\t<br></br>\n\t\t\t\t\t\t<code class=\"highlighter-rouge\">GET [base]/Bundle/[id]</code>\n\t\t\t\t</li><br></br><!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --></ul><hr></hr><h4 class=\"no_toc\" id=\"coverage\">Coverage</h4><p>Conformance Expectation:\t<strong>SHOULD</strong></p><p>Supported Profiles:\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage\">\nHRex Coverage Profile</a>\n\t\t\t\t\n\t\t\t\t</p><p>Resource Specific Documentation:</p><blockquote><p>Required resource type to carry information regarding reason for requesting Clniical information for prior authorization.</p></blockquote><p>Profile Interaction Summary:</p><ul><li><strong>SHOULD</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>read</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>vread</code>.</li><li><strong>MAY</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>create</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>search-type</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>update</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>patch</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>delete</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-instance</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>\n\t\t\t\t\tA Client <strong>SHOULD</strong> be capable of fetching a Coverage resource using:\n\t\t\t\t\t<br></br>\n\t\t\t\t\t\t<code class=\"highlighter-rouge\">GET [base]/Coverage/[id]</code>\n\t\t\t\t</li><br></br><!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --></ul><hr></hr><h4 class=\"no_toc\" id=\"subscription\">Subscription</h4><p>Conformance Expectation:\t<strong>SHOULD</strong></p><p>Resource Specific Documentation:</p><blockquote><p>Required resource type to subscribe to data source</p></blockquote><p>Profile Interaction Summary:</p><ul><li><strong>SHOULD</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>create</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>search-type</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>read</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>vread</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>update</code>.</li><li><strong>MAY</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>patch</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>delete</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-instance</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>\n\t\t\t\t\tA Client <strong>SHOULD</strong> be capable of fetching a Subscription resource using:\n\t\t\t\t\t<br></br>\n\t\t\t\t\t\t<code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code>\n\t\t\t\t</li><br></br><!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --></ul><hr></hr><h4 class=\"no_toc\" id=\"task\">Task</h4><p>Conformance Expectation:\t<strong>SHOULD</strong></p><p>Supported Profiles:\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a>\n\t\t\t\t\n\t\t\t\t</p><p>Resource Specific Documentation:</p><blockquote><p>Required resource type to request and fetch clinical information from data source</p></blockquote><p>Profile Interaction Summary:</p><ul><li><strong>SHOULD</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>create</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>search-type</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>read</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>vread</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>update</code>.</li><li><strong>MAY</strong> support \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>patch</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>delete</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-instance</code>, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<code>history-type</code>.</li></ul><p>Fetch and Search Criteria:</p><ul><li>\n\t\t\t\t\tA Client <strong>SHOULD</strong> be capable of fetching a Task resource using:\n\t\t\t\t\t<br></br>\n\t\t\t\t\t\t<code class=\"highlighter-rouge\">GET [base]/Task/[id]</code>\n\t\t\t\t</li><br></br><!-- Only SHOULDs for include for now the capability statement does not create the primitive extensios for this yet --><!-- Only SHALLs for revinclude for now the capability statement does not create the primitive extensios for this yet --></ul><hr></hr><br></br></div>",
-        "status": "generated"
+  "resourceType": "CapabilityStatement",
+  "id": "data-consumer-client",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h2 id=\"title\">Data Consumer Client CapabilityStatement</h2> <ul> <li>Implementation Guide Version: 0.2.0</li> <li>FHIR Version: 4.0.1</li> <li>Supported formats: JSON, XML</li> <li>Published: 2021-06-03 12:12:36.486609-08:00</li> <li>Published by: HL7 International - Patient Care Work Group</li> </ul> <p>This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in <em>Client</em> mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange. This includes the following interactions:</p> <ol> <li>Requesting Clinical Data using a FHIR RESTful query</li> <li>POSTing a Task resource representing a request for clinical data</li> <li>POSTing a Subscription resource</li> <li>Polling a Task resource</li> </ol> <h3 class=\"no_toc\" id=\"shall_igs\">SHALL Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core//index.html\">HL7 FHIR® US Core Implementation Guide STU3 Release 3.1.1</a></li> </ul> <h3 class=\"no_toc\" id=\"should_igs\">SHOULD Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep//index.html\">Da Vinci Health Record Exchange (HRex) 0.2.0 - STU R1 - 2nd ballot</a></li> </ul> <h3 class=\"no_toc\" id=\"shall_css\">SHALL Implement All Or Parts Of The Following Capability Statements:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client/index.html\">US Core Client CapabilityStatement</a></li> </ul> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Consumer <strong>SHALL</strong>:</p> <ol> <li>Support at least one of the two FHIR transaction approaches for requesting information as defined in this Guide: <ol> <li>Direct Query</li> <li>Task Based Approachs</li> </ol> </li> <li>Support json source formats for all Da Vinci CDex interactions.</li> <li>Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Consumer <strong>SHOULD</strong>:</p> <ol> <li>Support xml source formats for all Da Vinci CDex interactions.</li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on <a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html\">Security and Privacy</a></li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#bundle\">Bundle</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#coverage\">Coverage</a> </td> <td> <a href=\"http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage\"> HRex Coverage Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#task\">Task</a> </td> <td> <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"bundle\">Bundle</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to fetch Clinical Information from data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a Bundle resource using: <code class=\"highlighter-rouge\">GET [base]/Bundle/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"coverage\">Coverage</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Supported Profiles: <a href=\"http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage\"> HRex Coverage Profile</a> </p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry information regarding reason for requesting Clniical information for prior authorization.</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a Coverage resource using: <code class=\"highlighter-rouge\">GET [base]/Coverage/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"task\">Task</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Supported Profiles: <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a> </p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to request and fetch clinical information from data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a Task resource using: <code class=\"highlighter-rouge\">GET [base]/Task/[id]</code> </li> </ul> <hr /> </div>"
+  },
+  "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-consumer-client",
+  "version": "0.2.0",
+  "name": "DataConsumerClientCapabilityStatement",
+  "title": "Data Consumer Client CapabilityStatement",
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-03T12:12:36.486609-08:00",
+  "publisher": "HL7 International - Patient Care Work Group",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
+        }
+      ]
+    }
+  ],
+  "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n1. POSTing a Task resource representing a request for clinical data\n1. POSTing a Subscription resource\n1. Polling a Task resource",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "US"
+        }
+      ]
+    }
+  ],
+  "kind": "requirements",
+  "instantiates": [
+    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client"
+  ],
+  "_instantiates": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "_format": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ]
     },
-    "contact": [
+    {
+      "extension": [
         {
-            "telecom": [
-                {
-                    "system": "url",
-                    "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
-                }
-            ]
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
         }
-    ],
-    "date": "2020-11-04",
-    "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n1. POSTing a Task resource representing a request for clinical data\n1. POSTing a Subscription resource\n1. Polling a Task resource",
-    "experimental": false,
-    "fhirVersion": "4.0.1",
-    "format": [
-        "xml",
-        "json"
-    ],
-    "implementationGuide": [
-        "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex|0.2.0",
-        "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|3.1.1",
-        "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|0.2.0"
-    ],
-    "jurisdiction": [
+      ]
+    }
+  ],
+  "patchFormat": [
+    "application/json-patch+json"
+  ],
+  "_patchFormat": [
+    {
+      "extension": [
         {
-            "coding": [
-                {
-                    "code": "US",
-                    "system": "urn:iso:std:iso:3166"
-                }
-            ]
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
         }
-    ],
-    "kind": "requirements",
-    "name": "DataConsumerClientCapabilityStatement",
-    "patchFormat": [
-        "application/json-patch+json"
-    ],
-    "publisher": "HL7 International - Patient Care Work Group",
-    "rest": [
+      ]
+    }
+  ],
+  "implementationGuide": [
+    "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|3.1.1",
+    "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|0.2.0"
+  ],
+  "_implementationGuide": [
+    {
+      "extension": [
         {
-            "documentation": "The  Da Vinci CDex Data Consumer  **SHALL**:\n\n1. Support at least one of the two FHIR transaction approaches for requesting information as defined in this Guide:\n     1. Direct Query\n     1. Task Based Approachs\n1. Support json source formats for all Da Vinci CDex interactions.\n1. Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.\n\nThe  Da Vinci CDex Data Consumer  **SHOULD**:\n\n1. Support xml source formats for all Da Vinci CDex interactions.",
-            "interaction": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "MAY"
-                        }
-                    ],
-                    "code": "transaction"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "MAY"
-                        }
-                    ],
-                    "code": "batch"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "MAY"
-                        }
-                    ],
-                    "code": "search-system"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "MAY"
-                        }
-                    ],
-                    "code": "history-system"
-                }
-            ],
-            "mode": "client",
-            "resource": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "SHOULD"
-                        }
-                    ],
-                    "documentation": "Required resource type to fetch Clinical Information from data source",
-                    "interaction": [
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "create"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "search-type"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "read"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "vread"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "update"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "patch"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "delete"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-instance"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-type"
-                        }
-                    ],
-                    "type": "Bundle"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "SHOULD"
-                        }
-                    ],
-                    "documentation": "Required resource type to carry information regarding reason for requesting Clniical information for prior authorization.",
-                    "interaction": [
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "create"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "search-type"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "read"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "vread"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "update"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "patch"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "delete"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-instance"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-type"
-                        }
-                    ],
-                    "supportedProfile": [
-                        "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
-                    ],
-                    "type": "Coverage"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "SHOULD"
-                        }
-                    ],
-                    "documentation": "Required resource type to subscribe to data source",
-                    "interaction": [
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "create"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "search-type"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "read"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "vread"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "update"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "patch"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "delete"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-instance"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-type"
-                        }
-                    ],
-                    "type": "Subscription"
-                },
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                            "valueCode": "SHOULD"
-                        }
-                    ],
-                    "documentation": "Required resource type to request and fetch clinical information from data source",
-                    "interaction": [
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "create"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "search-type"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "read"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "vread"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "SHOULD"
-                                }
-                            ],
-                            "code": "update"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "patch"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "delete"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-instance"
-                        },
-                        {
-                            "extension": [
-                                {
-                                    "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                                    "valueCode": "MAY"
-                                }
-                            ],
-                            "code": "history-type"
-                        }
-                    ],
-                    "supportedProfile": [
-                        "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
-                    ],
-                    "type": "Task"
-                }
-            ],
-            "security": {
-                "description": "1. For general security consideration refer to the [Security and Privacy Considerations](http://build.fhir.org/secpriv-module.html). \n1. For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on [Security and Privacy](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html)\n"
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHALL"
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
+        }
+      ]
+    }
+  ],
+  "rest": [
+    {
+      "mode": "client",
+      "documentation": "The  Da Vinci CDex Data Consumer  **SHALL**:\n\n1. Support at least one of the two FHIR transaction approaches for requesting information as defined in this Guide:\n     1. Direct Query\n     1. Task Based Approachs\n1. Support json source formats for all Da Vinci CDex interactions.\n1. Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.\n\nThe  Da Vinci CDex Data Consumer  **SHOULD**:\n\n1. Support xml source formats for all Da Vinci CDex interactions.",
+      "security": {
+        "description": "1. For general security consideration refer to the [Security and Privacy Considerations](http://build.fhir.org/secpriv-module.html). \n1. For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on [Security and Privacy](http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html)\n"
+      },
+      "resource": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHOULD"
             }
+          ],
+          "type": "Bundle",
+          "supportedProfile": [],
+          "documentation": "Required resource type to fetch Clinical Information from data source",
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "search-type"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "patch"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-instance"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-type"
+            }
+          ],
+          "searchParam": [],
+          "operation": []
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHOULD"
+            }
+          ],
+          "type": "Coverage",
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
+          ],
+          "documentation": "Required resource type to carry information regarding reason for requesting Clniical information for prior authorization.",
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "search-type"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "patch"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-instance"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-type"
+            }
+          ],
+          "searchParam": [],
+          "operation": []
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHOULD"
+            }
+          ],
+          "type": "Subscription",
+          "supportedProfile": [],
+          "documentation": "Required resource type to subscribe to data source",
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "search-type"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "patch"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-instance"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-type"
+            }
+          ],
+          "searchParam": [],
+          "operation": []
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHOULD"
+            }
+          ],
+          "type": "Task",
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+          ],
+          "documentation": "Required resource type to request and fetch clinical information from data source",
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "search-type"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "patch"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-instance"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-type"
+            }
+          ],
+          "searchParam": [],
+          "operation": []
         }
-    ],
-    "status": "active",
-    "title": "Data Consumer Client CapabilityStatement",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-consumer-client",
-    "version": "0.2.0",
-    "resourceType": "CapabilityStatement"
+      ],
+      "interaction": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "code": "transaction"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "code": "batch"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "code": "search-system"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "MAY"
+            }
+          ],
+          "code": "history-system"
+        }
+      ]
+    }
+  ]
 }
