@@ -29,7 +29,7 @@ requester:
 owner:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 reasonCode:
-  text: Support prior authorization decision-making
+  text: Support claim submission
 reasonReference:
   reference: http://example.org/fhir/Claim/cdex-example-claim
 input:
