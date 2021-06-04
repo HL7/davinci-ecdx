@@ -4,9 +4,9 @@
 In this example:
 
 1. No formal authorization (order) is needed
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-2. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-3. The Patient B's Documents referenced by Task.output are *contained* resources and the actual documents are base64 pdf files in the `DocumentReference.content.attachment.data` elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them. A Document from the resource is rendered below.
+1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
+1. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+1. **In this example there is no matching data**
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -20,7 +20,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example3-query-request.json %}
+{% include cdex-example2-query-request.json %}
 ~~~
 
 **Response Headers**
@@ -28,7 +28,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example3-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example2-query-failed/_history/1
 ...(other headers)
 ~~~
 
@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example3-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET [base]Task/cdex-example3-query-completed
+GET Task/cdex-example2-query-failed
 ~~~
 
 {% include request-headers.md %}
@@ -46,9 +46,5 @@ GET [base]Task/cdex-example3-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example3-query-completed.json %}
+{% include_relative Task-cdex-example2-query-failed.json %}
 ~~~
-
-###### Step 3 - Rendered Documents
-
-<embed  type="application/pdf" frameborder="1" width="640" height="480" src="data:application/pdf;base64,{{site.data.cdex-example3-query-completed.contained[0].entry[0].resource.content[0].attachment.data}}"/>

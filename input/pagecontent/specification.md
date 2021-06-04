@@ -220,7 +220,7 @@ Preconditions and Assumptions:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
+{% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
 </div>
 
 ---
@@ -234,7 +234,7 @@ Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
 
-{% include examplebutton_default.html example="task-scenario2-basic" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
 ---
 
@@ -247,7 +247,7 @@ Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
-{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
 ### Bulk Data
 
