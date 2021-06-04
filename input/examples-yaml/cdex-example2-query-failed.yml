@@ -3,7 +3,7 @@ id: cdex-example2-query-failed
 meta:
   extension:
     - url: 'http://hl7.org/fhir/StructureDefinition/instance-name'
-      valueString: Scenario 2 Failed Task Example
+      valueString: Scenario 3 Failed Task Example
     - url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
       valueMarkdown: Task to seek a patient's HbA1c test results.
   profile:

@@ -153,7 +153,7 @@
           "reference": "Task/cdex-example2-query-failed"
         },
         "description": "Task to seek a patient's HbA1c test results.",
-        "name": "Scenario 2 Failed Task Example",
+        "name": "Scenario 3 Failed Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
@@ -161,7 +161,7 @@
           "reference": "Task/cdex-example2-query-requested"
         },
         "description": "Task to seek a patient HbA1c test results.",
-        "name": "Scenario 2 Task Example",
+        "name": "Scenario 3 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
@@ -169,7 +169,7 @@
           "reference": "Task/cdex-example3-query-completed"
         },
         "description": "Completed Task to seek a patient's latest history and physical exam notes.",
-        "name": "Scenario 3 Completed Task Example",
+        "name": "Scenario 4 Completed Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
@@ -177,7 +177,7 @@
           "reference": "Task/cdex-example3-query-requested"
         },
         "description": "Task to seek a patient's latest history and physical exam notes.",
-        "name": "Scenario 3 Task Example",
+        "name": "Scenario 4 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       }
     ],

@@ -187,23 +187,23 @@ definition:
             reference: Task/cdex-example1-query-requested
     -   description: Task to seek a patient's HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: Scenario 2 Failed Task Example
+        name: Scenario 3 Failed Task Example
         reference:
             reference: Task/cdex-example2-query-failed
     -   description: Task to seek a patient HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: Scenario 2 Task Example
+        name: Scenario 3 Task Example
         reference:
             reference: Task/cdex-example2-query-requested
     -   description: Completed Task to seek a patient's latest history and physical
             exam notes.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: Scenario 3 Completed Task Example
+        name: Scenario 4 Completed Task Example
         reference:
             reference: Task/cdex-example3-query-completed
     -   description: Task to seek a patient's latest history and physical exam notes.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-        name: Scenario 3 Task Example
+        name: Scenario 4 Task Example
         reference:
             reference: Task/cdex-example3-query-requested
 dependsOn:

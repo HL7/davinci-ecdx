@@ -5,7 +5,7 @@
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Scenario 3 Completed Task Example"
+                "valueString": "Scenario 4 Completed Task Example"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
