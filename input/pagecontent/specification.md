@@ -220,7 +220,7 @@ Preconditions and Assumptions:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Interaction with a formal authorization' %}
+{% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
 
 ---
 
