@@ -37,7 +37,7 @@
     "authoredOn": "2020-10-26T02:58:55.179Z",
     "lastModified": "2020-10-26T02:58:55.179Z",
     "requester": {
-        "reference": "http://example.org/fhir/Organization/cdex-refered-to-provider"
+        "reference": "http://example.org/fhir/Organization/cdex-referred-to-provider"
     },
     "owner": {
         "reference": "http://example.org/fhir/Organization/cdex-referring-provider"
