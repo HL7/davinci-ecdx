@@ -7,6 +7,7 @@ Note: Formal authorization is optional and typically in provider to provider tra
 In this example:
 
 1. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
+   - Note that in this example, the Referred-To Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a 'third party'.
 1. The Referred-To Provider POSTS a Task to the Referring Provider endpoint, the CommunicationRequest is referenced in `Task.basedOn`
 1. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
 1. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
