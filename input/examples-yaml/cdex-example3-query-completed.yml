@@ -84,7 +84,7 @@ lastModified: '2020-10-27T11:05:34-07:00'
 requester:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 owner:
-  reference: http://example.org/fhir/Organization/cdex-example-payer
+  reference: http://example.org/fhir/Organization/cdex-example-provider
 reasonCode:
   text: To improve care coordination
 input:

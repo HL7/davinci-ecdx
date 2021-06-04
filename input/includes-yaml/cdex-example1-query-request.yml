@@ -16,7 +16,7 @@ lastModified: '2020-10-26T02:58:55.179Z'
 requester:
   reference: http://example.org/fhir/Organization/cdex-example-payer
 owner:
-  reference: http://example.org/fhir/Organization/cdex-example-payer
+  reference: http://example.org/fhir/Organization/cdex-example-provider
 reasonCode:
   text: Support claim submission
 reasonReference:
