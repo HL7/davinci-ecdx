@@ -208,9 +208,11 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
 ---
 
-##### Scenario 2
+<div markdown="1" class="bg-success">
 
-Referred-to Provider Seeks Patient B's Active Conditions from referring Provider <span class="bg-success">to support performing the requested service.</span>
+""##### Scenario 2
+
+Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
 
 Preconditions and Assumptions:
 - There is human involvement needed to complete the request
@@ -221,6 +223,8 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 {% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Interaction with a formal authorization' %}
 
 ---
+
+</div>
 
 ##### Scenario 3
 
