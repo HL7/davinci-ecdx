@@ -110,6 +110,14 @@
       },
       {
         "reference": {
+          "reference": "Task/cdex-example1-authorized-completed"
+        },
+        "description": "Completed Task to seek a patient active conditions with a reference to a formal authorization.",
+        "name": "Scenario 2 Completed Authorization Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
           "reference": "Task/cdex-example1-free-text-completed"
         },
         "description": "Completed Task to seek a patient active conditions using free text for the input.",

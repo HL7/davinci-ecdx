@@ -157,6 +157,12 @@ definition:
         name: Scenario 2 Authorization Example
         reference:
             reference: Task/cdex-example1-authorized-request
+    -   description: Completed Task to seek a patient active conditions with a reference
+            to a formal authorization.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 2 Completed Authorization Example
+        reference:
+            reference: Task/cdex-example1-authorized-completed
     -   description: Completed Task to seek a patient active conditions using free
             text for the input.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request

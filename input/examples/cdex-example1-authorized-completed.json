@@ -1,0 +1,85 @@
+{
+    "resourceType": "Task",
+    "id": "cdex-example1-authorized-completed",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Scenario 2 Completed Authorization Example"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Completed Task to seek a patient active conditions with a reference to a formal authorization."
+            }
+        ],
+        "versionId": "3",
+        "lastUpdated": "2020-10-26T04:04:52.000+00:00",
+        "source": "#tgH2FoPFuCq0yjw5",
+        "profile": [
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        ]
+    },
+    "basedOn": [
+        {
+            "reference": "http://example.org/fhir/CommunicationRequest/cdex-example1-authorization"
+        }
+    ],
+    "status": "completed",
+    "businessStatus": {
+        "text": "Results reviewed for release"
+    },
+    "intent": "order",
+    "code": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                "code": "data-request"
+            }
+        ]
+    },
+    "for": {
+        "reference": "http://example.org/fhir/Patient/cdex-example-patient"
+    },
+    "authoredOn": "2020-10-26T02:58:55.179Z",
+    "lastModified": "2020-10-26T04:04:52.019Z",
+    "requester": {
+        "reference": "http://example.org/fhir/Organization/cdex-referred-to-provider"
+    },
+    "owner": {
+        "reference": "http://example.org/fhir/Organization/cdex-referring-provider"
+    },
+    "reasonCode": {
+        "text": "Support performing requested service"
+    },
+    "reasonReference": {
+        "reference": "http://example.org/fhir/Claim/cdex-example-claim"
+    },
+    "input": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                        "code": "data-query"
+                    }
+                ]
+            },
+            "valueString": "Condition?patient=cdex-example-patient&clinical-status=active"
+        }
+    ],
+    "output": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                        "code": "data-value"
+                    }
+                ]
+            },
+            "valueReference": {
+                "reference": "http://example.org/fhir/Condition/858"
+            }
+        }
+    ]
+}
