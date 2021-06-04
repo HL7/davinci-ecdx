@@ -210,7 +210,7 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 <div markdown="1" class="bg-success">
 
-""##### Scenario 2
+##### Scenario 2
 
 Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
 
