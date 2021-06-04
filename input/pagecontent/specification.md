@@ -186,7 +186,7 @@ As discussed above, there are 4 basic implementation variations in any combinati
 1. Structured vs Free Text Request
 1. Subscription vs Polling
 1. Fetching Contained vs External Data
-1. Whether Formal Authorization is Needed
+1. Whether Formal Authorization is Needed (typically in provider-provider scenarios)
 
 The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
 
@@ -206,12 +206,23 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling.' %}
 
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
+---
+
+##### Scenario 2
+
+Referred-to Provider Seeks Patient B's Active Conditions from referring Provider <span class="bg-success">to support performing the requested service.</span>
+
+Preconditions and Assumptions:
+- There is human involvement needed to complete the request
+- Referred-to Provider needs formal authorization to request data
+
+Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
 {% include examplebutton_default.html example="task-scenario1-authorization" b_title = 'Interaction with a formal authorization' %}
 
 ---
 
-##### Scenario 2
+##### Scenario 3
 
 Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
@@ -224,7 +235,7 @@ Preconditions and Assumptions:
 
 ---
 
-##### Scenario 3
+##### Scenario 4
 
 Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
 
