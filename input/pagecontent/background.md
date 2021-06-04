@@ -84,7 +84,7 @@ Figure 2 below illustrates the general workflow for the exchange of clinical dat
 {:.bg-warning}
 
 #### Steps
-1. The data consumer initiates a request for clinical or administrative information.
+1. The data consumer initiates a request for information.
 1. The data source retrieves the the requested data.
 1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
 1. The data is sent back to the the data consumer.
