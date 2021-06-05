@@ -32,6 +32,8 @@ This Guide is divided into several pages which are listed at the top of each pag
 - [Background]\: This page provides the background and a summary of the Da Vinci Clinical Data Exchange Project.
 - [Specification]\: This page provides detailed guidance on the set of FHIR transactions and the FHIR artifacts used in a general framework to support exchange of clinical information between provider and payers.
 - [FHIR Artifacts]\: These pages provide detailed descriptions and examples for Task based data exchange approach.
+- [Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
+- [Downloads]\: This page provides links to downloadable artifacts.
 
 ---
 

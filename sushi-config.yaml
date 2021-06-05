@@ -14,7 +14,7 @@ jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
   Used by permission of HL7 International all rights reserved Creative Commons License
 description: >-
-  This IG provides detailed guidance that helps implementers use FHIR-based interactions and resources relevant to support specific exchanges of clinical data between providers and payers (or other providers).  What is unique about this guide is that it documents the **Direct Query** and **Task Based**  transaction approaches for requesting information. Key scenarios this IG can support include:
+  This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  What is unique about this guide is that it documents the **Direct Query** and **Task Based**  transaction approaches for requesting information. Key scenarios this IG can support include:
 
    - Requesting *attachments* to support claim submission, medical necessity and other reasons for attachments between payers and providers
    - Gathering information for Quality programs and Risk Adjustment between payers and providers
