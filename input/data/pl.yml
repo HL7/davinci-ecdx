@@ -41,7 +41,9 @@ list:
       1. **Triaged**: Interop Framework for Payer2Payer and Internal Systems ([FHIR-29683](https://jira.hl7.org/browse/FHIR-29683)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Provide another example of a use case not covered by another Da Vinci IG ([FHIR-30146](https://jira.hl7.org/browse/FHIR-30146)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html##where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Fix link and expectations to CapabilityStatements ([FHIR-30147](https://jira.hl7.org/browse/FHIR-30147)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/CapabilityStatement-data-source-server.html#resource-details)
-      1. **Resolved - change required**: Failed task or task without result? ([FHIR-30148](https://jira.hl7.org/browse/FHIR-30148)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Failed task or task without result? ([FHIR-30148](https://jira.hl7.org/browse/FHIR-30148)) See Changes:
+         -  [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#when-the-task-cannot-be-completed)
+         -  [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/CapabilityStatement-data-source-server.html#task)
       1. **Applied**: add item to list of benefits ([FHIR-30440](https://jira.hl7.org/browse/FHIR-30440)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Update section on What Payers Do with Clinical Information ([FHIR-30442](https://jira.hl7.org/browse/FHIR-30442)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/ackground.html#what-do-payers-do-with-clinical-information)
       1. **Applied**: Update text in sequence diagrams ([FHIR-30445](https://jira.hl7.org/browse/FHIR-30445)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#steps)

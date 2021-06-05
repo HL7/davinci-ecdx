@@ -12,17 +12,17 @@
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
-<artifact id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="Scenario 1 Authorization Example"/>
-<artifact id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="Scenario 1 Completed Authorization Example"/>
 <artifact id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
 <artifact id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
 <artifact id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>
 <artifact id="Task/cdex-example1-query-requested" key="Task-cdex-example1-query-requested" name="Scenario 1 Example"/>
 <artifact id="Task/cdex-example1-free-text-request" key="Task-cdex-example1-free-text-request" name="Scenario 1 Free Text Example"/>
-<artifact id="Task/cdex-example2-query-failed" key="Task-cdex-example2-query-failed" name="Scenario 2 Failed Task Example"/>
-<artifact id="Task/cdex-example2-query-requested" key="Task-cdex-example2-query-requested" name="Scenario 2 Task Example"/>
-<artifact id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 3 Completed Task Example"/>
-<artifact id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 3 Task Example"/>
+<artifact id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="Scenario 2 Authorization Example"/>
+<artifact id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="Scenario 2 Completed Authorization Example"/>
+<artifact id="Task/cdex-example2-query-failed" key="Task-cdex-example2-query-failed" name="Scenario 3 Failed Task Example"/>
+<artifact id="Task/cdex-example2-query-requested" key="Task-cdex-example2-query-requested" name="Scenario 3 Task Example"/>
+<artifact id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
+<artifact id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
