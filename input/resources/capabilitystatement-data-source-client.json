@@ -3,7 +3,7 @@
   "id": "data-source-client",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h2 id=\"title\">Data Source Client CapabilityStatement</h2> <ul> <li>Implementation Guide Version: 0.2.0</li> <li>FHIR Version: 4.0.1</li> <li>Supported formats: JSON, XML</li> <li>Published: 2021-06-03 12:13:22.189962-08:00</li> <li>Published by: HL7 International - Patient Care Work Group</li> </ul> <p>This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in <em>Client</em> mode during a clinical data exchange with a Data Consumer. This includes the following interactions:</p> <ol> <li>Query for Authorization information represented by a CommunicationRequest or ServiceRequest</li> <li>Posting a subscription notification to a Data Consumer endpoint updating the status of a Task</li> </ol> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Source <strong>SHALL</strong>:</p> <ol> <li>Support the Task Based Approach approaches for requesting information as defined in this Guide:</li> <li>Support json source formats for all Da Vinci CDex interactions.</li> <li>Declare a CapabilityStatement identifying transactions and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Source <strong>SHOULD</strong>:</p> <ol> <li>Support xml source formats for all Da Vinci CDex interactions.</li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on <a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html\">Security and Privacy</a></li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#communicationrequest\">CommunicationRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#servicerequest\">ServiceRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"communicationrequest\">CommunicationRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clniical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a CommunicationRequest resource using: <code class=\"highlighter-rouge\">GET [base]/CommunicationRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"servicerequest\">ServiceRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clniical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a ServiceRequest resource using: <code class=\"highlighter-rouge\">GET [base]/ServiceRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code><sup>&#8224;</sup>, <code>update</code><sup>&#8224;</sup>.</li><li><strong>MAY</strong> support <code>create</code>, <code>read</code>, <code>vread</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>search-type<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote><blockquote>update<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>MAY</strong> be capable of fetching a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> </div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h2 id=\"title\">Data Source Client CapabilityStatement</h2> <ul> <li>Official URL: <code>http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-client</code></li> <li>Implementation Guide Version: 0.2.0</li> <li>FHIR Version: 4.0.1</li> <li>Supported formats: <strong>SHALL</strong> support JSON, <strong>SHOULD</strong> support XML </li> <li>Published: 2021-06-08 09:42:44.453046-08:00</li> <li>Published by: HL7 International - Patient Care Work Group</li> </ul> <p>This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in <em>Client</em> mode during a clinical data exchange with a Data Consumer. This includes the following interactions:</p> <ol> <li>Query for Authorization information represented by a CommunicationRequest or ServiceRequest</li> <li>Posting a subscription notification to a Data Consumer endpoint updating the status of a Task</li> </ol> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Source <strong>SHALL</strong>:</p> <ol> <li>Support the Task Based Approach approaches for requesting information as defined in this Guide:</li> <li>Support json source formats for all Da Vinci CDex interactions.</li> <li>Declare a CapabilityStatement identifying transactions and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Source <strong>SHOULD</strong>:</p> <ol> <li>Support xml source formats for all Da Vinci CDex interactions.</li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the Da Vinci HRex Implementation Guide section on <a href=\"http://hl7.org/fhir/us/davinci-hrex/2020Sep/security.html\">Security and Privacy</a></li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#communicationrequest\">CommunicationRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#servicerequest\">ServiceRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"communicationrequest\">CommunicationRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clniical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a CommunicationRequest resource using: <code class=\"highlighter-rouge\">GET [base]/CommunicationRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"servicerequest\">ServiceRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clniical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>SHOULD</strong> be capable of fetching a ServiceRequest resource using: <code class=\"highlighter-rouge\">GET [base]/ServiceRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code><sup>&#8224;</sup>, <code>update</code><sup>&#8224;</sup>.</li><li><strong>MAY</strong> support <code>create</code>, <code>read</code>, <code>vread</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>search-type<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote><blockquote>update<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Client <strong>MAY</strong> be capable of fetching a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> </div>"
   },
   "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-client",
   "version": "0.2.0",
@@ -11,7 +11,7 @@
   "title": "Data Source Client CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2021-06-03T12:13:22.189962-08:00",
+  "date": "2021-06-08T09:42:44.453046-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -74,7 +74,6 @@
             }
           ],
           "type": "CommunicationRequest",
-          "supportedProfile": [],
           "documentation": "Required resource type to carry authorization information regarding for requesting Clniical information",
           "interaction": [
             {
@@ -159,9 +158,7 @@
               ],
               "code": "history-type"
             }
-          ],
-          "searchParam": [],
-          "operation": []
+          ]
         },
         {
           "extension": [
@@ -171,7 +168,6 @@
             }
           ],
           "type": "ServiceRequest",
-          "supportedProfile": [],
           "documentation": "Required resource type to carry authorization information regarding for requesting Clniical information",
           "interaction": [
             {
@@ -256,9 +252,7 @@
               ],
               "code": "history-type"
             }
-          ],
-          "searchParam": [],
-          "operation": []
+          ]
         },
         {
           "extension": [
@@ -268,7 +262,6 @@
             }
           ],
           "type": "Subscription",
-          "supportedProfile": [],
           "documentation": "Required resource type to subscribe to data source",
           "interaction": [
             {
@@ -354,9 +347,7 @@
               ],
               "code": "history-type"
             }
-          ],
-          "searchParam": [],
-          "operation": []
+          ]
         }
       ],
       "interaction": [
