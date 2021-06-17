@@ -113,6 +113,7 @@ list:
       1. **Applied**: Add supplemental security guidance on audit ([FHIR-31888](https://jira.hl7.org/browse/FHIR-31888)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
       1. **Applied**: Add supplemental security guidance on scopes([FHIR-31887](https://jira.hl7.org/browse/FHIR-31887)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
       1. **Applied**: Clarify human involvement needed([FHIR-31886](https://jira.hl7.org/browse/FHIR-31886)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#task-based-approach)
+      1. **Applied**: Provide guidance on finding organization and provider identifiers([FHIR-32841](https://jira.hl7.org/browse/FHIR-32841)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#task-based-approach)
 
     path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
     status: ci-build
