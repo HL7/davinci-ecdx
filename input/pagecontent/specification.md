@@ -118,6 +118,15 @@ In most of these situations, there is still human intervention (e.g., a provider
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
+<div markdown="1", class ="new-content">
+
+Task based queries require sending a FHIR id or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers, and implementers will need to obtain them "out of band".
+
+It is anticipated other efforts such as FHIR at Scale Taskforce (FAST) will provide a long term solution to the issue of FHIR id discovery.
+{:.stu-note}
+
+</div>
+
 #### Benefits
 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
