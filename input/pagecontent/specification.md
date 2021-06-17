@@ -120,7 +120,7 @@ In most of these situations, there is still human intervention (e.g., a provider
 
 <div markdown="1" class="new-content">
 
-Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers, and implementers will need to obtain them "out of band".
+Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
 
 It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
 {:.stu-note}

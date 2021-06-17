@@ -73,4 +73,4 @@
 [Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021May/
-[FHIR id]: {{site.data.fhir.path}}references.html#literal
+[FHIR id]: {{site.data.fhir.path}}references.html
