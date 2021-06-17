@@ -66,11 +66,11 @@
 [Background on FHIR]: {{site.data.fhir.ver.hrex}}fhir.html
 [Conformance Expectations]: {{site.data.fhir.ver.hrex}}conformance.html
 [Subscription Capabilities]: {{site.data.fhir.ver.hrex}}exchanging.html#subscription-capability
-[Task state machine diagram]: {{site.data.fhir.path}}task.html#statemachine
+[Task state machine]: {{site.data.fhir.path}}task.html#statemachine
 [SMART on FHIR Framework]: http://hl7.org/fhir/smart-app-launch/index.html
 [Bulk Data exchange IG]: https://hl7.org/fhir/uv/bulkdata/authorization/index.html
 [Da Vinci - Prior Authorization Support]: http://hl7.org/fhir/us/davinci-pas/usecases.html#submit-additional-information
 [Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021May/
-[Task state machine]: http://hl7.org/fhir/task.html#statemachine
+[FHIR id]: {{site.data.fhir.path}}references.html#literal

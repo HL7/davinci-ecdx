@@ -118,11 +118,11 @@ In most of these situations, there is still human intervention (e.g., a provider
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
-<div markdown="1", class ="new-content">
+<div markdown="1" class="new-content">
 
-Task based queries require sending a FHIR id or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers, and implementers will need to obtain them "out of band".
+Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers, and implementers will need to obtain them "out of band".
 
-It is anticipated other efforts such as FHIR at Scale Taskforce (FAST) will provide a long term solution to the issue of FHIR id discovery.
+It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
 {:.stu-note}
 
 </div>
@@ -179,7 +179,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Fetching the Data
 
-<span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine diagram] in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
+<span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
 
 <div markdown="1" class="new-content">
 
