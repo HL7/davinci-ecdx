@@ -90,7 +90,7 @@ list:
       1. **Applied**: Remove unsubstantiated claims. ([FHIR-30847](https://jira.hl7.org/browse/FHIR-30847)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#what-do-payers-do-with-clinical-information)
       1. **Triaged**: Explain how this guide might improve HEDIS scores. ([FHIR-30849](https://jira.hl7.org/browse/FHIR-30849)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
       1. **Applied**: Relocate paragraph. ([FHIR-30850](https://jira.hl7.org/browse/FHIR-30850)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#actors-and-roles)
-      1. **Triaged**: Relocate paragraph to security page. ([FHIR-30851](https://jira.hl7.org/browse/FHIR-30851)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.md)
+      1. **Applied**: Remove paragraph and refer to HREX security page. ([FHIR-30851](https://jira.hl7.org/browse/FHIR-30851)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.md)
       1. **Applied**: Typo ([FHIR-30852](https://jira.hl7.org/browse/FHIR-30852)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Reword statement. ([FHIR-30853](https://jira.hl7.org/browse/FHIR-30853)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Typo ([FHIR-30854](https://jira.hl7.org/browse/FHIR-30854)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
