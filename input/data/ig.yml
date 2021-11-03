@@ -78,14 +78,6 @@ definition:
     -   code: path-history
         value: http://hl7.org/fhir/us/davinci-cdex/history.html
     resource:
-    -   description: "This Task profile is based upon the [Da Vinci Hrex Task Data\
-            \ Request Profile](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).\
-            \  It extensibly binds `Task.input.value` codes to LOINC\xAE Document\
-            \ types."
-        exampleBoolean: false
-        name: CDex Task Data Request Profile
-        reference:
-            reference: StructureDefinition/cdex-task-data-request
     -   description: 'This CapabilityStatement describes the expected capabilities
             of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when
             requesting clinical data from the Data Source (often an EHR) during a
@@ -145,6 +137,40 @@ definition:
         name: Data Source Server CapabilityStatement
         reference:
             reference: CapabilityStatement/data-source-server
+    -   description: Codes temporarily defined as part of the CDex implementation
+            guide.  These will eventually migrate into an officially maintained terminology
+            (likely HL7's UTG code systems).
+        exampleBoolean: false
+        name: CDex Temporary Code System
+        reference:
+            reference: CodeSystem/cdex-temp
+    -   description: "This Task profile is based upon the [Da Vinci Hrex Task Data\
+            \ Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).\
+            \ It adds the following additional constraints for CDEX: - In `Task.input`,\
+            \ represent the types of documents to be returned using the extensible\
+            \ LOINC\xAE Document types value set. - In `Task.input`, flag whether\
+            \ the requested data requires a signature. - In `Task.input`, represent\
+            \ the purpose of use for the requested data using an extensible *CDex\
+            \ Purpose of Use Value Set*."
+        exampleBoolean: false
+        name: CDex Task Data Request Profile
+        reference:
+            reference: StructureDefinition/cdex-task-data-request
+    -   description: The set of purpose of use codes for the requested data (the output
+            of the task). This code set is composed [FHIR core Purpose of Use security
+            labels](http://hl7.org/fhir/security-labels.html#core) and additional
+            codes defined by this Guide.
+        exampleBoolean: false
+        name: CDex Purpose of Use Value Set
+        reference:
+            reference: ValueSet/cdex-POU
+    -   description: The set work queue tags that the provider may use in their workflow
+            to process request. This code set is composed of codes defined by this
+            Guide.
+        exampleBoolean: false
+        name: CDex Work Queue Value Set
+        reference:
+            reference: ValueSet/cdex-work-queue
     -   description: Completed Task to seek a patient active conditions with a reference
             to a formal authorization.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request

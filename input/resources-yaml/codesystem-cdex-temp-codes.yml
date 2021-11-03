@@ -1,0 +1,86 @@
+resourceType: CodeSystem
+id: cdex-temp
+url: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+name: CDexTempCodes
+title: CDex Temporary Code System
+status: draft
+date: '2021-10-26T18:38:56-07:00'
+description: >-
+  Codes temporarily defined as part of the CDex implementation guide.  These
+  will eventually migrate into an officially maintained terminology (likely
+  HL7's UTG code systems).
+content: complete
+concept:
+  - code: claims-processing
+    display: Claim Processing
+    definition:  Request for data necessary from payers to support claims for services.
+
+  - code: risk-adjustment
+    display: Risk Adjustment
+    definition: Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided.
+
+  - code: quality-metrics
+    display: Quality Metrics
+    definition: Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures.
+
+  - code: prior-authorization
+    display: Prior Authorization
+    definition: Request for data from payers as part of a prior authorization requests from EHR systems. If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested. The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
+
+  - code: referral
+    display: Referral
+    definition: Request for additional clinical information from referring provider to support performing the requested service.
+
+  - code: social-care
+    display: Social Care
+    definition: TODO
+
+  - code: authorization-other
+    display: Other Authorization
+    definition: Request for data from payers for other authorization request not otherwise specified.
+
+  - code: care-coordination
+    display: Care Coordination
+    definition: Request for data from payers to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care.
+
+  - code: documentation-general
+    display: General Documentation
+    definition: Request for data used from payers or providers for general documentation.
+
+  - code: orders
+    display: Orders
+    definition: Request for additional clinical information from referring provider to support orders.
+
+  - code: patient-status
+    display: Patient Status
+    definition: Requests for patient health record information from payers to support their payer member records.
+
+  - code: signature
+    display: Signature
+    definition: Request for signatures from payers or providers on requested data.
+
+  - code: care-planning
+    display: Care Planning
+    definition: Request for data from payers or providers to determine how to deliver care for a particular patient, group or community.
+
+  - code: social-risk
+    display: Social Risk
+    definition: Request for data from payers or other providers to assess of social risk, establishing coded health concerns/problems, creating patient driven goals, managing interventions, and measuring outcomes.
+
+  - code: operations-nos
+    display: Operations Not Otherwise Specified
+    definition: >-
+      [Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) and isn't defined further to ascertain a more detailed Purpose of Use concept.
+
+  - code: payment-nos
+    display: Payment Not Otherwise Specified
+    definition: >-
+       [Healthcare Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) and isn't defined further to ascertain a more detailed Purpose of Use concept.
+
+  - code: purpose-of-use
+    display: Purpose Of Use
+    definition: Purpose of use for the requested data.
+
+  - code: signature-flag
+    display: Signature Flag
+    definition: Flag to indicate whether the requested data requires a signature.

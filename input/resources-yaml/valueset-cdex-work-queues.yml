@@ -1,0 +1,24 @@
+resourceType: ValueSet
+id: cdex-work-queue
+url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
+name: CDexWorkQueueCodes
+title: CDex Work Queue Value Set
+status: draft
+date: '2021-10-26T18:38:56-07:00'
+description: The set work queue tags that the provider may use in their workflow to process request. This code set is composed of codes defined by this Guide.
+compose:
+  include:
+    - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+      concept:
+        - code: claims-processing
+        - code: risk-adjustment
+        - code: quality-metrics
+        - code: prior-authorization
+        - code: referral
+        - code: social-care
+        - code: authorization-other
+        - code: care-coordination
+        - code: documentation-general
+        - code: orders
+        - code: patient-status
+        - code: signature

@@ -84,7 +84,8 @@ menu:
   FHIR Artifacts: #artifacts.html
       CapabilityStatements: artifacts.html#1
       Profiles: artifacts.html#2
-      #Terminology: terminology.html
-      Examples: artifacts.html#3
+      Value Sets: artifacts.html#3
+      Code Systems: artifacts.html#4
+      Examples: artifacts.html#5
   Security and Privacy: security.html
   Downloads: downloads.html
