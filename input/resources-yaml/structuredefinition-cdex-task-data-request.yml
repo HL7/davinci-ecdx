@@ -5,10 +5,11 @@ version: 0.2.0
 name: CDexTaskDataRequest
 title: CDex Task Data Request Profile
 status: active
-description: >-
+description: |
   This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDEX:
+  - A 'meta.tag' element represents work-queue hints.
   - In `Task.input`, represent the types of documents to be returned using the extensible LOINC® Document types value set.
-  - In `Task.input`, flag whether the requested data requires a signature.
+  - In `Task.input`, represent a flag to indicate whether the requested data requires a signature.
   - In `Task.input`, represent the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.
 fhirVersion: 4.0.1
 kind: resource
