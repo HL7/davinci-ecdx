@@ -1,4 +1,3 @@
-### Task Based Approach
 
 This guide uses a Task Based Approach to satisfy the Payer's need to request the information it needs when it can not perform a direct query. The decision to use this approach is based on the following factors:
 
@@ -24,7 +23,7 @@ It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will pr
 
 </div>
 
-#### Benefits
+### Benefits
 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
 
@@ -37,14 +36,14 @@ All of the following except the last of these benefits are relevant whether huma
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
 
-#### Sequence Diagram
+### Sequence Diagram
 
 The sequence diagram in Figure 3 below summarizes the basic interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction.   However, there are three implementation variations with Task Based Exchange discussed below:
 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
 
-#### Formal Authorization
+### Formal Authorization
 
 In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
 {:.new-content}
@@ -52,15 +51,15 @@ In provider to provider transactions, there are situations where one must provid
 The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. <span class="bg-success"> This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers.</span>  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.stu-note}
 
-#### Polling vs Subscriptions
+### Polling vs Subscriptions
 
 Task Based exchanges can take one of two forms - *subscription* or *polling* as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] sections of the Da Vinci HRex Implementation Guide.  General guidance on whether to use polling or subscription can be found in the [Subscription Capabilities] section.
 
-##### Polling
+#### Polling
 
 Polling is a mechanism for conveying new data to a Payer as (or shortly after) the data is created or updated without requiring the Provider to be aware of the specific needs of the Payer.  The Payer repeatedly queries the Provider to see if there is new data. In the Da Vinci CDex use case, the Payer would poll the Provider by fetching the Task resource to see if has been updated.  Polling is the *default option* if the Provider does not support subscribing to the Task as described below.
 
-##### Subscription
+#### Subscription
 
 Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance.  <span class="bg-success">Typically,</span> the notification *does not* expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
 
@@ -74,27 +73,27 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
 {:.stu-note}
 
-#### Fetching the Data
+### Fetching the Data
 
 <span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
 
 <div markdown="1" class="new-content">
 
-##### When the Task cannot be completed
+#### When the Task cannot be completed
 
 If the EHR was not successful in completing the request for data, the Task's state transitions to "failed". It is a terminal state and no further activity on the request will occur. This can happen when the requested data is not available, because the EHR cannot complete the task.  The `Task.status` is updated to 'failed', and the reason  stated in `Task.statusReason` (for example, "no matching results"). The `Task.output` is absent since the requesting data is not available. The Payer's business rules will determine their response to a failed request.  An example transaction where there is no matching data is given in [scenario 3](#scenario-3) below.
 </div>
 
 <div markdown="1" class="new-content">
 
-##### How Long is the Data Available
+#### How Long is the Data Available
 
 Ultimately, the Data Source determines how long the Data Consumer has access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
 </div>
 
 <div markdown="1" class="new-content">
 
-#### Example Transactions:
+### Example Transactions:
 
 As discussed above, there are 4 basic implementation variations in any combination with task based exchanges:
 
@@ -105,7 +104,7 @@ As discussed above, there are 4 basic implementation variations in any combinati
 
 The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
 
-##### Scenario 1
+#### Scenario 1
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
 
@@ -125,7 +124,7 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 <div markdown="1" class="bg-success">
 
-##### Scenario 2
+#### Scenario 2
 
 Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
 
@@ -140,7 +139,7 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 ---
 
-##### Scenario 3
+#### Scenario 3
 
 Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
@@ -153,7 +152,7 @@ Preconditions and Assumptions:
 
 ---
 
-##### Scenario 4
+#### Scenario 4
 
 Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
 

@@ -1,8 +1,7 @@
-### Direct Query
 
 For Direct Query, the Payer directly queries the EHR for specific data using the standard FHIR RESTful search. *This is the preferred option*. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
-#### Benefits
+### Benefits
 
 - "Out of the Box" FHIR transaction
 - Widely implemented
@@ -10,17 +9,17 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 - Authorization/Authentication protocols established
 - No human intervention needed
 
-#### Sequence Diagram
+### Sequence Diagram
 
 The sequence diagram in Figure 2 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
 
 {% include img.html img="search-sequencediagram.svg" caption="Figure 3" %}
 
-#### Example Transactions:
+### Example Transactions:
 
 The following example transactions show scenarios of using direct query to get clinical data from an EHR.
 
-##### Scenario 1
+#### Scenario 1
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
 
@@ -38,7 +37,7 @@ Following guidance in US Core searches for all active conditions using the combi
 
 ---
 
-##### Scenario 2
+#### Scenario 2
 
 Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
@@ -56,7 +55,7 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 ---
 
-##### Scenario 3
+#### Scenario 3
 
 Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success>to support a claim submission</span>.
 
