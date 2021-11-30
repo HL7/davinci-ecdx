@@ -16,8 +16,24 @@
   <li>
     <a href="background.html">Background</a>
   </li>
-  <li>
-    <a href="specification.html">Specification</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="exchanging-clinical-data.html">Exchanging Clinical Data</a>
+      </li>
+      <li>
+        <a href="direct-query.html">Direct Query</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html">Task Based Approach</a>
+      </li>
+      <li>
+        <a href="unsolicited-push.html">Unsolicited Push</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts

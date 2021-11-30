@@ -68,19 +68,11 @@ releaselabel: CI Build
 menu:
   Home: index.html
   Background: background.html
-  Specification: specification.html
-      #General Guidance: general-guidance.html
-      #Direct Query: direct-query.html
-      #Using Task: using-task.html
-      #Using Subscriptions: using-subscriptions.html
-  #Example Scenarios:
-      #Improving Care Coordination: improving-care-coordination.html
-      #Building Accurate Risk Profiles and Health Records: building-accurate-risk-profiles.html
-      #Supporting Quality Management: support-quality-management.html
-      #Confirming Medical Necessity: confirming-medical-necessity.html
-      #Improving Member Experience: improving-member-experience.html
-      #Tracking Referrals and Orders: tracking-referrals-and-orders.html
-  #Table of Contents: toc.html
+  Specification: #specification.html
+      Exchanging Clinical Data: exchanging-clinical-data.html
+      Direct Query: direct-query.html
+      Task Based Approach: task-based-approach.html
+      Unsolicited Push: unsolicited-push.html
   FHIR Artifacts: #artifacts.html
       CapabilityStatements: artifacts.html#1
       Profiles: artifacts.html#2
