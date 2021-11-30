@@ -27,17 +27,10 @@
 [Da Vinci]: http://www.hl7.org/about/davinci/index.cfm?ref=common
 [US Core]: {{site.data.fhir.uscore}}/index.html
 [Example Scenarios]: example-scenarios.html
-[Improving Care Coordination]: improving-care-coordination.html
-[Building Accurate Risk Profiles and Health Records]: building-accurate-risk-profiles.html
-[Supporting Quality Management]: support-quality-management.html
-[Confirming Medical Necessity]: confirming-medical-necessity.html
-[Improving Member Experience]: improving-member-experience.html
-[Tracking Referrals and Orders]: tracking-referrals-and-orders.html
-[Specification]: specification.html
-[General Guidance]: general-guidance.html
+[Exchanging Clinical Data]: exchanging-clinical-data.html
 [Direct Query]: direct-query.html
-[Using Task]: using-task.html
-[Using Subscriptions]: using-subscriptions.html
+[Task Based Approach]: task-based-approach.html
+[Unsolicited Push]: unsolicited-push.html
 [HL7 Da Vinci Guiding Principles]: https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf
 [Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
 [Patient Care (PC)]: http://www.hl7.org/Special/committees/pateintcare/index.cfm
