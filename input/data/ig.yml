@@ -33,9 +33,6 @@ definition:
             nameUrl: security.html
             title: Security
         -   generation: markdown
-            nameUrl: specification.html
-            title: Specification
-        -   generation: markdown
             nameUrl: task-based-approach.html
             title: Task Based Approach
         -   generation: markdown

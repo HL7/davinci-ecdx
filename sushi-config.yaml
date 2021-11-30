@@ -68,12 +68,12 @@ releaselabel: CI Build
 menu:
   Home: index.html
   Background: background.html
-  Specification: #specification.html
+  Specification:
       Exchanging Clinical Data: exchanging-clinical-data.html
       Direct Query: direct-query.html
       Task Based Approach: task-based-approach.html
       Unsolicited Push: unsolicited-push.html
-  FHIR Artifacts: #artifacts.html
+  FHIR Artifacts:
       CapabilityStatements: artifacts.html#1
       Profiles: artifacts.html#2
       Value Sets: artifacts.html#3
