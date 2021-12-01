@@ -91,4 +91,18 @@ Figure 2 below illustrates the general workflow for the exchange of clinical dat
 
 </div>
 
+Figure 3 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
+
+{% include img.html img="workflow-unsolicited.svg" caption="Figure 3" %}
+
+#### Actors and Roles
+
+- The Payer or External Provider System acts in the role of a *data consumer*.
+- The Provider system acts in the role of a *data source*.
+
+#### Steps
+
+1. Based on pre-defined payor rules or business needs the data source sends data to the data consumer.
+1. The subsequent payor steps are out of scope.
+
 {% include link-list.md %}
