@@ -270,7 +270,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{%gist %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
 
 **Response Headers**
@@ -296,7 +296,7 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{%gist %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
 
 ###### Step 3 - Fetch Active Conditions
@@ -313,7 +313,7 @@ GET [base]Condition/858
 **Response Body**
 
 ~~~
-{%gist %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
 
 </div>

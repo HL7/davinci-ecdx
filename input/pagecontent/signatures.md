@@ -63,7 +63,7 @@ In this Example, a `Bundle.signature` is added to the CDEX IG [Example 4](http:/
 
 ![](https://hackmd.io/_uploads/H1owYTqVK.jpg)
 
-{%gist Healthedata1/db1e5b9cfe0232fb366973f89a426369 %}
+{%raw%}{%gist Healthedata1/db1e5b9cfe0232fb366973f89a426369 %}{%endraw%}
 
 
 ### Digital Signatures

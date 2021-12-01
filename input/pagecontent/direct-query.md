@@ -159,7 +159,7 @@ HTTP/1.1 400 Not Found
 
 The following example shows [Scenario 1](specification.html#example-transactions) response with a signature attached. See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
 
-{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}
+{%raw%}{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}{%endraw%}
 
 </div>
 
