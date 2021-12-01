@@ -52,12 +52,14 @@
                     }
                 ]
             },
-            "valueCodeableConcept": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActReasoncodes",
-                    "code": "COVERAGE"
-                }
-            ]
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReasoncodes",
+                        "code": "COVERAGE"
+                    }
+                ]
+            }
         }
     ]
 }
