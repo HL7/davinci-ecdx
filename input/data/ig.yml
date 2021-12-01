@@ -33,6 +33,9 @@ definition:
             nameUrl: security.html
             title: Security
         -   generation: markdown
+            nameUrl: signatures.html
+            title: Signatures
+        -   generation: markdown
             nameUrl: task-based-approach.html
             title: Task Based Approach
         -   generation: markdown
