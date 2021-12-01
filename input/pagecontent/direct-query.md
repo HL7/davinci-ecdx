@@ -2,6 +2,7 @@
 For Direct Query, the Payer directly queries the EHR for specific data using the standard FHIR RESTful search. *This is the preferred option*. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
 To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested as documented in US Core [Basic Provenance] page. When returning provenance the [HRexProvenance Profile] should be used. An example illustrating this transaction is shown below.
+{:.new-content}
 
 ### Benefits
 
@@ -35,13 +36,17 @@ Following guidance in US Core searches for all active conditions using the combi
 
 `GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
 
+<div markdown="1" class="new-content">
 Alternatively, here is the same query with a request to include corresponding Provenance records
 
 `GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
+</div>
 
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
+<div markdown="1" class="new-content">
 {% include examplebutton_default.html example="direct-query1p-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions and Provenance records" %}
+</div>
 ---
 
 #### Scenario 2
