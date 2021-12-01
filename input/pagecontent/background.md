@@ -65,15 +65,25 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 <div markdown='1' class="new-content">
 
+**The following content is to be considered draft content, because it has not yet undergone proper community review and HL7 balloting.**
+
 ### Workflow Overview
 
-See the [Specification] page for a detailed description of the technical workflow and API guidance.
+FHIR offers numerous architectural approaches for sharing data between systems. The guide focuses on **three** FHIR transaction approaches for requesting information:
 
-Figure 2 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
+1. **[Direct Query] (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
+1. **[Task Based Approach]:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
+1. **[Unsolicited Push]** Based on pre-defined payor rules or business needs the EHR sends claims data directly to Payer without an explicit Payer request.
+
+See the Specification pages for a detailed description of the technical workflow and API guidance.
+
+#### Direct Query and Task-Based Workflow
+
+Figure 2 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query*  and *Task-Based* workflows.  
 
 {% include img.html img="workflow-overview.svg" caption="Figure 2" %}
 
-#### Actors and Roles
+##### Actors and Roles
 
 - The Payer or External Provider System acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.\*
@@ -83,15 +93,19 @@ Figure 2 below illustrates the general workflow for the exchange of clinical dat
 \* For most payer use-cases, payers can not use the data if they cannot identify who is responsible for the clinical event (for example an observation, diagnosis, order, etc).  Therefore, payer's health records needs to identify the provider who is making the assertion. This information is typically supplied by provider systems.  An *Electronic Health Information Exchange* (HIE) that has the ability to validate the authorship of the information would also be an acceptable data source.  However, not all HIEs do this (and not for all records) and they would *not* be acceptable data sources.
 {:.bg-warning}
 
-#### Steps
+##### Steps
 1. The data consumer initiates a request for information.
 1. The data source retrieves the the requested data.
 1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
 1. The data is sent back to the the data consumer.
 
-</div>
+<div markdown="1" class="stu-note">
 
-Figure 3 below illustrates the general workflow for the exchange of clinical data between a Payer (or Provider) system and a Provider system.
+**The following content is to be considered draft content, because it has not yet undergone proper community review and HL7 balloting.**
+
+#### Unsolicited Attachments Workflow
+
+Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Unsolicited Attachments* workflow.  
 
 {% include img.html img="workflow-unsolicited.svg" caption="Figure 3" %}
 
@@ -104,5 +118,8 @@ Figure 3 below illustrates the general workflow for the exchange of clinical dat
 
 1. Based on pre-defined payor rules or business needs the data source sends data to the data consumer.
 1. The subsequent payor steps are out of scope.
+
+</div>
+</div>
 
 {% include link-list.md %}
