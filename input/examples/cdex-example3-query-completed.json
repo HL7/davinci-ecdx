@@ -164,7 +164,7 @@
             "valueCodeableConcept": {
                 "coding": [
                     {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReasoncodes",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
                         "code": "COC"
                     }
                 ]
