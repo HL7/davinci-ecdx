@@ -71,3 +71,4 @@
 [Basic Provenance]: {{site.data.fhir.uscore}}basic-provenance.html
 [HRexProvenance Profile]: {{site.data.fhir.ver.hrex}}StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
+[Da Vinci - Coverage Requirements Discovery]: http://hl7.org/fhir/us/davinci-crd/index.html
