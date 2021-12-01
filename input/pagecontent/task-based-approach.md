@@ -13,6 +13,7 @@ In most of these situations, there is still human intervention (e.g., a provider
 {:.new-content}
 
 To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below. Note that for Documents the provenance is typically implicitly or explicitly defined within and so there is no need for an external structure.  
+{:.new-content}
 
 **For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
 
