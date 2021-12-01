@@ -98,6 +98,8 @@ The actual CCDA document is referenced in `DocumentReference.content.attachment.
 
 {% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
 
+<div markdown="1" class="new-content">
+
 ### Signatures
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
@@ -159,5 +161,6 @@ The following example shows [Scenario 1](specification.html#example-transactions
 
 {%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}
 
+</div>
 
 {% include link-list.md %}

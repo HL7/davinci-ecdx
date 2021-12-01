@@ -1,3 +1,7 @@
+
+This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
+{:.new-content}
+
 ### Generating and Verifying *Signed* Resources
 
 There is a legal liability associated with the data exchanged. Medical legal issue around administrative transactions means there is a

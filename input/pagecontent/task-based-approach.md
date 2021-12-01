@@ -210,6 +210,8 @@ Preconditions and Assumptions:
 
 {% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
+<div markdown="1" class="new-content">
+
 ### Signatures
 
 Some data consumers may require that the data they receive are signed. When performing Task based request when signatures are required on the returned results, the following general rules apply:
@@ -314,5 +316,6 @@ GET [base]Condition/858
 {%gist %}
 ~~~
 
+</div>
 
 {% include link-list.md %}
