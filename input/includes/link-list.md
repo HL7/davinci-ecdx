@@ -68,3 +68,5 @@
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021May/
 [FHIR id]: {{site.data.fhir.path}}references.html
+[Basic Provenance]: {{site.data.fhir.uscore}}basic-provenance.html
+[HRexProvenance Profile]: {{site.data.fhir.ver.hrex}}StructureDefinition-hrex-provenance.html
