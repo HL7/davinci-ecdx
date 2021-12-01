@@ -54,7 +54,7 @@ It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will pr
 
 #### Purpose of Use
 
-What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. The purpose of use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Purpose of Use codes are used in the examples below.
+What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples are provided below. 
 
 #### Work Queues
 
