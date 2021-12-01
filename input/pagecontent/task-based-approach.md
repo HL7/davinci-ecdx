@@ -66,6 +66,8 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 ### Discovery of FHIR IDs
 
+<div markdown="1" class="new-content">
+
 #### Providers and Payer FHIR IDs
 
 Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
@@ -79,13 +81,14 @@ The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Dire
 
 1. FHIR RESTful search on Patient using a combination of an identifier known by the Payer such as a member_id and patient demographics.
 
-  `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+   `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
 1. FHIR RESTful search on [Coverage]. The patient's FHIR_id is found in  Coverage.beneficiary` which references the patient.
 
    `GET /Coverage?payor & member_id and/or subscriber_id`  TODO
 
 These are the most direct approaches to obtaining the FHIR_id. However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. Additionally, if the effective dates of the coverage needs to be reflected in the this lookup then search semantics become more complex.
+</div>
 
 ### Formal Authorization
 

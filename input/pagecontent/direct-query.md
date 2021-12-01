@@ -21,6 +21,7 @@ The sequence diagram in Figure 2 below outlines a successful interaction between
 ### Discovery of Patient FHIR IDs
 
 The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR_id.
+{:.new-content}
 
 ### Example Transactions:
 
