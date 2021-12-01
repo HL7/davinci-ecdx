@@ -106,7 +106,7 @@ Figure 2 below illustrates the exchange of clinical data between a Payer (or Pro
 
 <div markdown="1" class="stu-note">
 
-**The following content is to be considered draft content, because it has not yet undergone proper community review and HL7 balloting.**
+**The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
 
 #### Unsolicited Attachments Workflow
 
