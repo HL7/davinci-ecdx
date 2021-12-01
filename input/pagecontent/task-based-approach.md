@@ -210,4 +210,109 @@ Preconditions and Assumptions:
 
 {% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
+### Signatures
+
+Some data consumers may require that the data they receive are signed. When performing Task based request when signatures are required on the returned results, the following general rules apply:
+
+- The signature **SHALL** represent a *human provider* signature on resources attesting that the information is true and accurate.
+- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
+
+#### The Data Consumer/Requester Requirements
+
+When a electronic or digital signature is required for a Task based request, the Data Consumer/Requester **SHALL**:
+
+- Indicate in Task that a signature is required using `Task.input` signature flag parameter as defined in [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
+    - It **SHOULD NOT** be assumed that a Task based requests will be signed if the flag is omitted.
+-  Pre-negotiate whether *electronic* or *digital* signatures are used
+- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for validating signatures.
+
+
+#### Data Source/Responder
+
+When a electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
+- Return an object is either already inherently signed or transform it into a *signed* FHIR Document.
+- Be signed by the provider that is responding the the query.
+- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for producing signatures.
+
+:::info
+- As discussed in the [What is Signed](/2_qdYLjXR3KyYlk78Ye9Gg#What-is-Signed) section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed obect or a signed FHIR Document.
+:::
+
+#### Examples of a *Signed* Task Based Transaction
+
+The following example repeats [Scenario 1](specification.html#scenario-1), only this time a signature is required.
+- See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
+
+##### Example 1:
+
+In this example:
+
+1. No formal authorization (order) is needed
+2. **The Payer requires signatures on the returned data**
+3. The POU is to Support claim submission
+4. The work queue hint is claim processing
+5. The reason for the request is the referenced claim
+6. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
+7. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+8. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+
+###### Step 1 - POST Task to Provider endpoint
+
+**Request**
+~~~
+POST [base]/Task
+~~~
+
+{% include request-headers.md %}
+
+**Request Body**
+
+~~~
+{%gist %}
+~~~
+
+**Response Headers**
+
+~~~
+HTTP/1.1 200 OK
+Server: CDEX Example Server
+Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
+...(other headers)
+~~~
+
+###### Step 2 - Poll Task
+
+**Polling Request**
+~~~
+GET Task/cdex-example1-query-completed
+~~~
+
+{% include request-headers.md %}
+
+{% include response-headers.md %}
+
+**Response Body**
+
+~~~
+{%gist %}
+~~~
+
+###### Step 3 - Fetch Active Conditions
+
+**Request**
+~~~
+GET [base]Condition/858
+~~~
+
+{% include request-headers.md %}
+
+{% include response-headers.md %}
+
+**Response Body**
+
+~~~
+{%gist %}
+~~~
+
+
 {% include link-list.md %}

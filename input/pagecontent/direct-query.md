@@ -98,4 +98,66 @@ The actual CCDA document is referenced in `DocumentReference.content.attachment.
 
 {% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
 
+### Signatures
+
+Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
+
+- The signature **SHALL** represent a *system-level* attestation by the sending organization that they are the source of the information.
+- The `Bundle.signature` element on the FHIR searchset Bundle **SHALL** be used to exchange the signature.
+
+#### The Data Consumer/Requester Requirements
+
+When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Consumer/Requester **SHALL**:
+
+- *Pre-negotiate* the signature requirement with the organization representing the Data Source/Responder.
+   - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* search query response will be signed.
+   - Conversely, it **SHOULD** be assumed that no search query response will be signed unless there exists a pre-negotiated agreement
+   - Unlike Task based queries, the actual FHIR queries won't indicate that a signature is required.
+   - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
+- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for validating signatures.
+
+#### Data Source/Responder
+
+When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
+- Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the the signature.
+- Be signed by the organization that is responding the the query.
+- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for producing signatures.
+
+:::info
+- As discussed in the [What is Signed](/2_qdYLjXR3KyYlk78Ye9Gg#What-is-Signed) section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests](/QBvGIPkgSDeuxmpAoBtjOg)).
+:::
+
+:::warning
+Because the signature is represented by `Bundle.signature`, this precludes using [FHIR RESTful read](http://build.fhir.org/http.html#read) transactions which returns a single instances of a resource.  Therefore, the following rules apply for read transactions:
+- If signatures are required, the Consumer/Requester **SHALL NOT** use read transaction to fetch data.
+- If signatures are required the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
+
+~~~
+HTTP/1.1 400 Not Found
+[other headers]
+{
+  "resourceType": "OperationOutcome",
+  "id": "cdex-signed-read-response",
+  "issue": [
+{
+  "severity": "error",
+  "code": "business-rule",
+  "details": {
+    "text": "signed FHIR RESTful read response is not supported."
+  },
+  "diagnostics": "Resubmit the request as a FHIR RESTful search'"
+}
+  ]
+}
+~~~
+:::
+
+
+#### Example of *Signed* Direct Query Response
+
+The following example shows [Scenario 1](specification.html#example-transactions) response with a signature attached. See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
+
+{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}
+
+
 {% include link-list.md %}
