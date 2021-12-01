@@ -47,9 +47,13 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 #### Purpose of Use
 
-What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples are provided below.
+What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples using these codes are provided below.
 
 #### Work Queues
+
+For asynchronous requests using Task, it may be beneficial for Payers and EHRs to pre-coordinate and agree upon a set of  "request-tags" to communicate the general type of request being made.  The EHR can use these Payer supplied tags to aid in filtering and sorting Tasks.  For example, assuming the EHR has work queues based on request criteria, tags could be used by the EHR to place a Task in the appropriate work queue.
+
+The [CDex Work Queue Value Set] is a set work queue tags that the provider may use in their workflow to process request.  The `Task.meta.tag` is used to tag the Task with the work queue hint.  Examples using these tags are provided below.
 
 #### Task Reason
 
