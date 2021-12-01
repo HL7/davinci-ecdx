@@ -30,9 +30,14 @@ This Guide is divided into several pages which are listed at the top of each pag
 
 - [Home]\: The home page provides the introduction for the Da Vinci Clinical Data Exchange Project.
 - [Background]\: This page provides the background and a summary of the Da Vinci Clinical Data Exchange Project.
-- [Specification]\: This page provides detailed guidance on the set of FHIR transactions and the FHIR artifacts used in a general framework to support exchange of clinical information between provider and payers.
-- {:.bg-success}[FHIR Artifacts]\: These pages provide detailed descriptions and examples for Task based data exchange approach.
+- Specification\: The Specification pages provides specific guidance on exchanging clinical data between Payers and Providers:
+  - {:.bg-success}[Exchanging Clinical Data]\: Exchanging Clinical data overview page.
+  - {:.bg-success}[Direct Query]\: Payer directly queries EHR for specific data using the standard FHIR RESTful search
+  - {:.bg-success}[Task Based Approach]\: Payer identifies the ‘type’ of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
+  - {:.bg-success}[Unsolicited Push]\: ...TODO...
+- {:.bg-success}[Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non fhir signatures.
 - {:.bg-success}[Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
+- {:.bg-success}[FHIR Artifacts]\: These pages provide detailed descriptions and examples for Task based data exchange approach.
 - [Downloads]\: This page provides links to downloadable artifacts.
 
 ---
