@@ -51,6 +51,7 @@
 [batch]: {{site.data.fhir.path}}http.html#transaction
 [HL7 FHIR-I Workflow project]: https://confluence.hl7.org/display/FHIRI/FHIR+Workflow?src=contextnavpagetreemode
 [HRex Security and Privacy]: {{site.data.fhir.ver.hrex}}/security.html
+[Signatures]: signatures.html
 [Security and Privacy]: security.html
 [Approaches to Exchanging FHIR Data]: {{site.data.fhir.ver.hrex}}exchanging.html
 [Requesting Exchange using Task]: {{site.data.fhir.ver.hrex}}exchanging-request.html#task
