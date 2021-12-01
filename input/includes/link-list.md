@@ -70,3 +70,4 @@
 [FHIR id]: {{site.data.fhir.path}}references.html
 [Basic Provenance]: {{site.data.fhir.uscore}}basic-provenance.html
 [HRexProvenance Profile]: {{site.data.fhir.ver.hrex}}StructureDefinition-hrex-provenance.html
+[CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html

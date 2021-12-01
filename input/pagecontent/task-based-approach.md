@@ -9,35 +9,60 @@ This guide uses a Task Based Approach to satisfy the Payer's need to request the
   - there is no way to describe the data in a structure format it is described in free text.
 - A Direct Query is otherwise not feasible
 
-In most of these situations, there is still human intervention (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data and/or approve its release.  In other use cases, mutually agreed upon data sets for specific purposes can already be requested and automatically fulfilled without human intervention.  The details for these Task based transaction are described in detail the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
-{:.new-content}
-
-To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below. Note that for Documents the provenance is typically implicitly or explicitly defined within and so there is no need for an external structure.  
-{:.new-content}
-
-**For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer**
-
-<div markdown="1" class="new-content">
-
-Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
-
-It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
-{:.stu-note}
-
-</div>
-
 ### Benefits
 
 All of the following except the last of these benefits are relevant whether human intervention is needed or not.
 
-- Easy ability to say 'yes' or 'no', including providing a reason for refusal
-- Provides the ability to represent the reason (*Purpose of Use*) in the `Task.reasonCode` element using either codes or free text.
+- Easy ability to say 'yes' or 'no', including providing a reason for refusal.
 - Allows linking the request to its associated outputs without creating a new resource
 - Can use polling or subscriptions to retrieve the results
 - {:.new-content}As trust and infrastructure enabling direct queries evolve, enables a transition strategy towards direct queries to gather data of interest
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
+- Enables referencing the object that directly lead to the task - a particular claim for example
+
+In most of these situations, there is still human intervention (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data and/or approve its release.  In other use cases, mutually agreed upon data sets for specific purposes can already be requested and automatically fulfilled without human intervention.
+
+<div markdown="1" class="new-content">
+
+### The Task Resource
+
+**For CDex Task based transactions the [CDex Task Data Request Profile] SHALL be used by the Payer to solicit information from a system.** It represents *both* the data request and the returned data as follows:
+
+1. `Task.input` represents the data request. The data request may be:
+  - FHIR RESTful Search syntax
+  - coded
+  - free text
+1. `Task.output` represents the requested data. This output may be:
+  - FHIR reference(s)
+  - coded
+1. `Task.status` is updated as the task is fulfilled
+
+The details for these Task based transaction are described in detail the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+
+#### Provenance
+
+To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below. Note that for Documents the provenance is typically implicitly or explicitly defined within and so there is no need for an external structure.  
+
+#### Discovery of FHIR IDs
+
+Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
+
+It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
+{:.stu-note}
+
+#### Purpose of Use
+
+What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. The purpose of use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Purpose of Use codes are used in the examples below.
+
+#### Work Queues
+
+#### Task Reason
+
+When it is known,`Task.reasonCode/reasonReference` **SHOULD** reference the object that directly lead to the task - a particular claim for example.
+
+</div>
 
 ### Sequence Diagram
 
