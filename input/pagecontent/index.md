@@ -15,7 +15,16 @@ Where possible, new and updated content will be highlighted with green text and 
 
 </div>
 
-{{ site.data.ig.description }}
+This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  What is unique about this guide is that it documents the **Direct Query**, **Task Based** and <span markdown="1" class="bg-success">**Unsolicited Attachments** transaction approaches for requesting and sending information</span>. Key scenarios this IG can support include:
+
+ - Requesting *attachments* to support claim submission, medical necessity and other reasons for attachments between payers and providers
+ - Gathering information for Quality programs and Risk Adjustment between payers and providers
+ - Exchanging clinical data between referring providers
+ - {:.new-content}Sending unsolicited and solicited attachments for claims
+
+In the context of this guide, 'clinical data' means *any* information a provider holds in a patient's health record. The data format is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIRBundle (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)), and clinical data such as a specific FHIR resource.
+
+By using the FHIR standard and implementing this guide, payers can be explicit about the data they are requesting as opposed to general requests which often result in providers sending more information than is necessary. The anticipated benefit of using FHIR is more efficient and effective exchange of health record information in several areas such as claims management, care coordination, risk adjustment and quality reporting.
 
 This IG provides several *general* examples to illustrate the different approaches for exchanging clinical data, but it does not to document specific use cases.  We plan to create a set of [Clinical Data Exchange- Supplemental Guides] which will document and provide examples for specific use cases.
 {:.bg-info}
