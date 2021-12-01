@@ -35,7 +35,7 @@
 [Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
 [Patient Care (PC)]: http://www.hl7.org/Special/committees/pateintcare/index.cfm
 [Propose a Change]: https://jira.hl7.org/issues
-[ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/sites/isa/files/2020-07/USCDI-Version-1-July-2020-Errata-Final.pdf
+[ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi
 [FHIR Asynchronous Request Patterns]: {{site.data.fhir.path}}async.html
 [FHIR Bulk Data Access]: http://hl7.org/fhir/uv/bulkdata/
 [Task]: {{site.data.fhir.path}}task.html
