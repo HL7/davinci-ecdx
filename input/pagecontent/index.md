@@ -43,7 +43,7 @@ This Guide is divided into several pages which are listed at the top of each pag
   - {:.bg-success}[Exchanging Clinical Data]\: Exchanging Clinical data overview page.
   - {:.bg-success}[Direct Query]\: Payer directly queries EHR for specific data using the standard FHIR RESTful search
   - {:.bg-success}[Task Based Approach]\: Payer identifies the ‘type’ of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-  - {:.bg-success}[Unsolicited Push]\: ...TODO...
+  - {:.bg-success}[Unsolicited Attachments]\: ...TODO...
 - {:.bg-success}[Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 - {:.bg-success}[Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
 - {:.bg-success}[FHIR Artifacts]\: These pages provide detailed descriptions and examples for Task based data exchange approach.

@@ -65,7 +65,7 @@ menu:
       Exchanging Clinical Data: exchanging-clinical-data.html
       Direct Query: direct-query.html
       Task Based Approach: task-based-approach.html
-      Unsolicited Push: unsolicited-push.html
+      Unsolicited Attachments: unsolicited-attachments.html
   Signatures: signatures.html
   Security and Privacy: security.html
   FHIR Artifacts:
