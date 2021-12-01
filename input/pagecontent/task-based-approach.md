@@ -45,16 +45,9 @@ The details for these Task based transaction are described in detail the [Reques
 
 To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below. Note that for Documents the provenance is typically implicitly or explicitly defined within and so there is no need for an external structure.  
 
-#### Discovery of FHIR IDs
-
-Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
-
-It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
-{:.stu-note}
-
 #### Purpose of Use
 
-What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples are provided below. 
+What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples are provided below.
 
 #### Work Queues
 
@@ -70,6 +63,29 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
+
+### Discovery of FHIR IDs
+
+#### Providers and Payer FHIR IDs
+
+Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
+
+It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
+{:.stu-note}
+
+#### Patient FHIR IDs
+
+The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in EHRs today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match operation](http://build.fhir.org/patient-operation-match.html) where it has been implemented. Another options is find the FHIR_id using the FHIR RESTful API:
+
+1. FHIR RESTful search on Patient using a combination of an identifier known by the Payer such as a member_id and patient demographics.
+
+  `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+
+1. FHIR RESTful search on [Coverage]. The patient's FHIR_id is found in  Coverage.beneficiary` which references the patient.
+
+   `GET /Coverage?payor & member_id and/or subscriber_id`  TODO
+
+These are the most direct approaches to obtaining the FHIR_id. However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. Additionally, if the effective dates of the coverage needs to be reflected in the this lookup then search semantics become more complex.
 
 ### Formal Authorization
 
