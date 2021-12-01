@@ -65,8 +65,6 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 <div markdown='1' class="new-content">
 
-**The following content is to be considered draft content, because it has not yet undergone proper community review and HL7 balloting.**
-
 ### Workflow Overview
 
 FHIR offers numerous architectural approaches for sharing data between systems. The guide focuses on **three** FHIR transaction approaches for requesting information:
