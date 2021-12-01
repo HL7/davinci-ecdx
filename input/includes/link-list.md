@@ -73,3 +73,4 @@
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
 [Da Vinci - Coverage Requirements Discovery]: http://hl7.org/fhir/us/davinci-crd/index.html
 [Da Vinci Prior Authorization Support (PAS) FHIR IG]: http://hl7.org/fhir/us/davinci-pas/index.html
+[CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
