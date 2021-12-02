@@ -174,7 +174,7 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 {% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text request for data' %}
 
-{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}
+{%raw%}{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}{%endraw%}
 
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
 
