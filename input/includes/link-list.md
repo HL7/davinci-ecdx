@@ -11,7 +11,7 @@
 [FHIR RESTful operation]: {{site.data.fhir.path}}operations.html
 [Framework]: guidance.html  "General Framework Page"
 [Home]: index.html "Home Page"
-[operation]: {{site.data.fhir.path}}operations.html
+[Operation]: {{site.data.fhir.path}}operations.html
 [Operations]: operations.html "Operations Page"
 [Profiles]: profiles.html "Profiles and Extensions Page"
 [Profiling]: {{site.data.fhir.path}}profiling.html
