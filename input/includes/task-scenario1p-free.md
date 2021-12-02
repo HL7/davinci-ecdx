@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example1-free-text-completed/_histor
 
 **Polling Request**
 ~~~
-GET Task/cdex-example1-free-text-completed
+GET Task/cdex-example1p-free-text-completed
 ~~~
 
 {% include request-headers.md %}

@@ -36,7 +36,7 @@ Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET Task/cdex-example1-query-completed
+GET Task/cdex-example1p-query-completed
 ~~~
 
 {% include request-headers.md %}
@@ -46,7 +46,7 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1-query-completed.json %}
+{% include_relative Task-cdex-example1p-query-completed.json %}
 ~~~
 
 ###### Step 3 - Fetch Bundle
