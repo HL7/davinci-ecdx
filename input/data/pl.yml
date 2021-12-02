@@ -36,11 +36,10 @@ list:
 
       **Status: Summary (Jira Issue) Link to Change**
 
-      1. **Triaged**: CDex documents require signature, but don't explain how used ([FHIR-26855](https://jira.hl7.org/browse/FHIR-26855)) See Changes:
+      1. **Applied**: CDex documents require signature, but don't explain how used ([FHIR-26855](https://jira.hl7.org/browse/FHIR-26855)) See Changes:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct_query#signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approache#signatures.html)
-
       1. **Applied**: Add reference to C-CDA on FHIR ([FHIR-28158](https://jira.hl7.org/browse/FHIR-28158)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Provide another example of a use case not covered by another Da Vinci IG ([FHIR-30146](https://jira.hl7.org/browse/FHIR-30146)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html##where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Fix link and expectations to CapabilityStatements ([FHIR-30147](https://jira.hl7.org/browse/FHIR-30147)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/CapabilityStatement-data-source-server.html#resource-details)
@@ -53,7 +52,10 @@ list:
       1. **Applied**: Update Scenarios to include to support claim submission - Attachments. ([FHIR-30446](https://jira.hl7.org/browse/FHIR-30446)) See Changes:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#example-scenarios)
-      1. **Triaged**: add a section on Administrative Documentation ([FHIR-30489](https://jira.hl7.org/browse/FHIR-30489)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: Update definition of clinical data and added guidance on data provenance([FHIR-30489](https://jira.hl7.org/browse/FHIR-30489)) See Changes:
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct-query.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#provenance)
       1. **Applied**: Referennce clinical safety section in HREX ([FHIR-30490](https://jira.hl7.org/browse/FHIR-30490)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#da-vinci-hrex-security-and-privacy-requirements)
       1. **Applied**: Delete use of word 'complete' ([FHIR-30494](https://jira.hl7.org/browse/FHIR-30494)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#what-do-payers-do-with-clinical-information)
       1. **Applied**: Explicitly reference the Da Vinci Guiding Principles in new Privacy and Security section. ([FHIR-30498](https://jira.hl7.org/browse/FHIR-30498)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html)
@@ -105,20 +107,20 @@ list:
       1. **Applied**: Updated Purpose of Use section for Direct Query. ([FHIR-30867](https://jira.hl7.org/browse/FHIR-30867)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct-query.html)
       1. **Applied**: Updated Sensitivity and Confidentiality protection guidance. ([FHIR-30868](https://jira.hl7.org/browse/FHIR-30868)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#sensitive-and-confidential-data)
       1. **Applied**: Updated Sensitivity and Confidentiality protection guidance. ([FHIR-30869](https://jira.hl7.org/browse/FHIR-30869)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#sensitive-and-confidential-data)
-      1. **Triaged**: clarify when attribution is not present or non-repudiable ([FHIR-30870](https://jira.hl7.org/browse/FHIR-30870)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Applied**: clarify when attribution is not present or non-repudiable ([FHIR-30870](https://jira.hl7.org/browse/FHIR-30870)) various changes
       1. **Applied**: Fix sequential numbering of figures  ([FHIR-30935](https://jira.hl7.org/browse/FHIR-30935)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html)
       1. **Applied**: correct last example bullet ([FHIR-31050](https://jira.hl7.org/browse/FHIR-31050)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/davinci-ecdx/background.html#example-scenarios)
       1. **Applied**: Remove reference to HREX CommunicationRequest plus Task transaction ([FHIR-31516](https://jira.hl7.org/browse/FHIR-31516)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
       1. **Applied**: Clarify human involvement in Task transaction ([FHIR-31886](https://jira.hl7.org/browse/FHIR-31886) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
       1. **Applied**: Create privacy and security page ([FHIR-31885](https://jira.hl7.org/browse/FHIR-31885) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html)
-      1. **Applied**: Clarify when HIEs are data sources ([FHIR-31884](https://jira.hl7.org/browse/FHIR-31884)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#actors-and-roles)
-      1. **Applied**: Add supplemental security guidance on audit ([FHIR-31888](https://jira.hl7.org/browse/FHIR-31888)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
-      1. **Applied**: Add supplemental security guidance on scopes([FHIR-31887](https://jira.hl7.org/browse/FHIR-31887)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
-      1. **Applied**: Clarify human involvement needed([FHIR-31886](https://jira.hl7.org/browse/FHIR-31886)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
-      1. **Applied**: Provide guidance on finding organization and provider identifiers([FHIR-32841](https://jira.hl7.org/browse/FHIR-32841)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
-      1. **Applied**: Update how to represent Purpose of Use and reason in Task Based Query ([FHIR-31996](https://jira.hl7.org/browse/FHIR-31996)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
-      1. **Applied**: Clarify the relationship between this guide and others([FHIR-32116](https://jira.hl7.org/browse/FHIR-32116)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
-      1. **Applied**: Added guidance on matching patients([FHIR-32840](https://jira.hl7.org/browse/FHIR-32840)[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#discovery-of-fhir-ids)
+      1. **Applied**: Clarify when HIEs are data sources ([FHIR-31884](https://jira.hl7.org/browse/FHIR-31884))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#actors-and-roles)
+      1. **Applied**: Add supplemental security guidance on audit ([FHIR-31888](https://jira.hl7.org/browse/FHIR-31888))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
+      1. **Applied**: Add supplemental security guidance on scopes([FHIR-31887](https://jira.hl7.org/browse/FHIR-31887))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/security.html#general-considerations)
+      1. **Applied**: Clarify human involvement needed([FHIR-31886](https://jira.hl7.org/browse/FHIR-31886))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
+      1. **Applied**: Provide guidance on finding organization and provider identifiers([FHIR-32841](https://jira.hl7.org/browse/FHIR-32841))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
+      1. **Applied**: Update how to represent Purpose of Use and reason in Task Based Query ([FHIR-31996](https://jira.hl7.org/browse/FHIR-31996))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
+      1. **Applied**: Clarify the relationship between this guide and others([FHIR-32116](https://jira.hl7.org/browse/FHIR-32116))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
+      1. **Applied**: Added guidance on matching patients([FHIR-32840](https://jira.hl7.org/browse/FHIR-32840))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#discovery-of-fhir-ids)
       1. **Applied**: Update to the USCDI liknk ([FHIR-33265](https://jira.hl7.org/browse/FHIR-33265)
       1. **Applied**: Add guidance how to provide some work queue tags([FHIR-31890](https://jira.hl7.org/browse/FHIR-31890) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#work-queues)
 

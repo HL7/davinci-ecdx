@@ -20,7 +20,9 @@ All of the following except the last of these benefits are relevant whether huma
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
-- Enables referencing the object that directly lead to the task - a particular claim for example
+- {:.new-content}Provides the ability to represent the Purpose of Use in the Task
+- {:.new-content}Provides the ability to supply work queue hints to the Task recipient
+- {:.new-content}Enables referencing the object that directly lead to the task - a particular claim for example
 
 In most of these situations, there is still human intervention (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data and/or approve its release.  In other use cases, mutually agreed upon data sets for specific purposes can already be requested and automatically fulfilled without human intervention.
 
@@ -34,16 +36,18 @@ In most of these situations, there is still human intervention (e.g., a provider
   - FHIR RESTful Search syntax
   - coded
   - free text
-1. `Task.output` represents the requested data. This output may be:
-  - FHIR reference(s)
-  - coded
+1. `Task.output` represents the requested data. This output is a FHIR reference to:
+      - Individual FHIR resources (e.g., Condition)
+      - FHIR Search Bundle (e.g., a query response)
+      - FHIR Documents (e.g., CCDA on FHIR)
+      - Other data formats attached to or referenced by DocumentReference (e.g., CCDA)
 1. `Task.status` is updated as the task is fulfilled
 
 The details for these Task based transaction are described in detail the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
 #### Provenance
 
-To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below. Note that for Documents the provenance is typically implicitly or explicitly defined within and so there is no need for an external structure.  
+To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below.  Alternatively, When `Task.output` represents individual FHIR resource, the Data Receiver could query for Provenance when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](http://build.fhir.org/ig/HL7/davinci-ecdx/branches/master/direct-query.html#example-transactions)). Typically, it is unnecessary to request external Provenance for FHIR Documents and other formats such as CCDA, because their contents implicitly or explicitly supply their provenance.
 
 #### Purpose of Use
 
@@ -164,11 +168,15 @@ Preconditions and Assumptions:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: Structured data (codes) for request, Polling, Output references to external resources, No formal authorization' %}
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: FHIR RESTful query syntax for data request, Polling, Output references to external resources, No formal authorization' %}
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text for the request instead of codes.' %}
+{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Base interaction + Provenance: FHIR RESTful query syntax for data and provenance, Polling, Output references to external resources, No formal authorization' %}
 
-{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling.' %}
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text request for data' %}
+
+{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}
+
+{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
 
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
 ---

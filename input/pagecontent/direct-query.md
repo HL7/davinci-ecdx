@@ -41,15 +41,14 @@ Following guidance in US Core searches for all active conditions using the combi
 
 `GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
 
-<div markdown="1" class="new-content">
-Alternatively, here is the same query with a request to include corresponding Provenance records
-
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
-</div>
-
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
 <div markdown="1" class="new-content">
+
+Alternatively, here is the same query with a request to include corresponding Provenance records
+
+`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
+
 {% include examplebutton_default.html example="direct-query1p-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions and Provenance records" %}
 </div>
 ---

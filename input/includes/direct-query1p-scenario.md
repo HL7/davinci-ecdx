@@ -54,7 +54,7 @@ Content-Type: application/fhir+json;charset=utf-8
   "link": [
     {
       "relation": "self",
-      "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+      "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"
     }
   ],
   "entry": [
