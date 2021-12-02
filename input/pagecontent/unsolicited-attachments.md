@@ -1,9 +1,11 @@
----
+
+
+<!-- ---
 tags: CDEX
 title:  Unsolicited Attachments
 ---
 
-# Unsolicited Attachments
+# Unsolicited Attachments -->
 
 <div markdown="1" class="stu-note">
 
@@ -53,9 +55,9 @@ participant Payer (Data Consumer)
 note over EHR (Data Source):1) EHR needs to send attachments Payer 
 EHR (Data Source)->>Payer (Data Consumer): 2) POST $attachment with attachments in payload
 alt 3) Accepted
-Payer (Data Consumer)-->>EHR (Data Source): Return HTTP 200 OK / 202 Accepted
+Payer (Data Consumer)->>EHR (Data Source): Return HTTP 200 OK / 202 Accepted
 else 3) Rejected
-Payer (Data Consumer)-->>EHR (Data Source): Return HTTP 4xx or 5xx with an OperationOutcome
+Payer (Data Consumer)->>EHR (Data Source): Return HTTP 4xx or 5xx with an OperationOutcome
 end
 note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br> to claim and<br> processes claim
 ```
