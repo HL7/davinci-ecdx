@@ -1,4 +1,9 @@
 
+<!-- ---
+tags: CDEX
+title: Generating and Verifying *Signed* Resources
+--- -->
+
 This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 {:.new-content}
 
@@ -7,26 +12,27 @@ This page provides specific guidance and rules to exchange *signed* data using F
 There is a legal liability associated with the data exchanged. Medical legal issue around administrative transactions means there is a
 big difference is how you look at clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, the CMS Attachments Rules require a digital signature to verify the authors of the data ( ==more specific citations needed!==: [Signature_Requirements_Fact_Sheet](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Signature_Requirements_Fact_Sheet_ICN905364.pdf)). Signatures attest that the data has been reviewed and the information is accurate and know it to be true.
 
-:::info
+
 In addition legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.
-:::
+{:.bg-warning}
 
 ### What is Signed?
 
 The data returned in CDEX is not limited to FHIR resources, but may also include C-CDA documents, pdfs, text files and other types of data. Depending on the data type returned, the signature may be in the actual payload or the `Bundle.signature` element.  The following table summarizes what artifacts are signed:
 
-|#|Data Type Returned|Location of Signature|
-|---|---|---|
-|1.1|Other data formats attached to or referenced by DocumentReference (e.g., CCDA)|Referenced or attached data|
-|1.2|FHIR Documents (e.g., CCDA on FHIR, Task-based request*)|Document Bundle|
-|1.3|FHIR Search Bundle (in other words, a query response)|Search Bundle|
-|1.5|Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, and/or binary files referenced by DocumentReference)|Combination of Above|
+|Data Type Returned|Location of Signature|
+|---|---|
+|Non-FHIR data formats attached to or referenced by DocumentReference (e.g., CCDA)|Referenced or attached data|
+|FHIR Documents (e.g., CCDA on FHIR, Task-based request*, Unsolicited Attachment*)|Document Bundle|
+|FHIR Search Bundle (e.g., a query response)|Search Bundle|
+|Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, and/or binary files referenced by DocumentReference)|Combination of Above|
+{:.grid}
 
-\* When a signature is required, the data source/responder **SHALL** return a *signed FHIR Document* for task based requests that would normally return individual resources.
+\* For task based requests and unsolicited attachments the data source/responder transact a *signed FHIR Document* when the artifact would otherwise, if unsigned, be individual FHIR resources.
 
-The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [FHIR RESTful queries](#) and [Task based requests](#). ==TODO: Completes these sections==
+The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [FHIR RESTful queries](direct-query.html#signatures), [Task based requests](task-based-approach.html#signatures) and [Unsolicited Attachments](unsolicited-attachments.html#signatures).
 
-Requirements for using the `Bundle.signature` element to sign a Bundle with *electronic signatures* or *digital signatures*  are documented in the following sections.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
+Requirements for using *FHIR Signatures* to sign a Bundle with electronic or digital signatures are documented in the sections below.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
 
 ### Electronic Signatures
 
@@ -40,10 +46,8 @@ The [`Bundle.signature`](http://hl7.org/fhir/bundle-definitions.html#Bundle.sign
 - a digitized handwritten signature
 - digital signature using encryption technology*
 
-
-:::info
 \* This guide provides specific guidance on how to implement digital signatures in the following sections. Specific guidance for other types of electronic signature is an implementation detail that is out of scope for this guide.
-:::
+{:.bg-info}
 
 #### Electronic Signature Rules For CDEX FHIR Bundles
 
@@ -59,12 +63,15 @@ The [`Bundle.signature`](http://hl7.org/fhir/bundle-definitions.html#Bundle.sign
 
 #### Electronic Signature Example
 
-In this Example, a `Bundle.signature` is added to the CDEX IG [Example 4](http://build.fhir.org/ig/HL7/davinci-ecdx/specification.html#example-4). The electronic signature is a JPG Image that represents this handwritten signature:
+In this Example, a `Bundle.signature` is added to the CDEX Task based [Example 4](task-based-approach.html#example-4). The electronic signature is a JPG Image that represents this handwritten signature:
 
-![](https://hackmd.io/_uploads/H1owYTqVK.jpg)
+<!-- ![](https://hackmd.io/_uploads/H1owYTqVK.jpg)
 
-{%raw%}{%gist Healthedata1/db1e5b9cfe0232fb366973f89a426369 %}{%endraw%}
+{%raw%}{%gist Healthedata1/db1e5b9cfe0232fb366973f89a426369 %}{%endraw%} -->
 
+{% include img.html img="jh-signature.jpg" %}
+
+{% include examplebutton_default.html example="esigned-example" b_title = 'Electronic Signature Example' %}
 
 ### Digital Signatures
 
