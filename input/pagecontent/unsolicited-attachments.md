@@ -1,5 +1,4 @@
 
-
 <!-- ---
 tags: CDEX
 title:  Unsolicited Attachments
@@ -7,16 +6,19 @@ title:  Unsolicited Attachments
 
 # Unsolicited Attachments -->
 
+<div markdown="1" class="new-content">
+
+This page documents how to exchange clinical data using a FHIR based Unsolicited Attachments transaction.
+
 <div markdown="1" class="stu-note">
 
 **The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
 </div>
+</div>
 
 ### Attachments for Claims or Prior Authorization
 
-The guide documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer. In contrast to the Direct Query and Task Based approach, the CDex Unsolicited Attachment transaction is not a response to a FHIR-based request for clinical data. Instead it is either based on a set of pre-defined rules by the payer or jurisdictional mandates ("Unsolicited"), or the request for attachments comes through an X12 transaction or Prior Authorization ("Solicited").
-
-Today claims come through X12, portal submission, or other ways.  The additional information to support these claims (a.k.a. attachments) come through X12 transactions, fax, portal, other ways *before, with or after* a claim.  The attachment is then re-attached to the claim and the claim processed. 
+Today claims come through X12, portal submission, or other ways.  The additional information to support these claims (a.k.a. attachments) come through X12 transactions, fax, portal, other ways *before, with or after* a claim.  The attachment is then re-attached to the claim and the claim processed. This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer. In contrast to the Direct Query and Task Based approach, the CDex Unsolicited Attachment transaction is not a response to a FHIR-based request for clinical data. Instead it is either based on a set of pre-defined rules by the payer or jurisdictional mandates ("Unsolicited"), or the request for attachments comes through an X12 transaction or Prior Authorization ("Solicited").
 
 The following scenarios illustrate where Unsolicited Attachments transaction can be used:
   
@@ -27,20 +29,21 @@ The following scenarios illustrate where Unsolicited Attachments transaction can
 1. Submit additional information for prior authorization.
 
 In all these case, the payer will require a trading partner agreement for unsolicited attachments based based on predefined rules.
+{:.warning}
 
 ### `$attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using `$attachment`, a [FHIR Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [operation definition]() for further details.
+This guide defines a simple RESTful interaction for exchanging attachments using `$attachment`, a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [operation definition](todo.html) for further details.
 
 
-### FHIR Technical Workflow : 
+### FHIR Technical Workflow 
 
 
 As shown in the figure 5 below, the attachments are “pushed” using the `$attachment` operation directly to the Payer or an Intermediary.
 
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
 
-<!-- 
+
 ```mermaid
 sequenceDiagram
 #text for https://sequencediagram.org/
@@ -61,7 +64,7 @@ Payer (Data Consumer)->>EHR (Data Source): Return HTTP 4xx or 5xx with an Operat
 end
 note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br> to claim and<br> processes claim
 ```
--->
+
 
 1. EHR assemble attachments and re-attachment data for a claim
 1. EHR invokes `$attachment` operation to submit attachments to Payer
