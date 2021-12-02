@@ -1,0 +1,107 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="911" height="943" viewBox="0.0 0.0 829.0 740.0">
+  <desc>%23text%20for%20https%3A%2F%2Fsequencediagram.org%2F%0A%23%20add%20viewbox%20attribute%20to%20svg%20file%20for%20img%20sizing%20viewBox%3D%220.0%200.0%20829.0%20740.0%22%3E%0A%0Atitle%20Unsolicited%20Attachments%0A%0Aparticipant%20EHR%20(Data%20Source)%0A%0Aparticipant%20Payer%20(Data%20Consumer)%0A%0Anote%20over%20EHR%20(Data%20Source)%3A1)%20EHR%20needs%20to%20send%20attachments%20Payer%20%0AEHR%20(Data%20Source)-%3EPayer%20(Data%20Consumer)%3A%202)%20POST%20%24attachment%20with%20attachments%20in%20payload%0Aalt%203)%20Accepted%0APayer%20(Data%20Consumer)--%3EEHR%20(Data%20Source)%3A%20Return%20HTTP%20200%20OK%20%2F%20202%20Accepted%0Aelse%203)%20Rejected%0APayer%20(Data%20Consumer)--%3EEHR%20(Data%20Source)%3A%20Return%20HTTP%204xx%20or%205xx%20with%20an%20OperationOutcome%0Aend%0Anote%20right%20of%20Payer%20(Data%20Consumer)%3A%204)%20Out%20of%20Scope%3A%5Cn%20Payer%20attaches%20data%5Cn%20to%20claim%20and%5Cn%20processes%20claimtitle%20This%20is%20a%20title%0A%0A%0A</desc>
+  <defs/>
+  <g>
+    <g/>
+    <g/>
+    <g/>
+    <g/>
+    <g/>
+    <g/>
+    <g/>
+    <g/>
+    <g>
+      <rect fill="white" stroke="none" x="0" y="0" width="911" height="943"/>
+    </g>
+    <g>
+      <text fill="black" stroke="none" font-family="sans-serif" font-size="16.5pt" font-style="normal" font-weight="normal" text-decoration="normal" x="337.6465098016992" y="39.58145414999999" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Unsolicited Attachments</text>
+    </g>
+    <g/>
+    <g>
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 187.44140971304688 154.895423907 L 187.44140971304688 943.885743297" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray="20.298181615384618,8.795878700000001"/>
+      <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 593.4919720278906 154.895423907 L 593.4919720278906 943.885743297" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray="20.298181615384618,8.795878700000001"/>
+    </g>
+    <g>
+      <path fill="none" stroke="none"/>
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 95.67197719347266 83.648806437 L 279.2108422326211 83.648806437 L 279.2108422326211 154.895423907 L 95.67197719347266 154.895423907 L 95.67197719347266 83.648806437 Z" stroke-miterlimit="10" stroke-width="4.222021776" stroke-dasharray=""/>
+      </g>
+      <g>
+        <g/>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="124.30256236197266" y="128.507787807" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">EHR (Data Source)</text>
+      </g>
+      <path fill="none" stroke="none"/>
+      <g>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 487.4634223818515 83.648806437 L 699.5205216739296 83.648806437 L 699.5205216739296 154.895423907 L 487.4634223818515 154.895423907 L 487.4634223818515 83.648806437 Z" stroke-miterlimit="10" stroke-width="4.222021776" stroke-dasharray=""/>
+      </g>
+      <g>
+        <g/>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="516.0940075503515" y="128.507787807" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Payer (Data Consumer)</text>
+      </g>
+    </g>
+    <g>
+      <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 13.19381805 207.67069610700003 L 337.94012888609376 207.67069610700003 L 361.68900137609376 231.41956859700002 L 361.68900137609376 268.362259137 L 13.19381805 268.362259137 L 13.19381805 207.67069610700003 M 337.94012888609376 207.67069610700003 L 337.94012888609376 231.41956859700002 L 361.68900137609376 231.41956859700002" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray=""/>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="50.136508590000005" y="244.61338664700003" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">1) EHR needs to send attachments Payer </text>
+      </g>
+      <g>
+        <g>
+          <rect fill="white" stroke="none" x="223.1299291224609" y="307.94371328700004" width="334.6735234960156" height="34.30392693"/>
+        </g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="227.0880745374609" y="331.69258577700003" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">2) POST $attachment with attachments in payload</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 187.44140971304688 342.247640217 L 571.7661516388906 342.247640217" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray=""/>
+        <g transform="translate(593.4919720278906,342.247640217) translate(-593.4919720278906,-342.247640217)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 571.5022752778906 331.252791842 L 593.4919720278906 342.247640217 L 571.5022752778906 353.24248859200003 Z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <rect fill="white" stroke="none" x="265.50283866835935" y="453.07571183700003" width="249.92770440421876" height="34.30392693"/>
+        </g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="269.46098408335934" y="476.824584327" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Return HTTP 200 OK / 202 Accepted</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 593.4919720278906 487.379638767 L 209.1672301020469 487.379638767" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray="10.555054440000001"/>
+        <g transform="translate(187.44140971304688,487.379638767) translate(-187.44140971304688,-487.379638767)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 209.4311064630469 476.384790392 L 187.44140971304688 487.379638767 L 209.4311064630469 498.374487142 Z"/>
+        </g>
+      </g>
+      <g>
+        <g>
+          <rect fill="white" stroke="none" x="218.66677909804685" y="598.207710387" width="343.59982354484373" height="34.30392693"/>
+        </g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="222.62492451304684" y="621.9565828770001" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">Return HTTP 4xx or 5xx with an OperationOutcome</text>
+      </g>
+      <g>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 593.4919720278906 632.511637317 L 209.1672301020469 632.511637317" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray="10.555054440000001"/>
+        <g transform="translate(187.44140971304688,632.511637317) translate(-187.44140971304688,-632.511637317)">
+          <path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 209.4311064630469 621.5167889420001 L 187.44140971304688 632.511637317 L 209.4311064630469 643.506485692 Z"/>
+        </g>
+      </g>
+      <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 593.4919720278906 781.6017812819999 L 606.6857900778906 781.6017812819999 M 606.6857900778906 711.6745456169999 L 874.3454462508984 711.6745456169999 L 898.0943187408984 735.423418107 L 898.0943187408984 851.529016947 L 606.6857900778906 851.529016947 L 606.6857900778906 711.6745456169999 M 874.3454462508984 711.6745456169999 L 874.3454462508984 735.423418107 L 898.0943187408984 735.423418107" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray=""/>
+      <g>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="643.6284806178905" y="748.617236157" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">4) Out of Scope:</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="643.6284806178905" y="775.004872257" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve"> Payer attaches data</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="643.6284806178905" y="801.392508357" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve"> to claim and</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="643.6284806178905" y="827.780144457" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve"> processes claim</text>
+      </g>
+      <g>
+        <g/>
+        <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 95.08468336304688 381.82909436700004 L 685.8486983778906 381.82909436700004 L 685.8486983778906 672.093091467 L 95.08468336304688 672.093091467 L 95.08468336304688 381.82909436700004 Z" stroke-miterlimit="10" stroke-width="3.7696623000000002" stroke-dasharray=""/>
+        <path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 95.08468336304688 381.82909436700004 L 95.08468336304688 413.494257687 L 161.54875256011718 413.494257687 L 177.38133422011717 397.66167602700006 L 177.38133422011717 381.82909436700004 L 95.08468336304688 381.82909436700004" stroke-miterlimit="10" stroke-width="3.7696623000000002" stroke-dasharray=""/>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="121.47231946304689" y="402.939203247" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">alt</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="203.76897032011718" y="402.939203247" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">[3) Accepted]</text>
+        <g>
+          <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 95.08468336304688 526.961092917 L 685.8486983778906 526.961092917" stroke-miterlimit="10" stroke-width="3.7696623000000002" stroke-dasharray="6.596909025"/>
+        </g>
+        <g/>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="203.76897032011718" y="548.071201797" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">[3) Rejected]</text>
+      </g>
+      <g/>
+    </g>
+    <g/>
+    <g/>
+  </g>
+</svg>

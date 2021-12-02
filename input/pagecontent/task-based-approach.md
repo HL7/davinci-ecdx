@@ -67,7 +67,7 @@ When it is known,`Task.reasonCode/reasonReference` **SHOULD** reference the obje
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 3 below summarizes the basic interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction.   However, there are three implementation variations with Task Based Exchange discussed below:
+The sequence diagram in Figure 4 below summarizes the basic interaction between the Payer and EHR to query and retrieve the requested data using the Task based transaction.   However, there are three implementation variations with Task Based Exchange discussed below:
 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 4" %}
