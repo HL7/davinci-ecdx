@@ -2,24 +2,27 @@ resourceType: Task
 id: cdex-example1-free-text-completed
 meta:
   extension:
-    - url: 'http://hl7.org/fhir/StructureDefinition/instance-name'
-      valueString: Scenario 1 Completed Free Text Example
-    - url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
-      valueMarkdown: Completed Task to seek a patient active conditions using free text for the input.
+  - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    valueString: Scenario 1 Completed Free Text Example
+  - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    valueMarkdown: Completed Task to seek a patient active conditions using free text
+      for the input.
   versionId: '3'
   lastUpdated: '2020-10-26T04:04:52.000+00:00'
   source: '#tgH2FoPFuCq0yjw5'
   profile:
-    - >-
-      http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+  - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+  tag:
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: claims-processing
 status: completed
 businessStatus:
   text: Results reviewed for release
 intent: order
 code:
   coding:
-    - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-      code: data-request
+  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+    code: data-request
 for:
   reference: http://example.org/fhir/Patient/cdex-example-patient
 authoredOn: '2020-10-26T02:58:55.179Z'
@@ -31,24 +34,24 @@ owner:
 reasonReference:
   reference: http://example.org/fhir/Claim/cdex-example-claim
 input:
-  - type:
-      coding:
-        - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-          code: data-code
-    valueCodeableConcept:
-      text: request for patient's active conditions
-  - type:
-      coding:
-        - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-          code: purpose-of-use
-    valueCodeableConcept:
-      coding:
-        - system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason'
-          code: COVERAGE
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-code
+  valueCodeableConcept:
+    text: request for patient's active conditions
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: purpose-of-use
+  valueCodeableConcept:
+    coding:
+    - system: http://terminology.hl7.org/CodeSystem/v3-ActReason
+      code: COVERAGE
 output:
-  - type:
-      coding:
-        - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-          code: data-value
-    valueReference:
-      reference: http://example.org/fhir/Condition/858
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-value
+  valueReference:
+    reference: http://example.org/fhir/Condition/858
