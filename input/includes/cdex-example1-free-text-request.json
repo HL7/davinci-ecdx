@@ -3,6 +3,12 @@
     "meta": {
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        ],
+        "tag": [
+            {
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "claims-processing"
+            }
         ]
     },
     "status": "requested",
@@ -47,7 +53,7 @@
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
                         "code": "purpose-of-use"
                     }
                 ]
