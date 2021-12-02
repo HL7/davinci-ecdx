@@ -1,14 +1,8 @@
----
-tags: CDEX
-title:  Unsolicited Attachments
----
-
-# Unsolicited Attachments
 
 <div markdown="1" class="stu-note">
 
 **The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
-
+</div>
 
 ### Attachments for Claims or Prior Authorization
 
