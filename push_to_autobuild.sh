@@ -6,6 +6,27 @@ echo "================================================================="
 echo "=== commit and load to github for autopublisher ==="
 echo "================================================================="
 
+inpath=input
+for folder in includes-yaml examples-yaml resources-yaml
+do
+if ls $inpath/$folder/*.yml; then
+echo "======================================================================="
+echo "convert all yml files in $folder directory to json files"
+echo "Python 3.7 and PyYAML, json and sys modules are required"
+for yaml_file in $inpath/$folder/*.yml
+do
+echo $yaml_file
+json_file=$inpath/${folder%-*}/$(basename $yaml_file)
+json_file=${json_file%.*}.json
+echo $json_file
+python3.7 -c 'import sys, yaml, json; json.dump(yaml.full_load(sys.stdin), sys.stdout, indent=4)' < $yaml_file > $json_file
+done
+echo "========================================================================"
+fi
+done
+
+echo "================================================================="
+
 echo "================================================================="
 echo "=== rename the 'input/fsh' folder to 'input/_fsh'  ==="
 echo "================================================================="

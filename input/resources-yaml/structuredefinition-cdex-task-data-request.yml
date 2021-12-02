@@ -44,7 +44,7 @@ differential:
       short: Work Queue Tag
       definition: Payer provided some work queue tags that provider may use in their workflow to process request.
       binding:
-        strength: extensible
+        strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
 
     - id: 'Task.input:code'
