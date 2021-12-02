@@ -26,7 +26,7 @@
                     "discriminator": [
                         {
                             "type": "pattern",
-                            "path": "this"
+                            "path": "$this"
                         }
                     ],
                     "ordered": false,
