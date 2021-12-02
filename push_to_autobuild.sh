@@ -1,11 +1,21 @@
 #!/bin/bash
 # exit when any command fails
 set -e
+YAML_ON='true'
+while getopts y option
+do
+ case "${option}"
+ in
+ y) YAML_ON='false';;
+ esac
+done
 
 echo "================================================================="
 echo "=== commit and load to github for autopublisher ==="
+echo '=== -y parameter for converting yaml to json: YAML_ON =' $YAML_ON
 echo "================================================================="
-
+sleep 1
+if [[ $YAML_ON == 'true' ]]; then
 inpath=input
 for folder in includes-yaml examples-yaml resources-yaml
 do
@@ -24,6 +34,7 @@ done
 echo "========================================================================"
 fi
 done
+fi
 
 echo "================================================================="
 
