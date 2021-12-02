@@ -329,5 +329,3 @@ GET [base]Condition/858
 ~~~
 
 </div>
-
-{% include link-list.md %}
