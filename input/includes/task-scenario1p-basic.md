@@ -4,9 +4,9 @@
 In this example:
 
 1. No formal authorization (order) is needed
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
+1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's active Conditions and associated Provenance. For the actual request, the FHIR RESTful query syntax is used.
 2. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-3. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+3. The Payer fetches Patient B's Active Conditions and Provenance referenced by `Task.output` as an *external* Search Bundle resource.
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -20,7 +20,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example1-query-request.json %}
+{% include cdex-example1p-query-request.json %}
 ~~~
 
 **Response Headers**
@@ -49,11 +49,11 @@ GET Task/cdex-example1-query-completed
 {% include_relative Task-cdex-example1-query-completed.json %}
 ~~~
 
-###### Step 3 - Fetch Active Conditions
+###### Step 3 - Fetch Bundle
 
 **Request**
 ~~~
-GET [base]Condition/858
+GET [base]Bundle/858p
 ~~~
 
 {% include request-headers.md %}
@@ -63,5 +63,5 @@ GET [base]Condition/858
 **Response Body**
 
 ~~~
-{% include condition-858.json %}
+{% include bundle-858p.json %}
 ~~~
