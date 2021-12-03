@@ -78,7 +78,7 @@ FHIR offers numerous architectural approaches for sharing data between systems. 
 
 1. **[Direct Query] (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
 1. **[Task Based Approach]:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-1. **[Unsolicited Attachments]** Based on pre-defined payor rules or business needs the EHR sends claims data directly to Payer without an explicit Payer request.
+1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends claims data directly to Payer without an explicit Payer request.
 
 See the Specification pages for a detailed description of the technical workflow and API guidance.
 
@@ -108,9 +108,9 @@ Figure 2 below illustrates the exchange of clinical data between a Payer (or Pro
 
 **The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
 
-#### Unsolicited Attachments Workflow
+#### Attachments Workflow
 
-Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Unsolicited Attachments* workflow.  
+Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Attachments* workflow.  
 
 {% include img.html img="workflow-unsolicited.svg" caption="Figure 3" %}
 

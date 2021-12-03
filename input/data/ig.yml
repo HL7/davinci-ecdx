@@ -15,6 +15,9 @@ definition:
             nameUrl: index.html
             title: Home
         -   generation: markdown
+            nameUrl: attachments.html
+            title: Attachments
+        -   generation: markdown
             nameUrl: background.html
             title: Background
         -   generation: markdown
@@ -208,6 +211,15 @@ definition:
         name: Scenario 1 Free Text Example
         reference:
             reference: Task/cdex-example1-free-text-request
+    -   description: Electronic signature example showing how a image file can be
+            use to sign a document Bundle.  The CDEX use case would be the target
+            resource in response to a Task-based request where an electronic signature
+            was required.  If no signature was required, the response would typically
+            be in the form of an individual resource.
+        exampleBoolean: true
+        name: CDEX Electronic Signature Example
+        reference:
+            reference: Bundle/cdex-electronic-sig-example
     -   description: Completed Task to seek a patient active conditions using a contained
             resource for output.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
@@ -224,6 +236,17 @@ definition:
         name: Scenario 1 Example
         reference:
             reference: Task/cdex-example1-query-requested
+    -   description: Completed Task to seek a patient active conditions and their
+            provenance using free text for the input.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1P Completed Free Text Example
+        reference:
+            reference: Task/cdex-example1p-free-text-completed
+    -   description: Completed Task to seek a patient active conditions their provenance.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Scenario 1P Completed Example
+        reference:
+            reference: Task/cdex-example1p-query-completed
     -   description: Task to seek a patient's HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: Scenario 3 Failed Task Example

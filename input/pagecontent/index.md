@@ -15,7 +15,7 @@ Where possible, new and updated content will be highlighted with green text and 
 
 </div>
 
-This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  What is unique about this guide is that it documents the **Direct Query**, **Task Based** and <span markdown="1" class="bg-success">**Unsolicited Attachments** transaction approaches for requesting and sending information</span>. Key scenarios this IG can support include:
+This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  What is unique about this guide is that it documents the **Direct Query**, **Task Based** and <span markdown="1" class="bg-success">**Attachments** transaction approaches for requesting and sending information</span>. Key scenarios this IG can support include:
 
  - Requesting *attachments* to support claim submission, medical necessity and other reasons for attachments between payers and providers
  - Gathering information for Quality programs and Risk Adjustment between payers and providers
@@ -43,7 +43,7 @@ This Guide is divided into several pages which are listed at the top of each pag
   - {:.bg-success}[Exchanging Clinical Data]\: Exchanging Clinical data overview page.
   - {:.bg-success}[Direct Query]\: Payer directly queries EHR for specific data using the standard FHIR RESTful search
   - {:.bg-success}[Task Based Approach]\: Payer identifies the ‘type’ of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-  - {:.bg-success}[Unsolicited Attachments]\: Documents how to exchange clinical data using a FHIR based Unsolicited Attachments transaction. *This content is to be considered DRAFT, because it has not yet undergone HL7 balloting.*
+  - {:.bg-success}[Attachments]\: Documents how to exchange attachments for claims or prior authorization using a FHIR based `$attachments` operation. *This content is to be considered DRAFT, because it has not yet undergone HL7 balloting.*
 - {:.bg-success}[Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 - {:.bg-success}[Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
 - {:.bg-success}[FHIR Artifacts]\: These pages provide detailed descriptions and examples for Task based data exchange approach.

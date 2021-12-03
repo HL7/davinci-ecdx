@@ -150,6 +150,14 @@
       },
       {
         "reference": {
+          "reference": "Bundle/cdex-electronic-sig-example"
+        },
+        "description": "Electronic signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "name": "CDEX Electronic Signature Example",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Task/cdex-example1-query-completed-contained"
         },
         "description": "Completed Task to seek a patient active conditions using a contained resource for output.",
@@ -170,6 +178,22 @@
         },
         "description": "Task to seek a patient active conditions.",
         "name": "Scenario 1 Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-example1p-free-text-completed"
+        },
+        "description": "Completed Task to seek a patient active conditions and their provenance using free text for the input.",
+        "name": "Scenario 1P Completed Free Text Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-example1p-query-completed"
+        },
+        "description": "Completed Task to seek a patient active conditions their provenance.",
+        "name": "Scenario 1P Completed Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {
@@ -213,6 +237,11 @@
         {
           "nameUrl": "index.html",
           "title": "Home",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "attachments.html",
+          "title": "Attachments",
           "generation": "markdown"
         },
         {

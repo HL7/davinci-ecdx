@@ -28,9 +28,9 @@ The data returned in CDEX is not limited to FHIR resources, but may also include
 |Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, and/or binary files referenced by DocumentReference)|Combination of Above|
 {:.grid}
 
-\* For task based requests and unsolicited attachments the data source/responder transact a *signed FHIR Document* when the artifact would otherwise, if unsigned, be individual FHIR resources.
+\* A *signed FHIR Document* is sent for task based requests and attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.
 
-The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [FHIR RESTful queries](direct-query.html#signatures), [Task based requests](task-based-approach.html#signatures) and [Unsolicited Attachments](unsolicited-attachments.html#signatures).
+The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [FHIR RESTful queries](direct-query.html#signatures), [Task based requests](task-based-approach.html#signatures) and [Attachments](attachments.html#signatures).
 
 Requirements for using *FHIR Signatures* to sign a Bundle with electronic or digital signatures are documented in the sections below.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
 
