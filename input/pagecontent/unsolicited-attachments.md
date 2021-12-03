@@ -4,8 +4,9 @@ tags: CDEX
 title:  Unsolicited Attachments
 ---
 
-# Unsolicited Attachments -->
-
+# Unsolicited Attachments
+ -->
+ 
 <div markdown="1" class="new-content">
 
 This page documents how to exchange clinical data using a FHIR based Unsolicited Attachments transaction.
@@ -43,7 +44,7 @@ As shown in the figure 5 below, the attachments are “pushed” using the `$att
 
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
 
-
+<!-- 
 ```mermaid
 sequenceDiagram
 #text for https://sequencediagram.org/
@@ -64,7 +65,7 @@ Payer (Data Consumer)->>EHR (Data Source): Return HTTP 4xx or 5xx with an Operat
 end
 note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br> to claim and<br> processes claim
 ```
-
+ -->
 
 1. EHR assemble attachments and re-attachment data for a claim
 1. EHR invokes `$attachment` operation to submit attachments to Payer
