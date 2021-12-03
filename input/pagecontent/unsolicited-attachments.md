@@ -42,9 +42,10 @@ This guide defines a simple RESTful interaction for exchanging attachments using
 
 As shown in the figure 5 below, the attachments are “pushed” using the `$attachment` operation directly to the Payer or an Intermediary.
 
-{% include img.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
+{% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
 
-<!-- 
+<!--
+ 
 ```mermaid
 sequenceDiagram
 #text for https://sequencediagram.org/
@@ -65,6 +66,7 @@ Payer (Data Consumer)->>EHR (Data Source): Return HTTP 4xx or 5xx with an Operat
 end
 note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br> to claim and<br> processes claim
 ```
+
  -->
 
 1. EHR assemble attachments and re-attachment data for a claim
