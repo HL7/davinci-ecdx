@@ -99,14 +99,24 @@ Refer to this [section](task-based-approach.html#data-sourceresponder-requiremen
 
 ### Examples
 
-#### Scenario 1
+#### Scenario 1: Unsolicited Attachments
 
-In the following example, the submitted attachment is a CCDA document.
+In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$attachment`]: 
 
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Unsolicited Notifications transaction" %}
+`POST [base]/$attachment`
+
+#### Preconditions and Assumptions:
+
+- Based on a set of pre-defined rules set by the Payer, Provider can submit additional information for certain claims as Unsolicited Attachments
+- Provider A knows the Payer endpoint for Sending attachments.  The `$attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+- "Unsolicited Attachments" implies that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
+- Typically when the attachments are CCDA documents as in this scenario, they already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
+- Reassociation of attachments to the Claim, subsequent Claim processing and ajudication, and follow up communication are out of scope and out of band.
+
+{% include examplebutton_default.html example="attachment-scenario1" b_title = "Click Here To See Example Unsolicited Notifications transaction" %}
 
 
-#### Scenario 2
+#### Scenario 2: Unsolicited *Signed* Attachments
 
 In the following example a FHIR signature is required on the attachment which is a FHIR resource.
 
