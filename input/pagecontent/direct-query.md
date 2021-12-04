@@ -124,11 +124,14 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
 - Be signed by the organization that is responding the the query.
 - Follow the documentation in the [Signatures] page for producing signatures.
 
-:::info
-- As discussed in the [What is Signed] section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests](/QBvGIPkgSDeuxmpAoBtjOg)).
-:::
+<div markdown="1" class="bg-info">
 
-:::warning
+- As discussed in the [What is Signed] section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
+
+</div>
+
+<div markdown="1" class="bg-warning">
+
 Because the signature is represented by `Bundle.signature`, this precludes using [FHIR RESTful read](http://build.fhir.org/http.html#read) transactions which returns a single instances of a resource.  Therefore, the following rules apply for read transactions:
 - If signatures are required, the Consumer/Requester **SHALL NOT** use read transaction to fetch data.
 - If signatures are required the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
@@ -151,12 +154,13 @@ HTTP/1.1 400 Not Found
   ]
 }
 ~~~
-:::
+
+</div>
 
 
 #### Example of *Signed* Direct Query Response
 
-The following example shows [Scenario 1](direct-query.html#example-transactions) response with a signature attached. See [Signatures] page for complete worked example on how the signature was created.
+The following example shows [Scenario 1](#example-transactions) response with a signature attached. See [Signatures] page for complete worked example on how the signature was created.
 
 {%raw%}{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}{%endraw%}
 
