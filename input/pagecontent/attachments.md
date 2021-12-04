@@ -1,10 +1,10 @@
 
 <!-- ---
 tags: CDEX
-title:  Unsolicited Attachments
+title: Attachments
 ---
 
-# Unsolicited Attachments -->
+# Attachments -->
 
  
 <div markdown="1" class="new-content">
@@ -34,7 +34,7 @@ In all these case, the payer will require a trading partner agreement for unsoli
 
 ### `$attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using `$attachment`, a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [operation definition](todo.html) for further details.
+This guide defines a simple RESTful interaction for exchanging attachments using [`$attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [`$attachment`] operation definition and examples below for further details.
 
 
 ### FHIR Technical Workflow 
