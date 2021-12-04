@@ -99,6 +99,16 @@
             "code": "signature-flag",
             "display": "Signature Flag",
             "definition": "Flag to indicate whether the requested data requires a signature."
+        },
+        {
+            "code": "unsolicited",
+            "display": "Unsolicited Attachments For A Claim",
+            "definition": "Additional information sent to payer for a claim not explicitly requested by the payer."
+        },
+        {
+            "code": "solicited",
+            "display": "Solicited Attachments For A Claim",
+            "definition": "Additional information sent to payer for a claim. This information was requested by the payer."
         }
     ]
 }

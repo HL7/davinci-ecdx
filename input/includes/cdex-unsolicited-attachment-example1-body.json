@@ -2,7 +2,7 @@
     "resourceType": "Parameters",
     "parameter": [
         {
-            "name": "AttachmentType",
+            "name": "AttachmentReason",
             "valueCode": "unsolicited-attachments"
         },
         {

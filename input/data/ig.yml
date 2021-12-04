@@ -93,6 +93,29 @@ definition:
     -   code: path-history
         value: http://hl7.org/fhir/us/davinci-cdex/history.html
     resource:
+    -   description: "This operation is used to submit attachments for Claims or Prior\
+            \ Authorization. This operation accepts the clinical attachments and the\
+            \ necessary information needed to re-attach them to the claim or prior\
+            \ authorization, and returns a transaction layer http response.  This\
+            \ operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\
+            \nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n\
+            1. Data elements for reassociation to the Claim/Prior Authorization\n\
+            \    - Reason for Attachments:\n      - Unsolicited attachments for a\
+            \ claim\n      - Solicited attachments for a claim\n      - Additional\
+            \ information for prior authorization\n    - A unique claim/prior authorization\
+            \ identifier\n    - One or more unique claim line item identifiers\n \
+            \   - A unique organization/location identifier (e.g., NPI)\n    - A unique\
+            \ provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\
+            \nThere are no output parameters.\n\nNote that Unsolicited Claim implies\
+            \ that the *provider* assigns the claim identifier (in other words, a\
+            \ \"placer identifier\") upon claim generation. Solicited Claim and Prior\
+            \ Authorization imply that the *payer* assigned the Claim/Prior Authorization\
+            \ identifier (in other words, a \"filler identifier\") a upon receipt\
+            \ of a claim or prior authorization.\n"
+        exampleBoolean: false
+        name: Attachment Operation
+        reference:
+            reference: OperationDefinition/attachment
     -   description: 'This CapabilityStatement describes the expected capabilities
             of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when
             requesting clinical data from the Data Source (often an EHR) during a
@@ -180,6 +203,12 @@ definition:
         name: CDex Purpose of Use Value Set
         reference:
             reference: ValueSet/cdex-POU
+    -   description: The set of codes is used in the [`$attachment`](http://build.fhir.org/ig/HL7/davinci-ecdx/todo.html)
+            operation for identifying the reason for attachments
+        exampleBoolean: false
+        name: CDex Attachment Reason Value Set
+        reference:
+            reference: ValueSet/cdex-attachment-reason
     -   description: The set work queue tags that the provider may use in their workflow
             to process request. This code set is composed of codes defined by this
             Guide.

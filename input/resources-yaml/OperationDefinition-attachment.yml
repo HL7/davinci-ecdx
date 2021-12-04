@@ -1,0 +1,97 @@
+resourceType: OperationDefinition
+id: attachment
+url: 'http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/attachment'
+version: 4.0.1
+name: Attachment
+title: Attachment Operation
+status: draft
+kind: operation
+date: '2021-12-02T20:24:41-08:00'
+description: |
+  This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+
+  The input parameters are:
+  1. One or more Attachments as FHIR Resources
+  1. Data elements for reassociation to the Claim/Prior Authorization
+      - Reason for Attachments:
+        - Unsolicited attachments for a claim
+        - Solicited attachments for a claim
+        - Additional information for prior authorization
+      - A unique claim/prior authorization identifier
+      - One or more unique claim line item identifiers
+      - A unique organization/location identifier (e.g., NPI)
+      - A unique provider identifier (e.g., NPI)
+      - A unique Patient member identifier
+
+  There are no output parameters.
+
+  Note that Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a "placer identifier") upon claim generation. Solicited Claim and Prior Authorization imply that the *payer* assigned the Claim/Prior Authorization identifier (in other words, a "filler identifier") a upon receipt of a claim or prior authorization.
+code: attachment
+comment: |
+  The following rules apply when using `$attachment`:
+  * The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error
+  * When processing messages, a server may return one of several status codes:
+    * **200 OK**: Indicates that the operation has been processed.
+    * **202 Accepted**: Indicates that the receiving system has accepted custody
+    of the message
+    * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point resubmitting the unaltered message,
+    * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original message.
+    *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater.
+resource:
+  - Claim
+system: true
+type: true
+instance: false
+parameter:
+  - name: AttachmentReason
+    use: in
+    min: 0
+    max: '1'
+    documentation: >-
+      Whether the attachments submission for claim is unsolicited, or the information for a claim is solicited from the payor, or because of a prior authorization information request.
+    type: code
+    binding:
+      strength: required
+      valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-reason
+  - name: ClaimId
+    use: in
+    min: 0
+    max: '1'
+    documentation: >-
+      Claim/prior authorization identifier value. Reason for attachments determines whether this is a "placer" or "filler" identifier (see above).
+    type: Identifier
+  - name: ItemId
+    use: in
+    min: 0
+    max: '*'
+    documentation: >-
+      Claim/prior authorization identifier that uniquely reference an line item in a claim or prior authorization.  Reason for attachments determines whether this is a "placer" or "filler" identifier (see above).
+    type: Identifier
+  - name: OrganizationId
+    use: in
+    min: 0
+    max: '1'
+    documentation: >-
+      Sending organization/location Identifier (e.g., NPI)
+    type: Identifier
+  - name: ProviderId
+    use: in
+    min: 0
+    max: '1'
+    documentation: >-
+      Sending provider identifier (e.g., NPI)
+    type: Identifier
+  - name: MemberId
+    use: in
+    min: 0
+    max: '1'
+    documentation: >-
+      Patient member identifier
+    type: Identifier
+  - name: Attachment
+    use: in
+    min: 0
+    max: '*'
+    documentation: >-
+      The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR Non-FHIR data formats attached to or referenced by DocumentReference.
+    type: Resource
