@@ -75,7 +75,7 @@
             "use": "in",
             "min": 0,
             "max": "*",
-            "documentation": "The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR Non-FHIR data formats attached to or referenced by DocumentReference.",
+            "documentation": "The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.",
             "type": "Resource"
         }
     ]
