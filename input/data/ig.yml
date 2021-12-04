@@ -200,7 +200,7 @@ definition:
         name: CDex Purpose of Use Value Set
         reference:
             reference: ValueSet/cdex-POU
-    -   description: The set of codes is used in the [`$attachment`](http://build.fhir.org/ig/HL7/davinci-ecdx/todo.html)
+    -   description: The set of codes is used in the [`$attachment`](http://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-attachment.html)
             operation for identifying the reason for attachments
         exampleBoolean: false
         name: CDex Attachment Reason Value Set
