@@ -248,12 +248,12 @@ When a electronic or digital signature is required for Task based request, the D
 - Follow the documentation in the [Signatures] page for producing signatures.
 
 :::info
-- As discussed in the [What is Signed](/2_qdYLjXR3KyYlk78Ye9Gg#What-is-Signed) section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed obect or a signed FHIR Document.
+- As discussed in the [What is Signed] section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed obect or a signed FHIR Document.
 :::
 
 #### Examples of a *Signed* Task Based Transaction
 
-The following example repeats [Scenario 1](specification.html#scenario-1), only this time a signature is required.
+The following example repeats [Scenario 1](task-based-approach.html#scenario-1), only this time a signature is required.
 - See [Signatures] page for complete worked example on how the signature was created.
 
 ##### Example 1:
