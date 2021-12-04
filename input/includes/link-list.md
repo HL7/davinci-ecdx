@@ -76,4 +76,4 @@
 [Da Vinci Prior Authorization Support (PAS) FHIR IG]: http://hl7.org/fhir/us/davinci-pas/index.html
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
-[Signatures for Task Based Requests]: task-based-approach.md#signatures
+[Signatures for Task Based Requests]: task-based-approach.html#signatures
