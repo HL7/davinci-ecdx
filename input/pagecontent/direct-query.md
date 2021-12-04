@@ -115,14 +115,14 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
    - Conversely, it **SHOULD** be assumed that no search query response will be signed unless there exists a pre-negotiated agreement
    - Unlike Task based queries, the actual FHIR queries won't indicate that a signature is required.
    - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
-- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for validating signatures.
+- Follow the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source/Responder
 
 When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
 - Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the the signature.
 - Be signed by the organization that is responding the the query.
-- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for producing signatures.
+- Follow the documentation in the [Signatures] page for producing signatures.
 
 :::info
 - As discussed in the [What is Signed](/2_qdYLjXR3KyYlk78Ye9Gg#What-is-Signed) section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests](/QBvGIPkgSDeuxmpAoBtjOg)).
@@ -156,7 +156,7 @@ HTTP/1.1 400 Not Found
 
 #### Example of *Signed* Direct Query Response
 
-The following example shows [Scenario 1](specification.html#example-transactions) response with a signature attached. See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
+The following example shows [Scenario 1](specification.html#example-transactions) response with a signature attached. See [Signatures] page for complete worked example on how the signature was created.
 
 {%raw%}{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}{%endraw%}
 

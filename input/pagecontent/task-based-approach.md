@@ -237,7 +237,7 @@ When a electronic or digital signature is required for a Task based request, the
 - Indicate in Task that a signature is required using `Task.input` signature flag parameter as defined in [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
     - It **SHOULD NOT** be assumed that a Task based requests will be signed if the flag is omitted.
 -  Pre-negotiate whether *electronic* or *digital* signatures are used
-- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for validating signatures.
+- Follow the documentation in the [Signatures] page for validating signatures.
 
 
 #### Data Source/Responder
@@ -245,7 +245,7 @@ When a electronic or digital signature is required for a Task based request, the
 When a electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
 - Return an object is either already inherently signed or transform it into a *signed* FHIR Document.
 - Be signed by the provider that is responding the the query.
-- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for producing signatures.
+- Follow the documentation in the [Signatures] page for producing signatures.
 
 :::info
 - As discussed in the [What is Signed](/2_qdYLjXR3KyYlk78Ye9Gg#What-is-Signed) section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed obect or a signed FHIR Document.
@@ -254,7 +254,7 @@ When a electronic or digital signature is required for Task based request, the D
 #### Examples of a *Signed* Task Based Transaction
 
 The following example repeats [Scenario 1](specification.html#scenario-1), only this time a signature is required.
-- See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
+- See [Signatures] page for complete worked example on how the signature was created.
 
 ##### Example 1:
 

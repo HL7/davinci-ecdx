@@ -6,7 +6,7 @@ title: Attachments
 
 # Attachments -->
 
- 
+
 <div markdown="1" class="new-content">
 
 This page documents how to exchange clinical data using a FHIR based Unsolicited Attachments transaction.
@@ -22,7 +22,7 @@ This page documents how to exchange clinical data using a FHIR based Unsolicited
 Today claims come through X12, portal submission, or other ways.  The additional information to support these claims (a.k.a. attachments) come through X12 transactions, fax, portal, other ways *before, with or after* a claim.  The attachment is then re-attached to the claim and the claim processed. This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer. In contrast to the Direct Query and Task Based approach, the CDex Unsolicited Attachment transaction is not a response to a FHIR-based request for clinical data. Instead it is either based on a set of pre-defined rules by the payer or jurisdictional mandates ("Unsolicited"), or the request for attachments comes through an X12 transaction or Prior Authorization ("Solicited").
 
 The following scenarios illustrate where Unsolicited Attachments transaction can be used:
-  
+
 1. Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
 1. Attachments for a claim, because a Provider thinks the Payer will want it.
 1. A Provider is under review and needs to provide additional information for all claims.
@@ -37,7 +37,7 @@ In all these case, the payer will require a trading partner agreement for unsoli
 This guide defines a simple RESTful interaction for exchanging attachments using [`$attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [`$attachment`] operation definition and examples below for further details.
 
 
-### FHIR Technical Workflow 
+### FHIR Technical Workflow
 
 
 As shown in the figure 5 below, the attachments are “pushed” using the `$attachment` operation directly to the Payer or an Intermediary.
@@ -45,7 +45,7 @@ As shown in the figure 5 below, the attachments are “pushed” using the `$att
 {% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
 
 <!--
- 
+
 ```mermaid
 sequenceDiagram
 #text for https://sequencediagram.org/
@@ -57,7 +57,7 @@ participant EHR (Data Source)
 
 participant Payer (Data Consumer)
 
-note over EHR (Data Source):1) EHR needs to send attachments Payer 
+note over EHR (Data Source):1) EHR needs to send attachments Payer
 EHR (Data Source)->>Payer (Data Consumer): 2) POST $attachment with attachments in payload
 alt 3) Accepted
 Payer (Data Consumer)->>EHR (Data Source): Return HTTP 200 OK / 202 Accepted
@@ -72,7 +72,7 @@ note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br
 1. EHR assemble attachments and re-attachment data for a claim
 1. EHR invokes `$attachment` operation to submit attachments to Payer
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
-1. Payer attaches data to claim and processes claim (out of scope) 
+1. Payer attaches data to claim and processes claim (out of scope)
 
 
 ### Signatures
@@ -90,7 +90,7 @@ When a electronic or digital signature is required for Unsolicited Attachments, 
    - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* attachments will be signed.
    - Conversely, it **SHOULD** be assumed that no Unsolicited Attachments transaction will be signed unless there exists a pre-negotiated agreement
    - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
-- Follow the documentation in the [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for validating signatures.
+- Follow the documentation in the [Signatures] page for validating signatures.
 
 
 #### Data Source Requirements
@@ -101,7 +101,7 @@ Refer to this [section](task-based-approach.html#data-sourceresponder-requiremen
 
 #### Scenario 1: Unsolicited Attachments
 
-In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$attachment`]: 
+In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$attachment`]:
 
 `POST [base]/$attachment`
 
@@ -120,7 +120,7 @@ In the following example, The Provider creates a claim and sends supporting CCDA
 
 In the following example a FHIR signature is required on the attachment which is a FHIR resource.
 
-- See [Generating and Verifying *Signed* Resources](/2_qdYLjXR3KyYlk78Ye9Gg) page for complete worked example on how the signature was created.
+- See [Signatures] page for complete worked example on how the signature was created.
 
 {% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Signed Unsolicited Notifications transaction" %}
 
