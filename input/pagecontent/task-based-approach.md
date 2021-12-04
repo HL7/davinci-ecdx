@@ -240,7 +240,7 @@ When a electronic or digital signature is required for a Task based request, the
 - Follow the documentation in the [Signatures] page for validating signatures.
 
 
-#### Data Source/Responder
+#### Data Source/Responder Requirements
 
 When a electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
 - Return an object is either already inherently signed or transform it into a *signed* FHIR Document.

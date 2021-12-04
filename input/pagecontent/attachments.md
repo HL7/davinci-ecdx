@@ -95,7 +95,7 @@ When a electronic or digital signature is required for Unsolicited Attachments, 
 
 #### Data Source Requirements
 
-Refer to this [section](task-based-approach.html#data-sourceresponder-requirements) in the Task Based Approach to signatures.
+Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-sourceresponder-requirements) section in the Task Based Approach to signatures.
 
 ### Examples
 

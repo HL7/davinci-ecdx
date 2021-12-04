@@ -85,7 +85,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
 
 #### Digital Signature Rules For CDEX FHIR Bundles:
 
-In addition to [Electronic Signature Rules For Fhir Bundles](#Electronic-Signature-Rules-For-CDEX-FHIR-Bundles) listed in the previous section.
+In addition to the electronic signature rules listed in the previous section, for digital signatures implementers:
 
 1. **SHALL** use JSON Web Signature (JWS)[[see RFC 7515]](https://tools.ietf.org/html/rfc7515)
 >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
@@ -109,7 +109,7 @@ In addition to [Electronic Signature Rules For Fhir Bundles](#Electronic-Signatu
     :thinking_face: The complete JWS is the Header.Payload.Signature with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value need to be base64 encoded *again* as indicated above since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ will cause it to fail validation otherwise due to the period ('.') character.
     :::
     :::info
-    If the issuer has more than one certificate for the same public key (e.g. participation in more than one trust community), then we need to use [JWS JSON Serialization](xhttps://datatracker.ietf.org/doc/html/rfc7515#section-3.2) represent multiple signature with all parameter values identical except `"x5c"`. :unamused:
+    If the issuer has more than one certificate for the same public key (e.g. participation in more than one trust community), then we need to use [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) represent multiple signature with all parameter values identical except `"x5c"`. :unamused:
     :::
 <!-- - **SHALL** embed the public key used to sign this JWS in *JSON Web Key* format using the `jwk` header claim
   - **MAY** also use others method to discover public key (see SMART cards?)-->
