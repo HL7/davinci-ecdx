@@ -1,0 +1,82 @@
+{
+    "resourceType": "OperationDefinition",
+    "id": "submit-attachment",
+    "url": "http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment",
+    "version": "4.0.1",
+    "name": "Attachment",
+    "title": "Attachment Operation",
+    "status": "draft",
+    "kind": "operation",
+    "date": "2021-12-02T20:24:41-08:00",
+    "description": "This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier\n    - One or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.\n\nNote that Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a \"placer identifier\") upon claim generation. Solicited Claim and Prior Authorization imply that the *payer* assigned the Claim/Prior Authorization identifier (in other words, a \"filler identifier\") a upon receipt of a claim or prior authorization.\n",
+    "code": "submit-attachment",
+    "comment": "The following rules apply when using `$submit-attachment`:\n* The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error\n* For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type for and **SHOULD** support other types. These capabilities should be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).\n* When processing messages, a server may return one of several status codes:\n  * **200 OK**: Indicates that the operation has been processed.\n  * **202 Accepted**: Indicates that the receiving system has accepted custody\n  of the message\n  * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point resubmitting the unaltered message,\n  * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original message.\n  *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check that they didn't send it to the wrong payer.\n",
+    "resource": [
+        "Claim"
+    ],
+    "system": true,
+    "type": true,
+    "instance": false,
+    "parameter": [
+        {
+            "name": "AttachTo",
+            "use": "in",
+            "min": 1,
+            "max": "1",
+            "documentation": "Whether the additional information is needed for a claim (unsolicited or solicited) or for prior authorization.",
+            "type": "code",
+            "binding": {
+                "strength": "required",
+                "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-reason"
+            }
+        },
+        {
+            "name": "TargetId",
+            "use": "in",
+            "min": 1,
+            "max": "1",
+            "documentation": "Claim/prior authorization identifier value. This can be either a filler or placer id.",
+            "type": "Identifier"
+        },
+        {
+            "name": "ItemId",
+            "use": "in",
+            "min": 1,
+            "max": "*",
+            "documentation": "Claim/prior authorization identifier that uniquely reference an line item in the context of the claim or prior authorization. This can be either a filler or placer id.",
+            "type": "string"
+        },
+        {
+            "name": "OrganizationId",
+            "use": "in",
+            "min": 1,
+            "max": "1",
+            "documentation": "Sending organization/location Identifier (e.g., NPI)",
+            "type": "Identifier"
+        },
+        {
+            "name": "ProviderId",
+            "use": "in",
+            "min": 1,
+            "max": "1",
+            "documentation": "Sending provider identifier (e.g., NPI)",
+            "type": "Identifier"
+        },
+        {
+            "name": "MemberId",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "documentation": "Patient member identifier",
+            "type": "Identifier"
+        },
+        {
+            "name": "Attachment",
+            "use": "in",
+            "min": 1,
+            "max": "*",
+            "documentation": "The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.  Servers **SHALL** support  DocumentReference resource type for and **SHOULD** support other types.",
+            "type": "Resource"
+        }
+    ]
+}

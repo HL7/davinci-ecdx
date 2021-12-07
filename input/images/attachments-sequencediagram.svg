@@ -48,7 +48,7 @@
         <g>
           <rect fill="white" stroke="none" x="223.1299291224609" y="307.94371328700004" width="334.6735234960156" height="34.30392693"/>
         </g>
-        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="227.0880745374609" y="331.69258577700003" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">2) POST $attachment with attachments in payload</text>
+        <text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="227.0880745374609" y="331.69258577700003" text-anchor="start" dominant-baseline="alphabetic" xml:space="preserve">2) POST $submit-attachment with attachments in payload</text>
       </g>
       <g>
         <path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 187.44140971304688 342.247640217 L 571.7661516388906 342.247640217" stroke-miterlimit="10" stroke-width="2.1989696750000003" stroke-dasharray=""/>

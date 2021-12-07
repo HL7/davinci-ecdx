@@ -54,9 +54,9 @@
     "resource": [
       {
         "reference": {
-          "reference": "OperationDefinition/attachment"
+          "reference": "OperationDefinition/submit-attachment"
         },
-        "description": "This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - Reason for Attachments:\n      - Unsolicited attachments for a claim\n      - Solicited attachments for a claim\n      - Additional information for prior authorization\n    - A unique claim/prior authorization identifier\n    - One or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.\n\nNote that Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a \"placer identifier\") upon claim generation. Solicited Claim and Prior Authorization imply that the *payer* assigned the Claim/Prior Authorization identifier (in other words, a \"filler identifier\") a upon receipt of a claim or prior authorization.\n",
+        "description": "This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier\n    - One or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.\n\nNote that Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a \"placer identifier\") upon claim generation. Solicited Claim and Prior Authorization imply that the *payer* assigned the Claim/Prior Authorization identifier (in other words, a \"filler identifier\") a upon receipt of a claim or prior authorization.\n",
         "exampleBoolean": false,
         "name": "Attachment Operation"
       },
@@ -120,7 +120,7 @@
         "reference": {
           "reference": "ValueSet/cdex-attachment-reason"
         },
-        "description": "The set of codes is used in the [`$attachment`](http://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-attachment.html) operation for identifying the reason for attachments",
+        "description": "The set of codes is used in the [`$submit-attachment`](http://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-attachment.html) operation for identifying the reason for attachments",
         "exampleBoolean": false,
         "name": "CDex Attachment Reason Value Set"
       },

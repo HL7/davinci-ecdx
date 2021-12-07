@@ -32,15 +32,15 @@ The following scenarios illustrate where Unsolicited Attachments transaction can
 In all these case, the payer will require a trading partner agreement for unsolicited attachments based based on predefined rules.
 {:.warning}
 
-### `$attachment` Operation
+### `$submit-attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using [`$attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [`$attachment`] operation definition and examples below for further details.
+This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim, and returns a transaction layer http response. The re-attachment to the claim, subsequent processing, and response the the Payer is out of scope for this guide.  See the [`$submit-attachment`] operation definition and examples below for further details.
 
 
 ### FHIR Technical Workflow
 
 
-As shown in the figure 5 below, the attachments are “pushed” using the `$attachment` operation directly to the Payer or an Intermediary.
+As shown in the figure 5 below, the attachments are “pushed” using the `$submit-attachment` operation directly to the Payer or an Intermediary.
 
 {% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
 
@@ -58,7 +58,7 @@ participant EHR (Data Source)
 participant Payer (Data Consumer)
 
 note over EHR (Data Source):1) EHR needs to send attachments Payer
-EHR (Data Source)->>Payer (Data Consumer): 2) POST $attachment with attachments in payload
+EHR (Data Source)->>Payer (Data Consumer): 2) POST $submit-attachment with attachments in payload
 alt 3) Accepted
 Payer (Data Consumer)->>EHR (Data Source): Return HTTP 200 OK / 202 Accepted
 else 3) Rejected
@@ -70,7 +70,7 @@ note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br
  -->
 
 1. EHR assemble attachments and re-attachment data for a claim
-1. EHR invokes `$attachment` operation to submit attachments to Payer
+1. EHR invokes `$submit-attachment` operation to submit attachments to Payer
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
 1. Payer attaches data to claim and processes claim (out of scope)
 
@@ -101,14 +101,14 @@ Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-
 
 #### Scenario 1: Unsolicited Attachments
 
-In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$attachment`]:
+In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
 
-`POST [base]/$attachment`
+`POST [base]/$submit-attachment`
 
 #### Preconditions and Assumptions:
 
 - Based on a set of pre-defined rules set by the Payer, Provider can submit additional information for certain claims as Unsolicited Attachments
-- Provider A knows the Payer endpoint for Sending attachments.  The `$attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+- Provider A knows the Payer endpoint for Sending attachments.  The `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
 - "Unsolicited Attachments" implies that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
 - Typically when the attachments are CCDA documents as in this scenario, they already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
 - Reassociation of attachments to the Claim, subsequent Claim processing and ajudication, and follow up communication are out of scope and out of band.

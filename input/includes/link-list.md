@@ -31,7 +31,7 @@
 [Direct Query]: direct-query.html
 [Task Based Approach]: task-based-approach.html
 [Attachments]: attachments.html
-[`$attachment`]: OperationDefinition-attachment.html
+[`$submit-attachment`]: OperationDefinition-submit-attachment.html
 [HL7 Da Vinci Guiding Principles]: https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf
 [Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
 [Patient Care (PC)]: http://www.hl7.org/Special/committees/pateintcare/index.cfm
