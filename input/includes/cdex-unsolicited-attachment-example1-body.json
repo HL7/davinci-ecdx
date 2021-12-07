@@ -6,10 +6,6 @@
             "valueCode": "claim"
         },
         {
-            "name": "AttachTo",
-            "valueCode": "claim"
-        },
-        {
             "name": "TargetId",
             "valueIdentifier": {
                 "type": {
