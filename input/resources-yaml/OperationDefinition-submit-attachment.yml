@@ -36,12 +36,12 @@ comment: |
     of the message
     * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point resubmitting the unaltered message,
     * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original message.
-    *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check that they didn't send it to the wrong payer.
+    *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check whether they sent it to the wrong payer.
 resource:
   - Claim
 system: true
 type: true
-instance: false
+instance: true
 parameter:
   - name: AttachTo
     use: in

@@ -8,7 +8,7 @@ participant EHR (Data Source)
 participant Payer (Data Consumer)
 
 note over EHR (Data Source):1) EHR needs to send attachments Payer
-EHR (Data Source)->Payer (Data Consumer): 2) POST $attachment with attachments in payload
+EHR (Data Source)->Payer (Data Consumer): 2) POST $submit-attachment with attachments in payload
 alt 3) Accepted
 Payer (Data Consumer)-->EHR (Data Source): Return HTTP 200 OK / 202 Accepted
 else 3) Rejected
