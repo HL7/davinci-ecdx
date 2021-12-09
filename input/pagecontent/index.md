@@ -35,7 +35,7 @@ This IG provides several *general* examples to illustrate the different approach
 
 This Implementation Guide is supported by the [Da Vinci] initiative which is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. Like all Da Vinci Implementation Guides, it follows the [HL7 Da Vinci Guiding Principles] for exchange of patient health information.  The guide is based upon the prior work from the [US Core] and [Da Vinci Health Record Exchange (HRex)] Implementation Guides. As illustrated in figure 1 below, FHIR provides the foundation, and sets of profiles are built on top of FHIR that provide more and more focused use cases by constraining profiles and extending functionality to cover gaps.
 
-{% include img.html img="davinci-use-cases.svg" caption="Figure 1: Relationship of CDex to Other FHIR Standards" %}
+{% include img.html img="profile-pyramid.svg" caption="Figure 1: Relationship of CDex to Other FHIR Standards" %}
 
 Changes to this specification are managed by the sponsoring HL7 [Patient Care (PC)] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 
