@@ -40,9 +40,9 @@ This guide defines a simple RESTful interaction for exchanging attachments using
 ### FHIR Technical Workflow
 
 
-As shown in the figure 5 below, the attachments are “pushed” using the `$submit-attachment` operation directly to the Payer or an Intermediary.
+As shown in the figure 7 below, the attachments are “pushed” using the `$submit-attachment` operation directly to the Payer or an Intermediary.
 
-{% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 5" %}
+{% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
 <!--
 

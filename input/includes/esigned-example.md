@@ -1,4 +1,7 @@
 ~~~
-{% include_relative Bundle-cdex-electronic-sig-example.json %}
+{ % include_relative Bundle-cdex-electronic-sig-example.json % }
 ~~~
-{: style="white-space:pre-wrap; word-wrap:break-word;"}
+
+{%raw%}{% include pre_base64.html example=Bundle-cdex-electronic-sig-example.json %}{%endraw%}
+
+{% include pre_base64.html example=Bundle-cdex-electronic-sig-example.json %}
