@@ -112,7 +112,7 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 
 Figure 4 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Attachments* workflow.  
 
-{% include img.html img="workflow-unsolicited.svg" caption="Figure 4" %}
+{% include img.html img="workflow-attachments.svg" caption="Figure 4" %}
 
 #### Actors and Roles
 
