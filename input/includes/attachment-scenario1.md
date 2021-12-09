@@ -21,7 +21,7 @@ Content-Type: application/fhir+json
 **Response Headers**
 
 ~~~
-HTTP/1.1 202 Accepted
+HTTP/1.1 200 OK
 Server: nginx/1.14.0 (Ubuntu)
 Date: Fri, 23 Oct 2020 04:54:56 GMT
 Content-Type: application/fhir+json;charset=utf-8
