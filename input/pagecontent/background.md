@@ -78,7 +78,7 @@ FHIR offers numerous architectural approaches for sharing data between systems. 
 
 1. **[Direct Query] (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
 1. **[Task Based Approach]:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends claims data directly to Payer without an explicit Payer request.
+1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends claims or prior authorization data directly to Payer using a "push" based operation.
 
 See the Specification pages for a detailed description of the technical workflow and API guidance.
 

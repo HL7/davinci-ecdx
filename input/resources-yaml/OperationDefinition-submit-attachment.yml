@@ -33,7 +33,7 @@ comment: |
   * The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error
   * For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type for and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
-    *These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
+    * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
   * When processing messages, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
     * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point resubmitting the unaltered operation,
