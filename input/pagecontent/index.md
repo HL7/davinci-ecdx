@@ -33,10 +33,13 @@ This IG provides several *general* examples to illustrate the different approach
 
 ### About This Guide
 
-This Implementation Guide is supported by the [Da Vinci] initiative which is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. Like all Da Vinci Implementation Guides, it follows the [HL7 Da Vinci Guiding Principles] for exchange of patient health information.  The guide is based upon the prior work from the [US Core] and [Da Vinci Health Record Exchange (HRex)] Implementation Guides. <span markdown="1" class="new-content">As illustrated in figure 1 below, this guide is built on top of FHIR which provides the foundation, and other implementation guides that provide more and more focused use cases by constraining profiles and extending functionality to cover gaps.</span>
+This Implementation Guide is supported by the [Da Vinci] initiative which is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. Like all Da Vinci Implementation Guides, it follows the [HL7 Da Vinci Guiding Principles] for exchange of patient health information.  The guide is based upon the prior work from the [US Core] and [Da Vinci Health Record Exchange (HRex)] Implementation Guides. <span markdown="1" class="bg-success">As illustrated in figure 1 below, this guide is built on top of FHIR which provides the foundation, and other implementation guides that provide more and more focused use cases by constraining profiles and extending functionality to cover gaps.</span>
+
+<div markdown="1" class="new-content">
 
 {% include img.html img="profile-pyramid.svg" caption="Figure 1: Relationship of CDex to Other FHIR Standards" %}
-{:.new-content}
+
+</div>
 
 Changes to this specification are managed by the sponsoring HL7 [Patient Care (PC)] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 
