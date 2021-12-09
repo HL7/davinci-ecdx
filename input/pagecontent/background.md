@@ -58,7 +58,7 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 ### Where Does CDEX Fit in the Da Vinci Project?
 
 <div markdown='1' class="new-content">
-There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 1 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  CDex not intended to supplant existing standards that already define how to share clinical information.  However, there are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex may be used to request clinical data from a provider when:
+There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  CDex not intended to supplant existing standards that already define how to share clinical information.  However, there are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex may be used to request clinical data from a provider when:
 
 - an alternative is needed to cover some aspect of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses prefetch requests, the CDS service could use CDex to request the data instead.
 - there is a specific exchange is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS) FHIR IG], the Payer could requests additional information for prior authorization using CDex.
@@ -67,7 +67,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
   1. A Provider has not implemented DEQM
   1. Additional information is required for an audit of the Quality Measure.
 
-{% include img.html img="davinci-use-cases.svg" caption="Figure 1" %}
+{% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
 </div>
 
 <div markdown='1' class="new-content">
@@ -84,9 +84,9 @@ See the Specification pages for a detailed description of the technical workflow
 
 #### Direct Query and Task-Based Workflow
 
-Figure 2 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query*  and *Task-Based* workflows.  
+Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query*  and *Task-Based* workflows.  
 
-{% include img.html img="workflow-overview.svg" caption="Figure 2" %}
+{% include img.html img="workflow-overview.svg" caption="Figure 3" %}
 
 ##### Actors and Roles
 
@@ -110,9 +110,9 @@ Figure 2 below illustrates the exchange of clinical data between a Payer (or Pro
 
 #### Attachments Workflow
 
-Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Attachments* workflow.  
+Figure 4 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Attachments* workflow.  
 
-{% include img.html img="workflow-unsolicited.svg" caption="Figure 3" %}
+{% include img.html img="workflow-unsolicited.svg" caption="Figure 4" %}
 
 #### Actors and Roles
 

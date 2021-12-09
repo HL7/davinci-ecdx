@@ -40,6 +40,7 @@ list:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct_query#signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approache#signatures.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/attachments#signatures.html)
       1. **Applied**: Add reference to C-CDA on FHIR ([FHIR-28158](https://jira.hl7.org/browse/FHIR-28158)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/index.html#home)
       1. **Applied**: Provide another example of a use case not covered by another Da Vinci IG ([FHIR-30146](https://jira.hl7.org/browse/FHIR-30146)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html##where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Fix link and expectations to CapabilityStatements ([FHIR-30147](https://jira.hl7.org/browse/FHIR-30147)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/CapabilityStatement-data-source-server.html#resource-details)
@@ -68,7 +69,11 @@ list:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider-data-exchange)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/exchanging-clinical-data.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider)
-      1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/)
+      1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) See Changes:
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/signatures.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct_query#signatures.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approache#signatures.html)
+         - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/attachments#signatures.html)
       1. **Applied**: Rephrase. ([FHIR-30817](https://jira.hl7.org/browse/FHIR-30817)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct-query.html)
       1. **Applied**: Clarify how subscripition mitigates risks ([FHIR-30819](https://jira.hl7.org/browse/FHIR-30819)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
       1. **Applied**: Add section on termination of access to request([FHIR-30820](https://jira.hl7.org/browse/FHIR-30820)) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/specification#how-long-is-the-data-available)
@@ -121,8 +126,12 @@ list:
       1. **Applied**: Update how to represent Purpose of Use and reason in Task Based Query ([FHIR-31996](https://jira.hl7.org/browse/FHIR-31996))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html)
       1. **Applied**: Clarify the relationship between this guide and others([FHIR-32116](https://jira.hl7.org/browse/FHIR-32116))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#where-does-cdex-fit-in-the-da-vinci-project)
       1. **Applied**: Added guidance on matching patients([FHIR-32840](https://jira.hl7.org/browse/FHIR-32840))[See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#discovery-of-fhir-ids)
-      1. **Applied**: Update to the USCDI liknk ([FHIR-33265](https://jira.hl7.org/browse/FHIR-33265)
+      1. **Applied**: Update to the USCDI link ([FHIR-33265](https://jira.hl7.org/browse/FHIR-33265)
       1. **Applied**: Add guidance how to provide some work queue tags([FHIR-31890](https://jira.hl7.org/browse/FHIR-31890) [See Change Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#work-queues)
+      1. **Applied**: Add push mechanism to support Attachments for Claims and Prior Auth([FHIR-33129](https://jira.hl7.org/browse/FHIR-33129) See Changes:
+        - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#attachments-workflow)
+        - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/attachments.html)
+        - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-submit-attachment.html)
 
     path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
     status: ci-build

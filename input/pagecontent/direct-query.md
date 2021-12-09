@@ -14,9 +14,9 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 3 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
+The sequence diagram in Figure 5 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
 
-{% include img.html img="search-sequencediagram.svg" caption="Figure 3" %}
+{% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
 
 ### Discovery of Patient FHIR IDs
 
