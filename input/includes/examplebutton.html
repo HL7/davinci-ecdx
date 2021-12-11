@@ -8,7 +8,7 @@
 
 <div class="collapse" id="{{target}}">
   <div class="card card-body">
-      {% capture my-include %}{% include include.example %}{% endcapture %}{{ my-include | markdownify }}
+      {% capture my-include %}{% include {{include.example}} %}{% endcapture %}{{ my-include | markdownify }}
   </div>
 </div>
 <br />
