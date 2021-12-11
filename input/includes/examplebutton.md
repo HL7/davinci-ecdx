@@ -6,8 +6,8 @@
   </button>
 </p>
 
-<div class="collapse" id="{{target}}">
-  <div class="card card-body">
+<div class="collapse" id="{{target}}" >
+  <div class="card card-body" markdown="1">
 
 {%raw%}
     {% if file_type == "html" %}
@@ -17,9 +17,9 @@
     {% endif %}
 {% endraw%}
 
-{% highlight json %}
+
 {% include {{include.example}} %}
-{% endhighlight %}
+
 
 </div>
 </div>

@@ -9,6 +9,6 @@
 </pre>
 {%endraw%}-->
 
-{% highlight json %}
+~~~json
 {{ code_block | xml_escape }}
-{% endhighlight %}
+~~~
