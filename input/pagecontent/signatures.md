@@ -73,7 +73,7 @@ In this Example, a `Bundle.signature` is added to the CDEX Task based [Example 4
 
 {% include examplebutton.html example='Bundle-cdex-electronic-sig-example-json-html.xhtml' b_title= 'Electronic Signature Example' %}
 
-{% include examplebutton.html example='markdown_example2.md' b_title='Markdown Example 2' %}
+{% include examplebutton.html example='esigned=example.md' b_title= 'Electronic Signature Example' %}
 
 ### Digital Signatures
 
