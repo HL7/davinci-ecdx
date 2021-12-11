@@ -71,7 +71,34 @@ In this Example, a `Bundle.signature` is added to the CDEX Task based [Example 4
 
 {% include img.html img="jh-signature.jpg" %}
 
+
+
 {% include examplebutton.html example='Bundle-cdex-electronic-sig-example-json-html.xhtml' b_title= 'Electronic Signature Example' %}
+
+~~~json
+{"identifier": [
+  {
+    "use": "usual",
+    "type": {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+          "code": "MR"
+        }
+      ]
+    },
+    "system": "urn:oid:1.2.36.146.595.217.0.1",
+    "value": "12345",
+    "period": {
+      "start": "2001-05-06"
+    },
+    "assigner": {
+      "display": "Acme Healthcare"
+    }
+  }
+]
+}
+~~~
 
 {% include examplebutton.html example='esigned-example.html' b_title= 'Electronic Signature Example' %}
 
