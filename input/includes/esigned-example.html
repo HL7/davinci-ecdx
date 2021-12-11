@@ -1,7 +1,14 @@
 {% capture code_block %}{% include_relative Bundle-cdex-electronic-sig-example.json %}{% endcapture %}
 
+
+<!--{%raw%}
 <pre class="highlight language-json" style="white-space: pre-wrap; word-wrap: break-word;">
 <code class="language-json" style="white-space: pre-wrap; word-wrap: break-word;">
 {{ code_block | xml_escape }}
 </code>
 </pre>
+{%endraw%}-->
+
+{% highlight json %}
+{{ code_block | xml_escape }}
+{% endhighlight %}
