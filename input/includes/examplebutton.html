@@ -9,7 +9,7 @@
 <div class="collapse" id="{{target}}">
   <div class="card card-body">
     {% if file_type == "html" %}
-      {%include.example%}
+      {% include {{include.example}} %}
     {% else %}
       {% capture my-include %}{% include {{include.example}} %}{% endcapture %}{{ my-include | markdownify }}
     {% endif %}
