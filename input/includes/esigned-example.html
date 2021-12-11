@@ -1,5 +1,7 @@
+{% capture code_block %}{% include_relative Bundle-cdex-electronic-sig-example.json %}{% endcapture %}
+
 <pre class="highlight">
 <code>
-{% include_relative Bundle-cdex-electronic-sig-example.json %}
+{{ code_block | xml_escape }}
 </code>
 </pre>
