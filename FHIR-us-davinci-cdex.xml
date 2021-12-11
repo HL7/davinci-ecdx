@@ -7,6 +7,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Attachment Operation"/>
+<artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Electronic Signature Example"/>
+<artifact id="ValueSet/cdex-attachment-reason" key="ValueSet-cdex-attachment-reason" name="CDex Attachment Reason Value Set"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
@@ -20,6 +23,8 @@
 <artifact id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>
 <artifact id="Task/cdex-example1-query-requested" key="Task-cdex-example1-query-requested" name="Scenario 1 Example"/>
 <artifact id="Task/cdex-example1-free-text-request" key="Task-cdex-example1-free-text-request" name="Scenario 1 Free Text Example"/>
+<artifact id="Task/cdex-example1p-query-completed" key="Task-cdex-example1p-query-completed" name="Scenario 1P Completed Example"/>
+<artifact id="Task/cdex-example1p-free-text-completed" key="Task-cdex-example1p-free-text-completed" name="Scenario 1P Completed Free Text Example"/>
 <artifact id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="Scenario 2 Authorization Example"/>
 <artifact id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="Scenario 2 Completed Authorization Example"/>
 <artifact id="Task/cdex-example2-query-failed" key="Task-cdex-example2-query-failed" name="Scenario 3 Failed Task Example"/>
@@ -29,6 +34,7 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="attachments" name="Attachments"/>
 <page key="background" name="Background"/>
 <page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
 <page key="direct-query" name="Direct Query"/>
@@ -45,7 +51,6 @@
 <page key="toc" name="Table of Contents"/>
 <page key="task-based-approach" name="Task Based Approach"/>
 <page deprecated="true" key="terminology" name="Terminology"/>
-<page key="unsolicited-attachments" name="Unsolicited Attachments"/>
 <page deprecated="true" key="using-subscriptions" name="Using Subscriptions"/>
 <page deprecated="true" key="using-task" name="Using Task"/>
 </specification>
