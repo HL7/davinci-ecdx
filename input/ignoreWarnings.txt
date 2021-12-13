@@ -1,31 +1,5 @@
 == Suppressed Messages ==
+
 # the example demonstrate using a contained searchset Bundle for the output data. In this context, a self link that specifies what the search is not meaningful and confusing if present
-WARNING: Task/cdex-example1-query-completed-contained: Task.contained.ofType(Bundle): SearchSet Bundles should have a self link that specifies what the search was
-WARNING: Task/cdex-example3-query-completed: Task.contained.ofType(Bundle): SearchSet Bundles should have a self link that specifies what the search was
+
 # the example demonstrate the legitimate use case for using free text instead of codes:
-WARNING: Task/cdex-example1-free-text-completed: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
-WARNING: Task/cdex-example1-free-text-request: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
-# Jira has been updated however this warning persists:
-WARNING: The jira specification file appears to be out of date with the versions, artifacts and pages currently defined in the IG.  A proposed revised file to be reviewed and, if appropriate, submitted as a pull request against the XML folder in https://github.com/HL7/JIRA-Spec-Artifacts.  To see the differences, perform a file compare on 'template/jira-current.xml' (a normalized view of what is in Github) and 'template/jira-new.xml' (reflects current IG content)
-INFORMATION: ImplementationGuide/hl7.fhir.us.davinci-cdex: ImplementationGuide: Validate resource against profile http://hl7.org/fhir/StructureDefinition/ImplementationGuide
-INFORMATION: StructureDefinition/cdex-task-data-request: StructureDefinition: Validate resource against profile http://hl7.org/fhir/StructureDefinition/StructureDefinition
-INFORMATION: Task/cdex-example1-authorized-completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-authorized-request: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-free-text-completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-free-text-request: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-query-completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-query-completed-contained: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example1-query-completed-contained: Task.contained.ofType(Bundle): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
-INFORMATION: Task/cdex-example1-query-completed-contained: Task.contained.ofType(Bundle).entry[0].resource.ofType(Condition): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Condition
-INFORMATION: Task/cdex-example1-query-requested: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example2-query-failed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example2-query-requested: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example3-query-completed: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: Task/cdex-example3-query-completed: Task.contained.ofType(Bundle): Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle
-INFORMATION: Task/cdex-example3-query-completed: Task.contained.ofType(Bundle).entry[0].resource.ofType(DocumentReference): Validate resource against profile http://hl7.org/fhir/StructureDefinition/DocumentReference
-INFORMATION: Task/cdex-example3-query-completed: Task.contained.ofType(Bundle).entry[1].resource.ofType(DocumentReference): Validate resource against profile http://hl7.org/fhir/StructureDefinition/DocumentReference
-INFORMATION: Task/cdex-example3-query-requested: Task: Validate resource against profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-INFORMATION: CapabilityStatement/data-consumer-client: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-INFORMATION: CapabilityStatement/data-consumer-server: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-INFORMATION: CapabilityStatement/data-source-client: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
-INFORMATION: CapabilityStatement/data-source-server: CapabilityStatement: Validate resource against profile http://hl7.org/fhir/StructureDefinition/CapabilityStatement
