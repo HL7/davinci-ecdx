@@ -29,7 +29,8 @@ echo $yaml_file
 json_file=$inpath/${folder%-*}/$(basename $yaml_file)
 json_file=${json_file%.*}.json
 echo $json_file
-python3.7 -c 'import sys, yaml, json; json.dump(yaml.full_load(sys.stdin), sys.stdout, indent=4)' < $yaml_file > $json_file
+python3.7 -c 'import sys, yaml, json; json.dump(yaml.full_load(sys.stdin), sys.stdout, indent=4).replace('\n",','",')' < $yaml_file > $json_file
+
 done
 echo "========================================================================"
 fi
