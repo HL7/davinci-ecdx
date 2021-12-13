@@ -2,11 +2,11 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-cdex",
   "url": "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "name": "DaVinciCDex",
   "title": "Da Vinci Clinical Data Exchange (CDex) Implementation Guide",
   "status": "active",
-  "date": "2020-10-01",
+  "date": "2021-12-13",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -14,7 +14,11 @@
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/patientcare/index.cfm"
+          "value": "http://www.hl7.org/Special/committees/patientcare"
+        },
+        {
+          "system": "email",
+          "value": "patientcare@lists.HL7.org"
         }
       ]
     }
@@ -56,9 +60,9 @@
         "reference": {
           "reference": "OperationDefinition/submit-attachment"
         },
-        "description": "This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier\n    - One or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.\n\nNote that Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a \"placer identifier\") upon claim generation. Solicited Claim and Prior Authorization imply that the *payer* assigned the Claim/Prior Authorization identifier (in other words, a \"filler identifier\") a upon receipt of a claim or prior authorization.\n",
+        "description": "**The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**\n\nThis operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier*\n    - Optionally, one or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.\n\n\\*Note that an Unsolicited Claim implies that the *provider* assigns the claim identifier (in other words, a \"placer identifier\") when the attachments are sent upon claim generation. Solicited Claims imply that the *payer* assigned the Claim identifier (in other words, a \"filler identifier\") upon receipt of a claim, and that the attachments are in response to a payer request for additional information.  Similarily for Prior Authorization, the the prior auth identifier is *provider* assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the *payer* assigned when the attachments are in response to a request for additional information by the payer.\n",
         "exampleBoolean": false,
-        "name": "Attachment Operation"
+        "name": "Submit Attachment Operation"
       },
       {
         "reference": {
@@ -134,6 +138,14 @@
       },
       {
         "reference": {
+          "reference": "Bundle/cdex-electronic-sig-example"
+        },
+        "description": "Electronic signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "name": "CDEX Electronic Signature Example",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
           "reference": "Task/cdex-example1-authorized-completed"
         },
         "description": "Completed Task to seek a patient active conditions with a reference to a formal authorization.",
@@ -163,14 +175,6 @@
         "description": "Task to seek a patient active conditions using free text for the input.",
         "name": "Scenario 1 Free Text Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
-      },
-      {
-        "reference": {
-          "reference": "Bundle/cdex-electronic-sig-example"
-        },
-        "description": "Electronic signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
-        "name": "CDEX Electronic Signature Example",
-        "exampleBoolean": true
       },
       {
         "reference": {
@@ -309,7 +313,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "CI Build"
+        "value": "STU1 Release"
       },
       {
         "code": "path-resource",
@@ -365,7 +369,7 @@
       },
       {
         "code": "excludexml",
-        "value": "true"
+        "value": "false"
       },
       {
         "code": "excludejsn",

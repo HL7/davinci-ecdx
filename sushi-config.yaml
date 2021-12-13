@@ -7,17 +7,20 @@ canonical: http://hl7.org/fhir/us/davinci-cdex
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 status: active
+
 publisher:
   name: HL7 International - Patient Care Work Group
-  url: 'http://www.hl7.org/Special/committees/patientcare/index.cfm'
+  url: 'http://www.hl7.org/Special/committees/patientcare'
+  email: patientcare@lists.HL7.org
+  
 jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
   Used by permission of HL7 International all rights reserved Creative Commons License
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: 2020-10-01
-version: 0.2.0
+date: '2021-12-13'
+version: 1.0.0
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core:
@@ -44,7 +47,7 @@ parameters:
   apply-version: 'true'
   show-inherited-invariants: 'false'
   usage-stats-opt-out: 'true'
-  excludexml: 'true'
+  excludexml: 'false'
   excludejsn: 'false'
   excludettl: 'true'
   excludemap: 'true'
@@ -53,7 +56,7 @@ parameters:
     - xml
     - json
 copyrightyear: '2020+'
-releaselabel: CI Build
+releaselabel: STU1 Release
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │

@@ -2,10 +2,12 @@ contact:
 -   name: HL7 International - Patient Care Work Group
     telecom:
     -   system: url
-        value: http://www.hl7.org/Special/committees/patientcare/index.cfm
+        value: http://www.hl7.org/Special/committees/patientcare
+    -   system: email
+        value: patientcare@lists.HL7.org
 copyright: Used by permission of HL7 International all rights reserved Creative Commons
     License
-date: '2020-10-01'
+date: '2021-12-13'
 definition:
     page:
         generation: html
@@ -46,7 +48,7 @@ definition:
     -   code: copyrightyear
         value: 2020+
     -   code: releaselabel
-        value: CI Build
+        value: STU1 Release
     -   code: path-resource
         value: input/resources
     -   code: path-resource
@@ -74,7 +76,7 @@ definition:
     -   code: usage-stats-opt-out
         value: 'true'
     -   code: excludexml
-        value: 'true'
+        value: 'false'
     -   code: excludejsn
         value: 'false'
     -   code: excludettl
@@ -90,25 +92,32 @@ definition:
     -   code: path-history
         value: http://hl7.org/fhir/us/davinci-cdex/history.html
     resource:
-    -   description: "This operation is used to submit attachments for Claims or Prior\
-            \ Authorization. This operation accepts the clinical attachments and the\
-            \ necessary information needed to re-attach them to the claim or prior\
-            \ authorization, and returns a transaction layer http response.  This\
-            \ operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\
-            \nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n\
-            1. Data elements for reassociation to the Claim/Prior Authorization\n\
-            \    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n\
-            \    - A unique claim/prior authorization identifier\n    - One or more\
-            \ unique claim line item identifiers\n    - A unique organization/location\
+    -   description: "**The following content is to be considered DRAFT, because it\
+            \ has not yet undergone HL7 balloting.**\n\nThis operation is used to\
+            \ submit attachments for Claims or Prior Authorization. This operation\
+            \ accepts the clinical attachments and the necessary information needed\
+            \ to re-attach them to the claim or prior authorization, and returns a\
+            \ transaction layer http response.  This operation can be used by any\
+            \ HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters\
+            \ are:\n1. One or more Attachments as FHIR Resources\n1. Data elements\
+            \ for reassociation to the Claim/Prior Authorization\n    - What are the\
+            \ attachments for:\n      - Claim\n      - Prior Authorization\n    -\
+            \ A unique claim/prior authorization identifier*\n    - Optionally, one\
+            \ or more unique claim line item identifiers\n    - A unique organization/location\
             \ identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n\
             \    - A unique Patient member identifier\n\nThere are no output parameters.\n\
-            \nNote that Unsolicited Claim implies that the *provider* assigns the\
-            \ claim identifier (in other words, a \"placer identifier\") upon claim\
-            \ generation. Solicited Claim and Prior Authorization imply that the *payer*\
-            \ assigned the Claim/Prior Authorization identifier (in other words, a\
-            \ \"filler identifier\") a upon receipt of a claim or prior authorization.\n"
+            \n\\*Note that an Unsolicited Claim implies that the *provider* assigns\
+            \ the claim identifier (in other words, a \"placer identifier\") when\
+            \ the attachments are sent upon claim generation. Solicited Claims imply\
+            \ that the *payer* assigned the Claim identifier (in other words, a \"\
+            filler identifier\") upon receipt of a claim, and that the attachments\
+            \ are in response to a payer request for additional information.  Similarily\
+            \ for Prior Authorization, the the prior auth identifier is *provider*\
+            \ assigned when the attachments are sent upon prior auth generation, and\
+            \ the prior auth identifier is the *payer* assigned when the attachments\
+            \ are in response to a request for additional information by the payer.\n"
         exampleBoolean: false
-        name: Attachment Operation
+        name: Submit Attachment Operation
         reference:
             reference: OperationDefinition/submit-attachment
     -   description: 'This CapabilityStatement describes the expected capabilities
@@ -211,6 +220,15 @@ definition:
         name: CDex Work Queue Value Set
         reference:
             reference: ValueSet/cdex-work-queue
+    -   description: Electronic signature example showing how a image file can be
+            use to sign a document Bundle.  The CDEX use case would be the target
+            resource in response to a Task-based request where an electronic signature
+            was required.  If no signature was required, the response would typically
+            be in the form of an individual resource.
+        exampleBoolean: true
+        name: CDEX Electronic Signature Example
+        reference:
+            reference: Bundle/cdex-electronic-sig-example
     -   description: Completed Task to seek a patient active conditions with a reference
             to a formal authorization.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
@@ -235,15 +253,6 @@ definition:
         name: Scenario 1 Free Text Example
         reference:
             reference: Task/cdex-example1-free-text-request
-    -   description: Electronic signature example showing how a image file can be
-            use to sign a document Bundle.  The CDEX use case would be the target
-            resource in response to a Task-based request where an electronic signature
-            was required.  If no signature was required, the response would typically
-            be in the form of an individual resource.
-        exampleBoolean: true
-        name: CDEX Electronic Signature Example
-        reference:
-            reference: Bundle/cdex-electronic-sig-example
     -   description: Completed Task to seek a patient active conditions using a contained
             resource for output.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
@@ -319,4 +328,4 @@ resourceType: ImplementationGuide
 status: active
 title: Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 url: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
-version: 0.2.0
+version: 1.0.0
