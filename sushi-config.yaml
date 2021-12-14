@@ -12,7 +12,7 @@ publisher:
   name: HL7 International - Patient Care Work Group
   url: 'http://www.hl7.org/Special/committees/patientcare'
   email: patientcare@lists.HL7.org
-  
+
 jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
   Used by permission of HL7 International all rights reserved Creative Commons License
@@ -31,6 +31,10 @@ dependencies:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
     version: 0.2.0
     id: hrex
+  hl7.fhir.us.davinci-pas:
+    uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
+    version: 1.0.0
+    id: pas
 parameters:
   path-resource:
     - input/resources

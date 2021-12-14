@@ -310,6 +310,10 @@ dependsOn:
     packageId: hl7.fhir.us.davinci-hrex
     uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
     version: 0.2.0
+-   id: pas
+    packageId: hl7.fhir.us.davinci-pas
+    uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
+    version: 1.0.0
 description: This IG provides detailed guidance that helps implementers use FHIR-based
     interactions to support specific exchanges of clinical data between providers
     and payers (or other providers).
