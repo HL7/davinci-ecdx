@@ -74,6 +74,21 @@ note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
 1. Payer attaches data to claim or prior authorization and processes it (out of scope)
 
+### Example Transaction Scenario
+
+In the following example, a Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
+
+`POST [base]/$submit-attachment`
+
+#### Scenario 1: CCDA Document Attachments
+
+- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
+  - Typically when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
+- Provider knows the Payer's endpoint for Sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+- "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
+- Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
+
+{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example Scenario 1: CCDA Document Attachments" %}
 
 ### Signatures
 
@@ -97,26 +112,9 @@ When a electronic or digital signature is required for CDex Attachments, the Dat
 
 Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-sourceresponder-requirements) section in the Task Based Approach to signatures.
 
-### Examples
+#### Example: *Signed* FHIR Resource Attachments
 
-In the following examples, the Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
-
-`POST [base]/$submit-attachment`
-
-#### Scenario 1: CCDA Document Attachments
-
-- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
-  - Typically when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
-- Provider knows the Payer's endpoint for Sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
-- "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
-- Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
-
-{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example Scenario 1: CCDA Document Attachments" %}
-
-
-#### Scenario 2: *Signed* FHIR Resource Attachments
-
-- This example is the same as Scenario 1 except that the attachment is a FHIR resource and a FHIR signature is required.
+- This example is the same as Scenario 1 above except that the attachment is a FHIR resource and a FHIR signature is required.
   - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See the [Signatures] page for complete worked example on how the signature was created.
 
