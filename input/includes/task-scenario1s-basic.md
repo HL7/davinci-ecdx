@@ -12,9 +12,6 @@ In this example:
 1. {{ site.data.base-example-list[5] }}
 1. The Payer fetches Patient B’s Active Conditions referenced by Task.output as a *FHIR Document*.
 
-
-###### Step 1 - POST Task to Provider endpoint
-
 ###### Step 1 - POST Task to Provider endpoint
 
 **Request**
@@ -27,7 +24,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example1-query-request.json %}
+{% include cdex-example1s-query-request-withsig.json %}
 ~~~
 
 **Response Headers**
@@ -35,7 +32,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example1s-query-completed/_history/1
 ...(other headers)
 ~~~
 
@@ -53,7 +50,7 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1-query-completed.json %}
+{% include_relative Task-cdex-example1s-query-completed.json %}
 ~~~
 
 ###### Step 3 - Fetch Signed FHIR Document

@@ -232,6 +232,14 @@
       },
       {
         "reference": {
+          "reference": "Task/cdex-example1s-query-withsig-completed"
+        },
+        "description": "Completed Task to seek a *signed* patient active conditions.",
+        "name": "Example of Completed Task Request for Signed Data",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
           "reference": "Task/cdex-example2-query-failed"
         },
         "description": "Task to seek a patient's HbA1c test results.",
