@@ -88,7 +88,7 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 - "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
 - Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
 
-{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example Scenario 1: CCDA Document Attachments" %}
+{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
 ### Signatures
 
@@ -118,7 +118,7 @@ Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-
   - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete worked example on how the signature was created.
 
-{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
+{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}
 
 
 {% include link-list.md %}
