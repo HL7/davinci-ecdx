@@ -3,10 +3,22 @@
 
 In this example:
 
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[1] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }}
+1. {{ site.data.base-example-list[6] }}
+1. {{ site.data.base-example-list[7] }}
+
 1. No formal authorization (order) is needed
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-2. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-3. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as an *external* Search Bundle resource.
+3. The POU is to Support claim submission
+4. The work queue hint is claim processing
+5. The reason for the request is the referenced claim
+6. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
+7. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+8. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
 ###### Step 1 - POST Task to Provider endpoint
 
