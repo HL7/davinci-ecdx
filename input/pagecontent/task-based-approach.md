@@ -164,12 +164,19 @@ Preconditions and Assumptions:
 
 #### Scenario 2
 
+This scenario demonstrates requesting a non-FHIR document (CCDA) using a Task Based Query:
+
 Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
 
 Preconditions and Assumptions:
 
-- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
-- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
+1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
+1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
 {% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
 
