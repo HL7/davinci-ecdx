@@ -1,7 +1,5 @@
 
-##### Example:
-
-###### Step 1 - Search for DocumentReference
+**Step 1 - Search for DocumentReference**
 
 **Request**
 ~~~
@@ -109,7 +107,7 @@ Content-Type: application/fhir+json;charset=utf-8
 }
 ~~~
 
-###### Step 2 - Fetch Document
+**Step 2 - Fetch Document**
 
 **Request**
 ~~~

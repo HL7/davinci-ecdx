@@ -1,19 +1,3 @@
-<!--
-#### Scenario
-
-Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
-
-##### Preconditions and Assumptions:
-
-- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
-- Payer A knows the *logical id* of the resource for Patient B
-- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 *Hemoglobin A1c/Hemoglobin.total in Blood*)
-
-Following guidance in US Core searches for all HbA1c test results by a date range using using the combination of the patient and code and date search parameters:
-
-`GET [base]/Observation?patient=[reference]&code=[code]&date=gt[date]`
--->
-##### Example:
 
 **Request**
 ~~~
