@@ -2,4 +2,11 @@
 
 # the example demonstrate using a contained searchset Bundle for the output data. In this context, a self link that specifies what the search is not meaningful and confusing if present
 
+WARNING: Task/cdex-example1-query-completed-contained: Task.contained[0].ofType(Bundle): SearchSet Bundles should have a self link that specifies what the search was
+WARNING: Task/cdex-example3-query-completed: Task.contained[0].ofType(Bundle): SearchSet Bundles should have a self link that specifies what the search was
+
 # the example demonstrate the legitimate use case for using free text instead of codes:
+
+WARNING: Task/cdex-example1-free-text-completed: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
+WARNING: Task/cdex-example1-free-text-request: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
+WARNING: Task/cdex-example1p-free-text-completed: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
