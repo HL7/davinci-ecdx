@@ -255,7 +255,7 @@ The following example repeats [Scenario 1](#scenario-1), only this time a signat
   - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created.
 
-{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
+{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example: *Signed* Task Based Transaction' %}
 
 </div>
 
