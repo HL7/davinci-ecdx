@@ -87,7 +87,7 @@
             }
         },
         {
-            "name": "Attachment.1",
+            "name": "Attachment",
             "resource": {
                 "resourceType": "DocumentReference",
                 "id": "cdex-example-doc2",

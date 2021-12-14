@@ -105,13 +105,13 @@ In the following examples, the Provider creates a claim and sends supporting CCD
 
 #### Scenario 1: CCDA Document Attachments
 
-- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (an *Unsolicited Attachments*).
+- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
   - Typically when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for Sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
 - "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
 - Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
 
-{% include examplebutton_default.html example="attachment-scenario1" b_title = "Click Here To See Scenario 1: CCDA Document Attachments" %}
+{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example Scenario 1: CCDA Document Attachments" %}
 
 
 #### Scenario 2: *Signed* FHIR Resource Attachments
@@ -119,7 +119,7 @@ In the following examples, the Provider creates a claim and sends supporting CCD
 - This example is the same as Scenario 1 except that the attachment is a FHIR resource and, unlike Scenario 1, a FHIR signature is required.
 - See the [Signatures] page for complete worked example on how the signature was created.
 
-{% include examplebutton_default.html example="attachment-scenario2" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
+{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
 
 
 {% include link-list.md %}

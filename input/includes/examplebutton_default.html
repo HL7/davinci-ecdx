@@ -7,12 +7,12 @@
   </button>
 </p>
 
-<div class="collapse" id="{{include.example}}">
-  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px">
-    {% if file_type =="xhtml" or file_type =="html" %}
+<div class="collapse" id="{{target}}">
+  <div class="card card-body" style="border:1px solid;border-color:#cccccc;padding:10px" markdown="1">
+    {% if file_type =="xhtml" or file_type =="html" or file_type =="md"%}
       {% include {{include.example}} %}
     {% else %}
-      {% capture my-include %}{% include {{target}}.md %}{% endcapture %}{{ my-include | markdownify }}
+      {% include {{target}}.md %}
     {% endif %}
   </div>
 </div>
