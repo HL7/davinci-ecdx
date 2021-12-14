@@ -3,6 +3,6 @@
 - The POU is to Support claim submission
 - The work queue hint is claim processing
 - The reason for the request is the referenced claim
-- The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
+- The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.
 - The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
 - The Payer fetches Patient B's Active Conditions referenced by `Task.output` as a *search Bundle*.

@@ -188,11 +188,19 @@ If the EHR was not successful in completing the request for data, the Task's sta
 
 #### Example Task Based Transaction When It Cannot Be Completed
 
-Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
+Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
 Preconditions and Assumptions:
-- There is human involvement needed to complete the request
-- Referred-to Provider needs formal authorization to request data
+
+1. The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+1. Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
+1. The POU is to Support health quality improvement
+1. The work queue hint is claim processing
+1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
+1. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+1. **In this example there is no matching data**
+
+
 
 {% include examplebutton_default.html example="task-scenario3-basic" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 </div>
@@ -247,14 +255,18 @@ The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circ
 
 #### Example Task Based Transaction with a Formal Authorization
 
-Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
+
+Preconditions and Assumptions:
+- There is human involvement needed to complete the request
+- Referred-to Provider needs formal authorization to request data
 
 Preconditions and Assumptions:
 
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
 
-{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
+{% include examplebutton_default.html example="task-scenario2-authorization" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
 ### Provenance
 
