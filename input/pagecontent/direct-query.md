@@ -20,7 +20,7 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR_id.
 {:.new-content}
 
-### Example Direct Query Transaction Scenarios:
+### Direct Query Transaction Scenarios
 
 The following example transactions show scenarios of using direct query to get clinical data from an EHR.
 
