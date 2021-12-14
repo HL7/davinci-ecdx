@@ -108,7 +108,7 @@ Ultimately, the Data Source determines how long the Data Consumer has access to 
 
 ### Task Based Transaction Scenarios
 
-Following the guidance in this guide and HRex, Getting clinical data from the Provider is typically a two to five step process for the Payer. The following example transactions show 2 scenarios using task based exchanges to get clinical data from an EHR.  Additional examples are provided in the following sections which document other implementation considerations
+Following the guidance in this guide and HRex, Getting clinical data from the Provider is typically a two to five step process for the Payer. The following example transactions show 2 scenarios using task based exchanges to get clinical data from an EHR.  Additional examples are provided in the following sections and illustrate other implementation considerations.
 
 #### Scenario 1
 
@@ -118,29 +118,46 @@ This scenario demonstrates these Task Based Query options:
 1. Polling
 1. Fetching Contained vs External Data
 
-
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
 
-In this example:
+##### Example 1.1
+
+Preconditions and Assumptions:
 
 1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[1] }}
 1. {{ site.data.base-example-list[2] }}
 1. {{ site.data.base-example-list[3] }}
 1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }}
+1. {{ site.data.base-example-list[5] }}  For the actual request, the FHIR RESTful query syntax is used.
 1. {{ site.data.base-example-list[6] }}
 
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Request(RESTful search syntax)' %}
+
+##### Example 1.2
+
 Preconditions and Assumptions:
-- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 
-Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }}  **For the actual request, *natural language free text* is used.**
+1. {{ site.data.base-example-list[6] }}
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Request for Patient Active Conditions (search syntax)' %}
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Request (free text)' %}
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Request for Patient Active Conditions (free text)' %}
+##### Example 1.3
 
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources (contained output)' %}
+Preconditions and Assumptions:
+
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
+1. **Patient B’s Active Conditions referenced by Task.output are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.**
+
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Request(contained output)' %}
 ---
 
 <div markdown="1" class="bg-success">
