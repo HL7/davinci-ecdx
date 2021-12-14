@@ -156,7 +156,10 @@ Because the signature is represented by `Bundle.signature`, this precludes using
 
 #### Example of *Signed* Direct Query Response
 
-The following example shows [Scenario 1](#example-transactions) response with a signature attached. See [Signatures] page for complete worked example on how the signature was created.
+This example is the same as Scenario 1 above except that it also includes a digital signature. See the [Signatures] page for complete worked example on how the signature was created.
+
+**Preconditions and Assumptions:**
+- In addition to the Scenario 1 assumptions above, Payer A pre-negotiated with Provider B that digital signatures are required for direct query responses.
 
 `GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
 
