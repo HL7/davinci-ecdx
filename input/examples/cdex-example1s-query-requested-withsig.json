@@ -1,6 +1,17 @@
 {
     "resourceType": "Task",
+    "id": "cdex-example1s-query-requested-withsig",
     "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Example of Task Request for Signed Data"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Task to seek a patient active conditions using `Task.input` signature parameter to indicate a signature is required."
+            }
+        ],
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
         ],
@@ -53,6 +64,14 @@
                     {
                         "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
                         "code": "purpose-of-use"
+                    }
+                ]
+            },
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                        "code": "COVERAGE"
                     }
                 ]
             }

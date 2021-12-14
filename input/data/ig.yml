@@ -280,6 +280,12 @@ definition:
         name: Scenario 1P Completed Example
         reference:
             reference: Task/cdex-example1p-query-completed
+    -   description: Task to seek a patient active conditions using `Task.input` signature
+            parameter to indicate a signature is required.
+        exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+        name: Example of Task Request for Signed Data
+        reference:
+            reference: Task/cdex-example1s-query-requested-withsig
     -   description: Task to seek a patient's HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: Scenario 3 Failed Task Example
