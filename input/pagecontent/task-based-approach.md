@@ -246,84 +246,16 @@ When a electronic or digital signature is required for Task based request, the D
 - Return an object is either already inherently signed or transform it into a *signed* FHIR Document.
 - Be signed by the provider that is responding the the query.
 - Follow the documentation in the [Signatures] page for producing signatures.
-- {:.bg-info}As discussed in the [What is Signed] section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed obect or a signed FHIR Document.
+- {:.bg-info}As discussed in the [What is Signed] section, a signed FHIR document could have a within it objects that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed object or a signed FHIR Document.
 
 
-#### Examples of a *Signed* Task Based Transaction
+#### Example of a *Signed* Task Based Transaction
 
 The following example repeats [Scenario 1](#scenario-1), only this time a signature is required.
+  - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created.
 
-##### Example 1:
-
-In this example:
-
-1. No formal authorization (order) is needed
-2. **The Payer requires signatures on the returned data**
-3. The POU is to Support claim submission
-4. The work queue hint is claim processing
-5. The reason for the request is the referenced claim
-6. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-7. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-8. The Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
-
-###### Step 1 - POST Task to Provider endpoint
-
-**Request**
-~~~
-POST [base]/Task
-~~~
-
-{% include request-headers.md %}
-
-**Request Body**
-
-~~~
-{%raw%}{%gist %}{%endraw%}
-~~~
-
-**Response Headers**
-
-~~~
-HTTP/1.1 200 OK
-Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
-...(other headers)
-~~~
-
-###### Step 2 - Poll Task
-
-**Polling Request**
-~~~
-GET Task/cdex-example1-query-completed
-~~~
-
-{% include request-headers.md %}
-
-{% include response-headers.md %}
-
-**Response Body**
-
-~~~
-{%raw%}{%gist %}{%endraw%}
-~~~
-
-###### Step 3 - Fetch Active Conditions
-
-**Request**
-~~~
-GET [base]Condition/858
-~~~
-
-{% include request-headers.md %}
-
-{% include response-headers.md %}
-
-**Response Body**
-
-~~~
-{%raw%}{%gist %}{%endraw%}
-~~~
+{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
 
 </div>
 

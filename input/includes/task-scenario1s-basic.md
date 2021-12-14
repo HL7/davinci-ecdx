@@ -1,5 +1,4 @@
-
-##### Example 1:
+##### Example 1s:
 
 In this example:
 
@@ -10,6 +9,7 @@ In this example:
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[5] }}
 1. {{ site.data.base-example-list[6] }}
+1. **The Payer requires signatures on the returned data**
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -23,7 +23,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{% include cdex-example1-query-request.json %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
 
 **Response Headers**
@@ -49,14 +49,14 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1-query-completed.json %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
 
-###### Step 3 - Fetch Bundle
+###### Step 3 - Fetch Active Conditions
 
 **Request**
 ~~~
-GET [base]Bundle/858
+GET [base]Condition/858
 ~~~
 
 {% include request-headers.md %}
@@ -66,5 +66,5 @@ GET [base]Bundle/858
 **Response Body**
 
 ~~~
-{% include bundle-858.json %}
+{%raw%}{%gist %}{%endraw%}
 ~~~
