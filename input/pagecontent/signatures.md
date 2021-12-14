@@ -72,12 +72,12 @@ In this Example, a `Bundle.signature` is added to the CDEX Task based [Scenario 
 {% include img.html img="jh-signature.jpg" %}
 
 <p>
-  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#electronic-signature-example" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-info btn-lg btn-block" type="button" title="Click to Open or Close Example" data-toggle="collapse" data-target="#Bundle-cdex-electronic-sig-example-json-html" aria-expanded="false" aria-controls="collapseExample">
     Electronic Signature Example
   </button>
 </p>
 
-<div class="collapse" id="electronic-signature-example">
+<div class="collapse" id="Bundle-cdex-electronic-sig-example-json-html">
   <div class="card card-body">
       {% include Bundle-cdex-electronic-sig-example-json-html.xhtml %}
   </div>
