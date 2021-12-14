@@ -1,16 +1,4 @@
 
-##### Example 1:
-
-In this example:
-
-1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[1] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }}
-1. {{ site.data.base-example-list[6] }}
-
 ###### Step 1 - POST Task to Provider endpoint
 
 **Request**
