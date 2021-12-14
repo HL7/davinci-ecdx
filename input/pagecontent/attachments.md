@@ -74,7 +74,7 @@ note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
 1. Payer attaches data to claim or prior authorization and processes it (out of scope)
 
-### Example Transaction Scenario
+### Attachments Transaction Scenario
 
 In the following example, a Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
 
@@ -114,8 +114,8 @@ Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-
 
 #### Example: *Signed* FHIR Resource Attachments
 
-- This example is the same as Scenario 1 above except that the attachment is a FHIR resource and a FHIR signature is required.
-  - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
+- This example is the same as Scenario 1 above except that the attachment is a FHIR resource and a FHIR digital signature is required.
+  - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete worked example on how the signature was created.
 
 {% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}

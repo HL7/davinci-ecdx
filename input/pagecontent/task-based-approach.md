@@ -45,10 +45,6 @@ In most of these situations, there is still human intervention (e.g., a provider
 
 The details for these Task based transaction are described in detail the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
-#### Provenance
-
-To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below.  Alternatively, When `Task.output` represents individual FHIR resource, the Data Receiver could query for Provenance when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](http://build.fhir.org/ig/HL7/davinci-ecdx/branches/master/direct-query.html#example-transactions)). Typically, it is unnecessary to request external Provenance for FHIR Documents and other formats such as CCDA, because their contents implicitly or explicitly supply their provenance.
-
 #### Purpose of Use
 
 What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the source system, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples using these codes are provided below.
@@ -97,13 +93,78 @@ The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Dire
 These are the most direct approaches to obtaining the FHIR_id. However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. Additionally, if the effective dates of the coverage needs to be reflected in the this lookup then search semantics become more complex.
 </div>
 
-### Formal Authorization
+### Fetching the Data
 
-In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
-{:.new-content}
+<span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
 
-The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. <span class="bg-success"> This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers.</span>  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
-{:.stu-note}
+<div markdown="1" class="new-content">
+
+#### How Long is the Data Available
+
+Ultimately, the Data Source determines how long the Data Consumer has access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
+</div>
+
+<div markdown="1" class="new-content">
+
+### Task Based Transaction Scenarios:
+
+Following the guidance in this guide and HRex, Getting clinical data from the Provider is typically a two to five step process for the Payer. The following example transactions show 2 scenarios using task based exchanges to get clinical data from an EHR.  Additional examples are provided in the following sections which document other implementation considerations
+
+#### Scenario 1
+
+This scenario demonstrates these Task Based Query options:
+
+1. Structured vs Free Text Request
+1. Polling
+1. Fetching Contained vs External Data
+
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
+
+Preconditions and Assumptions:
+- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+
+Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
+
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: FHIR RESTful query syntax for data request, Polling, Output references to external resources, No formal authorization' %}
+
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text request for data' %}
+
+{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
+
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
+---
+
+<div markdown="1" class="bg-success">
+
+#### Scenario 2
+
+Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+
+Preconditions and Assumptions:
+
+- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
+- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+
+{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
+
+<div markdown="1" class="new-content">
+
+### When The Task Cannot Be Completed
+
+If the EHR was not successful in completing the request for data, the Task's state transitions to "failed". It is a terminal state and no further activity on the request will occur. This can happen when the requested data is not available, because the EHR cannot complete the task.  The `Task.status` is updated to 'failed', and the reason  stated in `Task.statusReason` (for example, "no matching results"). The `Task.output` is absent since the requesting data is not available. The Payer's business rules will determine their response to a failed request.  An example transaction where there is no matching data is given in [scenario 3](#scenario-3) below.
+
+#### Example Task Based Transaction When It Cannot Be Completed
+
+Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
+
+Preconditions and Assumptions:
+- There is human involvement needed to complete the request
+- Referred-to Provider needs formal authorization to request data
+
+Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
+
+{% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
+</div>
 
 ### Polling vs Subscriptions
 
@@ -127,77 +188,21 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the future publication of a Subscription R5 Backport Implementation Guide for FHIR 4 to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Payer may discover it out-of-band or simply through trial-and-error.
 {:.stu-note}
 
-### Fetching the Data
+#### Example Task Based Transaction using Subscription
 
-<span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
-
-<div markdown="1" class="new-content">
-
-#### When the Task cannot be completed
-
-If the EHR was not successful in completing the request for data, the Task's state transitions to "failed". It is a terminal state and no further activity on the request will occur. This can happen when the requested data is not available, because the EHR cannot complete the task.  The `Task.status` is updated to 'failed', and the reason  stated in `Task.statusReason` (for example, "no matching results"). The `Task.output` is absent since the requesting data is not available. The Payer's business rules will determine their response to a failed request.  An example transaction where there is no matching data is given in [scenario 3](#scenario-3) below.
-</div>
-
-<div markdown="1" class="new-content">
-
-#### How Long is the Data Available
-
-Ultimately, the Data Source determines how long the Data Consumer has access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
-</div>
-
-<div markdown="1" class="new-content">
-
-### Example Transactions:
-
-As discussed above, there are 4 basic implementation variations in any combination with task based exchanges:
-
-1. Structured vs Free Text Request
-1. Subscription vs Polling
-1. Fetching Contained vs External Data
-1. Whether Formal Authorization is Needed (typically in provider-provider scenarios)
-
-The following example transactions show scenarios using task based exchanges to get clinical data from an EHR.  Each of the above variations will be demonstrated. Following the guidance in this guide and HRex, Getting Active Conditions from Provider is typically a two to five step process for the Payer.
-
-#### Scenario 1
-
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
-
-Preconditions and Assumptions:
-- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
-
-Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
-
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: FHIR RESTful query syntax for data request, Polling, Output references to external resources, No formal authorization' %}
-
-{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Base interaction with provenance' %}
-
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text request for data' %}
-
-{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}
+The following examples repeats Scenario 1 above using Subscription instead of Polling
 
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
 
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
----
+### Formal Authorization
 
-<div markdown="1" class="bg-success">
+In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
+{:.new-content}
 
-#### Scenario 2
+The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. <span class="bg-success"> This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers.</span>  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
+{:.stu-note}
 
-Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
-
-Preconditions and Assumptions:
-- There is human involvement needed to complete the request
-- Referred-to Provider needs formal authorization to request data
-
-Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
-
-{% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
-</div>
-
----
-
-#### Scenario 3
+#### Example Task Based Transaction with a Formal Authorization
 
 Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
@@ -208,20 +213,17 @@ Preconditions and Assumptions:
 
 {% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
 
----
+### Provenance
 
-#### Scenario 4
+To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below.  Alternatively, When `Task.output` represents individual FHIR resource, the Data Receiver could query for Provenance when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](http://build.fhir.org/ig/HL7/davinci-ecdx/branches/master/direct-query.html#example-transactions)). Typically, it is unnecessary to request external Provenance for FHIR Documents and other formats such as CCDA, because their contents implicitly or explicitly supply their provenance.
 
-Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+#### Example Requests for Provenance using Task Based Transaction
 
-Preconditions and Assumptions:
+The following examples repeats Scenario 1 above and also request the associated Provenance.
 
-- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
-- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Base interaction with provenance' %}
 
-{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
-
-<div markdown="1" class="new-content">
+{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}
 
 ### Signatures
 
