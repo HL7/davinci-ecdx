@@ -131,7 +131,7 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[5] }}  For the actual request, the FHIR RESTful query syntax is used.
 1. {{ site.data.base-example-list[6] }}
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Request(RESTful search syntax)' %}
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Based Request (RESTful search syntax)' %}
 
 ##### Example 1.2
 
@@ -144,7 +144,7 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[5] }}  **For the actual request, *natural language free text* is used.**
 1. {{ site.data.base-example-list[6] }}
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Request (free text)' %}
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Based Request (free text)' %}
 
 ##### Example 1.3
 
@@ -157,7 +157,7 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
 1. **Patient B’s Active Conditions referenced by Task.output are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.**
 
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Request(contained output)' %}
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Based Request (contained output)' %}
 ---
 
 <div markdown="1" class="bg-success">
@@ -178,7 +178,7 @@ Preconditions and Assumptions:
 1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
 1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
-{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Request for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Based Request for Patient's Latest History and Physical" %}
 
 <div markdown="1" class="new-content">
 
@@ -194,7 +194,7 @@ Preconditions and Assumptions:
 - There is human involvement needed to complete the request
 - Referred-to Provider needs formal authorization to request data
 
-Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
+Click on the buttons below to see example Task Based Request for a Patient's Active Conditions:
 
 {% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 </div>
