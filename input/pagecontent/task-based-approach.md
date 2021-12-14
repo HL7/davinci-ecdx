@@ -106,7 +106,7 @@ Ultimately, the Data Source determines how long the Data Consumer has access to 
 
 <div markdown="1" class="new-content">
 
-### Task Based Transaction Scenarios:
+### Task Based Transaction Scenarios
 
 Following the guidance in this guide and HRex, Getting clinical data from the Provider is typically a two to five step process for the Payer. The following example transactions show 2 scenarios using task based exchanges to get clinical data from an EHR.  Additional examples are provided in the following sections which document other implementation considerations
 
@@ -118,20 +118,29 @@ This scenario demonstrates these Task Based Query options:
 1. Polling
 1. Fetching Contained vs External Data
 
+
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
+
+In this example:
+
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[1] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }}
+1. {{ site.data.base-example-list[6] }
 
 Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Base interaction: FHIR RESTful query syntax for data request, Polling, Output references to external resources, No formal authorization' %}
+{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Request for Patient Active Conditions (search syntax)' %}
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Interaction using free text request for data' %}
+{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Request for Patient Active Conditions (free text)' %}
 
-{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
-
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources' %}
+{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Interaction with contained output instead references to external resources (contained output)' %}
 ---
 
 <div markdown="1" class="bg-success">
@@ -163,7 +172,7 @@ Preconditions and Assumptions:
 
 Click on the buttons below to see example Task Requests for a Patient's Active Conditions:
 
-{% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Task Request with a formal authorization' %}
+{% include examplebutton_default.html example="task-scenario2-authorization" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 </div>
 
 ### Polling vs Subscriptions
@@ -192,7 +201,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 The following examples repeats Scenario 1 above using Subscription instead of Polling
 
-{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Interaction using subscriptions instead of polling' %}
+{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
 ### Formal Authorization
 
@@ -211,7 +220,7 @@ Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
 
-{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Request for Patient's HBA1C Results after 2020-01-01" %}
+{% include examplebutton_default.html example="task-scenario3-basic" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
 ### Provenance
 
@@ -221,9 +230,9 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 The following examples repeats Scenario 1 above and also request the associated Provenance.
 
-{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Base interaction with provenance' %}
+{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Click Here To See Example Requests for Provenance using Task (search based syntax)' %}
 
-{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Interaction using free text request for data and provenance' %}
+{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Example Requests for Provenance using Task (free text)' %}
 
 ### Signatures
 
@@ -257,7 +266,7 @@ The following example repeats [Scenario 1](#scenario-1), only this time a signat
   - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created.
 
-{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example: *Signed* Task Based Transaction' %}
+{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example *Signed* Task Based Transaction' %}
 
 </div>
 
