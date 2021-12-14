@@ -1,25 +1,13 @@
-
-##### Example:
- 
 Note: Formal authorization is optional and typically in provider to provider transactions.
 {:.bg-info}
 
-In this example:
-
-1. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
-   - Note that in this example, the Referred-To Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a 'third party'.
-1. The Referred-To Provider POSTS a Task to the Referring Provider endpoint, the CommunicationRequest is referenced in `Task.basedOn`
-1. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
-1. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-1. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
-
-###### Step 1 - Create CommunicationRequest (on Referred-To Provider system)
+##### Step 1 - Create CommunicationRequest (on Referred-To Provider system)
 
 ~~~
 {% include cdex-example1-authorization.json %}
 ~~~
 
-###### Step 2 - POST Task to Referring Provider endpoint
+##### Step 2 - POST Task to Referring Provider endpoint
 
 **Request**
 ~~~
@@ -43,7 +31,7 @@ Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
 ...(other headers)
 ~~~
 
-###### Step 3 - (Optional) Referring Provider Fetches CommunicationRequest
+##### Step 3 - (Optional) Referring Provider Fetches CommunicationRequest
 
 **Request from Referring Provider**
 ~~~
@@ -60,7 +48,7 @@ POST [base]CommunicationRequest/cdex-example1-authorization
 {% include cdex-example1-authorization.json %}
 ~~~
 
-###### Step 4 - Referred-To Provider Polls Task
+##### Step 4 - Referred-To Provider Polls Task
 
 **Polling Request**
 ~~~
@@ -77,7 +65,7 @@ GET Task/cdex-example1-query-completed
 {% include_relative Task-cdex-example1-authorized-completed.json %}
 ~~~
 
-###### Step 5 - Referred-To Provider Fetches Active Conditions
+##### Step 5 - Referred-To Provider Fetches Active Conditions
 
 **Request**
 ~~~

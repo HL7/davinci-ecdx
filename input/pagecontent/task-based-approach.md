@@ -200,8 +200,6 @@ Preconditions and Assumptions:
 1. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
 1. **In this example there is no matching data**
 
-
-
 {% include examplebutton_default.html example="task-scenario3-basic" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 </div>
 
@@ -258,13 +256,13 @@ The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circ
 Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
 
 Preconditions and Assumptions:
-- There is human involvement needed to complete the request
-- Referred-to Provider needs formal authorization to request data
 
-Preconditions and Assumptions:
-
-- The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
-- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
+1. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
+   - Note that in this example, the Referred-To Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a 'third party'.
+1. The Referred-To Provider POSTS a Task to the Referring Provider endpoint, the CommunicationRequest is referenced in `Task.basedOn`
+1. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
+1. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+1. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
 {% include examplebutton_default.html example="task-scenario2-authorization" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
