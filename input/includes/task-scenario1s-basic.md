@@ -2,14 +2,17 @@
 
 In this example:
 
+1. **The Payer requires signatures on the returned data**
 1. {{ site.data.base-example-list[0] }}
 1. {{ site.data.base-example-list[1] }}
 1. {{ site.data.base-example-list[2] }}
 1. {{ site.data.base-example-list[3] }}
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[5] }}
-1. {{ site.data.base-example-list[6] }}
-1. **The Payer requires signatures on the returned data**
+1. The Payer fetches Patient B’s Active Conditions referenced by Task.output as a *FHIR Document*.
+
+
+###### Step 1 - POST Task to Provider endpoint
 
 ###### Step 1 - POST Task to Provider endpoint
 
@@ -23,7 +26,7 @@ POST [base]/Task
 **Request Body**
 
 ~~~
-{%raw%}{%gist %}{%endraw%}
+{% include cdex-example1-query-request.json %}
 ~~~
 
 **Response Headers**
@@ -49,14 +52,14 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{%raw%}{%gist %}{%endraw%}
+{% include_relative Task-cdex-example1-query-completed.json %}
 ~~~
 
-###### Step 3 - Fetch Active Conditions
+###### Step 3 - Fetch Signed FHIR Document
 
 **Request**
 ~~~
-GET [base]Condition/858
+GET [base]Bundle/cdex-electronic-sig-example
 ~~~
 
 {% include request-headers.md %}
@@ -66,5 +69,5 @@ GET [base]Condition/858
 **Response Body**
 
 ~~~
-{%raw%}{%gist %}{%endraw%}
+{% include_relative Bundle-cdex-electronic-sig-example.json %}
 ~~~
