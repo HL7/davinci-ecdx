@@ -63,7 +63,7 @@ The [`Bundle.signature`](http://hl7.org/fhir/bundle-definitions.html#Bundle.sign
 
 #### Electronic Signature Example
 
-In this Example, a `Bundle.signature` is added to the CDEX Task based [Example 4](task-based-approach.html#example-4). The electronic signature is a JPG Image that represents this handwritten signature:
+In this Example, a `Bundle.signature` is added to the CDEX Task based [Scenario 2](task-based-approach.html#scenario-2). The electronic signature is a JPG Image that represents this handwritten signature:
 
 <!-- ![](https://hackmd.io/_uploads/H1owYTqVK.jpg)
 
