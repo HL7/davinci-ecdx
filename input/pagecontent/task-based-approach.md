@@ -129,7 +129,7 @@ In this example:
 1. {{ site.data.base-example-list[3] }}
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[5] }}
-1. {{ site.data.base-example-list[6] }
+1. {{ site.data.base-example-list[6] }}
 
 Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
