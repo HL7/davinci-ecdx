@@ -55,18 +55,15 @@
                         "code": "purpose-of-use"
                     }
                 ]
-            }
-        },
-        {
-            "type": {
+            },
+            "valueCodeableConcept": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "signature-flag"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                        "code": "COVERAGE"
                     }
                 ]
-            },
-            "valueBoolean": true
+            }
         }
     ]
 }

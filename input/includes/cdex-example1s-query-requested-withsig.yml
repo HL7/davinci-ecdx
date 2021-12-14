@@ -35,3 +35,8 @@ input:
     coding:
     - system: http://terminology.hl7.org/CodeSystem/v3-ActReason
       code: COVERAGE
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: signature-flag
+  valueBoolean: true

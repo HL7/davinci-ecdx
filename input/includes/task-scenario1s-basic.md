@@ -32,7 +32,7 @@ POST [base]/Task
 ~~~
 HTTP/1.1 200 OK
 Server: CDEX Example Server
-Location: http://example.org/FHIR/Task/cdex-example1s-query-completed/_history/1
+Location: http://example.org/FHIR/Task/cdex-example1s-query-withsig-completed/_history/1
 ...(other headers)
 ~~~
 
@@ -40,7 +40,7 @@ Location: http://example.org/FHIR/Task/cdex-example1s-query-completed/_history/1
 
 **Polling Request**
 ~~~
-GET Task/cdex-example1-query-completed
+GET Task/cdex-example1s-query-withsig-completed
 ~~~
 
 {% include request-headers.md %}
@@ -50,7 +50,7 @@ GET Task/cdex-example1-query-completed
 **Response Body**
 
 ~~~
-{% include_relative Task-cdex-example1s-query-completed.json %}
+{% include_relative Task-cdex-example1s-query-withsig-completed.json %}
 ~~~
 
 ###### Step 3 - Fetch Signed FHIR Document
