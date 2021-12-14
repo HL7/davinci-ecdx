@@ -99,30 +99,27 @@ Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-
 
 ### Examples
 
-#### Scenario 1: Unsolicited Attachments
-
-In the following example, The Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
+In the following examples, the Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
 
 `POST [base]/$submit-attachment`
 
-#### Preconditions and Assumptions:
+#### Scenario 1: CCDA Document Attachments
 
-- Based on a set of pre-defined rules set by the Payer, Provider can submit additional information for certain claims as Unsolicited Attachments
-- Provider A knows the Payer endpoint for Sending attachments.  The `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
-- "Unsolicited Attachments" implies that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
-- Typically when the attachments are CCDA documents as in this scenario, they already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
+- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (an *Unsolicited Attachments*).
+  - Typically when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
+- Provider knows the Payer's endpoint for Sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+- "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
 - Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
 
-{% include examplebutton_default.html example="attachment-scenario1" b_title = "Click Here To See Example Unsolicited Notifications transaction" %}
+{% include examplebutton_default.html example="attachment-scenario1" b_title = "Click Here To See Scenario 1: CCDA Document Attachments" %}
 
 
-#### Scenario 2: Unsolicited *Signed* Attachments
+#### Scenario 2: *Signed* FHIR Resource Attachments
 
-In the following example a FHIR signature is required on the attachment which is a FHIR resource.
+- This example is the same as Scenario 1 except that the attachment is a FHIR resource and, unlike Scenario 1, a FHIR signature is required.
+- See the [Signatures] page for complete worked example on how the signature was created.
 
-- See [Signatures] page for complete worked example on how the signature was created.
-
-{% include examplebutton_default.html example="todo" b_title = "Click Here To See Example Signed Unsolicited Notifications transaction" %}
+{% include examplebutton_default.html example="attachment-scenario2" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
 
 
 {% include link-list.md %}
