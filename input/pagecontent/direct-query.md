@@ -163,7 +163,9 @@ HTTP/1.1 400 Not Found
 
 The following example shows [Scenario 1](#example-transactions) response with a signature attached. See [Signatures] page for complete worked example on how the signature was created.
 
-{%raw%}{%gist Healthedata1/ef1d8be9cf47253d66354b02a74db802 %}{%endraw%}
+`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
+
+{% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example *Signed* Direct Query Response" %}
 
 </div>
 

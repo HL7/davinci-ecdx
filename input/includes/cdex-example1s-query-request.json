@@ -1,0 +1,94 @@
+{
+    "resourceType": "Bundle",
+    "id": "d88e2910-3c95-469d-b1f4-ab5553b471fb",
+    "meta": {
+        "lastUpdated": "2020-10-23T04:54:56.048+00:00"
+    },
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+            "resource": {
+                "resourceType": "Condition",
+                "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+                "meta": {
+                    "versionId": "10",
+                    "lastUpdated": "2020-04-28T20:28:00.008+00:00",
+                    "source": "#cabiJIK51sD2iz4N",
+                    "profile": [
+                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+                    ]
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "encounter-diagnosis",
+                                "display": "Encounter Diagnosis"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "1234",
+                            "display": "Examplitis"
+                        }
+                    ],
+                    "text": "Examplitis"
+                },
+                "subject": {
+                    "reference": "Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+                },
+                "encounter": {
+                    "reference": "Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
+                },
+                "onsetDateTime": "2018-10-21T21:22:15-07:00",
+                "recordedDate": "2018-10-21T21:22:15-07:00"
+            },
+            "search": {
+                "mode": "match"
+            }
+        }
+    ],
+    "signature": {
+        "type": [
+            {
+                "system": "urn:iso-astm:E1762-95:2013",
+                "code": "1.2.840.10065.1.12.1.5",
+                "display": "Verification Signature"
+            }
+        ],
+        "when": "2020-10-23T04:54:56.048+00:00",
+        "who": {
+            "reference": "Organization/123"
+        },
+        "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLkUyM3p1NHJuSzdscXQ1T2xJb0lzTHFMOVN4ZXdyeEgxNjFsQkFvTlg0WXRqNU10cDFRcHRwMUZmVzJQS3dlRlhBdlhjODdES2EwM0p4SkVndXI1T1NxbmRwcFc0YkVLTjNPWTZaSU1HVXkwNTloX3NGczBOYnd3bFlSMVJxUVlSNk5QVHNMUUJET3V5VTJxaG9qdGVmOWR3YndXVWkzbFlIa21IcS1LcURHZzR1RWh6NV9lc193REZQVXlaV2hvc0tSSW9BUUlsd0xvbzBKdjhQMzFHbXVZamM0SXBjUmpHYTluUUotLTlSRzdIcmRpXzNWUllFNk1VU3czZXh6OTIwTUREd1ZNOWN5MkE1Z2M1T0RKVzI2NFVkU1E5bjgzT2VCMlhBdWJKbE04ZzJudlFtMUFhd2JzTklKY2x3eDFvbGc0LVFXQk9GY1djOXhoS2xvSnRabkpnVHQ4LVdLa3o0UC00ZzROS0tDLS0weS1MalUzN2xCT0RYdFVxZEVVTjNCandiNk5zNEFFZFA5STJlMXB6cmt5QWF1d19uNFhoRkFSdkNqdjhZYy1BMjQ2WWUyU2tfWGRrOVoxQ0JYMnE5SlZ0bzB5emlwc1RJbk04YzBGUHZBUWZnYnF5WDMzUlJFWmFjVmFobnJpNUZIcmJHRmV1eEQ4M05qTnJ6YnMt"
+    }
+}
