@@ -120,9 +120,7 @@ This scenario demonstrates these Task Based Query options:
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
 
-##### Example 1.1
-
-Preconditions and Assumptions:
+##### Preconditions and Assumptions:
 
 1. {{ site.data.base-example-list[0] }}
 1. {{ site.data.base-example-list[2] }}
@@ -133,29 +131,17 @@ Preconditions and Assumptions:
 
 {% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Based Transaction (RESTful search syntax)' %}
 
-##### Example 1.2
+##### Free Text Request
 
-Preconditions and Assumptions:
-
-1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }}  **For the actual request, *natural language free text* is used.**
-1. {{ site.data.base-example-list[6] }}
+This example is the same as above, except *natural language free text* is used the actual request in Task.
 
 {% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Based Transaction (free text)' %}
 
-##### Example 1.3
+##### Contained Task Outputs
 
 Preconditions and Assumptions:
 
-1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
-1. **Patient B’s Active Conditions referenced by Task.output are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.**
+This example repeats the first, except Patient B’s active conditions referenced by `Task.output` are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.
 
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Based Transaction (contained output)' %}
 ---
@@ -186,11 +172,11 @@ Preconditions and Assumptions:
 
 If the EHR was not successful in completing the request for data, the Task's state transitions to "failed". It is a terminal state and no further activity on the request will occur. This can happen when the requested data is not available, because the EHR cannot complete the task.  The `Task.status` is updated to 'failed', and the reason  stated in `Task.statusReason` (for example, "no matching results"). The `Task.output` is absent since the requesting data is not available. The Payer's business rules will determine their response to a failed request.  An example transaction where there is no matching data is given in [scenario 3](#scenario-3) below.
 
-#### Example Task Based Transaction When It Cannot Be Completed
+#### Example Unsuccessful Task Based Transaction
 
-Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
-Preconditions and Assumptions:
+##### Preconditions and Assumptions:
 
 1. The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
 1. Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
@@ -227,15 +213,8 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Example Task Based Transaction using Subscription
 
-The following examples repeats Scenario 1 above using Subscription instead of Polling
+The following examples repeats Scenario 1 above using Subscription instead of Polling. Instead of the payer polling the Task resource until the `Task.status` indicates it is completed, rejected, or failed:
 
-Preconditions and Assumptions:
-
-1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }}  For the actual request, the FHIR RESTful query syntax is used.
 1. The Payer *subscribes* the Task resource to get notifications when it is updated.  `Task.status` indicates it is completed or rejected.
 1. The Payer fetches the Task resource when notified of an update.
 1. When the `Task.status` indicates it is completed, the Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.  (This step is skipped if the the status is 'rejected')
@@ -253,9 +232,9 @@ The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circ
 
 #### Example Task Based Transaction with a Formal Authorization
 
-Referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
+In this scenario, a referred-to Provider Seeks Patient B's Active Conditions from referring Provider to support performing the requested service.
 
-Preconditions and Assumptions:
+##### Preconditions and Assumptions:
 
 1. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
    - Note that in this example, the Referred-To Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a 'third party'.
@@ -272,7 +251,7 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 #### Example Requests for Provenance using Task Based Transaction
 
-The following examples repeats Scenario 1 above and also request the associated Provenance.
+The following examples repeat the first two examples in Scenario 1 above but request Patient B’s active Conditions *and associated Provenance*.
 
 {% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Click Here To See Example Requests for Provenance using Task (search based syntax)' %}
 
@@ -306,7 +285,7 @@ When a electronic or digital signature is required for Task based request, the D
 
 #### Example of a *Signed* Task Based Transaction
 
-The following example repeats [Scenario 1](#scenario-1), only this time a signature is required.
+The following example repeats Scenario 1 above, however a signature is required.
   - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created.
 

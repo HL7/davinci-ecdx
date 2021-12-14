@@ -1,18 +1,5 @@
 
-##### Example 1s:
-
-In this example:
-
-1. **The Payer requires signatures on the returned data**
-1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[1] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }}
-1. The Payer fetches Patient B’s Active Conditions referenced by Task.output as a *FHIR Document*.
-
-###### Step 1 - POST Task to Provider endpoint
+##### Step 1 - POST Task to Provider endpoint
 
 **Request**
 ~~~
@@ -36,7 +23,7 @@ Location: http://example.org/FHIR/Task/cdex-example1s-query-withsig-completed/_h
 ...(other headers)
 ~~~
 
-###### Step 2 - Poll Task
+##### Step 2 - Poll Task
 
 **Polling Request**
 ~~~
@@ -53,7 +40,7 @@ GET Task/cdex-example1s-query-withsig-completed
 {% include_relative Task-cdex-example1s-query-withsig-completed.json %}
 ~~~
 
-###### Step 3 - Fetch Signed FHIR Document
+##### Step 3 - Fetch Signed FHIR Document
 
 **Request**
 ~~~

@@ -1,3 +1,4 @@
+
 Note: Formal authorization is optional and typically in provider to provider transactions.
 {:.bg-info}
 
