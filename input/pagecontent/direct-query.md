@@ -94,7 +94,7 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 #### Example of Direct Query Response Including Provenance
 
-The following example shows [Scenario 1](#example-transactions) response with with a request to include corresponding Provenance records.
+This example is the same as Scenario 1 above except that it also includes the corresponding Provenance records.
 
 `GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
 
