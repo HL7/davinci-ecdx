@@ -20,11 +20,11 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR_id.
 {:.new-content}
 
-#### Example Direct Query Transactions:
+#### Example Direct Query Transaction Scenarios:
 
 The following example transactions show scenarios of using direct query to get clinical data from an EHR.
 
-##### Scenario 1
+#### Scenario 1
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
 
@@ -42,7 +42,7 @@ Following guidance in US Core searches for all active conditions using the combi
 
 ---
 
-##### Scenario 2
+#### Scenario 2
 
 Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
 
@@ -60,7 +60,7 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 ---
 
-##### Scenario 3
+#### Scenario 3
 
 Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success>to support a claim submission</span>.
 
