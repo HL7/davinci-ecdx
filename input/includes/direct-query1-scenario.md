@@ -1,21 +1,3 @@
-<!--
-#### Scenario
-
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to confirm medical necessity.
-
-##### Preconditions and Assumptions:
-
-- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
-- Payer A knows the *logical id* of the resource for Patient B
-- Payer A knows the appropriate codes for searching for active conditions
-
-Following guidance in US Core searches for all active conditions using the combination of the patient and clinical-status search parameters:
-
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission
-`
--->
-
-##### Example:
 
 **Request**
 ~~~
