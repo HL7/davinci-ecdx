@@ -223,6 +223,18 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 The following examples repeats Scenario 1 above using Subscription instead of Polling
 
+Preconditions and Assumptions:
+
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[2] }}
+1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[5] }}  For the actual request, the FHIR RESTful query syntax is used.
+1. The Payer *subscribes* the Task resource to get notifications when it is updated.  `Task.status` indicates it is completed or rejected.
+1. The Payer fetches the Task resource when notified of an update.
+1. When the `Task.status` indicates it is completed, the Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.  (This step is skipped if the the status is 'rejected')
+1. Subscription is cancelled.
+
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
 ### Formal Authorization

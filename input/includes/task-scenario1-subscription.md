@@ -1,15 +1,4 @@
 
-##### Example 3
-
-In this example:
-
-1. No formal authorization (order) is needed
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.  For the actual request, the FHIR RESTful query syntax is used.
-2. The Payer *subscribes* the Task resource to get notifications when it is updated.  `Task.status` indicates it is completed or rejected.
-3. The Payer fetches the Task resource when notified of an update.
-4. When the `Task.status` indicates it is completed, the Payer fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.  (This step is skipped if the the status is 'rejected')
-5. Subscription is cancelled.
-
 ###### Step 1 - POST Task to Provider endpoint
 
 **Request**
