@@ -144,6 +144,7 @@ Preconditions and Assumptions:
 This example repeats the first, except Patient B’s active conditions referenced by `Task.output` are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.
 
 {% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Based Transaction (contained output)' %}
+
 ---
 
 <div markdown="1" class="bg-success">
@@ -153,6 +154,8 @@ This example repeats the first, except Patient B’s active conditions reference
 This scenario demonstrates requesting a non-FHIR document (CCDA) using a Task Based Query:
 
 Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+
+---
 
 Preconditions and Assumptions:
 
@@ -189,6 +192,8 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 {% include examplebutton_default.html example="task-scenario3-basic" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 </div>
 
+---
+
 ### Polling vs Subscriptions
 
 Task Based exchanges can take one of two forms - *subscription* or *polling* as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] sections of the Da Vinci HRex Implementation Guide.  General guidance on whether to use polling or subscription can be found in the [Subscription Capabilities] section.
@@ -222,6 +227,8 @@ The following examples repeats Scenario 1 above using Subscription instead of Po
 
 {% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
+---
+
 ### Formal Authorization
 
 In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
@@ -245,6 +252,8 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 
 {% include examplebutton_default.html example="task-scenario2-authorization" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
+---
+
 ### Provenance
 
 To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested using Task.  To request the Provenance using Task either a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance") is used. Examples for requesting and receiving provenance using either method are provided below.  Alternatively, When `Task.output` represents individual FHIR resource, the Data Receiver could query for Provenance when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](http://build.fhir.org/ig/HL7/davinci-ecdx/branches/master/direct-query.html#example-transactions)). Typically, it is unnecessary to request external Provenance for FHIR Documents and other formats such as CCDA, because their contents implicitly or explicitly supply their provenance.
@@ -256,6 +265,8 @@ The following examples repeat the first two examples in Scenario 1 above but req
 {% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Click Here To See Example Requests for Provenance using Task (search based syntax)' %}
 
 {% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Example Requests for Provenance using Task (free text)' %}
+
+---
 
 ### Signatures
 

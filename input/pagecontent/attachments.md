@@ -90,6 +90,8 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 
 {% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
+---
+
 ### Signatures
 
 Some data consumers may require that the data they receive are signed. When performing CDex Attachments transactions and signatures are required, the following general rules apply:

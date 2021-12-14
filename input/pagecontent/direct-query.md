@@ -100,6 +100,8 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 {% include examplebutton_default.html example="direct-query1p-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions and Provenance records" %}
 
+---
+
 ### Signatures
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
