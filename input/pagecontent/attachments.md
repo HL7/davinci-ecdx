@@ -116,7 +116,8 @@ In the following examples, the Provider creates a claim and sends supporting CCD
 
 #### Scenario 2: *Signed* FHIR Resource Attachments
 
-- This example is the same as Scenario 1 except that the attachment is a FHIR resource and, unlike Scenario 1, a FHIR signature is required.
+- This example is the same as Scenario 1 except that the attachment is a FHIR resource and a FHIR signature is required.
+  - Unlike Scenario1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See the [Signatures] page for complete worked example on how the signature was created.
 
 {% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example Scenario 2: *Signed* FHIR Resource Attachments" %}
