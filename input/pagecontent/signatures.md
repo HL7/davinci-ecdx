@@ -101,29 +101,22 @@ In addition to the electronic signature rules listed in the previous section, fo
 1. **SHALL** use JSON Web Signature (JWS)[[see RFC 7515]](https://tools.ietf.org/html/rfc7515)
 >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
 
-[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721,
-                May 2015,
-<https://datatracker.ietf.org/doc/html/rfc7515>.
+[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015,
 
 2. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
 
->When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
->- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
->- The signature is a [Detached](https://tools.ietf.org/html/rfc7515#appendix-F)  Signature (where the content that is signed is separate from the signature itself)
->- When FHIR Resources are signed, the signature is across the [Canonical JSON](http://hl7.org/fhir/json.html#canonical) form of the resource(s)
->- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
->- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
+  >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
+  >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
+  >- The signature is a [Detached](https://tools.ietf.org/html/rfc7515#appendix-F)  Signature (where the content that is signed is separate from the signature itself)
+  >- When FHIR Resources are signed, the signature is across the [Canonical JSON](http://hl7.org/fhir/json.html#canonical) form of the resource(s)
+  >- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
+  >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
 
 3. Additional rules for this guide:
-  - **SHALL** support only single signature using the use JWS compact serialization format
-    :::info
-    :thinking_face: The complete JWS is the Header.Payload.Signature with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value need to be base64 encoded *again* as indicated above since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ will cause it to fail validation otherwise due to the period ('.') character.
-    :::
-    :::info
-    If the issuer has more than one certificate for the same public key (e.g. participation in more than one trust community), then we need to use [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) represent multiple signature with all parameter values identical except `"x5c"`. :unamused:
-    :::
-<!-- - **SHALL** embed the public key used to sign this JWS in *JSON Web Key* format using the `jwk` header claim
-  - **MAY** also use others method to discover public key (see SMART cards?)-->
+  - **SHALL** support JWS compact serialization format for single signatures
+     - {:.bg-info}The complete JWS is the Header.Payload.Signature with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value need to be base64 encoded *again* as indicated above since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ will cause it to fail validation otherwise due to the period ('.') character.
+  - **SHOULD** support [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) format to represent multiple signatures with all parameter values identical except `"x5c"`.
+    - The signer may have has more than one certificate (e.g., participation in more than one trust community)
   - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
 
     1. The KeyUsage should include 'DigitalSignature'
@@ -179,17 +172,17 @@ The following steps outline the process for verifying the Signature on a Bundle.
 
 ##### Worked Examples
 
-:::warning
-[*self-signed* certificates](https://en.wikipedia.org/wiki/Self-signed_certificate) are used for the purpose of these examples and not recommended for production systems.
-:::
+
+Although [*self-signed* certificates](https://en.wikipedia.org/wiki/Self-signed_certificate) are used for the purpose of these examples, they are not recommended for production systems.
+{:.bg-warning}
 
 In these example, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
 
-###### [SearchSet Bundle Example](https://github.com/Healthedata1/CDEX-Signatures/blob/main/DaVinci_Digsig_Searchset_Bundle_Example.ipynb)
+###### [SearchSet Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Searchset_Bundle_Example.ipynb)
 
 The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-###### [Document Bundle Example](https://github.com/Healthedata1/CDEX-Signatures/blob/main/DaVinci_Digsig_Document_Bundle_Example.ipynb)
+###### [Document Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
 
 The Document level signatures occurs when performing Task based requests where signatures are required and the returned results are individual fhir resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case the digital signature represents a practitioner attesting that the information is true and accurate.
 
