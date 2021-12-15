@@ -176,14 +176,14 @@ The following steps outline the process for verifying the Signature on a Bundle.
 Although [*self-signed* certificates](https://en.wikipedia.org/wiki/Self-signed_certificate) are used for the purpose of these examples, they are not recommended for production systems.
 {:.bg-warning}
 
-In these example, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
+In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
 
-###### [SearchSet Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Searchset_Bundle_Example.ipynb)
+- [SearchSet Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Searchset_Bundle_Example.ipynb)
 
-The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
+  The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-###### [Document Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
+- [Document Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
 
-The Document level signatures occurs when performing Task based requests where signatures are required and the returned results are individual fhir resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case the digital signature represents a practitioner attesting that the information is true and accurate.
+  The Document level signatures occurs when performing Task based requests where signatures are required and the returned results are individual fhir resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case the digital signature represents a practitioner attesting that the information is true and accurate.
 
 {% include link-list.md %}
