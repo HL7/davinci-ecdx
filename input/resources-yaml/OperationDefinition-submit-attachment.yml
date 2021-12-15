@@ -40,7 +40,7 @@ comment: |
     * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.
     *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check whether they sent it to the wrong payer.
 
-  See the the [Attachments](davinci-ecdx/attachments.html) page for additional guidance and examples.
+  See the the [Attachments](attachments.html) page for additional guidance and examples.
 resource:
   - Claim
 system: true
