@@ -25,9 +25,9 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 In some cases, it may be important to transmit the purpose of use when soliciting data.  Specifically, when the purpose of use differs from the 'default' purpose of use for that data consuming system (generally 'payment and operations' for payers and 'treatment' for providers), the data source needs to be able to make decisions about whether to provide the information at all or whether/how to filter the information.
 
-However, when using standard RESTful queries, such information cannot be conveyed directly. There is work in progress in [FHIR SMART v2 (Granular Controls)] and the [FHIR Data Segmentation for Privacy] (ballot version) on standardizing how this information can be conveyed using OAuth.  Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
+For the Task based approach, representing purpose of use is documented [here](task-based-approach.html#purpose-of-use).  However, when using standard RESTful queries, such information cannot be conveyed directly. There is work in progress in [FHIR SMART v2 (Granular Controls)] and the [FHIR Data Segmentation for Privacy] (ballot version) on standardizing how this information can be conveyed using OAuth.  Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
 
-When using the Task based approach, the purpose of use can be conveyed in `TODO`.
+
 
 #### Sensitive and Confidential Data
 
