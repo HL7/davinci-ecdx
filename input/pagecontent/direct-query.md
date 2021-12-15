@@ -62,7 +62,7 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 #### Scenario 3
 
-Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success>to support a claim submission</span>.
+Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success">to support a claim submission</span>.
 
 **Preconditions and Assumptions:**
 
