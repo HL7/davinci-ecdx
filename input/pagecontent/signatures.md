@@ -86,13 +86,13 @@ In this Example, a `Bundle.signature` is added to a FHIR Document. The electroni
 
 ### Digital Signatures
 
-*Digital Signatures* are as type of *Electronic signature* that meet the following functional requirements:
+*Digital Signatures* are a type of *Electronic signature* that meet the following functional requirements:
 
-1) authentication  - how the person that claims he is, is really that person
-2) integrity - has not been altered
-3) non-repudiation - if action later ( legal etc ) signer can not say it is not them.
+1. authentication  - how the person that claims he is, is really that person
+2. integrity - has not been altered
+3. non-repudiation - if action later ( legal etc ) signer can not say it is not them.
 
-Digital Signatures employ encryption technology and a digital certificate issued by a certification authority(CA).   The encryption ensure the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
+Digital Signatures employ encryption technology and a digital certificate issued by a certification authority(CA). The encryption ensure the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
 
 #### Digital Signature Rules For CDEX FHIR Bundles:
 
