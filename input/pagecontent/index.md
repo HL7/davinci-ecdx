@@ -1,4 +1,4 @@
-
+<!--{raw}
 <div class="bg-info" markdown="1">
 Publishing Punch list:
 
@@ -16,6 +16,7 @@ Where possible, new and updated content will be highlighted with green text and 
 {{ site.data.pl.list[0].desc }}
 
 </div>
+{endraw}-->
 
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and <span markdown="1" class="bg-success">**Attachments** transaction approaches for requesting and sending information</span>. Key scenarios this IG can support include:
 
