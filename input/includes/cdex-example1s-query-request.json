@@ -56,7 +56,7 @@
                 "code": {
                     "coding": [
                         {
-                            "system": "http://example.org/codes",
+                            "system": "http://snomed.info/sct",
                             "code": "1234",
                             "display": "Examplitis"
                         }
