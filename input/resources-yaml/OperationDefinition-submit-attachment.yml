@@ -62,14 +62,14 @@ parameter:
     min: 1
     max: '1'
     documentation: >-
-      Claim/prior authorization identifier value. This can be either a filler or placer id.
+      Claim/prior authorization identifier value. This can be either a filler or placer id*.
     type: Identifier
   - name: ItemId
     use: in
     min: 0
     max: '*'
     documentation: >-
-      Claim/prior authorization identifier that uniquely reference an line item in the context of the claim or prior authorization. This can be either a filler or placer id.
+      Claim/prior authorization identifier that uniquely reference an line item in the context of the claim or prior authorization. This can be either a filler or placer id*.
     type: string
   - name: OrganizationId
     use: in
