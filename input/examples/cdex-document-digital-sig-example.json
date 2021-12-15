@@ -8,7 +8,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Digital signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
+                "valueMarkdown": "Digital signature example showing how it used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
             }
         ]
     },

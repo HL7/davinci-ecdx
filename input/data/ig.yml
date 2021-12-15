@@ -210,11 +210,11 @@ definition:
         name: CDex Work Queue Value Set
         reference:
             reference: ValueSet/cdex-work-queue
-    -   description: Digital signature example showing how a image file can be use
-            to sign a document Bundle.  The CDEX use case would be the target resource
-            in response to a Task-based request where an digital signature was required.  If
-            no signature was required, the response would typically be in the form
-            of an individual resource.
+    -   description: Digital signature example showing how it used to sign a FHIR
+            Document.  The CDEX use case would be the target resource in response
+            to a Task-based request where an digital signature was required.  If no
+            signature was required, the response would typically be in the form of
+            an individual resource.
         exampleBoolean: true
         name: CDEX Document with Digital Signature Example
         reference:
@@ -311,6 +311,13 @@ definition:
         name: Scenario 4 Task Example
         reference:
             reference: Task/cdex-example3-query-requested
+    -   description: Digital signature example showing how it is used to sign a searchset
+            Bundle.  The CDEX use case would be a response to a Direct Query where
+            an digital signature was required.
+        exampleBoolean: true
+        name: CDEX SearchSet Bundle with Digital Signature Example
+        reference:
+            reference: Bundle/cdex-searchset-digital-sig-example
 dependsOn:
 -   id: uscore
     packageId: hl7.fhir.us.core

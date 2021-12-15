@@ -146,7 +146,7 @@
         "reference": {
           "reference": "Bundle/cdex-document-digital-sig-example"
         },
-        "description": "Digital signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "description": "Digital signature example showing how it used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Digital Signature Example",
         "exampleBoolean": true
       },
@@ -277,6 +277,14 @@
         "description": "Task to seek a patient's latest history and physical exam notes.",
         "name": "Scenario 4 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/cdex-searchset-digital-sig-example"
+        },
+        "description": "Digital signature example showing how it is used to sign a searchset Bundle.  The CDEX use case would be a response to a Direct Query where an digital signature was required.",
+        "name": "CDEX SearchSet Bundle with Digital Signature Example",
+        "exampleBoolean": true
       }
     ],
     "page": {
