@@ -97,25 +97,24 @@ Digital Signatures employ encryption technology and a digital certificate issued
 In addition to the electronic signature rules listed in the previous section, for digital signatures implementers:
 
 1. **SHALL** use JSON Web Signature (JWS)[[see RFC 7515]](https://tools.ietf.org/html/rfc7515)
-  >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
+   >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
 2. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
-  >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
-  >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
-  >- The signature is a [Detached](https://tools.ietf.org/html/rfc7515#appendix-F)  Signature (where the content that is signed is separate from the signature itself)
-  >- When FHIR Resources are signed, the signature is across the [Canonical JSON](http://hl7.org/fhir/json.html#canonical) form of the resource(s)
-  >- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
-  >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
-
+   >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
+   >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
+   >- The signature is a [Detached](https://tools.ietf.org/html/rfc7515#appendix-F)  Signature (where the content that is signed is separate from the signature itself)
+   >- When FHIR Resources are signed, the signature is across the [Canonical JSON](http://hl7.org/fhir/json.html#canonical) form of the resource(s)
+   >- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
+   >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
 3. Additional rules for this guide:
-  - **SHALL** support JWS compact serialization format for single signatures
+   - **SHALL** support JWS compact serialization format for single signatures
      - {:.bg-info}The complete JWS is the Header.Payload.Signature with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value need to be base64 encoded *again* as indicated above since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ will cause it to fail validation otherwise due to the period ('.') character.
-  - **SHOULD** support [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) format to represent multiple signatures with all parameter values identical except `"x5c"`.
+   - **SHOULD** support [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) format to represent multiple signatures with all parameter values identical except `"x5c"`.
      - The signer may have has more than one certificate (e.g., participation in more than one trust community)
-  - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
-    1. The KeyUsage should include 'DigitalSignature'
-    1. The Issuer should be a trusted CA for the Consumer
-    1. The Subject (:thinking_face: or Subject Alternative Name (SAN)) should match the data Source
-    1. The Validity Dates should be appropriate/long enough for as determined by the business partners.
+   - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
+      1. The KeyUsage should include 'DigitalSignature'
+      1. The Issuer should be a trusted CA for the Consumer
+      1. The Subject (:thinking_face: or Subject Alternative Name (SAN)) should match the data Source
+      1. The Validity Dates should be appropriate/long enough for as determined by the business partners.
 
 ##### Sender/Signer Steps
 
