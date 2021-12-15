@@ -54,5 +54,5 @@ GET [base]Bundle/cdex-electronic-sig-example
 **Response Body**
 
 ~~~
-{% include_relative Bundle-cdex-electronic-sig-example.json %}
+{% include_relative Bundle-cdex-document-digital-sig-example.json %}
 ~~~
