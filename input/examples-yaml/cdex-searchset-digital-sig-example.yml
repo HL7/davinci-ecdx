@@ -39,7 +39,7 @@ entry:
               display: Encounter Diagnosis
       code:
         coding:
-          - system: 'http://snomed.info/sct'
+          - system: 'http://example.org/terminology'
             code: '1234'
             display: Examplitis
         text: Examplitis
