@@ -225,7 +225,7 @@ definition:
             was required.  If no signature was required, the response would typically
             be in the form of an individual resource.
         exampleBoolean: true
-        name: CDEX Electronic Signature Example
+        name: CDEX Docuement with Electronic Signature Example
         reference:
             reference: Bundle/cdex-electronic-sig-example
     -   description: Completed Task to seek a patient active conditions with a reference
