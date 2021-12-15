@@ -96,7 +96,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
 
 In addition to the electronic signature rules listed in the previous section, for digital signatures implementers:
 
-1. **SHALL** use JSON Web Signature (JWS)[[see RFC 7515]](https://tools.ietf.org/html/rfc7515)
+1. **SHALL** use JSON Web Signature (JWS)([see RFC 7515](https://tools.ietf.org/html/rfc7515))
    >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
 2. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
    >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
@@ -181,7 +181,7 @@ In these examples, a detached JWS signature is created using a signer's private 
 ---
 
 [^first]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
-[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015,
+[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015, <https://tools.ietf.org/html/rfc7515>
 
 
 {% include link-list.md %}
