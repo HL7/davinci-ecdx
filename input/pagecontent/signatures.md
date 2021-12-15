@@ -38,8 +38,6 @@ Requirements for using *FHIR Signatures* to sign a Bundle with electronic or dig
 
 >The term “electronic signature” means an electronic sound, symbol, or process, attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.[^first]
 
-[^first]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
-
 The [`Bundle.signature`](http://hl7.org/fhir/bundle-definitions.html#Bundle.signature) element is available to support the various forms of electronic signatures which include:
 - a typed-out name
 - a graphical image that represents a handwritten signature
@@ -99,12 +97,8 @@ Digital Signatures employ encryption technology and a digital certificate issued
 In addition to the electronic signature rules listed in the previous section, for digital signatures implementers:
 
 1. **SHALL** use JSON Web Signature (JWS)[[see RFC 7515]](https://tools.ietf.org/html/rfc7515)
->JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
-
-[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015,
-
+  >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^second]
 2. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
-
   >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
   >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)](https://tools.ietf.org/html/rfc7515)
   >- The signature is a [Detached](https://tools.ietf.org/html/rfc7515#appendix-F)  Signature (where the content that is signed is separate from the signature itself)
@@ -116,9 +110,8 @@ In addition to the electronic signature rules listed in the previous section, fo
   - **SHALL** support JWS compact serialization format for single signatures
      - {:.bg-info}The complete JWS is the Header.Payload.Signature with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value need to be base64 encoded *again* as indicated above since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ will cause it to fail validation otherwise due to the period ('.') character.
   - **SHOULD** support [JWS JSON Serialization](https://datatracker.ietf.org/doc/html/rfc7515#section-3.2) format to represent multiple signatures with all parameter values identical except `"x5c"`.
-    - The signer may have has more than one certificate (e.g., participation in more than one trust community)
+     - The signer may have has more than one certificate (e.g., participation in more than one trust community)
   - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
-
     1. The KeyUsage should include 'DigitalSignature'
     1. The Issuer should be a trusted CA for the Consumer
     1. The Subject (:thinking_face: or Subject Alternative Name (SAN)) should match the data Source
@@ -187,5 +180,9 @@ In these examples, a detached JWS signature is created using a signer's private 
   The Document level signatures occurs when performing Task based requests where signatures are required and the returned results are individual fhir resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case the digital signature represents a practitioner attesting that the information is true and accurate.
 
 ---
+
+[^first]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
+[^second]: [RFC7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015,
+
 
 {% include link-list.md %}
