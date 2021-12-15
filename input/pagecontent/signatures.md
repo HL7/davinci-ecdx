@@ -113,7 +113,7 @@ In addition to the electronic signature rules listed in the previous section, fo
    - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
       1. The KeyUsage should include 'DigitalSignature'
       1. The Issuer should be a trusted CA for the Consumer
-      1. The Subject (:thinking_face: or Subject Alternative Name (SAN)) should match the data Source
+      1. The Subject (or Subject Alternative Name (SAN)) should match the data Source
       1. The Validity Dates should be appropriate/long enough for as determined by the business partners.
 
 ##### Sender/Signer Steps
