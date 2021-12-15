@@ -300,7 +300,7 @@ The following example repeats Scenario 1 above, however a signature is required.
   - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created.
 
-{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example *Signed* Task Based Transaction' %}
+{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example Signed Task Based Transaction' %}
 
 </div>
 
