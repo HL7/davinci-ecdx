@@ -69,7 +69,7 @@ list:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider-data-exchange)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/exchanging-clinical-data.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/background.html#provider-to-provider)
-      1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) See Changes:
+      1. **Applied**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) See Changes:
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/direct_query#signatures.html)
          - [Here](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approache#signatures.html)
@@ -177,7 +177,7 @@ list:
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1background.html#provider-to-provider-data-exchange)
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1exchanging-clinical-data.html)
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1background.html#provider-to-provider)
-      1. **Triaged**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) See Changes:
+      1. **Applied**: Please clarify whether any human involvement is required, and an example, as well as define the term fulfillment as it relates to attestation. ([FHIR-30816](https://jira.hl7.org/browse/FHIR-30816)) See Changes:
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1signatures.html)
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1direct_query#signatures.html)
          - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1task-based-approache#signatures.html)
