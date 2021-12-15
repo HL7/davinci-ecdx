@@ -186,4 +186,6 @@ In these examples, a detached JWS signature is created using a signer's private 
 
   The Document level signatures occurs when performing Task based requests where signatures are required and the returned results are individual fhir resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case the digital signature represents a practitioner attesting that the information is true and accurate.
 
+---
+
 {% include link-list.md %}
