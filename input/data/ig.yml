@@ -210,6 +210,15 @@ definition:
         name: CDex Work Queue Value Set
         reference:
             reference: ValueSet/cdex-work-queue
+    -   description: Digital signature example showing how a image file can be use
+            to sign a document Bundle.  The CDEX use case would be the target resource
+            in response to a Task-based request where an digital signature was required.  If
+            no signature was required, the response would typically be in the form
+            of an individual resource.
+        exampleBoolean: true
+        name: CDEX Document with Digital Signature Example
+        reference:
+            reference: Bundle/cdex-document-digital-sig-example
     -   description: Electronic signature example showing how a image file can be
             use to sign a document Bundle.  The CDEX use case would be the target
             resource in response to a Task-based request where an electronic signature
