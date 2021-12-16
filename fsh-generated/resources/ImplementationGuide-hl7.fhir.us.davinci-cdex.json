@@ -82,7 +82,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-server"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Server* mode when  responding to a  Data Source  (often an EHR) or one of its proxies during a clinical data exchange.   This includes the following interactions:\n\n1. Responding to a query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to Subscription Notification posted to it endpoint updating the status of a Task",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Server* mode when  responding to a  Data Source  (often an EHR) or one of its proxies during a clinical data exchange.   This includes the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to subscription notification posted to it endpoint updating the status of a task\n1. Responding to `$submit-attachment` operation.",
         "exampleBoolean": false,
         "name": "Data Consumer Server CapabilityStatement"
       },
@@ -90,7 +90,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during a clinical data exchange with a Data Consumer. This includes the following interactions:\n\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest\n1. Posting a subscription notification to a Data Consumer endpoint updating the status of a Task",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during a clinical data exchange with a Data Consumer. This includes the following interactions:\n1. POSTing the `$submit-attachment` operation to exchange clinical data using a FHIR based Attachments transaction.\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n1. Posting a subscription notification to a Data Consumer endpoint updating the status of a Task.",
         "exampleBoolean": false,
         "name": "Data Source Client CapabilityStatement"
       },
@@ -146,7 +146,7 @@
         "reference": {
           "reference": "Bundle/cdex-document-digital-sig-example"
         },
-        "description": "Digital signature example showing how it used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "description": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Digital Signature Example",
         "exampleBoolean": true
       },

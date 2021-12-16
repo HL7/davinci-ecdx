@@ -122,7 +122,9 @@ definition:
 
             1. POSTing a Subscription resource
 
-            1. Polling a Task resource'
+            1. Polling a Task resource
+
+            '
         exampleBoolean: false
         name: Data Consumer Client CapabilityStatement
         reference:
@@ -133,11 +135,13 @@ definition:
             data exchange.   This includes the following interactions:
 
 
-            1. Responding to a query for Authorization information represented by
+            1. Responding to a query for authorization information represented by
             a CommunicationRequest or ServiceRequest
 
-            1. Responding to Subscription Notification posted to it endpoint updating
-            the status of a Task'
+            1. Responding to subscription notification posted to it endpoint updating
+            the status of a task
+
+            1. Responding to `$submit-attachment` operation.'
         exampleBoolean: false
         name: Data Consumer Server CapabilityStatement
         reference:
@@ -147,12 +151,14 @@ definition:
             a clinical data exchange with a Data Consumer. This includes the following
             interactions:
 
+            1. POSTing the `$submit-attachment` operation to exchange clinical data
+            using a FHIR based Attachments transaction.
 
             1. Query for Authorization information represented by a CommunicationRequest
-            or ServiceRequest
+            or ServiceRequest.
 
             1. Posting a subscription notification to a Data Consumer endpoint updating
-            the status of a Task'
+            the status of a Task.'
         exampleBoolean: false
         name: Data Source Client CapabilityStatement
         reference:
@@ -210,7 +216,7 @@ definition:
         name: CDex Work Queue Value Set
         reference:
             reference: ValueSet/cdex-work-queue
-    -   description: Digital signature example showing how it used to sign a FHIR
+    -   description: Digital signature example showing how it is used to sign a FHIR
             Document.  The CDEX use case would be the target resource in response
             to a Task-based request where an digital signature was required.  If no
             signature was required, the response would typically be in the form of
