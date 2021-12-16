@@ -9,7 +9,7 @@ title: Attachments
 
 <div markdown="1" class="new-content">
 
-This page documents how to exchange clinical data using a FHIR based Unsolicited Attachments transaction.
+This page documents how to exchange clinical data using a FHIR based Attachments transaction.
 
 <div markdown="1" class="stu-note">
 
