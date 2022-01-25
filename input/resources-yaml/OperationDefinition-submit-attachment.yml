@@ -8,9 +8,9 @@ status: draft
 kind: operation
 date: '2021-12-02T20:24:41-08:00'
 description: |
-  **The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
+  **The following content is DRAFT, because it has not yet undergone HL7 balloting.**
 
-  This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+  This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more Attachments as FHIR Resources
@@ -31,7 +31,7 @@ comment: |
 
   The following rules apply when using `$submit-attachment`:
   * The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error
-  * For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type for and **SHOULD** support other types.
+  * For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
   * When processing messages, a server may return one of several status codes:
@@ -97,5 +97,5 @@ parameter:
     min: 1
     max: '*'
     documentation: >-
-      The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.  Servers **SHALL** support  DocumentReference resource type for and **SHOULD** support other types.
+      The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.  Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     type: Resource

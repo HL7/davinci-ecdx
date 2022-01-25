@@ -17,36 +17,37 @@ definition:
             nameUrl: index.html
             title: Home
         -   generation: markdown
-            nameUrl: attachments.html
-            title: Attachments
-        -   generation: markdown
             nameUrl: background.html
             title: Background
         -   generation: markdown
-            nameUrl: direct-query.html
-            title: Direct Query
-        -   generation: markdown
-            nameUrl: downloads.html
-            title: Downloads
-        -   generation: markdown
-            nameUrl: examples.html
-            title: Examples
-        -   generation: markdown
-            nameUrl: exchanging-clinical-data.html
-            title: Exchanging Clinical Data
-        -   generation: markdown
-            nameUrl: security.html
-            title: Security
+            nameUrl: specification.html
+            page:
+            -   generation: markdown
+                nameUrl: exchanging-clinical-data.html
+                title: Exchanging Clinical Data
+            -   generation: markdown
+                nameUrl: direct-query.html
+                title: Direct Query
+            -   generation: markdown
+                nameUrl: task-based-approach.html
+                title: Task Based Approach
+            -   generation: markdown
+                nameUrl: attachments.html
+                title: Attachments
+            title: Specification
         -   generation: markdown
             nameUrl: signatures.html
             title: Signatures
         -   generation: markdown
-            nameUrl: task-based-approach.html
-            title: Task Based Approach
+            nameUrl: security.html
+            title: Security and Privacy
+        -   generation: markdown
+            nameUrl: downloads.html
+            title: Downloads
         title: Table of Contents
     parameter:
     -   code: copyrightyear
-        value: 2020+
+        value: 2022+
     -   code: releaselabel
         value: STU1 Release
     -   code: path-resource
@@ -92,20 +93,20 @@ definition:
     -   code: path-history
         value: http://hl7.org/fhir/us/davinci-cdex/history.html
     resource:
-    -   description: "**The following content is to be considered DRAFT, because it\
-            \ has not yet undergone HL7 balloting.**\n\nThis operation is used to\
-            \ submit attachments for Claims or Prior Authorization. This operation\
-            \ accepts the clinical attachments and the necessary information needed\
-            \ to re-attach them to the claim or prior authorization, and returns a\
-            \ transaction layer http response.  This operation can be used by any\
-            \ HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters\
-            \ are:\n1. One or more Attachments as FHIR Resources\n1. Data elements\
-            \ for reassociation to the Claim/Prior Authorization\n    - What are the\
-            \ attachments for:\n      - Claim\n      - Prior Authorization\n    -\
-            \ A unique claim/prior authorization identifier*\n    - Optionally, one\
-            \ or more unique claim line item identifiers\n    - A unique organization/location\
-            \ identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n\
-            \    - A unique Patient member identifier\n\nThere are no output parameters.\n"
+    -   description: "**The following content is DRAFT, because it has not yet undergone\
+            \ HL7 balloting.**\n\nThis operation is used to submit attachments for\
+            \ Claims or Prior Authorization. This operation accepts the clinical attachments\
+            \ and the necessary information needed to re-attach them to the claim\
+            \ or prior authorization, and returns a transaction layer HTTP response.\
+            \  This operation can be used by any HTTP end-point, not just FHIR RESTful\
+            \ servers.\n\nThe input parameters are:\n1. One or more Attachments as\
+            \ FHIR Resources\n1. Data elements for reassociation to the Claim/Prior\
+            \ Authorization\n    - What are the attachments for:\n      - Claim\n\
+            \      - Prior Authorization\n    - A unique claim/prior authorization\
+            \ identifier*\n    - Optionally, one or more unique claim line item identifiers\n\
+            \    - A unique organization/location identifier (e.g., NPI)\n    - A\
+            \ unique provider identifier (e.g., NPI)\n    - A unique Patient member\
+            \ identifier\n\nThere are no output parameters.\n"
         exampleBoolean: false
         name: Submit Attachment Operation
         reference:
@@ -177,7 +178,8 @@ definition:
             reference: CapabilityStatement/data-source-server
     -   description: Codes temporarily defined as part of the CDex implementation
             guide.  These will eventually migrate into an officially maintained terminology
-            (likely HL7's UTG code systems).
+            (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code
+            systems).
         exampleBoolean: false
         name: CDex Temporary Code System
         reference:
@@ -296,12 +298,12 @@ definition:
         name: Example of Completed Task Request for Signed Data
         reference:
             reference: Task/cdex-example1s-query-withsig-completed
-    -   description: Task to seek a patient's HbA1c test results.
+    -   description: Task to seek a patient's HbA1c test results with a failed status.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: Scenario 3 Failed Task Example
         reference:
             reference: Task/cdex-example2-query-failed
-    -   description: Task to seek a patient HbA1c test results.
+    -   description: Task to seek a patient's HbA1c test results.
         exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
         name: Scenario 3 Task Example
         reference:

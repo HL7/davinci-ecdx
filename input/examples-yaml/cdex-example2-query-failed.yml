@@ -5,7 +5,7 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Scenario 3 Failed Task Example
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Task to seek a patient's HbA1c test results.
+    valueMarkdown: Task to seek a patient's HbA1c test results with a failed status.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:

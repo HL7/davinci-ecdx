@@ -3,9 +3,30 @@
 Publishing Punch list:
 
 - [X] Finish [Resolving Trackers](https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801)
-- [ ] Finish Applying Resolved Trackers
+- [X] Finish Applying Resolved Trackers
 - [ ] technical QA
 - [ ] ProofRead
+  - [ ] update to US Core 3.1.1
+  - [ ] update to published version of HREX
+  - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0
+  - [ ] Update PL
+  - [ ] Remove all new content highlighting
+  - [X] home
+  - [X] downloads
+  - [X] artifacts
+  - [X] Attachments
+  - [X] $submit-attachments
+  - [X] security and privacy
+  - [ ] background
+  - [ ] Exchanging Clinical Data
+  - [ ] Direct Query
+  - [ ] Task Based Approach
+  - [ ] Attachments
+  - [ ] signatures
+  - [ ] Profiles
+  - [ ] Terminology
+  - [ ] CapabilityStatements
+  - [ ] Examples
 - [X] Reconciliation Spreadsheet
 - [ ] publication request
 - [ ] publication checklist
@@ -23,7 +44,7 @@ This IG provides detailed guidance that helps implementers use FHIR-based intera
  - Requesting additional data to support claim submission, medical necessity and other reasons for attachments between payers and providers
  - Gathering information for Quality programs and Risk Adjustment between payers and providers
  - Exchanging clinical data between referring providers
- - Sending unsolicited and solicited attachments for claims and prior authorization
+ - Sending attachments for claims and prior authorization
 
 In the context of this guide, "clinical data" means *any* information a provider holds in a patient's health record. The format of the data exchanged is not limited to FHIR resources, but includes C-CDA documents, pdfs, text files and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR Bundle (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)), and clinical data such as a specific FHIR resource.
 
@@ -36,11 +57,7 @@ This IG provides several *general* examples to illustrate the different approach
 
 This Implementation Guide is supported by the [Da Vinci] initiative which is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. Like all Da Vinci Implementation Guides, it follows the [HL7 Da Vinci Guiding Principles] for exchange of patient health information.  The guide is based upon the prior work from the [US Core] and [Da Vinci Health Record Exchange (HRex)] Implementation Guides. As illustrated in figure 1 below, this guide is built on top of FHIR and other implementation guides that provide more and more focused use cases by constraining profiles and extending functionality to cover gaps.
 
-<div markdown="1" class="new-content">
-
 {% include img.html img="profile-pyramid.svg" caption="Figure 1: Relationship of CDex to Other FHIR Standards" %}
-
-</div>
 
 Changes to this specification are managed by the sponsoring HL7 [Patient Care (PC)] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 

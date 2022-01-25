@@ -8,7 +8,7 @@ date: '2021-10-26T18:38:56-07:00'
 description: >-
   Codes temporarily defined as part of the CDex implementation guide.  These
   will eventually migrate into an officially maintained terminology (likely
-  HL7's UTG code systems).
+  HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).
 caseSensitive: true
 content: complete
 concept:

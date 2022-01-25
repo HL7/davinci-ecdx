@@ -29,12 +29,27 @@ dependencies:
     id: uscore
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: 0.2.0
+    version: 0.2.0  # *TODO* change to published version prior to publishing
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
     version: 1.0.0
     id: pas
+
+pages:
+  index.md:
+    title: Home
+  background.md:
+  specification.md:
+    exchanging-clinical-data.md:
+    direct-query.md:
+    task-based-approach.md:
+    attachments.md:
+  signatures.md:
+  security.md:
+    title: Security and Privacy
+  downloads.md:
+
 parameters:
   path-resource:
     - input/resources
@@ -59,7 +74,7 @@ parameters:
   generate:
     - xml
     - json
-copyrightyear: '2020+'
+copyrightyear: '2022+'
 releaselabel: STU1 Release
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

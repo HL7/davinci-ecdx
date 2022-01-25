@@ -6,31 +6,27 @@ title: Attachments
 
 # Attachments -->
 
-
-<div markdown="1" class="new-content">
-
-This page documents how to exchange clinical data using a FHIR based Attachments transaction.
+This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer.
 
 <div markdown="1" class="stu-note">
 
-**The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
-</div>
+**The following content is DRAFT, because it has not yet undergone HL7 balloting.**
 </div>
 
 ### Attachments for Claims or Prior Authorization
 
-Today claims come through X12, portal submission, or other ways.  The additional information to support these claims (a.k.a. attachments) come through X12 transactions, fax, portal, other ways *before, with or after* a claim.  In contrast to the Direct Query and Task Based approach, the CDex attachments for claims transaction is not a response to a FHIR-based request for clinical data. Instead it is either based on a set of pre-defined rules by the payer or jurisdictional mandates ("Unsolicited"), or the request for attachments comes through an X12 transaction ("Solicited").  The attachment is then re-attached to the claim and then processed.  Similarly for Prior Authorization, supporting information may be submitted with the prior authorization or in response to a request for more information after the initial submission.
+Today claims typically come through [X12 transactions] or portal submissions.  The additional information to support these claims (a.k.a. attachments) comes through X12 transactions, fax, portal, or other ways *before, with or after* a claim.  In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a FHIR-based request for clinical data. Instead the clinical data it sent directly to the payer based on a set of pre-defined rules by the payer or jurisdictional mandates ("unsolicited"), or the request for attachments comes through an X12 transaction ("solicited").  The attachment is then re-attached to the claim and processed.  Similarly for Prior Authorization, the CDex Attachments transaction is used to submit supporting information with the prior authorization or in response to a request for more information after the initial submission.
 
-This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer.  The following scenarios illustrate where CDex Attachments transaction can be used:
+CDex Attachments transactions can be used in the following scenarios:
 
 1. Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
 1. Attachments for a claim, because a Provider thinks the Payer will want it.
 1. A Provider is under review and needs to provide additional information for all claims.
 1. Filing a claim for two surgeons in one surgery.
-1. Submit additional information for prior authorization.
+1. Submitting additional information for prior authorization.
 
-In all these case, the payer will require a trading partner agreement for sending attachments based based on predefined rules.
-{:.warning}
+In all these case, the payer will require a trading partner agreement for sending attachments based on predefined rules.
+{:.bg-warning}
 
 ### `$submit-attachment` Operation
 

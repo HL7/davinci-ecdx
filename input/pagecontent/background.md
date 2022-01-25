@@ -4,31 +4,23 @@ Da Vinci is a private sector initiative that addresses the needs of the Value Ba
 
 ### What Do Payers Do with Clinical Information?
 
-Payers want to create a clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations. Payers may use this clinical record to give providers information that may assist in care coordination.
+Payers require clinical data from  providers who order or provide services. They use this data to document prior authorization, process claims, audit submitted claims, and to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes.
 
-Payers also require clinical data from the provider ordering or providing services to document prior authorization, claims processing, audit submitted claims, to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes.
-{:.new-content}
+Payers also want to create a clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations. Payers may use this clinical record to give providers information that may assist in care coordination.
 
-<div markdown="1" class="new-content">
+
 
 #### Example Scenarios
 
 - Payer requests *attachments* to support a claim submission.
-
 - Payer requests *attachments* to support medical necessity or a coverage rule.
-
 - Payer requests *attachments* to support a claims audit.
-
 - Payer requests additional information for prior authorization.  (See the [Da Vinci - Prior Authorization Support] for more information)
-
-- Payer requests patient health record information to support a HEDIS/Stars quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
-
-- Payer requests patient health record information to support their Risk Adjustment submissions to CMS.
-
+- Payer requests patient health record information to support a [HEDIS/Stars] quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
+- Payer requests patient health record information to support their Risk Adjustment submissions to Centers for Medicare and Medicaid Services(CMS).
 - Payer requests patient health record information to support their member records. (Some payers create a clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.)
-
 - Payers requests patient health record information to meet new regulatory requirements (e.g., promoting patient access)
-</div>
+
 
 <div markdown="1" class="new-content">
 
