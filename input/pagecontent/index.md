@@ -6,26 +6,28 @@ Publishing Punch list:
 - [X] Finish Applying Resolved Trackers
 - [ ] technical QA
 - [ ] ProofRead
-  - [ ] update to US Core 3.1.1
+  - [X] update to US Core 3.1.1
   - [ ] update to published version of HREX
-  - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0
-  - [ ] Update PL
-  - [ ] Remove all new content highlighting
+  - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0 todo
+  - [X] Update PL
+  - [ ] Update Jira file pending...
+  - [X] final QA
+  - [X] Remove all new content highlighting
   - [X] home
   - [X] downloads
   - [X] artifacts
   - [X] Attachments
   - [X] $submit-attachments
   - [X] security and privacy
-  - [ ] background
-  - [ ] Exchanging Clinical Data
-  - [ ] Direct Query
-  - [ ] Task Based Approach
-  - [ ] Attachments
-  - [ ] signatures
-  - [ ] Profiles
-  - [ ] Terminology
-  - [ ] CapabilityStatements
+  - [X] background
+  - [X] Exchanging Clinical Data
+  - [X] Direct Query
+  - [X] Task Based Approach
+  - [X] Attachments
+  - [X] Signatures
+  - [X] Profiles
+  - [X] Terminology
+  - [X] CapabilityStatements
   - [ ] Examples
 - [X] Reconciliation Spreadsheet
 - [ ] publication request

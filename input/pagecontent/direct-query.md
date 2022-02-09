@@ -17,8 +17,7 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 
 ### Discovery of Patient FHIR IDs
 
-The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR_id.
-{:.new-content}
+The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR id.
 
 ### Direct Query Transaction Scenarios
 
@@ -26,17 +25,17 @@ The following example transactions show scenarios of using direct query to get c
 
 #### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claim submission.
 
 **Preconditions and Assumptions:**
 
-- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
-- Payer A knows the *logical id* of the resource for Patient B
+- Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful queries
+- Payer A knows the FHIR id of the Patient resource for Patient B
 - Payer A knows the appropriate codes for searching for active conditions
 
-Following guidance in US Core searches for all active conditions using the combination of the patient and clinical-status search parameters:
+Following guidance in US Core, a search for all active conditions uses the combination of the patient and clinical-status search parameters:
 
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
 
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
@@ -49,12 +48,12 @@ Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test result
 **Preconditions and Assumptions:**
 
 - Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
-- Payer A knows the *logical id* of the resource for Patient B
+- Payer A knows the FHIR id of the Patient resource for Patient B
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 *Hemoglobin A1c/Hemoglobin.total in Blood*)
 
 Following guidance in US Core searches for all HbA1c test results by a date range using using the combination of the patient and code and date search parameters:
 
-`GET [base]/Observation?patient=[reference]&code=[code]&date=gt[date]`
+`GET [base]/Observation?patient=[FHIR id]&code=[code]&date=gt[date]`
 
 {% include examplebutton_default.html example="direct-query2-scenario" b_title = "Click Here To See Example Direct Query for Patient's HbA1c Results after 2020-01-01" %}
 
@@ -62,14 +61,14 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 #### Scenario 3
 
-Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success">to support a claim submission</span>.
+Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C to support a claim submission.
 
 **Preconditions and Assumptions:**
 
 - Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
-- Payer A knows the *logical id* of the resource for Patient B
-- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 *History & Physical Note*)
-- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case then the Payer can search using the date parameter and select the most recent history and physical exam notes for the query results.)
+- Payer A knows the FHIR id of the Patient resource for Patient B
+- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA documents (34117-2 *History & Physical Note*)
+- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent history and physical exam notes for the query results.)
 
 Getting the latest History and Physical is typically a two step process:
 
@@ -78,25 +77,23 @@ Getting the latest History and Physical is typically a two step process:
 
 Following the US Core Clinical Notes Guidance section, Payer searches for History and Physical CCDA document using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets a particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
 
-`GET [base]/DocumentReference?patient=[id]&type=[type-code]&_sort=-period&_count=1`
+`GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
 
 The actual CCDA document is referenced in `DocumentReference.content.attachment.url` and can be fetched using a RESTful GET.
 
-`GET [DocumentReference.content.attachment.url]`
+`GET [base]/[url]`
 
 {% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
 
-<div markdown="1" class="new-content">
-
 ### Provenance
 
-To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested as documented in US Core [Basic Provenance] page. When returning provenance the [HRexProvenance Profile] should be used. An example illustrating this transaction is shown below.
+To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested as documented in US Core's [Basic Provenance] page. When returning provenance the [HRex Provenance Profile] should be used. An example illustrating this transaction is shown below.
 
 #### Example of Direct Query Response Including Provenance
 
 This example is the same as Scenario 1 above except that it also includes the corresponding Provenance records.
 
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
 
 {% include examplebutton_default.html example="direct-query1p-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions and Provenance records" %}
 
@@ -115,7 +112,7 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
 
 - *Pre-negotiate* the signature requirement with the organization representing the Data Source/Responder.
    - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* search query response will be signed.
-   - Conversely, it **SHOULD** be assumed that no search query response will be signed unless there exists a pre-negotiated agreement
+   - Conversely, it **SHOULD NOT** be assumed that a query response will be signed unless there exists a pre-negotiated agreement
    - Unlike Task based queries, the actual FHIR queries won't indicate that a signature is required.
    - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
 - Follow the documentation in the [Signatures] page for validating signatures.
@@ -126,7 +123,7 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
 - Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the the signature.
 - Be signed by the organization that is responding the the query.
 - Follow the documentation in the [Signatures] page for producing signatures.
-- As discussed in the [What is Signed] section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
+- As discussed in the [What is Signed] section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
 
 <div markdown="1" class="bg-warning">
 
@@ -155,18 +152,15 @@ Because the signature is represented by `Bundle.signature`, this precludes using
 
 </div>
 
-
 #### Example of *Signed* Direct Query Response
 
-This example is the same as Scenario 1 above except that it also includes a digital signature. See the [Signatures] page for complete worked example on how the signature was created.
+This example is the same as Scenario 1 above except that it also includes a digital signature. See the [Signatures] page for a complete worked example on how the signature was created and verified.
 
 **Preconditions and Assumptions:**
 - In addition to the Scenario 1 assumptions above, Payer A pre-negotiated with Provider B that digital signatures are required for direct query responses.
 
-`GET [base]/Condition?patient=[reference]&clinical-status=active,recurrance,remission`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
 
 {% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example *Signed* Direct Query Response" %}
-
-</div>
 
 {% include link-list.md %}

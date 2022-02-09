@@ -106,7 +106,7 @@ definition:
             \ identifier*\n    - Optionally, one or more unique claim line item identifiers\n\
             \    - A unique organization/location identifier (e.g., NPI)\n    - A\
             \ unique provider identifier (e.g., NPI)\n    - A unique Patient member\
-            \ identifier\n\nThere are no output parameters.\n"
+            \ identifier\n\nThere are no output parameters."
         exampleBoolean: false
         name: Submit Attachment Operation
         reference:
@@ -123,9 +123,7 @@ definition:
 
             1. POSTing a Subscription resource
 
-            1. Polling a Task resource
-
-            '
+            1. Polling a Task resource'
         exampleBoolean: false
         name: Data Consumer Client CapabilityStatement
         reference:
@@ -187,12 +185,13 @@ definition:
     -   description: "This Task profile is based upon the [Da Vinci Hrex Task Data\
             \ Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).\
             \ It adds the following additional constraints for CDEX:\n- A 'meta.tag'\
-            \ element represents work-queue hints.\n- In `Task.input`, represent the\
-            \ types of documents to be returned using the extensible LOINC\xAE Document\
-            \ types value set.\n- In `Task.input`, represent a flag to indicate whether\
-            \ the requested data requires a signature.\n- In `Task.input`, represent\
-            \ the purpose of use for the requested data using an extensible *CDex\
-            \ Purpose of Use Value Set*.\n"
+            \ element representing work-queue hints.\n- A `Task.input` element slice\
+            \ representing the types of documents to be returned using the extensible\
+            \ LOINC\xAE Document types value set.\n- A `Task.input` element slice\
+            \ representing a flag to indicate whether the requested data requires\
+            \ a signature.\n- A `Task.input` element slice representing the purpose\
+            \ of use for the requested data using an extensible *CDex Purpose of Use\
+            \ Value Set*."
         exampleBoolean: false
         name: CDex Task Data Request Profile
         reference:

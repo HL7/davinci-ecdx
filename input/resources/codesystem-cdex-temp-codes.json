@@ -38,7 +38,7 @@
         {
             "code": "social-care",
             "display": "Social Care",
-            "definition": "TODO"
+            "definition": "Request for data from payers to support the non-medical social needs of individuals, especially the elderly, vulnerable or with special needs."
         },
         {
             "code": "authorization-other",

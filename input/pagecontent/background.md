@@ -4,11 +4,7 @@ Da Vinci is a private sector initiative that addresses the needs of the Value Ba
 
 ### What Do Payers Do with Clinical Information?
 
-Payers require clinical data from  providers who order or provide services. They use this data to document prior authorization, process claims, audit submitted claims, and to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes.
-
-Payers also want to create a clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations. Payers may use this clinical record to give providers information that may assist in care coordination.
-
-
+Payers require clinical data from  providers who order or provide services. They use this data to document prior authorization, process and audit claims, and to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. Payers also want to create a clinical record of their members to improve care coordination and provide optimum medical care. For example with this information they can reduce redundant care, shift to more proactive and timely care, and make better informed and more accurate medical treatment and care planning recommendations. Payers may use this clinical record to give providers information that may assist in care coordination.
 
 #### Example Scenarios
 
@@ -16,22 +12,19 @@ Payers also want to create a clinical record of their members to improve care co
 - Payer requests *attachments* to support medical necessity or a coverage rule.
 - Payer requests *attachments* to support a claims audit.
 - Payer requests additional information for prior authorization.  (See the [Da Vinci - Prior Authorization Support] for more information)
-- Payer requests patient health record information to support a [HEDIS/Stars] quality program. <!--For example, by examining the record for care coordination information they may improve performance on the HEDIS TRC- Transitions of Care measure which looks at 1) notification of inpatient admission, 2) receipt of discharge information, 3) patient engagement after inpatient discharge and 4) medication reconciliation post-discharge.-->
-- Payer requests patient health record information to support their Risk Adjustment submissions to Centers for Medicare and Medicaid Services(CMS).
-- Payer requests patient health record information to support their member records. (Some payers create a clinical record for each of their members to facilitate data exchange with providers. Payers use this clinical record to give providers the adequate information to execute care coordination decisions.)
-- Payers requests patient health record information to meet new regulatory requirements (e.g., promoting patient access)
-
-
-<div markdown="1" class="new-content">
+- Payer requests patient health record information to support their Risk Adjustment submissions to Centers for Medicare and Medicaid Services (CMS).
+- Payer requests patient health record information to support a [HEDIS] or CMS Five-Star Quality Measure Rating quality program.
+- Payer requests patient health record information to support their member records.
+- Payers requests patient health record information to meet new regulatory requirements (for example, promoting patient access).
 
 ### Provider to Provider Data Exchange
 
- Providers commonly need and request information from other providers about their patients.  For example, when referring a patient, the referred-to provider needs the order and supporting documentation and the referring provider needs the results from the referral.  Although this guide focuses on payor to provider to interactions, the technical exchange is no different than a provider to provider interaction.
+ Providers commonly need and request information from other providers about their patients.  Although this guide focuses on payor to provider to interactions, the technical exchange is no different than a provider to provider interaction.
 
-#### Example Scenario
+#### Example Scenarios
 
  - Referred-to provider solicits additional clinical information from referring provider to support performing the requested service.
-</div>
+ - Referring provider needs the results from the Referred-to provider.
 
 ### What Information is Needed?
 
@@ -49,30 +42,26 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 
 ### Where Does CDEX Fit in the Da Vinci Project?
 
-<div markdown='1' class="new-content">
-There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  CDex not intended to supplant existing standards that already define how to share clinical information.  However, there are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex may be used to request clinical data from a provider when:
+There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
 
-- an alternative is needed to cover some aspect of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses prefetch requests, the CDS service could use CDex to request the data instead.
-- there is a specific exchange is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS) FHIR IG], the Payer could requests additional information for prior authorization using CDex.
-- the other IG has not been or can not be implemented for the use case.  For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of Quality Measures. CDex can be used when:
+- An alternative is needed to cover some aspect of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses prefetch requests, the CDS service could use CDex to request the data instead.
+- There is a specific exchange is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS) FHIR IG], the Payer could requests additional information for prior authorization using CDex.
+- The other IG has not been or can not be implemented for the use case.  For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of Quality Measures. CDex can be used when:
   1. The measure is not yet implementable using DEQM
   1. A Provider has not implemented DEQM
   1. Additional information is required for an audit of the Quality Measure.
 
 {% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
-</div>
-
-<div markdown='1' class="new-content">
 
 ### Workflow Overview
 
-FHIR offers numerous architectural approaches for sharing data between systems. The guide focuses on **three** FHIR transaction approaches for requesting information:
+FHIR offers numerous architectural approaches for sharing data between systems. This guide focuses on **three** FHIR transaction approaches for exchanging clincal data:
 
 1. **[Direct Query] (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
-1. **[Task Based Approach]:** Payer identifies the 'type' of information desired and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends supporting information for claims or prior authorization directly to Payer using a "push" based operation.
+1. **[Task Based Approach]:** Payer requests the information desired using the FHIR *Task* resource and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
+1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends supporting information for claims or prior authorization directly to Payer using a "push" based FHIR operation.
 
-See the Specification pages for a detailed description of the technical workflow and API guidance.
+See the [Specification] pages for a detailed description of the technical workflow and API guidance.
 
 #### Direct Query and Task-Based Workflow
 
@@ -98,11 +87,13 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 
 <div markdown="1" class="stu-note">
 
-**The following content is to be considered DRAFT, because it has not yet undergone HL7 balloting.**
+**The following content is DRAFT, because it has not yet undergone HL7 balloting.**
+
+</div>
 
 #### Attachments Workflow
 
-Figure 4 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Attachments* workflow.  
+Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Attachments* workflow.  
 
 {% include img.html img="workflow-attachments.svg" caption="Figure 4" %}
 
@@ -113,14 +104,10 @@ Figure 4 below illustrates the exchange of clinical data between a Payer (or Pro
 
 #### Steps
 
-1. The data source sends clinical information to the data consumer.
-   -  Supporting information (attachments) for a claim or prior authorization
-   - Data Elements for association to a claim or prior authorization. (for example, member id and Claim id)
+1. The data source sends attachments to the data consumer.
+   - Supporting information for a claim or prior authorization
+   - Data Elements for association to a claim or prior authorization. (for example, member id and claim id)
 1. Payer accepts attachments
-1. Out of Scope: Payer processes the claim or prior authorization.
-
-
-</div>
-</div>
+1. *Out of Scope*: Payer processes the claim or prior authorization.
 
 {% include link-list.md %}

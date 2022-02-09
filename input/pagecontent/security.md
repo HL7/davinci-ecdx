@@ -15,7 +15,7 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
-1. User scopes **SHALL** be used as defined in the the [SMART on FHIR Framework] and/or the [Bulk Data exchange IG] to restrict access to the relevant patients for a given Data Consumer.
+1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer.
 
 1. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.
 
