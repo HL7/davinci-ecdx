@@ -4,6 +4,12 @@ tags: CDEX
 title: Generating and Verifying *Signed* Resources
 --- -->
 
+<div markdown="1" class="stu-note">
+
+**The following page content is DRAFT.  It has not yet undergone HL7 balloting.**
+
+</div>
+
 This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 
 ### Generating and Verifying *Signed* Resources
@@ -103,27 +109,34 @@ In addition to the electronic signature rules listed in the previous section, fo
    >- When FHIR Resources are signed, the signature is across the [Canonical JSON] form of the resource(s)
    >- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
    >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
-3. Additional rules for this guide:
+
+    There is no "CommitmentTypeIndication" element in JWS. This is an error in the FHIR specification and a tracker ([FHIR-36158]) has been logged. As documented below, `Signature.type` shall contain the value "1.2.840.10065.1.12.1.5" (Verification Signature).
+    {:.stu-note}
+
+3. Additional JWS rules for this guide:
    - **SHALL** support JWS compact serialization format for single signatures
      - Note that the complete JWS is in the form *Header.Payload.Signature* with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value must be base64 encoded *again* as indicated above. Otherwise it will fail validation since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ does not include the period ('.') character.
    - **SHOULD** support [JWS JSON Serialization] format to represent multiple signatures with all parameter values identical except `"x5c"`.
      - The signer may have more than one certificate (for example, the signer participates in more than one trust community)
-   - **SHALL** use [X.509 certificates](https://www.itu.int/rec/T-REC-X.509) to verify the identity of the entity signing the Bundle
-      1. The KeyUsage should include 'DigitalSignature'
-      1. The Issuer should be a trusted CA for the Consumer
-      1. The Subject (or Subject Alternative Name (SAN)) should match the data Source
-      1. The Validity Dates should be appropriate/long enough as determined by the business partners.
+  - **SHALL** use [X.509 certificates] to verify the identity of the entity signing the Bundle
+    1. The KeyUsage should include 'DigitalSignature'
+    1. The Issuer should be a trusted CA for the Consumer
+    1. The Subject (or Subject Alternative Name (SAN)) should match the data Source
+    1. The Validity Dates should be appropriate/long enough as determined by the business partners.
+   - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well documented and standardized canonicalization algorithm, with multiple open-source implementation across several programming languages.
+     - The `Bundle.id`,`Bundle.metadata` and `Bundle.signature` elements on the root Bundle resource **SHALL** be removed prior to canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
+    <!--     1. The canonicalization algorithms defined in the FHIR specification *do not work* for the enveloped signatures that are being used in this guide.  -->
 
 ##### Sender/Signer Steps
 
 1. Prepare JWS Header
-    1.  **SHALL** have `"alg": "RS256"` (preferred) or some other JSON Web Algorithms (JWA) (see [RFC 7518]
-    2.  **SHALL** have` "kty": "RS"`, and `"use": "sig"`
-    3.  **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517](https://tools.ietf.org/html/rfc7517#section-4.7)).
+    1.  **SHALL** have `"alg": "RS256"` (preferred) or some other JSON Web Algorithms (JWA) (see [RFC 7518])
+    2.  **SHALL** have `"kty": "RS"`
+    3.  **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).
 The public key is listed in the first certificate in the `"x5c"` specified by the "Modulus" and "Exponent" parameters of the entry.
 1. Prepare JWS Payload
     1. Prepare valid FHIR Bundle
-    2. Create the [Canonical JSON] Bundle
+    2. Canonicalize the Bundle resource
     3. base64_url encode the payload
 4. Create the JWS signature using the supported algorithm.
 5. Remove the payload element from the JWS.
@@ -148,29 +161,29 @@ The following steps outline the process for verifying the Signature on a Bundle.
       -   a reference to a FHIR document and must be fetched from the referenced endpoint.
    3. For Attachments a FHIR Document is submitted in the operation payload.
 1. Remove the `Bundle.signature` element from the Bundle resource.
-5. Create a [Canonical JSON] Bundle.
-6. Transform the canonicalize Bundle to a base64-url format.
-7. Get the base64 encoded JWS  from the `Bundle.signature.data`  element
-8. Base64 decode the encoded JWS
-9. Insert the base64 encoded Bundle into the JWS payload element.
-10. Obtain public Key from the first certificate in JWS header `"x5c"` key
+1. Canonicalize the Bundle resource.
+1. Transform the canonicalize Bundle to a base64-url format.
+1. Get the base64 encoded JWS  from the `Bundle.signature.data`  element
+1. Base64 decode the encoded JWS
+1. Insert the base64 encoded Bundle into the JWS payload element.
+1. Obtain public Key from the first certificate in JWS header `"x5c"` key
     - base64 decode the key value
     - Use the "Subject Public Key Info"
-11. Verify Issuer, Validity Dates, Subject, and KeyUsage of certificate,
-12. Validate the JWS using the public key or the X.509 Certificate
+1. Verify Issuer, Validity Dates, Subject, and KeyUsage of certificate,
+1. Validate the JWS using the public key or the X.509 Certificate
 
 ##### Worked Examples
 
-Although [*self-signed* certificates](https://en.wikipedia.org/wiki/Self-signed_certificate) are used for the purpose of these examples, they are not recommended for production systems.
+Although [*self-signed* certificates] are used for the purpose of these examples, they are not recommended for production systems.
 {:.bg-warning}
 
 In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
 
-- [SearchSet Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Searchset_Bundle_Example.ipynb)
+- [SearchSet Bundle Example]
 
   The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-- [Document Bundle Example](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
+- [Document Bundle Example]
 
   The Document level signatures occurs when performing Task based requests or Attachments transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate.
 

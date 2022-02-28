@@ -94,4 +94,9 @@
 [JWS JSON Serialization]: https://datatracker.ietf.org/doc/html/rfc7515#section-3.2
 [X.509 certificates]: https://www.itu.int/rec/T-REC-X.509
 [RFC 7518]: https://tools.ietf.org/html/rfc7518
-[RFC 7517]: https://tools.ietf.org/html/rfc7517#section-4.7
+[RFC 7517]: https://tools.ietf.org/html/rfc7517
+[RFC 8785]: https://datatracker.ietf.org/doc/rfc8785
+[*self-signed* certificates]: https://en.wikipedia.org/wiki/Self-signed_certificate
+[SearchSet Bundle Example]: https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Searchset_Bundle_Example.ipynb
+[Document Bundle Example]: https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb
+[FHIR-36158]: https://jira.hl7.org/browse/FHIR-36158

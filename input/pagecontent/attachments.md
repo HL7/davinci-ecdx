@@ -6,12 +6,13 @@ title: Attachments
 
 # Attachments -->
 
-This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer.
-
 <div markdown="1" class="stu-note">
 
-**The following content is DRAFT, because it has not yet undergone HL7 balloting.**
+**The following page content is DRAFT.  It has not yet undergone HL7 balloting.**
+
 </div>
+
+This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer.
 
 ### Attachments for Claims or Prior Authorization
 

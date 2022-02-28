@@ -9,6 +9,8 @@ Publishing Punch list:
   - [X] update to US Core 3.1.1
   - [ ] update to published version of HREX
   - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0 todo
+  - [ ] Update Signatures to Draft status
+  - [ ] Update to Attachments section.
   - [X] Update PL
   - [ ] Update Jira file pending...
   - [X] final QA
@@ -24,11 +26,11 @@ Publishing Punch list:
   - [X] Direct Query
   - [X] Task Based Approach
   - [X] Attachments
-  - [X] Signatures
+  - [X] Signatures - included updates to Canonicalization!
   - [X] Profiles
   - [X] Terminology
   - [X] CapabilityStatements
-  - [ ] Examples
+  - [ ] Examples updated sig examples!
 - [X] Reconciliation Spreadsheet
 - [ ] publication request
 - [ ] publication checklist
@@ -40,6 +42,12 @@ Where possible, new and updated content will be highlighted with green text and 
 
 </div>
 {endraw}-->
+
+<div markdown="1" class="stu-note">
+
+**The attachment transaction and signature content is DRAFT.  It has not yet undergone HL7 balloting. The appropriate pages and sections are preceded with a STU-Note indicating the draft content.**
+
+</div>
 
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 
@@ -73,8 +81,8 @@ This Guide is divided into several pages which are listed at the top of each pag
   - [Exchanging Clinical Data]\: Exchanging Clinical data overview page.
   - [Direct Query]\: Documents how to exchange clinical data using the standard FHIR RESTful search.
   - [Task Based Approach]\: Documents how to exchange clinical data using the FHIR Task resource. This approach supports asynchronous workflows where human involvement to find/aggregate/filter/approve requests may be required.
-  - [Attachments]\: Documents how to exchange attachments for claims or prior authorization between provider and payers using a "PUSH-based" FHIR Operation. *This is DRAFT content because it has not yet undergone HL7 balloting.*
-- [Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
+  - [Attachments]\: <span class="bg-warning">This content is DRAFT. It has not yet undergone HL7 balloting.</span> Documents how to exchange attachments for claims or prior authorization between provider and payers using a "PUSH-based" FHIR Operation.
+- [Signatures]\: <span class="bg-warning">This content is DRAFT. It has not yet undergone HL7 balloting.</span> This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - [Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
 - [FHIR Artifacts]\: This page list the FHIR Profiles, Operations, Terminology, CapabilityStatements, and example resources used within this guide.
 - [Downloads]\: This page provides links to downloadable artifacts that can be used by developers to help them implement this guide.
