@@ -9,7 +9,7 @@ Publishing Punch list:
   - [X] update to US Core 3.1.1
   - [ ] update to published version of HREX
   - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0 todo
-  - [ ] Update Signatures to Draft status
+  - [X] Update Signatures to Draft status
   - [ ] Update to Attachments section.
   - [X] Update PL
   - [ ] Update Jira file pending...
