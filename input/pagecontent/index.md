@@ -89,7 +89,7 @@ This Guide is divided into several pages which are listed at the top of each pag
 
 ---
 
-*This Implementation Guide was made possible by the contributions of the [Da Vinci Project] member organizations and project management staff, the [Patient Care] Work Group and the [Payer/Provider Information Exchange] Work Group.*
+*This Implementation Guide was made possible by the contributions of the [Da Vinci] Project member organizations and project management staff, the [Patient Care] Work Group and the [Payer/Provider Information Exchange] Work Group.*
 
 *Authors:*
 
