@@ -69,7 +69,7 @@ This Implementation Guide is supported by the [Da Vinci] initiative which is a p
 
 {% include img.html img="profile-pyramid.svg" caption="Figure 1: Relationship of CDex to Other FHIR Standards" %}
 
-Changes to this specification are managed by the sponsoring HL7 [Patient Care (PC)] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
+Changes to this specification are managed by the sponsoring HL7 [Patient Care] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 
 #### How to read this Guide
 
@@ -89,18 +89,13 @@ This Guide is divided into several pages which are listed at the top of each pag
 
 ---
 
-**This Implementation Guide was made possible by the thoughtful contributions of the following people and organizations:**
+*This Implementation Guide was made possible by the contributions of the [Da Vinci Project] member organizations and project management staff, the [Patient Care] Work Group and the [Payer/Provider Information Exchange] Work Group.*
 
-- *The twenty-two founding [Da Vinci Project](http://www.hl7.org/about/davinci/index.cfm?ref=common) member organizations.*
+*Authors:*
 
 - *Eric Haas, Health eData Inc*
-- *Lloyd Mckenzie, Gevity*
+- *Lloyd Mckenzie, Gevity Consulting*
 - *Robert Dieterle, EnableCare*
-- *Viet Nguyen, Stratametrics*
-- *Vanessa Candeloria, Point of Care Partners*
-- *Jocelyn Keegan, Point of Care Partners*
-- *Lisa Nelson MaxMD*
-- *Rick Geimer Lantana Consulting Group*
 
 ---
 
