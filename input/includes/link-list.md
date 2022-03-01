@@ -33,7 +33,8 @@
 [`$submit-attachment`]: OperationDefinition-submit-attachment.html
 [HL7 Da Vinci Guiding Principles]: https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf
 [Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
-[Patient Care (PC)]: http://www.hl7.org/Special/committees/patientcare/index.cfm
+[Patient Care]: http://www.hl7.org/Special/committees/patientcare/index.cfm
+[Payer/Provider Information Exchange]: http://www.hl7.org/Special/Committees/claims/index.cfm
 [Propose a Change]: https://jira.hl7.org/issues
 [ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi
 [FHIR Asynchronous Request Patterns]: {{site.data.fhir.path}}async.html
