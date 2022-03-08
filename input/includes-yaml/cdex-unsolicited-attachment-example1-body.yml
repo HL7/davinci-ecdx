@@ -3,16 +3,9 @@ parameter:
 - name: AttachTo
   valueCode: claim
 - name: TargetId
-  valueIdentifier:
-    type:
-      coding:
-      - system: http://terminology.hl7.org/CodeSystem/v2-0203
-        code: FILL
-        display: Filler Identifier
-    system: http://example.org/cdex/claim-ids
-    value: '11234657'
+  valueString: '11234657'
 - name: ItemId
-  valueString: http://example.org/cdex/item-ids|1
+  valueString: '1'
 - name: OrganizationId
   valueIdentifier:
     system: http://hl7.org/fhir/sid/us-npi
