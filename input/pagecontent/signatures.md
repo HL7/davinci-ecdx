@@ -176,11 +176,11 @@ Although [*self-signed* certificates] are used for the purpose of these examples
 
 In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
 
-- [SearchSet Bundle Example]
+- [Signed SearchSet Bundle Example]
 
   The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-- [Document Bundle Example]
+- [Signed Document Bundle Example]
 
   The Document level signatures occurs when performing Task based requests or Attachments transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate.
 
