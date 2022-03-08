@@ -8,12 +8,12 @@ status: draft
 kind: operation
 date: '2021-12-02T20:24:41-08:00'
 description: |-
-  This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.
+  This operation is used to submit attachments (aditional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more Attachments as FHIR Resources
   1. Data elements for reassociation to the Claim/Prior Authorization
-      - What are the attachments for:
+      - What is the documentation for:
         - Claim
         - Prior Authorization
       - A unique claim/prior authorization identifier  (referred to as the "re-association tracking control numbers")*
