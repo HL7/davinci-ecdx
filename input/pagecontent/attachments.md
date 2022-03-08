@@ -12,7 +12,7 @@ This page documents a FHIR based approach for exchanging *attachments* (in other
 
 ### Attachments (additional information) for Claims or Prior Authorization
 
-Today claims typically come through [X12 transactions] or portal submissions. Payers may need additional information - referred to as "attachments" - from a provider to determine if the service being billed (claim) or requested (prior authorization) is consistent with medical policies. In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a CDex FHIR-based request for clinical/administrative data.  However, the additional information to support these claims or prior authorizations *may* be requested via a non CDex FHIR based request such as an X12 transactions, fax, portal, or other capabilities.
+Today claims typically come through [X12 transactions] or portal submissions. Payers may need additional information - referred to as "attachments" - from a provider to determine if the service being billed (claim) or requested (prior authorization) is consistent with medical policies. In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a CDex FHIR-based request for clinical/administrative data.  However, the additional information to support these claims or prior authorizations *may* be requested via a non-CDex FHIR based request such as an X12 transactions, fax, portal, or other capabilities.
 
 Attachments for Claims or Prior Authorization introduces the concepts of *solicited* and *unsolicited* workflows:
 
