@@ -56,7 +56,7 @@ definition:
     -   code: copyrightyear
         value: 2022+
     -   code: releaselabel
-        value: STU1 Release
+        value: trial-use
     -   code: path-resource
         value: input/resources
     -   code: path-resource
