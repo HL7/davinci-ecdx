@@ -64,7 +64,7 @@ Signatures|Example of Task Request for Signed Data|[7.22.1](Task-cdex-example1s-
 Signatures|Example of Completed Task Request for Signed Data|[7.23.1](Task-cdex-example1s-query-withsig-completed.html)
 Signatures|CDEX SearchSet Bundle with Digital Signature Example|[7.28.1](Bundle-cdex-searchset-digital-sig-example.html)
 
-**These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here Any comments outside of these boundaries will be dispositioned as “Not Related” for this STU Comment period.**
+**These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here.  Any comments outside of these boundaries will be dispositioned as “Not Related” for this STU Comment period.**
 
 </div>
 
