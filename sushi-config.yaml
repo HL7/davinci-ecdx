@@ -46,6 +46,8 @@ pages:
     task-based-approach.md:
     attachments.md:
   signatures.md:
+    signed-searchset-bundle-example.md:
+    signed-document-bundle-example.md:
   security.md:
     title: Security and Privacy
   downloads.md:

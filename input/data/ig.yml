@@ -37,6 +37,13 @@ definition:
             title: Specification
         -   generation: markdown
             nameUrl: signatures.html
+            page:
+            -   generation: markdown
+                nameUrl: signed-searchset-bundle-example.html
+                title: Signed Searchset Bundle Example
+            -   generation: markdown
+                nameUrl: signed-document-bundle-example.html
+                title: Signed Document Bundle Example
             title: Signatures
         -   generation: markdown
             nameUrl: security.html

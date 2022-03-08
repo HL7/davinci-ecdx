@@ -340,7 +340,19 @@
         {
           "nameUrl": "signatures.html",
           "title": "Signatures",
-          "generation": "markdown"
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "signed-searchset-bundle-example.html",
+              "title": "Signed Searchset Bundle Example",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "signed-document-bundle-example.html",
+              "title": "Signed Document Bundle Example",
+              "generation": "markdown"
+            }
+          ]
         },
         {
           "nameUrl": "security.html",

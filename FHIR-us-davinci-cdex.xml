@@ -53,6 +53,8 @@
 <page deprecated="true" key="profiles" name="Profiles"/>
 <page key="security" name="Security and Privacy"/>
 <page key="signatures" name="Signatures"/>
+<page key="signed-document-bundle-example" name="Signed Document Bundle Example"/>
+<page key="signed-searchset-bundle-example" name="Signed Searchset Bundle Example"/>
 <page deprecated="true" key="specification" name="Specification"/>
 <page key="toc" name="Table of Contents"/>
 <page key="task-based-approach" name="Task Based Approach"/>
