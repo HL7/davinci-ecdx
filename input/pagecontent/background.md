@@ -81,17 +81,14 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 
 ##### Steps
 1. The data consumer initiates a request for information.
-1. The data source retrieves the the requested data.
+1. The data source retrieves the requested data.
 1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
-1. The data is sent back to the the data consumer.
+1. The data is sent back to the data consumer.
 
 #### Attachments Workflow
 
-<div markdown="1" class="stu-note">
-
-**The following section content is DRAFT.  It has not yet undergone HL7 balloting.**
-
-</div>
+**The following section is DRAFT and open for review**
+{:.note-to-balloters}
 
 Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Attachments* workflow.  
 

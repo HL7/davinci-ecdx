@@ -2,11 +2,11 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-cdex",
   "url": "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "DaVinciCDex",
   "title": "Da Vinci Clinical Data Exchange (CDex) Implementation Guide",
   "status": "active",
-  "date": "2021-12-13",
+  "date": "2022-03-07",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -66,7 +66,7 @@
         "reference": {
           "reference": "OperationDefinition/submit-attachment"
         },
-        "description": "**The following content is DRAFT, because it has not yet undergone HL7 balloting.**\n\nThis operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier*\n    - Optionally, one or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n\nThere are no output parameters.",
+        "description": "This operation is used to submit attachments for Claims or Prior Authorization. This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP end-point, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more Attachments as FHIR Resources\n1. Data elements for reassociation to the Claim/Prior Authorization\n    - What are the attachments for:\n      - Claim\n      - Prior Authorization\n    - A unique claim/prior authorization identifier  (referred to as the \"re-association tracking control numbers\")*\n    - Optionally, one or more unique claim line item identifiers\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n    - Date of Service\n\nThere are no output parameters.",
         "exampleBoolean": false,
         "name": "Submit Attachment Operation"
       },
@@ -285,6 +285,14 @@
         "description": "Digital signature example showing how it is used to sign a searchset Bundle.  The CDEX use case would be a response to a Direct Query where an digital signature was required.",
         "name": "CDEX SearchSet Bundle with Digital Signature Example",
         "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Parameters/cdex-submit-attachment-example"
+        },
+        "description": "Parameters Resource example showing how it is used when the `$submit-attachment` operation is invoked. It represents the collection of named parameters including the \"attachment\"  (additional information) and data to re-associate the attachmenet to a claim or prior authorization.",
+        "name": "CDex Submit Attachment Parameters Resource Example",
+        "exampleBoolean": true
       }
     ],
     "page": {
@@ -353,7 +361,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU1 Release"
+        "value": "ballot"
       },
       {
         "code": "path-resource",

@@ -18,8 +18,19 @@ list:
   - version: current
     desc: |-
       Continuous Integration Build for Da Vinci CDEX 2022 May Ballot (latest in version control)
-    path: 'http://build.fhir.org/ig/HL7/davinci-ecdx'
+    path: "http://build.fhir.org/ig/HL7/davinci-ecdxbranches/May2022Ballot"
     status: ci-build
+
+  - version: 1.1.0
+    desc: |-
+       Da Vinci CDEX 2022 May Ballot. This ballot is restricted to the Draft content in the STU 1.0 version of CDex.  The draft content includes handling of Attachments and Digital Signatures.
+    date: '2022-03-07'
+    sequence: STU2
+    path:  'http://hl7.org/fhir/us/davinci-cdex/2022May'
+    status: "ballot"
+    fhirversion: 4.0.1
+    current: false
+
 
   - version: 1.0.0
     desc: |-
@@ -142,6 +153,7 @@ list:
     status: ballot
     fhirversion: 4.0.1
     current: false
+
   - version: 0.1.0
     desc: June 2019 Ballot for Da Vinci CDex
     date: '2019-06-18'

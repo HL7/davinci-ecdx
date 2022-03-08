@@ -101,11 +101,8 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 ### Signatures
 
-<div markdown="1" class="stu-note">
-
-**The following section content is DRAFT.  It it has not yet undergone HL7 balloting.**
-
-</div>
+**The following section is DRAFT and open for review**
+{:.note-to-balloters}
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
 
@@ -126,8 +123,8 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
 #### Data Source/Responder
 
 When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
-- Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the the signature.
-- Be signed by the organization that is responding the the query.
+- Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature.
+- Be signed by the organization that is responding the query.
 - Follow the documentation in the [Signatures] page for producing signatures.
 - As discussed in the [What is Signed] section, a signed search bundle could have a entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
 

@@ -1,4 +1,3 @@
-
 <!-- ---
 tags: CDEX
 title: Attachments
@@ -6,32 +5,39 @@ title: Attachments
 
 # Attachments -->
 
-<div markdown="1" class="stu-note">
+**The following page content is DRAFT and open for review**
+{:.note-to-balloters}
 
-**The following page content is DRAFT.  It has not yet undergone HL7 balloting.**
+This page documents a FHIR based approach for exchanging *attachments* (in other words, additional information) for claims or prior authorization directly to a Payer.
 
-</div>
+### Attachments (additional information) for Claims or Prior Authorization
 
-This page documents a FHIR based approach for exchanging attachments for claims or prior authorization directly to a Payer.
+Today claims typically come through [X12 transactions] or portal submissions. Payers may need additional information - referred to as "attachments" - from a provider to determine if the service being billed (claim) or requested (prior authorization) is consistent with medical policies. In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a CDex FHIR-based request for clinical/administrative data.  However, the additional information to support these claims or prior authorizations *may* be requested via a non CDex FHIR based request such as an X12 transactions, fax, portal, or other capabilities.
 
-### Attachments for Claims or Prior Authorization
+Attachments for Claims or Prior Authorization introduces the concepts of *solicited* and *unsolicited* workflows:
 
-Today claims typically come through [X12 transactions] or portal submissions.  The additional information to support these claims (a.k.a. attachments) comes through X12 transactions, fax, portal, or other ways *before, with or after* a claim.  In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a FHIR-based request for clinical data. Instead the clinical data it sent directly to the payer based on a set of pre-defined rules by the payer or jurisdictional mandates ("unsolicited"), or the request for attachments comes through an X12 transaction ("solicited").  The attachment is then re-attached to the claim and processed.  Similarly for Prior Authorization, the CDex Attachments transaction is used to submit supporting information with the prior authorization or in response to a request for more information after the initial submission.
+#### Solicited Workflow
+A solicited based attachment request, is a non-CDex FHIR request where a payer may send a portal, letter, X12 or other type of request to the provider for additional information to support a claim or prior authorization. In response, the additional information is being sent from the provider system/EMR using CDEX Attachments. The attachment is then re-associated with the claim or prior authorization.
 
-CDex Attachments transactions can be used in the following scenarios:
+##### Example Scenarios:
+1.	Submitting additional information for a prior authorization.
+2.	Submitting supplemental information for a claim based on a X12 (or other non-CDex FHIR) based payer request
 
-1. Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
-1. Attachments for a claim, because a Provider thinks the Payer will want it.
-1. A Provider is under review and needs to provide additional information for all claims.
-1. Filing a claim for two surgeons in one surgery.
-1. Submitting additional information for prior authorization.
+#### Unsolicited Workflow
+For an Unsolicited attachment the provider will submit additional information using CDex Attachments to support a claim or prior authorization based on payer predefined rules without any type of request.  The attachment is then re-associated with the claim or prior authorization.
+
+##### Example Scenarios:
+1.	Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
+2.	Additional information for a claim that a Provider believes the Payer will need for processing.
+3.	A Provider is under review and required to provide additional information for all claims.
+
 
 In all these case, the payer will require a trading partner agreement for sending attachments based on predefined rules.
 {:.bg-warning}
 
 ### `$submit-attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-attach them to the claim or prior authorization, and returns a transaction layer http response. The re-attachment to the claim or prior authorization, subsequent processing, and response the the Payer is out of scope for this guide.  See the [`$submit-attachment`] operation definition and examples below for further details.
+This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-associate  them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
 
 
 ### FHIR Technical Workflow
@@ -66,10 +72,10 @@ note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br
 
  -->
 
-1. EHR assemble attachments and re-attachment data for a claim or prior authorization
+1. EHR assembles attachments and re-association  data for a claim or prior authorization
 1. EHR invokes `$submit-attachment` operation to submit attachments to Payer
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
-1. Payer attaches data to claim or prior authorization and processes it (out of scope)
+1. Payer re-associates additional information with claim or prior authorization
 
 ### Attachments Transaction Scenario
 
@@ -80,9 +86,9 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 #### Scenario 1: CCDA Document Attachments
 
 - Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
-  - Typically when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore FHIR signatures and external Provenance resources are not needed.
+  - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for Sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP end-point, not just FHIR RESTful servers.
-- "Unsolicited Attachments" imply that the *Provider* assigns the claim and line item identifiers (in other words, a "placer identifier") upon claim generation.
+- Unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
 - Re-association of attachments to the Claim, subsequent Claim processing and adjudication, and follow up communication are out of scope and out of band.
 
 {% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
@@ -103,7 +109,7 @@ When a electronic or digital signature is required for CDex Attachments, the Dat
 - *Pre-negotiate* the signature requirement with the organization representing the Data Source.
    - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* attachments will be signed.
    - Conversely, it **SHOULD** be assumed that no CDex Attachments transaction will be signed unless there exists a pre-negotiated agreement
-   - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
+   - Based on the agreement, *electronic* or *digital* signatures **MAY** be used  
 - Follow the documentation in the [Signatures] page for validating signatures.
 
 
