@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Completed Task to seek a patient's latest history and physical exam notes."
+                "valueMarkdown": "Completed Task to seek a patient's latest history and physical exam notes using a contained resource for the output data."
             }
         ],
         "profile": [
@@ -27,6 +27,13 @@
             "resourceType": "Bundle",
             "id": "results",
             "type": "searchset",
+            "total": 2,
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://example.com/base/DocumentReference?_id=cdex-example-doc1,cdex-example-doc2"
+                }
+            ],
             "entry": [
                 {
                     "fullUrl": "https://api.logicahealth.org/DaVinciCDexProvider/open/DocumentReference/cdex-example-doc1",

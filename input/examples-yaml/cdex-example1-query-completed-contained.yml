@@ -4,6 +4,11 @@ contained:
 - resourceType: Bundle
   id: results
   type: searchset
+  total: 1
+  link:
+    - relation: self
+      url: >-
+        https://example.com/base/Condition?patient=cdex-example-patient&clinical-status=active
   entry:
   - fullUrl: http://example.org/fhir/Condition/858
     resource:
@@ -41,8 +46,7 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Scenario 1 Contained Example
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Completed Task to seek a patient active conditions using a contained
-      resource for output.
+    valueMarkdown: Completed Task to seek a patient active conditions using a contained resource for the output data.
   versionId: '3'
   lastUpdated: '2020-10-26T04:04:52.000+00:00'
   source: '#tgH2FoPFuCq0yjw5'
