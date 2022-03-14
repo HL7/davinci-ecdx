@@ -6,6 +6,13 @@
             "resourceType": "Bundle",
             "id": "results",
             "type": "searchset",
+            "total": 1,
+            "link": [
+                {
+                    "relation": "self",
+                    "url": "https://example.com/base/Condition?patient=cdex-example-patient&clinical-status=active"
+                }
+            ],
             "entry": [
                 {
                     "fullUrl": "http://example.org/fhir/Condition/858",
@@ -74,7 +81,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Completed Task to seek a patient active conditions using a contained resource for output."
+                "valueMarkdown": "Completed Task to seek a patient active conditions using a contained resource for the output data."
             }
         ],
         "versionId": "3",
