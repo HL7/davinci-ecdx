@@ -29,7 +29,7 @@ dependencies:
     id: uscore
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: 0.2.0  # *TODO* change to published version prior to publishing
+    version: 1.0.0
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
