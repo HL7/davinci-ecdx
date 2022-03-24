@@ -51,7 +51,7 @@
       "id": "hrex",
       "packageId": "hl7.fhir.us.davinci-hrex",
       "uri": "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
-      "version": "0.2.0"
+      "version": "1.0.0"
     },
     {
       "id": "pas",
