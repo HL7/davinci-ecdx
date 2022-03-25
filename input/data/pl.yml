@@ -21,15 +21,14 @@ list:
     path: "http://build.fhir.org/ig/HL7/davinci-ecdxbranches/May2022Ballot"
     status: ci-build
 
-  - version: 1.1.0
+  - version: 1.1.0-ballot
     desc: |-
        Da Vinci CDEX 2022 May Ballot. This ballot is restricted to the Draft content in the STU 1.0 version of CDex.  The draft content includes handling of Attachments and Digital Signatures.
-    date: '2022-03-07'
+    date: '2022-03-25'
     sequence: STU2
     path:  'http://hl7.org/fhir/us/davinci-cdex/2022May'
     status: "ballot"
     fhirversion: 4.0.1
-    current: false
 
 
   - version: 1.0.0
@@ -137,7 +136,7 @@ list:
         - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1attachments.html)
         - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1OperationDefinition-submit-attachment.html)
       1. **Applied**: Add figure to clarify relationship between cdex and hrex([FHIR-34559](https://jira.hl7.org/browse/FHIR-34559) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1index.html#about-this-guide)
-    date: '2021-12-13'
+    date: '2022-03-25'
     sequence: STU1
     path: 'http://hl7.org/fhir/us/davinci-cdex/STU1'
     status: "trial-use"
@@ -152,7 +151,6 @@ list:
     path: 'http://hl7.org/fhir/us/davinci-cdex/2021Jan'
     status: ballot
     fhirversion: 4.0.1
-    current: false
 
   - version: 0.1.0
     desc: June 2019 Ballot for Da Vinci CDex
@@ -161,5 +159,4 @@ list:
     path: 'http://hl7.org/fhir/us/davinci-cdex/2019Jun'
     status: ballot
     fhirversion: 4.0.0
-    current: false
 category: Financial
