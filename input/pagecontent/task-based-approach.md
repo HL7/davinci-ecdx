@@ -255,11 +255,8 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 ### Signatures
 
-<div markdown="1" class="stu-note">
-
-**The following section content is DRAFT.  It has not yet undergone HL7 balloting.**
-
-</div>
+**The following section is DRAFT and open for review**
+{:.note-to-balloters}
 
 Some data consumers may require that the data they receive are signed. When performing Task based request when signatures are required on the returned results, the following general rules apply:
 

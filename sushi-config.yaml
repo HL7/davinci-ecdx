@@ -19,8 +19,8 @@ copyright: >-
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: '2021-12-13'
-version: 1.0.0
+date: '2022-03-07'
+version: 1.1.0-ballot
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core:
@@ -77,7 +77,7 @@ parameters:
     - xml
     - json
 copyrightyear: '2022+'
-releaselabel: STU R1 # ci-build|draft|qa-preview|ballot|trial-use|release|release|update|normative+trial-use
+releaselabel: ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │

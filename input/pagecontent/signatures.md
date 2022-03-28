@@ -4,11 +4,8 @@ tags: CDEX
 title: Generating and Verifying *Signed* Resources
 --- -->
 
-<div markdown="1" class="stu-note">
-
-**The following page content is DRAFT.  It has not yet undergone HL7 balloting.**
-
-</div>
+**The following page content is DRAFT and open for review**
+{:.note-to-balloters}
 
 This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 

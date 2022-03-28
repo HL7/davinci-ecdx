@@ -1,6 +1,8 @@
 #text for https://sequencediagram.org/
 # add viewbox attribute to svg file for img sizing viewBox="0.0 0.0 911.0 943.0">
 
+
+
 participant EHR (Data Source)
 
 participant Payer (Data Consumer)

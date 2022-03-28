@@ -9,7 +9,8 @@ Publishing Punch list:
   - [X] update to US Core 3.1.1
   - [ ] update to published version of HREX
   - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0 todo
-  - [X] Update Signatures to Draft status
+  - [ ] create Balloters introduction
+  - [ ] Update Signatures and attachment to Draft/open for comment status
   - [ ] Update to Attachments section.
   - [X] Update PL
   - [ ] Update Jira file pending...
@@ -43,9 +44,30 @@ Where possible, new and updated content will be highlighted with green text and 
 </div>
 {endraw}-->
 
-<div markdown="1" class="stu-note">
+<div markdown="1" class="note-to-balloters">
 
-**The attachment transaction and signature content is DRAFT.  It has not yet undergone HL7 balloting. The appropriate pages and sections are preceded with a STU-Note indicating the draft content.**
+**All comments for this ballot are restricted to the following Draft content in the STU 1.0 version of CDex which includes handling of Attachments and Digital Signatures**:
+
+|Topic|Page|Section
+---|---|---
+Attachments|Background|[2.6.2](background.html#attachments-workflow)
+Attachments|Attachments|[3.4](attachments.html)
+Attachments|OperationDefinition: Submit Attachment Operation|[7.5.1](OperationDefinition-submit-attachment.html)
+Attachments|CDex Submit Attachment Parameters Resource Example|[7.29.1](Parameters-cdex-submit-attachment-example.html)
+Signatures|Direct Query|[3.2.6](direct-query.html#signatures)
+Signatures|Task Based Approach|[3.2.6](task-based-approach.html#signatures)
+Signatures|Attachments|[3.4.5](attachments.html#signatures)
+Signatures|Signatures|[4](signatures.html)
+Signatures|Signed SearchSet Bundle Example|[4.1](signed-searchset-bundle-example.html)
+Signatures|Signed Document Bundle Example|[4.2](signed-document-bundle-example.html)
+Signatures|CDEX Document with Digital Signature Example|[7.11.1](Bundle-cdex-document-digital-sig-example.html)
+Signatures|CDEX Document with Electronic Signature Example|[7.12.1](Bundle-cdex-electronic-sig-example.html)
+Signatures|Example of Task Request for Signed Data|[7.22.1](Task-cdex-example1s-query-requested-withsig.html)
+Signatures|Example of Completed Task Request for Signed Data|[7.23.1](Task-cdex-example1s-query-withsig-completed.html)
+Signatures|CDEX SearchSet Bundle with Digital Signature Example|[7.28.1](Bundle-cdex-searchset-digital-sig-example.html)
+{:.grid}
+
+**These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here.  Any comments outside of these boundaries will be dispositioned as “Not Related” for this STU Comment period.**
 
 </div>
 
@@ -81,8 +103,8 @@ This Guide is divided into several pages which are listed at the top of each pag
   - [Exchanging Clinical Data]\: Exchanging Clinical data overview page.
   - [Direct Query]\: Documents how to exchange clinical data using the standard FHIR RESTful search.
   - [Task Based Approach]\: Documents how to exchange clinical data using the FHIR Task resource. This approach supports asynchronous workflows where human involvement to find/aggregate/filter/approve requests may be required.
-  - [Attachments]\: <span class="bg-warning">This content is DRAFT. It has not yet undergone HL7 balloting.</span> Documents how to exchange attachments for claims or prior authorization between provider and payers using a "PUSH-based" FHIR Operation.
-- [Signatures]\: <span class="bg-warning">This content is DRAFT. It has not yet undergone HL7 balloting.</span> This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
+  - [Attachments]\: <span class="bg-warning">This content is DRAFT and is open for review.</span> Documents how to exchange attachments for claims or prior authorization between provider and payers using a "PUSH-based" FHIR Operation.
+- [Signatures]\: <span class="bg-warning">This content is DRAFT and is open for review.</span> This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - [Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
 - [FHIR Artifacts]\: This page list the FHIR Profiles, Operations, Terminology, CapabilityStatements, and example resources used within this guide.
 - [Downloads]\: This page provides links to downloadable artifacts that can be used by developers to help them implement this guide.

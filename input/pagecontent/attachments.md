@@ -1,4 +1,3 @@
-
 <!-- ---
 tags: CDEX
 title: Attachments
@@ -6,11 +5,8 @@ title: Attachments
 
 # Attachments -->
 
-<div markdown="1" class="stu-note">
-
-**The following page content is DRAFT.  It has not yet undergone HL7 balloting.**
-
-</div>
+**The following page content is DRAFT and open for review**
+{:.note-to-balloters}
 
 This page documents a FHIR based approach for exchanging *attachments* (in other words, additional information) for claims or prior authorization directly to a Payer.
 

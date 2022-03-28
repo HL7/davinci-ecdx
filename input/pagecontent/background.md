@@ -87,11 +87,8 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 
 #### Attachments Workflow
 
-<div markdown="1" class="stu-note">
-
-**The following section content is DRAFT.  It has not yet undergone HL7 balloting.**
-
-</div>
+**The following section is DRAFT and open for review**
+{:.note-to-balloters}
 
 Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Attachments* workflow.  
 

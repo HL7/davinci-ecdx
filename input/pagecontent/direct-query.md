@@ -101,11 +101,8 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 ### Signatures
 
-<div markdown="1" class="stu-note">
-
-**The following section content is DRAFT.  It it has not yet undergone HL7 balloting.**
-
-</div>
+**The following section is DRAFT and open for review**
+{:.note-to-balloters}
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
 
