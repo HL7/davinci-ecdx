@@ -44,6 +44,7 @@
 <page key="attachments" name="Attachments"/>
 <page key="background" name="Background"/>
 <page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
+<page key="changes" name="Change Log"/>
 <page key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
 <page deprecated="true" key="examples" name="Examples"/>
