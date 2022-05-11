@@ -14,7 +14,7 @@ This is a Jupyter Notebook which uses openSSL, Python 3.7, and the Python jcs an
 
 *DO THIS STEP ONLY ONCE*
 
-**2. Create a sef-signed certificate for authenticating the signer**
+**2. Create a self-signed certificate for authenticating the signer**
 
 create the public and private keys and cert using openssl on the command line.
 
@@ -582,7 +582,7 @@ print(dumps(searchset_bundle, indent=2))
 ### Receiver/Verifier Steps
 
 **1. Remove the `Bundle.signature` element from the Search Bundle resource**
-- For this example using the python dictionary object from above, but in real life, Therefore it would need to be stored unaltered in order to perform these next steps.
+- For this example using the python dictionary object from above. In a transaction, it would need to be stored unaltered in order to perform these next steps.
 
 
 ```python

@@ -11,8 +11,8 @@ This page provides specific guidance and rules to exchange *signed* data using F
 
 ### Generating and Verifying *Signed* Resources
 
-There is a legal liability associated with the data exchanged. Medical legal issue around administrative transactions means there is a
-big difference is how you look at clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first] Signatures attest that the data has been reviewed and the information is accurate and know it to be true.
+There is a legal liability associated with the data exchanged. Because of medical legal issue surrounding administrative transactions, there is a
+difference in the clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first] Signatures attest that the data has been reviewed and the information is accurate and know it to be true.
 
 
 In addition legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.

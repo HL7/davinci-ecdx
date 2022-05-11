@@ -111,7 +111,7 @@ Some data consumers may require that the data they receive are signed. When perf
 
 #### The Data Consumer/Requester Requirements
 
-When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Consumer/Requester **SHALL**:
+When an electronic or digital signature is required for a FHIR RESTful Queries, the Data Consumer/Requester **SHALL**:
 
 - *Pre-negotiate* the signature requirement with the organization representing the Data Source/Responder.
    - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* search query response will be signed.
@@ -122,7 +122,7 @@ When a electronic or digital signature is required for a FHIR RESTful Queries, t
 
 #### Data Source/Responder
 
-When a electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
+When an electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
 - Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature.
 - Be signed by the organization that is responding the query.
 - Follow the documentation in the [Signatures] page for producing signatures.

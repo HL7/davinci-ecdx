@@ -17,7 +17,7 @@ Today claims typically come through [X12 transactions] or portal submissions. Pa
 Attachments for Claims or Prior Authorization introduces the concepts of *solicited* and *unsolicited* workflows:
 
 #### Solicited Workflow
-A solicited based attachment request, is a non-CDex FHIR request where a payer may send a portal, letter, X12 or other type of request to the provider for additional information to support a claim or prior authorization. In response, the additional information is being sent from the provider system/EMR using CDEX Attachments. The attachment is then re-associated with the claim or prior authorization.
+A solicited based attachment request, is a non-CDex FHIR request where a payer may send a portal, letter, X12 message or other type of request to the provider for additional information to support a claim or prior authorization. In response, the additional information is being sent from the provider system/EMR using CDex Attachments. The attachment is then re-associated with the claim or prior authorization.
 
 ##### Example Scenarios:
 1.	Submitting additional information for a prior authorization.
@@ -32,7 +32,7 @@ For an Unsolicited attachment the provider will submit additional information us
 3.	A Provider is under review and required to provide additional information for all claims.
 
 
-In all these case, the payer will require a trading partner agreement for sending attachments based on predefined rules.
+In all of these cases, the payer will require a trading partner agreement for sending attachments based on predefined rules.
 {:.bg-warning}
 
 ### `$submit-attachment` Operation
@@ -46,31 +46,6 @@ This guide defines a simple RESTful interaction for exchanging attachments using
 As shown in the figure 7 below, the attachments are “pushed” using the `$submit-attachment` operation directly to the Payer or an Intermediary.
 
 {% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
-
-<!--
-
-```mermaid
-sequenceDiagram
-#text for https://sequencediagram.org/
-# add viewbox attribute to svg file for img sizing viewBox="0.0 0.0 829.0 740.0">
-
-title: figure 5: Unsolicited Attachments
-
-participant EHR (Data Source)
-
-participant Payer (Data Consumer)
-
-note over EHR (Data Source):1) EHR needs to send attachments Payer
-EHR (Data Source)->>Payer (Data Consumer): 2) POST $submit-attachment with attachments in payload
-alt 3) Accepted
-Payer (Data Consumer)->>EHR (Data Source): Return HTTP 200 OK / 202 Accepted
-else 3) Rejected
-Payer (Data Consumer)->>EHR (Data Source): Return HTTP 4xx or 5xx with an OperationOutcome
-end
-note right of Payer (Data Consumer): 4) Out of Scope:<br> Payer attaches data<br> to claim and<br> processes claim
-```
-
- -->
 
 1. EHR assembles attachments and re-association  data for a claim or prior authorization
 1. EHR invokes `$submit-attachment` operation to submit attachments to Payer
@@ -100,11 +75,11 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 Some data consumers may require that the data they receive are signed. When performing CDex Attachments transactions and signatures are required, the following general rules apply:
 
 - The signature **SHALL** represent a *human provider* signature on resources attesting that the information is true and accurate.
-- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
+- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** be transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
 
 #### The Data Consumer Requirements
 
-When a electronic or digital signature is required for CDex Attachments, the Data Consumer **SHALL**:
+When an electronic or digital signature is required for CDex Attachments, the Data Consumer **SHALL**:
 
 - *Pre-negotiate* the signature requirement with the organization representing the Data Source.
    - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* attachments will be signed.

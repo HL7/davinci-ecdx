@@ -265,7 +265,7 @@ Some data consumers may require that the data they receive are signed. When perf
 
 #### The Data Consumer/Requester Requirements
 
-When a electronic or digital signature is required for a Task based request, the Data Consumer/Requester **SHALL**:
+When an electronic or digital signature is required for a Task based request, the Data Consumer/Requester **SHALL**:
 
 - Indicate that a signature is required using the `Task.input` signature flag parameter as defined in [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
     - It **SHOULD NOT** be assumed that a Task based requests will be signed if the flag is omitted.
@@ -274,7 +274,7 @@ When a electronic or digital signature is required for a Task based request, the
 
 #### Data Source/Responder Requirements
 
-When a electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
+When an electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
 - Return an object is either already inherently signed or transform it into a *signed* FHIR Document.
 - Be signed by the provider that is responding the query.
 - Follow the documentation in the [Signatures] page for producing signatures.

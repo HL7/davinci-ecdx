@@ -2,7 +2,7 @@
 **Request**
 
 ~~~
-POST [base]/$attachment
+POST [base]/$submit-attachment
 ~~~
 
 **Request Headers**
