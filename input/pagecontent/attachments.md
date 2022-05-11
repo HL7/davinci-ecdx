@@ -5,9 +5,6 @@ title: Attachments
 
 # Attachments -->
 
-**The following page content is DRAFT and open for review**
-{:.note-to-balloters}
-
 This page documents a FHIR based approach for exchanging *attachments* (in other words, additional information) for claims or prior authorization directly to a Payer.
 
 ### Attachments (additional information) for Claims or Prior Authorization

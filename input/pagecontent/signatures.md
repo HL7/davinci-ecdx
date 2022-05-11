@@ -4,9 +4,6 @@ tags: CDEX
 title: Generating and Verifying *Signed* Resources
 --- -->
 
-**The following page content is DRAFT and open for review**
-{:.note-to-balloters}
-
 This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
 
 ### Generating and Verifying *Signed* Resources

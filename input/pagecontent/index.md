@@ -1,52 +1,14 @@
-<!--{raw}
-<div class="bg-info" markdown="1">
-Publishing Punch list:
 
-- [X] Finish [Resolving Trackers](https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801)
-- [X] Finish Applying Resolved Trackers
-- [ ] technical QA
-- [ ] ProofRead
-  - [X] update to US Core 3.1.1
-  - [ ] update to published version of HREX
-  - [ ] evaluate pathway to US Core 4.0.0 and US Core 5.0.0 todo
-  - [ ] create Balloters introduction
-  - [ ] Update Signatures and attachment to Draft/open for comment status
-  - [ ] Update to Attachments section.
-  - [X] Update PL
-  - [ ] Update Jira file pending...
-  - [X] final QA
-  - [X] Remove all new content highlighting
-  - [X] home
-  - [X] downloads
-  - [X] artifacts
-  - [X] Attachments
-  - [X] $submit-attachments
-  - [X] security and privacy
-  - [X] background
-  - [X] Exchanging Clinical Data
-  - [X] Direct Query
-  - [X] Task Based Approach
-  - [X] Attachments
-  - [X] Signatures - included updates to Canonicalization!
-  - [X] Profiles
-  - [X] Terminology
-  - [X] CapabilityStatements
-  - [ ] Examples updated sig examples!
-- [X] Reconciliation Spreadsheet
-- [ ] publication request
-- [ ] publication checklist
-
+<div class="new-content" markdown="1">
 Where possible, new and updated content will be highlighted with green text and background
-
-
-{{ site.data.pl.list[0].desc }}
-
 </div>
-{endraw}-->
+
+<!--
 
 <div markdown="1" class="note-to-balloters">
 
 **All comments for this ballot are restricted to the following Draft content in the STU 1.0 version of CDex which includes handling of Attachments and Digital Signatures**:
+
 
 |Topic|Page|Section
 ---|---|---
@@ -70,6 +32,8 @@ Signatures|CDEX SearchSet Bundle with Digital Signature Example|[7.28.1](Bundle-
 **These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here.  Any comments outside of these boundaries will be dispositioned as “Not Related” for this STU Comment period.**
 
 </div>
+
+-->
 
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 

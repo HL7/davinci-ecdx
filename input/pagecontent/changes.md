@@ -1,10 +1,109 @@
-### Version = CI Build
+### Version = CI Build (1.1.0-preview)
 - url: <http://build.fhir.org/ig/HL7/davinci-ecdx>
 - Based on FHIR version : 4.0.1
 
 
 #### Changes:
- Continuous Integration Build for Da Vinci CDEX 2022 May Ballot (latest in version control)
+ Continuous Integration Build for version 1.1.0 preview of Da Vinci (latest in version control)
+
+This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process, non-ballot issue,  and *Draft* new content to meet anticipated Attachments legislation and rules. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care Work Group.
+
+##### May 2022 Ballot comments and links to the updated content are below::
+
+**Status: Summary (Jira Issue) Link to Change**
+
+1. **Applied:** speling ([FHIR-36819](https://jira.hl7.org/browse/FHIR-36819)) See Changes [Here](#.html)
+1. **Applied:** simple edits ([FHIR-36820](https://jira.hl7.org/browse/FHIR-36820)) See Changes [Here](#.html)
+1. **Applied:** minor edits ([FHIR-36821](https://jira.hl7.org/browse/FHIR-36821)) See Changes [Here](#.html)
+1. **Resolved - change required:** Nothing displayed for example ([FHIR-36822](https://jira.hl7.org/browse/FHIR-36822)) See Changes [Here](#.html)
+1. **Resolved - change required:** nothing displayed for CDEX Document with Electronic Sig Example ([FHIR-36823](https://jira.hl7.org/browse/FHIR-36823)) See Changes [Here](#.html)
+1. **Triaged:** Add guidance and requiriements for when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes [Here](#.html)
+1. **Triaged:** Example of Completed Task Request for Signed Data provides example output link that leads to unaccessible page ([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](#.html)
+1. **Triaged:** Need clarification on who is signing for whom ([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes [Here](#.html)
+1. **Triaged:** Can providers forward supporting documents from another system? ([FHIR-36847](https://jira.hl7.org/browse/FHIR-36847)) See Changes [Here](#.html)
+1. **Triaged:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](#.html)
+1. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)
+1. **Applied:** correct typo ([FHIR-36917](https://jira.hl7.org/browse/FHIR-36917)) See Changes [Here](#.html)
+1. **Triaged:** more generic example of attachments-document types and data element examples-perhaps, word choice for re-association ([FHIR-36918](https://jira.hl7.org/browse/FHIR-36918)) See Changes [Here](#.html)
+1. **Triaged:** clarificaiton of the purpose for additional information ([FHIR-36919](https://jira.hl7.org/browse/FHIR-36919)) See Changes [Here](#.html)
+1. **Triaged:** clarify the disposition of a new attachment ([FHIR-36920](https://jira.hl7.org/browse/FHIR-36920)) See Changes [Here](#.html)
+1. **Applied:** typo correction ([FHIR-36921](https://jira.hl7.org/browse/FHIR-36921)) See Changes [Here](#.html)
+1. **Applied:** Change the word is to in tho make the sentence flow. ([FHIR-36922](https://jira.hl7.org/browse/FHIR-36922)) See Changes [Here](#.html)
+1. **Triaged:** no content to review on page (XML or JSON may have corrections- ([FHIR-36923](https://jira.hl7.org/browse/FHIR-36923)) See Changes [Here](#.html)
+1. **Triaged:** Clarify Figure 4 and associated text in 2.6.2 ([FHIR-36985](https://jira.hl7.org/browse/FHIR-36985)) See Changes [Here](#.html)
+1. **Triaged:** Signature requirements clarification in 3.2.6 and 4 ([FHIR-36986](https://jira.hl7.org/browse/FHIR-36986)) See Changes [Here](#.html)
+1. **Triaged:** Add non-document based attachment scenario ([FHIR-36995](https://jira.hl7.org/browse/FHIR-36995)) See Changes [Here](#.html)
+1. **Triaged:** Re-association reference is ambiguous ([FHIR-36996](https://jira.hl7.org/browse/FHIR-36996)) See Changes [Here](#.html)
+1. **Triaged:** Alignment with other ePA guides ([FHIR-36997](https://jira.hl7.org/browse/FHIR-36997)) See Changes [Here](#.html)
+1. **Triaged:** Replace EHR with Source HIT ([FHIR-36999](https://jira.hl7.org/browse/FHIR-36999)) See Changes [Here](#.html)
+1. **Triaged:** $submit-attachment should allow for more ""attachTo"" values in valueset ([FHIR-37000](https://jira.hl7.org/browse/FHIR-37000)) See Changes [Here](#.html)
+1. **Triaged:** Direct query being the ""preferred"" approach ([FHIR-37166](https://jira.hl7.org/browse/FHIR-37166)) See Changes [Here](#.html)
+1. **Triaged:** Qualifying a direct query ([FHIR-37167](https://jira.hl7.org/browse/FHIR-37167)) See Changes [Here](#.html)
+1. **Triaged:** Signature attesting true and accurate resources ([FHIR-37194](https://jira.hl7.org/browse/FHIR-37194)) See Changes [Here](#.html)
+1. **Triaged:** Clarify H&P in diagram is object or behavior ([FHIR-37225](https://jira.hl7.org/browse/FHIR-37225)) See Changes [Here](#.html)
+1. **Triaged:** Question on human practitioner requirements on attachments ([FHIR-37226](https://jira.hl7.org/browse/FHIR-37226)) See Changes [Here](#.html)
+1. **Applied:** Typo correction for clarity ([FHIR-37227](https://jira.hl7.org/browse/FHIR-37227)) See Changes [Here](#.html)
+1. **Triaged:** Provide clarity on why solicited workflow varies from existing guidance in financial module ([FHIR-37228](https://jira.hl7.org/browse/FHIR-37228)) See Changes [Here](#.html)
+1. **Applied:** Typo correction ([FHIR-37229](https://jira.hl7.org/browse/FHIR-37229)) See Changes [Here](#.html)
+1. **Triaged:** Describe reasoning for choosing Bundle.signature in attachment signatures or signatures page ([FHIR-37230](https://jira.hl7.org/browse/FHIR-37230)) See Changes [Here](#.html)
+1. **Submitted:** Same comment as above ([FHIR-37231](https://jira.hl7.org/browse/FHIR-37231)) See Changes [Here](#.html)
+1. **Applied:** minor text edits ([FHIR-37233](https://jira.hl7.org/browse/FHIR-37233)) See Changes [Here](#.html)
+1. **Applied:** Clarify Figure 7 step 4 text to match the description ([FHIR-37234](https://jira.hl7.org/browse/FHIR-37234)) See Changes [Here](#.html)
+1. **Applied:** operation name used in examples  ([FHIR-37235](https://jira.hl7.org/browse/FHIR-37235)) See Changes [Here](#.html)
+1. **Triaged:** concerned about liability implications of digital signatures ([FHIR-37243](https://jira.hl7.org/browse/FHIR-37243)) See Changes [Here](#.html)
+1. **Triaged:** change SHOULD to SHALL ([FHIR-37244](https://jira.hl7.org/browse/FHIR-37244)) See Changes [Here](#.html)
+1. **Triaged:** Signatures should not be required for more than one per Task ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](#.html)
+1. **Triaged:** overly vague ([FHIR-37248](https://jira.hl7.org/browse/FHIR-37248)) See Changes [Here](#.html)
+1. **Triaged:** data consumer?  ([FHIR-37250](https://jira.hl7.org/browse/FHIR-37250)) See Changes [Here](#.html)
+1. **Triaged:** re write section  ([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes [Here](#.html)
+1. **Triaged:** Please flesh sentence  ([FHIR-37253](https://jira.hl7.org/browse/FHIR-37253)) See Changes [Here](#.html)
+1. **Triaged:** overlap with DV Burden Reduction guides? ([FHIR-37257](https://jira.hl7.org/browse/FHIR-37257)) See Changes [Here](#.html)
+1. **Triaged:** subscriptions  ([FHIR-37260](https://jira.hl7.org/browse/FHIR-37260)) See Changes [Here](#.html)
+
+##### Non-Ballot Issues and links to the updated content are below::
+
+**Status: Summary (Jira Issue) Link to Change**
+
+48. **FHIR-23429:** Does the IG support ""Access"" without retrieval of data? - CDex #16 ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-23441:** This is a use case between two providers, primarily. - CDex #28 ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-23672:** AMA believes quality reporting should include the goal of increasing the transparency of health care data. - CDex #307 ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-23674:** This use case needs to be narrowed in order to prevent medical necessity determinations delaying or completely impeding access to appropriate care. - CDex #309 ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-30824:** Recommendation for exchanging purpose of use. ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-30837:** Messaging not reflected in data flow. ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-31890:** overflowing their workflow in-basket impacting patient care ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-34425:** add a profile on Parameters ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-35151:** CLONE - Better standardize Task.reasonReference by formalizing (but not limiting) the current scenarios ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36180:** EHR vs. HIT ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36181:** Data Sets as ""attachments"" ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36727:** move change log from version HX to changes page ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36733:** Attachments Section Unsolicited Work Flow ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36735:** Submit attachment operation sentence modification ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36736:** Fix Typo  sef-signed ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36739:** Example Bundle: CDEX Document with Digital Signature Example- No general narrative ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36740:** Active Condition 1 - no general narrative or example listed ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36741:** Explicitly call out that HRex and FHIR define the content that is exchanged, while CDex defines additional conditions for how it is exchanged ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36756:** SubmitAttachment AttachTo text correction ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36757:** Unclear why certain inputs are required ([Question](https://jira.hl7.org/browse/Question)) Link to Changes [Here](#.html)
+1. **FHIR-36843:** Example Bundles for CDex Document with Digital Sig and Electronic Sig have a blank Narrative Content page and it's unclear whyblank  ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36846:** Clarify that signature.who should reference an Organization resource or Practitioner resource ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36848:** sentence fragments ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36853:** Various Points Seem to be on the same line when describing that implementers should support JWS JSON Serialization, meaning is unclear ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-36896:** Capitalization consistency ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36897:** Operation link consistency ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36898:** Incorrect request URL in examples ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36905:** Small edits to the Signature page ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36906:** Small edits to SubmitAttachment operation page ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-36907:** Incomplete Narrative Content rendering of Submit Attachment Parameters Resource example ([Technical Correction](https://jira.hl7.org/browse/Technical Correction)) Link to Changes [Here](#.html)
+1. **FHIR-37245:** Missing examples  ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37247:** We appreciate the robust P&S section ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37252:** please rewrite  ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37264:** Clarify support (or not) for XML with signatures ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37265:** Add clarification on how to handle reads when signatures are needed ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37271:** In diagram, show 200 ok w/ OperationOutcome ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37331:** Submission process needs to identify what payer we're sending to ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+1. **FHIR-37332:** Need clarification on whether claims attachment submitter is same as claim submitter ([Change Request](https://jira.hl7.org/browse/Change Request)) Link to Changes [Here](#.html)
+
+
 
 ---
 
