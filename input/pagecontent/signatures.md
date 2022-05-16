@@ -112,7 +112,7 @@ In addition to the electronic signature rules listed in the previous section, fo
      - Note that the complete JWS is in the form *Header.Payload.Signature* with period ('.') characters between the base64_url encoded parts.  This `Signature.data` value must be base64 encoded *again* as indicated above. Otherwise it will fail validation since the base64Binary regex: (\s*([0-9a-zA-Z\+\=]){4}\s*)+ does not include the period ('.') character.
    - **SHOULD** support [JWS JSON Serialization] format to represent multiple signatures with all parameter values identical except `"x5c"`.
      - The signer may have more than one certificate (for example, the signer participates in more than one trust community)
-  - **SHALL** use [X.509 certificates] to verify the identity of the entity signing the Bundle
+   - **SHALL** use [X.509 certificates] to verify the identity of the entity signing the Bundle
     1. The KeyUsage should include 'DigitalSignature'
     1. The Issuer should be a trusted CA for the Consumer
     1. The Subject (or Subject Alternative Name (SAN)) should match the data Source
