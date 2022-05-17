@@ -40,12 +40,12 @@ This guide defines a simple RESTful interaction for exchanging attachments using
 ### FHIR Technical Workflow
 
 
-As shown in the figure 7 below, the attachments are “pushed” using the `$submit-attachment` operation directly to the Payer or an Intermediary.
+As shown in the figure 7 below, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 {% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
 1. EHR assembles attachments and re-association  data for a claim or prior authorization
-1. EHR invokes `$submit-attachment` operation to submit attachments to Payer
+1. EHR invokes [`$submit-attachment`] operation to submit attachments to Payer
 1. Payer responds with an http transactional layer response either accepting or rejecting transaction
 1. Payer re-associates additional information with claim or prior authorization
 
@@ -59,7 +59,7 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 
 - Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
-- Provider knows the Payer's endpoint for sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+- Provider knows the Payer's endpoint for sending attachments.  Note that the [`$submit-attachment`] operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
 - Re-association of attachments to the claim and subsequent steps are out of scope for this guide.
 

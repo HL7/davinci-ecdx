@@ -84,7 +84,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Applied:** Fix grammar([FHIR-36848](https://jira.hl7.org/browse/FHIR-36848)) See Changes [Here](direct-query.html#signatures)
 1. **Applied:** Fix formatting Error to separate several entries([FHIR-36853](https://jira.hl7.org/browse/FHIR-36853)) See Changes [Here](signatures.html#digital-signatures)
 2. **Submitted:** Fix capitalization([FHIR-36896](https://jira.hl7.org/browse/FHIR-36896)) See Changes [Here](attachments.html)
-3. **Submitted:** Operation link consistency ([FHIR-36897](https://jira.hl7.org/browse/FHIR-36897)) See Changes [Here](#.html)
+3. **Submitted:** Adds links to operation consistently ([FHIR-36897](https://jira.hl7.org/browse/FHIR-36897)) See Changes [Here](attachments.html)
 4. **Submitted:** Small edits to the Signature page ([FHIR-36905](https://jira.hl7.org/browse/FHIR-36905)) See Changes [Here](#.html)
 5. **Submitted:** Small edits to SubmitAttachment operation page ([FHIR-36906](https://jira.hl7.org/browse/FHIR-36906)) See Changes [Here](#.html)
 6. **Submitted:** Incomplete Narrative Content rendering of Submit Attachment Parameters Resource example ([FHIR-36907](https://jira.hl7.org/browse/FHIR-36907)) See Changes [Here](#.html)
