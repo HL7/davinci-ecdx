@@ -11,7 +11,7 @@ This is a Jupyter Notebook which uses openSSL, Python 3.7, and the Python jcs an
 
 *DO THIS STEP ONLY ONCE*
 
-**2. Create a sef-signed certificate for authenticating the signer**
+**2. Create a self-signed certificate for authenticating the signer**
 
 create the public and private keys and cert using openssl on the command line.
 
