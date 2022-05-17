@@ -9,7 +9,7 @@ This page provides specific guidance and rules to exchange *signed* data using F
 ### Generating and Verifying *Signed* Resources
 
 There is a legal liability associated with the data exchanged. Because of medical legal issue surrounding administrative transactions, there is a
-difference in the clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first] Signatures attest that the data has been reviewed and the information is accurate and know it to be true.
+difference in the clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, Medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first] Signatures attest that the data has been reviewed and the information is accurate and is known to be true.
 
 
 In addition legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.
@@ -84,9 +84,9 @@ In this Example, a `Bundle.signature` is added to a FHIR Document. The electroni
 
 *Digital Signatures* are a type of *Electronic signature* that meet the following functional requirements:
 
-1. authentication  - how the person that claims he is, is really that person
-2. integrity - has not been altered
-3. non-repudiation - if action later ( legal etc ) signer can not say it is not them.
+1. authentication  - They verify the identity of a person.
+2. integrity -  They ensure the signed document has not been altered.
+3. non-repudiation - The signer can not dispute their authorship (For example, if there is subsequent legal activity related to the signed document).
 
 Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensure the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
 
