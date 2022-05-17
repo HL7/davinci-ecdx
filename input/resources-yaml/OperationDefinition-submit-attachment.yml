@@ -8,7 +8,7 @@ status: draft
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  This operation is used to submit attachments (aditional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+  This operation is used to submit attachments (additional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more Attachments as FHIR Resources
@@ -30,7 +30,7 @@ comment: |
   \*Note that an *unsolicited* Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for re-association. A *solicited* Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
 
   The following rules apply when using `$submit-attachment`:
-  * The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error
+  * The operation's endpoint **SHALL** only accepts `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
   * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.
   * For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
