@@ -1,12 +1,12 @@
 resourceType: OperationDefinition
 id: submit-attachment
-url: 'http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment'
+url: "http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment"
 version: 4.0.1
 name: SubmitAttachment
 title: Submit Attachment Operation
 status: draft
 kind: operation
-date: '2021-12-02T20:24:41-08:00'
+date: "2021-12-02T20:24:41-08:00"
 description: |-
   This operation is used to submit attachments (aditional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
@@ -27,7 +27,7 @@ description: |-
 
 code: submit-attachment
 comment: |
-  \*Note that an Unsolicited Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for re-association. Solicited Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
+  \*Note that an *unsolicited* Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for re-association. A *solicited* Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
 
   The following rules apply when using `$submit-attachment`:
   * The operation only accepts `POST` transactions - any other HTTP method will result in an HTTP error
@@ -51,9 +51,9 @@ parameter:
   - name: AttachTo
     use: in
     min: 1
-    max: '1'
+    max: "1"
     documentation: >-
-      Whether the additional information is needed for a claim (unsolicited or solicited) or for prior authorization.
+      Whether the additional information is needed for a claim or for prior authorization.
     type: code
     binding:
       strength: required
@@ -61,35 +61,35 @@ parameter:
   - name: TargetId
     use: in
     min: 1
-    max: '1'
+    max: "1"
     documentation: >-
       Claim/prior authorization identifier value referred to as the "re-association tracking control numbers"*
     type: string
   - name: ItemId
     use: in
     min: 0
-    max: '*'
+    max: "*"
     documentation: >-
       Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization.
     type: string
   - name: OrganizationId
     use: in
     min: 1
-    max: '1'
+    max: "1"
     documentation: >-
       Sending organization/location Identifier (e.g., NPI)
     type: Identifier
   - name: ProviderId
     use: in
     min: 1
-    max: '1'
+    max: "1"
     documentation: >-
       Sending provider identifier (e.g., NPI)
     type: Identifier
   - name: MemberId
     use: in
     min: 1
-    max: '1'
+    max: "1"
     documentation: >-
       Patient member identifier
     type: Identifier
@@ -97,7 +97,7 @@ parameter:
   - name: ServiceDate
     use: in
     min: 0
-    max: '1'
+    max: "1"
     documentation: >-
       Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.
     type: date
@@ -105,7 +105,7 @@ parameter:
   - name: Attachment
     use: in
     min: 1
-    max: '*'
+    max: "*"
     documentation: >-
       The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.  Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     type: Resource

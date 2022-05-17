@@ -14,14 +14,14 @@ Today claims typically come through [X12 transactions] or portal submissions. Pa
 Attachments for Claims or Prior Authorization introduces the concepts of *solicited* and *unsolicited* workflows:
 
 #### Solicited Workflow
-A solicited based attachment request, is a non-CDex FHIR request where a payer may send a portal, letter, X12 message or other type of request to the provider for additional information to support a claim or prior authorization. In response, the additional information is being sent from the provider system/EMR using CDex Attachments. The attachment is then re-associated with the claim or prior authorization.
+A *solicited* based attachment request, is a non-CDex FHIR request where a payer may send a portal, letter, X12 message or other type of request to the provider for additional information to support a claim or prior authorization. In response, the additional information is being sent from the provider system/EMR using CDex Attachments. The attachment is then re-associated with the claim or prior authorization.
 
 ##### Example Scenarios:
 1.	Submitting additional information for a prior authorization.
 2.	Submitting supplemental information for a claim based on a X12 (or other non-CDex FHIR) based payer request
 
 #### Unsolicited Workflow
-For an Unsolicited attachment the provider will submit additional information using CDex Attachments to support a claim or prior authorization based on payer predefined rules without any type of request.  The attachment is then re-associated with the claim or prior authorization.
+For an *unsolicited* attachment the provider will submit additional information using CDex Attachments to support a claim or prior authorization based on payer predefined rules without any type of request.  The attachment is then re-associated with the claim or prior authorization.
 
 ##### Example Scenarios:
 1.	Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
@@ -60,7 +60,7 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 - Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for sending attachments.  Note that the `$submit-attachment` operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
-- Unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
+- An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
 - Re-association of attachments to the claim and subsequent steps are out of scope for this guide.
 
 {% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
