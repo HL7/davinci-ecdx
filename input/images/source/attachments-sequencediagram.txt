@@ -11,4 +11,4 @@ Payer (Data Consumer)-->EHR (Data Source): Return HTTP 200 OK
 else 3) Rejected
 Payer (Data Consumer)-->EHR (Data Source): Return HTTP 4xx or 5xx with an OperationOutcome
 end
-note right of Payer (Data Consumer): 4) Payer re-associates data to claim\nor prior auth and processes
+note right of Payer (Data Consumer): 4) Payer associates data with the claim\nor prior authorization and processes
