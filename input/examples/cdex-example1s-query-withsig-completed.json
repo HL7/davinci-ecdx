@@ -105,7 +105,7 @@
                 ]
             },
             "valueReference": {
-                "reference": "http://example.org/fhir/Bundle/cdex-electronic-sig-example"
+                "reference": "Bundle/cdex-document-digital-sig-example"
             }
         }
     ]

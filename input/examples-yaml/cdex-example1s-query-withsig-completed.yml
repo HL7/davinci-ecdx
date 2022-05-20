@@ -57,4 +57,4 @@ output:
     - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
       code: data-value
   valueReference:
-    reference: http://example.org/fhir/Bundle/cdex-electronic-sig-example
+    reference: Bundle/cdex-document-digital-sig-example
