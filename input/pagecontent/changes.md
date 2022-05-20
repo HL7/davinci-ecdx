@@ -33,7 +33,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 14. **Pre-Applied** Clarify Figure 4 and associated text in 2.6.2 ([FHIR-36985](https://jira.hl7.org/browse/FHIR-36985)) See Changes [Here](background.html#attachments-workflow)
 15. **Triaged:** Signature requirements clarification in 3.2.6 and 4 ([FHIR-36986](https://jira.hl7.org/browse/FHIR-36986)) See Changes [Here](#.html)
 16. **Triaged:** Add non-document based attachment scenario ([FHIR-36995](https://jira.hl7.org/browse/FHIR-36995)) See Changes [Here](#.html)
-17. **Triaged:** Re-association reference is ambiguous ([FHIR-36996](https://jira.hl7.org/browse/FHIR-36996)) See Changes [Here](#.html)
+17. **Pre-Applied:** Clarify association of data ([FHIR-36996](https://jira.hl7.org/browse/FHIR-36996)) See Changes [Here](attachments.html)
 18. **Triaged:** Alignment with other ePA guides ([FHIR-36997](https://jira.hl7.org/browse/FHIR-36997)) See Changes [Here](#.html)
 19. **Triaged:** Replace EHR with Source HIT ([FHIR-36999](https://jira.hl7.org/browse/FHIR-36999)) See Changes [Here](#.html)
 20. **Triaged:** $submit-attachment should allow for more ""attachTo"" values in valueset ([FHIR-37000](https://jira.hl7.org/browse/FHIR-37000)) See Changes [Here](#.html)

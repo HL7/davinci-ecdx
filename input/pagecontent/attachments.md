@@ -34,7 +34,7 @@ In all of these cases, the payer will require a trading partner agreement for se
 
 ### `$submit-attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
+This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
 
 
 ### FHIR Technical Workflow
@@ -44,11 +44,10 @@ As shown in the figure 7 below, the attachments are “pushed” using the [`$su
 
 {% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
-1. EHR assembles attachments and re-association data for a claim or prior authorization
-1. EHR invokes [`$submit-attachment`] operation to submit attachments to Payer
-1. Payer responds with an http transactional layer response either accepting or rejecting transaction
-1. Payer associates additional information with claim or prior authorization
-
+1. EHR assembles attachments and meta data to associate it to a claim or prior authorization
+2. EHR invokes [`$submit-attachment`] operation to submit attachments to Payer
+3. Payer responds with an http transactional layer response either accepting or rejecting transaction
+4. Payer associates attachments with claim or prior authorization.
 ### Attachments Transaction Scenario
 
 In the following example, a Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:
@@ -61,7 +60,7 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for sending attachments.  Note that the [`$submit-attachment`] operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
-- Association of attachments to the claim and subsequent steps are out of scope for this guide.
+- Payer associates attachments to the claim.
 
 {% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
