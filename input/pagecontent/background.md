@@ -57,9 +57,9 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 FHIR offers numerous architectural approaches for sharing data between systems. This guide focuses on **three** FHIR transaction approaches for exchanging clincal data:
 
-1. **[Direct Query] (preferred):** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
-1. **[Task Based Approach]:** Payer requests the information desired using the FHIR *Task* resource and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-1. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends supporting information for claims or prior authorization directly to Payer using a "push" based FHIR operation.
+1. **[Direct Query]:** Payer directly queries EHR for specific data using the standard FHIR RESTful search.
+2. **[Task Based Approach]:** Payer requests the information desired using the FHIR *Task* resource and the EHR supplies the data possibly with human involvement to find/aggregate/filter/approve it.
+3. **[Attachments]** Based on pre-defined payor rules or business needs the EHR sends supporting information for claims or prior authorization directly to Payer using a "push" based FHIR operation.
 
 See the [Specification] pages for a detailed description of the technical workflow and API guidance.
 

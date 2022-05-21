@@ -37,7 +37,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 18. **Triaged:** Alignment with other ePA guides ([FHIR-36997](https://jira.hl7.org/browse/FHIR-36997)) See Changes [Here](#.html)
 19. **Triaged:** Replace EHR with Source HIT ([FHIR-36999](https://jira.hl7.org/browse/FHIR-36999)) See Changes [Here](#.html)
 20. **Triaged:** $submit-attachment should allow for more ""attachTo"" values in valueset ([FHIR-37000](https://jira.hl7.org/browse/FHIR-37000)) See Changes [Here](#.html)
-21. **Triaged:** Direct query being the ""preferred"" approach ([FHIR-37166](https://jira.hl7.org/browse/FHIR-37166)) See Changes [Here](#.html)
+21. **Pre-Applied:** Remove "preferred" approach from direct query ([FHIR-37166](https://jira.hl7.org/browse/FHIR-37166)) See Changes [Here](direct-query.html)
 22. **Triaged:** Qualifying a direct query ([FHIR-37167](https://jira.hl7.org/browse/FHIR-37167)) See Changes [Here](#.html)
 23. **Triaged:** Signature attesting true and accurate resources ([FHIR-37194](https://jira.hl7.org/browse/FHIR-37194)) See Changes [Here](#.html)
 24. **Triaged:** Clarify H&P in diagram is object or behavior ([FHIR-37225](https://jira.hl7.org/browse/FHIR-37225)) See Changes [Here](#.html)
