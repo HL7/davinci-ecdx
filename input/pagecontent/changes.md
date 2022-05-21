@@ -56,7 +56,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 37. **Triaged:** overly vague ([FHIR-37248](https://jira.hl7.org/browse/FHIR-37248)) See Changes [Here](#.html)
 38. **Triaged:** data consumer?  ([FHIR-37250](https://jira.hl7.org/browse/FHIR-37250)) See Changes [Here](#.html)
 39. **Triaged:** re write section  ([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes [Here](#.html)
-40. **Triaged:** Please flesh sentence  ([FHIR-37253](https://jira.hl7.org/browse/FHIR-37253)) See Changes [Here](#.html)
+40. **Pre-Applied** Rewrite introduction to Signature   ([FHIR-37253](https://jira.hl7.org/browse/FHIR-37253)) See Changes [Here](signatures.html)
 41. **Triaged:** overlap with DV Burden Reduction guides? ([FHIR-37257](https://jira.hl7.org/browse/FHIR-37257)) See Changes [Here](#.html)
 42. **Triaged:** subscriptions  ([FHIR-37260](https://jira.hl7.org/browse/FHIR-37260)) See Changes [Here](#.html)
 

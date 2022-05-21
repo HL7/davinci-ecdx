@@ -1,18 +1,12 @@
 
 <!-- ---
 tags: CDEX
-title: Generating and Verifying *Signed* Resources
+title: Signatures
 --- -->
 
-This page provides specific guidance and rules to exchange *signed* data using FHIR and non FHIR signatures.
+<span class="bg-success" markdown="1">Payers are committed to detecting, correcting and preventing fraud, waste and abuse within the healthcare payment system. As part of this effort, payers may require signatures from the provider or provider organization to attest that the information being exchanged is true and accurate. For example, Medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first]  The  provider may be subject to administrative, civil, or criminal liability for falsification, omission, or concealment of material fact. Providers acting as *data consumers* may require signatures as well. This page provides specific guidance and rules for generating exchanging and verifying *signed* data using FHIR and non FHIR signatures. </span><!-- new-content -->
 
-### Generating and Verifying *Signed* Resources
-
-There is a legal liability associated with the data exchanged. Because of medical legal issue surrounding administrative transactions, there is a
-difference in the clinical vs contractual vs legal uses of data. Some data consumers may require that the data they receive are signed. For example, Medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first] Signatures attest that the data has been reviewed and the information is accurate and is known to be true.
-
-
-In addition legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.
+Legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.
 {:.bg-warning}
 
 ### What is Signed?
