@@ -21,7 +21,7 @@ A *solicited* based attachment request, is a non-CDex FHIR request where a payer
 2.	Submitting supplemental information for a claim based on a X12 (or other non-CDex FHIR) based payer request
 
 #### Unsolicited Workflow
-For an *unsolicited* attachment the provider will submit additional information using CDex Attachments to support a claim or prior authorization based on payer predefined rules without any type of request.  The attachment is then associated with the claim or prior authorization.
+For an *unsolicited* attachment the provider will submit additional information using CDex Attachments to support a claim or prior authorization based on payer predefined rules without any type of request.  <span class="bg-success" markdown="1">The attachments may be submitted *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.</span><!-- new-content --> The attachment is then associated with the claim or prior authorization.
 
 ##### Example Scenarios:
 1.	Additional information based on a set of pre-defined rules by the payer or in state mandates without a specific request.
@@ -34,7 +34,7 @@ In all of these cases, the payer will require a trading partner agreement for se
 
 ### `$submit-attachment` Operation
 
-This guide defines a simple RESTful interaction for exchanging attachments using [`$submit-attachment`], a FHIR [Operation].  This operation accepts the clinical attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
+<span class="bg-success" markdown="1">This guide defines a FHIR [Operation] for exchanging attachments using [`$submit-attachment`].</span><!-- new-content -->  This operation accepts the clinical attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
 
 
 ### FHIR Technical Workflow
@@ -42,12 +42,23 @@ This guide defines a simple RESTful interaction for exchanging attachments using
 
 As shown in the figure 7 below, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
-{% include img-med.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
+<div class="bg-success" markdown="1">
 
-1. EHR assembles attachments and meta data to associate it to a claim or prior authorization
-2. EHR invokes [`$submit-attachment`] operation to submit attachments to Payer
-3. Payer responds with an http transactional layer response either accepting or rejecting transaction
-4. Payer associates attachments with claim or prior authorization.
+{% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
+
+
+1. Data Source assembles attachments and the meta data to associate the attachments to a claim or prior authorization
+1. Data Source invokes [`$submit-attachment`] operation to submit attachments to Payer
+1. Payer responds with an http transactional layer response either accepting or rejecting transaction  
+   1. The transaction is accepted and the Payer associates attachments with and *existing* claim or prior authorization.
+   1. The transaction is accepted and the Payer stores the attachments for subsequent association to a *future* claim or prior authorization
+     - attachment can not be associated to an *existing* claim or member
+     - an OperationOutcome is sent with the response to inform the Data Source that the attachments are being held for subsequent association  
+   1. transaction is rejected
+1. After association of the attachments to the claim or prior authorization, the Payer processes the claim.
+
+</div><!-- new-content -->
+
 ### Attachments Transaction Scenario
 
 In the following example, a Provider creates a claim and sends supporting CCDA documents using the FHIR operation, [`$submit-attachment`]:

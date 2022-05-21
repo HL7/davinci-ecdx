@@ -8,7 +8,7 @@ status: draft
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  This operation is used to submit attachments (additional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+  This operation is used to submit attachments (additional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more Attachments as FHIR Resources
@@ -16,6 +16,7 @@ description: |-
       - What is the documentation for:
         - Claim
         - Prior Authorization
+      - Optionally, a unique payer identifier
       - A unique claim/prior authorization identifier  (referred to as the "re-association tracking control numbers")*
       - Optionally, one or more unique claim line item identifiers
       - A unique organization/location identifier (e.g., NPI)
@@ -37,9 +38,10 @@ comment: |
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
   * When processing messages, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
+      * If the attachments can not be associated to an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that the attachments are being held for subsequent association to a claim or prior-authorization.
     * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point resubmitting the unaltered operation,
     * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.
-    *  The server **MAY** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional information, and **SHOULD** do so if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check whether they sent it to the wrong payer.
+    *  The server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional error information if the response code is 400 or greater. For example, if the payer has no knowledge of the claim or prior authorization, the OperationOurtcome can alert submitter to check whether they sent it to the wrong payer.
 
   See the [Attachments](attachments.html) page for additional guidance and examples.
 resource:
@@ -58,6 +60,13 @@ parameter:
     binding:
       strength: required
       valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-reason
+  - name: PayerId
+    use: in
+    min: 0
+    max: "1"
+    documentation: >-
+      The receiving payer identifier. Some endpoints may support multiple payers.  Therefore, this identifier may be required when submitting attachments.
+    type: Identifier   
   - name: TargetId
     use: in
     min: 1
@@ -77,7 +86,7 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      Sending organization/location Identifier (e.g., NPI)
+      Sending organization/location identifier (e.g., NPI)
     type: Identifier
   - name: ProviderId
     use: in
