@@ -102,6 +102,6 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
    - Attachments (Supporting information) for a claim or prior authorization
    - Data Elements for association to a claim or prior authorization. (for example, member id and claim id)
 1. Payer system accepts attachments
-1. *Out of Scope*: How payer system associates attachments to and processes the claim or prior authorization.
+1. *Out of Scope*: <span class="bg-success" markdown="1">How payer system associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
 
 {% include link-list.md %}
