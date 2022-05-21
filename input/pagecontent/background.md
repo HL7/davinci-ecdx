@@ -93,15 +93,15 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
 
 #### Actors and Roles
 
-- The Payer acts in the role of a *data consumer*.
+- The Payer system acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.
 
 #### Steps
 
-1. The data source sends attachments to the data consumer.
-   - Supporting information for a claim or prior authorization
+1. The data source sends:
+   - Attachments (Supporting information) for a claim or prior authorization
    - Data Elements for association to a claim or prior authorization. (for example, member id and claim id)
-1. Payer accepts attachments
-1. *Out of Scope*: Payer processes the claim or prior authorization.
+1. Payer system accepts attachments
+1. *Out of Scope*: How payer system associates attachments to and processes the claim or prior authorization.
 
 {% include link-list.md %}

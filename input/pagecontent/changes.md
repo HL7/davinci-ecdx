@@ -41,7 +41,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 22. **Triaged:** Qualifying a direct query ([FHIR-37167](https://jira.hl7.org/browse/FHIR-37167)) See Changes [Here](#.html)
 23. **Triaged:** Signature attesting true and accurate resources ([FHIR-37194](https://jira.hl7.org/browse/FHIR-37194)) See Changes [Here](#.html)
 24. **Triaged:** Clarify H&P in diagram is object or behavior ([FHIR-37225](https://jira.hl7.org/browse/FHIR-37225)) See Changes [Here](#.html)
-25. **Triaged:** Question on human practitioner requirements on attachments ([FHIR-37226](https://jira.hl7.org/browse/FHIR-37226)) See Changes [Here](#.html)
+25. **Pre-Applied:** Clarify roles in attachments diagram([FHIR-37226](https://jira.hl7.org/browse/FHIR-37226)) See Changes [Here](background.html)
 26. **Applied:** Typo correction for clarity ([FHIR-37227](https://jira.hl7.org/browse/FHIR-37227)) See Changes [Here](#.html)
 27. **Triaged:** Provide clarity on why solicited workflow varies from existing guidance in financial module ([FHIR-37228](https://jira.hl7.org/browse/FHIR-37228)) See Changes [Here](#.html)
 28. **Applied:** Typo correction ([FHIR-37229](https://jira.hl7.org/browse/FHIR-37229)) See Changes [Here](#.html)
