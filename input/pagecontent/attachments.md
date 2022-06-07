@@ -49,13 +49,9 @@ As shown in the figure 7 below, the attachments are “pushed” using the [`$su
 
 1. Data Source assembles attachments and the meta data to associate the attachments to a claim or prior authorization
 1. Data Source invokes [`$submit-attachment`] operation to submit attachments to Payer
-1. Payer responds with an http transactional layer response either accepting or rejecting transaction  
-   1. The transaction is accepted and the Payer associates attachments with and *existing* claim or prior authorization.
-   1. The transaction is accepted and the Payer stores the attachments for subsequent association to a *future* claim or prior authorization
-     - attachment can not be associated to an *existing* claim or member
-     - an OperationOutcome is sent with the response to inform the Data Source that the attachments are being held for subsequent association  
-   1. transaction is rejected
-1. After association of the attachments to the claim or prior authorization, the Payer processes the claim.
+1. Payer responds with an http transactional layer response either accepting or rejecting the transaction.
+   - The Payer **SHOULD** return an informational OperationOutcome with the http accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
+2. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
 
 </div><!-- new-content -->
 
@@ -65,7 +61,7 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 
 `POST [base]/$submit-attachment`
 
-#### Scenario 1: CCDA Document Attachments
+#### Scenario 1a: CCDA Document Attachments
 
 - Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim. (*Unsolicited Attachments*).
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
@@ -73,7 +69,17 @@ In the following example, a Provider creates a claim and sends supporting CCDA d
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
 - <span class="bg-success" markdown="1">Payer associates attachments to the claim.</span><!-- new-content -->
 
-{% include examplebutton_default.html example="attachment-scenario1.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+{% include examplebutton_default.html example="attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+
+<div class="bg-success" markdown="1">
+
+#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to Claim
+
+This Scenario is the same as Scenario 1a above except that the attachments are submitted *prior* to the claim.  The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
+
+{% include examplebutton_default.html example="attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+
+</div><!-- new-content -->
 
 ---
 

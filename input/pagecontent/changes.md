@@ -94,11 +94,14 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 17. **Pre-Applied:** Clarify support for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes:
     -  [Here](signatures.html#digital-signature-rules-for-cdex-fhir-bundles)
     -  [Here](CapabilityStatement-data-consumer-client.html#behavior)
-   -   [Here](CapabilityStatement-data-consumer-server.html#behavior)
+    -  [Here](CapabilityStatement-data-consumer-server.html#behavior)
     -  [Here](CapabilityStatement-data-source-client.html#behavior)
     -  [Here](CapabilityStatement-data-source-server.html#behavior)
 18. **Triaged:** Add clarification on how to handle reads when signatures are needed ([FHIR-37265](https://jira.hl7.org/browse/FHIR-37265)) See Changes [Here](#.html)
-19. **Pre-Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes [Here](attachments.html#fhir-technical-workflow)
+19. **Pre-Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes:
+    -  [Here](attachments.html#fhir-technical-workflow)
+    -  [Here](attachments.html#scenario-1b-ccda-document-attachments-submitted-prior-to-claim)
+    -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
 20. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
 21. **Triaged:** Need clarification on whether claims attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes [Here](#.html)
 

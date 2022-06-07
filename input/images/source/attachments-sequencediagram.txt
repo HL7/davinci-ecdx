@@ -1,27 +1,14 @@
 #text for https://sequencediagram.org/
 
-participant Data Source
+participant EHR (Data Source)
 
 participant Payer (Data Consumer)
 
-entryspacing 0.6
-note over Data Source:1) Data Source has attachments for Payer
-Data Source->Payer (Data Consumer): 2) POST $submit-attachment
-alt 3.1) Accepted and associated with an existing claim or prior authorization
-
-note over Payer (Data Consumer): 3.1) Payer associates attachments\nwith an existing claim or prior authorization
-Payer (Data Consumer)-->Data Source: Return HTTP 200 OK
-else 3.2) Accepted and associated with a future claim or prior authorization
-
-note over Payer (Data Consumer): 3.2) Payer unable to associate\nattachments with an existing claim\nor prior authorization
-
-Payer (Data Consumer)-->Data Source: Return HTTP 200 OK with an Informational OperationOutcome 
-
-note over Payer (Data Consumer): 3.2) Payer associates held attachments\nwith a new claim or prior authorization
-
-else 3.3) Rejected
-Payer (Data Consumer)-->Data Source: Return HTTP 4xx or 5xx with an Error OperationOutcome
+note over EHR (Data Source):1) EHR has attachments for Payer
+EHR (Data Source)->Payer (Data Consumer): 2) POST $submit-attachment with attachments in payload
+alt 3) Accepted
+Payer (Data Consumer)-->EHR (Data Source): Return HTTP 200 OK +/- OperationOutcome
+else 3) Rejected
+Payer (Data Consumer)-->EHR (Data Source): Return HTTP 4xx or 5xx with an OperationOutcome
 end
-
-
-note over Payer (Data Consumer): 4) Payer processes claim\nor prior authorization
+note right of Payer (Data Consumer): 4) Payer associates data with existing or future\nclaim/prior authorization and processes
