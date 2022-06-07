@@ -4,7 +4,7 @@ tags: CDEX
 title: Signatures
 --- -->
 
-<span class="bg-success" markdown="1">Payers are committed to detecting, correcting and preventing fraud, waste and abuse within the healthcare payment system. As part of this effort, payers may require signatures from the provider or provider organization to attest that the information being exchanged is true and accurate. For example, Medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first]  The  provider may be subject to administrative, civil, or criminal liability for falsification, omission, or concealment of material fact. Providers acting as *data consumers* may require signatures as well. This page provides specific guidance and rules for generating exchanging and verifying *signed* data using FHIR and non FHIR signatures. </span><!-- new-content -->
+<span class="bg-success" markdown="1">Payers are committed to detecting, correcting and preventing fraud, waste and abuse within the healthcare payment system. As part of this effort, payers may require signatures from the provider or provider organization to attest that the information being exchanged is true and accurate. For example, Medicare requires that services provided/ordered/certified be authenticated by the persons responsible for the care of the beneficiary in accordance with Medicare’s policies.[^first][^second]  The  provider may be subject to administrative, civil, or criminal liability for falsification, omission, or concealment of material fact. Providers acting as *data consumers* may require signatures as well. This page provides specific guidance and rules for generating exchanging and verifying *signed* data using FHIR and non FHIR signatures. </span><!-- new-content -->
 
 Legal claims of fraud, waste and abuse requires extensive review of logs.  Therefore accurate and complete logs of what was data was exchanged must also be kept.
 {:.bg-warning}
@@ -29,7 +29,7 @@ Requirements for using *FHIR Signatures* to sign a Bundle with electronic or dig
 
 ### Electronic Signatures
 
->The term “electronic signature” means an electronic sound, symbol, or process, attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.[^second]
+>The term “electronic signature” means an electronic sound, symbol, or process, attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.[^third]
 
 The [`Bundle.signature`] element is available to support the various forms of electronic signatures which include:
 - a typed-out name
@@ -89,7 +89,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
 In addition to the electronic signature rules listed in the previous section, for digital signatures implementers:
 
 1. **SHALL** use JSON Web Signature (JWS)(see [RFC 7515])
-   >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^third]
+   >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
 
     <span class="bg-success" markdown="1">Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.
     {:.bg-warning}</span><!-- new-content --> 
@@ -181,9 +181,10 @@ In these examples, a detached JWS signature is created using a signer's private 
 
 ---
 
-[^first]: CMS signature requirements outlined in the Medicare Program Integrity Manual (CMS Pub.100-08), Chapter 3, Section 3.3.2.4.
-[^second]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
-[^third]: [RFC 7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015, <https://tools.ietf.org/html/rfc7515>
+[^first]: MLN Fact Sheet: Complying with Medicare Signature Requirements MLN Fact Sheet <https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/Downloads/Signature_Requirements_Fact_Sheet_ICN905364.pdf>
+[^second]: CMS signature requirements outlined in the Medicare Program Integrity Manual (CMS Pub.100-08), Chapter 3, Section 3.3.2.4. <https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/Downloads/pim83c03.pdf#page=44>
+[^third]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
+[^fourth]: [RFC 7515] Jones, M., et. al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015, <https://tools.ietf.org/html/rfc7515>
 
 
 {% include link-list.md %}
