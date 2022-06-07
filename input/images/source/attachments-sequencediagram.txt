@@ -9,20 +9,19 @@ note over Data Source:1) Data Source has attachments for Payer
 Data Source->Payer (Data Consumer): 2) POST $submit-attachment
 alt 3.1) Accepted and associated with an existing claim or prior authorization
 
-note right of Payer (Data Consumer): 3.1) Payer associates attachments with an existing claim\nor prior authorization
+note over Payer (Data Consumer): 3.1) Payer associates attachments\nwith an existing claim or prior authorization
 Payer (Data Consumer)-->Data Source: Return HTTP 200 OK
 else 3.2) Accepted and associated with a future claim or prior authorization
 
-note right of Payer (Data Consumer): 3.2) Payer unable to associate attachments with an existing claim\nor prior authorization
+note over Payer (Data Consumer): 3.2) Payer unable to associate\nattachments with an existing claim\nor prior authorization
 
-note right of Payer (Data Consumer): 3.2) Payer holds attachments for association\nwith future claim or prior-authorization
+Payer (Data Consumer)-->Data Source: Return HTTP 200 OK with an Informational OperationOutcome 
 
-Payer (Data Consumer)-->Data Source: Return HTTP 200 OK with an OperationOutcome\n informing that attachments are being held
-note right of Payer (Data Consumer): 3.2) Payer associates held attachments with a new claim\nor prior authorization
+note over Payer (Data Consumer): 3.2) Payer associates held attachments\nwith a new claim or prior authorization
 
 else 3.3) Rejected
-Payer (Data Consumer)-->Data Source: Return HTTP 4xx or 5xx with an OperationOutcome
+Payer (Data Consumer)-->Data Source: Return HTTP 4xx or 5xx with an Error OperationOutcome
 end
 
 
-note right of Payer (Data Consumer): 4) Payer processes claim\nor prior authorization
+note over Payer (Data Consumer): 4) Payer processes claim\nor prior authorization

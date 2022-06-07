@@ -90,6 +90,10 @@ In addition to the electronic signature rules listed in the previous section, fo
 
 1. **SHALL** use JSON Web Signature (JWS)(see [RFC 7515])
    >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^third]
+
+    <span class="bg-success" markdown="1">Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.
+    {:.bg-warning}</span><!-- new-content --> 
+
 2. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
    >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
    >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)]
@@ -108,9 +112,9 @@ In addition to the electronic signature rules listed in the previous section, fo
      - The signer may have more than one certificate (for example, the signer participates in more than one trust community)
    - **SHALL** use [X.509 certificates] to verify the identity of the entity signing the Bundle
     1. The KeyUsage should include 'DigitalSignature'
-    1. The Issuer should be a trusted CA for the Consumer
-    1. The Subject (or Subject Alternative Name (SAN)) should match the data Source
-    1. The Validity Dates should be appropriate/long enough as determined by the business partners.
+    2. The Issuer should be a trusted CA for the Consumer
+    3. The Subject (or Subject Alternative Name (SAN)) should match the data Source
+    4. The Validity Dates should be appropriate/long enough as determined by the business partners.
    - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well documented and standardized canonicalization algorithm, with multiple open-source implementation across several programming languages.
      - The `Bundle.id`,`Bundle.metadata` and `Bundle.signature` elements on the root Bundle resource **SHALL** be removed prior to canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
     <!--     1. The canonicalization algorithms defined in the FHIR specification *do not work* for the enveloped signatures that are being used in this guide.  -->

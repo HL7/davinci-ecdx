@@ -91,10 +91,15 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 14. **Submitted:** Missing examples  ([FHIR-37245](https://jira.hl7.org/browse/FHIR-37245)) See Changes [Here](#.html)
 15. **Submitted:** We appreciate the robust P&S section ([FHIR-37247](https://jira.hl7.org/browse/FHIR-37247)) See Changes [Here](#.html)
 16. **Pre-Applied:** Rewrite background on section on Payers([FHIR-37252](https://jira.hl7.org/browse/FHIR-37252)) See Changes [Here](background.html#what-do-payers-do-with-clinical-information)
-17. **Triaged:** Clarify support (or not) for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes [Here](#.html)
+17. **Pre-Applied:** Clarify support for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes:
+    -  [Here](signatures.html#digital-signature-rules-for-cdex-fhir-bundles)
+    -  [Here](CapabilityStatement-data-consumer-client.html#behavior)
+   -   [Here](CapabilityStatement-data-consumer-server.html#behavior)
+    -  [Here](CapabilityStatement-data-source-client.html#behavior)
+    -  [Here](CapabilityStatement-data-source-server.html#behavior)
 18. **Triaged:** Add clarification on how to handle reads when signatures are needed ([FHIR-37265](https://jira.hl7.org/browse/FHIR-37265)) See Changes [Here](#.html)
-19. **Triaged:** In diagram, show 200 ok w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes [Here](#.html)
-20. **Triaged:** Submission process needs to identify what payer we're sending to ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](#.html)
+19. **Pre-Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes [Here](attachments.html#fhir-technical-workflow)
+20. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
 21. **Triaged:** Need clarification on whether claims attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes [Here](#.html)
 
 
