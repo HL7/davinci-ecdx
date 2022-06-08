@@ -39,19 +39,19 @@
             "type": "Identifier"
         },
         {
+            "name": "PayerUrl",
+            "use": "in",
+            "min": 0,
+            "max": "1",
+            "documentation": "The receiving payer url. TODO WHY IS THIS NEEDED?",
+            "type": "url"
+        },
+        {
             "name": "TargetId",
             "use": "in",
             "min": 1,
             "max": "1",
             "documentation": "Claim/prior authorization identifier value referred to as the \"re-association tracking control numbers\"*",
-            "type": "string"
-        },
-        {
-            "name": "ItemId",
-            "use": "in",
-            "min": 0,
-            "max": "*",
-            "documentation": "Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization.",
             "type": "string"
         },
         {
@@ -89,10 +89,35 @@
         {
             "name": "Attachment",
             "use": "in",
-            "min": 1,
+            "min": 0,
             "max": "*",
-            "documentation": "The actual attachments as FHIR resources for Claims or Prior Authorization.  Note that non-FHIR data formats are attached to or referenced by DocumentReference.  Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.",
-            "type": "Resource"
+            "documentation": "The attachments being communicated for a Claim or Prior Authorization. They are applied to the ItemId (line items) and/or LOINC parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.",
+            "part": [
+                {
+                    "name": "ItemId",
+                    "use": "in",
+                    "min": 0,
+                    "max": "*",
+                    "documentation": "Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.",
+                    "type": "string"
+                },
+                {
+                    "name": "code",
+                    "use": "in",
+                    "min": 0,
+                    "max": "*",
+                    "documentation": "LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.",
+                    "type": "Coding"
+                },
+                {
+                    "name": "content",
+                    "use": "in",
+                    "min": 1,
+                    "max": "*",
+                    "documentation": "Attachments as FHIR resources.  Non-FHIR attachments data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.",
+                    "type": "Resource"
+                }
+            ]
         }
     ]
 }

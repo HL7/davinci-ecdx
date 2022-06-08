@@ -85,6 +85,8 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 1. The data may be reviewed by a human practitioner prior to sending it back to the data consumer.
 1. The data is sent back to the data consumer.
 
+<div class="bg-success" markdown="1">
+
 #### Attachments Workflow
 
 Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Attachments* workflow.  
@@ -95,6 +97,8 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
 
 - The Payer system acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.
+  
+</div><!-- new-content -->
 
 #### Steps
 
