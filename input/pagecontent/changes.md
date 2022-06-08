@@ -24,7 +24,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 5. **Triaged:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](#.html)
 6. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)
 7. **Applied:** correct typo ([FHIR-36917](https://jira.hl7.org/browse/FHIR-36917)) See Changes [Here](#.html)
-8. **Triaged:** more generic example of attachments-document types and data element examples-perhaps, word choice for re-association ([FHIR-36918](https://jira.hl7.org/browse/FHIR-36918)) See Changes [Here](#.html)
+8. **Pre-Applied** Update Figure ([FHIR-36918](https://jira.hl7.org/browse/FHIR-36918)) See Changes [Here](background.html#attachments-workflow)
 9. **Pre-Applied** Clarify purpose for additional information ([FHIR-36919](https://jira.hl7.org/browse/FHIR-36919)) See Changes [Here](attachments.html)
 10. **Triaged:** clarify the disposition of a new attachment ([FHIR-36920](https://jira.hl7.org/browse/FHIR-36920)) See Changes [Here](#.html)
 11. **Applied:** typo correction ([FHIR-36921](https://jira.hl7.org/browse/FHIR-36921)) See Changes [Here](#.html)
