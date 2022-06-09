@@ -112,11 +112,27 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/cdex-task-attachment-request"
+        },
+        "description": "This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following additional constraints for CDEX:\n- A `Task.identifier` element representing the Tracking ID\n- A `Task.requester.reference.identifier` element representing the Payer ID\n- A `Task.input` element slice representing the Payer Endpoint URL for submitting attachment using the `$submit-attachment` operation.\n- A `Task.input` element slice representing the Date of Service for the  Claim or Prior authorization.\n- An extension on the `Task.input` element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization.\n- A required `Task.Restriction.period` representing the due date for the attachments.\n- A contained Patient Resource representing required patient information associated 2022-06-09 01:53:53with the claim or prior-authorization.",
+        "exampleBoolean": false,
+        "name": "CDex Task Attachment Request Profile"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/cdex-task-data-request"
         },
         "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDEX:\n- A 'meta.tag' element representing work-queue hints.\n- A `Task.input` element slice representing the types of documents to be returned using the extensible LOINC® Document types value set.\n- A `Task.input` element slice representing a flag to indicate whether the requested data requires a signature.\n- A `Task.input` element slice representing the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.",
         "exampleBoolean": false,
         "name": "CDex Task Data Request Profile"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/item-ids"
+        },
+        "description": "A comma separated string of items IDs representing line item numbers of a Claim or Prior Authorization (for example, '1,2,3').",
+        "exampleBoolean": false,
+        "name": "CDex Item IDs Extension"
       },
       {
         "reference": {
