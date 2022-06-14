@@ -58,7 +58,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 39. **Triaged:** re write section  ([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes [Here](#.html)
 40. **Pre-Applied:** Rewrite introduction to Signature ([FHIR-37253](https://jira.hl7.org/browse/FHIR-37253)) See Changes [Here](signatures.html)
 41. **Triaged:** overlap with DV Burden Reduction guides? ([FHIR-37257](https://jira.hl7.org/browse/FHIR-37257)) See Changes [Here](#.html)
-42. **Triaged:** Update Polling Guidance ([FHIR-37260](https://jira.hl7.org/browse/FHIR-37260)) See Changes [Here](task-based-approach.html#polling-vs-subscriptionsl)
+42. **Pre-Applied:** Update Polling Guidance ([FHIR-37260](https://jira.hl7.org/browse/FHIR-37260)) See Changes [Here](task-based-approach.html#polling-vs-subscriptions)
 
 ##### Non-Ballot Issues and links to the updated content are below::
 
@@ -104,6 +104,11 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
 20. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
 21. **Triaged:** Need clarification on whether claims attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes [Here](#.html)
+22.  **Pre-Applied:** Add "Request Attachments" content as Draft ([FHIR-37563](https://jira.hl7.org/browse/FHIR-37563)) See Changes:
+    -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
+    -  [Here](attachments.html)
+    -  [Here](task-based-approach.html)
+
 
 
 ---

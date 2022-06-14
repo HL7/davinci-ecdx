@@ -8,34 +8,38 @@ status: draft
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  This operation is used to submit attachments (additional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to re-associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+  This operation is used to submit attachments (additional information) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
-  1. One or more Attachments as FHIR Resources
-  1. Data elements for reassociation to the Claim/Prior Authorization
+  1. One or more attachments as FHIR Resources
+      - Optionally, one or more unique line item numbers associated with the attachment(s)
+      - Optionally, one or more codes associated with the attachment(s)  
+  1. Data elements for association to the Claim/Prior Authorization
+      - A unique identifer that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
       - What is the documentation for:
         - Claim
         - Prior Authorization
       - Optionally, a unique payer identifier
-      - A unique claim/prior authorization identifier  (referred to as the "re-association tracking control numbers")*
-      - Optionally, one or more unique claim line item identifiers
       - A unique organization/location identifier (e.g., NPI)
       - A unique provider identifier (e.g., NPI)
       - A unique Patient member identifier
-      - Date of Service
+      - A Date of Service
+      - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.
 
   There are no output parameters.
 
 code: submit-attachment
 comment: |
-  \*Note that an *unsolicited* Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for re-association. A *solicited* Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
+  \*Note that an *unsolicited* Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. A *solicited* Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
 
   The following rules apply when using `$submit-attachment`:
   * The operation's endpoint **SHALL** only accepts `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
   * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.
-  * For the `Attachment` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
+  * The `Attachment.ItemID` and `Attachment.Code` parameters are associated with the attachements in `Attachment.Content`.   If `Attachment.ItemID` is not present, then the attachment is associated with to the entire claim or prior authorization.
+  * For the `Attachment.Content` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
+  * The default meaning when the `Done` parameter is omitted is Done="true" - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.
   * When processing messages, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
       * If the attachments can not be associated to an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that the attachments are being held for subsequent association to a claim or prior-authorization.
@@ -50,6 +54,14 @@ system: true
 type: false
 instance: false
 parameter:
+  - name: TrackingId
+    use: in
+    min: 1
+    max: "1"
+    documentation: >-
+      Identifer that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "re-association tracking control numbers"*
+    type: string
+
   - name: AttachTo
     use: in
     min: 1
@@ -60,6 +72,7 @@ parameter:
     binding:
       strength: required
       valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-reason
+
   - name: PayerId
     use: in
     min: 0
@@ -67,6 +80,7 @@ parameter:
     documentation: >-
       The receiving payer identifier. Some endpoints may support multiple payers.  Therefore, this identifier may be required when submitting attachments.
     type: Identifier
+
   - name: PayerUrl
     use: in
     min: 0
@@ -74,13 +88,6 @@ parameter:
     documentation: >-
       The receiving payer url. TODO: WHAT IS THIS - THE OPERATION ENDPOINT?
     type: url
-  - name: TargetId
-    use: in
-    min: 1
-    max: "1"
-    documentation: >-
-      Claim/prior authorization identifier value referred to as the "re-association tracking control numbers"*
-    type: string
 
   - name: OrganizationId
     use: in
@@ -96,6 +103,7 @@ parameter:
     documentation: >-
       Sending provider identifier (e.g., NPI)
     type: Identifier
+
   - name: MemberId
     use: in
     min: 1
@@ -129,7 +137,7 @@ parameter:
         Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.
       type: string
 
-    - name: code
+    - name: Code
       use: in
       min: 0
       max: "*"
@@ -140,12 +148,20 @@ parameter:
         strength: extensible
         valueSet: http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type
 
-    - name: content
+    - name: Content
       use: in
       min: 1
       max: "*"
       documentation: >-
         Attachments as FHIR resources.  Non-FHIR attachments data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
       type: Resource
+
+  - name: Done
+    use: in
+    min: 0
+    max: "1"
+    documentation: >-
+      Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Done = "true", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Done = "false", the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.
+    type: boolean
 
 
