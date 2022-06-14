@@ -108,6 +108,9 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
     -  [Here](attachments.html)
     -  [Here](task-based-approach.html)
+    -  [Here](ValueSet-cdex-claim-use.html)
+    -  [Here](StructureDefinition-cdex-claim.html)
+    -  [Here](StructureDefinition-cdex-task-data-request.html)
 
 
 
