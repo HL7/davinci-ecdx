@@ -70,7 +70,7 @@ differential:
       type:
         - code: Claim
           profile:
-            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim'
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
       mustSupport: true
 
 
