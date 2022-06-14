@@ -6,7 +6,7 @@
     "name": "CDexTaskDataRequest",
     "title": "CDex Task Data Request Profile",
     "status": "active",
-    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDEX:\n- A 'meta.tag' element representing work-queue hints.\n- A `Task.input` element slice representing the types of documents to be returned using the extensible LOINC\u00ae Document types value set.\n- A `Task.input` element slice representing a flag to indicate whether the requested data requires a signature.\n- A `Task.input` element slice representing the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.",
+    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDEX:\n- A Task.identifier element representing the payers tracking identifier (referred to as the \u201cre-association tracking control numbers\u201d)\n- A meta.tag element representing work-queue hints.\n- A Task.requester.reference.identifier element representing the Payer ID\n- A Task.for.reference.identifier element representing the Patient MemberId\n- A Task.input element slice representing the types of documents to be returned using the extensible LOINC\u00ae Document types value set.\n- A Task.input element slice representing a flag to indicate whether the requested data requires a signature.\n- A Task.input element slice representing the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.\n- A Task.input element slice representing the Payer Endpoint URL for submitting attachment using the $submit-attachment operation.\n- An extension on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization.\n- A Task.reasonReference slice to a contained Claim Resource representing claim or pre-authorization:\n    - type\n    - id\n    - date of service\n    - patient member id\n    - patient account no\n- A Task.Restriction.period representing the due date for the attachments.",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
@@ -29,7 +29,6 @@
                             "path": "$this"
                         }
                     ],
-                    "ordered": false,
                     "rules": "open"
                 }
             },
@@ -54,9 +53,150 @@
                 }
             },
             {
+                "id": "Task.contained",
+                "path": "Task.contained",
+                "definition": "The contained claim profile representing the required claim or pre-authorization data needed for attachments requests",
+                "short": "Contained Claim resource",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Claim",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claim"
+                        ]
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier",
+                "path": "Task.identifier",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "pattern",
+                            "path": "$this"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier.value",
+                "path": "Task.identifier.value",
+                "min": 1,
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier:tracking-id",
+                "path": "Task.identifier",
+                "sliceName": "tracking-id",
+                "short": "Re-association tracking control number",
+                "definition": "A unique claim/prior authorization identifier (referred to as the \u201cre-association tracking control numbers\u201d)",
+                "max": "1",
+                "patternIdentifier": {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                                "code": "tracking-id"
+                            }
+                        ]
+                    }
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.for",
+                "path": "Task.for"
+            },
+            {
+                "id": "Task.for.identifier",
+                "path": "Task.for.identifier",
+                "short": "Patient Member ID",
+                "definition": "business identifier representing the Patient Member ID",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.requester",
+                "path": "Task.requester"
+            },
+            {
+                "id": "Task.requester.identifier",
+                "path": "Task.requester.identifier",
+                "short": "Payer ID",
+                "definition": "business identifier representing the Payer ID",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.restriction",
+                "path": "Task.restriction",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.restriction.period",
+                "path": "Task.restriction.period",
+                "short": "Attachments due date",
+                "definition": "due date for the attachments",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonReference",
+                "path": "Task.reasonReference"
+            },
+            {
+                "id": "Task.reasonReference.reference",
+                "path": "Task.reasonReference.reference",
+                "short": "Contained Claim",
+                "definition": "Reference to contained Claim representing claim or pre-authorization for required data.",
+                "fixedString": "#claim",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:query",
+                "path": "Task.input",
+                "sliceName": "query"
+            },
+            {
+                "id": "Task.input:query.extension:item-ids",
+                "path": "Task.input.extension",
+                "sliceName": "item-ids",
+                "short": "Line item numbers",
+                "definition": "The line item numbers in the Claim or Prior Authorization",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/item-ids"
+                        ]
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
                 "id": "Task.input:code",
                 "path": "Task.input",
                 "sliceName": "code"
+            },
+            {
+                "id": "Task.input:code.extension:item-ids",
+                "path": "Task.input.extension",
+                "sliceName": "item-ids",
+                "short": "Line item numbers",
+                "definition": "The line item numbers in the Claim or Prior Authorization the request applies to.",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/item-ids"
+                        ]
+                    }
+                ],
+                "mustSupport": true
             },
             {
                 "id": "Task.input:code.valueCodeableConcept",
@@ -136,6 +276,39 @@
                     "strength": "extensible",
                     "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU"
                 },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url",
+                "path": "Task.input",
+                "sliceName": "payer-url",
+                "short": "Payer Url",
+                "definition": "The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.",
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url.type",
+                "path": "Task.input.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                            "code": "payer-url"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url.value[x]",
+                "path": "Task.input.value[x]",
+                "short": "Payer url value",
+                "type": [
+                    {
+                        "code": "url"
+                    }
+                ],
                 "mustSupport": true
             }
         ]

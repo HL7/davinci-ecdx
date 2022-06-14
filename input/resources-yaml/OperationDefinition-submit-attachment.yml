@@ -71,7 +71,7 @@ parameter:
     type: code
     binding:
       strength: required
-      valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-reason
+      valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/claim-use
 
   - name: PayerId
     use: in

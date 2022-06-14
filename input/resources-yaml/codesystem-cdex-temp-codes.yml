@@ -24,9 +24,9 @@ concept:
     display: Quality Metrics
     definition: Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures.
 
-  - code: prior-authorization
-    display: Prior Authorization
-    definition: Request for data from payers as part of a prior authorization requests from EHR systems. If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested. The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
+  # - code: prior-authorization
+  #   display: Prior Authorization
+  #   definition: Request for data from payers as part of a prior authorization requests from EHR systems. If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested. The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
 
   - code: referral
     display: Referral
@@ -86,6 +86,10 @@ concept:
     display: Signature Flag
     definition: Flag to indicate whether the requested data requires a signature.
 
-  - code: claim
-    display: Claim
-    definition: A provider issued list of professional services and products which have been provided to a patient which is sent to an insurer for reimbursement.
+  # - code: claim
+  #   display: Claim
+  #   definition: A provider issued list of professional services and products which have been provided to a patient which is sent to an insurer for reimbursement.
+
+  - code: tracking-id
+    display: Tracking Id
+    definition: A identifier representing a tracking identifier to tie attachments back to the claim or prior-authorization (referred to as the “re-association tracking control numbers”).  

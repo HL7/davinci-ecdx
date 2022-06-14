@@ -1,0 +1,115 @@
+resourceType: StructureDefinition
+id: cdex-claim
+url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
+version: 0.2.0
+name: CDexClaimProfile
+title: CDex Claim Profile
+status: active
+description: |-
+  This Claim profile represents a claim or prior-authorization and defines the following required information for requesting attachments: 
+  - A business identifier
+  - A use ("claim" or "preauthorization")
+  - A date of service
+  - A patient member id or patient account no
+
+  It is defined to be [contained](http://hl7.org/fhir/R4/references.html) within a the CDex Task Data Request Profile when that profile is used for requesting attachments.
+
+fhirVersion: 4.0.1
+kind: resource
+abstract: false
+type: Claim
+baseDefinition: 'http://hl7.org/fhir/StructureDefinition/Claim'
+derivation: constraint
+differential:
+  element:
+
+
+    - id: Claim.id
+      path: Claim.id
+      short: CDex Claim id default value
+      min: 1
+      max: '1'
+      fixedString: claim  # referenced by Task.reasonReference.reference
+
+    - id: Claim.identifier
+      path: Claim.identifier
+      slicing:
+        discriminator:
+          - type: pattern
+            path: $this
+        rules: open
+      mustSupport: true
+
+    - id: Claim.identifier.value
+      path: Claim.identifier.value
+      min: 1
+      max: '1'
+      mustSupport: true
+
+    - id: 'Claim.identifier:claim-id'
+      path: Claim.identifier
+      sliceName: claim-id
+      min: 1
+      max: '1'
+      mustSupport: true
+
+    - id: Claim.status
+      path: Claim.status
+      fixedCode: active
+      mustSupport: true 
+
+    - id: Claim.type
+      path: Claim.type
+      mustSupport: true     
+
+    - id: Claim.use
+      path: Claim.use
+      short: claim | preauthorization
+      definition: 'A code to indicate whether the nature of the request is: to request adjudication of products and services previously rendered; or requesting authorization and adjudication for provision in the future'
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/claim-use'
+      mustSupport: true
+     
+
+    - id: Claim.patient
+      path: Claim.patient
+      mustSupport: true
+
+    - id: Claim.patient.identifier
+      path: Claim.patient.identifier
+      short: Patient member ID or patient account no
+      definition: business identifier representing the Patient ID
+      mustSupport: true
+
+    - id: Claim.created
+      path: Claim.created
+      mustSupport: true
+
+    - id: Claim.provider
+      path: Claim.provider
+      mustSupport: true 
+
+    - id: Claim.provider.identifier
+      path: Claim.provider.identifier
+      short: provider ID
+      definition: business identifier representing the provider ID
+      mustSupport: true 
+
+    - id: Claim.priority
+      path: Claim.priority
+      Comments: '-'
+      mustSupport: true 
+
+
+    - id: 'Claim.supportingInfo'
+      path: Claim.supportingInfo
+      min: 1  #TODO -  see if this is required
+      mustSupport: true 
+
+    - id: 'Claim.supportingInfo.timing[x]'
+      path: Claim.supportingInfo.timing[x]
+      min: 1  #TODO -  see if this is required
+      mustSupport: true   
+
+
