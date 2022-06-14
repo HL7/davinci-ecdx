@@ -94,11 +94,11 @@
             "documentation": "The attachments being communicated for a Claim or Prior Authorization. They are applied to the ItemId (line items) and/or LOINC parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.",
             "part": [
                 {
-                    "name": "ItemId",
+                    "name": "LineItem",
                     "use": "in",
                     "min": 0,
                     "max": "*",
-                    "documentation": "Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.",
+                    "documentation": "Claim/prior authorization line item for service in the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.",
                     "type": "string"
                 },
                 {

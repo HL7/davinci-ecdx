@@ -15,7 +15,8 @@ description: |-
   - A Task.input element slice representing a flag to indicate whether the requested data requires a signature.
   - A Task.input element slice representing the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.
   - A Task.input element slice representing the Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
-  - An extension on the Task.input element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
+  - A Task.input element slice representing the Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
+  - A Task.input element slice representing a flag to indicate whether the requested data can be sent in multiple submissions.
   - A Task.reasonReference slice to a contained Claim Resource representing claim or pre-authorization:
       - type
       - id
@@ -157,11 +158,11 @@ differential:
       short: Line item numbers
       definition: The line item numbers in the Claim or Prior Authorization
       # min: 0
-      max: '1'
+      max: '*'
       type:
         - code: Extension
           profile:
-            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/item-ids'
+            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
       mustSupport: true
 
 
@@ -177,11 +178,11 @@ differential:
       short: Line item numbers
       definition: The line item numbers in the Claim or Prior Authorization the request applies to.
       # min: 0
-      max: '1'
+      max: '*'
       type:
         - code: Extension
           profile:
-            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/item-ids'
+            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
       mustSupport: true
   
 
@@ -266,4 +267,26 @@ differential:
       type:
         - code: url
       mustSupport: true
+
+    - id: 'Task.input:multiple-submits'
+      path: Task.input
+      sliceName: multiple-submits
+      short: Multiple submits flag
+      definition: |-
+        Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = "false" -  all the requested data should be submitted in a single transaction.
+      max: '1'
+
+    - id: 'Task.input:multiple-submits.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+            code: multiple-submits-flag
+
+    - id: 'Task.input:multiple-submits.value[x]'
+      path: 'Task.input.value[x]'
+      short: Multiple submits flag value
+      type:
+        - code: boolean
+
 

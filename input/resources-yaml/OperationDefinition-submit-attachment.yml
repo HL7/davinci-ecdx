@@ -129,12 +129,12 @@ parameter:
 
     part:
 
-    - name: ItemId
+    - name: LineItem
       use: in
       min: 0
       max: "*"
       documentation: >-
-        Claim/prior authorization identifier that uniquely reference a line item in the context of the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.
+        Claim/prior authorization line item for service in the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.
       type: string
 
     - name: Code
