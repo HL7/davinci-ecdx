@@ -10,6 +10,7 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A meta.tag element representing work-queue hints.
   - A Task.requester.reference.identifier element representing the Payer ID
+  - A Task.owner.reference.identifier element representing the Provider ID
   - A Task.for element:
     - the identifier element representing Patient MemberId
     - the reference element linking to a contained Patient Resource defined by the HRex Patient Demographics Profile and representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
@@ -150,6 +151,17 @@ differential:
       path: Task.requester.identifier
       short: Payer ID
       definition: business identifier representing the Payer ID
+      # min: 1
+      mustSupport: true
+
+
+    - id: Task.owner
+      path: Task.owner
+
+    - id: Task.owner.identifier
+      path: Task.owner.identifier
+      short: Porvider ID
+      definition: business identifier representing the Provider ID
       # min: 1
       mustSupport: true
 
