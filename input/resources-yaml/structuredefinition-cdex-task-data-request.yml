@@ -10,20 +10,18 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A meta.tag element representing work-queue hints.
   - A Task.requester.reference.identifier element representing the Payer ID
-  - A Task.for.reference.identifier element representing the Patient MemberId
-  - A Task.input element slice representing the types of documents to be returned using the extensible LOINC® Document types value set.
-  - A Task.input element slice representing a flag to indicate whether the requested data requires a signature.
-  - A Task.input element slice representing the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.
-  - A Task.input element slice representing the Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
-  - A Task.input element slice representing the Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
-  - A Task.input element slice representing a flag to indicate whether the requested data can be sent in multiple submissions.
-  - A Task.reasonReference slice to a contained Claim Resource representing claim or pre-authorization:
-      - type
-      - id
-      - date of service
-      - patient member id
-      - patient account no
-  - A Task.Restriction.period representing the due date for the attachments.
+  - A Task.for element:
+    - the identifier element representing Patient MemberId
+    - the reference element linking to a contained Patient Resource defined by the HRex Patient Demographics Profile and representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+  - Extensions on the `Task.input` element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
+  - A Task.input element slices representing:
+      - the types of documents to be returned using the extensible LOINC® Document types value set.
+      - the purpose of use for the requested data using an extensible *CDex Purpose of Use Value Set*.
+      - the Payer Endpoint URL for requesting the provider submit attachment using the $submit-attachment operation.
+      - a flag to indicate whether the requested data requires a signature.
+      - a flag to indicate whether the requested data can be sent in multiple submissions.
+  - A Task.reasonReference linking to a contained Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.
+  - A Task.Restriction.period element representing the due date for the attachments.
 
 fhirVersion: 4.0.1
 kind: resource
@@ -60,9 +58,17 @@ differential:
         strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
 
-
-    - id: Task.contained # TODO make this a slice or add an invara
+    - id: Task.contained
       path: Task.contained
+      slicing:
+        discriminator:
+          - type: type
+            path: $this
+        rules: open
+
+    - id: Task.contained:claim
+      path: Task.contained
+      sliceName: claim
       definition: >-
         The contained claim profile representing the required claim or pre-authorization data needed for attachments requests
       short: Contained Claim resource
@@ -74,6 +80,19 @@ differential:
             - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
       mustSupport: true
 
+    - id: Task.contained:patient
+      path: Task.contained
+      sliceName: patient
+      definition: >-
+        The contained patient profile representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+      short: Contained Patient resource
+      # min: 1
+      max: '1'
+      type:
+        - code: Patient
+          profile:
+            - 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics'
+      mustSupport: true
 
     - id: Task.identifier
       path: Task.identifier
@@ -107,6 +126,15 @@ differential:
 
     - id: Task.for
       path: Task.for
+  
+    - id: Task.for.reference
+      path: Task.for.reference
+      short: Contained Patient
+      definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
+      # min: 1
+      fixedString: '#patient'
+      mustSupport: true    
+      # add invariant  
 
     - id: Task.for.identifier
       path: Task.for.identifier
