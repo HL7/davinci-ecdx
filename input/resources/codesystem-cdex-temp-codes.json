@@ -16,6 +16,11 @@
             "definition": "Request for data necessary from payers to support claims for services."
         },
         {
+            "code": "preauth-processing",
+            "display": "Pre-authorization Processing",
+            "definition": "Request for data necessary from payers to support pre-authorization for services."
+        },
+        {
             "code": "risk-adjustment",
             "display": "Risk Adjustment",
             "definition": "Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided."

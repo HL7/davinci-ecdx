@@ -11,9 +11,9 @@ compose:
     - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
       concept:
         - code: claims-processing
+        - code: preauth-processing
         - code: risk-adjustment
         - code: quality-metrics
-        - code: prior-authorization
         - code: referral
         - code: social-care
         - code: authorization-other

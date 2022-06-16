@@ -16,6 +16,10 @@ concept:
     display: Claim Processing
     definition:  Request for data necessary from payers to support claims for services.
 
+  - code: preauth-processing
+    display: Pre-authorization Processing
+    definition: Request for data necessary from payers to support pre-authorization for services.
+
   - code: risk-adjustment
     display: Risk Adjustment
     definition: Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided.
@@ -23,10 +27,6 @@ concept:
   - code: quality-metrics
     display: Quality Metrics
     definition: Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures.
-
-  # - code: prior-authorization
-  #   display: Prior Authorization
-  #   definition: Request for data from payers as part of a prior authorization requests from EHR systems. If authorization is required and documentation is necessary to substantiate the need for the service, the specific documentation is requested. The documentation may take the form of attestations by the provider, diagnoses, results of specific diagnostic tests, prior treatment that has been tried and failed, specific studies that need to be performed and other specific documentation such as progress notes or discharge summaries.
 
   - code: referral
     display: Referral

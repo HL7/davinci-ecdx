@@ -16,13 +16,13 @@
                         "code": "claims-processing"
                     },
                     {
+                        "code": "preauth-processing"
+                    },
+                    {
                         "code": "risk-adjustment"
                     },
                     {
                         "code": "quality-metrics"
-                    },
-                    {
-                        "code": "prior-authorization"
                     },
                     {
                         "code": "referral"
