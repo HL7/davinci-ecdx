@@ -97,3 +97,7 @@ concept:
   - code: multiple-submits-flag
     display: Multiple Submits Flag
     definition: Flag to indicate whether the requested data can be submitted in multiple transactions.  If true the data can be submitted in separate transactions.  if false *all* the data should be submitted in a single transaction.
+
+  - code: payer-url
+    display: Payer URL
+    definition: $submit-attachment operation endpoint where the requested data can be submitted

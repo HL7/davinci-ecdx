@@ -15,7 +15,6 @@
 <artifact deprecated="true" id="ValueSet/cdex-attachment-reason" key="ValueSet-cdex-attachment-reason" name="CDex Attachment Reason Value Set"/>
 <artifact id="StructureDefinition/cdex-claim" key="StructureDefinition-cdex-claim" name="CDex Claim Profile"/>
 <artifact id="ValueSet/cdex-claim-use" key="ValueSet-cdex-claim-use" name="CDex Claim Use Value Set"/>
-<artifact id="StructureDefinition/item-ids" key="StructureDefinition-item-ids" name="CDex Item IDs Extension"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
 <artifact id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>

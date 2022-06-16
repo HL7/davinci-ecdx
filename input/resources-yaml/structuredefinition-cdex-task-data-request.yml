@@ -13,7 +13,7 @@ description: |-
   - A Task.owner.reference.identifier element representing the Provider ID
   - A Task.for element:
     - the identifier element representing Patient MemberId
-    - the reference element linking to a contained Patient Resource defined by the HRex Patient Demographics Profile and representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+    - a contained Patient Resource defined by the HRex Patient Demographics Profile and representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
   - Extensions on the `Task.input` element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
   - A Task.input element slices representing:
       - the types of documents to be returned using the extensible LOINC® Document types value set.
@@ -21,7 +21,7 @@ description: |-
       - the Payer Endpoint URL for requesting the provider submit attachment using the $submit-attachment operation.
       - a flag to indicate whether the requested data requires a signature.
       - a flag to indicate whether the requested data can be sent in multiple submissions.
-  - A Task.reasonReference linking to a contained Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.
+  - A contained Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.
   - A Task.Restriction.period element representing the due date for the attachments.
 
 fhirVersion: 4.0.1
@@ -130,10 +130,11 @@ differential:
   
     - id: Task.for.reference
       path: Task.for.reference
-      short: Contained Patient
-      definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
-      # min: 1
-      fixedString: '#patient'
+      # short: Contained Patient
+      # definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
+      comment: For requesting attachements, a reference to a contained Patient Resource defined by the HRex Patient Demographics Profile is used to representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+      # # min: 1
+      # fixedString: '#patient'
       mustSupport: true    
       # add invariant  
 
@@ -165,6 +166,19 @@ differential:
       # min: 1
       mustSupport: true
 
+    - id: Task.reasonReference
+      path: Task.reasonReference
+
+    - id: Task.reasonReference.reference
+      path: Task.reasonReference.reference
+      # short: Contained Claim
+      # definition: Reference to contained Claim representing claim or pre-authorization for required data.
+      comment: For requesting attachments, a reference to a contained Claim Resource defined in the CDex Claim Profile is used to representing a claim or pre-authorization.
+      # # min: 1
+      # fixedString: '#claim'
+      mustSupport: true    
+      # add invariant 
+
     - id: Task.restriction
       path: Task.restriction
       mustSupport: true
@@ -174,19 +188,7 @@ differential:
       short: Attachments due date
       definition: due date for the attachments
       # min: 1
-      mustSupport: true
-
-    - id: Task.reasonReference
-      path: Task.reasonReference
-
-    - id: Task.reasonReference.reference
-      path: Task.reasonReference.reference
-      short: Contained Claim
-      definition: Reference to contained Claim representing claim or pre-authorization for required data.
-      # min: 1
-      fixedString: '#claim'
       mustSupport: true    
-      # add invariant     
 
     - id: 'Task.input:query'
       path: Task.input

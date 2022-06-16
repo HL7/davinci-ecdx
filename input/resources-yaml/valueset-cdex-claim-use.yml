@@ -1,6 +1,6 @@
 resourceType: ValueSet
 id: cdex-claim-use
-url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/claim-use'
+url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use'
 name: CDexClaimUseCodes
 title: CDex Claim Use Value Set
 status: active

@@ -71,7 +71,7 @@ parameter:
     type: code
     binding:
       strength: required
-      valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/claim-use
+      valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use
 
   - name: PayerId
     use: in
@@ -81,13 +81,13 @@ parameter:
       The receiving payer identifier. Some endpoints may support multiple payers.  Therefore, this identifier may be required when submitting attachments.
     type: Identifier
 
-  - name: PayerUrl
-    use: in
-    min: 0
-    max: "1"
-    documentation: >-
-      The receiving payer url. TODO: WHAT IS THIS - THE OPERATION ENDPOINT?
-    type: url
+  # - name: PayerUrl
+  #   use: in
+  #   min: 0
+  #   max: "1"
+  #   documentation: >-
+  #     The receiving payer url. TODO: WHAT IS THIS - THE OPERATION ENDPOINT?
+  #   type: url
 
   - name: OrganizationId
     use: in
