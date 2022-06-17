@@ -187,6 +187,7 @@ differential:
       path: Task.restriction.period
       short: Attachments due date
       definition: due date for the attachments
+      comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
       # min: 1
       mustSupport: true    
 

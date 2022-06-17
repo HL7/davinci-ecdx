@@ -98,8 +98,8 @@
                     "use": "in",
                     "min": 0,
                     "max": "*",
-                    "documentation": "LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.",
-                    "type": "Coding",
+                    "documentation": "LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request. If a FHIR RESTful search query or free text request was made it should use the text element to echo it back.",
+                    "type": "CodeableConcept",
                     "binding": {
                         "strength": "extensible",
                         "valueSet": "http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type"

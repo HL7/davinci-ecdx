@@ -137,8 +137,8 @@
             "value": "234567"
         }
     },
-    "authoredOn": "2020-10-26T02:58:55.179Z",
-    "lastModified": "2020-10-26T02:58:55.179Z",
+    "authoredOn": "2022-06-17T16:16:06Z",
+    "lastModified": "2022-06-17T16:16:06Z",
     "requester": {
         "identifier": {
             "system": "http://example.org/cdex/payer-ids",
@@ -153,6 +153,11 @@
     },
     "reasonReference": {
         "reference": "#claim"
+    },
+    "restriction": {
+        "period": {
+            "end": "2022-06-21"
+        }
     },
     "input": [
         {
