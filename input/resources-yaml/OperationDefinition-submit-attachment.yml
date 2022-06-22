@@ -12,8 +12,8 @@ description: |-
 
   The input parameters are:
   1. One or more attachments as FHIR Resources
-      - Optionally, one or more unique line item numbers associated with the attachment(s)
-      - Optionally, one or more codes associated with the attachment(s)  
+      - Optionally, one or more unique line item numbers associated with the attachment
+      - Optionally, the code, free text, or search string for information that was requested
   1. Data elements for association to the Claim/Prior Authorization
       - A unique identifer that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
       - What is the documentation for:
@@ -39,7 +39,7 @@ comment: |
   * For the `Attachment.Content` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
-  * The default meaning when the `Done` parameter is omitted is Done="true" - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.
+  * The default meaning when the `Final` parameter is omitted is Final="true" - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.
   * When processing messages, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
       * If the attachments can not be associated to an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that the attachments are being held for subsequent association to a claim or prior-authorization.
@@ -125,7 +125,7 @@ parameter:
     min: 0
     max: "*"
     documentation: >-
-      The attachments being communicated for a Claim or Prior Authorization. They are applied to the ItemId (line items) and/or LOINC parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.
+      The attachments being communicated for a Claim or Prior Authorization. They are applied to the ItemId (line items) and/or Code (LOINC) parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.
 
     part:
 
@@ -140,10 +140,10 @@ parameter:
     - name: Code
       use: in
       min: 0
-      max: "*"
+      max: "1"
       documentation: >-
-        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request. If a FHIR RESTful search query or free text request was made it should use the text element to echo it back.
-      type: CodeableConcept 
+        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.  The CodeableConcept `text` element is used for a FHIR RESTful search query or a free text request.
+      type: CodeableConcept
       binding:
         strength: extensible
         valueSet: http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type
@@ -151,17 +151,15 @@ parameter:
     - name: Content
       use: in
       min: 1
-      max: "*"
+      max: "1"
       documentation: >-
-        Attachments as FHIR resources.  Non-FHIR attachments data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
+        Attachment as a FHIR resources.  Non-FHIR attachment data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
       type: Resource
 
-  - name: Done
+  - name: Final
     use: in
     min: 0
     max: "1"
     documentation: >-
-      Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Done = "true", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Done = "false", the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.
+      Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Final = "true", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = "false", the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.
     type: boolean
-
-
