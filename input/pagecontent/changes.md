@@ -112,8 +112,6 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](StructureDefinition-cdex-claim.html)
     -  [Here](StructureDefinition-cdex-task-data-request.html)
 
-
-
 ---
 
 ### Version = 1.1.0-ballot

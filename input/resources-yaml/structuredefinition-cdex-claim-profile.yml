@@ -1,18 +1,24 @@
 resourceType: StructureDefinition
 id: cdex-claim
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
-version: 0.2.0
 name: CDexClaimProfile
 title: CDex Claim Profile
 status: active
 description: |-
-  This Claim profile represents a claim or prior-authorization and defines the following required information for requesting attachments: 
-  - A business identifier
+  This Claim Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).  It represents a claim or prior-authorization and defines the following *mandatory* (min=1) information:
+
+  - A default resource ID of "claim"
+  - A claim/prior-auth ID (business identifier)
   - A use ("claim" or "preauthorization")
   - A date of service
-  - A patient member id or patient account no
+  - A patient member ID or patient account no
 
-  It is defined to be [contained](http://hl7.org/fhir/R4/references.html) within a the CDex Task Data Request Profile when that profile is used for requesting attachments.
+  In addition, these *mandatory* (min=1) elements are inheritied from the FHIR Claim resource:
+    - Resource status
+    - Claim category
+    - Resource creation date
+    - Provdier responsible for the claim
+    - Claim priority
 
 fhirVersion: 4.0.1
 kind: resource
@@ -24,15 +30,18 @@ differential:
   element:
 
 
-    # - id: Claim.id
-    #   path: Claim.id
-    #   short: CDex Claim id default value
-    #   min: 1
-    #   max: '1'
-    #   fixedString: claim  # referenced by Task.reasonReference.reference
+    - id: Claim.id
+      path: Claim.id
+      short: Resource ID Default Value
+      min: 1
+      max: '1'
+      fixedString: claim  # referenced by Task.reasonReference.reference
+      mustSupport: true      
 
     - id: Claim.identifier
       path: Claim.identifier
+      short: Claim/Prior-Auth ID
+      min: 1      
       slicing:
         discriminator:
           - type: pattern

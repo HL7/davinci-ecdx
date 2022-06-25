@@ -1,0 +1,232 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "cdex-task-attachment-request",
+    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+    "name": "CDexTaskAttachmentRequest",
+    "title": "CDex Task Attachment Request Profile",
+    "status": "active",
+    "description": "This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following additional  *mandatory* (min=1) constraints:\n- A Task.meta.profile element claiming that the resource instance conforms to this profile.\n- A Task.identifier element representing the payers tracking identifier (referred to as the \u201cre-association tracking control numbers\u201d)\n- A Task.requester.identifier element representing the Payer ID\n- A Task.for element:\n  - the identifier element representing Patient MemberId\n  - a reference element referencing a [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the CDex Patient Demographics Profile and represents additional patient demographic data elements.\n- A Task.input element slices representing:\n    - the Payer Endpoint URL for requesting the provider submit attachment using the $submit-attachment operation.\n- A Task.reasonReference.reference referencing a [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.\n- A Task.Restriction.period element representing the due date for submitting the attachments\n\nIn addtion, the following additional *optional* constraint is added:\n\n- An  Task.input element slices representing:\n    - a flag to indicate whether the requested data can be sent in multiple submissions.",
+    "fhirVersion": "4.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "Task",
+    "baseDefinition": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "Task.meta",
+                "path": "Task.meta",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.meta.profile",
+                "path": "Task.meta.profile",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "pattern",
+                            "path": "$this"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "comment": "meta.profile is required as a matter of convenience of receiving systems. The meta.profile should be used by the Server to hint/assert/declare that this instance conforms to one (or more) stated profiles (with business versions). meta.profile does not capture any business logic, processing directives, or semantics (for example, inpatient or outpatient). Clients should not assume that the Server will exhaustively indicate all profiles with all versions that this instance conforms to. Clients can (and should) perform their own validation of conformance to the indicated profile(s) and to any other profiles of interest.",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.meta.profile:cdex",
+                "path": "Task.meta.profile",
+                "sliceName": "cdex",
+                "short": "CDex Attachment Request Profile",
+                "definition": "Profile declaration asserting that this resource instance contains all the data elements required for CDex attachment requests.",
+                "min": 1,
+                "max": "1",
+                "fixedCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.contained:claim",
+                "path": "Task.contained",
+                "sliceName": "claim",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.contained:patient",
+                "path": "Task.contained",
+                "sliceName": "patient",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier",
+                "path": "Task.identifier",
+                "min": 1,
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "pattern",
+                            "path": "$this"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier:tracking-id",
+                "path": "Task.identifier",
+                "sliceName": "tracking-id",
+                "short": "Re-association tracking control number",
+                "definition": "A unique claim/prior authorization identifier (referred to as the \u201cre-association tracking control numbers\u201d)",
+                "min": 1,
+                "max": "1",
+                "patternIdentifier": {
+                    "type": {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                                "code": "tracking-id"
+                            }
+                        ]
+                    }
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.identifier:tracking-id.value",
+                "path": "Task.identifier.value",
+                "min": 1,
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.for",
+                "path": "Task.for"
+            },
+            {
+                "id": "Task.for.reference",
+                "path": "Task.for.reference",
+                "short": "Contained Patient",
+                "definition": "Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).",
+                "comment": "For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).",
+                "min": 1,
+                "fixedString": "#patient",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.for.identifier",
+                "path": "Task.for.identifier",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.requester",
+                "path": "Task.requester"
+            },
+            {
+                "id": "Task.requester.identifier",
+                "path": "Task.requester.identifier",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonReference",
+                "path": "Task.reasonReference",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonReference.reference",
+                "path": "Task.reasonReference.reference",
+                "short": "Contained Claim",
+                "definition": "Reference to contained Claim representing claim or pre-authorization for required data.",
+                "comment": "For requesting attachments, a reference to a contained Claim Resource defined in the CDex Claim Profile is used to representing a claim or pre-authorization.",
+                "min": 1,
+                "fixedString": "#claim",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.restriction",
+                "path": "Task.restriction",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.restriction.period",
+                "path": "Task.restriction.period",
+                "short": "Attachments due date",
+                "definition": "due date for the attachments",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url",
+                "path": "Task.input",
+                "sliceName": "payer-url",
+                "short": "Payer Url",
+                "definition": "The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.",
+                "min": 1,
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url.type",
+                "path": "Task.input.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                            "code": "payer-url"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:payer-url.value[x]",
+                "path": "Task.input.value[x]",
+                "short": "Payer url value",
+                "type": [
+                    {
+                        "code": "url"
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:multiple-submits",
+                "path": "Task.input",
+                "sliceName": "multiple-submits",
+                "short": "Multiple submits flag",
+                "definition": "Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = \"false\" -  all the requested data should be submitted in a single transaction.",
+                "max": "1"
+            },
+            {
+                "id": "Task.input:multiple-submits.type",
+                "path": "Task.input.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                            "code": "multiple-submits-flag"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "Task.input:multiple-submits.value[x]",
+                "path": "Task.input.value[x]",
+                "short": "Multiple submits flag value",
+                "type": [
+                    {
+                        "code": "boolean"
+                    }
+                ]
+            }
+        ]
+    }
+}

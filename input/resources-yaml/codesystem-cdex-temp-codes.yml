@@ -92,7 +92,7 @@ concept:
 
   - code: tracking-id
     display: Tracking Id
-    definition: A identifier representing a tracking identifier to tie attachments back to the claim or prior-authorization (referred to as the “re-association tracking control numbers”).  
+    definition: A business identifier that ties requested attachments back to the claim or prior-authorization (referred to as the “re-association tracking control numbers”). 
 
   - code: multiple-submits-flag
     display: Multiple Submits Flag

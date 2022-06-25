@@ -103,7 +103,7 @@
         {
             "code": "tracking-id",
             "display": "Tracking Id",
-            "definition": "A identifier representing a tracking identifier to tie attachments back to the claim or prior-authorization (referred to as the \u201cre-association tracking control numbers\u201d)."
+            "definition": "A business identifier that ties requested attachments back to the claim or prior-authorization (referred to as the \u201cre-association tracking control numbers\u201d)."
         },
         {
             "code": "multiple-submits-flag",
