@@ -15,7 +15,7 @@ description: |-
   - A Task.requester.reference.identifier element representing the Payer ID
   - A Task.owner.reference.identifier element representing the Provider ID
   - A Task.for element:
-    - the identifier element representing Patient MemberId
+    - the identifier element representing Patient Member ID
     - a reference element to link to resources communicating patient demographic data.
   - Extensions on the `Task.input` element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
   - Task.input element slices representing:

@@ -12,17 +12,14 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.requester.identifier element representing the Payer ID
   - A Task.for element:
-    - the identifier element representing Patient MemberId
+    - the identifier element representing Patient Member ID
     - a reference element referencing a [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the CDex Patient Demographics Profile and represents additional patient demographic data elements.
-  - A Task.input element slices representing:
-      - the Payer Endpoint URL for requesting the provider submit attachment using the $submit-attachment operation.
+  - A Task.input element slice representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation.
   - A Task.reasonReference.reference referencing a [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.
   - A Task.Restriction.period element representing the due date for submitting the attachments
 
-  In addtion, the following additional *optional* constraint is added:
-  
-  - An  Task.input element slices representing:
-      - a flag to indicate whether the requested data can be sent in multiple submissions.
+  In addition, the following additional *optional* constraint is added:
+  - An  Task.input element slice representing a flag to indicate whether the requested data can be sent in multiple submissions.
 
 fhirVersion: 4.0.1
 kind: resource
