@@ -86,10 +86,6 @@ concept:
     display: Signature Flag
     definition: Flag to indicate whether the requested data requires a signature.
 
-  # - code: claim
-  #   display: Claim
-  #   definition: A provider issued list of professional services and products which have been provided to a patient which is sent to an insurer for reimbursement.
-
   - code: tracking-id
     display: Tracking Id
     definition: A business identifier that ties requested attachments back to the claim or prior-authorization (referred to as the “re-association tracking control numbers”). 
@@ -101,3 +97,17 @@ concept:
   - code: payer-url
     display: Payer URL
     definition: $submit-attachment operation endpoint where the requested data can be submitted
+
+  # - code: PAC
+  #   display: Patient Account Number
+  #   definition: A provider's unique patient identifier when submitting a claim or prior-authorization.
+    #use C4BB code: pat http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
+
+
+  # - code: CI
+  #   display: Claim or PreAuthorization ID
+  #   definition: A provider issued unique claim or preAuthorization Identifier which is assigned when  submitting a claim or prior-authorization.
+  #use C4BB code: uc http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
+
+
+

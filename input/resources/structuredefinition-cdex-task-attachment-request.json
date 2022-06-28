@@ -105,7 +105,8 @@
             },
             {
                 "id": "Task.for",
-                "path": "Task.for"
+                "path": "Task.for",
+                "mustSupport": true
             },
             {
                 "id": "Task.for.reference",
@@ -118,14 +119,9 @@
                 "mustSupport": true
             },
             {
-                "id": "Task.for.identifier",
-                "path": "Task.for.identifier",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
                 "id": "Task.requester",
-                "path": "Task.requester"
+                "path": "Task.requester",
+                "mustSupport": true
             },
             {
                 "id": "Task.requester.identifier",
