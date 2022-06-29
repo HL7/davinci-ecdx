@@ -12,10 +12,14 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.requester.identifier element representing the Payer ID
   - A Task.for element:
-    - the identifier element representing Patient Member ID
     - a reference element referencing a [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the CDex Patient Demographics Profile and represents additional patient demographic data elements.
+  - A Task.input element slice to communicate to the provider what attachments are needed using LOINC attachment codes.
+    - Note that the extension on the Task.input element “code” slice representing line item numbers in the Claim or Prior Authorization is inherited from Da Vinci CDex Task Data Request.
   - A Task.input element slice representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation.
-  - A Task.reasonReference.reference referencing a [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined in the CDex Claim Profile representing a claim or pre-authorization.
+  - A Task.reasonReference.reference referencing a [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined in the CDex Claim Profile and represents the provider's claim or pre-authorization.
+
+   In addition, the following additional *must support* constraint is added:
+
   - A Task.Restriction.period element representing the due date for submitting the attachments
 
   In addition, the following additional *optional* constraint is added:
@@ -68,36 +72,44 @@ differential:
       fixedCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
       mustSupport: true 
 
+    - id: Task.contained
+      path: Task.contained
+      min: 2
+      slicing:
+        discriminator:
+          - type: type
+            path: $this
+        rules: open
+      mustSupport: true
+
     - id: Task.contained:claim
       path: Task.contained
       sliceName: claim
-      # definition: >-
-      #   The contained claim profile representing the required claim or pre-authorization data needed for attachments requests
-      # short: Contained Claim resource
+      definition: >-
+        The contained claim profile representing the required claim or pre-authorization data needed for attachments requests
+      short: Contained Claim resource
       min: 1
-      # max: '1'
-      # type:
-      #   - code: Claim
-      #     profile:
-      #       - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
+      max: '1'
+      type:
+        - code: Claim
+          profile:
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
       mustSupport: true
 
     - id: Task.contained:patient
       path: Task.contained
       sliceName: patient
-      # definition: >-
-      #   The contained patient profile representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
-      # short: Contained Patient resource
+      definition: >-
+        The contained patient profile representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+      short: Contained Patient resource
       min: 1
-      # max: '1'
-      # type:
-      #   - code: Patient
-      #     profile:
-      #       - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
+      max: '1'
+      type:
+        - code: Patient
+          profile:
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
       mustSupport: true
 
-
-      #note this profiled is missing identifier slices for patient acct number
     - id: Task.identifier
       path: Task.identifier
       min: 1
@@ -178,17 +190,35 @@ differential:
 
     - id: Task.restriction
       path: Task.restriction
-      min: 1
+      min: 0
       mustSupport: true
-
+    
     - id: Task.restriction.period
       path: Task.restriction.period
       short: Attachments due date
       definition: due date for the attachments
       # comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
+      min: 0
+      mustSupport: true
+
+    - id: Task.input
+      path: Task.input
+      slicing:
+        discriminator:
+          - type: pattern
+            path: type
+        rules: open
+      # min: 1
+      mustSupport: true
+
+    - id: 'Task.input:code'
+      path: Task.input
+      sliceName: code
+      short: Attachment Codes
+      # comment: In future version will consider adding Task.input query slice (an existing invariant to require one or the other)
       min: 1
       mustSupport: true
-  
+      
     - id: 'Task.input:payer-url'
       path: Task.input
       sliceName: payer-url

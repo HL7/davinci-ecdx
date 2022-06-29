@@ -41,6 +41,12 @@ differential:
 
     - id: Patient.identifier
       path: Patient.identifier
+      min: 1
+      slicing:
+        discriminator:
+          - type: pattern
+            path: $this
+        rules: open
       mustSupport: true
 
     - id: Patient.identifier.value

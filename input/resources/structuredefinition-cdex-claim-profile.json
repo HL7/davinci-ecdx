@@ -5,7 +5,7 @@
     "name": "CDexClaimProfile",
     "title": "CDex Claim Profile",
     "status": "active",
-    "description": "This Claim Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).  It represents a claim or prior-authorization and defines the following *mandatory* (min=1) information:\n\n- A default resource ID of \"claim\"\n- A claim/prior-auth ID (business identifier)\n- A use (\"claim\" or \"preauthorization\")\n- A date of service\n- A patient member ID or patient account no\n\nIn addition, these *mandatory* (min=1) elements are inheritied from the FHIR Claim resource:\n  - Resource status\n  - Claim category\n  - Resource creation date\n  - Provdier responsible for the claim\n  - Claim priority",
+    "description": "This Claim Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).  It represents a claim or prior-authorization and defines the following *mandatory* (min=1) information:\n\n- A fixed resource ID = \"claim\"\n- A claim/prior-auth ID (business identifier)\n- A use (\"claim\" or \"preauthorization\")\n- Supporting information:\n  - a fixed entry = \"1\"\n  - a fixed category = \"patientEvent\"\n  - date or period of service\n- A fixed reference to the contained Patient resource = \"#patient\"\n\nIn addition, these *mandatory* (min=1) elements are inherited from the FHIR Claim resource:\n  - Resource status\n  - Claim category\n  - Resource creation date\n  - Provider responsible for the claim\n  - Claim priority",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
@@ -92,10 +92,12 @@
                 "mustSupport": true
             },
             {
-                "id": "Claim.patient.identifier",
-                "path": "Claim.patient.identifier",
-                "short": "Patient member ID or patient account no",
-                "definition": "business identifier representing the Patient ID",
+                "id": "Claim.patient.reference",
+                "path": "Claim.patient.reference",
+                "short": "Contained Patient",
+                "definition": "A fixed reference to the contained Patient resource = '#patient'",
+                "min": 1,
+                "fixedString": "#patient",
                 "mustSupport": true
             },
             {
@@ -113,6 +115,7 @@
                 "path": "Claim.provider.identifier",
                 "short": "provider ID",
                 "definition": "business identifier representing the provider ID",
+                "min": 1,
                 "mustSupport": true
             },
             {
@@ -122,13 +125,50 @@
                 "mustSupport": true
             },
             {
-                "id": "Claim.supportingInfo",
+                "id": "Claim.supportingInfo:PatientEvent",
                 "path": "Claim.supportingInfo",
                 "min": 1,
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "value",
+                            "path": "category"
+                        }
+                    ],
+                    "rules": "open"
+                },
                 "mustSupport": true
             },
             {
-                "id": "Claim.supportingInfo.timing[x]",
+                "id": "Claim.supportingInfo:PatientEvent",
+                "path": "Claim.supportingInfo",
+                "sliceName": "PatientEvent",
+                "short": "Information about the dates of the event that are being requested.",
+                "min": 1,
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Claim.supportingInfo:PatientEvent.sequence",
+                "path": "Claim.supportingInfo.sequence",
+                "fixedPositiveInt": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Claim.supportingInfo:PatientEvent.category",
+                "path": "Claim.supportingInfo.category",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType",
+                            "code": "patientEvent"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Claim.supportingInfo:PatientEvent.timing[x]",
                 "path": "Claim.supportingInfo.timing[x]",
                 "min": 1,
                 "mustSupport": true

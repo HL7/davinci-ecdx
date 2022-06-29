@@ -7,17 +7,20 @@ status: active
 description: |-
   This Claim Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).  It represents a claim or prior-authorization and defines the following *mandatory* (min=1) information:
 
-  - A default resource ID of "claim"
+  - A fixed resource ID = "claim"
   - A claim/prior-auth ID (business identifier)
   - A use ("claim" or "preauthorization")
-  - A date of service
-  - A patient member ID or patient account no
+  - Supporting information:
+    - a fixed entry = "1"
+    - a fixed category = "patientEvent"
+    - date or period of service
+  - A fixed reference to the contained Patient resource = "#patient"
 
-  In addition, these *mandatory* (min=1) elements are inheritied from the FHIR Claim resource:
+  In addition, these *mandatory* (min=1) elements are inherited from the FHIR Claim resource:
     - Resource status
     - Claim category
     - Resource creation date
-    - Provdier responsible for the claim
+    - Provider responsible for the claim
     - Claim priority
 
 fhirVersion: 4.0.1
@@ -90,10 +93,12 @@ differential:
       path: Claim.patient
       mustSupport: true
 
-    - id: Claim.patient.identifier
-      path: Claim.patient.identifier
-      short: Patient member ID or patient account no
-      definition: business identifier representing the Patient ID
+    - id: Claim.patient.reference
+      path: Claim.patient.reference
+      short: Contained Patient
+      definition: A fixed reference to the contained Patient resource = '#patient'
+      min: 1
+      fixedString: '#patient'
       mustSupport: true
 
     - id: Claim.created
@@ -108,6 +113,7 @@ differential:
       path: Claim.provider.identifier
       short: provider ID
       definition: business identifier representing the provider ID
+      min: 1
       mustSupport: true 
 
     - id: Claim.priority
@@ -115,15 +121,40 @@ differential:
       comment: '-'
       mustSupport: true 
 
-
-    - id: 'Claim.supportingInfo'
+    - id: Claim.supportingInfo:PatientEvent
       path: Claim.supportingInfo
-      min: 1  #TODO -  see if this is required
+      min: 1
+      slicing:
+        discriminator:
+          - type: value
+            path: category
+        rules: open
       mustSupport: true 
 
-    - id: 'Claim.supportingInfo.timing[x]'
+    - id: 'Claim.supportingInfo:PatientEvent'
+      path: Claim.supportingInfo
+      sliceName: PatientEvent
+      short: Information about the dates of the event that are being requested.
+      min: 1
+      max: '1'
+      mustSupport: true
+
+    - id: Claim.supportingInfo:PatientEvent.sequence
+      path: Claim.supportingInfo.sequence
+      fixedPositiveInt: 1
+      mustSupport: true
+
+    - id: Claim.supportingInfo:PatientEvent.category
+      path: Claim.supportingInfo.category
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType'
+            code: patientEvent
+      mustSupport: true
+
+    - id: 'Claim.supportingInfo:PatientEvent.timing[x]'
       path: Claim.supportingInfo.timing[x]
-      min: 1  #TODO -  see if this is required
+      min: 1 
       mustSupport: true   
 
 

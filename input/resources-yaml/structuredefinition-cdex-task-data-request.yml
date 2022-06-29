@@ -7,23 +7,15 @@ title: CDex Task Data Request Profile
 status: active
 description: |-
   This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDex:
-  - A Task.identifier element representing a request identifier
+
   - A meta.tag element representing work-queue hints.
-  - Task.contained element slices representing:
-    - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) representing additional patient demographic data elements.
-    - A contained Claim Resource defined by the [CDex Claim Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim) representing a claim or pre-authorization.
-  - A Task.requester.reference.identifier element representing the Payer ID
-  - A Task.owner.reference.identifier element representing the Provider ID
-  - A Task.for element:
-    - the identifier element representing Patient Member ID
-    - a reference element to link to resources communicating patient demographic data.
-  - Extensions on the `Task.input` element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
+  - A Task.identifier element representing the unique data request identifier.
+  - A Task.Restriction.period element to communicate the due date for submitting the requested data.
   - Task.input element slices representing:
       - The specific kind of information being requested  using the extensible LOINC® Document types value set.
       - the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).
       - a flag to indicate whether the requested data requires a signature.
-  - Task.reasonReference.reference element to link to resources communicating why task is needed.
-  - A Task.Restriction.period element representing the due date for submitting the requested data.
+  - Extensions on the `Task.input` element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization.
 
 fhirVersion: 4.0.1
 kind: resource
@@ -60,45 +52,44 @@ differential:
         strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
 
-    - id: Task.contained
-      path: Task.contained
-      slicing:
-        discriminator:
-          - type: type
-            path: $this
-        rules: open
+    # - id: Task.contained
+    #   path: Task.contained
+    #   slicing:
+    #     discriminator:
+    #       - type: type
+    #         path: $this
+    #     rules: open
 
-    - id: Task.contained:claim
-      path: Task.contained
-      sliceName: claim
-      definition: >-
-        The contained claim profile represents a claim or prior-authorization and is used to communicate a reason for a clinical data request.
-      short: Contained Claim resource
-      # min: 1
-      max: '1'
-      type:
-        - code: Claim
-          profile:
-            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
-      mustSupport: true
+    # - id: Task.contained:claim
+    #   path: Task.contained
+    #   sliceName: claim
+    #   definition: >-
+    #     The contained claim profile represents a claim or prior-authorization and is used to communicate a reason for a clinical data request.
+    #   short: Contained Claim resource
+    #   # min: 1
+    #   max: '1'
+    #   type:
+    #     - code: Claim
+    #       profile:
+    #         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
+    #   mustSupport: true
 
-    - id: Task.contained:patient
-      path: Task.contained
-      sliceName: patient
-      definition: >-
-        The contained patient profile representing is used to communicate additional patient demographic data.
-      short: Contained Patient resource
-      # min: 1
-      max: '1'
-      type:
-        - code: Patient
-          profile:
-            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
-      mustSupport: true
+    # - id: Task.contained:patient
+    #   path: Task.contained
+    #   sliceName: patient
+    #   definition: >-
+    #     The contained patient profile representing is used to communicate additional patient demographic data.
+    #   short: Contained Patient resource
+    #   # min: 1
+    #   max: '1'
+    #   type:
+    #     - code: Patient
+    #       profile:
+    #         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
+    #   mustSupport: true
 
     - id: Task.identifier
       path: Task.identifier
-
       # slicing:
       #   discriminator:
       #     - type: pattern
@@ -106,11 +97,11 @@ differential:
       #   rules: open
       mustSupport: true
 
-    - id: Task.identifier.value
-      path: Task.identifier.value
-      min: 1
-      max: '1'
-      mustSupport: true
+    # - id: Task.identifier.value
+    #   path: Task.identifier.value
+    #   min: 1
+    #   max: '1'
+    #   mustSupport: true
 
     # - id: 'Task.identifier:tracking-id'
     #   path: Task.identifier
@@ -126,63 +117,63 @@ differential:
     #           code: tracking-id
     #   mustSupport: true
 
-    - id: Task.for
-      path: Task.for
-      mustSupport: true
+    # - id: Task.for
+    #   path: Task.for
+    #   mustSupport: true
   
-    - id: Task.for.reference
-      path: Task.for.reference
-      # short: Contained Patient
-      # definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
-      comment: For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to representing the patient demographic data elements used to verify patient identity for compliance regulations (such as HIPAA).
-      # # min: 1
-      # fixedString: '#patient'
-      mustSupport: true    
-      # add invariant  
+    # - id: Task.for.reference
+    #   path: Task.for.reference
+    #   # short: Contained Patient
+    #   # definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
+    #   comment: For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to representing the patient demographic data elements used to verify patient identity for compliance regulations (such as HIPAA).
+    #   # # min: 1
+    #   # fixedString: '#patient'
+    #   mustSupport: true    
+    #   # add invariant  
 
-    - id: Task.for.identifier
-      path: Task.for.identifier
-      short: Patient Member ID
-      definition: business identifier representing the Patient Member ID
-      # min: 1
-      mustSupport: true    
+    # - id: Task.for.identifier
+    #   path: Task.for.identifier
+    #   short: Patient Member ID
+    #   definition: business identifier representing the Patient Member ID
+    #   # min: 1
+    #   mustSupport: true    
 
-    - id: Task.requester
-      path: Task.requester
-      mustSupport: true
+    # - id: Task.requester
+    #   path: Task.requester
+    #   mustSupport: true
 
-    - id: Task.requester.identifier
-      path: Task.requester.identifier
-      short: Payer ID
-      definition: business identifier representing the Payer ID
-      # min: 1
-      mustSupport: true
+    # - id: Task.requester.identifier
+    #   path: Task.requester.identifier
+    #   short: Payer ID
+    #   definition: business identifier representing the Payer ID
+    #   # min: 1
+    #   mustSupport: true
 
 
-    - id: Task.owner
-      path: Task.owner
-      mustSupport: true
+    # - id: Task.owner
+    #   path: Task.owner
+    #   mustSupport: true
 
-    - id: Task.owner.identifier
-      path: Task.owner.identifier
-      short: Provider ID
-      definition: business identifier representing the Provider ID
-      # min: 1
-      mustSupport: true
+    # - id: Task.owner.identifier
+    #   path: Task.owner.identifier
+    #   short: Provider ID
+    #   definition: business identifier representing the Provider ID
+    #   # min: 1
+    #   mustSupport: true
 
-    - id: Task.reasonReference
-      path: Task.reasonReference
-      mustSupport: true
+    # - id: Task.reasonReference
+    #   path: Task.reasonReference
+    #   mustSupport: true
 
-    - id: Task.reasonReference.reference
-      path: Task.reasonReference.reference
-      # short: Contained Claim
-      # definition: Reference to contained Claim representing claim or pre-authorization for required data.
-      comment: A reference to a contained CDex Claim Profile is defined to be contained within the CDex Task Attachment Request Profile or CDex Task Data Request Profile. It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).
-      # # min: 1
-      # fixedString: '#claim'
-      mustSupport: true    
-      # add invariant 
+    # - id: Task.reasonReference.reference
+    #   path: Task.reasonReference.reference
+    #   # short: Contained Claim
+    #   # definition: Reference to contained Claim representing claim or pre-authorization for required data.
+    #   comment: A reference to a contained CDex Claim Profile is defined to be contained within the CDex Task Attachment Request Profile or CDex Task Data Request Profile. It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).
+    #   # # min: 1
+    #   # fixedString: '#claim'
+    #   mustSupport: true    
+    #   # add invariant 
 
     - id: Task.restriction
       path: Task.restriction
@@ -194,11 +185,24 @@ differential:
       definition:  The due date for submitting the requested data
       comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
       # min: 1
-      mustSupport: true    
+      mustSupport: true
+
+    - id: Task.input
+      path: Task.input
+      slicing:
+        discriminator:
+          - type: pattern
+            path: type
+        rules: open
+      # min: 1
+      mustSupport: true
+
 
     - id: 'Task.input:query'
       path: Task.input
       sliceName: query
+      max: '*'
+      mustSupport: true
    
     - id: 'Task.input:query.extension:item-ids'
       path: Task.input.extension
@@ -213,12 +217,11 @@ differential:
             - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
       mustSupport: true
 
-
-
     - id: 'Task.input:code'
       path: Task.input
       sliceName: code
-
+      max: '*'
+      mustSupport: true
 
     - id: 'Task.input:code.extension:item-ids'
       path: Task.input.extension
@@ -292,49 +295,49 @@ differential:
       mustSupport: true
 
 
-    - id: 'Task.input:payer-url'
-      path: Task.input
-      sliceName: payer-url
-      short: Payer Url
-      definition: The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
-      # min: 0
-      max: '1'
-      mustSupport: true
+    # - id: 'Task.input:payer-url'
+    #   path: Task.input
+    #   sliceName: payer-url
+    #   short: Payer Url
+    #   definition: The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
+    #   # min: 0
+    #   max: '1'
+    #   mustSupport: true
 
-    - id: 'Task.input:payer-url.type'
-      path: Task.input.type
-      patternCodeableConcept:
-        coding:
-          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-            code: payer-url
-      mustSupport: true
+    # - id: 'Task.input:payer-url.type'
+    #   path: Task.input.type
+    #   patternCodeableConcept:
+    #     coding:
+    #       - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+    #         code: payer-url
+    #   mustSupport: true
 
-    - id: 'Task.input:payer-url.value[x]'
-      path: 'Task.input.value[x]'
-      short: Payer url value
-      type:
-        - code: url
-      mustSupport: true
+    # - id: 'Task.input:payer-url.value[x]'
+    #   path: 'Task.input.value[x]'
+    #   short: Payer url value
+    #   type:
+    #     - code: url
+    #   mustSupport: true
 
-    - id: 'Task.input:multiple-submits'
-      path: Task.input
-      sliceName: multiple-submits
-      short: Multiple submits flag
-      definition: |-
-        Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = "false" -  all the requested data should be submitted in a single transaction.
-      max: '1'
+    # - id: 'Task.input:multiple-submits'
+    #   path: Task.input
+    #   sliceName: multiple-submits
+    #   short: Multiple submits flag
+    #   definition: |-
+    #     Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = "false" -  all the requested data should be submitted in a single transaction.
+    #   max: '1'
 
-    - id: 'Task.input:multiple-submits.type'
-      path: Task.input.type
-      patternCodeableConcept:
-        coding:
-          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-            code: multiple-submits-flag
+    # - id: 'Task.input:multiple-submits.type'
+    #   path: Task.input.type
+    #   patternCodeableConcept:
+    #     coding:
+    #       - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+    #         code: multiple-submits-flag
 
-    - id: 'Task.input:multiple-submits.value[x]'
-      path: 'Task.input.value[x]'
-      short: Multiple submits flag value
-      type:
-        - code: boolean
+    # - id: 'Task.input:multiple-submits.value[x]'
+    #   path: 'Task.input.value[x]'
+    #   short: Multiple submits flag value
+    #   type:
+    #     - code: boolean
 
 
