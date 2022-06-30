@@ -217,6 +217,9 @@ differential:
       short: Attachment Codes
       # comment: In future version will consider adding Task.input query slice (an existing invariant to require one or the other)
       min: 1
+      binding:
+        strength: extensible
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment' 
       mustSupport: true
       
     - id: 'Task.input:payer-url'

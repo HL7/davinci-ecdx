@@ -5,7 +5,7 @@ name: CDexClaimUseCodes
 title: CDex Claim Use Value Set
 status: active
 date: '2022-06-13'
-description: "The purpose of a Claim resource and the reason for attachments. Consist of the codes 'preauthorization' and 'claim'."
+description: The purpose of a Claim resource and the reason for attachments. It includes the codes "preauthorization" and "claim".
 compose:
   include:
     - system: 'http://hl7.org/fhir/claim-use'

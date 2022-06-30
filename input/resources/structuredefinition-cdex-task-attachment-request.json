@@ -216,6 +216,10 @@
                 "sliceName": "code",
                 "short": "Attachment Codes",
                 "min": 1,
+                "binding": {
+                    "strength": "extensible",
+                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment"
+                },
                 "mustSupport": true
             },
             {

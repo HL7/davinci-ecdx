@@ -158,9 +158,17 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/cdex-attachment"
+        },
+        "description": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.",
+        "exampleBoolean": false,
+        "name": "CDex Attachment Value Set"
+      },
+      {
+        "reference": {
           "reference": "ValueSet/cdex-claim-use"
         },
-        "description": "The purpose of a Claim resource and the reason for attachments. Consist of the codes 'preauthorization' and 'claim'.",
+        "description": "The purpose of a Claim resource and the reason for attachments. It includes the codes \"preauthorization\" and \"claim\".",
         "exampleBoolean": false,
         "name": "CDex Claim Use Value Set"
       },
