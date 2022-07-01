@@ -6,7 +6,7 @@
     "name": "CDexTaskDataRequest",
     "title": "CDex Task Data Request Profile",
     "status": "active",
-    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following additional constraints for CDex:\n\n- A meta.tag element representing work-queue hints.\n- A Task.identifier element representing the unique data request identifier.\n- A Task.Restriction.period element to communicate the due date for submitting the requested data.\n- Task.input element slices representing:\n    - The specific kind of information being requested  using the extensible LOINC\u00ae Document types value set.\n    - the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\n    - a flag to indicate whether the requested data requires a signature.\n- Extensions on the `Task.input` element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization.",
+    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- A Task.Restriction.period element to communicate the due date for submitting the requested data\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n- Extensions on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
@@ -55,6 +55,54 @@
             {
                 "id": "Task.identifier",
                 "path": "Task.identifier",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.for",
+                "path": "Task.for",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.for.identifier",
+                "path": "Task.for.identifier",
+                "short": "Patient Member ID",
+                "definition": "business identifier representing the Patient",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.requester",
+                "path": "Task.requester",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.requester.identifier",
+                "path": "Task.requester.identifier",
+                "short": "Payer ID",
+                "definition": "business identifier representing the Payer",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.owner",
+                "path": "Task.owner",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.owner.identifier",
+                "path": "Task.owner.identifier",
+                "short": "Provider ID",
+                "definition": "business identifier representing the Provider",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonReference",
+                "path": "Task.reasonReference",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonReference.identifier",
+                "path": "Task.reasonReference.identifier",
+                "short": "Claim ID",
+                "definition": "business identifier representing the claim or prior-authorization ID",
                 "mustSupport": true
             },
             {

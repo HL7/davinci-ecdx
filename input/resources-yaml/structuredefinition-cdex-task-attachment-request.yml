@@ -7,23 +7,22 @@ name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
 status: active
 description: |-
-  This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following additional  *mandatory* (min=1) constraints:
+  This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:
   - A Task.meta.profile element claiming that the resource instance conforms to this profile.
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.requester.identifier element representing the Payer ID
   - A Task.for element:
     - a reference element referencing a [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the CDex Patient Demographics Profile and represents additional patient demographic data elements.
-  - A Task.input element slice to communicate to the provider what attachments are needed using LOINC attachment codes.
+  - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes.
     - Note that the extension on the Task.input element “code” slice representing line item numbers in the Claim or Prior Authorization is inherited from Da Vinci CDex Task Data Request.
-  - A Task.input element slice representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation.
+  - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation.
   - A Task.reasonReference.reference referencing a [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined in the CDex Claim Profile and represents the provider's claim or pre-authorization.
 
-   In addition, the following additional *must support* constraint is added:
-
+   In addition, the following *must support* constraint:
   - A Task.Restriction.period element representing the due date for submitting the attachments
 
-  In addition, the following additional *optional* constraint is added:
-  - An  Task.input element slice representing a flag to indicate whether the requested data can be sent in multiple submissions.
+  In addition, the following *optional* constraint:
+  - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions.
 
 fhirVersion: 4.0.1
 kind: resource
