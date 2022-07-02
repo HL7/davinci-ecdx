@@ -1,13 +1,13 @@
-# input/examples-yaml/cdex-example2-attachment-request-withsig.yml
+# input/includes-yaml/cdex-prior-auth-attachment-request2-example-withsig.yml
 
 resourceType: Task
-id: cdex-example2-attachment-request-withsig
+# id: cdex-prior-auth-attachment-request2-example-withsig
 meta:
-  extension:
-    - url: http://hl7.org/fhir/StructureDefinition/instance-name
-      valueString: Attachment Request Example 2
-    - url: http://hl7.org/fhir/StructureDefinition/instance-description
-      valueMarkdown: Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.
+#   extension:
+#     - url: http://hl7.org/fhir/StructureDefinition/instance-name
+#       valueString: Prior-Auth Attachment Request2 Example
+#     - url: http://hl7.org/fhir/StructureDefinition/instance-description
+#       valueMarkdown: '*ReasonCode Option* Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'
   profile:
     - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
   tag:
@@ -19,9 +19,9 @@ contained:
     meta:
       profile:
         - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-    extension:
-      - url: "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
-        valueCode: F
+    # extension:
+    #   - url: "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+    #     valueCode: F
     identifier:
       - use: usual
         type:
@@ -45,6 +45,7 @@ contained:
       - family: Shaw
         given:
           - Amy
+    gender: female
     birthDate: "1987-02-20"
 
 identifier:

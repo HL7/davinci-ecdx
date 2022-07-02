@@ -5,12 +5,12 @@
     "name": "CDexPatientDemographicsProfile",
     "title": "CDex Patient Demographics Profile",
     "status": "active",
-    "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It is derived from the [HRex Patient Demographics](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics) Profile and it constrains the following element to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n\nIn addition, these *mandatory* (min=1) elements are inherited from the HRex Patient Demographics Profile:\n\n- A patient name\n- A date of birth",
+    "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It is derived from the [US Core Patient Profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\\|3.1.1) Profile and it constrains the following element to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n\nIn addition, these *mandatory* (min=1) elements are inherited from US Core:\n\n- A patient name\n- An administrative gender\n- A date of birth",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
     "type": "Patient",
-    "baseDefinition": "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics",
+    "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
     "derivation": "constraint",
     "differential": {
         "element": [
@@ -78,6 +78,11 @@
             {
                 "id": "Patient.name",
                 "path": "Patient.name",
+                "mustSupport": true
+            },
+            {
+                "id": "Patient.gender",
+                "path": "Patient.gender",
                 "mustSupport": true
             },
             {

@@ -1,8 +1,19 @@
 {
     "resourceType": "Task",
+    "id": "cdex-prior-auth-attachment-request2-example-withsig",
     "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Prior-Auth Attachment Request2 Example"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "*ReasonCode Option* Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note"
+            }
+        ],
         "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
         ],
         "tag": [
             {
@@ -20,12 +31,6 @@
                     "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
                 ]
             },
-            "extension": [
-                {
-                    "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
-                    "valueCode": "F"
-                }
-            ],
             "identifier": [
                 {
                     "use": "usual",
@@ -66,71 +71,8 @@
                     ]
                 }
             ],
+            "gender": "female",
             "birthDate": "1987-02-20"
-        },
-        {
-            "resourceType": "Claim",
-            "id": "claim",
-            "meta": {
-                "profile": [
-                    "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim"
-                ]
-            },
-            "identifier": {
-                "type": {
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
-                                "code": "uc",
-                                "display": "Unique Claim ID"
-                            }
-                        ]
-                    },
-                    "text": "Unique Claim ID"
-                },
-                "system": "http://example.org/cdex/payer/claim-ids",
-                "value": "Preauth123"
-            },
-            "status": "active",
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/claim-type",
-                        "code": "institutional",
-                        "display": "Institutional"
-                    }
-                ],
-                "text": "Institutional"
-            },
-            "use": "preauthorization",
-            "patient": {
-                "reference": "#patient"
-            },
-            "created": "2022-06-16T06:19:00+00:00",
-            "provider": {
-                "identifier": {
-                    "system": "http://hl7.org/fhir/sid/us-npi",
-                    "value": "9941339108"
-                }
-            },
-            "priority": {
-                "text": "Normal"
-            },
-            "supportingInfo": [
-                {
-                    "sequence": 1,
-                    "category": [
-                        {
-                            "coding": {
-                                "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType",
-                                "code": "patientEvent"
-                            }
-                        }
-                    ],
-                    "timingDate": "2022-06-13"
-                }
-            ]
         }
     ],
     "identifier": [
@@ -181,8 +123,17 @@
             "value": "9941339108"
         }
     },
+    "reasonCode": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/claim-use",
+                "code": "preauthorization",
+                "display": "Preauthorization"
+            }
+        ],
+        "text": "preauthorization"
+    },
     "reasonReference": {
-        "reference": "#claim",
         "identifier": {
             "system": "http://example.org/cdex/payer/claim-ids",
             "value": "Preauth123"
@@ -213,12 +164,13 @@
                 ],
                 "text": "History and Physical"
             },
-            "extension": {
-                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
-                "valuePositiveInt": 1
-            }
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                    "valuePositiveInt": 1
+                }
+            ]
         },
-        null,
         {
             "type": {
                 "coding": [
@@ -241,6 +193,16 @@
             },
             "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
         },
-        null
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                        "code": "service-date"
+                    }
+                ]
+            },
+            "valueDate": "2022-06-13"
+        }
     ]
 }

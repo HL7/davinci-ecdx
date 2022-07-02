@@ -9,7 +9,6 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="Task/cdex-example1-attachment-request-withsig" key="Task-cdex-example1-attachment-request-withsig" name="Attachment Request Example"/>
 <artifact id="Task/cdex-example2-attachment-request-withsig" key="Task-cdex-example2-attachment-request-withsig" name="Attachment Request Example 2"/>
 <artifact id="Bundle/cdex-document-digital-sig-example" key="Bundle-cdex-document-digital-sig-example" name="CDEX Document with Digital Signature Example"/>
 <artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Document with Electronic Signature Example"/>
@@ -26,12 +25,16 @@
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
+<artifact id="Task/cdex-claim-attachment-request-example-withsig" key="Task-cdex-claim-attachment-request-example-withsig" name="Claim Attachment Request Example"/>
+<artifact id="Task/cdex-claim-attachment-request2-example-withsig" key="Task-cdex-claim-attachment-request2-example-withsig" name="Claim Attachment Request2 Example"/>
 <artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
 <artifact id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
 <artifact id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
+<artifact id="Task/cdex-prior-auth-attachment-request-example-withsig" key="Task-cdex-prior-auth-attachment-request-example-withsig" name="Prior-Auth Attachment Request Example"/>
+<artifact id="Task/cdex-prior-auth-attachment-request2-example-withsig" key="Task-cdex-prior-auth-attachment-request2-example-withsig" name="Prior-Auth Attachment Request2 Example"/>
 <artifact id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
 <artifact id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
 <artifact id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>

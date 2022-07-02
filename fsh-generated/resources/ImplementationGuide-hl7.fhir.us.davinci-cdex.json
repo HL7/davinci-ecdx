@@ -128,7 +128,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-patient-demographics"
         },
-        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It is derived from the [HRex Patient Demographics](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics) Profile and it constrains the following element to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n\nIn addition, these *mandatory* (min=1) elements are inherited from the HRex Patient Demographics Profile:\n\n- A patient name\n- A date of birth",
+        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It is derived from the [US Core Patient Profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\\|3.1.1) Profile and it constrains the following element to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n\nIn addition, these *mandatory* (min=1) elements are inherited from US Core:\n\n- A patient name\n- An administrative gender\n- A date of birth",
         "exampleBoolean": false,
         "name": "CDex Patient Demographics Profile"
       },
@@ -190,6 +190,22 @@
       },
       {
         "reference": {
+          "reference": "Task/cdex-claim-attachment-request-example-withsig"
+        },
+        "description": "*Contained Claim Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
+        "name": "Claim Attachment Request Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-claim-attachment-request2-example-withsig"
+        },
+        "description": "*ReasonCode Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note",
+        "name": "Claim Attachment Request2 Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
+      },
+      {
+        "reference": {
           "reference": "Bundle/cdex-document-digital-sig-example"
         },
         "description": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
@@ -203,14 +219,6 @@
         "description": "Electronic signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Electronic Signature Example",
         "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Task/cdex-example1-attachment-request-withsig"
-        },
-        "description": "Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
-        "name": "Attachment Request Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
       },
       {
         "reference": {
@@ -339,6 +347,22 @@
         "description": "Task to seek a patient's latest history and physical exam notes.",
         "name": "Scenario 4 Task Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-prior-auth-attachment-request-example-withsig"
+        },
+        "description": "*Contained Claim Option*  Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
+        "name": "Prior-Auth Attachment Request Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+      },
+      {
+        "reference": {
+          "reference": "Task/cdex-prior-auth-attachment-request2-example-withsig"
+        },
+        "description": "*ReasonCode Option* Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note",
+        "name": "Prior-Auth Attachment Request2 Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
       },
       {
         "reference": {

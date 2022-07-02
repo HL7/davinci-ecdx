@@ -1,27 +1,27 @@
-# input/examples-yaml/cdex-example1-attachment-request-withsig.yml
+# input/examples-yaml/cdex-claim-attachment-request-example-withsig.yml
 
 resourceType: Task
-id: cdex-example1-attachment-request-withsig
+id: cdex-claim-attachment-request-example-withsig
 meta:
   extension:
     - url: http://hl7.org/fhir/StructureDefinition/instance-name
-      valueString: Attachment Request Example
+      valueString: Claim Attachment Request Example
     - url: http://hl7.org/fhir/StructureDefinition/instance-description
-      valueMarkdown: Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.
+      valueMarkdown: '*Contained Claim Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.'
   profile:
     - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
   tag:
     - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
-      code: preauth-processing
+      code: claims-processing
 contained:
   - resourceType: Patient
     id: patient
     meta:
       profile:
         - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-    extension:
-      - url: "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
-        valueCode: F
+    # extension:
+    #   - url: "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
+    #     valueCode: F
     identifier:
       - use: usual
         type:
@@ -45,6 +45,7 @@ contained:
       - family: Shaw
         given:
           - Amy
+    gender: female
     birthDate: "1987-02-20"
   - resourceType: Claim
     id: claim
@@ -59,7 +60,7 @@ contained:
               display: Unique Claim ID
           text: Unique Claim ID
         system: "http://example.org/cdex/payer/claim-ids"
-        value: Preauth123
+        value: Claim123
     status: active
     type:
       coding:
@@ -67,7 +68,7 @@ contained:
           code: institutional
           display: Institutional
       text: Institutional
-    use: preauthorization
+    use: claim
     patient:
       reference: "#patient"
     created: "2022-06-16T06:19:00+00:00"
@@ -127,7 +128,7 @@ reasonReference:
   reference: "#claim"
   identifier: # ms 0..1 in data profile
     system: "http://example.org/cdex/payer/claim-ids" # could add FILL or PLAC types if that is important
-    value: Preauth123
+    value: Claim123
 restriction:
   period:
     end: "2022-06-21"
