@@ -114,8 +114,10 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](StructureDefinition-cdex-task-data-request.html)
     -  [Here](StructureDefinition-cdex-task-attachment-request.html)
     -  [Here](StructureDefinition-cdex-task-attachment-request2.html)
-    -  [Here](Task-cdex-example-attachment-request-withsig.html)
-    -  [Here](Task-cdex-example2-attachment-request-withsig.html)
+    -  [Here](Task-cdex-claim-attachment-request-example-withsig.html)
+    -  [Here](Task-cdex-claim-attachment-request2-example-withsig.html)
+    -  [Here](Task-cdex-prior-auth-attachment-request-example-withsig.html)
+    -  [Here](Task-cdex-prior-auth-attachment-requests2-example-withsig.html)
     -  [Here](ValueSet-cdex-attachment.html)
 
 ---
