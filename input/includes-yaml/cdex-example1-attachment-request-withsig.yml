@@ -1,18 +1,25 @@
 resourceType: Task
+# id: cdex-example1-attachment-request-withsig
 meta:
+    # extension:
+    # - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    #   valueString: Attachment Request Example
+    # - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    #   valueMarkdown:  Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.
     profile:
         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request'
     tag:
         - 
             system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
             code: preauth-processing
+
 contained:
     - 
         resourceType: Patient
         id: patient
         meta:
             profile:
-                - 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-patient-demographics'
+                - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
         extension:
             - 
                 url: 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex'
@@ -23,13 +30,23 @@ contained:
                 type:
                     coding:
                         - 
-                            system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+                            system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp' # vs http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType - um
                             code: UMB
                             display: Member Number
                     text: Member Number
-                system: 'http://example.org/payer'
+                system: 'http://example.org/cdex/payer/member-ids'
                 value: Member123
-        active: true
+            -
+                use: usual
+                type:
+                    coding:
+                        - 
+                            system: 'http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType'
+                            code: pat
+                            display: Patient Account Number
+                    text: Patient Account Number
+                system: 'http://example.org/cdex/provider/patient-ids'
+                value: PA-123
         name:
             - 
                 family: Shaw
@@ -44,9 +61,15 @@ contained:
                 - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
         identifier:
             type:
-                text: Claim ID
-            system: 'http://example.org/payer'
-            value: Claim123
+                type:
+                    coding:
+                        - 
+                            system: 'http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType'
+                            code: uc
+                            display: Unique Claim ID
+                text: Unique Claim ID
+            system: 'http://example.org/cdex/payer/claim-ids'
+            value: Preauth123
         status: active
         type:
             coding:
@@ -55,13 +78,11 @@ contained:
                     code: institutional
                     display: Institutional
             text: Institutional
-        use: claim
+        use: preauthorization
         patient:
-          identifier:
-            system: http://example.org/cdex/member-ids
-            value: '234567'
+          reference: '#patient'
         created: '2022-06-16T06:19:00+00:00'
-        provider:
+        provider:   # should be NPI supplied by Payer
           identifier:
               system: http://hl7.org/fhir/sid/us-npi
               value: '9941339108'
@@ -69,6 +90,12 @@ contained:
             text: Normal
         supportingInfo:
             - 
+                sequence: 1
+                category:
+                    -
+                        coding: 
+                            system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType
+                            code: patientEvent
                 timingDate: '2022-06-13'
 identifier:
     - 
@@ -78,7 +105,7 @@ identifier:
                     system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
                     code: tracking-id
                     display: Tracking Id
-            text: Tracking Id
+            text: Re-Association Tracking Control Number
         system: 'http://example.org/payer'
         value: trackingid123
 status: requested
@@ -88,26 +115,30 @@ code:
         - 
             system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
             code: data-request
+    text: Data Request
 for:
     reference: '#patient'
-    identifier:
-      system: http://example.org/cdex/member-ids
-      value: '234567'
+    identifier:  # ms 0..1 in data profile
+      system: http://example.org/cdex/payer/member-ids
+      value: 'Member123'
 authoredOn: '2022-06-17T16:16:06Z'
 lastModified: '2022-06-17T16:16:06Z'
 requester:
     identifier:
-      system: http://example.org/cdex/payer-ids
-      value: 'payer123'
-owner:
+      system: http://example.org/cdex/payer/payer-ids
+      value: 'Payer123'
+owner: # o..1 MS should be same as in claim is this needed?
     identifier:
-      system: http://hl7.org/fhir/sid/us-npi
+      system: http://hl7.org/fhir/sid/us-npi  #NPI
       value: '9941339108'
 reasonReference:
     reference: '#claim'
+    identifier: # ms 0..1 in data profile
+        system: 'http://example.org/cdex/payer/claim-ids'  # could add FILL or PLAC types if that is important
+        value: Preauth123
 restriction:
     period:
-        end: 2022-06-21
+        end: '2022-06-21'
 input:
     - 
         type:
@@ -116,24 +147,26 @@ input:
                     system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
                     code: data-code
         valueCodeableConcept:
-            coding:
-                - 
-                    system: 'http://loinc.org'
-                    code: 11492-6
+              coding:
+                - system: 'http://loinc.org'
+                  code: 34117-2
+                  display: History and physical note
+              text: History and Physical
         extension:
             url: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
             valuePositiveInt: 1
     - 
-        type:
-            coding:
-                - 
-                    system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-                    code: purpose-of-use
-        valueCodeableConcept:
-            coding:
-                - 
-                    system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason'
-                    code: CLMATTCH
+        # remove POU for now til we get it straighten
+        # type:
+        #     coding:
+        #         - 
+        #             system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+        #             code: purpose-of-use
+        # valueCodeableConcept:
+        #     coding:
+        #         - 
+        #             system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason'
+        #             code: CLMATTCH
     - 
         type:
             coding:
@@ -146,5 +179,12 @@ input:
             coding:
                 - 
                     system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-                    code: payer_url
-        valueUrl: 'http://example.org/cdex-payer/submit-attachment/endpoint'
+                    code: payer-url
+        valueUrl: 'http://example.org/cdex/payer/$submit-attachment'
+    - 
+        # type:
+        #     coding:
+        #         - 
+        #             system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+        #             code: multiple-submits-flag
+        # valueBoolean: false

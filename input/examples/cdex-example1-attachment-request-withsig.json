@@ -1,8 +1,19 @@
 {
     "resourceType": "Task",
+    "id": "cdex-example1-attachment-request-withsig",
     "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Attachment Request Example"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note."
+            }
+        ],
         "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
         ],
         "tag": [
             {
@@ -76,8 +87,8 @@
                     "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim"
                 ]
             },
-            "identifier": {
-                "type": {
+            "identifier": [
+                {
                     "type": {
                         "coding": [
                             {
@@ -85,13 +96,13 @@
                                 "code": "uc",
                                 "display": "Unique Claim ID"
                             }
-                        ]
+                        ],
+                        "text": "Unique Claim ID"
                     },
-                    "text": "Unique Claim ID"
-                },
-                "system": "http://example.org/cdex/payer/claim-ids",
-                "value": "Preauth123"
-            },
+                    "system": "http://example.org/cdex/payer/claim-ids",
+                    "value": "Preauth123"
+                }
+            ],
             "status": "active",
             "type": {
                 "coding": [
@@ -120,15 +131,27 @@
             "supportingInfo": [
                 {
                     "sequence": 1,
-                    "category": [
-                        {
-                            "coding": {
+                    "category": {
+                        "coding": [
+                            {
                                 "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASSupportingInfoType",
                                 "code": "patientEvent"
                             }
-                        }
-                    ],
+                        ]
+                    },
                     "timingDate": "2022-06-13"
+                }
+            ],
+            "insurance": [
+                {
+                    "sequence": 1,
+                    "focal": true,
+                    "coverage": {
+                        "identifier": {
+                            "system": "http://example.org/cdex/payer/member-ids",
+                            "value": "Member123"
+                        }
+                    }
                 }
             ]
         }
@@ -213,12 +236,13 @@
                 ],
                 "text": "History and Physical"
             },
-            "extension": {
-                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
-                "valuePositiveInt": 1
-            }
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                    "valuePositiveInt": 1
+                }
+            ]
         },
-        null,
         {
             "type": {
                 "coding": [
@@ -240,7 +264,6 @@
                 ]
             },
             "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
-        },
-        null
+        }
     ]
 }

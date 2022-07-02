@@ -16,7 +16,7 @@ description: |-
       - Optionally, the code, free text, or search string for information that was requested
   1. Data elements for association to the Claim/Prior Authorization
       - A unique identifer that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
-      - What is the documentation for:
+      - What is the attachements are for:
         - Claim
         - Prior Authorization
       - Optionally, a unique payer identifier

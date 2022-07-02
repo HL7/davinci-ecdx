@@ -15,6 +15,10 @@ description: |-
     - a fixed category = "patientEvent"
     - date or period of service
   - A fixed reference to the contained Patient resource = "#patient"
+  - Insurance information:
+      - a fixed sequence = "1"
+      - a flag fixed to "true" to indicating that this Coverage is to be used for adjudication
+      - a coverage referencing the Member Id (business identifier)
 
   In addition, these *mandatory* (min=1) elements are inherited from the FHIR Claim resource:
     - Resource status
@@ -22,6 +26,8 @@ description: |-
     - Resource creation date
     - Provider responsible for the claim
     - Claim priority
+
+
 
 fhirVersion: 4.0.1
 kind: resource
@@ -47,8 +53,8 @@ differential:
       min: 1      
       slicing:
         discriminator:
-          - type: pattern
-            path: $this
+          - type: pattern  # need identifier type for this to work
+            path: $this 
         rules: open
       mustSupport: true
 
@@ -63,7 +69,7 @@ differential:
       sliceName: claim-id
       min: 1
       max: '1'
-      patternIdentifier:
+      patternIdentifier:   # need identifier type for slicing
         type:
           coding:
             - system: 'http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType'
@@ -105,14 +111,14 @@ differential:
       path: Claim.created
       mustSupport: true
 
-    - id: Claim.provider
+    - id: Claim.provider     # should be NPI supplied by Payer
       path: Claim.provider
       mustSupport: true 
 
     - id: Claim.provider.identifier
       path: Claim.provider.identifier
       short: provider ID
-      definition: business identifier representing the provider ID
+      definition: business identifier representing the provider ID   # should be NPI supplied by Payer
       min: 1
       mustSupport: true 
 
@@ -121,7 +127,7 @@ differential:
       comment: '-'
       mustSupport: true 
 
-    - id: Claim.supportingInfo:PatientEvent
+    - id: Claim.supportingInfo
       path: Claim.supportingInfo
       min: 1
       slicing:
@@ -155,6 +161,46 @@ differential:
     - id: 'Claim.supportingInfo:PatientEvent.timing[x]'
       path: Claim.supportingInfo.timing[x]
       min: 1 
-      mustSupport: true   
+      mustSupport: true
+
+
+    - id: Claim.insurance
+      path: Claim.insurance
+      min: 1
+      slicing:
+        discriminator:
+          - type: value
+            path: sequence
+        rules: open
+      mustSupport: true 
+
+    - id: 'Claim.insurance:PatientEvent'
+      path: Claim.insurance
+      sliceName: PatientEvent
+      # short: 
+      min: 1
+      max: '1'
+      mustSupport: true
+
+    - id: Claim.insurance:PatientEvent.sequence
+      path: Claim.insurance.sequence
+      fixedPositiveInt: 1
+      mustSupport: true
+
+    - id: Claim.insurance:PatientEvent.focal
+      path: Claim.insurance.focal
+      fixedBoolean: true
+      mustSupport: true
+
+    - id: 'Claim.insurance:PatientEvent.coverage'
+      path: Claim.insurance.coverage
+      mustSupport: true 
+
+    - id: Claim.insurance:PatientEvent.coverage.identifier
+      path: Claim.insurance.coverage.identifier
+      short: Unique Member Identifier
+      definition: The unique member identifier for this patient.
+      min: 1
+      mustSupport: true
 
 

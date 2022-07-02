@@ -114,6 +114,11 @@
             "code": "payer-url",
             "display": "Payer URL",
             "definition": "$submit-attachment operation endpoint where the requested data can be submitted"
+        },
+        {
+            "code": "service-date",
+            "display": "Service Date",
+            "definition": "Date of service or starting date of the service for the claim or prior authorization."
         }
     ]
 }
