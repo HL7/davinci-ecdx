@@ -102,7 +102,7 @@
                     "type": "CodeableConcept",
                     "binding": {
                         "strength": "extensible",
-                        "valueSet": "http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type"
+                        "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment"
                     }
                 },
                 {
