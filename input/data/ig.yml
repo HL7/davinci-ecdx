@@ -397,28 +397,33 @@
                     "generation": "markdown"
                 },
                 {
-                    "nameUrl": "specification.html",
-                    "title": "Specification",
+                    "nameUrl": "direct-query.html",
+                    "title": "Direct Query",
+                    "generation": "markdown"
+                },
+                {
+                    "nameUrl": "task-based-approach.html",
+                    "title": "Task Based Approach",
+                    "generation": "markdown"
+                },
+                {
+                    "nameUrl": "attachments.html",
+                    "title": "Attachments",
                     "generation": "markdown",
                     "page": [
                         {
-                            "nameUrl": "exchanging-clinical-data.html",
-                            "title": "Exchanging Clinical Data",
+                            "nameUrl": "solicited-unsolicited-attachments.html",
+                            "title": "olicited and Unsolicited Attachments",
                             "generation": "markdown"
                         },
                         {
-                            "nameUrl": "direct-query.html",
-                            "title": "Direct Query",
+                            "nameUrl": "sending-attachments.html",
+                            "title": "Sending Attachments",
                             "generation": "markdown"
                         },
                         {
-                            "nameUrl": "task-based-approach.html",
-                            "title": "Task Based Approach",
-                            "generation": "markdown"
-                        },
-                        {
-                            "nameUrl": "attachments.html",
-                            "title": "Attachments",
+                            "nameUrl": "requesting-attachments.html",
+                            "title": "Requesting Attachments",
                             "generation": "markdown"
                         }
                     ]

@@ -16,22 +16,25 @@
   <li>
     <a href="background.html">Background</a>
   </li>
+  <li>
+    <a href="direct-query.html">Direct Query</a>
+  </li>
+  <li>
+    <a href="task-based-approach.html">Task Based Approach</a>
+  </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Specification
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="exchanging-clinical-data.html">Exchanging Clinical Data</a>
+        <a href="solicited-unsolicited-attachments.html">Solicited and Unsolicited Attachments</a>
       </li>
       <li>
-        <a href="direct-query.html">Direct Query</a>
+        <a href="sending-attachments.html">Sending Attachments</a>
       </li>
       <li>
-        <a href="task-based-approach.html">Task Based Approach</a>
-      </li>
-      <li>
-        <a href="attachments.html">Attachments</a>
+        <a href="requesting-attachments.html">Requesting Attachments</a>
       </li>
     </ul>
   </li>

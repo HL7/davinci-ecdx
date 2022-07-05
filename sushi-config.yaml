@@ -44,11 +44,15 @@ pages:
   index.md:
     title: Home
   background.md:
-  specification.md:
-    exchanging-clinical-data.md:
-    direct-query.md:
-    task-based-approach.md:
-    attachments.md:
+  # specification.md:
+  #   exchanging-clinical-data.md:
+  direct-query.md:
+  task-based-approach.md:
+  attachments.md:
+    solicited-unsolicited-attachments.md:
+      title: olicited and Unsolicited Attachments
+    sending-attachments.md:
+    requesting-attachments.md:
   signatures.md:
     signed-searchset-bundle-example.md:
     signed-document-bundle-example.md:
@@ -91,11 +95,14 @@ releaselabel: CI Build
 menu:
   Home: index.html
   Background: background.html
-  Specification:
-      Exchanging Clinical Data: exchanging-clinical-data.html
-      Direct Query: direct-query.html
-      Task Based Approach: task-based-approach.html
-      Attachments: attachments.html
+  # Specification:
+  #     Exchanging Clinical Data: exchanging-clinical-data.html
+  Direct Query: direct-query.html
+  Task Based Approach: task-based-approach.html
+  Attachments:
+    Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
+    Sending Attachments: sending-attachments.html
+    Requesting Attachments: requesting-attachments.html
   Signatures: signatures.html
   Security and Privacy: security.html
   FHIR Artifacts:

@@ -27,7 +27,7 @@ parameter:
             system: 'http://example.org/cdex/member-ids'
             value: '234567'
     - 
-        name: serviceDate
+        name: ServiceDate
         valueDate: '2022-06-16'
     - 
         name: Attachment

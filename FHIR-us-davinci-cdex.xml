@@ -59,12 +59,14 @@
 <page key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
 <page deprecated="true" key="examples" name="Examples"/>
-<page key="exchanging-clinical-data" name="Exchanging Clinical Data"/>
+<page deprecated="true" key="exchanging-clinical-data" name="Exchanging Clinical Data"/>
 <page deprecated="true" key="framework_old" name="Framework Old"/>
 <page deprecated="true" key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="profiles" name="Profiles"/>
+<page key="requesting-attachments" name="Requesting Attachments"/>
 <page key="security" name="Security and Privacy"/>
+<page key="sending-attachments" name="Sending Attachments"/>
 <page key="signatures" name="Signatures"/>
 <page key="signed-document-bundle-example" name="Signed Document Bundle Example"/>
 <page key="signed-searchset-bundle-example" name="Signed Searchset Bundle Example"/>
@@ -74,4 +76,5 @@
 <page deprecated="true" key="terminology" name="Terminology"/>
 <page deprecated="true" key="using-subscriptions" name="Using Subscriptions"/>
 <page deprecated="true" key="using-task" name="Using Task"/>
+<page key="solicited-unsolicited-attachments" name="olicited and Unsolicited Attachments"/>
 </specification>
