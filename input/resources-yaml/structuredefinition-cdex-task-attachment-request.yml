@@ -25,6 +25,7 @@ description: |-
    In addition, the following *must support* constraint:
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)
+  - A Task.input element representing a flag to indicate whether the requested data requires a signature
 
   In addition, the following *optional* constraint:
   - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
@@ -380,6 +381,29 @@ differential:
       short: Service Date value
       type:
         - code: date
+      mustSupport: true
+
+    - id: 'Task.input:signature'
+      path: Task.input
+      sliceName: signature
+      short: Signature flag
+      definition: Flag to indicate whether the requested data requires a signature.
+      max: '1'
+      mustSupport: true
+
+    - id: 'Task.input:signature.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+            code: signature-flag
+      mustSupport: true
+
+    - id: 'Task.input:signature.value[x]'
+      path: 'Task.input.value[x]'
+      short: Signature flag value
+      type:
+        - code: boolean
       mustSupport: true
 
     - id: 'Task.input:multiple-submits'

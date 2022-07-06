@@ -169,6 +169,17 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                        "code": "signature-flag"
+                    }
+                ]
+            },
+            "valueBoolean": true
+        },
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
                         "code": "payer-url"
                     }
                 ]
