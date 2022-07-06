@@ -5,7 +5,7 @@ resourceType: Task
 meta:
 #   extension:
 #     - url: http://hl7.org/fhir/StructureDefinition/instance-name
-#       valueString: Prior-Auth Attachment Request2 Example
+#       valueString: Prior-Auth AttachmentRequest Example
 #     - url: http://hl7.org/fhir/StructureDefinition/instance-description
 #       valueMarkdown: '*ReasonCode Option* Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'
   profile:

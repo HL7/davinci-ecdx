@@ -6,7 +6,7 @@
     "name": "CDexTaskDataRequest",
     "title": "CDex Task Data Request Profile",
     "status": "active",
-    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- A Task.Restriction.period element to communicate the due date for submitting the requested data\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n- Extensions on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.",
+    "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- A Task.Restriction.period element to communicate the due date for submitting the requested data\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n- Extensions on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
@@ -136,7 +136,6 @@
                 "id": "Task.input:query",
                 "path": "Task.input",
                 "sliceName": "query",
-                "max": "*",
                 "mustSupport": true
             },
             {
@@ -160,7 +159,6 @@
                 "id": "Task.input:code",
                 "path": "Task.input",
                 "sliceName": "code",
-                "max": "*",
                 "mustSupport": true
             },
             {
@@ -229,8 +227,7 @@
                 "sliceName": "POU",
                 "short": "Purpose of use code",
                 "definition": "Represent the purpose of use for the requested data.",
-                "max": "1",
-                "mustSupport": true
+                "max": "1"
             },
             {
                 "id": "Task.input:POU.type",
@@ -242,8 +239,7 @@
                             "code": "purpose-of-use"
                         }
                     ]
-                },
-                "mustSupport": true
+                }
             },
             {
                 "id": "Task.input:POU.value[x]",

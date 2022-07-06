@@ -15,13 +15,14 @@ description: |-
   - A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier
   - A Task.Restriction.period element to communicate the due date for submitting the requested data
   - For the "code" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested
-  - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)
+
   - A Task.input element representing a flag to indicate whether the requested data requires a signature
   - Extensions on the Task.input element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization
 
   In addition, the following *optional* constraint:
 
   - A meta.tag element representing work-queue hints.
+  - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)
 
 fhirVersion: 4.0.1
 kind: resource
@@ -214,7 +215,6 @@ differential:
     - id: 'Task.input:query'
       path: Task.input
       sliceName: query
-      max: '*'
       mustSupport: true
    
     - id: 'Task.input:query.extension:item-ids'
@@ -233,7 +233,6 @@ differential:
     - id: 'Task.input:code'
       path: Task.input
       sliceName: code
-      max: '*'
       mustSupport: true
 
     - id: 'Task.input:code.extension:item-ids'
@@ -287,7 +286,7 @@ differential:
       short: Purpose of use code
       definition: Represent the purpose of use for the requested data.
       max: '1'
-      mustSupport: true
+      # mustSupport: true
 
     - id: 'Task.input:POU.type'
       path: Task.input.type
@@ -295,7 +294,7 @@ differential:
         coding:
           - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
             code: purpose-of-use
-      mustSupport: true
+      # mustSupport: true
 
     - id: 'Task.input:POU.value[x]'
       path: 'Task.input.value[x]'

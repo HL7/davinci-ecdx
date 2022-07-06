@@ -50,9 +50,11 @@ pages:
   task-based-approach.md:
   attachments.md:
     solicited-unsolicited-attachments.md:
-      title: olicited and Unsolicited Attachments
+      title: Solicited and Unsolicited Attachments
     sending-attachments.md:
     requesting-attachments.md:
+    burden-reduction.md:
+      title: Using  CDex Attachments with DaVinci PAS
   signatures.md:
     signed-searchset-bundle-example.md:
     signed-document-bundle-example.md:
@@ -103,6 +105,7 @@ menu:
     Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
     Sending Attachments: sending-attachments.html
     Requesting Attachments: requesting-attachments.html
+    Using CDex Attachments with DaVinci PAS: burden-reduction.html
   Signatures: signatures.html
   Security and Privacy: security.html
   FHIR Artifacts:

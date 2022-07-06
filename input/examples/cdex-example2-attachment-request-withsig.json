@@ -13,7 +13,7 @@
             }
         ],
         "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
         ],
         "tag": [
             {

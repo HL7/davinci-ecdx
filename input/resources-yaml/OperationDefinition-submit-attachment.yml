@@ -142,11 +142,12 @@ parameter:
       min: 0
       max: "1"
       documentation: >-
-        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.  The CodeableConcept `text` element is used for a FHIR RESTful search query or a free text request.
+        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
       type: CodeableConcept
       binding:
         strength: extensible
-        valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment
+        # valueSet: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment
+        valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
 
     - name: Content
       use: in

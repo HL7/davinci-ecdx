@@ -118,31 +118,15 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/cdex-claim"
-        },
-        "description": "This Claim Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).  It represents a claim or prior-authorization and defines the following *mandatory* (min=1) information:\n\n- A fixed resource ID = \"claim\"\n- A claim/prior-auth ID (business identifier)\n- A use (\"claim\" or \"preauthorization\")\n- Supporting information:\n  - a fixed entry = \"1\"\n  - a fixed category = \"patientEvent\"\n  - date or period of service\n- A fixed reference to the contained Patient resource = \"#patient\"\n- Insurance information:\n    - a fixed sequence = \"1\"\n    - a flag fixed to \"true\" to indicating that this Coverage is to be used for adjudication\n    - a coverage referencing the Member Id (business identifier)\n\nIn addition, these *mandatory* (min=1) elements are inherited from the FHIR Claim resource:\n  - Resource status\n  - Claim category\n  - Resource creation date\n  - Provider responsible for the claim\n  - Claim priority",
-        "exampleBoolean": false,
-        "name": "CDex Claim Profile"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/cdex-patient-demographics"
         },
-        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It is derived from the [US Core Patient Profile](http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient\\|3.1.1) Profile and it constrains the following element to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n\nIn addition, these *mandatory* (min=1) elements are inherited from US Core:\n\n- A patient name\n- An administrative gender\n- A date of birth",
+        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n- A patient name\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
         "exampleBoolean": false,
         "name": "CDex Patient Demographics Profile"
       },
       {
         "reference": {
           "reference": "StructureDefinition/cdex-task-attachment-request"
-        },
-        "description": "This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:\n- A Task.meta.profile element claiming that the resource instance conforms to this profile.\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. \n- A [contained](http://hl7.org/fhir/R4/references.html) Claim Resource defined by the [CDex Claim Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim) and representing the claim or pre-authorization.\n- A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A Task.requester.identifier element representing the Payer ID\n- A Task.for element:\n  - a reference element referencing the contained Patient Resource\n- A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes.\n  - Note that the extension on the Task.input element “code” slice representing line item numbers in the Claim or Prior Authorization is inherited from Da Vinci CDex Task Data Request.\n- A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation.\n- A Task.reasonReference.reference referencing the contained Claim Resource.\n\n In addition, the following *must support* constraint:\n- A Task.Restriction.period element representing the due date for submitting the attachments\n\nIn addition, the following *optional* constraint:\n- A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions.",
-        "exampleBoolean": false,
-        "name": "CDex Task Attachment Request Profile"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/cdex-task-attachment-request2"
         },
         "description": "This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:\n- A Task.meta.profile element claiming that the resource instance conforms to this profile.\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. \n- A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A Task.requester.identifier element representing the Payer ID\n- A Task.for element:\n  - a reference element referencing the contained Patient Resource\n- A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)\n- A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes\n  - Note that the extension on the Task.input element “code” slice representing line item numbers in the Claim or Prior Authorization is inherited from Da Vinci CDex Task Data Request.\n- A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation\n- A Task.input element representing date of service or starting date of the service for the claim or prior authorization\n\n\n In addition, the following *must support* constraint:\n- A Task.Restriction.period element representing the due date for submitting the attachments\n\nIn addition, the following *optional* constraint:\n- A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions",
         "exampleBoolean": false,
@@ -152,7 +136,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-task-data-request"
         },
-        "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- A Task.Restriction.period element to communicate the due date for submitting the requested data\n- For the \"code\" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n- Extensions on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.",
+        "description": "This Task profile is based upon the [Da Vinci Hrex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- A Task.Restriction.period element to communicate the due date for submitting the requested data\n- For the \"code\" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested\n\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n- Extensions on the Task.input element \"code\" and \"query\" slices representing line item numbers in the Claim or Prior Authorization\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
         "exampleBoolean": false,
         "name": "CDex Task Data Request Profile"
       },
@@ -190,19 +174,11 @@
       },
       {
         "reference": {
-          "reference": "Task/cdex-claim-attachment-request-example-withsig"
-        },
-        "description": "*Contained Claim Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
-        "name": "Claim Attachment Request Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-      },
-      {
-        "reference": {
           "reference": "Task/cdex-claim-attachment-request2-example-withsig"
         },
-        "description": "*ReasonCode Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note",
-        "name": "Claim Attachment Request2 Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
+        "description": "Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'",
+        "name": "Claim AttachmentRequest Example",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
       },
       {
         "reference": {
@@ -314,7 +290,7 @@
         },
         "description": "Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
         "name": "Attachment Request Example 2",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
       },
       {
         "reference": {
@@ -352,17 +328,9 @@
         "reference": {
           "reference": "Task/cdex-prior-auth-attachment-request-example-withsig"
         },
-        "description": "*Contained Claim Option*  Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note.",
-        "name": "Prior-Auth Attachment Request Example",
+        "description": "Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note",
+        "name": "Prior-Auth AttachmentRequest Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-      },
-      {
-        "reference": {
-          "reference": "Task/cdex-prior-auth-attachment-request2-example-withsig"
-        },
-        "description": "*ReasonCode Option* Prior Authorization Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note",
-        "name": "Prior-Auth Attachment Request2 Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
       },
       {
         "reference": {
@@ -413,7 +381,7 @@
           "page": [
             {
               "nameUrl": "solicited-unsolicited-attachments.html",
-              "title": "olicited and Unsolicited Attachments",
+              "title": "Solicited and Unsolicited Attachments",
               "generation": "markdown"
             },
             {
@@ -424,6 +392,11 @@
             {
               "nameUrl": "requesting-attachments.html",
               "title": "Requesting Attachments",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "burden-reduction.html",
+              "title": "Using  CDex Attachments with DaVinci PAS",
               "generation": "markdown"
             }
           ]
