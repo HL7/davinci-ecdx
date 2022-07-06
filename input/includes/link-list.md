@@ -101,3 +101,7 @@
 [Signed SearchSet Bundle Example]: signed-searchset-bundle-example.html
 [Signed Document Bundle Example]: signed-document-bundle-example.html
 [FHIR-36158]: https://jira.hl7.org/browse/FHIR-36158
+[Solicited and Unsolicited Attachments]: solicited-unsolicited-attachments.html
+[Sending Attachments]: sending-attachments.html
+[Requesting Attachments]: requesting-attachments.html
+[Using CDex Attachments with DaVinci PAS]: burden-reduction.html
