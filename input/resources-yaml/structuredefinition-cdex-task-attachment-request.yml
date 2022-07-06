@@ -4,26 +4,27 @@ resourceType: StructureDefinition
 id: cdex-task-attachment-request
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request'
 name: CDexTaskAttachmentRequest
-title: CDex Task Attachment Request Profile2
+title: CDex Task Attachment Request Profile
 status: active
 description: |-
-  This Task profile is a specialization of the [Da Vinci CDex Task Data Request](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/hrex-task-data-request) It defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:
-  - A Task.meta.profile element claiming that the resource instance conforms to this profile.
+  This [Task](http://hl7.org/StructureDefinition/Task) profile defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
+  - A Task.status with a required binding the the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
+  - A Task.intent fixed to "order" (this element is a mandatory Task element)
+  - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
-  - A Task.for element:
-    - a reference element referencing the contained Patient Resource
+  - A Task.for.reference element fixed to "\#string" - a reference the the contained Patient Resource
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
-    - Note that the extension on the Task.input element “code” slice representing line item numbers in the Claim or Prior Authorization is inherited from Da Vinci CDex Task Data Request.
+    - An extensions representing line item numbers in the Claim or Prior Authorization
   - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
   - A Task.input element representing date of service or starting date of the service for the claim or prior authorization
 
-
    In addition, the following *must support* constraint:
   - A Task.Restriction.period element representing the due date for submitting the attachments
+  - A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)
 
   In addition, the following *optional* constraint:
   - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
@@ -32,48 +33,48 @@ fhirVersion: 4.0.1
 kind: resource
 abstract: false
 type: Task
-baseDefinition: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request'
+baseDefinition: 'http://hl7.org/fhir/StructureDefinition/Task'
 derivation: constraint
 differential:
   element:
 
-    - id: Task.meta
-      path: Task.meta
-      min: 1
-      mustSupport: true
+    # - id: Task.meta
+    #   path: Task.meta
+    #   min: 1
+    #   mustSupport: true
       
-    - id: 'Task.meta.profile'
-      path: 'Task.meta.profile'
-      slicing:
-        discriminator:
-          - type: pattern
-            path: $this
-        rules: open
-      comment: >-
-        meta.profile is required as a matter of convenience of receiving
-        systems. The meta.profile should be used by the Server to
-        hint/assert/declare that this instance conforms to one (or more) stated
-        profiles (with business versions). meta.profile does not capture any
-        business logic, processing directives, or semantics (for example,
-        inpatient or outpatient). Clients should not assume that the Server will
-        exhaustively indicate all profiles with all versions that this instance
-        conforms to. Clients can (and should) perform their own validation of
-        conformance to the indicated profile(s) and to any other profiles of
-        interest.
-      min: 1
-      mustSupport: true
+    # - id: 'Task.meta.profile'
+    #   path: 'Task.meta.profile'
+    #   slicing:
+    #     discriminator:
+    #       - type: pattern
+    #         path: $this
+    #     rules: open
+    #   comment: >-
+    #     meta.profile is required as a matter of convenience of receiving
+    #     systems. The meta.profile should be used by the Server to
+    #     hint/assert/declare that this instance conforms to one (or more) stated
+    #     profiles (with business versions). meta.profile does not capture any
+    #     business logic, processing directives, or semantics (for example,
+    #     inpatient or outpatient). Clients should not assume that the Server will
+    #     exhaustively indicate all profiles with all versions that this instance
+    #     conforms to. Clients can (and should) perform their own validation of
+    #     conformance to the indicated profile(s) and to any other profiles of
+    #     interest.
+    #   min: 1
+    #   mustSupport: true
 
-    - id: 'Task.meta.profile:cdex'
-      path: 'Task.meta.profile'
-      sliceName: cdex
-      short: CDex Attachment Request Profile
-      definition: Profile declaration asserting that this resource instance contains all the data elements required for CDex attachment requests.
-      min: 1
-      max: '1'
-      # type:
-      #   - code: canonical
-      fixedCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-      mustSupport: true 
+    # - id: 'Task.meta.profile:cdex'
+    #   path: 'Task.meta.profile'
+    #   sliceName: cdex
+    #   short: CDex Attachment Request Profile
+    #   definition: Profile declaration asserting that this resource instance contains all the data elements required for CDex attachment requests.
+    #   min: 1
+    #   max: '1'
+    #   # type:
+    #   #   - code: canonical
+    #   fixedCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    #   mustSupport: true 
 
     - id: Task.contained
       path: Task.contained
@@ -143,8 +144,42 @@ differential:
       max: '1'
       mustSupport: true
 
+    - id: Task.status
+      path: Task.status
+      mustSupport: true
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status'
+
+    - id: Task.statusReason
+      path: Task.statusReason
+      requirements: Indicates why task failed or was rejected.
+      mustSupport: true
+
+    - id: Task.statusReason.text
+      path: Task.statusReason.text
+      min: 1
+      mustSupport: true
+  
+    - id: Task.intent
+      path: Task.intent
+      fixedCode: order
+      mustSupport: true
+
+    - id: Task.code
+      path: Task.code
+      min: 1
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+            code: attachment-request
+      mustSupport: true
+
     - id: Task.for
       path: Task.for
+      short: Member who is subject of claim or preauthorization
+      min: 1
+      max: '1'
       mustSupport: true
   
     - id: Task.for.reference
@@ -167,13 +202,28 @@ differential:
  
     - id: Task.requester
       path: Task.requester
+      short: Payer asking for attachments
+      min: 1     
       mustSupport: true
 
     - id: Task.requester.identifier
       path: Task.requester.identifier
-      # short: Payer ID
-      # definition: business identifier representing the Payer ID
+      short: Payer ID
+      definition: business identifier representing the Payer ID
       min: 1
+      mustSupport: true
+
+    - id: Task.owner
+      path: Task.owner
+      short: Provider who submitted claim or preauthorization
+      min: 1
+      mustSupport: true
+
+    - id: Task.owner.identifier
+      path: Task.owner.identifier
+      short: Provider ID
+      definition: business identifier representing the Provider
+      min: 1 
       mustSupport: true
 
     - id: Task.reasonCode
@@ -252,19 +302,36 @@ differential:
           - type: pattern
             path: type
         rules: open
-      # min: 1
+      min: 3
       mustSupport: true
 
     - id: 'Task.input:code'
       path: Task.input
       sliceName: code
       short: Attachment Codes
+      definition: A code indicating the type of data/document to be returned
       comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
       min: 1
+      # max: '*'
       binding:
         strength: extensible
         # valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment' 
         valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
+      mustSupport: true
+
+    - id: 'Task.input:code.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+            code: data-code
+      mustSupport: true
+
+    - id: 'Task.input:code.value[x]'
+      path: 'Task.input.value[x]'
+      short: LOINC attachment code value
+      type:
+        - code: CodeableConcept
       mustSupport: true
       
     - id: 'Task.input:payer-url'

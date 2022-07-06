@@ -119,6 +119,11 @@
             "code": "service-date",
             "display": "Service Date",
             "definition": "Date of service or starting date of the service for the claim or prior authorization."
+        },
+        {
+            "code": "attachment-request",
+            "display": "Attachment Request",
+            "definition": "A Task by a Payer requesting attachments for a claim or prior-authorization from the Provider.  The Provider is expected to submit the attachments using the $submit-attachment operation to the endpoint provided in the \"payer-url\" input parameter."
         }
     ]
 }

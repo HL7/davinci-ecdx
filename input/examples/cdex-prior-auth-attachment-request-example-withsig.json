@@ -14,12 +14,6 @@
         ],
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-        ],
-        "tag": [
-            {
-                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "preauth-processing"
-            }
         ]
     },
     "contained": [
@@ -95,11 +89,11 @@
     "code": {
         "coding": [
             {
-                "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-                "code": "data-request"
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "attachment-request"
             }
         ],
-        "text": "Data Request"
+        "text": "Attachment Request"
     },
     "for": {
         "reference": "#patient",
@@ -169,17 +163,6 @@
                     "valuePositiveInt": 1
                 }
             ]
-        },
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "signature-flag"
-                    }
-                ]
-            },
-            "valueBoolean": true
         },
         {
             "type": {

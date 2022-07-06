@@ -10,9 +10,9 @@ meta:
       valueMarkdown: Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'
   profile:
     - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-  tag:
-    - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
-      code: claims-processing
+  # tag:
+  #   - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+  #     code: claims-processing
 contained:
   - resourceType: Patient
     id: patient
@@ -60,9 +60,9 @@ status: requested
 intent: order
 code:
   coding:
-    - system: "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"
-      code: data-request
-  text: Data Request
+    - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+      code: attachment-request
+  text: Attachment Request
 for:
   reference: "#patient"
   identifier: # ms 0..1 in data profile
@@ -118,11 +118,11 @@ input:
     #         -
     #             system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason'
     #             code: CLMATTCH
-  - type:
-      coding:
-        - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
-          code: signature-flag
-    valueBoolean: true
+  # - type:
+  #     coding:
+  #       - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+  #         code: signature-flag
+  #   valueBoolean: true
   - type:
       coding:
         - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"

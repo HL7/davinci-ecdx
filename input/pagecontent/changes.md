@@ -106,19 +106,15 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 21. **Triaged:** Need clarification on whether claims attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes [Here](#.html)
 22. **Pre-Applied:** Add "Request Attachments" content as Draft ([FHIR-37563](https://jira.hl7.org/browse/FHIR-37563)) See Changes:
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
-    -  [Here](attachments.html)
-    -  [Here](task-based-approach.html)
+    -  [Here](solicited-unsolicited-attachments.html)
+    -  [Here](sending-attachments.html)
+    -  [Here](requesting-attachments.html)
+    -  [Here](burden-reduction.html)
     -  [Here](ValueSet-cdex-claim-use.html)
-    -  [Here](StructureDefinition-cdex-claim.html)
     -  [Here](StructureDefinition-cdex-patient-demographics.html)
-    -  [Here](StructureDefinition-cdex-task-data-request.html)
     -  [Here](StructureDefinition-cdex-task-attachment-request.html)
-    -  [Here](StructureDefinition-cdex-task-attachment-request2.html)
     -  [Here](Task-cdex-claim-attachment-request-example-withsig.html)
-    -  [Here](Task-cdex-claim-attachment-request2-example-withsig.html)
     -  [Here](Task-cdex-prior-auth-attachment-request-example-withsig.html)
-    -  [Here](Task-cdex-prior-auth-attachment-requests2-example-withsig.html)
-    -  [Here](ValueSet-cdex-attachment.html)
 
 ---
 

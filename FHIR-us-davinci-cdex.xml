@@ -9,7 +9,6 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="Task/cdex-example2-attachment-request-withsig" key="Task-cdex-example2-attachment-request-withsig" name="Attachment Request Example 2"/>
 <artifact id="Bundle/cdex-document-digital-sig-example" key="Bundle-cdex-document-digital-sig-example" name="CDEX Document with Digital Signature Example"/>
 <artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Document with Electronic Signature Example"/>
 <artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
@@ -19,7 +18,7 @@
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
 <artifact id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
-<artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile2"/>
+<artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
