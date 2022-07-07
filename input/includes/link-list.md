@@ -105,3 +105,4 @@
 [Sending Attachments]: sending-attachments.html
 [Requesting Attachments]: requesting-attachments.html
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
+[CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html

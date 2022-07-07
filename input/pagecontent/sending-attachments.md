@@ -1,13 +1,12 @@
-This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.
+This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.  This transaction is use for both *solicited* and *unsolicited* attachments.   <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 275 transaction.</span><!-- new-content -->
 
+### `$submit-attachment` Operation
 
-#### `$submit-attachment` Operation
+This guide defines [`$submit-attachment`], a simple RESTful interaction for exchanging attachments using a FHIR [Operation]. {{ site.data.resources.['OperationDefinition/submit-attachment']['description'] }}
 
-<span class="bg-success" markdown="1">This guide defines a FHIR [Operation] for exchanging attachments using [`$submit-attachment`].</span><!-- new-content --> This operation replace the X12n 275 transaction. The operation accepts the clinical attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
+See the [`$submit-attachment`] operation definition for further details.
 
-
-#### FHIR Technical Workflow
-
+### Technical Workflow
 
 As shown in the figure 7 below, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
@@ -25,9 +24,21 @@ As shown in the figure 7 below, the attachments are “pushed” using the [`$su
 </div><!-- new-content -->
 
 
-#### Examples
+### Data Elements for Sending Attachments
 
-In the following examples, a Provider creates a claim and sends supporting CCDA documents as *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]:
+The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 analog in the following table: 
+
+{% include attachments_to_275.md %}
+
+For *solicited* attachments, the same data elements sent in the request for attachments. The table below shows the mappings between the corresponding data communicated in the attachments request for CDex Request Attachment, X12n 277, and 278response forms and the  [`$submit-attachment`] parameters. 
+
+{% include attachments_to_requests_277_278.md %}
+
+See the [Requesting Attachments] page for a detailed discussion on how these data element are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response back to the Payer.
+
+### Examples
+
+In the following examples, a Provider creates a claim and sends supporting CCDA documents as *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]. For *solicited attachments* examples, see the [Requesting Attachments] page.
 
 `POST [base]/$submit-attachment`
 

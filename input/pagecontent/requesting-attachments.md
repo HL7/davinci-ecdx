@@ -1,133 +1,36 @@
-<!-- ---
-tags: CDEX
-title: Draft Rewritten Attachments Page 
----
-
-
-# Draft Rewritten Attachments Page  -->
-
-This page documents a FHIR based approach for exchanging *attachments* for claims or prior authorization directly to a Payer.
-
-### Attachments (additional information) for Claims or Prior Authorization
-
-Today claims typically come through [X12 transactions] or portal submissions. Payers may need additional information - referred to as "attachments" - from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical benefits, or by policy benefits. In contrast to the Direct Query and Task Based approach, the CDex Attachments transaction is not a response to a CDex FHIR-based request for clinical/administrative data.  However, the additional information to support these claims or prior authorizations *may* be requested via a non-CDex FHIR based request such as an X12 transactions, fax, portal, or other capabilities.
-
-Attachments for Claims or Prior Authorization can be divided into *solicited* and *unsolicited* workflows. The Sections below document the differences and similarities between these workflows and CDex transactions can be used for each. 
-
-### *Unsolicited* Attachments
-
-For an *unsolicited* attachment the Provider will submit additional information using CDex Attachments to support a claim or prior authorization based on Payer predefined rules without any type of request.  <span class="bg-success" markdown="1">The attachments may be submitted *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.</span><!-- new-content --> The attachment is then associated with the claim or prior authorization. The flow diagram for this transaction is shown in the figure below:
-
-
-{% include img.html img="unsolicited-flow.svg" caption="Unsolicited Attachments Flow Diagram" %}
-
-#### `$submit-attachment` Operation
-
-<span class="bg-success" markdown="1">This guide defines a FHIR [Operation] for exchanging attachments using [`$submit-attachment`].</span><!-- new-content --> This operation replace the X12n 275 transaction. The operation accepts the clinical attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer http response. See the [`$submit-attachment`] operation definition and examples below for further details.
-
-
-#### FHIR Technical Workflow
-
-
-As shown in the figure 7 below, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
-
-<div class="bg-success" markdown="1">
-
-{% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
-
-
-1. Data Source assembles attachments and the meta data to associate the attachments to a claim or prior authorization
-1. Data Source invokes [`$submit-attachment`] operation to submit attachments to Payer
-1. Payer responds with an http transactional layer response either accepting or rejecting the transaction.
-   - The Payer **SHOULD** return an informational OperationOutcome with the http accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
-2. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
-
-</div><!-- new-content -->
-
-#### Example Scenarios
-
-1.	Additional information based on a set of pre-defined rules by the Payer or in state mandates without a specific request.
-2.	Additional information for a claim that a Provider believes the Payer will need for processing.
-3.	A Provider is under review and required to provide additional information for all claims.
-
-
-In all of these cases, the Payer will require a trading partner agreement for sending attachments based on predefined rules.
-{:.bg-warning}
-
-#### Examples
-
-In the following examples, a Provider creates a claim and sends supporting CCDA documents as *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]:
-
-`POST [base]/$submit-attachment`
-
-##### Scenario 1a: CCDA Document Attachments
-
-- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim.
-  - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
-- Provider knows the Payer's endpoint for sending attachments.  Note that the [`$submit-attachment`] operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
-- An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
-- <span class="bg-success" markdown="1">Payer associates attachments to the claim.</span><!-- new-content -->
-
-{% include examplebutton_default.html example="attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
-
-<div class="bg-success" markdown="1">
-
-#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to Claim
-
-This Scenario is the same as Scenario 1a above except that the attachments are submitted *prior* to the claim.  The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
-
-{% include examplebutton_default.html example="attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
-
-</div><!-- new-content -->
-
-
-
-### *Solicited* Attachments
-
-For a *solicited* attachment the Provider will submit additional information using to support a claim or prior authorization *in response to*  a Payor's request for additional documentation.  The submnitted attachments are then associated with the claim or prior authorization. The flow diagram for this transaction is shown in the figures below:
-
-
-{% include img.html img="solicited-claim-flow.svg" caption="Solicited Attachments for a Claim" %}
-
-
-{% include img.html img="solicited-prior-auth-flow.svg" caption="Solicited Attachments for a Prior Authorization" %}
+This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is use for *solicited*  attachments and uses the combination of a Task based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to "push" the attachments to the Payer as documented in the [Sending Attachments] page.  <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.</span><!-- new-content -->
 
 ### non-FHIR Request
 
-When the Payer sends a portal, letter, X12n 277 or 278 response message or other type of request to the Provider for additional information to support a claim or prior authorization. Using the CDex the `$submit-attachment` Operation defined above, the additional documentation can be sent from the Provider to the Payer.  The attachments are then associated with the claim or prior authorization.
+When the Payer sends a portal, letter, X12n 277 or 278 response message or other non-FHIR type of request to the Provider for additional information to support a claim or prior authorization, the attachments can be “pushed” using the [`$submit-attachment`] operation directly to the Payer.
 
-{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using Non-FHIR Request" %}
+{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
-### Request Attachment Using CDEX and FHIR
+TODO - document steps
+{:.bg-warning} 
 
-Using CDex, the Payer can elect to send an attachment request as a FHIR transaction. The attachment request is communicated using CDEX Task based approach and the response through the CDex $submit-operation.  These FHIR based transactions are designed to be compliant with HIPAA Attachment rules for CMS and can replace the X12n 278response, 277 and 275 messages. ( Bob to edit ). 
+### CDEX Attachment Request Profile
+
+Using CDex, the Payer can elect to send an attachment request as a FHIR transaction. The attachment request is communicated using the Task  based [CDex Task Attachment Request Profile].  {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
+
+### Technical Workflow
+
+The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments  using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDEX Task" %}
 
-#### The CDEX Attachment Request Profile
+TODO - document steps
+{:.bg-warning} 
 
-The CDEX Attachment Request Profile is a specialization of the CDEX Task Profile for requesting attachments. The CDEX Task Profile is used communicate the request for a variety of use cases including requesting attachments, but The CDEX Attachment Request is defined specifically for requesting attachments for Claims and Prior Authorization that is compatible with existing X12n 277 and 278 response transactions. It communicates the necesary data elements for requesting attachments and associating them to a claim or prior authorization: 
+### Data Elements for Requesting Attachments
 
-##### Data Elements Needed to Request Attachments
+The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They are mapped to the [CDex Task Attachment Request Profile] elements and their corresponding x12n 277 and 278 response analogs in the following table: 
 
-No.|Data Element|X12 277/278 ID|CDEX
----|---|---
-1 | Payer ID - should be a business ID -requester.reference| NM108  |
-2 | Payer URL| - | "code" Task.input
-3 |  Claim/PreAuth ID (Provider or Payer Assigned) | -  | Task.reasonReference.identifier
-4 |  Tracking ID (Provider or Payer Assigned)| REF02 | Task.identifier
-5|   line item # nos | |  "code" Task.input.extension 
-6 | Attachment LOINCs |  STC01-02  |  "code" Task.input
-7|  Due Date|  DPT02  | Task.restriction.period
-8|  Date of Service (encounter info) | DTP03  | "service-date" Task.input
-9 |  Member ID (patient info)| X2100D NM | Patient.identifier
-10 |  Patient Name (patient info) |  X2100D NM103-7  | Patient.name
-11 |   Patient Account No. *PreAuth Only* (patient info) |CLM01(837) |  Patient.identifier
-12 |   DOB *Optional* (patient info  |)X12  | Patient.birthDate
-{: .grid}
+{% include requests-277_278.md %}
 
+The same data elements sent in the request for attachments are echoed back when submitting the attachments using the [`$submit-attachment`] operation. The mappings between the corresponding data communicated in the CDex Request Attachment Profile elements and the  [`$submit-attachment`] parameters are shown in the table below:
 
-[**CDEX Attachment Request Profile Content Design 2(reasonCode and Service-date input)**](StructureDefinition-cdex-task-attachment-request2.html)
+{% include attachments_to_requests.md %}
 
 
 ### Example Attachment Request
@@ -150,11 +53,11 @@ The payer also indicates whether a Digital Signature is required and supplies an
 POST [base]/Task
 ~~~
 
-##### Request Body
+**Request Body**
 
 <!-- The request body's various elements are annotated to show how each of the data elements is communicated to the Provider. -->
 
-###### Declaring the Profile and Work Queue Hints
+##### Declaring the Profile and Work Queue Hints
 
 The Provider receives the Attachments request.  The profile declaration asserts that the resource conforms to the profile and contains all the necessary data elements listed above.  Work Queue Hints are and optional element are displayed here to show how they can be used by a Payer in a claims attachment request.
 
@@ -174,7 +77,7 @@ The Provider receives the Attachments request.  The profile declaration asserts 
  13:      },
 ~~~
 
-###### Verifying Patient Identity
+##### Verifying Patient Identity
 
 The following data elements are used to verify patient identity for compliance regulations (such as HIPAA). (How the Provider system verify the patient in not covered in this guide.) The Payer communicates them in a `contained` Patient resource using the [**CDex Patient Demographics Profile**](http://build.fhir.org/ig/HL7/davinci-ecdx/StructureDefinition-cdex-patient-demographics.html).  This contained Patient is referenced in `Task.for.reference` using the a fixed reference value of "#patient".:
 
@@ -258,7 +161,7 @@ The Payer supplies the necessary Claim/PreAuthorization Data so the Provider can
 
 
 
-###### Supplying the Tracking ID
+##### Supplying the Tracking ID
 
 The mandatory `Task.identifier` "tracking-id" slice element represents the payers tracking identifier.  This is an identifier that ties the attachments back to the claim or pre-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
@@ -281,7 +184,7 @@ The mandatory `Task.identifier` "tracking-id" slice element represents the payer
  82:      ],
 ~~~
 
-###### Task *Infrastructure* Elements
+##### Task *Infrastructure* Elements
 
 These required Task *infrastructural* elements:
 
@@ -306,7 +209,7 @@ convey what the task is about, its status and the intent of the request.  The va
 ~~~
 
 
-###### Identifying the Payer, Provider and Patient
+##### Identifying the Payer, Provider and Patient
 
 Business idenfiers are used to identify the Payer, Patient and if present  the Provider ID  which is an optional element in the profile. Note that the Patient identifier is in both Task profile and the contained Patient profile. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
 
@@ -417,9 +320,9 @@ The payer supplies either LOINCs or non-coded data a Task input parameters to in
 162:          },
 ~~~
 
-###### Communicating the Signature Requirements
+##### Communicating the Signature Requirements
 
-See the [Signature page](#) for more information
+See the [Signature page] for more information
 
 ~~~
 163:          {
@@ -435,7 +338,7 @@ See the [Signature page](#) for more information
 173:          },
 ~~~
 
-###### Indicating the $submit-attachment Operation Endpoint
+##### Indicating the $submit-attachment Operation Endpoint
 
 When the Payer supplies the url endpoint as a Task input parameter, it triggers the Provider System to use it as the endpoint for the $submit-attachment Operation defined above.  If no url endpoint is supplied the attachments are provided either as references or contained Task resource and the requester needs to poll/subscribe to the Task to retrieve when done.
 
@@ -453,7 +356,7 @@ When the Payer supplies the url endpoint as a Task input parameter, it triggers 
 184:          },
 ~~~
 
-###### Date of Service for the Claim
+##### Date of Service for the Claim
 
 A Task.input element represents the date of service or starting date of the service for the claim or prior authorization.
 
@@ -477,16 +380,7 @@ A Task.input element represents the date of service or starting date of the serv
 
 #### Step 2 - Submit Solicited Attachments to Payer endpoint
 
-As stated above, the Payer endpoint is communicated to the Payer using the Task.input element.  This endpoint is the target for the $submit-attachment operation when the provider sends the requested attachment to the payer.  The following table maps the information communicated in the CDex Attachment Request to the corresponding parameter in the body of $submit-attachment operation:
-
-
-|Parameter|CDex Request Attachment Element|X12 Element|Description|
-|---|---|---|---|
-|foo|bar|baz|biz|
-{: .grid}
-
-
-These parameters are documented in more detail below.
+As stated above, the Payer endpoint is communicated to the Payer using the Task.input element.  This endpoint is the target for the $submit-attachment operation when the provider sends the requested attachment to the payer.  The table maps the information communicated in the CDex Attachment Request to the corresponding parameter in the body of $submit-attachment operation. These parameters are documented in more detail below.
 
 
 **Request**
@@ -590,67 +484,16 @@ the Requested Attachments and the corresponding coded or non-coded requests and/
 ~~~
 
 
-**Full example Task request in JSON:**
+##### Complete *Solicited* Attachment Transaction
+
+
+{% include examplebutton_default.html example="attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+
 
 <!--{%raw%} {%gist Healthedata1/9bc715de1ebab524a95b4c679e5894fe%}{%endraw%} -->
 
 
-**Full example Response in JSON ($submit-attachment Parameters Payload):**
-
 <!--{%raw%}{%gist Healthedata1/ff729585f6d369e821d90854813c9b97%}{%endraw%} -->
-
-
-
-
----
-
-### Signatures
-
-Some data consumers may require that the data they receive are signed. When performing CDex Attachments transactions and signatures are required, the following general rules apply:
-
-- The signature **SHALL** represent a *human provider* signature on resources attesting that the information is true and accurate.
-- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** be transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
-
-#### The Data Consumer Requirements
-
-When an electronic or digital signature is required for CDex Attachments, the Data Consumer **SHALL**:
-
-- *Pre-negotiate* the signature requirement with the organization representing the Data Source.
-   - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* attachments will be signed.
-   - Conversely, it **SHOULD** be assumed that no CDex Attachments transaction will be signed unless there exists a pre-negotiated agreement
-   - Based on the agreement, *electronic* or *digital* signatures **MAY** be used  
-- Follow the documentation in the [Signatures] page for validating signatures.
-
-
-#### Data Source Requirements
-
-Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-sourceresponder-requirements) section in the Task Based Approach to signatures.
-
-#### Example: *Signed* FHIR Resource Attachments
-
-- This example is the same as Scenario 1 above except that the attachment is a FHIR resource and a FHIR digital signature is required.
-  - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical/administrative data are transformed into a FHIR Document bundle and the bundle is digitally signed.
-- See the [Signatures] page for complete examples on how the signature was created.
-
-{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}
-
-
-### How Does CDex fit into the DaVinci Burden Reduction/PAS Workflow
-
-
-In PAS, the expection is that a final decision is generated immediately and automatically in the majority of cases.  The flow below depicts the cases where the result is "pended" and additional data is needed.  In these cases the Payer or Provider may elect to use a CDex Transaction to request or submit attachments.
-{: .bg-info}
-
-
-There is no direct intersection with [DTR/CRD workflow](http://hl7.org/fhir/us/davinci-dtr/index.html). In DTR, the [Q/QR is held] until any [required Tasks](http://hl7.org/fhir/us/davinci-dtr/specification__behaviors__task_creation.html) are completed and the question is answered which not compatible with the CDex attachments workflow.
-{: .bg-warning}
-
-{% include img.html img="burden-reduction-flow.svg" caption="CDex in DaVinci Burden Reduction Workflow" %}
-
-
-#### PAS Workflow for Pended Transaction
-
-{% include img.html img="pas-pended-flow.svg" caption="CDex in DaVinci PAS 'Pended' Workflow" %}
 
 
 {% include link-list.md %}
