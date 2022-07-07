@@ -40,21 +40,6 @@
                     },
                     "system": "http://example.org/cdex/payer/member-ids",
                     "value": "Member123"
-                },
-                {
-                    "use": "usual",
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
-                                "code": "pat",
-                                "display": "Patient Account Number"
-                            }
-                        ],
-                        "text": "Patient Account Number"
-                    },
-                    "system": "http://example.org/cdex/provider/patient-ids",
-                    "value": "PA-123"
                 }
             ],
             "name": [
@@ -96,11 +81,7 @@
         "text": "Attachment Request"
     },
     "for": {
-        "reference": "#patient",
-        "identifier": {
-            "system": "http://example.org/cdex/payer/member-ids",
-            "value": "Member123"
-        }
+        "reference": "#patient"
     },
     "authoredOn": "2022-06-17T16:16:06Z",
     "lastModified": "2022-06-17T16:16:06Z",

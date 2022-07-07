@@ -91,7 +91,7 @@
 [JSON Signature rules]: {{site.data.fhir.path}}/datatypes.html#JSON
 [RFC 7515: JSON Web Signature (JWS)]: https://tools.ietf.org/html/rfc7515
 [Detached]: https://tools.ietf.org/html/rfc7515#appendix-F
-[Canonical JSON]: http://hl7.org/fhir/json.html#canonical
+[Canonical JSON]: {{site.data.fhir.path}}/json.html#canonical
 [JWS JSON Serialization]: https://datatracker.ietf.org/doc/html/rfc7515#section-3.2
 [X.509 certificates]: https://www.itu.int/rec/T-REC-X.509
 [RFC 7518]: https://tools.ietf.org/html/rfc7518
@@ -106,3 +106,5 @@
 [Requesting Attachments]: requesting-attachments.html
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
+[LOINC attachment codes]: https://loinc.org/attachments/
+[Parameters]: {{site.data.fhir.path}}/parameters.html

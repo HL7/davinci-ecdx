@@ -1,23 +1,25 @@
-This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is use for *solicited*  attachments and uses the combination of a Task based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to "push" the attachments to the Payer as documented in the [Sending Attachments] page.  <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.</span><!-- new-content -->
+This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is use for *solicited*  attachments and uses the combination of a Task based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page.  <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.</span><!-- new-content -->
 
 ### non-FHIR Request
 
-When the Payer sends a portal, letter, X12n 277 or 278 response message or other non-FHIR type of request to the Provider for additional information to support a claim or prior authorization, the attachments can be “pushed” using the [`$submit-attachment`] operation directly to the Payer.
+In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using a X12 transactions, fax, portal, or other capabilities.  The Provider can submit these *solicited* attachments using a variety of Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
 TODO - document steps
 {:.bg-warning} 
 
-### CDEX Attachment Request Profile
+### CDex Attachment Request Profile
 
-Using CDex, the Payer can elect to send an attachment request as a FHIR transaction. The attachment request is communicated using the Task  based [CDex Task Attachment Request Profile].  {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
+Using CDex, the Payer can send an attachment request as a FHIR transaction. The attachment request is communicated using the Task based [CDex Task Attachment Request Profile].  {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
+
+See the [CDex Task Attachment Request Profile] formal definition for further details.
 
 ### Technical Workflow
 
 The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments  using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
 
-{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDEX Task" %}
+{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
 TODO - document steps
 {:.bg-warning} 
@@ -32,22 +34,31 @@ The same data elements sent in the request for attachments are echoed back when 
 
 {% include attachments_to_requests.md %}
 
+The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 
-### Example Attachment Request
 
-In the following sections, An example CDEX Attachment Request is looked at in detail to document how this profile is used to communicate the required data elements and how they are used in $submit-attachment response back to the payer.
+### *Solicited* Attachment Transaction Walk Through
+
+In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how the CDex Task Attachment Request Profile is used to communicate the required data elements to the Provider and how the $submit-attachment is used to communicate the response back to the Payer.
 {: .bg-info}
 
-In this example, a Provider creates a claim and sends to the Payer.  The Payer responds with request for attachments using the The CDEX Attachment Request Profile. This replaces the X12n 277 transactions.  In addition to the various identifiers needed to associate the attachments to the claim, the payer supplies details about what information is need to complete the adjudication of the claim:
+In this scenario, a Provider creates a claim and sends it to the Payer.  The Payer reviews the claim and responds with request for attachments using the  CDex Attachment Request Profile.  In addition to the information needed to successfully submit and associate the attachments to the claim, the payer supplies the following details about what information is need to complete the adjudication of the claim:
 
-- LOINC code(s) for the requested attachment
+- LOINC attachment code(s) for the requested documents
 - What line numbers on the claim the requested attachment(s) are for
 
-The payer also indicates whether a Digital Signature is required and supplies an endpoint where the Provider should submit the attachments. After receiving the attachment request, the Provider collects the documentation and returns them using the `$submit-attachment operation` which replaces the X12n 275 transaction. The flow diagram for this transaction is shown in the figure below:
+<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the `$submit-attachment` operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicates whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
+
+After receiving the attachment request, the Provider collects the documentation and returns them using the `$submit-attachment operation`, posting it to the endpoint supplied in the request.
+ <!-- The data for association to the original claim is supplied in the request is echoed back. The attachments populate the operation body based on the appropriate line numbers and attachment codes. -->
+
+The flow diagram for this transaction is shown in the figure below:
 
 {% include img.html img="cdex-request-attach-claim-flow.svg" caption="CDex Request Attachment Overview for a Claim" %}
 
-#### Step 1: POST a CDEX Attachment Request to the Provider Endpoint
+#### Payer Requests Attachments for Claim
+
+The Payer POSTs the CDex Task Attachment Request Profile to the Provider endpoint.
 
 ~~~
 POST [base]/Task
@@ -55,26 +66,20 @@ POST [base]/Task
 
 **Request Body**
 
+##### Task Resource
+
+The optional profile declaration shown below asserts that the resource conforms to the profile and contains all the necessary data elements listed above.
+
 <!-- The request body's various elements are annotated to show how each of the data elements is communicated to the Provider. -->
 
-##### Declaring the Profile and Work Queue Hints
-
-The Provider receives the Attachments request.  The profile declaration asserts that the resource conforms to the profile and contains all the necessary data elements listed above.  Work Queue Hints are and optional element are displayed here to show how they can be used by a Payer in a claims attachment request.
-
 ~~~
-  1:  {
+ 1:  {
   2:      "resourceType": "Task",
   3:      "meta": {
   4:          "profile": [
-  5:              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
-  6:          ],
-  7:          "tag": [
-  8:              {
-  9:                  "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
- 10:                  "code": "claims-processing"
- 11:              }
- 12:          ]
- 13:      },
+  5:              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+  6:          ]
+  7:      },
 ~~~
 
 ##### Verifying Patient Identity
@@ -83,66 +88,51 @@ The following data elements are used to verify patient identity for compliance r
 
 |Data|HRex Patient Demographics Profile.|
 |---|---|
-|Member ID or Patient Account No.|`Patient.identifier`|
+|Member ID or Patient Account No.*|`Patient.identifier`|
 |Patient Name|`Patient.name`|
 |Patient DOB (optional)|`Patient.birthDate`|
-|Sex |`Patient.gender`|
 {: .grid}
 
+\* Patient Account No are Provider assigned identifiers for Prior-Auth
+
 ~~~
- 14:      "contained": [
- 15:          {
- 16:              "resourceType": "Patient",
- 17:              "id": "patient",
- 18:              "meta": {
- 19:                  "profile": [
- 20:                      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
- 21:                  ]
- 22:              },
- 23:              "identifier": [
- 24:                  {
- 25:                      "use": "usual",
- 26:                      "type": {
- 27:                          "coding": [
- 28:                              {
- 29:                                  "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
- 30:                                  "code": "UMB",
- 31:                                  "display": "Member Number"
- 32:                              }
- 33:                          ],
- 34:                          "text": "Member Number"
- 35:                      },
- 36:                      "system": "http://example.org/cdex/payer/member-ids",
- 37:                      "value": "Member123"
- 38:                  },
- 39:                  {
- 40:                      "use": "usual",
- 41:                      "type": {
- 42:                          "coding": [
- 43:                              {
- 44:                                  "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
- 45:                                  "code": "pat",
- 46:                                  "display": "Patient Account Number"
- 47:                              }
- 48:                          ],
- 49:                          "text": "Patient Account Number"
- 50:                      },
- 51:                      "system": "http://example.org/cdex/provider/patient-ids",
- 52:                      "value": "PA-123"
- 53:                  }
- 54:              ],
- 55:              "name": [
- 56:                  {
- 57:                      "family": "Shaw",
- 58:                      "given": [
- 59:                          "Amy"
- 60:                      ]
- 61:                  }
- 62:              ],
- 63:              "gender": "female",
- 64:              "birthDate": "1987-02-20"
- 65:          }
- 66:      ],
+  8:      "contained": [
+  9:          {
+ 10:              "resourceType": "Patient",
+ 11:              "id": "patient",
+ 12:              "meta": {
+ 13:                  "profile": [
+ 14:                      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
+ 15:                  ]
+ 16:              },
+ 17:              "identifier": [
+ 18:                  {
+ 19:                      "use": "usual",
+ 20:                      "type": {
+ 21:                          "coding": [
+ 22:                              {
+ 23:                                  "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+ 24:                                  "code": "UMB",
+ 25:                                  "display": "Member Number"
+ 26:                              }
+ 27:                          ],
+ 28:                          "text": "Member Number"
+ 29:                      },
+ 30:                      "system": "http://example.org/cdex/payer/member-ids",
+ 31:                      "value": "Member123"
+ 32:                  }
+ 33:              ],
+ 34:              "name": [
+ 35:                  {
+ 36:                      "family": "Shaw",
+ 37:                      "given": [
+ 38:                          "Amy"
+ 39:                      ]
+ 40:                  }
+ 41:              ],
+ 42:              "birthDate": "1987-02-20"
+ 43:          }
+ 44:      ],
 ~~~
 
 <!-- ##### Supplying the Claim/PreAuthorization Data
@@ -166,22 +156,22 @@ The Payer supplies the necessary Claim/PreAuthorization Data so the Provider can
 The mandatory `Task.identifier` "tracking-id" slice element represents the payers tracking identifier.  This is an identifier that ties the attachments back to the claim or pre-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
 ~~~
- 67:      "identifier": [
- 68:          {
- 69:              "type": {
- 70:                  "coding": [
- 71:                      {
- 72:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
- 73:                          "code": "tracking-id",
- 74:                          "display": "Tracking Id"
- 75:                      }
- 76:                  ],
- 77:                  "text": "Re-Association Tracking Control Number"
- 78:              },
- 79:              "system": "http://example.org/payer",
- 80:              "value": "trackingid123"
- 81:          }
- 82:      ],
+ 45:      "identifier": [
+ 46:          {
+ 47:              "type": {
+ 48:                  "coding": [
+ 49:                      {
+ 50:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+ 51:                          "code": "tracking-id", 
+ 52:                          "display": "Tracking Id"
+ 53:                      }
+ 54:                  ],
+ 55:                  "text": "Re-Association Tracking Control Number"
+ 56:              },
+ 57:              "system": "http://example.org/payer",
+ 58:              "value": "trackingid123"
+ 59:          }
+ 60:      ],
 ~~~
 
 ##### Task *Infrastructure* Elements
@@ -192,61 +182,57 @@ These required Task *infrastructural* elements:
 - Task.intent
 - Task.code
 
-convey what the task is about, its status and the intent of the request.  The values shown below are typical for the attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. 
+convey what the task is about, its status and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".  The Task.code is fixed to “attachment-request” to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the “payer-url” input parameter.
 
 ~~~
- 83:      "status": "requested",
- 84:      "intent": "order",
- 85:      "code": {
- 86:          "coding": [
- 87:              {
- 88:                  "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
- 89:                  "code": "data-request"
- 90:              }
- 91:          ],
- 92:          "text": "Data Request"
- 93:      },
+ 61:      "status": "requested",
+ 62:      "intent": "order",
+ 63:      "code": {
+ 64:          "coding": [
+ 65:              {
+ 66:                  "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+ 67:                  "code": "attachment-request"
+ 68:              }
+ 69:          ],
+ 70:          "text": "Attachment Request"
+ 71:      },
 ~~~
 
 
 ##### Identifying the Payer, Provider and Patient
 
-Business idenfiers are used to identify the Payer, Patient and if present  the Provider ID  which is an optional element in the profile. Note that the Patient identifier is in both Task profile and the contained Patient profile. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
+Business identifiers are used to identify the Patient, the Payer,and the Provider who submitted the Claim. Note that as discussed above, the Patient identifier is in the contained Patient resource which is referenced by the Task.for element. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
 
 |Actor|CDex Claim Profile element|
 |---|---|
 |payer ID|`Task.reasonReference.identifier`|
 |provider ID (optional)|`Task.owner.identifier`|
-|patient member ID or patient account no|`Task.for.identifier` and/or`Task.for.reference`|
+|patient member ID or Patient Account No|(contained)Patient.identifier|
 {: .grid}
 
 ~~~
- 94:      "for": {
- 95:          "reference": "#patient",
- 96:          "identifier": {
- 97:              "system": "http://example.org/cdex/payer/member-ids",
- 98:              "value": "Member123"
- 99:          }
-100:      },
-101:      "authoredOn": "2022-06-17T16:16:06Z",
-102:      "lastModified": "2022-06-17T16:16:06Z",
-103:      "requester": {
-104:          "identifier": {
-105:              "system": "http://example.org/cdex/payer/payer-ids",
-106:              "value": "Payer123"
-107:          }
-108:      },
-109:      "owner": {
-110:          "identifier": {
-111:              "system": "http://hl7.org/fhir/sid/us-npi",
-112:              "value": "9941339108"
-113:          }
-114:      },
+ 72:      "for": {
+ 73:          "reference": "#patient"
+ 74:      },
+ 75:      "authoredOn": "2022-06-17T16:16:06Z",
+ 76:      "lastModified": "2022-06-17T16:16:06Z",
+ 77:      "requester": {
+ 78:          "identifier": {
+ 79:              "system": "http://example.org/cdex/payer/payer-ids",
+ 80:              "value": "Payer123"
+ 81:          }
+ 82:      },
+ 83:      "owner": {
+ 84:          "identifier": {
+ 85:              "system": "http://hl7.org/fhir/sid/us-npi",
+ 86:              "value": "9941339108"
+ 87:          }
+ 88:      },
 ~~~
 
 ##### Claim Information
 
-The Task communicates whether the attachments are for a Claim or Prior Authorization and  the Claim or Prior Authorization ID is identified by its business Identifier. 
+The Task communicates whether the attachments are for a Claim or Prior Authorization and the Claim or Prior Authorization ID is identified by its business Identifier. 
 
 |Data|CDex Claim Profile element|
 |---|---|
@@ -255,105 +241,107 @@ The Task communicates whether the attachments are for a Claim or Prior Authoriza
 {: .grid}
 
 ~~~
-115:      "reasonCode": {
-116:          "coding": [
-117:              {
-118:                  "system": "http://hl7.org/fhir/claim-use",
-119:                  "code": "claim",
-120:                  "display": "Claim"
-121:              }
-122:          ],
-123:          "text": "claim"
-124:      },
-125:      "reasonReference": {
-126:          "identifier": {
-127:              "system": "http://example.org/cdex/payer/claim-ids",
-128:              "value": "Claim123"
-129:          }
-130:      },
+ 89:      "reasonCode": {
+ 90:          "coding": [
+ 91:              {
+ 92:                  "system": "http://hl7.org/fhir/claim-use",
+ 93:                  "code": "claim",
+ 94:                  "display": "Claim"
+ 95:              }
+ 96:          ],
+ 97:          "text": "claim"
+ 98:      },
+ 99:      "reasonReference": {
+100:          "identifier": {
+101:              "system": "http://example.org/cdex/payer/claim-ids",
+102:              "value": "Claim123"
+103:          }
+104:      },
 ~~~
 
-##### Communicating Attachments Due Date
+##### Attachment Due Date
 
 The Due Date for attachment is communicated in the `Task.restriction.period`  element. Note that `Task.restriction.period.end` is the due date representing the time by which the attachments should be submitted.
 
 ~~~
-131:      "restriction": {
-132:          "period": {
-133:              "end": "2022-06-21"
-134:          }
-135:      },
+105:      "restriction": {
+106:          "period": {
+107:              "end": "2022-06-21"
+108:          }
+109:      },
 ~~~
 
 ##### Communicating What Attachments are Needed
 
-The payer supplies either LOINCs or non-coded data a Task input parameters to indicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or pre-auth.  This information is represented in the `Task.input` "code" or "query" slices.  Note that free text requests use the "code" slice and FHIR search based syntax the "query" slice.  The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
+The payer supplies the [LOINC attachment codes] to communicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or pre-auth.  This information is represented in the `Task.input` "code". The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
 
 
 ~~~
-136:      "input": [
-137:          {
-138:              "type": {
-139:                  "coding": [
-140:                      {
-141:                          "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-142:                          "code": "data-code"
-143:                      }
-144:                  ]
-145:              },
-146:              "valueCodeableConcept": {
-147:                  "coding": [
-148:                      {
-149:                          "system": "http://loinc.org",
-150:                          "code": "34117-2",
-151:                          "display": "History and physical note"
-152:                      }
-153:                  ],
-154:                  "text": "History and Physical"
-155:              },
-156:              "extension": [
-157:                  {
-158:                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
-159:                      "valuePositiveInt": 1
-160:                  }
-161:              ]
-162:          },
+110:      "input": [
+111:          {
+112:              "type": {
+113:                  "coding": [
+114:                      {
+115:                          "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+116:                          "code": "data-code"
+117:                      }
+118:                  ]
+119:              },
+120:              "valueCodeableConcept": {
+121:                  "coding": [
+122:                      {
+123:                          "system": "http://loinc.org",
+124:                          "code": "34117-2",
+125:                          "display": "History and physical note"
+126:                      }
+127:                  ],
+128:                  "text": "History and Physical"
+129:              },
+130:              "extension": [
+131:                  {
+132:                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+133:                      "valuePositiveInt": 1
+134:                  }
+135:              ]
+136:          },
 ~~~
 
 ##### Communicating the Signature Requirements
 
-See the [Signature page] for more information
+ This Task.input "signature-flag" may be used to indicate that the attachments must be signed. See the [Signatures] and [Requesting Attachments] page for more information about using Signatures in CDex.
 
 ~~~
-163:          {
-164:              "type": {
-165:                  "coding": [
-166:                      {
-167:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-168:                          "code": "signature-flag"
-169:                      }
-170:                  ]
-171:              },
-172:              "valueBoolean": true
-173:          },
+137:          {
+138:              "type": {
+139:                  "coding": [
+140:                      {
+141:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+142:                          "code": "signature-flag"
+143:                      }
+144:                  ]
+145:              },
+146:              "valueBoolean": true
+147:          },
 ~~~
 
-##### Indicating the $submit-attachment Operation Endpoint
+##### Supplying the $submit-attachment Operation Endpoint
 
-When the Payer supplies the url endpoint as a Task input parameter, it triggers the Provider System to use it as the endpoint for the $submit-attachment Operation defined above.  If no url endpoint is supplied the attachments are provided either as references or contained Task resource and the requester needs to poll/subscribe to the Task to retrieve when done.
+The Payer supplies the url endpoint as a Task input parameter. The Provider System will use this information as the endpoint for the `$submit-attachment` Operation.
+
+<!-- If no url endpoint is supplied the attachments are provided either as references or contained Task resource and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
 ~~~
-174:          {
-175:              "type": {
-176:                  "coding": [
-177:                      {
-178:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-179:                          "code": "payer-url"
-180:                      }
-181:                  ]
-182:              },
-183:              "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
-184:          },
+148:          {
+149:              "type": {
+150:                  "coding": [
+151:                      {
+152:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+153:                          "code": "payer-url"
+154:                      }
+155:                  ]
+156:              },
+157:              "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
+158:          },
 ~~~
 
 ##### Date of Service for the Claim
@@ -362,26 +350,25 @@ A Task.input element represents the date of service or starting date of the serv
 
 
 ~~~
-185:          {
-186:              "type": {
-187:                  "coding": [
-188:                      {
-189:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-190:                          "code": "service-date"
-191:                      }
-192:                  ]
-193:              },
-194:              "valueDate": "2022-06-13"
-195:          }
-196:      ]
-197:  }
+159:          {
+160:              "type": {
+161:                  "coding": [
+162:                      {
+163:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+164:                          "code": "service-date"
+165:                      }
+166:                  ]
+167:              },
+168:              "valueDate": "2022-06-13"
+169:          }
+170:      ]
+171:  }
 ~~~
 
 
-#### Step 2 - Submit Solicited Attachments to Payer endpoint
+#### Provider Submits Solicited Attachments
 
-As stated above, the Payer endpoint is communicated to the Payer using the Task.input element.  This endpoint is the target for the $submit-attachment operation when the provider sends the requested attachment to the payer.  The table maps the information communicated in the CDex Attachment Request to the corresponding parameter in the body of $submit-attachment operation. These parameters are documented in more detail below.
-
+The Provider POSTs the $submit-attachment operation and it payload to the Payer's endpoint.  As stated above, the Payer endpoint is communicated to the Payer in CDex Task Attachment Request Profile.  The table in the [section](#data-elements-for-requesting-attachments) above maps the information communicated in the CDex Attachment Request to the corresponding parameter in the body of $submit-attachment operation. These parameters are documented in more detail below.
 
 **Request**
 
@@ -389,111 +376,183 @@ As stated above, the Payer endpoint is communicated to the Payer using the Task.
 POST [base]/$submit-attachment
 ~~~
 
-
 **Request Body**
 
-##### Use the `$submit-attachment` Operation Defined Above
+##### The `$submit-attachment` Operation Payload
 
-The attachments along with the metadata needed to associate the attachment to the Claim or Pre-Auth are in the $submit-attachments payload, a Parameters resource.
+The attachments along with the metadata needed to associate the attachment to the Claim or Pre-Auth are in the $submit-attachments payload, a [Parameters] resource.
 
-~~~yaml=
-resourceType: Parameters
-parameter:
+~~~
+ 1:  {
+ 2:      "resourceType": "Parameters",
+ 3:      "parameter": [
 ~~~
 
-##### Echoing back the Tracking ID and Whether Is Claim Or Preauthorization
-These data elements are taken from `Task.identifier` "tracking-id" slice and contained `Claim.use` elements respectively.
+##### Tracking ID and Indicating a Claim or Prior-authorization
+The Tracking ID is an identifier that ties the attachments back to the claim or pre-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachements are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
 
-~~~yaml=+
-  - name: TrackingId
-    valueString: targetid123
-  - name: AttachTo
-    valueCode: claim
+|Data Element|CDex Request Element|CDex #submit-attachment Parameter|
+|---|---|---|
+|TrackingID|Task.identifier|TrackingId|
+|Use|Task.reasonCode|AttachTo|
+{:.grid}
+
+~~~
+  4:          {
+  5:              "name": "TrackingId",
+  6:              "valueString": "targetid123"
+  7:          },
+  8:          {
+  9:              "name": "AttachTo",
+ 10:              "valueCode": "claim"
+ 11:          },
 ~~~    
 
-##### Supplying the Payer, Provider, Organization and Patient ids
+##### Identifying the Payer, Provider, Organization and Patient
 
-The Payer and Patient IDs should be the same as communicated in the request.  See above for details. For the Provider and Organization IDs the NPI should be used if not supplied in the request.
+As documented above, business identifiers are used to identify the Patient, the Payer, and Provider who submitted the Claim. These should be the same as communicated in the request.  For the Provider Organization IDs the NPI should be used.
 
-~~~yaml=+
-  - name: PayerId
-    valueIdentifier:
-      system: 'http://example.org/cdex/payer-ids'
-      value: payer123
-  - name: OrganizationId
-    valueIdentifier:
-      system: 'http://hl7.org/fhir/sid/us-npi'
-      value: '1407071236'
-  - name: ProviderId
-    valueIdentifier:
-      system: 'http://hl7.org/fhir/sid/us-npi'
-      value: '9941339108'
-  - name: MemberId
-    valueIdentifier:
-      system: 'http://example.org/cdex/member-ids'
-      value: '234567'
+|Data Element|CDex Request Element|CDex #submit-attachment Parameter|
+|---|---|---|
+|Payer URL|"payer-url"Task.input|(operationendpoint)|
+|Organiztion ID|-|OrganizationId|
+|Provider ID|Task.owner.identifier|ProviderId|
+|Member ID|Patient.identifier|MemberId|
+{:.grid}
+
+~~~
+ 12:          {
+ 13:              "name": "PayerId",
+ 14:              "valueIdentifier": {
+ 15:                  "system": "http://example.org/cdex/payer-ids",
+ 16:                  "value": "payer123"
+ 17:              }
+ 18:          },
+ 19:          {
+ 20:              "name": "OrganizationId",
+ 21:              "valueIdentifier": {
+ 22:                  "system": "http://hl7.org/fhir/sid/us-npi",
+ 23:                  "value": "1407071236"
+ 24:              }
+ 25:          },
+ 26:          {
+ 27:              "name": "ProviderId",
+ 28:              "valueIdentifier": {
+ 29:                  "system": "http://hl7.org/fhir/sid/us-npi",
+ 30:                  "value": "9941339108"
+ 31:              }
+ 32:          },
+ 33:          {
+ 34:              "name": "MemberId",
+ 35:              "valueIdentifier": {
+ 36:                  "system": "http://example.org/cdex/member-ids",
+ 37:                  "value": "234567"
+ 38:              }
+ 39:          },
 ~~~
 
-##### Echo back the Service date
+##### The Service date
 
-The service date taken from the contained `Claim.supportingInfo.timingDate` element in the CDEX Attachment request.
+The service date parameter taken from the “service-date” Task.input element in the CDex Attachment request.
 
-~~~yaml=+
-  - serviceDate: '2022-06-16'
+~~~
+40:          {
+ 41:              "name": "ServiceDate",
+ 42:              "valueDate": "2022-06-16"
+ 43:          },
 ~~~
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
-the Requested Attachments and the corresponding coded or non-coded requests and/or line item numbers are communicated back as Attachment parameter parts. The actual attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a DocumentReference containing Base64 encoded FHIR and non-FHIR documents. What attachments are returned are determined by the CDEX Attachment requests in `Task.input` "code" or "query" slices.  These may be coded in LOINC or non-LOINC, free text, or FHIR RESTful search syntax queries.  Codes are represented in the Attachment.code parameter part in the `valueCodeableConcept.Coding` field and free text or FHIR RESTful search syntax queries are represented in `valueCodeableConcept.text` field. Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
- 
+the Requested Attachments and the corresponding coded requests and/or line item numbers are communicated back as Attachment parameter parts. The actual attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents.  What attachments are returned are determined by the [LOINC attachment codes] in the CDex Attachment requests in Task.input "code" slice.   Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
 
-~~~yaml=+
-  - name: Attachment
-    part:
-      - name: LineItem
-        valueString: '1'
-      - name: Code
-        valueCodeableConcept:
-          - coding:
-                system: 'http://loinc.org'
-                code: 34117-2
-      - name: Content
-        resource:
-          - resourceType: DocumentReference
-            id: cdex-example-doc1
-            status: current
-            type:
-              coding:
-                - system: 'http://loinc.org'
-                  code: 34117-2
-                  display: History and physical note
-              text: History and Physical
-            category:
-              - coding:
-                  - system: >-
-                      http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category
-                    code: clinical-note
-                    display: Clinical Note
-                text: Clinical Note 1
-            date: '2021-12-03T18:30:56-08:00'
-            content:
-              - attachment:
-                  contentType: application/pdf
-                  data: '>>>>>>Base64 here<<<<<<'
-                  title: sample1.pdf
+ <!-- What attachments are returned are determined by the CDex Attachment requests in `Task.input` "code" or "query" slices.  These may be coded in LOINC or non-LOINC, free text, or FHIR RESTful search syntax queries.  Codes are represented in the Attachment.code parameter part in the `valueCodeableConcept.Coding` field and free text or FHIR RESTful search syntax queries are represented in `valueCodeableConcept.text` field. Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
+  -->
+
+|Data Element|CDex Request Element|CDex #submit-attachment Parameter|
+|---|---|---|
+|line item(s)|“code”Task.input.extension|Attachment.LineItem|
+|LOINC Attachment Code|“code”Task.input|Attachment.Code|
+|Attachments|-|Attachment.content
+{:.grid}
+
+~~~
+ 44:          {
+ 45:              "name": "Attachment",
+ 46:              "part": [
+ 47:                  {
+ 48:                      "name": "LineItem",
+ 49:                      "valueString": "1"
+ 50:                  },
+ 51:                  {
+ 52:                      "name": "Code",
+ 53:                      "valueCodeableConcept": {
+ 54:                          "coding": [
+ 55:                              {
+ 56:                                  "system": "http://loinc.org",
+ 57:                                  "code": "34117-2",
+ 58:                                  "display": "History and physical note"
+ 59:                              }
+ 60:                          ],
+ 61:                          "text": "History and physical note"
+ 62:                      }
+ 63:                  },
+ 64:                  {
+ 65:                      "name": "Content",
+ 66:                      "resource": {
+ 67:                          "resourceType": "DocumentReference",
+ 68:                          "id": "cdex-example-doc1",
+ 69:                          "status": "current",
+ 70:                          "type": {
+ 71:                              "coding": [
+ 72:                                  {
+ 73:                                      "system": "http://loinc.org",
+ 74:                                      "code": "34117-2",
+ 75:                                      "display": "History and physical note"
+ 76:                                  }
+ 77:                              ],
+ 78:                              "text": "History and Physical"
+ 79:                          },
+ 80:                          "category": [
+ 81:                              {
+ 82:                                  "coding": [
+ 83:                                      {
+ 84:                                          "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+ 85:                                          "code": "clinical-note",
+ 86:                                          "display": "Clinical Note"
+ 87:                                      }
+ 88:                                  ],
+ 89:                                  "text": "Clinical Note 1"
+ 90:                              }
+ 91:                          ],
+ 92:                          "date": "2021-12-03T18:30:56-08:00",
+ 93:                          "content": [
+ 94:                              {
+ 95:                                  "attachment": {
+ 96:                                      "contentType": "application/pdf",
+ 97:                                      "data": ">>>>>>Base64 here<<<<<<",
+ 98:                                      "title": "sample1.pdf"
+ 99:                                  }
+100:                              }
+101:                          ]
+102:                      }
+103:                  }
+104:              ]
+105:          }
+106:      ]
+107:  }
 ~~~
 
 
-##### Complete *Solicited* Attachment Transaction
+### Complete *Solicited* Attachment Transaction
 
+The complete *solicited* attachment transaction using the combination of a Task based CDex Task Attachment Request Profile to request attachments and the [$submit-attachment` operation sumbmit the attachments to the Payer is shown below:
 
-{% include examplebutton_default.html example="attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+{% include examplebutton_default.html example="solicited-attachment-scenario1.md" b_title = "Click Here To See FHIR Based Solicited Attachment Example" %}
 
+### Signatures
 
-<!--{%raw%} {%gist Healthedata1/9bc715de1ebab524a95b4c679e5894fe%}{%endraw%} -->
-
-
-<!--{%raw%}{%gist Healthedata1/ff729585f6d369e821d90854813c9b97%}{%endraw%} -->
-
+TODO
+{:.bg-warning}
 
 {% include link-list.md %}

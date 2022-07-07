@@ -30,11 +30,13 @@ The following data elements are needed to associate an attachment to a claim or 
 
 {% include attachments_to_275.md %}
 
-For *solicited* attachments, the same data elements sent in the request for attachments. The table below shows the mappings between the corresponding data communicated in the attachments request for CDex Request Attachment, X12n 277, and 278response forms and the  [`$submit-attachment`] parameters. 
+For *solicited* attachments, the same data elements are sent in the request for attachments. The table below shows the mappings between the corresponding data communicated in the attachments request for CDex Request Attachment, X12n 277, and 278response forms and the  [`$submit-attachment`] parameters. 
 
 {% include attachments_to_requests_277_278.md %}
 
 See the [Requesting Attachments] page for a detailed discussion on how these data element are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response back to the Payer.
+
+The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 
 ### Examples
 
@@ -61,10 +63,6 @@ This Scenario is the same as Scenario 1a above except that the attachments are s
 {% include examplebutton_default.html example="attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
 </div><!-- new-content -->
-
-
-
-
 
 ---
 

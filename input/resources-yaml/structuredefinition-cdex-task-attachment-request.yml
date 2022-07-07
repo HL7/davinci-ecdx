@@ -7,13 +7,16 @@ name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
 status: active
 description: |-
-  This [Task](http://hl7.org/StructureDefinition/Task) profile defines a request for attachments for Claims and Prior Authorization that is compatible with existing X12 277 and 278 transactions.  It adds the following *mandatory* (min=1) constraints:
+  This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for Claims or Prior-Authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
+  
+  It constrains the following elements to be *mandatory* (min=1):
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.status with a required binding the the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
+  - A Task.owner.identifier element representing the Provider ID
   - A Task.for.reference element fixed to "\#string" - a reference the the contained Patient Resource
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
@@ -22,12 +25,12 @@ description: |-
   - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
   - A Task.input element representing date of service or starting date of the service for the claim or prior authorization
 
-   In addition, the following *must support* constraint:
+  and the following elements to be *must support* [min=0]:
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)
   - A Task.input element representing a flag to indicate whether the requested data requires a signature
 
-  In addition, the following *optional* constraint:
+  and the following elements to be *optional*:
   - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
 
 fhirVersion: 4.0.1

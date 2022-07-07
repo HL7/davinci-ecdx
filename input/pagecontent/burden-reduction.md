@@ -7,6 +7,9 @@ In PAS, the expection is that a final decision is generated immediately and auto
 There is no direct intersection with [DTR/CRD workflow](http://hl7.org/fhir/us/davinci-dtr/index.html). In DTR, the [Q/QR is held] until any [required Tasks](http://hl7.org/fhir/us/davinci-dtr/specification__behaviors__task_creation.html) are completed and the question is answered which not compatible with the CDex attachments workflow.
 {: .bg-warning}
 
+TODO - document flow sheets
+{:.bg-warning}
+
 {% include img.html img="burden-reduction-flow.svg" caption="CDex in DaVinci Burden Reduction Workflow" %}
 
 

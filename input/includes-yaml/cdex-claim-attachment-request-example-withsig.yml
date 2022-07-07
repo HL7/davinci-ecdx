@@ -1,4 +1,4 @@
-# input/includes-yaml/cdex-claim-attachment-request2-example-withsig.yml
+# input/examples-yaml/cdex-claim-attachment-request-example-withsig.yml
 
 resourceType: Task
 # id: cdex-claim-attachment-request2-example-withsig
@@ -7,12 +7,12 @@ meta:
   #   - url: http://hl7.org/fhir/StructureDefinition/instance-name
   #     valueString: Claim AttachmentRequest Example
   #   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-  #     valueMarkdown: '*ReasonCode Option* Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'
+  #     valueMarkdown: Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'
   profile:
-    - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request2"
-  tag:
-    - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
-      code: claims-processing
+    - "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+  # tag:
+  #   - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+  #     code: claims-processing
 contained:
   - resourceType: Patient
     id: patient
@@ -32,20 +32,20 @@ contained:
           text: Member Number
         system: "http://example.org/cdex/payer/member-ids"
         value: Member123
-      - use: usual
-        type:
-          coding:
-            - system: "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"
-              code: pat
-              display: Patient Account Number
-          text: Patient Account Number
-        system: "http://example.org/cdex/provider/patient-ids"
-        value: PA-123
+      # pat only for prior auth
+      # - use: usual
+      #   type:
+      #     coding:
+      #       - system: "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"
+      #         code: pat
+      #         display: Patient Account Number
+      #     text: Patient Account Number
+      #   system: "http://example.org/cdex/provider/patient-ids"
+      #   value: PA-123
     name:
       - family: Shaw
         given:
           - Amy
-    gender: female
     birthDate: "1987-02-20"
 
 identifier:
@@ -61,21 +61,21 @@ status: requested
 intent: order
 code:
   coding:
-    - system: "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"
-      code: data-request
-  text: Data Request
+    - system: "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+      code: attachment-request
+  text: Attachment Request
 for:
   reference: "#patient"
-  identifier: # ms 0..1 in data profile
-    system: http://example.org/cdex/payer/member-ids
-    value: "Member123"
+  # identifier: # ms 0..1 in data profile
+  #   system: http://example.org/cdex/payer/member-ids
+  #   value: "Member123"
 authoredOn: "2022-06-17T16:16:06Z"
 lastModified: "2022-06-17T16:16:06Z"
 requester:
   identifier:
     system: http://example.org/cdex/payer/payer-ids
     value: "Payer123"
-owner: # o..1 MS should be same as in claim is this needed?
+owner: # 0..1 MS should be same as in claim is this needed?
   identifier:
     system: http://hl7.org/fhir/sid/us-npi #NPI
     value: "9941339108"
