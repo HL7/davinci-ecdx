@@ -1,39 +1,9 @@
 
 <div class="new-content" markdown="1">
-Where possible, new and updated content will be highlighted with green text and background
+For review of changes, new and updated content will be highlighted with green text and background where possible
 </div>
 
-<!--
-
-<div markdown="1" class="note-to-balloters">
-
-**All comments for this ballot are restricted to the following Draft content in the STU 1.0 version of CDex which includes handling of Attachments and Digital Signatures**:
-
-
-|Topic|Page|Section
----|---|---
-Attachments|Background|[2.6.2](background.html#attachments-workflow)
-Attachments|Attachments|[3.4](attachments.html)
-Attachments|OperationDefinition: Submit Attachment Operation|[7.5.1](OperationDefinition-submit-attachment.html)
-Attachments|CDex Submit Attachment Parameters Resource Example|[7.29.1](Parameters-cdex-submit-attachment-example.html)
-Signatures|Direct Query|[3.2.6](direct-query.html#signatures)
-Signatures|Task Based Approach|[3.2.6](task-based-approach.html#signatures)
-Signatures|Attachments|[3.4.5](attachments.html#signatures)
-Signatures|Signatures|[4](signatures.html)
-Signatures|Signed SearchSet Bundle Example|[4.1](signed-searchset-bundle-example.html)
-Signatures|Signed Document Bundle Example|[4.2](signed-document-bundle-example.html)
-Signatures|CDEX Document with Digital Signature Example|[7.11.1](Bundle-cdex-document-digital-sig-example.html)
-Signatures|CDEX Document with Electronic Signature Example|[7.12.1](Bundle-cdex-electronic-sig-example.html)
-Signatures|Example of Task Request for Signed Data|[7.22.1](Task-cdex-example1s-query-requested-withsig.html)
-Signatures|Example of Completed Task Request for Signed Data|[7.23.1](Task-cdex-example1s-query-withsig-completed.html)
-Signatures|CDEX SearchSet Bundle with Digital Signature Example|[7.28.1](Bundle-cdex-searchset-digital-sig-example.html)
-{:.grid}
-
-**These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here.  Any comments outside of these boundaries will be dispositioned as “Not Related” for this STU Comment period.**
-
-</div>
-
--->
+{% include ballot_intro.md %}
 
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 

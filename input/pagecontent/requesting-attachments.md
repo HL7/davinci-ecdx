@@ -30,12 +30,7 @@ The following data elements are needed to associate an attachment to a claim or 
 
 {% include requests-277_278.md %}
 
-The same data elements sent in the request for attachments are echoed back when submitting the attachments using the [`$submit-attachment`] operation. The mappings between the corresponding data communicated in the CDex Request Attachment Profile elements and the  [`$submit-attachment`] parameters are shown in the table below:
-
-{% include attachments_to_requests.md %}
-
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
-
 
 ### *Solicited* Attachment Transaction Walk Through
 
@@ -47,10 +42,10 @@ In this scenario, a Provider creates a claim and sends it to the Payer.  The Pay
 - LOINC attachment code(s) for the requested documents
 - What line numbers on the claim the requested attachment(s) are for
 
-<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the `$submit-attachment` operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicates whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
+<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the `[$submit-attachment]` operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicates whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
 
-After receiving the attachment request, the Provider collects the documentation and returns them using the `$submit-attachment operation`, posting it to the endpoint supplied in the request.
- <!-- The data for association to the original claim is supplied in the request is echoed back. The attachments populate the operation body based on the appropriate line numbers and attachment codes. -->
+After receiving the attachment request, the Provider collects the documentation and returns them using the `[$submit-attachment]` operation, posting it to the endpoint supplied in the request.
+
 
 The flow diagram for this transaction is shown in the figure below:
 
@@ -326,7 +321,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 
 ##### Supplying the $submit-attachment Operation Endpoint
 
-The Payer supplies the url endpoint as a Task input parameter. The Provider System will use this information as the endpoint for the `$submit-attachment` Operation.
+The Payer supplies the url endpoint as a Task input parameter. The Provider System will use this information as the endpoint for the `[$submit-attachment]` Operation.
 
 <!-- If no url endpoint is supplied the attachments are provided either as references or contained Task resource and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
@@ -368,7 +363,11 @@ A Task.input element represents the date of service or starting date of the serv
 
 #### Provider Submits Solicited Attachments
 
-The Provider POSTs the $submit-attachment operation and it payload to the Payer's endpoint.  As stated above, the Payer endpoint is communicated to the Payer in CDex Task Attachment Request Profile.  The table in the [section](#data-elements-for-requesting-attachments) above maps the information communicated in the CDex Attachment Request to the corresponding parameter in the body of $submit-attachment operation. These parameters are documented in more detail below.
+The Provider POSTs the `[$submit-attachment]` operation and it payload to the Payer's endpoint.  As stated above, the Payer endpoint is communicated to the Payer in CDex Task Attachment Request Profile. The same data elements sent in the request for attachments are echoed back when submitting the attachments using the `[$submit-attachment]` operation. The mappings between the corresponding data communicated in the CDex Request Attachment Profile elements and the `[$submit-attachment]` parameters are shown in the table below:
+
+{% include attachments_to_requests.md %}
+
+These parameters are documented in more detail below.
 
 **Request**
 
@@ -378,7 +377,7 @@ POST [base]/$submit-attachment
 
 **Request Body**
 
-##### The `$submit-attachment` Operation Payload
+##### The Submit Attachment Operation Payload
 
 The attachments along with the metadata needed to associate the attachment to the Claim or Pre-Auth are in the $submit-attachments payload, a [Parameters] resource.
 
@@ -388,8 +387,8 @@ The attachments along with the metadata needed to associate the attachment to th
  3:      "parameter": [
 ~~~
 
-##### Tracking ID and Indicating a Claim or Prior-authorization
-The Tracking ID is an identifier that ties the attachments back to the claim or pre-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachements are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
+##### Tracking ID and Indicating a Claim or Prior Authorization
+The Tracking ID is an identifier that ties the attachments back to the claim or pre-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
@@ -451,7 +450,7 @@ As documented above, business identifiers are used to identify the Patient, the 
  39:          },
 ~~~
 
-##### The Service date
+##### The Service Date
 
 The service date parameter taken from the “service-date” Task.input element in the CDex Attachment request.
 

@@ -31,6 +31,7 @@
 [Task Based Approach]: task-based-approach.html
 [Attachments]: attachments.html
 [`$submit-attachment`]: OperationDefinition-submit-attachment.html
+[Submit Attachment Operation]: OperationDefinition-submit-attachment.html
 [HL7 Da Vinci Guiding Principles]: https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf
 [Da Vinci Health Record Exchange (HRex)]: {{site.data.fhir.ver.hrex}}/index.html
 [Patient Care]: http://www.hl7.org/Special/committees/patientcare/index.cfm
@@ -108,3 +109,9 @@
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
 [Parameters]: {{site.data.fhir.path}}/parameters.html
+[CDex Patient Demographics Profile]: StructureDefinition-cdex-patient-demographics.html
+[CDex Claim Use Value Set]: ValueSet-cdex-claim-use.html
+[Prior-Auth AttachmentRequest Example]: Task-cdex-prior-auth-attachment-request-example-withsig.html
+[Claim AttachmentRequest Example]: Task-cdex-claim-attachment-request2-example-withsig.html
+[CDex Submit Attachment Parameters Resource Example]: Parameters-cdex-submit-attachment-example.html
+[CDex Temporary Code System]: CodeSystem-cdex-temp.html

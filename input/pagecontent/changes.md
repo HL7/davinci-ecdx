@@ -34,7 +34,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 15. **Triaged:** Signature requirements clarification in 3.2.6 and 4 ([FHIR-36986](https://jira.hl7.org/browse/FHIR-36986)) See Changes [Here](#.html)
 16. **Triaged:** Add non-document based attachment scenario ([FHIR-36995](https://jira.hl7.org/browse/FHIR-36995)) See Changes [Here](#.html)
 17. **Pre-Applied:** Clarify association of data ([FHIR-36996](https://jira.hl7.org/browse/FHIR-36996)) See Changes [Here](attachments.html)
-18. **Triaged:** Alignment with other ePA guides ([FHIR-36997](https://jira.hl7.org/browse/FHIR-36997)) See Changes [Here](#.html)
+18. **Pre-Applied:** Document using CDex Attachments with DaVinci PAS ([FHIR-36997](https://jira.hl7.org/browse/FHIR-36997)) See Changes [Here](burden-reduction.html)
 19. **Triaged:** Replace EHR with Source HIT ([FHIR-36999](https://jira.hl7.org/browse/FHIR-36999)) See Changes [Here](#.html)
 20. **Triaged:** $submit-attachment should allow for more ""attachTo"" values in valueset ([FHIR-37000](https://jira.hl7.org/browse/FHIR-37000)) See Changes [Here](#.html)
 21. **Pre-Applied:** Remove "preferred" approach from direct query ([FHIR-37166](https://jira.hl7.org/browse/FHIR-37166)) See Changes [Here](direct-query.html)
