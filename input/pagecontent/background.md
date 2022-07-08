@@ -114,7 +114,8 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
     - This can be a FHIR or non-FHIR based transaction
 2. The data source submits the attachments and metadata for association to the claim or prior authorization (for example, member id and claim id).
    - In some cases, attachments are submitted **without an explicit request** as an *unsolicited* attachment. 
-3. Payer system accepts attachments
-4. *Out of Scope*: <span class="bg-success" markdown="1">How payer system associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
+3. Payer system accepts attachments.
+ 
+*Out of Scope*: <span class="bg-success" markdown="1">How payer system associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
 
 {% include link-list.md %}
