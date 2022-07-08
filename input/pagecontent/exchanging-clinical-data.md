@@ -15,3 +15,12 @@ Payers may request data for many patients/members or anticipate large payloads f
 {:.stu-note}
 
 {% include link-list.md %}
+
+
+
+<div markdown="1" class="bg-info">
+
+<span class="bg-success" markdown="1">When we say “Payer” in these pages, we don’t mean to limit ourselves to only Payers. The same technology can be used for other data consumers like Providers.  Consider “Payer” here as a short-hand notation for "data consumer”</span><!-- new-content -->
+
+<span class="bg-success" markdown="1">When we say “Provider” in these pages, we don’t mean to limit ourselves to only EHRs blah blah blah HIT.  Consider “Payer” here as a short-hand notation for "data source”</span><!-- new-content -->
+</div>
