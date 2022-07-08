@@ -3,7 +3,7 @@ id: cdex-work-queue
 url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
 name: CDexWorkQueueCodes
 title: CDex Work Queue Value Set
-status: draft
+status: active
 date: '2021-10-26T18:38:56-07:00'
 description: The set work queue tags that the provider may use in their workflow to process request. This code set is composed of codes defined by this Guide.
 compose:

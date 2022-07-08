@@ -4,7 +4,7 @@
     "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU",
     "name": "CDexPOUCodes",
     "title": "CDex Purpose of Use Value Set",
-    "status": "draft",
+    "status": "active",
     "date": "2021-10-26T18:38:56-07:00",
     "description": "The set of purpose of use codes for the requested data (the output of the task). This code set is composed [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide.",
     "compose": {

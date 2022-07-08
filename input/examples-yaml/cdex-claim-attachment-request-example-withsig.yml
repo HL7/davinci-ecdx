@@ -1,7 +1,7 @@
 # input/examples-yaml/cdex-claim-attachment-request-example-withsig.yml
 
 resourceType: Task
-id: cdex-claim-attachment-request2-example-withsig
+id: cdex-claim-attachment-request-example-withsig
 meta:
   extension:
     - url: http://hl7.org/fhir/StructureDefinition/instance-name

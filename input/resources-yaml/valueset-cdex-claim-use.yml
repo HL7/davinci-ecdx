@@ -3,7 +3,7 @@ id: cdex-claim-use
 url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use'
 name: CDexClaimUseCodes
 title: CDex Claim Use Value Set
-status: active
+status: draft
 date: '2022-06-13'
 description: The purpose of a Claim resource and the reason for attachments. It includes the codes "preauthorization" and "claim".
 compose:

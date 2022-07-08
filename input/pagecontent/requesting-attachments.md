@@ -1,3 +1,5 @@
+{% include page_for_ballot.md %}
+
 This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is use for *solicited*  attachments and uses the combination of a Task based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page.  <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.</span><!-- new-content -->
 
 ### non-FHIR Request

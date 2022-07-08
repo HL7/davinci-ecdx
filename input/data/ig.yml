@@ -166,7 +166,7 @@
             },
             {
                 "reference": {
-                    "reference": "Task/cdex-claim-attachment-request2-example-withsig"
+                    "reference": "Task/cdex-claim-attachment-request-example-withsig"
                 },
                 "description": "Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note'",
                 "name": "Claim AttachmentRequest Example",

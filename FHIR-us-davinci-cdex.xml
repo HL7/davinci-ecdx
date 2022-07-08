@@ -21,7 +21,7 @@
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
-<artifact id="Task/cdex-claim-attachment-request2-example-withsig" key="Task-cdex-claim-attachment-request2-example-withsig" name="Claim AttachmentRequest Example"/>
+<artifact id="Task/cdex-claim-attachment-request-example-withsig" key="Task-cdex-claim-attachment-request-example-withsig" name="Claim AttachmentRequest Example"/>
 <artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
