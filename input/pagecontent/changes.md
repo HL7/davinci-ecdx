@@ -68,7 +68,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Triaged:** This is a use case between two providers, primarily. - CDex #28 ([FHIR-23441](https://jira.hl7.org/browse/FHIR-23441)) See Changes [Here](#.html)
 1. **Triaged:** AMA believes quality reporting should include the goal of increasing the transparency of health care data. - CDex #307 ([FHIR-23672](https://jira.hl7.org/browse/FHIR-23672)) See Changes [Here](#.html)
 1. **Triaged:** This use case needs to be narrowed in order to prevent medical necessity determinations delaying or completely impeding access to appropriate care. - CDex #309 ([FHIR-23674](https://jira.hl7.org/browse/FHIR-23674)) See Changes [Here](#.html)
-1. **Triaged:** Recommendation for exchanging purpose of use. ([FHIR-30824](https://jira.hl7.org/browse/FHIR-30824)) See Changes:
+1. **Pre-Applied:** Recommendation for exchanging purpose of use. ([FHIR-30824](https://jira.hl7.org/browse/FHIR-30824)) See Changes:
   - [Here](task-based-approach.html)
   - [Here](task-based-approach.html#purpose-of-use)
   - [Here](security.html#general-considerations)
@@ -76,7 +76,9 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 2. **Triaged:** Messaging not reflected in data flow. ([FHIR-30837](https://jira.hl7.org/browse/FHIR-30837)) See Changes [Here](#.html)
 3. **Triaged:** overflowing their workflow in-basket impacting patient care ([FHIR-31890](https://jira.hl7.org/browse/FHIR-31890)) See Changes [Here](#.html)
 4. **Triaged:** add a profile on Parameters ([FHIR-34425](https://jira.hl7.org/browse/FHIR-34425)) See Changes [Here](#.html)
-5. **Submitted:** CLONE - Better standardize Task.reasonReference by formalizing (but not limiting) the current scenarios ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes [Here](#.html)
+5. **Pre-Applied** Make Task.reasonReference.identifer 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
+  - [Here](StructureDefinition-cdex-task-data-request.html)
+  - [Here](Task-cdex-example1-query-requested.html)
 6. **Submitted:** move change log from version HX to changes page ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](#.html)
 7. **Pre-Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](attachments.html)
 8. **Submitted:** Submit attachment operation sentence modification ([FHIR-36735](https://jira.hl7.org/browse/FHIR-36735)) See Changes [Here](signed-searchset-bundle-example.html)
