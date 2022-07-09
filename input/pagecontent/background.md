@@ -8,8 +8,8 @@ Payers require clinical data from  providers who order or provide services. They
 
 #### Example Scenarios
 
-- Payer requests *attachments* to support a claim submission <span class="bg-success" markdown="1">or prior authorization.</span><!-- new-content -->
-- Payer requests <span class="bg-success" markdown="1">additional documentation</span><!-- new-content --> to support medical necessity or a coverage rule.
+- <span class="bg-success" markdown="1">Payer requests *attachments* for a claim submission or prior authorization.</span><!-- new-content -->
+  -  <span class="bg-success" markdown="1">For example, additional documentation to support medical necessity or a coverage rule.</span><!-- new-content -->
 - Payer requests <span class="bg-success" markdown="1">additional documentation</span><!-- new-content --> to support a claims audit.
 - Payer requests patient health record information to support their Risk Adjustment submissions to Centers for Medicare and Medicaid Services (CMS).
 - Payer requests patient health record information to support a [HEDIS] or CMS Five-Star Quality Measure Rating quality program.

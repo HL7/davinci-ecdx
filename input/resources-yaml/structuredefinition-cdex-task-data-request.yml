@@ -185,7 +185,8 @@ differential:
       path: Task.reasonReference.identifier
       short: Claim ID
       definition: business identifier representing the claim or prior-authorization ID
-      # min: 
+      comment: Most payer systems will not expose their claim and prior authorization records as a FHIR resource. They will provide a unique business identifier for the claim or prior authorization using `Task.reasonReference.identifier`.  This could be a payer-assigned or provider-assigned identifier which **SHOULD** be communicated in `Task.reasonReference.identifier.type` using the "FILL" for the payer and "PLAC" for the provider.
+      # min: 1 
       mustSupport: true
 
     - id: Task.restriction

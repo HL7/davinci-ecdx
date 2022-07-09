@@ -107,7 +107,7 @@ This scenario demonstrates these Task Based Query options:
 1. Polling
 1. Fetching contained vs external data
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claim submission.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims <span class="bg-success" markdown="1">audit</span><!-- new-content -->.
 
 ##### FHIR RESTful Query Syntax Request
 

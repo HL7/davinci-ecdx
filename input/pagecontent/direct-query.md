@@ -25,7 +25,7 @@ The following example transactions show scenarios of using direct query to get c
 
 #### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claim submission.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims <span class="bg-success" markdown="1">audit</span><!-- new-content -->.
 
 **Preconditions and Assumptions:**
 
