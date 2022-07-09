@@ -7,7 +7,7 @@
         "tag": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "claims-processing"
+                "code": "authorization-other"
             }
         ]
     },
@@ -22,18 +22,50 @@
         ]
     },
     "for": {
-        "reference": "http://example.org/fhir/Patient/cdex-example-patient"
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                        "code": "UMB",
+                        "display": "Member Number"
+                    }
+                ],
+                "text": "Member Number"
+            },
+            "system": "http://example.org/cdex/payer/member-ids",
+            "value": "Member123"
+        }
     },
     "authoredOn": "2020-10-26T02:58:55.179Z",
     "lastModified": "2020-10-26T02:58:55.179Z",
     "requester": {
-        "reference": "http://example.org/fhir/Organization/cdex-example-payer"
+        "identifier": {
+            "system": "http://example.org/cdex/payer/payer-ids",
+            "value": "Payer123"
+        }
     },
     "owner": {
-        "reference": "http://example.org/fhir/Organization/cdex-example-provider"
+        "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9941339108"
+        }
     },
     "reasonReference": {
-        "reference": "http://example.org/fhir/Claim/cdex-example-claim"
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "FILL",
+                        "display": "Filler Identifier"
+                    }
+                ],
+                "text": "Payer Claim ID"
+            },
+            "system": "http://example.org/cdex/payer/claim-ids",
+            "value": "Claim123"
+        }
     },
     "input": [
         {
@@ -59,8 +91,8 @@
             "valueCodeableConcept": {
                 "coding": [
                     {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-                        "code": "COVERAGE"
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                        "code": "operations-nos"
                     }
                 ]
             }
