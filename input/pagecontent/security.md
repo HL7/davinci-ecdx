@@ -15,15 +15,15 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
-1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer.
+1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer.  Organizational user access scopes are typically pre-negotiated and documented via business agreements. These agreements shall be translated into the appropriate SMART App Launch scopes.
 
 1. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.
 
 #### Purpose of Use
 
-In some cases, it may be important to transmit the purpose of use when soliciting data.  Specifically, when the purpose of use differs from the 'default' purpose of use for that data consuming system (generally 'payment and operations' for payers and 'treatment' for providers), the data source needs to be able to make decisions about whether to provide the information at all or whether/how to filter the information.
+<span class="bg-success" markdown="1">The purposes for which data may be used by or on behalf of an organization is known as the Purpose of Use (POU). It is important part of data sharing agreement between Data Consumers and Data Sources because privacy policies and consent directives dictate the response to data requests.  Typically, a single POU is assigned for a client applications when the app is registered and broadly defined POU types such as those listed in the [NHIN Purpose Of Use Code System].  For example, a Payer’s POU is typically “OPERATIONS” and a Provider’s is “TREATMENT”.  Therefore, it is implicit when the Data Consumer makes a direct query or an “automatically fulfilled” Task to the Data Source using that app.</span><!-- new-content -->
 
-For the Task based approach, representing purpose of use is documented [here](task-based-approach.html#purpose-of-use).  However, when using standard RESTful queries, such information cannot be conveyed directly. There is work in progress in [FHIR SMART v2 (Granular Controls)] and the [FHIR Data Segmentation for Privacy] (ballot version) on standardizing how this information can be conveyed using OAuth.  Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
+<span class="bg-success" markdown="1">For CDex Task based queries, the POU for the requested data **MAY** also be communicated between the Payer and Provider for each Task using codes from the [CDex Purpose of Use Value Set] in the POU `Task.input` element. The intent of this element is to define a potentially new way to exchange data with dynamically defined POUs.</span><!-- new-content -->
 
 
 

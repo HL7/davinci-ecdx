@@ -42,7 +42,9 @@ The details for these Task based transaction are described in detail in the [Req
 
 #### Purpose of Use
 
-What is going to be done with the requested information is known as the  *Purpose of Use* for the requested data.  It may be of interest to the data source, because privacy policies and consent directives may dictate the response to data requests. Purpose of Use for the requested data is communicated between the Payer and Provider using codes from the [CDex Purpose of Use Value Set] in `Task.input`.  Examples using these codes are provided below.
+<span class="bg-success" markdown="1">The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. The intent of this element is to define a potentially new way to exchange data with a dynamically defined POU.</span><!-- new-content -->
+
+<span class="bg-success" markdown="1">If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task based queries which may even differ from the ‘default’ purpose of use for that data consuming system. It allows the The Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.</span><!-- new-content -->
 
 #### Work Queues
 

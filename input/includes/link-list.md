@@ -89,10 +89,10 @@
 [(Verification Signature)]: {{site.data.fhir.path}}valueset-signature-type.html
 [FHIR Document]: {{site.data.fhir.path}}documents.html
 [RFC 7515]: https://tools.ietf.org/html/rfc7515
-[JSON Signature rules]: {{site.data.fhir.path}}/datatypes.html#JSON
+[JSON Signature rules]: {{site.data.fhir.path}}datatypes.html#JSON
 [RFC 7515: JSON Web Signature (JWS)]: https://tools.ietf.org/html/rfc7515
 [Detached]: https://tools.ietf.org/html/rfc7515#appendix-F
-[Canonical JSON]: {{site.data.fhir.path}}/json.html#canonical
+[Canonical JSON]: {{site.data.fhir.path}}json.html#canonical
 [JWS JSON Serialization]: https://datatracker.ietf.org/doc/html/rfc7515#section-3.2
 [X.509 certificates]: https://www.itu.int/rec/T-REC-X.509
 [RFC 7518]: https://tools.ietf.org/html/rfc7518
@@ -108,10 +108,11 @@
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
-[Parameters]: {{site.data.fhir.path}}/parameters.html
+[Parameters]: {{site.data.fhir.path}}parameters.html
 [CDex Patient Demographics Profile]: StructureDefinition-cdex-patient-demographics.html
 [CDex Claim Use Value Set]: ValueSet-cdex-claim-use.html
 [Prior-Auth AttachmentRequest Example]: Task-cdex-prior-auth-attachment-request-example-withsig.html
 [Claim AttachmentRequest Example]: Task-cdex-claim-attachment-request-example-withsig.html
 [CDex Submit Attachment Parameters Resource Example]: Parameters-cdex-submit-attachment-example.html
 [CDex Temporary Code System]: CodeSystem-cdex-temp.html
+[NHIN Purpose Of Use Code System]: {{site.data.fhir.path}}codesystem-nhin-purposeofuse.html
