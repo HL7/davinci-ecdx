@@ -42,9 +42,11 @@ The details for these Task based transaction are described in detail in the [Req
 
 #### Purpose of Use
 
-<span class="bg-success" markdown="1">The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. The intent of this element is to define a potentially new way to exchange data with a dynamically defined POU.</span><!-- new-content -->
+{% include section_for_ballot.md %}
 
-<span class="bg-success" markdown="1">If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task based queries which may even differ from the ‘default’ purpose of use for that data consuming system. It allows the The Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.</span><!-- new-content -->
+The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. The intent of this element is to define a potentially new way to exchange data with a dynamically defined POU.
+
+If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task based queries which may even differ from the ‘default’ purpose of use for that data consuming system. It allows the The Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.
 
 #### Work Queues
 
@@ -150,8 +152,8 @@ Payer A Seeks Insured Person/Patient B’s latest history and physical exam note
 Preconditions and Assumptions:
 
 1. {{ site.data.base-example-list[0] }}
-1. {{ site.data.base-example-list[2] }}
-1. {{ site.data.base-example-list[3] }}
+1. {{ site.data.base-example-list[8] }}
+1. {{ site.data.base-example-list[9] }}
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
 1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
@@ -169,13 +171,14 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 
 ##### Preconditions and Assumptions:
 
-1. The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
-1. Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 Hemoglobin A1c/Hemoglobin.total in Blood)
-1. The POU is to Support health quality improvement
-1. The work queue hint is claim processing
-1. The Payer POSTS a Task to the Provider endpoint requesting Patient B's recent HbA1c test results.  For the actual request, the FHIR RESTful query syntax is used.
-1. The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-1. **In this example there is no matching data**
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[10] }}
+1. {{ site.data.base-example-list[11] }}
+1. {{ site.data.base-example-list[4] }}
+1. {{ site.data.base-example-list[15] }}
+1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
+1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+1. {{ site.data.base-example-list[16] }} 
 
 {% include examplebutton_default.html example="task-scenario3-basic" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 
@@ -233,12 +236,16 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 
 ##### Preconditions and Assumptions:
 
-1. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
+1. {{ site.data.base-example-list[0] }}
+1. {{ site.data.base-example-list[17] }}
+1. {{ site.data.base-example-list[18] }}
+1. {{ site.data.base-example-list[12] }}
+2. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
    - Note that in this example, the Referred-To Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a 'third party'.
-1. The Referred-To Provider POSTS a Task to the Referring Provider endpoint, the CommunicationRequest is referenced in `Task.basedOn`
-1. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
-1. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-1. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+3. 1. The  Referred-To Provider POSTS a Task to the Referring Provider endpoint requesting Patient B's Active Conditions,, the CommunicationRequest is referenced in `Task.basedOn`.  For the actual request, the FHIR RESTful query syntax is used.
+4. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
+5. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+6. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
 {% include examplebutton_default.html example="task-scenario2-authorization" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 

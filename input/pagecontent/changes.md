@@ -78,8 +78,8 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 4. **Triaged:** add a profile on Parameters ([FHIR-34425](https://jira.hl7.org/browse/FHIR-34425)) See Changes [Here](#.html)
 5. **Pre-Applied** Make Task.reasonReference.identifer 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
   - [Here](StructureDefinition-cdex-task-data-request.html)
-  - [Here](Task-cdex-example1-query-requested.html)
-  - [Here](task-based-approach.html#step-1---post-task-to-provider-endpoint)
+  - [Various examples such as Here](Task-cdex-example1-query-requested.html)
+  - [Various example scenarios such as Here](task-based-approach.html#step-1---post-task-to-provider-endpoint)
 6. **Submitted:** move change log from version HX to changes page ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](#.html)
 7. **Pre-Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](attachments.html)
 8. **Submitted:** Submit attachment operation sentence modification ([FHIR-36735](https://jira.hl7.org/browse/FHIR-36735)) See Changes [Here](signed-searchset-bundle-example.html)

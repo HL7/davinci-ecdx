@@ -15,16 +15,19 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
+{% include section_for_ballot.md %}
+
 1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer.  Organizational user access scopes are typically pre-negotiated and documented via business agreements. These agreements shall be translated into the appropriate SMART App Launch scopes.
 
 1. Audit mechanisms need to be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.
 
 #### Purpose of Use
 
-<span class="bg-success" markdown="1">The purposes for which data may be used by or on behalf of an organization is known as the Purpose of Use (POU). It is important part of data sharing agreement between Data Consumers and Data Sources because privacy policies and consent directives dictate the response to data requests.  Typically, a single POU is assigned for a client applications when the app is registered and broadly defined POU types such as those listed in the [NHIN Purpose Of Use Code System].  For example, a Payer’s POU is typically “OPERATIONS” and a Provider’s is “TREATMENT”.  Therefore, it is implicit when the Data Consumer makes a direct query or an “automatically fulfilled” Task to the Data Source using that app.</span><!-- new-content -->
+{% include section_for_ballot.md %}
 
-<span class="bg-success" markdown="1">For CDex Task based queries, the POU for the requested data **MAY** also be communicated between the Payer and Provider for each Task using codes from the [CDex Purpose of Use Value Set] in the POU `Task.input` element. The intent of this element is to define a potentially new way to exchange data with dynamically defined POUs.</span><!-- new-content -->
+The purposes for which data may be used by or on behalf of an organization is known as the Purpose of Use (POU). It is important part of data sharing agreement between Data Consumers and Data Sources because privacy policies and consent directives dictate the response to data requests.  Typically, a single POU is assigned for a client applications when the app is registered and broadly defined POU types such as those listed in the [NHIN Purpose Of Use Code System].  For example, a Payer’s POU is typically “OPERATIONS” and a Provider’s is “TREATMENT”.  Therefore, it is implicit when the Data Consumer makes a direct query or an “automatically fulfilled” Task to the Data Source using that app.
 
+For CDex Task based queries, the POU for the requested data **MAY** also be communicated between the Payer and Provider for each Task using codes from the [CDex Purpose of Use Value Set] in the POU `Task.input` element. The intent of this element is to define a potentially new way to exchange data with dynamically defined POUs.
 
 
 #### Sensitive and Confidential Data
