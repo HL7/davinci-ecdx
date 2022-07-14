@@ -1,7 +1,7 @@
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data
 - No formal authorization (order) is needed
-- The POU is to support operations
-- The work queue hint for general documentation
+- The POU is to support operations related to coverage
+- The work queue hint for claims processing
 - The reason for the request is a business identifier identifying the claim
 - The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.
 - The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.

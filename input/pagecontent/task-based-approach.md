@@ -143,11 +143,13 @@ This example repeats the first, except Patient B’s active conditions reference
 
 #### Scenario 2
 
-This scenario demonstrates requesting a non-FHIR document (CCDA) using a code:
+This scenario demonstrates requesting a non-FHIR document <span class="bg-success" markdown="1">(PDF,CCDA)</span><!-- new-content --> using a code:
 
 Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
 
----
+<span class="bg-success" markdown="1">##### History and Physical Exam Notes as PDF</span><!-- new-content -->
+
+Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
 
 Preconditions and Assumptions:
 
@@ -155,11 +157,22 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[8] }}
 1. {{ site.data.base-example-list[9] }}
 1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[5] }} For the actual request, the FHIR RESTful query syntax is used.
-1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
-1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+2. {{ site.data.base-example-list[5] }} For the actual request, the LOINC attachment code 34117-2,History & Physical Note, is used.
+3. The Patient B’s Documents referenced by Task.output are contained resources and the actual <span class="bg-success" markdown="1">documents are base64 pdf files</span><!-- new-content --> in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
+
 
 {% include examplebutton_default.html example="task-scenario-2a" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest History and Physical" %}
+
+<div class="bg-success" markdown="1">
+
+##### Surgical Notes as CCDA
+
+Payer A Seeks Insured Person/Patient B’s operative notes from Provider C to improve care coordination.
+
+Preconditions and Assumptions are the same as above except the Payer POSTS a Task to the Provider endpoint requesting Patient B's operative notes using the LOINC attachment code 11504-8, Surgical operation note.
+
+{% include examplebutton_default.html example="task-scenario-2b" b_title = "Click Here To See Example Task Based Transaction for Patient's Operative Note" %}
+</div><!-- new-content -->
 
 ### When The Task Cannot Be Completed
 

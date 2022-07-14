@@ -1,5 +1,13 @@
 {
     "resourceType": "Task",
+    "meta": {
+        "tag": [
+            {
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "orders"
+            }
+        ]
+    },
     "basedOn": [
         {
             "reference": "http://example.org/fhir/CommunicationRequest/cdex-example-authorization"
@@ -85,8 +93,8 @@
             "valueCodeableConcept": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "operations-nos"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                        "code": "TREAT"
                     }
                 ]
             }

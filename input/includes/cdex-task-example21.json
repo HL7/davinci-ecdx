@@ -43,10 +43,10 @@
                 "coding": [
                     {
                         "system": "http://loinc.org",
-                        "code": "34117-2"
+                        "code": "11504-8"
                     }
                 ],
-                "text": "History and Physical Notes"
+                "text": "Surgical operation note"
             }
         },
         {

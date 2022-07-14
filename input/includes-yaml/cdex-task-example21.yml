@@ -25,8 +25,8 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-    text: History and Physical Notes
+      code: 11504-8
+    text: Surgical operation note
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

@@ -45,6 +45,7 @@
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
+<artifact id="Task/cdex-task-example21" key="Task-cdex-task-example21" name="Example Task - cdex-task-example21"/>
 <artifact deprecated="true" id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
 <artifact deprecated="true" id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
 <artifact deprecated="true" id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>

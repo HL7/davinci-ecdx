@@ -1,5 +1,16 @@
 resourceType: Task
+id: cdex-task-example7
 meta:
+  extension:
+  - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    valueString: Cdex Task Example 7
+  - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    valueMarkdown: '**Completed Coded Request for History and Physical - PDF:**   Completed Task to seek a patient''s latest history and physical exam notes
+      using the CDex Profile code input. This example illustrates the use of FHIR
+      resource references to the various actors. The output data is a contained DocumentReference
+      with an inline base64 encoded PDF document.'
+  profile:
+  - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
     code: care-coordination

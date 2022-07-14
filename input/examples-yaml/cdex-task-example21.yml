@@ -1,5 +1,16 @@
 resourceType: Task
+id: cdex-task-example21
 meta:
+  extension:
+  - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    valueString: Cdex Task Example 21
+  - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    valueMarkdown: '**Coded Request for Surgical Operation Note:**   Task to seek
+      a patient''s latest operative notes using the CDex Profile code
+      input. This example illustrates the use of FHIR resource references to the various
+      actors.'
+  profile:
+  - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
     code: care-coordination
@@ -25,8 +36,8 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-    text: History and Physical Notes
+      code: 11504-8
+    text: Surgical operation note
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

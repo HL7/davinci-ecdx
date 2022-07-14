@@ -1,5 +1,16 @@
 {
     "resourceType": "Task",
+    "meta": {
+        "versionId": "3",
+        "lastUpdated": "2020-10-26T04:04:52.000+00:00",
+        "source": "#tgH2FoPFuCq0yjw5",
+        "tag": [
+            {
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "orders"
+            }
+        ]
+    },
     "basedOn": [
         {
             "reference": "http://example.org/fhir/CommunicationRequest/cdex-example1-authorization"
@@ -88,8 +99,8 @@
             "valueCodeableConcept": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "operations-nos"
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+                        "code": "TREAT"
                     }
                 ]
             }
