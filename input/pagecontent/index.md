@@ -8,7 +8,7 @@ For review of changes, new and updated content will be highlighted with green te
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 
  - <span class="bg-success" markdown="1">Requesting and</span><!-- new-content --> Sending attachments for claims and prior authorization
- - Requesting additional data to support claims audits, medical necessity, and other reasons <span class="bg-success" markdown="1">for data exchange</span><!-- new-content --> between payers and providers
+ - <span class="bg-success" markdown="1">Requesting documentation to support payer operations such as claims audits</span><!-- new-content -->
  - Gathering information for Quality programs and Risk Adjustment between payers and providers
  - Exchanging clinical data between referring providers
 

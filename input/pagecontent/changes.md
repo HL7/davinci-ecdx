@@ -18,7 +18,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Resolved - change required:** Nothing displayed for example ([FHIR-36822](https://jira.hl7.org/browse/FHIR-36822)) See Changes [Here](#.html)
 1. **Resolved - change required:** nothing displayed for CDEX Document with Electronic Sig Example ([FHIR-36823](https://jira.hl7.org/browse/FHIR-36823)) See Changes [Here](#.html)
 1. **Triaged:** Add guidance and requiriements for when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes [Here](#.html)
-2. **Pre-Applied:** Add link to Example of Completed Task Request for Signed Data([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](Task-cdex-example1s-query-withsig-completed.html)
+2. **Pre-Applied:** Add link to Example of Completed Task Request for Signed Data([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](Task-cdex-task-example18.html)
 3. **Triaged:** Need clarification on who is signing for whom ([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes [Here](#.html)
 4. **Triaged:** Can providers forward supporting documents from another system? ([FHIR-36847](https://jira.hl7.org/browse/FHIR-36847)) See Changes [Here](#.html)
 5. **Triaged:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](#.html)
@@ -78,7 +78,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 4. **Triaged:** add a profile on Parameters ([FHIR-34425](https://jira.hl7.org/browse/FHIR-34425)) See Changes [Here](#.html)
 5. **Pre-Applied** Make Task.reasonReference.identifer 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
   - [Here](StructureDefinition-cdex-task-data-request.html)
-  - [Various examples such as Here](Task-cdex-example1-query-requested.html)
+  - [Various examples such as Here](Task-cdex-task-example1.html)
   - [Various example scenarios such as Here](task-based-approach.html#step-1---post-task-to-provider-endpoint)
 6. **Submitted:** move change log from version HX to changes page ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](#.html)
 7. **Pre-Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](attachments.html)
@@ -92,7 +92,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 15. **Applied:** Fix formatting Error to separate several entries([FHIR-36853](https://jira.hl7.org/browse/FHIR-36853)) See Changes [Here](signatures.html#digital-signatures)
 16. **Applied:** Fix capitalization([FHIR-36896](https://jira.hl7.org/browse/FHIR-36896)) See Changes [Here](attachments.html)
 17. **Applied:** Adds links to operation consistently ([FHIR-36897](https://jira.hl7.org/browse/FHIR-36897)) See Changes [Here](attachments.html)
-18. **Pre-Applied:** Rewrite digital signature functional requirements: ([FHIR-36905](https://jira.hl7.org/browse/FHIR-36905)) See Changes [Here](signature.html#digital-signatures)
+18. **Pre-Applied:** Rewrite digital signature functional requirements: ([FHIR-36905](https://jira.hl7.org/browse/FHIR-36905)) See Changes [Here](signatures.html#digital-signatures)
 19. **Pre-Applied:** Add conformance Verbs to SubmitAttachment operation page ([FHIR-36906](https://jira.hl7.org/browse/FHIR-36906)) See Changes [Here](OperationDefinition-submit-attachment.html)
 20. **Submitted:** Incomplete Narrative Content rendering of Submit Attachment Parameters Resource example ([FHIR-36907](https://jira.hl7.org/browse/FHIR-36907)) See Changes [Here](#.html)
 21. **Submitted:** Missing examples  ([FHIR-37245](https://jira.hl7.org/browse/FHIR-37245)) See Changes [Here](#.html)
@@ -121,8 +121,8 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](OperationDefinition-submit-attachment.html)
     -  [Here](StructureDefinition-cdex-patient-demographics.html)
     -  [Here](StructureDefinition-cdex-task-attachment-request.html)
-    -  [Here](Task-cdex-claim-attachment-request-example-withsig.html)
-    -  [Here](Task-cdex-prior-auth-attachment-request-example-withsig.html)
+    -  [Here](Task-cdex-task-example19.html)
+    -  [Here](Task-cdex-task-example20.html)
 
 ---
 

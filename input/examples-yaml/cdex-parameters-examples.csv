@@ -1,0 +1,8 @@
+scenario_file,new_scenario_file,Scenario,scenario_description,new_scenario_description,example_file,inlcude_file,new_file_name
+,unsolicited-attachment-scenario1a,attachment-scenario1a,Scenario 1a: CCDA Document Attachments,Scenario 1a: Unsolicited Attachments,cdex-unsolicited-attachment-example1-body,cdex-unsolicited-attachment-example1-body,cdex-parameters-example1
+,unsolicited-attachment-scenario1b,attachment-scenario1b,Scenario 1b: CCDA Document Attachments Submitted Prior to Claim,Scenario 1b: Unsolicited Attachments Submitted Prior to Claim,cdex-unsolicited-attachment-example1-body,cdex-unsolicited-attachment-example1-body,cdex-parameters-example2
+,unsolicited-attachment-scenario1b,attachment-scenario1b,Scenario 1b: CCDA Document Attachments Submitted Prior to Claim,Scenario 1b: CCDA Document Attachments Submitted Prior to Claim,cdex-unsolicited-attachment-example1b-operationoutcome,cdex-unsolicited-attachment-example1b-operationoutcome,cdex-operationoutcome-example2
+,unsolicited-attachment-scenario2,attachment-scenario2,Example: Signed FHIR Resource Attachments,Scenario 2: Signed Unsolicited Attachments,cdex-unsolicited-attachment-example2-body,cdex-unsolicited-attachment-example2-body,cdex-parameters-example3
+,solicited-attachment-scenario1,solicited-attachment-scenario1,Complete Solicited Attachment Transaction,Scenario 1: Solicited Attachment,cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example1-body,cdex-parameters-example4
+,solicited-attachment-scenario2,solicited-attachment-scenario2,Complete Solicited Attachment Transaction,Scenario 1: Signed Solicited Attachment,cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example1-body,cdex-parameters-example5
+,,,,,,,

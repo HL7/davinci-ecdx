@@ -1,0 +1,62 @@
+resourceType: Task
+basedOn:
+- reference: http://example.org/fhir/CommunicationRequest/cdex-example1-authorization
+status: completed
+businessStatus:
+  text: Results reviewed for release
+intent: order
+code:
+  coding:
+  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+    code: data-request
+for:
+  identifier:
+    type:
+      coding:
+      - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+        code: UMB
+        display: Member Number
+      text: Member Number
+    system: http://example.org/cdex/payer/member-ids
+    value: Member123
+authoredOn: '2020-10-26T02:58:55.179Z'
+lastModified: '2020-10-26T04:04:52.019Z'
+requester:
+  identifier:
+    system: http://example.org/cdex/payer/payer-ids
+    value: Payer123
+owner:
+  identifier:
+    system: http://hl7.org/fhir/sid/us-npi
+    value: '9941339108'
+reasonReference:
+  identifier:
+    type:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/v2-0203
+        code: FILL
+        display: Filler Identifier
+      text: Payer Claim ID
+    system: http://example.org/cdex/payer/claim-ids
+    value: Claim123
+input:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-query
+  valueString: Condition?patient=cdex-example-patient&clinical-status=active
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: purpose-of-use
+  valueCodeableConcept:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: operations-nos
+output:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-value
+  valueReference:
+    reference: http://example.org/fhir/Condition/858

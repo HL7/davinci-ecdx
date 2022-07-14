@@ -1,0 +1,100 @@
+resourceType: Task
+contained:
+- resourceType: Bundle
+  id: results
+  type: searchset
+  total: 1
+  link:
+  - relation: self
+    url: https://example.com/base/Condition?patient=cdex-example-patient&clinical-status=active
+  entry:
+  - fullUrl: http://example.org/fhir/Condition/858
+    resource:
+      resourceType: Condition
+      id: '858'
+      identifier:
+      - system: urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1
+        value: '1'
+      clinicalStatus:
+        coding:
+        - system: http://terminology.hl7.org/CodeSystem/condition-clinical
+          code: active
+      category:
+      - coding:
+        - system: http://snomed.info/sct
+          code: '55607006'
+          display: Problem
+        - system: http://loinc.org
+          code: 75326-9
+          display: Problem
+      code:
+        coding:
+        - system: http://snomed.info/sct
+          code: '44054006'
+          display: Type 2 Diabetes Mellitus
+      subject:
+        reference: http://example.org/fhir/Patient/cdex-example-patient
+      onsetDateTime: '2006'
+      asserter:
+        reference: http://example.org/fhir/PractitionerRole/126
+    search:
+      mode: match
+status: completed
+businessStatus:
+  text: Results reviewed for release
+intent: order
+code:
+  coding:
+  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+    code: data-request
+for:
+  identifier:
+    type:
+      coding:
+      - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+        code: UMB
+        display: Member Number
+      text: Member Number
+    system: http://example.org/cdex/payer/member-ids
+    value: Member123
+authoredOn: '2020-10-26T02:58:55.179Z'
+lastModified: '2020-10-26T04:04:52.019Z'
+requester:
+  identifier:
+    system: http://example.org/cdex/payer/payer-ids
+    value: Payer123
+owner:
+  identifier:
+    system: http://hl7.org/fhir/sid/us-npi
+    value: '9941339108'
+reasonReference:
+  identifier:
+    type:
+      coding:
+      - system: http://terminology.hl7.org/CodeSystem/v2-0203
+        code: FILL
+        display: Filler Identifier
+      text: Payer Claim ID
+    system: http://example.org/cdex/payer/claim-ids
+    value: Claim123
+input:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-query
+  valueString: Condition?patient=cdex-example-patient&clinical-status=active
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: purpose-of-use
+  valueCodeableConcept:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: operations-nos
+output:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-value
+  valueReference:
+    reference: '#results'

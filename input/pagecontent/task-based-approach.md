@@ -123,13 +123,13 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[6] }}
 1. {{ site.data.base-example-list[7] }}
 
-{% include examplebutton_default.html example="task-scenario1-basic" b_title = 'Click Here To See Example Task Based Transaction (RESTful search syntax)' %}
+{% include examplebutton_default.html example="task-scenario-1a" b_title = 'Click Here To See Example Task Based Transaction (RESTful search syntax)' %}
 
 ##### Free Text Request
 
 This example is the same as above, except *natural language free text* is used the actual request in Task.
 
-{% include examplebutton_default.html example="task-scenario1-free" b_title = 'Click Here To See Example Task Based Transaction (free text)' %}
+{% include examplebutton_default.html example="task-scenario-1b" b_title = 'Click Here To See Example Task Based Transaction (free text)' %}
 
 ##### Contained Task Outputs
 
@@ -137,7 +137,7 @@ Preconditions and Assumptions:
 
 This example repeats the first, except Patient B’s active conditions referenced by `Task.output` are *contained* resources, the Payer has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them.
 
-{% include examplebutton_default.html example="task-scenario1-contained" b_title ='Click Here To See Example Task Based Transaction (contained output)' %}
+{% include examplebutton_default.html example="task-scenario-1c" b_title ='Click Here To See Example Task Based Transaction (contained output)' %}
 
 ---
 
@@ -159,7 +159,7 @@ Preconditions and Assumptions:
 1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
 1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
 
-{% include examplebutton_default.html example="task-scenario4-basic" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="task-scenario-2a" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest History and Physical" %}
 
 ### When The Task Cannot Be Completed
 
@@ -177,10 +177,11 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[15] }}
 1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
-1. Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA document (34117-2 History & Physical Note)
+1. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
 1. {{ site.data.base-example-list[16] }} 
 
-{% include examplebutton_default.html example="task-scenario3-basic" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
+
+{% include examplebutton_default.html example="task-scenario-3" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
 
 ---
 
@@ -219,7 +220,7 @@ The following examples repeats Scenario 1 above using Subscription instead of Po
 1. When the `Task.status` indicates it is completed, the Payer fetches Patient B's active Conditions referenced by `Task.output` as *external* resources.  (This step is skipped if the status is "rejected".)
 1. Subscription is cancelled.
 
-{% include examplebutton_default.html example="task-scenario1-subscription" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
+{% include examplebutton_default.html example="task-scenario-4" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
 ---
 
@@ -247,7 +248,7 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 5. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
 6. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
-{% include examplebutton_default.html example="task-scenario2-authorization" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
+{% include examplebutton_default.html example="task-scenario-5" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
 ---
 
@@ -259,9 +260,9 @@ To the extent that the Provider keeps a record of the provenance for the source 
 
 The following examples repeat the first two examples in Scenario 1 above but request Patient B’s active Conditions *and associated Provenance*.
 
-{% include examplebutton_default.html example="task-scenario1p-basic" b_title = 'Click Here To See Example Requests for Provenance using Task (search based syntax)' %}
+{% include examplebutton_default.html example="task-scenario-6b" b_title = 'Click Here To See Example Requests for Provenance using Task (search based syntax)' %}
 
-{% include examplebutton_default.html example="task-scenario1p-free" b_title = 'Example Requests for Provenance using Task (free text)' %}
+{% include examplebutton_default.html example="task-scenario-6a" b_title = 'Example Requests for Provenance using Task (free text)' %}
 
 ---
 
@@ -296,6 +297,6 @@ The following example repeats Scenario 1 above, however a signature is required.
   - FHIR resources representing the clinical data are transformed into a FHIR Document bundle and the bundle is signed.
 - See [Signatures] page for complete worked example on how the signature was created and verified.
 
-{% include examplebutton_default.html example="task-scenario1s-basic" b_title = 'Click Here To See Example Signed Task Based Transaction' %}
+{% include examplebutton_default.html example="task-scenario-7" b_title = 'Click Here To See Example Signed Task Based Transaction' %}
 
 {% include link-list.md %}

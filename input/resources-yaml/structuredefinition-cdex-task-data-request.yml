@@ -13,10 +13,8 @@ description: |-
   - A Task.requester.reference.identifier element representing the Payer business identifier
   - A Task.owner.reference.identifier element representing the Provider business identifier
   - A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier
-  - A Task.Restriction.period element to communicate the due date for submitting the requested data
   - For the "code" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested
   - A Task.input element representing a flag to indicate whether the requested data requires a signature
-  - Extensions on the Task.input element "code" and "query" slices representing line item numbers in the Claim or Prior Authorization
 
   In addition, the following *optional* constraint:
 
@@ -189,17 +187,17 @@ differential:
       # min: 1 
       mustSupport: true
 
-    - id: Task.restriction
-      path: Task.restriction
-      mustSupport: true
+    # - id: Task.restriction
+    #   path: Task.restriction
+    #   mustSupport: true
 
-    - id: Task.restriction.period
-      path: Task.restriction.period
-      short: Sumbission due date
-      definition:  The due date for submitting the requested data
-      comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
-      # min: 1
-      mustSupport: true
+    # - id: Task.restriction.period
+    #   path: Task.restriction.period
+    #   short: Sumbission due date
+    #   definition:  The due date for submitting the requested data
+    #   comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
+    #   # min: 1
+    #   mustSupport: true
 
     - id: Task.input
       path: Task.input
@@ -217,36 +215,36 @@ differential:
       sliceName: query
       mustSupport: true
    
-    - id: 'Task.input:query.extension:item-ids'
-      path: Task.input.extension
-      sliceName: item-ids
-      short: Line item numbers
-      definition: The line item numbers in the Claim or Prior Authorization
-      # min: 0
-      max: '*'
-      type:
-        - code: Extension
-          profile:
-            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
-      mustSupport: true
+    # - id: 'Task.input:query.extension:item-ids'
+    #   path: Task.input.extension
+    #   sliceName: item-ids
+    #   short: Line item numbers
+    #   definition: The line item numbers in the Claim or Prior Authorization
+    #   # min: 0
+    #   max: '*'
+    #   type:
+    #     - code: Extension
+    #       profile:
+    #         - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+    #   mustSupport: true
 
     - id: 'Task.input:code'
       path: Task.input
       sliceName: code
       mustSupport: true
 
-    - id: 'Task.input:code.extension:item-ids'
-      path: Task.input.extension
-      sliceName: item-ids
-      short: Line item numbers
-      definition: The line item numbers in the Claim or Prior Authorization the request applies to.
-      # min: 0
-      max: '*'
-      type:
-        - code: Extension
-          profile:
-            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
-      mustSupport: true
+    # - id: 'Task.input:code.extension:item-ids'
+    #   path: Task.input.extension
+    #   sliceName: item-ids
+    #   short: Line item numbers
+    #   definition: The line item numbers in the Claim or Prior Authorization the request applies to.
+    #   # min: 0
+    #   max: '*'
+    #   type:
+    #     - code: Extension
+    #       profile:
+    #         - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+    #   mustSupport: true
   
 
     - id: 'Task.input:code.valueCodeableConcept'
@@ -304,7 +302,7 @@ differential:
       binding:
         strength: extensible
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU'
-      mustSupport: true
+      # mustSupport: true
 
 
     # - id: 'Task.input:payer-url'

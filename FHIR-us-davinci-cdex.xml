@@ -21,27 +21,45 @@
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
-<artifact id="Task/cdex-claim-attachment-request-example-withsig" key="Task-cdex-claim-attachment-request-example-withsig" name="Claim AttachmentRequest Example"/>
+<artifact id="Task/cdex-task-example1" key="Task-cdex-task-example1" name="Cdex Task Example 1"/>
+<artifact id="Task/cdex-task-example10" key="Task-cdex-task-example10" name="Cdex Task Example 10"/>
+<artifact id="Task/cdex-task-example11" key="Task-cdex-task-example11" name="Cdex Task Example 11"/>
+<artifact id="Task/cdex-task-example12" key="Task-cdex-task-example12" name="Cdex Task Example 12"/>
+<artifact id="Task/cdex-task-example13" key="Task-cdex-task-example13" name="Cdex Task Example 13"/>
+<artifact id="Task/cdex-task-example14" key="Task-cdex-task-example14" name="Cdex Task Example 14"/>
+<artifact id="Task/cdex-task-example15" key="Task-cdex-task-example15" name="Cdex Task Example 15"/>
+<artifact id="Task/cdex-task-example16" key="Task-cdex-task-example16" name="Cdex Task Example 16"/>
+<artifact id="Task/cdex-task-example17" key="Task-cdex-task-example17" name="Cdex Task Example 17"/>
+<artifact id="Task/cdex-task-example18" key="Task-cdex-task-example18" name="Cdex Task Example 18"/>
+<artifact id="Task/cdex-task-example19" key="Task-cdex-task-example19" name="Cdex Task Example 19"/>
+<artifact id="Task/cdex-task-example2" key="Task-cdex-task-example2" name="Cdex Task Example 2"/>
+<artifact id="Task/cdex-task-example20" key="Task-cdex-task-example20" name="Cdex Task Example 20"/>
+<artifact id="Task/cdex-task-example3" key="Task-cdex-task-example3" name="Cdex Task Example 3"/>
+<artifact id="Task/cdex-task-example4" key="Task-cdex-task-example4" name="Cdex Task Example 4"/>
+<artifact id="Task/cdex-task-example5" key="Task-cdex-task-example5" name="Cdex Task Example 5"/>
+<artifact id="Task/cdex-task-example6" key="Task-cdex-task-example6" name="Cdex Task Example 6"/>
+<artifact id="Task/cdex-task-example7" key="Task-cdex-task-example7" name="Cdex Task Example 7"/>
+<artifact id="Task/cdex-task-example8" key="Task-cdex-task-example8" name="Cdex Task Example 8"/>
+<artifact id="Task/cdex-task-example9" key="Task-cdex-task-example9" name="Cdex Task Example 9"/>
 <artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-client" key="CapabilityStatement-data-source-client" name="Data Source Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
-<artifact id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
-<artifact id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
-<artifact id="Task/cdex-prior-auth-attachment-request-example-withsig" key="Task-cdex-prior-auth-attachment-request-example-withsig" name="Prior-Auth AttachmentRequest Example"/>
-<artifact id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
-<artifact id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
-<artifact id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>
-<artifact id="Task/cdex-example1-query-requested" key="Task-cdex-example1-query-requested" name="Scenario 1 Example"/>
-<artifact id="Task/cdex-example1-free-text-request" key="Task-cdex-example1-free-text-request" name="Scenario 1 Free Text Example"/>
-<artifact id="Task/cdex-example1p-query-completed" key="Task-cdex-example1p-query-completed" name="Scenario 1P Completed Example"/>
-<artifact id="Task/cdex-example1p-free-text-completed" key="Task-cdex-example1p-free-text-completed" name="Scenario 1P Completed Free Text Example"/>
-<artifact id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="Scenario 2 Authorization Example"/>
-<artifact id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="Scenario 2 Completed Authorization Example"/>
-<artifact id="Task/cdex-example2-query-failed" key="Task-cdex-example2-query-failed" name="Scenario 3 Failed Task Example"/>
-<artifact id="Task/cdex-example2-query-requested" key="Task-cdex-example2-query-requested" name="Scenario 3 Task Example"/>
-<artifact id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
-<artifact id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
+<artifact deprecated="true" id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
+<artifact deprecated="true" id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
+<artifact deprecated="true" id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-query-requested" key="Task-cdex-example1-query-requested" name="Scenario 1 Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-free-text-request" key="Task-cdex-example1-free-text-request" name="Scenario 1 Free Text Example"/>
+<artifact deprecated="true" id="Task/cdex-example1p-query-completed" key="Task-cdex-example1p-query-completed" name="Scenario 1P Completed Example"/>
+<artifact deprecated="true" id="Task/cdex-example1p-free-text-completed" key="Task-cdex-example1p-free-text-completed" name="Scenario 1P Completed Free Text Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-authorized-request" key="Task-cdex-example1-authorized-request" name="Scenario 2 Authorization Example"/>
+<artifact deprecated="true" id="Task/cdex-example1-authorized-completed" key="Task-cdex-example1-authorized-completed" name="Scenario 2 Completed Authorization Example"/>
+<artifact deprecated="true" id="Task/cdex-example2-query-failed" key="Task-cdex-example2-query-failed" name="Scenario 3 Failed Task Example"/>
+<artifact deprecated="true" id="Task/cdex-example2-query-requested" key="Task-cdex-example2-query-requested" name="Scenario 3 Task Example"/>
+<artifact deprecated="true" id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
+<artifact deprecated="true" id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Submit Attachment Operation"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>

@@ -111,8 +111,8 @@
 [Parameters]: {{site.data.fhir.path}}parameters.html
 [CDex Patient Demographics Profile]: StructureDefinition-cdex-patient-demographics.html
 [CDex Claim Use Value Set]: ValueSet-cdex-claim-use.html
-[Prior-Auth AttachmentRequest Example]: Task-cdex-prior-auth-attachment-request-example-withsig.html
-[Claim AttachmentRequest Example]: Task-cdex-claim-attachment-request-example-withsig.html
+[Prior-Auth AttachmentRequest Example]: Task-cdex-task-example20.html
+[Claim AttachmentRequest Example]: Task-cdex-task-example19.html
 [CDex Submit Attachment Parameters Resource Example]: Parameters-cdex-submit-attachment-example.html
 [CDex Temporary Code System]: CodeSystem-cdex-temp.html
 [NHIN Purpose Of Use Code System]: {{site.data.fhir.path}}codesystem-nhin-purposeofuse.html

@@ -1,0 +1,101 @@
+resourceType: Task
+contained:
+- resourceType: Patient
+  id: patient
+  meta:
+    profile:
+    - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics
+  identifier:
+  - use: usual
+    type:
+      coding:
+      - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+        code: UMB
+        display: Member Number
+      text: Member Number
+    system: http://example.org/cdex/payer/member-ids
+    value: Member123
+  - use: usual
+    type:
+      coding:
+      - system: http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
+        code: pat
+        display: Patient Account Number
+      text: Patient Account Number
+    system: http://example.org/cdex/provider/patient-ids
+    value: PA-123
+  name:
+  - family: Shaw
+    given:
+    - Amy
+  birthDate: '1987-02-20'
+identifier:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: tracking-id
+      display: Tracking Id
+    text: Re-Association Tracking Control Number
+  system: http://example.org/payer
+  value: trackingid123
+status: requested
+intent: order
+code:
+  coding:
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: attachment-request
+  text: Attachment Request
+for:
+  reference: '#patient'
+authoredOn: '2022-06-17T16:16:06Z'
+lastModified: '2022-06-17T16:16:06Z'
+requester:
+  identifier:
+    system: http://example.org/cdex/payer/payer-ids
+    value: Payer123
+owner:
+  identifier:
+    system: http://hl7.org/fhir/sid/us-npi
+    value: '9941339108'
+reasonCode:
+  coding:
+  - system: http://hl7.org/fhir/claim-use
+    code: preauthorization
+    display: Preauthorization
+  text: preauthorization
+reasonReference:
+  identifier:
+    system: http://example.org/cdex/payer/claim-ids
+    value: Preauth123
+restriction:
+  period:
+    end: '2022-06-21'
+input:
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+      code: data-code
+  valueCodeableConcept:
+    coding:
+    - system: http://loinc.org
+      code: 34117-2
+      display: History and physical note
+    text: History and Physical
+  extension:
+  - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
+    valuePositiveInt: 1
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: signature-flag
+  valueBoolean: true
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: payer-url
+  valueUrl: http://example.org/cdex/payer/$submit-attachment
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: service-date
+  valueDate: '2022-06-13'
