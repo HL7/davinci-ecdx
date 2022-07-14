@@ -21,7 +21,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 2. **Pre-Applied:** Add link to Example of Completed Task Request for Signed Data([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](Task-cdex-task-example18.html)
 3. **Triaged:** Need clarification on who is signing for whom ([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes [Here](#.html)
 4. **Triaged:** Can providers forward supporting documents from another system? ([FHIR-36847](https://jira.hl7.org/browse/FHIR-36847)) See Changes [Here](#.html)
-5. **Triaged:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](#.html)
+5. **Applied:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](downloads.html)
 6. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)
 7. **Applied:** correct typo ([FHIR-36917](https://jira.hl7.org/browse/FHIR-36917)) See Changes [Here](#.html)
 8. **Pre-Applied** Update Figure ([FHIR-36918](https://jira.hl7.org/browse/FHIR-36918)) See Changes [Here](background.html#attachments-workflow)
