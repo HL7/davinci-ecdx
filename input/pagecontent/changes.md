@@ -132,6 +132,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](task-based-approach.html#discovery-of-providers-payer-and-patient-ids)
     -  [Here](direct-query.html#discovery-of-patient-fhir-ids) 
 32. **Applied:** Document how implementers locate the proper identifier ([FHIR-37651](https://jira.hl7.org/browse/FHIR-37651)) See Changes [Here](OperationDefinition-submit-attachment.html#submitattachment)
+33. **Applied:** Clarify how to fetch data if can not perform a direct query. ([FHIR-37649](https://jira.hl7.org/browse/FHIR-37649)) See Changes [Here](task-based-approach.html#fetching-the-data)
 
 ---
 

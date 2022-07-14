@@ -79,7 +79,7 @@ It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will pr
 
 ### Fetching the Data
 
-It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  The Task can refer to external resources which can be subsequently fetched by the Payer, or it can refer to a searchset Bundle [contained] within the Task resource itself. In the circumstances of a contained Bundle, the bundle does not have an independent existence.
+It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  The Task can refer to external resources which can be subsequently fetched by the Payer, or it can refer to a searchset Bundle [contained] within the Task resource itself. <span class="bg-success" markdown="1">In the circumstances of a contained Bundle, the bundle does not have an independent existence. By using a contained Bundle, the Data Source can provide information to Data Consumers who can not perform a direct query.  For example the Data Consumer's can only access the patient's data via FHIR RESTful reads or searches if they are authorized to access it.  Since the Data Source controls the release of information contained in Bundle, patient privacy and security is maintained.</span><!-- new-content -->
 
 #### How Long is the Data Available
 
