@@ -17,6 +17,8 @@ All the [Examples] that are used in this Implementation Guide available for down
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
 
+<div class="bg-success" markdown="1">
+
 ### Example Flow Charts:
 
 These example flow chart were created to assist the TestScript and Reference Implementation development team and are provided here to assist developers in implementing CDEX transactions.  They are example only and actual workflows may differ from them. 
@@ -24,6 +26,8 @@ These example flow chart were created to assist the TestScript and Reference Imp
 Individual flowcharts ( the text between the "'''") can be viewed using *flowchart.js*.  flowchart.js is a flowchart DSL and SVG render that runs in the browser and terminal. For more information see https://flowchart.js.org/.  Alternatively this page can be viewed on https://hackmd.io/.
 
  - [Technical FlowSheets](techflow_examples.md){:.download="true"}
+  
+</div><!-- new-content -->
 
 
 

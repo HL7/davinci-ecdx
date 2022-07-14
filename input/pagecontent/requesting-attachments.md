@@ -553,7 +553,6 @@ The complete *solicited* attachment transaction using the combination of a Task 
 
 ### Signatures
 
-TODO
-{:.bg-warning}
+Refer to the [Signatures section](sending-attachments.html#signatures) in the Sending Attachments page.
 
 {% include link-list.md %}

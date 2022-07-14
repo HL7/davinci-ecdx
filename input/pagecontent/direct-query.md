@@ -117,27 +117,22 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
 
-- The signature **SHALL** represent a *system-level* attestation by the sending organization that they are the source of the information.
-- The `Bundle.signature` element on the FHIR searchset Bundle **SHALL** be used to exchange the signature.
+- The signature represents system-level attestation by the sending organization that they are the source of the information.*
+- The `Bundle.signature` element on the FHIR searchset Bundle is used to exchange the signature.
+
+\* Consult with your payer and your legal team for questions reqarding legal liability associated with sharing and signing data.
 
 #### The Data Consumer/Requester Requirements
 
-When an electronic or digital signature is required for a FHIR RESTful Queries, the Data Consumer/Requester **SHALL**:
-
-- *Pre-negotiate* the signature requirement with the organization representing the Data Source/Responder.
-   - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* search query response will be signed.
-   - Conversely, it **SHOULD NOT** be assumed that a query response will be signed unless there exists a pre-negotiated agreement
-   - Unlike Task based queries, the actual FHIR queries won't indicate that a signature is required.
-   - Based on the agreement, *Electronic* or *digital* signatures **MAY** be used  
-- Follow the documentation in the [Signatures] page for validating signatures.
+- The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for FHIR RESTful query response data. If the signatures are required *all* search query response data will be signed by the sending organization.
+- The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source/Responder
 
-When an electronic or digital signature is required for a FHIR RESTful Queries, the Data Source/Responder **SHALL**:
-- Return a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature.
-- Be signed by the organization that is responding the query.
-- Follow the documentation in the [Signatures] page for producing signatures.
+- When an electronic or digital signature is required for a FHIR RESTful queries, the Data Source/Responder returns a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature signed by the organization that is responding the query.
+- The Data Source/Responder follows the documentation in the [Signatures] page for producing signatures.
 - As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they **MAY**  re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
+
 
 <div markdown="1" class="bg-warning">
 

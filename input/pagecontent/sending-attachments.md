@@ -68,25 +68,19 @@ This Scenario is the same as Scenario 1a above except that the attachments are s
 
 ### Signatures
 
-Some data consumers may require that the data they receive are signed. When performing CDex Attachments transactions and signatures are required, the following general rules apply:
-
-- The signature **SHALL** represent a *human provider* signature on resources attesting that the information is true and accurate.
-- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** be transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
+{% include provider-sig-rules.md %}
 
 #### The Data Consumer Requirements
 
-When an electronic or digital signature is required for CDex Attachments, the Data Consumer **SHALL**:
-
-- *Pre-negotiate* the signature requirement with the organization representing the Data Source.
-   - If the signature requirement is pre-negotiated, it **SHALL** be assumed that *all* attachments will be signed.
-   - Conversely, it **SHOULD** be assumed that no CDex Attachments transaction will be signed unless there exists a pre-negotiated agreement
-   - Based on the agreement, *electronic* or *digital* signatures **MAY** be used  
-- Follow the documentation in the [Signatures] page for validating signatures.
-
+- For *Unsolicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required.  If the signatures are required *all* attachments will be signed by the provider submitting them.
+- For *Solicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for:
+  - *all* attachments will be signed or
+  - *only* attachments for attachment to attachment requests that indicate it using the `Task.input` signature flag parameter defined in [CDex Task Attachment Request Profile] require a signature. (If a signature flag is required, it should not be assumed that the attachments will be signed if the flag is omitted.)  
+- The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source Requirements
 
-Refer to the [Data Source/Responder Requirements](task-based-approach.html#data-sourceresponder-requirements) section in the Task Based Approach to signatures.
+{% include data-source-sig-rules.md %}
 
 #### Example: *Signed* FHIR Resource Attachments
 

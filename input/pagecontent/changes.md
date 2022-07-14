@@ -57,7 +57,10 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 38. **Triaged:** Signatures should not be required for more than one per Task ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](#.html)
 39. **Triaged:** overly vague ([FHIR-37248](https://jira.hl7.org/browse/FHIR-37248)) See Changes [Here](#.html)
 40. **Triaged:** data consumer?  ([FHIR-37250](https://jira.hl7.org/browse/FHIR-37250)) See Changes [Here](#.html)
-41. **Triaged:** re write section  ([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes [Here](#.html)
+41. **Triaged:** Re-write Signature sections([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes:
+   - [Here](direct-query.html#signatures)
+   - [Here](task-based-approach.html#signatures)
+   - [Here](sending-attachments.html#signatures)
 42. **Pre-Applied:** Rewrite introduction to Signature ([FHIR-37253](https://jira.hl7.org/browse/FHIR-37253)) See Changes [Here](signatures.html)
 43. **Triaged:** overlap with DV Burden Reduction guides? ([FHIR-37257](https://jira.hl7.org/browse/FHIR-37257)) See Changes [Here](#.html)
 44. **Pre-Applied:** Update Polling Guidance ([FHIR-37260](https://jira.hl7.org/browse/FHIR-37260)) See Changes [Here](task-based-approach.html#polling-vs-subscriptions)

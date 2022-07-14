@@ -268,27 +268,18 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 ### Signatures
 
-Some data consumers may require that the data they receive are signed. When performing Task based request when signatures are required on the returned results, the following general rules apply:
-
-- The signature **SHALL** represent a *human provider* signature on resources attesting that the information is true and accurate.
-- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it **SHALL** transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature`  **SHALL** be used to exchange the signature.
+{% include provider-sig-rules.md %}
 
 #### The Data Consumer/Requester Requirements
 
-When an electronic or digital signature is required for a Task based request, the Data Consumer/Requester **SHALL**:
-
-- Indicate that a signature is required using the `Task.input` signature flag parameter as defined in [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
-    - It **SHOULD NOT** be assumed that a Task based requests will be signed if the flag is omitted.
--  Pre-negotiate whether *electronic* or *digital* signatures are used
-- Follow the documentation in the [Signatures] page for validating signatures.
+- The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for:
+  - *all* Task based query response data will be signed by the provider or
+  - *only* for responses to Task based queries that indicate signatures are required using the `Task.input` signature flag parameter defined in [CDex Task Data Request Profile]. (If a signature flag is required, it should not be assumed that a Task based requests will be signed if the flag is omitted.)
+- The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source/Responder Requirements
 
-When an electronic or digital signature is required for Task based request, the Data Source/Responder **SHALL**:
-- Return an object is either already inherently signed or transform it into a *signed* FHIR Document.
-- Be signed by the provider that is responding the query.
-- Follow the documentation in the [Signatures] page for producing signatures.
-- {:.bg-info}As discussed in the [What is Signed] section, a signed FHIR document could have objects that are individually signed within it as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present.  They **MAY** *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.  The  Data Source/Responder **MAY** return the signed object or a signed FHIR Document.
+{% include data-source-sig-rules.md %}
 
 
 #### Example of a *Signed* Task Based Transaction
