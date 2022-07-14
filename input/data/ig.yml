@@ -49,7 +49,7 @@ definition:
   - reference:
       reference: OperationDefinition/submit-attachment
     description: "This [operation](http://hl7.org/fhir/operations.html) is used to\
-      \ submit attachments (additional information) for Claims or Prior Authorization.\
+      \ submit attachments (additional documentation) for claims or claim authorization.\
       \ This operation accepts the clinical/administrative attachments and the necessary\
       \ information needed to associate them to the claim or prior authorization,\
       \ and returns a transaction layer HTTP response.  The operation may be invoked\
@@ -59,10 +59,10 @@ definition:
       \ attachments as FHIR Resources\n    - Optionally, one or more unique line item\
       \ numbers associated with the attachment\n    - Optionally, the code, free text,\
       \ or search string for information that was requested\n1. Data elements for\
-      \ association to the Claim/Prior Authorization\n    - A unique identifer that\
+      \ association to the claim/claim authorization\n    - A unique identifier that\
       \ ties the attachment(s) back to the claim or prior authorization. (referred\
       \ to as the \"re-association tracking control numbers\")*\n    - What is the\
-      \ attachements are for:\n      - Claim\n      - Prior Authorization\n    - Optionally,\
+      \ attachments are for:\n      - Claim\n      - Prior Authorization\n    - Optionally,\
       \ a unique payer identifier\n    - A unique organization/location identifier\
       \ (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique\
       \ Patient member identifier\n    - A Date of Service\n    - A Flag indicating\
@@ -162,7 +162,7 @@ definition:
       \ and communicating additional patient demographic data elements. \n- A Task.identifier\
       \ element representing the payers tracking identifier (referred to as the \u201C\
       re-association tracking control numbers\u201D)\n- A Task.status with a required\
-      \ binding the the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
+      \ binding the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element)\n- A Task.intent fixed to \"order\"\
       \ (this element is a mandatory Task element)\n- A Task.code fixed to \"attachment-request\"\
       \ to communicate that the Payer is requesting attachments for a claim or prior-authorization\
@@ -170,7 +170,7 @@ definition:
       \ to the endpoint provided in the \"payer-url\" input parameter.\n- A Task.requester.identifier\
       \ element representing the Payer ID\n- A Task.owner.identifier element representing\
       \ the Provider ID\n- A Task.for.reference element fixed to \"\\#string\" - a\
-      \ reference the the contained Patient Resource\n- A Task.reasonCode to communicate\
+      \ reference the contained Patient Resource\n- A Task.reasonCode to communicate\
       \ whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference\
       \ referencing the Claim or Prior Authorization ID (business Identifier)\n- A\
       \ Task.input element to communicate to the provider what attachments are needed\
@@ -361,6 +361,13 @@ definition:
       physical (H&P) note'
     name: Cdex Task Example 20
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+  - reference:
+      reference: Task/cdex-task-example21
+    description: '**Coded Request for Surgical Operation Note:**   Task to seek a
+      patient''s latest operative notes using the CDex Profile code input. This example
+      illustrates the use of FHIR resource references to the various actors.'
+    name: Cdex Task Example 21
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   - reference:
       reference: Task/cdex-task-example3
     description: '**Completed Query String Request for Condition with Contained Output:**   Completed

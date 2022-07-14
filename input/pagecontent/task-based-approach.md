@@ -70,7 +70,7 @@ The sequence diagram in Figure 6 below summarizes the basic interaction between 
 
 Task based queries require communicating either a business identifier (such as a provider NPI, or Member ID) or a [FHIR id] to uniquely identify providers, payers, and patients.  Business identifiers are used in many of the payer to provider based transactions toda and the CDex Task Data Request Profile provides a explicit requirement to support them.  Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
 
-The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Queries. See [this section](fdirect-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
+The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Queries. See [this section](direct-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
 </div><!-- new-content -->
 
 It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.

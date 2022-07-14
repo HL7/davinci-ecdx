@@ -8,15 +8,15 @@ status: draft
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for Claims or Prior Authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+  This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or claim authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more attachments as FHIR Resources
       - Optionally, one or more unique line item numbers associated with the attachment
       - Optionally, the code, free text, or search string for information that was requested
-  1. Data elements for association to the Claim/Prior Authorization
-      - A unique identifer that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
-      - What is the attachements are for:
+  1. Data elements for association to the claim/claim authorization
+      - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
+      - What is the attachments are for:
         - Claim
         - Prior Authorization
       - Optionally, a unique payer identifier
@@ -30,12 +30,11 @@ description: |-
 
 code: submit-attachment
 comment: |
-  \*Note that an *unsolicited* Claim attachment implies that the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. A *solicited* Claim attachments are when the payer assigns the Claim control number and sends the provider a request for additional information for that specific claim. Similarly for Prior Authorization, the prior auth identifier is provider assigned when the attachments are sent upon prior auth generation, and the prior auth identifier is the payer assigned control number when the attachments are in response to a request for additional information by the payer.
-
+ 
   The following rules apply when using `$submit-attachment`:
   * The operation's endpoint **SHALL** only accepts `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
   * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.
-  * The `Attachment.ItemID` and `Attachment.Code` parameters are associated with the attachements in `Attachment.Content`.   If `Attachment.ItemID` is not present, then the attachment is associated with to the entire claim or prior authorization.
+  * The `Attachment.ItemID` and `Attachment.Code` parameters are associated with the attachments in `Attachment.Content`.   If `Attachment.ItemID` is not present, then the attachment is associated with to the entire claim or prior authorization.
   * For the `Attachment.Content` parameter, Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
     * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
@@ -59,7 +58,9 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      Identifer that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "re-association tracking control numbers"*
+      Identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "tracking control number"
+
+       In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it the provider with the request for additional information for that specific claim. Similarly for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as an *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by payer when the attachments are in response to a request for additional documentation.
     type: string
 
   - name: AttachTo
@@ -67,7 +68,7 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      Whether the additional information is needed for a claim or for prior authorization.
+      A value of either "claim" or "prior-authorization" to communicate what the additional information is needed for.  This is known by the provider when submitting *unsolicited* attachments, and communicated to the provider through the request for *solicited* attachments.
     type: code
     binding:
       strength: required
@@ -78,30 +79,22 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      The receiving payer identifier. Some endpoints may support multiple payers.  Therefore, this identifier may be required when submitting attachments.
+      The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. 
     type: Identifier
-
-  # - name: PayerUrl
-  #   use: in
-  #   min: 0
-  #   max: "1"
-  #   documentation: >-
-  #     The receiving payer url. TODO: WHAT IS THIS - THE OPERATION ENDPOINT?
-  #   type: url
 
   - name: OrganizationId
     use: in
     min: 1
     max: "1"
     documentation: >-
-      Sending organization/location identifier (e.g., NPI)
+      Sending organization/location identifier (e.g., NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: Identifier
   - name: ProviderId
     use: in
     min: 1
     max: "1"
     documentation: >-
-      Sending provider identifier (e.g., NPI)
+      Sending provider identifier (e.g., NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: Identifier
 
   - name: MemberId
@@ -109,7 +102,7 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      Patient member identifier
+      Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: Identifier
 
   - name: ServiceDate
@@ -117,7 +110,7 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.
+      Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.  This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: date
 
   - name: Attachment
@@ -125,7 +118,7 @@ parameter:
     min: 0
     max: "*"
     documentation: >-
-      The attachments being communicated for a Claim or Prior Authorization. They are applied to the ItemId (line items) and/or Code (LOINC) parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.
+      The attachments being communicated for a claim or claim authorization. They are applied to the ItemId (line items) and/or Code (LOINC) parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.
 
     part:
 
@@ -134,7 +127,7 @@ parameter:
       min: 0
       max: "*"
       documentation: >-
-        Claim/prior authorization line item for service in the claim or prior authorization. For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the line items communicated in the request.
+        Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments.  For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request. 
       type: string
 
     - name: Code
@@ -142,7 +135,7 @@ parameter:
       min: 0
       max: "1"
       documentation: >-
-        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  For a *solicited* Claim or Prior Authorization attachment, this value should be the same as the LOINC communicated in the request.  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
+        LOINC code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/.   It **SHOULD** be present when submitting *unsolicited* attachments. For a *solicited* attachments, this value is the same as the LOINC communicated in the request.
       type: CodeableConcept
       binding:
         strength: extensible
@@ -154,7 +147,7 @@ parameter:
       min: 1
       max: "1"
       documentation: >-
-        Attachment as a FHIR resources.  Non-FHIR attachment data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
+        Attachment as a FHIR resources.  Non-FHIR attachment data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.  
       type: Resource
 
   - name: Final
