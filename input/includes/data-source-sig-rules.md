@@ -1,3 +1,4 @@
 - When an electronic or digital signature is required for Task based request, the Data Source/Responder returns a document that is either already inherently signed or transform it into a  *FHIR Document* signed by the responding provider.
+  - if multiple documents need to be signed, systems should minimize the number of interactions required by the user
 - The Data Source/Responder follows the documentation in the [Signatures] page for producing signatures.
 - As discussed in the [What is Signed] section, a signed FHIR document could have objects that are individually signed within it as well. If the Consumer/Requester assumed there would be a signature (wet,electronic, or digital) on an individual returned object (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they can *re-request* the data using Task based request and indicate it needs to signed using the `Task.input` signature flag.
