@@ -233,6 +233,7 @@ differential:
         - code: Reference
           targetProfile:
             - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'
       mustSupport: true
 
     - id: Task.owner.identifier

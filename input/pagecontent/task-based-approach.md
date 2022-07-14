@@ -64,30 +64,18 @@ The sequence diagram in Figure 6 below summarizes the basic interaction between 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 6" %}
 
-### Discovery of FHIR IDs
+<div class="bg-success" markdown="1">
 
-#### Providers and Payer FHIR IDs
+### Discovery of Providers, Payer, and Patient IDs
 
-Task based queries require sending a [FHIR id] or a business identifier for providers and payers. Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
+Task based queries require communicating either a business identifier (such as a provider NPI, or Member ID) or a [FHIR id] to uniquely identify providers, payers, and patients.  Business identifiers are used in many of the payer to provider based transactions toda and the CDex Task Data Request Profile provides a explicit requirement to support them.  Currently there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
+
+The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Queries. See [this section](fdirect-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
+</div><!-- new-content -->
 
 It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long term solution to the issue of FHIR id discovery.
 {:.stu-note}
 
-#### Patient FHIR IDs
-
-The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in EHRs today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another options is find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
-
-1. FHIR RESTful search on the Patient resource using a combination of an identifier known by the Payer such as a member_id and patient demographics.
-
-   `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
-
-1. FHIR RESTful search on [Coverage] resource using a combination the payor's FHIR id and identifier known by the Payer such as a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
-
-   `GET /Coverage?payor=[FHIR id]&identifier=[member_id]`
-   or
-   `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
-
-However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
 
 ### Fetching the Data
 

@@ -17,7 +17,20 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 
 ### Discovery of Patient FHIR IDs
 
-The patient's [FHIR id] is a prerequisite to performing both a FHIR RESTful Direct Query and Task-based query. See [this section](task-based-approach.html#patient-fhir-ids) for how to discover the patient's FHIR id.
+ The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in EHRs today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another options is find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
+
+1. FHIR RESTful search on the Patient resource using a combination of an identifier known by the Payer such as a member_id and patient demographics.
+
+   `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+
+1. FHIR RESTful search on [Coverage] resource using a combination the payor's FHIR id and identifier known by the Payer such as a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
+
+   `GET /Coverage?payor=[FHIR id]&identifier=[member_id]`
+   or
+   `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
+
+However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
+
 
 ### Direct Query Transaction Scenarios
 

@@ -128,6 +128,9 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](Task-cdex-task-example19.html)
     -  [Here](Task-cdex-task-example20.html)
 30. **Applied:** Add CCDA example and Correct PDF example ([FHIR-37655](https://jira.hl7.org/browse/FHIR-37655)) See Changes [Here](task-based-approach.html#scenario-2)
+31. **Applied:** Rewrite section on Discovery of FHIR IDs ([FHIR-37652](https://jira.hl7.org/browse/FHIR-37652)) See Changes:  
+    -  [Here](task-based-approach.html#discovery-of-providers-payer-and-patient-ids)
+    -  [Here](direct-query.html#discovery-of-patient-fhir-ids)
 
 ---
 
