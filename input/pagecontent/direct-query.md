@@ -117,7 +117,7 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 Some data consumers may require that the data they receive are signed. When performing direct queries when signatures are required on the returned results, the following general rules apply:
 
-- The signature represents system-level attestation by the sending organization that they are the source of the information.*
+- The signature represents a *system-level* attestation by the sending organization that they supplied the information and it is a complete and accurate representation of the shareable information available from that system meeting the requested criteria.  This signature does NOT attest that the information itself is accurate because the system can't make that determination.*
 - The `Bundle.signature` element on the FHIR searchset Bundle is used to exchange the signature.
 
 \* Consult with your payer and your legal team for questions reqarding legal liability associated with sharing and signing data.
