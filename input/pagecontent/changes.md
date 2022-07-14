@@ -112,7 +112,9 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here]sending-attachments.html#scenario-1b-ccda-document-attachments-submitted-prior-to-claim)
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
 27. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
-28. **Triaged:** Need clarification on whether claims attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes [Here](#.html)
+28. **Applied:** Clarify that claim's attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes:
+   - [Here](pagecontent/sending-attachments.html#data-elements-for-sending-attachments)
+   - [Here](pagecontent/requesting-attachments.html#identifying-the-payer-provider-and-patient)
 29. **Applied:** Add "Request Attachments" content as Draft ([FHIR-37563](https://jira.hl7.org/browse/FHIR-37563)) See Changes:
     -  [Here](background.html#attachments-workflow)
     -  [Here](solicited-unsolicited-attachments.html)

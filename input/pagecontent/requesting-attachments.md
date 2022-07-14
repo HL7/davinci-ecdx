@@ -198,12 +198,12 @@ convey what the task is about, its status and the intent of the request.  The Ta
 
 ##### Identifying the Payer, Provider and Patient
 
-Business identifiers are used to identify the Patient, the Payer,and the Provider who submitted the Claim. Note that as discussed above, the Patient identifier is in the contained Patient resource which is referenced by the Task.for element. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
+Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim.  The attachment request will be directed to the same Provider who submitted the claim or prior authorization. As discussed above, the Patient identifier is in the contained Patient resource which is referenced by the Task.for element. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
 
 |Actor|CDex Claim Profile element|
 |---|---|
 |payer ID|`Task.reasonReference.identifier`|
-|provider ID (optional)|`Task.owner.identifier`|
+|provider ID|`Task.owner.identifier`|
 |patient member ID or Patient Account No|(contained)Patient.identifier|
 {: .grid}
 
