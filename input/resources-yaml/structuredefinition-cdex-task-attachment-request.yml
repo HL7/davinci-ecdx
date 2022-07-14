@@ -12,12 +12,12 @@ description: |-
   It constrains the following elements to be *mandatory* (min=1):
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
-  - A Task.status with a required binding the the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
+  - A Task.status with a required binding the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
   - A Task.owner.identifier element representing the Provider ID
-  - A Task.for.reference element fixed to "\#string" - a reference the the contained Patient Resource
+  - A Task.for.reference element fixed to "\#string" - a reference the contained Patient Resource
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
@@ -326,7 +326,7 @@ differential:
       sliceName: code
       short: Attachment Codes
       definition: A code indicating the type of data/document to be returned
-      comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
+      comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
       min: 1
       # max: '*'
       binding:

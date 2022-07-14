@@ -46,7 +46,7 @@ In the following examples, a Provider creates a claim and sends supporting CCDA 
 
 ##### Scenario 1a: CCDA Document Attachments
 
-- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional information for a claim.
+- Based on a set of pre-defined rules set by the Payer, Provider submits CCDA Documents as additional documentation for a claim.
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for sending attachments.  Note that the [`$submit-attachment`] operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.

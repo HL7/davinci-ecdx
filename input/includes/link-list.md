@@ -116,3 +116,4 @@
 [CDex Submit Attachment Parameters Resource Example]: Parameters-cdex-submit-attachment-example.html
 [CDex Temporary Code System]: CodeSystem-cdex-temp.html
 [NHIN Purpose Of Use Code System]: {{site.data.fhir.path}}codesystem-nhin-purposeofuse.html
+[LOINC Document Ontology]: https://loinc.org/document-ontology/

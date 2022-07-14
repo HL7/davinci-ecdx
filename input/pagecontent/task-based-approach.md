@@ -46,7 +46,7 @@ The details for these Task based transaction are described in detail in the [Req
 
 The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. The intent of this element is to define a potentially new way to exchange data with a dynamically defined POU.
 
-If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task based queries which may even differ from the ‘default’ purpose of use for that data consuming system. It allows the The Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.
+If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task based queries which may even differ from the ‘default’ purpose of use for that data consuming system. It allows the Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.
 
 #### Work Queues
 
@@ -189,9 +189,8 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 1. {{ site.data.base-example-list[11] }}
 1. {{ site.data.base-example-list[4] }}
 1. {{ site.data.base-example-list[15] }}
-1. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
-1. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
-1. {{ site.data.base-example-list[16] }} 
+2. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
+3. {{ site.data.base-example-list[16] }} 
 
 
 {% include examplebutton_default.html example="task-scenario-3" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}

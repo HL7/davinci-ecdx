@@ -37,6 +37,7 @@ A sampling of the type of information needed by Payers includes:
 - Vital Signs - for example Blood Pressure measurements
 - Narrative - such as written or transcribed clinical notes
 
+
 For Security and Privacy considerations refer to the [Security and Privacy] page.
 
 ### Where Does CDEX Fit in the Da Vinci Project?
