@@ -151,6 +151,21 @@ definition:
     exampleBoolean: false
     name: CDex Patient Demographics Profile
   - reference:
+      reference: StructureDefinition/cdex-signature-bundle
+    description: "This Bundle profile enforces the various elements of signature documented\
+      \ in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\
+      \n- A Bundle.signature element representing the enveloped signature\n- A Bundle.signature.type\
+      \ fixed to ASTM Standard, E1762-95(2013) code = \u201C1.2.840.10065.1.12.1.5\u201D\
+      \ (Verification Signature)\n- A Bundle.signature.who representing the organization\
+      \ or practitioner who signed the Bundle which is either:\n  1. a reference to\
+      \ US-Core Practitioner, PractitionerRole or Organization or\n  1. a NPI or Tax\
+      \ ID and name of the organization or practitioner\n- A Bundle.signature.data\
+      \ representing base64 encoded JWS-Signature \n\nIn addition, the following *mandatory*\
+      \ (min=1) element is inherited from the base standard:\n- Bundle.signature.when\
+      \ - system timestamp when signature was created"
+    exampleBoolean: false
+    name: CDex Signature Bundle Profile
+  - reference:
       reference: StructureDefinition/cdex-task-attachment-request
     description: "This [Task](http://hl7.org/StructureDefinition/Task) based profile\
       \ is used by Payers to request additional documentation for Claims or Prior-Authorizations.\
@@ -218,6 +233,12 @@ definition:
       includes the codes "preauthorization" and "claim".
     exampleBoolean: false
     name: CDex Claim Use Value Set
+  - reference:
+      reference: ValueSet/cdex-identifier-types
+    description: Identifiers type for providers and organizations limited to NPI or
+      US Tax id.
+    exampleBoolean: false
+    name: CDex Identifier Types Value Set
   - reference:
       reference: ValueSet/cdex-work-queue
     description: The set work queue tags that the provider may use in their workflow

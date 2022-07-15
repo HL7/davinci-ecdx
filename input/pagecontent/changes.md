@@ -58,7 +58,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 35. **Applied:** operation name used in examples  ([FHIR-37235](https://jira.hl7.org/browse/FHIR-37235)) See Changes [Here](#.html)
 36. **Pre-Applied:** Rewrite introduction to Signature ([FHIR-37243](https://jira.hl7.org/browse/FHIR-37243)) See Changes [Here](signatures.html)
 37. **Triaged:** change SHOULD to SHALL ([FHIR-37244](https://jira.hl7.org/browse/FHIR-37244)) See Changes [Here](#.html)
-38. **Applied:** Add best practice guidance for signatures ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](task-based-approach.html#data-sourceresponder-requirements.html)
+38. **Applied:** Add best practice guidance for signatures ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](task-based-approach.html#data-sourceresponder-requirements)
 39. **Triaged:** overly vague ([FHIR-37248](https://jira.hl7.org/browse/FHIR-37248)) See Changes [Here](#.html)
 40. **Triaged:** data consumer?  ([FHIR-37250](https://jira.hl7.org/browse/FHIR-37250)) See Changes [Here](#.html)
 41. **Applied:** Re-write Signature sections([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes:
@@ -120,8 +120,8 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
 27. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
 28. **Applied:** Clarify that claim's attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes:
-   - [Here](pagecontent/sending-attachments.html#data-elements-for-sending-attachments)
-   - [Here](pagecontent/requesting-attachments.html#identifying-the-payer-provider-and-patient)
+   - [Here](sending-attachments.html#data-elements-for-sending-attachments)
+   - [Here](requesting-attachments.html#identifying-the-payer-provider-and-patient)
 29. **Applied:** Add "Request Attachments" content as Draft ([FHIR-37563](https://jira.hl7.org/browse/FHIR-37563)) See Changes:
     -  [Here](background.html#attachments-workflow)
     -  [Here](solicited-unsolicited-attachments.html)

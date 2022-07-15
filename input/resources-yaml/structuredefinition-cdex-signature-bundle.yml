@@ -1,0 +1,123 @@
+resourceType: StructureDefinition
+id: cdex-signature-bundle
+url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle'
+name: CDexSignatureBundle
+title: CDex Signature Bundle Profile
+status: active
+description: |-
+  This Bundle profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:
+
+  - A Bundle.signature element representing the enveloped signature
+  - A Bundle.signature.type fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)
+  - A Bundle.signature.who representing the organization or practitioner who signed the Bundle which is either:
+    1. a reference to US-Core Practitioner, PractitionerRole or Organization or
+    1. a NPI or Tax ID and name of the organization or practitioner
+  - A Bundle.signature.data representing base64 encoded JWS-Signature 
+  
+  In addition, the following *mandatory* (min=1) element is inherited from the base standard:
+  - Bundle.signature.when - system timestamp when signature was created
+  
+
+fhirVersion: 4.0.1
+kind: resource
+abstract: false
+type: Bundle
+baseDefinition: 'http://hl7.org/fhir/StructureDefinition/Bundle'
+derivation: constraint
+differential:
+  element:
+
+    - id: 'Bundle.signature'
+      path: 'Bundle.signature'
+      min: 1
+      mustSupport: true
+
+      constraint:
+        - key: sb-1
+          severity: error
+          human: if who.reference is not specified, then who.identifier and who.display are mandatory.
+          expression: >-
+            Bundle.signature.who.reference or (Bundle.signature.who.identifier and Bundle.signature.who.display)
+
+    - id: 'Bundle.signature.type'
+      path: 'Bundle.signature.type'
+      short: Verification Signature
+      patternCoding:
+        code: 1.2.840.10065.1.12.1.5
+      # min: 1
+      mustSupport: true
+
+    - id: 'Bundle.signature.when'
+      path: 'Bundle.signature.when'
+      mustSupport: true
+
+    - id: 'Bundle.signature.who'
+      path: 'Bundle.signature.who'
+      short: Organization or practitioner who signed the Bundle
+      type:
+        - code: Reference
+          targetProfile:
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
+
+          _targetProfile:
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: false
+
+      mustSupport: true
+
+    - id: Bundle.signature.who.reference
+      path: Bundle.signature.who.reference
+      # min: 0
+      condition: 
+        - sb-1
+      mustSupport: true  
+
+    - id: Bundle.signature.who.identifier
+      path: Bundle.signature.who.identifier
+      short: NPI or US Tax ID
+      definition: NPI or Tax ID representing the Provider or Organization
+      condition:
+        - sb-1
+      mustSupport: true
+
+    - id: Bundle.signature.who.identifier.type
+      path: Bundle.signature.who.identifier.type
+      min: 1
+      mustSupport: true
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-identifier-types'
+
+    - id: Bundle.signature.who.identifier.value
+      path: Bundle.signature.who.identifier.value
+      min: 1
+      mustSupport: true     
+
+    - id: Bundle.signature.who.display
+      path: Bundle.signature.who.display
+      # min: 0
+      condition: 
+        - sb-1
+      mustSupport: true  
+
+    - id: 'Bundle.signature.data'
+      path: 'Bundle.signature.data'
+      short: base64 encoded JWS-Signature
+      min: 1
+      mustSupport: true
