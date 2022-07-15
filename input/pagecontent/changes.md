@@ -19,7 +19,10 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Resolved - change required:** nothing displayed for CDEX Document with Electronic Sig Example ([FHIR-36823](https://jira.hl7.org/browse/FHIR-36823)) See Changes [Here](#.html)
 1. **Triaged:** Add guidance and requiriements for when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes [Here](#.html)
 2. **Pre-Applied:** Add link to Example of Completed Task Request for Signed Data([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](Task-cdex-task-example18.html)
-3. **Triaged:** Need clarification on who is signing for whom ([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes [Here](#.html)
+3. **Applied:** Clarification on who is signing([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes:
+   - [Here](direct-query.html#signatures)
+   - [Here](task-based-approach.html#signatures)
+   - [Here](sending-attachments.html#signatures)
 4. **Applied:** Clarify system level signatures ([FHIR-36847](https://jira.hl7.org/browse/FHIR-36847)) See Changes [Here](direct-query.html#signatures)
 5. **Applied:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](downloads.html)
 6. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)
@@ -54,7 +57,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 35. **Applied:** operation name used in examples  ([FHIR-37235](https://jira.hl7.org/browse/FHIR-37235)) See Changes [Here](#.html)
 36. **Pre-Applied:** Rewrite introduction to Signature ([FHIR-37243](https://jira.hl7.org/browse/FHIR-37243)) See Changes [Here](signatures.html)
 37. **Triaged:** change SHOULD to SHALL ([FHIR-37244](https://jira.hl7.org/browse/FHIR-37244)) See Changes [Here](#.html)
-38. **Triaged:** Add best practice guidance for signatures ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](task-based-approach.html#data-sourceresponder-requirements.html)
+38. **Applied:** Add best practice guidance for signatures ([FHIR-37246](https://jira.hl7.org/browse/FHIR-37246)) See Changes [Here](task-based-approach.html#data-sourceresponder-requirements.html)
 39. **Triaged:** overly vague ([FHIR-37248](https://jira.hl7.org/browse/FHIR-37248)) See Changes [Here](#.html)
 40. **Triaged:** data consumer?  ([FHIR-37250](https://jira.hl7.org/browse/FHIR-37250)) See Changes [Here](#.html)
 41. **Applied:** Re-write Signature sections([FHIR-37251](https://jira.hl7.org/browse/FHIR-37251)) See Changes:

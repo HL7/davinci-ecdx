@@ -268,13 +268,21 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 ### Signatures
 
-{% include provider-sig-rules.md %}
+Some data consumers may require that the data they receive are signed. When signatures are required on the returned results, the following general rules apply:
+
+- The signature represents a human provider signature on resources attesting that the information is true and accurate to the best of their knowledge.*
+- The signature representing the sending-system is a *system-level* attestation by the sending organization that they supplied the information and it is a complete and accurate representation of the shareable information available from that system meeting the requested criteria.  This signature does NOT attest that the information itself is accurate because the system can't make that determination.*
+- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it is transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature` used to exchange the signature.
+
+\* Consult with your payer and your legal team for questions reqarding legal liability associated with sharing and signing data.
+
 
 #### The Data Consumer/Requester Requirements
 
-- The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for:
-  - *all* Task based query response data will be signed by the provider or
-  - *only* for responses to Task based queries that indicate signatures are required using the `Task.input` signature flag parameter defined in [CDex Task Data Request Profile]. (If a signature flag is required, it should not be assumed that a Task based requests will be signed if the flag is omitted.)
+- The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether:
+  - electronic or digital provider signatures are required for *all* Task based query response data.
+  - electronic or digital system-level signatures are required for *all* or *some* Task based query response data instead of or in addition to provider signatures (for example,for automated workflows).
+  - electronic or digital provider signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag] input parameter.
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source/Responder Requirements

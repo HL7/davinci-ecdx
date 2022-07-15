@@ -68,14 +68,19 @@ This Scenario is the same as Scenario 1a above except that the attachments are s
 
 ### Signatures
 
-{% include provider-sig-rules.md %}
+Some data consumers may require that the data they receive are signed. When signatures are required, the following general rules apply:
+
+- The signature represents a human provider signature on resources attesting that the information is true and accurate to the best of their knowledge.*
+- The returned object is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it is transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature` used to exchange the signature.
+
+\* Consult with your payer and your legal team for questions reqarding legal liability associated with sharing and signing data.
 
 #### The Data Consumer Requirements
 
 - For *Unsolicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required.  If the signatures are required *all* attachments will be signed by the provider submitting them.
 - For *Solicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for:
   - *all* attachments will be signed or
-  - *only* attachments for attachment to attachment requests that indicate it using the `Task.input` signature flag parameter defined in [CDex Task Attachment Request Profile] require a signature. (If a signature flag is required, it should not be assumed that the attachments will be signed if the flag is omitted.)  
+  - *only* attachments for attachment requests that communicate the signature requirement using the `Task.input` [signature flag] input parameter.
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 
 #### Data Source Requirements
