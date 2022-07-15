@@ -23,6 +23,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
    - [Here](direct-query.html#signatures)
    - [Here](task-based-approach.html#signatures)
    - [Here](sending-attachments.html#signatures)
+   - [Here](signatures.html)
 4. **Applied:** Clarify system level signatures ([FHIR-36847](https://jira.hl7.org/browse/FHIR-36847)) See Changes [Here](direct-query.html#signatures)
 5. **Applied:** Add example FlowSheets for each Transaction ([FHIR-36854](https://jira.hl7.org/browse/FHIR-36854)) See Changes [Here](downloads.html)
 6. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)

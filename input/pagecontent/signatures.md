@@ -6,6 +6,26 @@ title: Signatures
 
 <span class="bg-success" markdown="1">Payers may require signatures from Providers to attest that the information being exchanged is true and accurate. For example, in order for a CMS worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Payers may require signatures from Provider organizations attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions. Consult with your Payer and your legal team for questions about legal liability associated with sharing and signing data. </span><!-- new-content -->
 
+### The Signer
+
+<div class="bg-success" markdown="1">
+As illustrated in the table below, who or what is the signatory depends on the transaction.  For synchronous or automated transactions it is a system level signature, for asynchronous transactions involving a human it is a provider signature. 
+
+||Direct Query|Task Based Query|Attachments|
+|---|---|---|---|
+|System Level|X|X||
+|Human Provider||X|X|
+{:.grid}
+
+System level and a provider signatures represent different levels of attestation:
+
+{% include human-signature.md %}
+{% include system-signature.md %}
+
+{% include signature-disclaimer.md %}
+</div><!-- new-content -->
+
+
 ### What is Signed?
 
 The data returned in CDEX is not limited to FHIR resources, but may also include C-CDA documents, pdfs, text files and other types of data. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload.  The following table summarizes what artifacts are signed:
