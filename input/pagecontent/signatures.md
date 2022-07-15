@@ -9,7 +9,7 @@ title: Signatures
 ### The Signer
 
 <div class="bg-success" markdown="1">
-As illustrated in the table below, who or what is the signatory depends on the transaction.  For synchronous or automated transactions it is a system level signature, for asynchronous transactions involving a human it is a provider signature. 
+As illustrated in the table below, the signatory depends on the transaction.  For synchronous or automated transactions it is a system level signature, for asynchronous transactions involving a human it is a provider signature. 
 
 ||Direct Query|Task Based Query|Attachments|
 |---|---|---|---|

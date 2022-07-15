@@ -118,3 +118,5 @@
 [NHIN Purpose Of Use Code System]: {{site.data.fhir.path}}codesystem-nhin-purposeofuse.html
 [LOINC Document Ontology]: https://loinc.org/document-ontology/
 [CDex Signature Bundle Profile]: StructureDefinition-cdex-signature-bundle.html
+[FHIR RESTful search]: {{site.data.fhir.path}}http.html#search
+[FHIR RESTful read]: {{site.data.fhir.path}}http.html#read

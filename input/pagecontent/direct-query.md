@@ -139,9 +139,9 @@ Some data consumers may require that the data they receive are signed.  When sig
 - As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they can re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
 </div><!-- new-content -->
 
-<div markdown="1" class="bg-warning">
+<div markdown="1" class="bg-warning" id="read-warning">
 
-Because the signature is represented by `Bundle.signature`, the Consumer/Requester can not use the [FHIR RESTful read](http://build.fhir.org/http.html#read) transactions to fetch data since they return a single instances of a resource.  If a read is attempted, the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
+<span class="bg-success" markdown="1">When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instances of a resource instead of a Bundle. </span><!-- new-content --> If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
 
   ~~~
   HTTP/1.1 400 Not Found
