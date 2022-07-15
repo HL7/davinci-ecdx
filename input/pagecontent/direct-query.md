@@ -131,6 +131,7 @@ Some data consumers may require that the data they receive are signed.  When sig
 <div class="bg-success" markdown="1">
 - The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for FHIR RESTful query response data. If the signatures are required *all* search query response data will be signed by the sending organization.
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
+  - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently there is no standard way to communicate this, and it needs to be done “out of band”.
 </div><!-- new-content -->
 
 #### Data Source/Responder Requirements

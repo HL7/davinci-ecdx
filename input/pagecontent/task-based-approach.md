@@ -290,6 +290,7 @@ Some data consumers may require that the data they receive are signed. When sign
   2. electronic or digital *system-level* signatures are required for *all* or *some* Task based query response data instead of or in addition to provider signatures (for example,for automated workflows) and/or
   3. electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature).
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
+   - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently there is no standard way to communicate this, and it needs to be done “out of band”.
 </div><!-- new-content -->
 
 #### Data Source/Responder Requirements

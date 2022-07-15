@@ -17,7 +17,10 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Applied:** minor edits ([FHIR-36821](https://jira.hl7.org/browse/FHIR-36821)) See Changes [Here](#.html)
 1. **Resolved - change required:** Nothing displayed for example ([FHIR-36822](https://jira.hl7.org/browse/FHIR-36822)) See Changes [Here](#.html)
 1. **Resolved - change required:** nothing displayed for CDEX Document with Electronic Sig Example ([FHIR-36823](https://jira.hl7.org/browse/FHIR-36823)) See Changes [Here](#.html)
-1. **Triaged:** Add guidance and requiriements for when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes [Here](#.html)
+1. **Triaged:** Add guidance when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes:   
+   - [Here](direct-query.html#signatures)
+   - [Here](task-based-approach.html#signatures)
+   - [Here](sending-attachments.html#signatures)
 2. **Pre-Applied:** Add link to Example of Completed Task Request for Signed Data([FHIR-36844](https://jira.hl7.org/browse/FHIR-36844)) See Changes [Here](Task-cdex-task-example18.html)
 3. **Applied:** Clarification on who is signing([FHIR-36845](https://jira.hl7.org/browse/FHIR-36845)) See Changes:
    - [Here](direct-query.html#signatures)
@@ -29,7 +32,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 6. **Triaged:** Support for Attachments ([FHIR-36882](https://jira.hl7.org/browse/FHIR-36882)) See Changes [Here](#.html)
 7. **Applied:** correct typo ([FHIR-36917](https://jira.hl7.org/browse/FHIR-36917)) See Changes [Here](#.html)
 8. **Pre-Applied** Update Figure ([FHIR-36918](https://jira.hl7.org/browse/FHIR-36918)) See Changes [Here](background.html#attachments-workflow)
-9. **Pre-Applied** Clarify purpose for additional information ([FHIR-36919](https://jira.hl7.org/browse/FHIR-36919)) See Changes [Here](attachments.html)
+9.  **Pre-Applied** Clarify purpose for additional information ([FHIR-36919](https://jira.hl7.org/browse/FHIR-36919)) See Changes [Here](attachments.html)
 10. **Triaged:** clarify the disposition of a new attachment ([FHIR-36920](https://jira.hl7.org/browse/FHIR-36920)) See Changes [Here](#.html)
 11. **Applied:** typo correction ([FHIR-36921](https://jira.hl7.org/browse/FHIR-36921)) See Changes [Here](#.html)
 12. **Applied:** Change the word is to in tho make the sentence flow. ([FHIR-36922](https://jira.hl7.org/browse/FHIR-36922)) See Changes [Here](#.html)

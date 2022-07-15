@@ -85,6 +85,7 @@ Some data consumers may require that the data they receive are signed. When sign
   1. *all* attachments will be signed or
   1. *only* attachments for attachment requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
 - The Payer/Requester follows the documentation in the [Signatures] page for validating signatures.
+  - If the signatures fail verification when processing the '$submit-attachments' operation, the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
 </div><!-- new-content -->
 
 #### Provider Requirements
