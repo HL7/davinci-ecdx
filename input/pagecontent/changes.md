@@ -96,7 +96,9 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 10. **Submitted:** Explicitly call out that HRex and FHIR define the content that is exchanged, while CDex defines additional conditions for how it is exchanged ([FHIR-36741](https://jira.hl7.org/browse/FHIR-36741)) See Changes [Here](#.html)
 11. **Submitted:** SubmitAttachment AttachTo text correction ([FHIR-36756](https://jira.hl7.org/browse/FHIR-36756)) See Changes [Here](#.html)
 12. **Submitted:** Unclear why certain inputs are required ([FHIR-36757](https://jira.hl7.org/browse/FHIR-36757)) See Changes [Here](#.html)
-13. **Submitted:** Clarify that signature.who should reference an Organization resource or Practitioner resource ([FHIR-36846](https://jira.hl7.org/browse/FHIR-36846)) See Changes [Here](#.html)
+13. **Applied:** Clarify that signature element should reference an Organization or Practitioner as signer ([FHIR-36846](https://jira.hl7.org/browse/FHIR-36846)) See Changes:
+    - [Here](StructureDefinition-cdex-signature-bundle.html)`
+    - [Here](signatures.html#digital-signature-rules-for-cdex-fhir-bundles)
 14. **Applied:** Fix grammar([FHIR-36848](https://jira.hl7.org/browse/FHIR-36848)) See Changes [Here](direct-query.html#signatures)
 15. **Applied:** Fix formatting Error to separate several entries([FHIR-36853](https://jira.hl7.org/browse/FHIR-36853)) See Changes [Here](signatures.html#digital-signatures)
 16. **Applied:** Fix capitalization([FHIR-36896](https://jira.hl7.org/browse/FHIR-36896)) See Changes [Here](attachments.html)
