@@ -1,17 +1,6 @@
 {
     "resourceType": "Bundle",
-    "id": "cdex-searchset-digital-sig-example",
     "meta": {
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDEX SearchSet Bundle with Digital Signature Example"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Digital signature example showing how it is used to sign a searchset Bundle.  The CDEX use case would be a response to a Direct Query where an digital signature was required."
-            }
-        ],
         "profile": [
             "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
         ]

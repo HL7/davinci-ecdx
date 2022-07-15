@@ -252,7 +252,7 @@ definition:
       where an digital signature was required.  If no signature was required, the
       response would typically be in the form of an individual resource.
     name: CDEX Document with Digital Signature Example
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
   - reference:
       reference: Bundle/cdex-electronic-sig-example
     description: Electronic signature example showing how a image file can be use
@@ -261,14 +261,14 @@ definition:
       no signature was required, the response would typically be in the form of an
       individual resource.
     name: CDEX Document with Electronic Signature Example
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
   - reference:
       reference: Bundle/cdex-searchset-digital-sig-example
     description: Digital signature example showing how it is used to sign a searchset
       Bundle.  The CDEX use case would be a response to a Direct Query where an digital
       signature was required.
     name: CDEX SearchSet Bundle with Digital Signature Example
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
   - reference:
       reference: Parameters/cdex-submit-attachment-example
     description: Parameters Resource example showing how it is used when the `$submit-attachment`

@@ -1,15 +1,5 @@
 resourceType: Bundle
-id: cdex-electronic-sig-example
 meta:
-  extension:
-  - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: CDEX Document with Electronic Signature Example
-  - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Electronic signature example showing how a image file can be use
-      to sign a document Bundle.  The CDEX use case would be the target resource in
-      response to a Task-based request where an electronic signature was required.  If
-      no signature was required, the response would typically be in the form of an
-      individual resource.
   lastUpdated: '2021-10-25T20:16:29-07:00'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
@@ -56,9 +46,6 @@ entry:
     id: 0820c16d-91de-4dfa-a3a6-f140a516a9bc
     meta:
       lastUpdated: '2013-05-05T16:13:03Z'
-    identifier:
-      - system: http://hl7.org/fhir/sid/us-npi
-        value: '9941339108'
     name:
     - family: Hancock
       given:

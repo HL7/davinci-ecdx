@@ -284,7 +284,7 @@ Some data consumers may require that the data they receive are signed. When sign
 - The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether:
   1. electronic or digital *provider* signatures are required for *all* Task based query response data and/or
   2. electronic or digital *system-level* signatures are required for *all* or *some* Task based query response data instead of or in addition to provider signatures (for example,for automated workflows) and/or
-  3. electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature input parameter).
+  3. electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature).
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 </div><!-- new-content -->
 
