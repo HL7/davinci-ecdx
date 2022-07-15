@@ -8,9 +8,6 @@ In the current state of healthcare data exchange, the Payer requests additional 
 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
-TODO - document steps
-{:.bg-warning} 
-
 ### CDex Attachment Request Profile
 
 Using CDex, the Payer can send an attachment request as a FHIR transaction. The attachment request is communicated using the Task based [CDex Task Attachment Request Profile].  {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
@@ -22,9 +19,6 @@ See the [CDex Task Attachment Request Profile] formal definition for further det
 The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments  using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
-
-TODO - document steps
-{:.bg-warning} 
 
 ### Data Elements for Requesting Attachments
 
@@ -317,7 +311,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 143:                      }
 144:                  ]
 145:              },
-146:              "valueBoolean": true
+146:              "valueBoolean": false
 147:          },
 ~~~
 

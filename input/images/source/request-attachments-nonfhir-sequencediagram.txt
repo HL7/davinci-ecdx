@@ -1,0 +1,9 @@
+#request-attachments-nonfhir-sequencediagram.txt
+#text for https://sequencediagram.org/
+#for input/images/request-attachments-nonfhir-sequencediagram.svg
+
+Payer (Data Consumer)-> Provider (Data Source): 1) non-FHIR Attachment request
+note right of Provider (Data Source): 2) Provider (Data Source)\ngathers information to submit
+Provider (Data Source)->Payer (Data Consumer): 3) POST $submit-attachment
+Payer (Data Consumer)--> Provider (Data Source): 4) Return HTTP 200 OK +/- OperationOutcome
+note left of Payer (Data Consumer): 5) Payer associates data with existing or future\nclaim/prior authorization and processes

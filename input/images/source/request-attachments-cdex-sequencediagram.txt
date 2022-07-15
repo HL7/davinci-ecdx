@@ -1,0 +1,12 @@
+#request-attachments-cdex-sequencediagram.txt
+#text for https://sequencediagram.org/
+#for input/images/request-attachments-cdex-sequencediagram.svg
+
+
+note left of Payer (Data Consumer): 1) Prepare Task for attachments request\n(including $submit-attachment endpoint URL)
+Payer (Data Consumer)->Provider (Data Source): 2) POST CDEX Task 
+note right of Provider (Data Source): 3) Gathers information to submit\nas $submit-attachment operation payload 
+Provider (Data Source)->Payer (Data Consumer): 4) POST $submit-attachment
+Payer (Data Consumer)->Provider (Data Source): 5) Return HTTP 200 OK +/- OperationOutcome
+note right of Provider (Data Source): 6) Updates Task as complete
+note left of Payer (Data Consumer): 7) Associates submitted data\n with existing or future\nclaim/prior authorization and processes

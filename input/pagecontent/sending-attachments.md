@@ -17,8 +17,8 @@ As shown in the figure 7 below, the attachments are “pushed” using the [`$su
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
 
-1. Data Source assembles attachments and the meta data to associate the attachments to a claim or prior authorization
-1. Data Source invokes [`$submit-attachment`] operation to submit attachments to Payer
+1. Provider assembles attachments and the meta data to associate the attachments to a claim or prior authorization
+1. Provider invokes [`$submit-attachment`] operation to submit attachments to Payer
 1. Payer responds with an http transactional layer response either accepting or rejecting the transaction.
    - The Payer **SHOULD** return an informational OperationOutcome with the http accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
 2. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
@@ -77,17 +77,17 @@ Some data consumers may require that the data they receive are signed. When sign
 {% include signature-disclaimer.md %}
 </div><!-- new-content -->
 
-#### The Data Consumer Requirements
+#### The Payer Requirements
 
 <div class="bg-success" markdown="1">
-- For *Unsolicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required.  If the signatures are required *all* attachments will be signed by the provider submitting them.
-- For *Solicited* Attachments, the Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for:
+- For *Unsolicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder whether electronic or digital signatures are required.  If the signatures are required *all* attachments will be signed by the provider submitting them.
+- For *Solicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder whether electronic or digital signatures are required for:
   1. *all* attachments will be signed or
   1. *only* attachments for attachment requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
-- The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
+- The Payer/Requester follows the documentation in the [Signatures] page for validating signatures.
 </div><!-- new-content -->
 
-#### Data Source Requirements
+#### Provider Requirements
 
 <div class="bg-success" markdown="1">
 {% include data-source-sig-rules.md %}

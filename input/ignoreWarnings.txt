@@ -1,0 +1,5 @@
+== Suppressed Messages ==
+
+# CDex needs a contained patient for 3 specific demographic elements- US Core variance approved: http://jira.hl7.org/browse/FHIR-37738
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+

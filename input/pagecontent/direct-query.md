@@ -1,5 +1,5 @@
 
-For Direct Query, the Payer directly queries the EHR for specific data using the standard FHIR RESTful search. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
+For Direct Query, the Data Consumer directly queries the <span class="bg-success" markdown="1">Data Source</span><!-- new-content --> for specific data using the standard FHIR RESTful search. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
 ### Benefits
 
@@ -11,31 +11,33 @@ For Direct Query, the Payer directly queries the EHR for specific data using the
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 5 below outlines a successful interaction between the Payer and EHR to query and retrieve the requested data using a direct query:
+The sequence diagram in Figure 5 below outlines a successful interaction between the Data Consumer and Data Source to query and retrieve the requested data using a direct query:
 
+<div class="bg-success" markdown="1">
 {% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
+</div><!-- new-content -->
 
 ### Discovery of Patient FHIR IDs
 
 <div class="bg-success" markdown="1">
-The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in EHRs today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another options is find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
+The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in HIT systems today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another options is find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
 
-1. FHIR RESTful search on the Patient resource using a combination of an identifier known by the Payer such as a member_id and patient demographics.
+1. FHIR RESTful search on the Patient resource using a combination of an identifier known by a Data Consumer. For example, a Payer may use a member_id and patient demographics.
 
    `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
-1. FHIR RESTful search on [Coverage] resource using a combination the payor's FHIR id and identifier known by the Payer such as a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
+1. FHIR RESTful search on [Coverage] resource using a combination the payor's FHIR id and identifier known by the Data Consumer.  For example, a Payer may use a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
 
    `GET /Coverage?payor=[FHIR id]&identifier=[member_id]`
    or
    `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
 
-However, servers may or may not support identifier based searches or searches based on member_id identifiers by EHR servers. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
+However, servers may or may not support identifier based searches or searches based on member_id identifiers by HIT systems. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
 </div><!-- new-content -->
 
 ### Direct Query Transaction Scenarios
 
-The following example transactions show scenarios of using direct query to get clinical data from an EHR.
+The following example transactions show scenarios of using direct query to get clinical data from a <span class="bg-success" markdown="1">Data Source(HIT)</span><!-- new-content -->.
 
 #### Scenario 1
 
@@ -131,7 +133,7 @@ Some data consumers may require that the data they receive are signed.  When sig
 - The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
 </div><!-- new-content -->
 
-#### Data Source/Responder
+#### Data Source/Responder Requirements
 
 <div class="bg-success" markdown="1">
 - When an electronic or digital signature is required for a FHIR RESTful queries, the Data Source/Responder returns a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature signed by the organization that is responding the query.

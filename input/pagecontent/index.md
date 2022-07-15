@@ -30,6 +30,25 @@ Changes to this specification are managed by the sponsoring HL7 [Patient Care] w
 
 #### How to read this Guide
 
+<div class="bg-success" markdown="1">
+In this guide several terms are used to denote the actors and their roles in CDex transaction:
+
+Data Consumer
+: The term "Data Consumer" is used to mean both payer and provider systems when they are requesting data.
+
+Data Source
+: The term "Data Source" or "Data Source(HIT)"  or "HIT system" is used to mean the source of data, which could be an EHR, HIM, Practice Management System, Population Health, Registration, or other HIT that may have support information or other data elements.
+
+Payer
+: The term  "Data Consumer(Payer)" or "Payer" is used when only the payer system (or an intermediary on behalf of a payer) is requesting data. 
+
+Provider
+: The term "Provider" is used to mean the provider system and can be either the Data Source or the Data Consumer.
+
+Attachments
+: The term “Attachments" is limited to a subset of additional information that are documents defined by the [LOINC Document Ontology] or data elements that are presented in document form.
+</div><!-- new-content -->
+
 This Guide is divided into several pages which are listed at the top of each page in the menu bar.
 
 - [Home]\: The home page provides the introduction for the Da Vinci Clinical Data Exchange Project.

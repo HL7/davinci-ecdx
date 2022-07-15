@@ -3,14 +3,14 @@
 
 title Direct Query
 
-participant Payer (Data Consumer)
+participant Data Consumer
 
-participant EHR (Data Source)
+participant Data Source
 
-note over Payer (Data Consumer):1) Payer needs Clinical Information
+note over Data Consumer:1) Payer needs clinical information
 
-Payer (Data Consumer)->EHR (Data Source):2) Search for data using FHIR RESTful Transaction
+Data Consumer->Data Source:2) Search for data using FHIR RESTful transaction
 
-EHR (Data Source)-->Payer (Data Consumer):3)  Return Bundle of search results if Successful
+Data Source-->Data Consumer:3)  Return Bundle of search results if successful
 
-note over Payer (Data Consumer):4) Process Search Results
+note over Data Consumer:4) Process search results

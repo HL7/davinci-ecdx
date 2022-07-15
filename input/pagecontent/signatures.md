@@ -4,7 +4,8 @@ tags: CDEX
 title: Signatures
 --- -->
 
-<span class="bg-success" markdown="1">Payers may require signatures from Providers to attest that the information being exchanged is true and accurate. For example, in order for a CMS worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Payers may require signatures from Provider organizations attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions. Consult with your Payer and your legal team for questions about legal liability associated with sharing and signing data. </span><!-- new-content -->
+<div class="bg-success" markdown="1">Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, in order for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
+ </div><!-- new-content -->
 
 ### The Signer
 
@@ -177,7 +178,7 @@ The following steps outline the process for verifying the Signature on a Bundle.
 1. Verify Issuer, Validity Dates, Subject, and KeyUsage of certificate,
 1. Validate the JWS using the public key or the X.509 Certificate
 
-##### Worked Examples
+##### Step-by-Step Examples
 
 Although [*self-signed* certificates] are used for the purpose of these examples, they are not recommended for production systems.
 {:.bg-warning}
