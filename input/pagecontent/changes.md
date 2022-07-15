@@ -17,7 +17,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 1. **Applied:** minor edits ([FHIR-36821](https://jira.hl7.org/browse/FHIR-36821)) See Changes [Here](#.html)
 1. **Resolved - change required:** Nothing displayed for example ([FHIR-36822](https://jira.hl7.org/browse/FHIR-36822)) See Changes [Here](#.html)
 1. **Resolved - change required:** nothing displayed for CDEX Document with Electronic Sig Example ([FHIR-36823](https://jira.hl7.org/browse/FHIR-36823)) See Changes [Here](#.html)
-1. **Triaged:** Add guidance when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes:   
+1. **Applied:** Add guidance when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes:   
    - [Here](direct-query.html#signatures)
    - [Here](task-based-approach.html#signatures)
    - [Here](sending-attachments.html#signatures)
@@ -95,7 +95,7 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 7. **Pre-Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](attachments.html)
 8. **Submitted:** Submit attachment operation sentence modification ([FHIR-36735](https://jira.hl7.org/browse/FHIR-36735)) See Changes [Here](signed-searchset-bundle-example.html)
 9.  **Applied:** Fix Typo([FHIR-36736](https://jira.hl7.org/browse/FHIR-36736)) See Changes [Here](signed-searchset-bundle-example.html)
-10. **Submitted:** Explicitly call out that HRex and FHIR define the content that is exchanged, while CDex defines additional conditions for how it is exchanged ([FHIR-36741](https://jira.hl7.org/browse/FHIR-36741)) See Changes [Here](#.html)
+10. **Submitted:** Clarify the relation between CDEX and HRex ([FHIR-36741](https://jira.hl7.org/browse/FHIR-36741)) See Changes [Here](index.html#about-this-guide)
 11. **Submitted:** SubmitAttachment AttachTo text correction ([FHIR-36756](https://jira.hl7.org/browse/FHIR-36756)) See Changes [Here](#.html)
 12. **Submitted:** Unclear why certain inputs are required ([FHIR-36757](https://jira.hl7.org/browse/FHIR-36757)) See Changes [Here](#.html)
 13. **Applied:** Clarify that signature element should reference an Organization or Practitioner as signer ([FHIR-36846](https://jira.hl7.org/browse/FHIR-36846)) See Changes:
