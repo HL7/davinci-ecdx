@@ -117,11 +117,11 @@
                 "coding": [
                     {
                         "system": "http://loinc.org",
-                        "code": "34117-2",
-                        "display": "History and physical note"
+                        "code": "11506-3",
+                        "display": "Progress note note"
                     }
                 ],
-                "text": "History and Physical"
+                "text": "Progress note"
             },
             "extension": [
                 {

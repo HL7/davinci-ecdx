@@ -1,5 +1,18 @@
 {
     "resourceType": "Parameters",
+    "id": "cdex-parameters-example2",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "CDex Parameters Example 2"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a prior authorization."
+            }
+        ]
+    },
     "parameter": [
         {
             "name": "TrackingId",
@@ -7,7 +20,7 @@
         },
         {
             "name": "AttachTo",
-            "valueCode": "claim"
+            "valueCode": "preauthorization"
         },
         {
             "name": "PayerId",

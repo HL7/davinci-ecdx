@@ -5,8 +5,8 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Cdex Task Example 6
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Coded Request for History and Physical:**   Task to seek
-      a patient''s latest history and physical exam notes using the CDex Profile code
+    valueMarkdown: '**Coded Request for Progress note:**   Task to seek
+      a patient''s latest Progress notes using the CDex Profile code
       input. This example illustrates the use of FHIR resource references to the various
       actors.'
   profile:
@@ -36,8 +36,8 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-    text: History and Physical Notes
+      code: 11506-3
+    text: Progress note Notes
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

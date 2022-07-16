@@ -136,4 +136,4 @@ Content-Type: application/pdf
 <embed src="cdex-example-hpnote.pdf" type="application/pdf" frameborder = "1"/>
 -->
 
-<embed  type="application/pdf" frameborder="1" width="640" height="480" src="data:application/pdf;base64,{{site.data.cdex-example3-query-completed.contained[0].entry[0].resource.content[0].attachment.data}}"/>
+<embed  type="application/pdf" frameborder="1" width="640" height="480" src="data:application/pdf;base64,{{site.data.cdex-task-example7.contained[0].entry[0].resource.content[0].attachment.data}}"/>

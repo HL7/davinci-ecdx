@@ -66,7 +66,7 @@ POST [base]/$submit-attachment
 
 ~~~
 
-{% include cdex-solicited-attachment-example1-body.json %}
+{% include cdex-parameters-example3.json %}
 
 ~~~
 
@@ -87,3 +87,7 @@ Content-Type: application/fhir+json;charset=utf-8
 ~~~
 
 
+#####  Rendered Documents
+
+
+<embed  type="application/pdf" frameborder="1" width="640" height="480" src="data:application/pdf;base64,{{site.data.cdex-parameters-example3.parameter[7].part.[2].resource.content[0].attachment.data}}"/>

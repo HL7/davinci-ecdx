@@ -91,11 +91,11 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
   - [Here](StructureDefinition-cdex-task-data-request.html)
   - [Various examples such as Here](Task-cdex-task-example1.html)
   - [Various example scenarios such as Here](task-based-approach.html#step-1---post-task-to-provider-endpoint)
-6. **Submitted:** move change log from version HX to changes page ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](#.html)
+6. **Applied:** Create page for change log ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](changes.html)
 7. **Pre-Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](attachments.html)
 8. **Submitted:** Submit attachment operation sentence modification ([FHIR-36735](https://jira.hl7.org/browse/FHIR-36735)) See Changes [Here](signed-searchset-bundle-example.html)
 9.  **Applied:** Fix Typo([FHIR-36736](https://jira.hl7.org/browse/FHIR-36736)) See Changes [Here](signed-searchset-bundle-example.html)
-10. **Submitted:** Clarify the relation between CDEX and HRex ([FHIR-36741](https://jira.hl7.org/browse/FHIR-36741)) See Changes [Here](index.html#about-this-guide)
+10. **Applied:** Clarify the relation between CDEX and HRex ([FHIR-36741](https://jira.hl7.org/browse/FHIR-36741)) See Changes [Here](index.html#about-this-guide)
 11. **Submitted:** SubmitAttachment AttachTo text correction ([FHIR-36756](https://jira.hl7.org/browse/FHIR-36756)) See Changes [Here](#.html)
 12. **Submitted:** Unclear why certain inputs are required ([FHIR-36757](https://jira.hl7.org/browse/FHIR-36757)) See Changes [Here](#.html)
 13. **Applied:** Clarify that signature element should reference an Organization or Practitioner as signer ([FHIR-36846](https://jira.hl7.org/browse/FHIR-36846)) See Changes:
@@ -109,20 +109,20 @@ This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 19. **Pre-Applied:** Add conformance Verbs to SubmitAttachment operation page ([FHIR-36906](https://jira.hl7.org/browse/FHIR-36906)) See Changes [Here](OperationDefinition-submit-attachment.html)
 20. **Submitted:** Incomplete Narrative Content rendering of Submit Attachment Parameters Resource example ([FHIR-36907](https://jira.hl7.org/browse/FHIR-36907)) See Changes [Here](#.html)
 21. **Submitted:** Missing examples  ([FHIR-37245](https://jira.hl7.org/browse/FHIR-37245)) See Changes [Here](#.html)
-23. **Pre-Applied:** Rewrite background on section on Payers([FHIR-37252](https://jira.hl7.org/browse/FHIR-37252)) See Changes [Here](background.html#what-do-payers-do-with-clinical-information)
-24. **Pre-Applied:** Clarify support for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes:
+22. **Pre-Applied:** Rewrite background on section on Payers([FHIR-37252](https://jira.hl7.org/browse/FHIR-37252)) See Changes [Here](background.html#what-do-payers-do-with-clinical-information)
+23. **Pre-Applied:** Clarify support for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes:
     -  [Here](signatures.html#digital-signature-rules-for-cdex-fhir-bundles)
     -  [Here](CapabilityStatement-data-consumer-client.html#behavior)
     -  [Here](CapabilityStatement-data-consumer-server.html#behavior)
     -  [Here](CapabilityStatement-data-source-client.html#behavior)
     -  [Here](CapabilityStatement-data-source-server.html#behavior)
-25. **Applied:** Add clarification on how to handle reads when signatures are needed ([FHIR-37265](https://jira.hl7.org/browse/FHIR-37265)) See Changes [Here](direct-query#signatures.html)
-26. **Pre-Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes:
+24. **Applied:** Add clarification on how to handle reads when signatures are needed ([FHIR-37265](https://jira.hl7.org/browse/FHIR-37265)) See Changes [Here](direct-query#signatures.html)
+25. **Pre-Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes:
     -  [Here](sending-attachments.html#technical-workflow)
     -  [Here]sending-attachments.html#scenario-1b-ccda-document-attachments-submitted-prior-to-claim)
     -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
-27. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
-28. **Applied:** Clarify that claim's attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes:
+26. **Pre-Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
+27. **Applied:** Clarify that claim's attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes:
    - [Here](sending-attachments.html#data-elements-for-sending-attachments)
    - [Here](requesting-attachments.html#identifying-the-payer-provider-and-patient)
 29. **Applied:** Add "Request Attachments" content as Draft ([FHIR-37563](https://jira.hl7.org/browse/FHIR-37563)) See Changes:

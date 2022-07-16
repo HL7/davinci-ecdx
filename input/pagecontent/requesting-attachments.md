@@ -28,7 +28,7 @@ The following data elements are needed to associate an attachment to a claim or 
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 
-### *Solicited* Attachment Transaction Walk Through
+### *Step-by-Step* Solicited Attachment Transaction
 
 In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how the CDex Task Attachment Request Profile is used to communicate the required data elements to the Provider and how the $submit-attachment is used to communicate the response back to the Payer.
 {: .bg-info}
@@ -282,11 +282,11 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 121:                  "coding": [
 122:                      {
 123:                          "system": "http://loinc.org",
-124:                          "code": "34117-2",
-125:                          "display": "History and physical note"
+124:                          "code": "11506-3",
+125:                          "display": "Progress note note"
 126:                      }
 127:                  ],
-128:                  "text": "History and Physical"
+128:                  "text": "Progress note"
 129:              },
 130:              "extension": [
 131:                  {
@@ -485,11 +485,11 @@ the Requested Attachments and the corresponding coded requests and/or line item 
  54:                          "coding": [
  55:                              {
  56:                                  "system": "http://loinc.org",
- 57:                                  "code": "34117-2",
- 58:                                  "display": "History and physical note"
+ 57:                                  "code": "11506-3",
+ 58:                                  "display": "Progress note note"
  59:                              }
  60:                          ],
- 61:                          "text": "History and physical note"
+ 61:                          "text": "Progress note note"
  62:                      }
  63:                  },
  64:                  {
@@ -502,11 +502,11 @@ the Requested Attachments and the corresponding coded requests and/or line item 
  71:                              "coding": [
  72:                                  {
  73:                                      "system": "http://loinc.org",
- 74:                                      "code": "34117-2",
- 75:                                      "display": "History and physical note"
+ 74:                                      "code": "11506-3",
+ 75:                                      "display": "Progress note note"
  76:                                  }
  77:                              ],
- 78:                              "text": "History and Physical"
+ 78:                              "text": "Progress note"
  79:                          },
  80:                          "category": [
  81:                              {
@@ -541,7 +541,7 @@ the Requested Attachments and the corresponding coded requests and/or line item 
 
 ### Complete *Solicited* Attachment Transaction
 
-The complete *solicited* attachment transaction using the combination of a Task based CDex Task Attachment Request Profile to request attachments and the [$submit-attachment` operation submit the attachments to the Payer is shown below:
+The complete *solicited* attachment transaction using the combination of a Task based CDex Task Attachment Request Profile to request attachments and the [`$submit-attachment`] operation submit the attachments to the Payer is shown below:
 
 {% include examplebutton_default.html example="task-scenario-8.md" b_title = "Click Here To See FHIR Based Solicited Attachment Example" %}
 

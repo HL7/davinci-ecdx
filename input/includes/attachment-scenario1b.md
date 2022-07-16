@@ -16,7 +16,7 @@ Content-Type: application/fhir+json
 **Request Body**
 
 ~~~
-{% include cdex-unsolicited-attachment-example1-body.json %}
+{% include cdex-parameters-example1.json %}
 ~~~
 
 **Response Headers**
@@ -34,3 +34,7 @@ Content-Type: application/fhir+json;charset=utf-8
 ~~~
 {% include cdex-unsolicited-attachment-example1b-operationoutcome.json %}
 ~~~
+
+##### Rendered Documents
+
+<embed  type="application/xml" frameborder="1" width="640" height="480" src="data:application/xml;base64,{{site.data.cdex-parameters-example1.parameter[7].part.[4].resource.content[0].attachment.data}}"/>

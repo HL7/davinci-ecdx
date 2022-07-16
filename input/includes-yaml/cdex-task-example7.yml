@@ -20,9 +20,9 @@ contained:
       type:
         coding:
         - system: http://loinc.org
-          code: 34117-2
-          display: History and physical note
-        text: History and Physical
+          code: 11506-3
+          display: Progress note note
+        text: Progress note
       category:
       - coding:
         - system: http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category
@@ -45,9 +45,9 @@ contained:
       type:
         coding:
         - system: http://loinc.org
-          code: 34117-2
-          display: History and physical note
-        text: History and Physical
+          code: 11506-3
+          display: Progress note note
+        text: Progress note
       category:
       - coding:
         - system: http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category
@@ -84,8 +84,8 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-    text: History and Physical Notes
+      code: 11506-3
+    text: Progress note Notes
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

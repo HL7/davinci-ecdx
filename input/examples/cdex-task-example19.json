@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Claim Attachment Request Example:**   Claim Attachment Request sent by payer to a provider requesting a signed History and physical (H&P) note"
+                "valueMarkdown": "**Claim Attachment Request Example:**   Claim Attachment Request sent by payer to a provider requesting a signed Progress note (H&P) note"
             }
         ],
         "profile": [
@@ -132,11 +132,11 @@
                 "coding": [
                     {
                         "system": "http://loinc.org",
-                        "code": "34117-2",
-                        "display": "History and physical note"
+                        "code": "11506-3",
+                        "display": "Progress note note"
                     }
                 ],
-                "text": "History and Physical"
+                "text": "Progress note"
             },
             "extension": [
                 {

@@ -70,9 +70,9 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-      display: History and physical note
-    text: History and Physical
+      code: 11506-3
+      display: Progress note note
+    text: Progress note
   extension:
   - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
     valuePositiveInt: 1

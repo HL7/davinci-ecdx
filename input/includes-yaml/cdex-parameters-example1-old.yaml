@@ -41,9 +41,9 @@ parameter:
                     coding:
                         - 
                             system: 'http://loinc.org'
-                            code: 34117-2
-                            display: History and physical note
-                    text: History and physical note
+                            code: 11506-3
+                            display: Progress note note
+                    text: Progress note note
             - 
                 name: Content
                 resource:
@@ -54,9 +54,9 @@ parameter:
                         coding:
                             - 
                                 system: 'http://loinc.org'
-                                code: 34117-2
-                                display: History and physical note
-                        text: History and Physical
+                                code: 11506-3
+                                display: Progress note note
+                        text: Progress note
                     category:
                         - 
                             coding:
@@ -82,9 +82,9 @@ parameter:
                         coding:
                             - 
                                 system: 'http://loinc.org'
-                                code: 34117-2
-                                display: History and physical note
-                        text: History and Physical
+                                code: 11506-3
+                                display: Progress note note
+                        text: Progress note
                     category:
                         - 
                             coding:

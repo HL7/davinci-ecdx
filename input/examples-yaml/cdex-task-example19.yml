@@ -6,7 +6,7 @@ meta:
     valueString: Cdex Task Example 19
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Claim Attachment Request Example:**   Claim Attachment
-      Request sent by payer to a provider requesting a signed History and physical
+      Request sent by payer to a provider requesting a signed Progress note
       (H&P) note'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
@@ -80,9 +80,9 @@ input:
   valueCodeableConcept:
     coding:
     - system: http://loinc.org
-      code: 34117-2
-      display: History and physical note
-    text: History and Physical
+      code: 11506-3
+      display: Progress note note
+    text: Progress note
   extension:
   - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
     valuePositiveInt: 1

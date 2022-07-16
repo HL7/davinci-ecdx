@@ -16,7 +16,7 @@ Content-Type: application/fhir+json
 **Request Body**
 
 ~~~
-{% include cdex-unsolicited-attachment-example1-body.json %}
+{% include cdex-parameters-example1.json %}
 ~~~
 
 **Response Headers**
@@ -28,3 +28,7 @@ Date: Fri, 23 Oct 2020 04:54:56 GMT
 Content-Type: application/fhir+json;charset=utf-8
 ...(other headers)
 ~~~
+
+##### Rendered Documents
+
+<embed  type="application/xml" frameborder="1" width="640" height="480" src="data:application/xml;base64,{{site.data.cdex-parameters-example1.parameter[7].part.[4].resource.content[0].attachment.data}}"/>

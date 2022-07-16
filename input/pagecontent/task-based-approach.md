@@ -135,13 +135,15 @@ This example repeats the first, except Patient B’s active conditions reference
 
 This scenario demonstrates requesting a non-FHIR document <span class="bg-success" markdown="1">(PDF,CCDA)</span><!-- new-content --> using a code:
 
-Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
 <span class="bg-success" markdown="1">
 
-##### History and Physical Exam Notes as PDF</span><!-- new-content -->
+##### Progress note Exam Notes as PDF
 
-Payer A Seeks Insured Person/Patient B’s latest history and physical exam notes from Provider C to improve care coordination.
+</span><!-- new-content -->
+
+Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
 Preconditions and Assumptions:
 
@@ -149,11 +151,11 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[8] }}
 1. {{ site.data.base-example-list[9] }}
 1. {{ site.data.base-example-list[4] }}
-2. {{ site.data.base-example-list[5] }} For the actual request, the LOINC attachment code 34117-2,History & Physical Note, is used.
+2. {{ site.data.base-example-list[5] }} For the actual request, the LOINC attachment code 11506-3,History & Physical Note, is used.
 3. The Patient B’s Documents referenced by Task.output are contained resources and the actual <span class="bg-success" markdown="1">documents are base64 pdf files</span><!-- new-content --> in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
 
 
-{% include examplebutton_default.html example="task-scenario-2a" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="task-scenario-2a" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest Progress note" %}
 
 <div class="bg-success" markdown="1">
 

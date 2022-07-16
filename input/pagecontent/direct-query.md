@@ -77,21 +77,21 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 #### Scenario 3
 
-Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C to support a claim submission.
+Payer A Seeks Insured Person/Patient B's latest Progress notes from Provider C to support a claim submission.
 
 **Preconditions and Assumptions:**
 
 - Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
 - Payer A knows the FHIR id of the Patient resource for Patient B
-- Payer A knows the appropriate LOINC codes for searching for History and Physical CCDA documents (34117-2 *History & Physical Note*)
-- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent history and physical exam notes for the query results.)
+- Payer A knows the appropriate LOINC codes for searching for Progress note CCDA documents (11506-3 *History & Physical Note*)
+- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent Progress notes for the query results.)
 
-Getting the latest History and Physical is typically a two step process:
+Getting the latest Progress note is typically a two step process:
 
 1. Query DocumentReference which references the actual notes file
 2. Fetch the notes file
 
-Following the US Core Clinical Notes Guidance section, Payer searches for History and Physical CCDA document using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets a particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
+Following the US Core Clinical Notes Guidance section, Payer searches for Progress note CCDA document using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets a particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
 
 `GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
 
@@ -99,7 +99,7 @@ The actual CCDA document is referenced in `DocumentReference.content.attachment.
 
 `GET [base]/[url]`
 
-{% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest History and Physical" %}
+{% include examplebutton_default.html example="direct-query3-scenario" b_title = "Click Here To See Example Direct Query for Patient's Latest Progress note" %}
 
 ### Provenance
 

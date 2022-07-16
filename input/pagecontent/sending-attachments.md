@@ -96,8 +96,8 @@ Some data consumers may require that the data they receive are signed. When sign
 
 #### Example: *Signed* FHIR Resource Attachments
 
-- This example is the same as Scenario 1 above except that the attachment is a FHIR resource and a FHIR digital signature is required.
-  - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the clinical/administrative data are transformed into a FHIR Document bundle and the bundle is digitally signed.
+- in this example, the Provider submits a patient's active conditions to the Payer to support a prior authorization.
+- Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete examples on how the signature was created.
 
 {% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}

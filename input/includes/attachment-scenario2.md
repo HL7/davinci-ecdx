@@ -16,7 +16,7 @@ Content-Type: application/fhir+json
 **Request Body**
 
 ~~~
-{% include cdex-unsolicited-attachment-example2-body.json %}
+{% include cdex-parameters-example2.json %}
 ~~~
 
 **Response Headers**
