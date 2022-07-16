@@ -32,7 +32,7 @@ contained:
         coding:
         - system: http://loinc.org
           code: 11506-3
-          display: Progress note note
+          display: Progress note
         text: Progress note
       category:
       - coding:
@@ -57,7 +57,7 @@ contained:
         coding:
         - system: http://loinc.org
           code: 11506-3
-          display: Progress note note
+          display: Progress note
         text: Progress note
       category:
       - coding:
@@ -96,7 +96,7 @@ input:
     coding:
     - system: http://loinc.org
       code: 11506-3
-    text: Progress note Notes
+    text: Progress notes
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

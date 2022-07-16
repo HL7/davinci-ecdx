@@ -40,7 +40,7 @@ For *solicited* attachments, the same data elements are sent in the request for 
 
 ### Examples
 
-In the following examples, a Provider creates a claim and sends supporting CCDA documents as *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]. For *solicited attachments* examples, see the [Requesting Attachments] page.
+In the following examples, a Provider creates a claim and sends *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]. For *solicited attachments* examples, see the [Requesting Attachments] page.
 
 `POST [base]/$submit-attachment`
 
@@ -52,7 +52,7 @@ In the following examples, a Provider creates a claim and sends supporting CCDA 
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
 - <span class="bg-success" markdown="1">Payer associates attachments to the claim.</span><!-- new-content -->
 
-{% include examplebutton_default.html example="attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+{% include examplebutton_default.html example="unsolicited-attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
 <div class="bg-success" markdown="1">
 
@@ -60,8 +60,13 @@ In the following examples, a Provider creates a claim and sends supporting CCDA 
 
 This Scenario is the same as Scenario 1a above except that the attachments are submitted *prior* to the claim.  The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
 
-{% include examplebutton_default.html example="attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
+{% include examplebutton_default.html example="unsolicited-attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
+##### Scenario 2: Laboratory Results Attachments
+
+ This scenario is the same as Scenario 1a, except the Provider is submitting laboratory results in support of a claim.  There are multiple attachments each populated with a FHIR Observation resource. If a signature were required they would be converted to signed FHIR document like the example in the Signatures section.
+
+{% include examplebutton_default.html example="unsolicited-attachment-scenario2.md" b_title = "Click Here To See Example Laboratory Results Attachments" %}
 </div><!-- new-content -->
 
 ---
@@ -100,7 +105,7 @@ Some data consumers may require that the data they receive are signed. When sign
 - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete examples on how the signature was created.
 
-{% include examplebutton_default.html example="attachment-scenario2.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}
+{% include examplebutton_default.html example="unsolicited-attachment-scenario3.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}
 
 
 {% include link-list.md %}

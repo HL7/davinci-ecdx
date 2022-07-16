@@ -79,7 +79,7 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. 
+      The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: Identifier
 
   - name: OrganizationId
@@ -127,7 +127,7 @@ parameter:
       min: 0
       max: "*"
       documentation: >-
-        Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments.  For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request. 
+        Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments.  For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request.
       type: string
 
     - name: Code
@@ -147,7 +147,7 @@ parameter:
       min: 1
       max: "1"
       documentation: >-
-        Attachment as a FHIR resources.  Non-FHIR attachment data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.  
+        Attachment as a FHIR resources.  Non-FHIR attachment data is conveyed using the DocumentReference or Binary resource. Servers **SHALL** support  DocumentReference resource type and **SHOULD** support other types.
       type: Resource
 
   - name: Final

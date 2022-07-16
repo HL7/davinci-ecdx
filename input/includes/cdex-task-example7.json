@@ -32,7 +32,7 @@
                                 {
                                     "system": "http://loinc.org",
                                     "code": "11506-3",
-                                    "display": "Progress note note"
+                                    "display": "Progress note"
                                 }
                             ],
                             "text": "Progress note"
@@ -75,7 +75,7 @@
                                 {
                                     "system": "http://loinc.org",
                                     "code": "11506-3",
-                                    "display": "Progress note note"
+                                    "display": "Progress note"
                                 }
                             ],
                             "text": "Progress note"
@@ -148,7 +148,7 @@
                         "code": "11506-3"
                     }
                 ],
-                "text": "Progress note Notes"
+                "text": "Progress notes"
             }
         },
         {

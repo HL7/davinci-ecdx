@@ -43,8 +43,8 @@ parameter:
                         - 
                             system: 'http://loinc.org'
                             code: 11506-3
-                            display: Progress note note
-                    text: Progress note note
+                            display: Progress note
+                    text: Progress note
             - 
                 name: Content
                 resource:
@@ -56,7 +56,7 @@ parameter:
                             - 
                                 system: 'http://loinc.org'
                                 code: 11506-3
-                                display: Progress note note
+                                display: Progress note
                         text: Progress note
                     category:
                         - 

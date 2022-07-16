@@ -76,10 +76,10 @@
                             {
                                 "system": "http://loinc.org",
                                 "code": "11506-3",
-                                "display": "Progress note note"
+                                "display": "Progress note"
                             }
                         ],
-                        "text": "Progress note note"
+                        "text": "Progress note"
                     }
                 },
                 {

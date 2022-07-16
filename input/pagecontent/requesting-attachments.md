@@ -283,7 +283,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 122:                      {
 123:                          "system": "http://loinc.org",
 124:                          "code": "11506-3",
-125:                          "display": "Progress note note"
+125:                          "display": "Progress note"
 126:                      }
 127:                  ],
 128:                  "text": "Progress note"
@@ -486,10 +486,10 @@ the Requested Attachments and the corresponding coded requests and/or line item 
  55:                              {
  56:                                  "system": "http://loinc.org",
  57:                                  "code": "11506-3",
- 58:                                  "display": "Progress note note"
+ 58:                                  "display": "Progress note"
  59:                              }
  60:                          ],
- 61:                          "text": "Progress note note"
+ 61:                          "text": "Progress note"
  62:                      }
  63:                  },
  64:                  {
@@ -503,7 +503,7 @@ the Requested Attachments and the corresponding coded requests and/or line item 
  72:                                  {
  73:                                      "system": "http://loinc.org",
  74:                                      "code": "11506-3",
- 75:                                      "display": "Progress note note"
+ 75:                                      "display": "Progress note"
  76:                                  }
  77:                              ],
  78:                              "text": "Progress note"

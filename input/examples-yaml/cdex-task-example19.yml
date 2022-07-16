@@ -81,7 +81,7 @@ input:
     coding:
     - system: http://loinc.org
       code: 11506-3
-      display: Progress note note
+      display: Progress note
     text: Progress note
   extension:
   - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
