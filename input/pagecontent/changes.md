@@ -1,7 +1,20 @@
-### Version = CI Build (1.1.0-preview)
-- url: <http://build.fhir.org/ig/HL7/davinci-ecdx>
+### Version = 1.2.0-ballot
+- Publication Date: TBD
+- url: <http://hl7.org/fhir/us/davinci-cdex/2022September>
 - Based on FHIR version : 4.0.1
 
+
+#### Changes:
+Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1 version of CDex. The draft content includes handling of Attachments and Purpose of Use in Task Based Queries.
+
+### Version = 1.1.0
+- Publication Date: TBD
+- url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
+- Based on FHIR version : 4.0.1
+
+#### What’s new in Version 1.1.0 of CDex:
+
+TODO
 
 #### Changes:
  Continuous Integration Build for version 1.1.0 preview of Da Vinci (latest in version control)
