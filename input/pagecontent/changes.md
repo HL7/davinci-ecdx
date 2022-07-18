@@ -19,7 +19,7 @@ TODO
 #### Changes:
  Continuous Integration Build for version 1.1.0 preview of Da Vinci (latest in version control)
 
-This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process, non-ballot issue,  and *Draft* new content to meet anticipated Attachments legislation and rules. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care Work Group.
+This STU1 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process, non-ballot issue,  and *Draft* new content to meet anticipated Attachments legislation and rules. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
 
 ##### May 2022 Ballot comments and links to the updated content are below::
 

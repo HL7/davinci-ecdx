@@ -4,6 +4,7 @@
     "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-identifier-types",
     "name": "CDexIdentifierTypes",
     "title": "CDex Identifier Types Value Set",
+    "status": "active",
     "date": "2022-07-15",
     "description": "Identifiers type for providers and organizations limited to NPI or US Tax id.",
     "compose": {

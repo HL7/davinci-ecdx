@@ -177,6 +177,12 @@
             },
             {
                 "id": "Task.input:POU",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                        "valueCode": "draft"
+                    }
+                ],
                 "path": "Task.input",
                 "sliceName": "POU",
                 "short": "THIS ELEMENT IS DRAFT: Purpose of use code",
