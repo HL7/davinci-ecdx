@@ -4,7 +4,7 @@ Da Vinci is a private sector initiative that addresses the needs of the Value Ba
 
 ### What Do Payers Do with Clinical Information?
 
-Payers require clinical data from  providers who order or provide services. They use this data to document prior authorization, process and audit claims, and to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinicals performance and outcomes. <span class="bg-success" markdown="1">Payers also want to create a clinical record of their members to be able to reduce redundant care and make better medical treatment and care planning recommendations to providers.</span><!-- new-content -->
+Payers require clinical data from  providers who order or provide services. They use this data to document prior authorization, process and audit claims, and to confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. <span class="bg-success" markdown="1">Payers also want to create a clinical record of their members to be able to reduce redundant care and make better medical treatment and care planning recommendations to providers.</span><!-- new-content -->
 
 #### Example Scenarios
 
@@ -18,12 +18,12 @@ Payers require clinical data from  providers who order or provide services. They
 
 ### Provider to Provider Data Exchange
 
- Providers commonly need and request information from other providers about their patients.  Although this guide focuses on payor to provider to interactions, the technical exchange is no different than a provider to provider interaction.
+ Providers commonly need and request information from other providers about their patients.  Although this guide focuses on Payer to Provider interactions, the technical exchange is no different than a Provider to Provider interaction.
 
 #### Example Scenarios
 
  - Referred-to provider solicits additional clinical information from referring provider to support performing the requested service.
- - Referring provider needs the results from the Referred-to provider.
+ - Referring provider needs the results from the referred-to provider.
 
 ### What Information is Needed?
 
@@ -44,7 +44,7 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 
 There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
 
-- An alternative is needed to cover some aspect of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses prefetch requests, the CDS service could use CDex to request the data instead.
+- An alternative is needed to cover some aspect of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses pre-fetch requests, the CDS service could use CDex to request the data instead.
 - There is a specific exchange is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS) FHIR IG], the Payer could requests additional information for prior authorization using CDex.
 - The other IG has not been or can not be implemented for the use case.  For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of Quality Measures. CDex can be used when:
   1. The measure is not yet implementable using DEQM
@@ -117,6 +117,6 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
    - In some cases, attachments are submitted **without an explicit request** as an *unsolicited* attachment. 
 3. Payer system accepts attachments.
  
-*Out of Scope*: <span class="bg-success" markdown="1">How payer system associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
+*Out of Scope*: <span class="bg-success" markdown="1">How Payer systems associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
 
 {% include link-list.md %}

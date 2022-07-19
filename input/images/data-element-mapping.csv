@@ -3,10 +3,10 @@
 2,Use,,,,AttachTo,Task.reasonCode,Claim or Prior Authorization.
 3,Payer ID,NM108,,,PayerId,Task.reasonReference.identifier,Payer ID - should be a business ID -requester.reference
 4,Payer URL,-,-,-,(operation endpoint),"""payer-url"" Task.input",Payer URL
-5,Organiztion ID,-,-,-,OrganizationId,-,Organization of Provider who submitted Claim/Prior-Auth
+5,Organization ID,-,-,-,OrganizationId,-,Organization of Provider who submitted Claim/Prior-Auth
 6,Provider ID,,,,ProviderId,Task.owner.identifier,Provider who submitted Claim/Prior-Auth
 7,Claim/PreAuth ID,,,,-,Task.reasonReference.identifier,Claim/Prior-Auth ID (Provider or Payer Assigned)
-8,line item(s),,,,Attachment.LineItem,“code” Task.input.extension,Claim/Prior-Auth line item # nos
+8,Line Item(s),,,,Attachment.LineItem,“code” Task.input.extension,Claim/Prior-Auth line item # nos
 9,LOINC Attachment code,STC01-02,,,Attachment.Code,“code” Task.input ,LOINCs
 10,Due Date,DPT02,,,-,Task.restriction.period,When attachments are Due
 11,Date of Service,DTP03,,,ServiceDate,“service-date” Task.input ,Claim/Prior-Auth Date of Service (encounter info) 

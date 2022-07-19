@@ -113,7 +113,6 @@
 [CDex Claim Use Value Set]: ValueSet-cdex-claim-use.html
 [Prior-Auth AttachmentRequest Example]: Task-cdex-task-example20.html
 [Claim AttachmentRequest Example]: Task-cdex-task-example19.html
-[CDex Submit Attachment Parameters Resource Example]: Parameters-cdex-submit-attachment-example.html
 [CDex Temporary Code System]: CodeSystem-cdex-temp.html
 [NHIN Purpose Of Use Code System]: {{site.data.fhir.path}}codesystem-nhin-purposeofuse.html
 [LOINC Document Ontology]: https://loinc.org/document-ontology/
@@ -121,4 +120,8 @@
 [FHIR RESTful search]: {{site.data.fhir.path}}http.html#search
 [FHIR RESTful read]: {{site.data.fhir.path}}http.html#read
 [Change Log]: changes.html
-
+[CDex Parameters Example1]: Parameters-cdex-parameters-example1.html
+[CDex Parameters Example2]: Parameters-cdex-parameters-example2.html
+[CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
+[CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
+[Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/STU1/

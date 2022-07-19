@@ -8,17 +8,17 @@ status: draft
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or claim authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
+  This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or prior authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 
   The input parameters are:
   1. One or more attachments as FHIR Resources
       - Optionally, one or more unique line item numbers associated with the attachment
       - Optionally, the code, free text, or search string for information that was requested
-  1. Data elements for association to the claim/claim authorization
+  1. Data elements for association to the claim/prior authorization
       - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
-      - What is the attachments are for:
-        - Claim
-        - Prior Authorization
+      - What are the attachments for:
+        - Claims
+        - Prior Authorizations
       - Optionally, a unique payer identifier
       - A unique organization/location identifier (e.g., NPI)
       - A unique provider identifier (e.g., NPI)

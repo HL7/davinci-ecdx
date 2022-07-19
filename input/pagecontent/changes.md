@@ -1,10 +1,10 @@
-<!-- ### Version = 2.0.0-ballot
+### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
 - url: <http://hl7.org/fhir/us/davinci-cdex/2022September>
 - Based on FHIR version : 4.0.1
 
 #### Changes:
-Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes: 1) requesting and sending attachments and 2) communicating purpose of use in Task Based Queries. -->
+Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes: 1) requesting and sending attachments and 2) communicating purpose of use in Task Based Queries.
 
 ### Version = 1.1.0
 - Publication Date: 2022-08-01
@@ -18,7 +18,7 @@ This STU2 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 - <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
     - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
     - A [Sending Attachments] page that documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - A [Requesting Attachments] page to  document a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
+    - A [Requesting Attachments] page to document a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
     - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
 -  A [Signatures] page a signature sections for each transaction in CDex to provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
 - A [Change Log] page to document the changes across the versions of CDex
