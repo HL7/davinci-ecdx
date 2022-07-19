@@ -1,13 +1,13 @@
-### Version = 2.0.0-ballot
+<!-- ### Version = 2.0.0-ballot
 - Publication Date: TBD
 - url: <http://hl7.org/fhir/us/davinci-cdex/2022September>
 - Based on FHIR version : 4.0.1
 
 #### Changes:
-Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes: 1) requesting and sending attachments and 2) communicating purpose of use in Task Based Queries.
+Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes: 1) requesting and sending attachments and 2) communicating purpose of use in Task Based Queries. -->
 
 ### Version = 1.1.0
-- Publication Date: TBD
+- Publication Date: 2022-7-31
 - url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
 - Based on FHIR version : 4.0.1
 
