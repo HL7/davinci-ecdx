@@ -2,11 +2,11 @@
   "resourceType": "ImplementationGuide",
   "id": "hl7.fhir.us.davinci-cdex",
   "url": "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex",
-  "version": "2.0.0-ballot",
+  "version": "1.1.0-ballot",
   "name": "DaVinciCDex",
   "title": "Da Vinci Clinical Data Exchange (CDex)",
   "status": "active",
-  "date": "2022-07-31",
+  "date": "2022-08-10",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -506,7 +506,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "Ballot"
+        "value": "STU2"
       },
       {
         "code": "path-resource",
