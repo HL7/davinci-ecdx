@@ -18,7 +18,7 @@ This STU2 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide
 - <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
     - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
     - A [Sending Attachments] page that documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - A [Requesting Attachments] page to  document a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
+    - A [Requesting Attachments] page to document a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
     - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
 -  A [Signatures] page a signature sections for each transaction in CDex to provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
 - A [Change Log] page to document the changes across the versions of CDex

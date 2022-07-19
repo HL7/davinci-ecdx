@@ -80,7 +80,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n1. POSTing a Task resource representing a request for clinical data\n1. POSTing a Subscription resource\n1. Polling a Task resource",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n2. Requesting Attachments\n3. POSTing a Task resource representing a request for clinical data\n4. POSTing a Subscription resource\n5. Polling a Task resource",
         "exampleBoolean": false,
         "name": "Data Consumer Client CapabilityStatement"
       },

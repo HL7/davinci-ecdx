@@ -108,7 +108,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
     <span class="bg-success" markdown="1">Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.
     {:.bg-warning}</span><!-- new-content --> 
 
-3. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convienience):
+3. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convenience):
    >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
    >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)]
    >- The signature is a [Detached] Signature (where the content that is signed is separate from the signature itself)

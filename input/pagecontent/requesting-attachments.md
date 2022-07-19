@@ -144,7 +144,7 @@ The Payer supplies the necessary Claim/PreAuthorization Data so the Provider can
 
 ##### Supplying the Tracking ID
 
-The mandatory `Task.identifier` "tracking-id" slice element represents the payers tracking identifier.  This is an identifier that ties the attachments back to the claim or pre-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
+The mandatory `Task.identifier` "tracking-id" slice element represents the payers tracking identifier.  This is an identifier that ties the attachments back to the claim or prior-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
 ~~~
  45:      "identifier": [
@@ -299,7 +299,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 
 ##### Communicating the Signature Requirements
 
- This Task.input "signature-flag" may be used to indicate that the attachments must be signed. See the [Signatures] and [Requesting Attachments] page for more information about using Signatures in CDex.
+ This Task.input "signature-flag" may be used to indicate that the attachments must be signed. See the [Signatures] and [Sending Attachments] page for more information about using Signatures in CDex.
 
 ~~~
 137:          {

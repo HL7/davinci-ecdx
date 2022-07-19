@@ -124,3 +124,4 @@
 [CDex Parameters Example2]: Parameters-cdex-parameters-example2.html
 [CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
 [CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
+[Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/STU1/

@@ -80,11 +80,13 @@ definition:
 
       1. Requesting Clinical Data using a FHIR RESTful query
 
-      1. POSTing a Task resource representing a request for clinical data
+      2. Requesting Attachments
 
-      1. POSTing a Subscription resource
+      3. POSTing a Task resource representing a request for clinical data
 
-      1. Polling a Task resource'
+      4. POSTing a Subscription resource
+
+      5. Polling a Task resource'
     exampleBoolean: false
     name: Data Consumer Client CapabilityStatement
   - reference:
