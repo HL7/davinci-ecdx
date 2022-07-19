@@ -411,20 +411,6 @@
         "description": "**Failed Coded Request for A1C Results:**  Task to seek a patient's HbA1c test results using the CDex Profile query input with a failed status. This example illustrates the use of FHIR resource references to the various actors.",
         "name": "Cdex Task Example 9",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
-      },
-      {
-        "reference": {
-          "reference": "Parameters/test-new"
-        },
-        "name": "test-new",
-        "exampleBoolean": true
-      },
-      {
-        "reference": {
-          "reference": "Parameters/test-validate"
-        },
-        "name": "test-validate",
-        "exampleBoolean": true
       }
     ],
     "page": {

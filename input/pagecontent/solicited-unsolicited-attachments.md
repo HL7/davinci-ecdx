@@ -1,4 +1,4 @@
-{% include page_for_ballot.md %}
+{% include draft_content_note.md  content="page" %}
 
 Today claims typically come through [X12 transactions] or portal submissions. Payers may need additional information from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical benefits or by policy benefits.<span class="bg-success" markdown="1"> In this guide, the use of term "attachments is limited to a subset of additional information that are documents defined by the [LOINC Document Ontology] or data elements that are presented in document form.</span><!-- new-content -->  Attachments for Claims or Prior Authorization can be divided into *solicited* and *unsolicited* workflows. The Sections below document the differences and similarities between these workflows and the CDex transactions that can be used for each. 
 

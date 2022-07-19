@@ -55,7 +55,7 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 ### Workflow Overview
 
-{% include section_for_ballot.md %}
+{% include draft_content_note.md  content="section" %}
 
 <span class="bg-success" markdown="1">FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:</span><!-- new-content -->
 
@@ -96,7 +96,7 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 
 #### Attachments Workflow
 
-{% include section_for_ballot.md %}
+{% include draft_content_note.md  content="section" %}
 
 Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited and Unsolicited Attachments* workflow.
 
