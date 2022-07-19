@@ -120,3 +120,5 @@
 [CDex Signature Bundle Profile]: StructureDefinition-cdex-signature-bundle.html
 [FHIR RESTful search]: {{site.data.fhir.path}}http.html#search
 [FHIR RESTful read]: {{site.data.fhir.path}}http.html#read
+[Change Log]: changes.html
+

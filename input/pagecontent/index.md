@@ -59,11 +59,12 @@ This Guide is divided into several pages which are listed at the top of each pag
     - <span class="bg-success" markdown="1">[Solicited and Unsolicited Attachments]\: Documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.</span><!-- new-content -->
     - <span class="bg-success" markdown="1">[Sending Attachments]\:This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.</span><!-- new-content -->
     - <span class="bg-success" markdown="1">[Requesting Attachments]\: This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.</span><!-- new-content -->
-    - <span class="bg-success" markdown="1">[Using CDex Attachments with DaVinci PAS]\: This Page illustrate where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.</span><!-- new-content -->
+    - <span class="bg-success" markdown="1">[Using CDex Attachments with DaVinci PAS]\: This page illustrate where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.</span><!-- new-content -->
 - [Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - [Security and Privacy]\: This page provides general expectations to ensure security, privacy, and safety of Da Vinci CDex exchanges.
 - [FHIR Artifacts]\: This page list the FHIR Profiles, Operations, Terminology, CapabilityStatements, and example resources used within this guide.
 - [Downloads]\: This page provides links to downloadable artifacts that can be used by developers to help them implement this guide.
+- [Change Log]\: This page documents the changes across the versions of CDex
 
 ---
 
