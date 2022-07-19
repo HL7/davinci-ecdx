@@ -14,19 +14,3 @@ push_to_autobuild.sh
 SUSHI-GENERATED-FILES.mdv
 /my-notes/
 
-# for managing publication and ballot branches
-# create ballot branch 
-#    - update change log, package list, sushi yaml to update version
-#      - done for ballot
-#    - keep liquid text same and change content in files
-#    - keep sushi yaml files and changes files separate
-#    - exclude these files in .gitignore so not changing when update - need to update .gitignore when merge back!
-
-sushi-config.yaml
-package-list.json
-fsh-generated/resources/ImplementationGuide-hl7.fhir.us.davinci-cdex.json
-input/pagecontent/changes.md
-input/includes/ballot_intro.md
-input/includes/draft_content_note.md
-input/includes/draft_intro.md
-

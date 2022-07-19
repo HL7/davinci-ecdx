@@ -5,7 +5,7 @@ version: 2.0.0-ballot
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active
-date: '2022-07-31'
+date: '2022-08-01'
 publisher: HL7 International - Patient Care Work Group
 contact:
 - name: HL7 International - Patient Care Work Group
@@ -301,14 +301,6 @@ definition:
       signature was required.
     name: CDEX SearchSet Bundle with Digital Signature Example
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
-  - reference:
-      reference: Parameters/cdex-submit-attachment-example
-    description: Parameters Resource example showing how it is used when the `$submit-attachment`
-      operation is invoked. It represents the collection of named parameters including
-      the "attachment"  (additional information) and data to re-associate the attachmenet
-      to a claim or prior authorization.
-    name: CDex Submit Attachment Parameters Resource Example
-    exampleBoolean: true
   - reference:
       reference: Task/cdex-task-example1
     description: '**Query String Request for Condition:**   Task to seek a patient

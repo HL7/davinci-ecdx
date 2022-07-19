@@ -44,12 +44,24 @@ differential:
 
     - id: 'Bundle.signature.type'
       path: 'Bundle.signature.type'
+      min: 1
+      slicing:
+        discriminator:
+          - type: pattern
+            path: $this
+        rules: open
+      mustSupport: true
+
+    - id: 'Bundle.signature.type:verify'
+      path: 'Bundle.signature.type'
+      sliceName: verify
       short: Verification Signature
       patternCoding:
         system: 'urn:iso-astm:E1762-95:2013'
         code: 1.2.840.10065.1.12.1.5
         display: Verification Signature
-      # min: 1
+      min: 1
+      max: '1'
       mustSupport: true
 
     - id: 'Bundle.signature.when'

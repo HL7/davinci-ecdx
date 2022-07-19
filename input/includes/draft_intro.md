@@ -14,8 +14,11 @@
 | Attachments | [CDex Claim Use Value Set] | 10.10.1 |
 | Attachments | [CDex Temporary Code System] | 10.12.1 |
 | Attachments | [Prior-Auth AttachmentRequest Example] | 10.31.1 |
-| Attachments | [Claim AttachmentRequest Example] | 10.13.1 |
-| Attachments | [CDex Submit Attachment Parameters Resource Example] | 10.33.2 |
+| Attachments | [Claim AttachmentRequest Example] |110.13.1 |
+| Attachments | [CDex Parameters Example1] | 10.17.1 |
+| Attachments | [CDex Parameters Example2] | 10.18.1 |
+| Attachments | [CDex Parameters Example2] | 10.19.1 |
+| Attachments | [CDex Parameters Example4] | 10.20.1 |
 | Attachments | [Background: Attachments Workflow](background.html#attachments-workflow) | 2.6.2 |
 | Purpose of Use | [Task.input:POU](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:POU) | 10.8.5.121 |
 | Purpose of Use | [CDex Purpose of Use Value Set] | 10.9.1 |
