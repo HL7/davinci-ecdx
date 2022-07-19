@@ -1,6 +1,6 @@
 {% include draft_content_note.md  content="page" %}
 
-This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.  This transaction is use for both *solicited* and *unsolicited* attachments.   <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 275 transaction.</span><!-- new-content -->
+This page documents a FHIR based approach to sending attachments for claims or prior authorization directly to a Payer.  This transaction is used for both *solicited* and *unsolicited* attachments.   <span class="bg-danger" markdown="1">It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 275 transaction.</span><!-- new-content -->
 
 ### `$submit-attachment` Operation
 
@@ -10,18 +10,18 @@ See the [`$submit-attachment`] operation definition for further details.
 
 ### Technical Workflow
 
-As shown in the figure 7 below, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
+As shown below in figure 7, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 <div class="bg-success" markdown="1">
 
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
 
-1. Provider assembles attachments and the meta data to associate the attachments to a claim or prior authorization
-1. Provider invokes [`$submit-attachment`] operation to submit attachments to Payer
-1. Payer responds with an http transactional layer response either accepting or rejecting the transaction.
+1. Provider assembles the attachments and meta data to associate the attachments to a claim or prior authorization
+2. Provider invokes [`$submit-attachment`] operation to submit attachments to Payer
+3. Payer responds with an http transaction layer response which either accepts or rejects the transaction.
    - The Payer **SHOULD** return an informational OperationOutcome with the http accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
-2. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
+4. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
 
 </div><!-- new-content -->
 
@@ -31,7 +31,7 @@ The following data elements are needed to associate an attachment to a claim or 
 
 {% include attachments_to_275.md %}
 
-The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
+The data element mapping table is available as a [CSV](data-element-mapping.csv) and an [Excel](data-element-mapping.xlsx) file.
 
 For *solicited* attachments, the same data elements are sent in the request for attachments. See the [Requesting Attachments] page for a detailed discussion on how these data element are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response back to the Payer.
 

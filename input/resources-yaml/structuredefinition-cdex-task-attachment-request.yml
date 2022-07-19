@@ -7,7 +7,7 @@ name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
 status: draft
 description: |-
-  This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for Claims or Prior-Authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
+  This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior-authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
   
   It constrains the following elements to be *mandatory* (min=1):
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
