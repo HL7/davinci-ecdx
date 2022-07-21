@@ -5,11 +5,11 @@
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Cdex Task Example 1"
+                "valueString": "CDex Task Example 1"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Query String Request for Condition:**   Task to seek a patient active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."
+                "valueMarkdown": "**Query String Request for Condition:** Task to seek a patient's active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors."
             }
         ],
         "profile": [

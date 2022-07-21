@@ -72,7 +72,7 @@
         "reference": {
           "reference": "OperationDefinition/submit-attachment"
         },
-        "description": "This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or claim authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization, and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the code, free text, or search string for information that was requested\n1. Data elements for association to the claim/claim authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")*\n    - What is the attachments are for:\n      - Claim\n      - Prior Authorization\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters.",
+        "description": "This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or prior authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the code, free text, or search string for information that was requested\n1. Data elements for the association to the claim/prior authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")*\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters.",
         "exampleBoolean": false,
         "name": "Submit Attachment Operation"
       },
@@ -120,7 +120,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-patient-demographics"
         },
-        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n- A patient name\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
+        "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n- A patient's name\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
         "exampleBoolean": false,
         "name": "CDex Patient Demographics Profile"
       },
@@ -128,7 +128,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-signature-bundle"
         },
-        "description": "This Bundle profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A Bundle.signature element representing the enveloped signature\n- A Bundle.signature.type fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)\n- A Bundle.signature.who representing the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, PractitionerRole or Organization or\n  1. a NPI or Tax ID and name of the organization or practitioner\n- A Bundle.signature.data representing base64 encoded JWS-Signature \n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- Bundle.signature.when - system timestamp when signature was created",
+        "description": "This Bundle profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A Bundle.signature element representing the enveloped signature\n- A Bundle.signature.type fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)\n- A Bundle.signature.who for the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, PractitionerRole or Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n- A Bundle.signature.data representing base64 encoded JWS-Signature \n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- Bundle.signature.when - system timestamp when the signature was created",
         "exampleBoolean": false,
         "name": "CDex Signature Bundle Profile"
       },
@@ -136,7 +136,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-task-attachment-request"
         },
-        "description": "This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for Claims or Prior-Authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.\n\nIt constrains the following elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. \n- A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A Task.status with a required binding the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)\n- A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n- A Task.code fixed to \"attachment-request\" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the \"payer-url\" input parameter.\n- A Task.requester.identifier element representing the Payer ID\n- A Task.owner.identifier element representing the Provider ID\n- A Task.for.reference element fixed to \"\\#string\" - a reference the contained Patient Resource\n- A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)\n- A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes\n  - An extensions representing line item numbers in the Claim or Prior Authorization\n- A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation\n- A Task.input element representing date of service or starting date of the service for the claim or prior authorization\n\nand the following elements to be *must support* [min=0]:\n- A Task.Restriction.period element representing the due date for submitting the attachments\n- A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nand the following elements to be *optional*:\n- A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions",
+        "description": "This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.\n\nIt constrains the following elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. \n- A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)\n- A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n- A Task.code fixed to \"attachment-request\" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the \"payer-url\" input parameter.\n- A Task.requester.identifier element representing the Payer ID\n- A Task.owner.identifier element representing the Provider ID\n- A Task.for.reference element fixed to \"\\#string\" - a reference the contained Patient Resource\n- A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)\n- A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes\n  - An extension representing line item numbers in the Claim or Prior Authorization\n- A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation\n- A Task.input element representing the date of service or starting date of the service for the claim or prior authorization\n\nand the following elements to be *must support* [min=0]:\n- A Task.Restriction.period element representing the due date for submitting the attachments\n- A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nand the following elements to be *optional*:\n- A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions",
         "exampleBoolean": false,
         "name": "CDex Task Attachment Request Profile"
       },
@@ -152,7 +152,7 @@
         "reference": {
           "reference": "ValueSet/cdex-POU"
         },
-        "description": "The set of purpose of use codes for the requested data (the output of the task). This code set is composed [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide.",
+        "description": "The set of purpose of use codes for the requested data (the output of the task). This code set is composed of [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide.",
         "exampleBoolean": false,
         "name": "CDex Purpose of Use Value Set"
       },
@@ -176,7 +176,7 @@
         "reference": {
           "reference": "ValueSet/cdex-work-queue"
         },
-        "description": "The set work queue tags that the provider may use in their workflow to process request. This code set is composed of codes defined by this Guide.",
+        "description": "The set work queue tags that the provider may use in their workflow to process requests. This code set is composed of codes defined by this Guide.",
         "exampleBoolean": false,
         "name": "CDex Work Queue Value Set"
       },
@@ -184,7 +184,7 @@
         "reference": {
           "reference": "Bundle/cdex-document-digital-sig-example"
         },
-        "description": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "description": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Digital Signature Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
       },
@@ -192,7 +192,7 @@
         "reference": {
           "reference": "Bundle/cdex-electronic-sig-example"
         },
-        "description": "Electronic signature example showing how a image file can be use to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
+        "description": "Electronic signature example showing how an image file can be used to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Electronic Signature Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
       },
@@ -232,7 +232,7 @@
         "reference": {
           "reference": "Bundle/cdex-searchset-digital-sig-example"
         },
-        "description": "Digital signature example showing how it is used to sign a searchset Bundle.  The CDEX use case would be a response to a Direct Query where an digital signature was required.",
+        "description": "Digital signature example showing how it is used to sign a search set Bundle.  The CDEX use case would be a response to a Direct Query where a digital signature was required.",
         "name": "CDEX SearchSet Bundle with Digital Signature Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
       },
@@ -240,8 +240,8 @@
         "reference": {
           "reference": "Task/cdex-task-example1"
         },
-        "description": "**Query String Request for Condition:**   Task to seek a patient active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
-        "name": "Cdex Task Example 1",
+        "description": "**Query String Request for Condition:** Task to seek a patient's active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
+        "name": "CDex Task Example 1",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
       },
       {

@@ -27,9 +27,9 @@
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
 <artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
+<artifact id="Task/cdex-task-example1" key="Task-cdex-task-example1" name="CDex Task Example 1"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
-<artifact id="Task/cdex-task-example1" key="Task-cdex-task-example1" name="Cdex Task Example 1"/>
 <artifact id="Task/cdex-task-example10" key="Task-cdex-task-example10" name="Cdex Task Example 10"/>
 <artifact id="Task/cdex-task-example11" key="Task-cdex-task-example11" name="Cdex Task Example 11"/>
 <artifact id="Task/cdex-task-example12" key="Task-cdex-task-example12" name="Cdex Task Example 12"/>
