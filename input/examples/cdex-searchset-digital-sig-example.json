@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Digital signature example showing how it is used to sign a searchset Bundle.  The CDEX use case would be a response to a Direct Query where an digital signature was required."
+                "valueMarkdown": "Digital signature example showing how it is used to sign a search set Bundle.  The CDEX use case would be a response to a Direct Query where a digital signature was required."
             }
         ],
         "profile": [

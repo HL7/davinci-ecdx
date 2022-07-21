@@ -9,13 +9,13 @@ description: |-
 
   - A Bundle.signature element representing the enveloped signature
   - A Bundle.signature.type fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)
-  - A Bundle.signature.who representing the organization or practitioner who signed the Bundle which is either:
+  - A Bundle.signature.who for the organization or practitioner who signed the Bundle which is either:
     1. a reference to US-Core Practitioner, PractitionerRole or Organization or
-    1. a NPI or Tax ID and name of the organization or practitioner
+    1. an NPI or Tax ID and name of the organization or practitioner
   - A Bundle.signature.data representing base64 encoded JWS-Signature 
   
   In addition, the following *mandatory* (min=1) element is inherited from the base standard:
-  - Bundle.signature.when - system timestamp when signature was created
+  - Bundle.signature.when - system timestamp when the signature was created
   
 
 fhirVersion: 4.0.1

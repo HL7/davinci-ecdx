@@ -46,7 +46,7 @@
                 "path": "Task.meta.tag",
                 "sliceName": "work-queue",
                 "short": "Work Queue Tag",
-                "definition": "Payer provided work queue tags that provider may use in their workflow to process request.",
+                "definition": "Payer provided work queue tags that providers may use in their workflow to process requests.",
                 "binding": {
                     "strength": "required",
                     "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue"

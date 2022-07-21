@@ -24,12 +24,12 @@
 | Purpose of Use | [Security and Privacy: Purpose of Use](security.html#purpose-of-use) | 7.2.2 |
 {:.grid}
 
-**These section are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here. For any comments on content that is not in the list above, balloters are encouraged to submit them as *non ballot* change requests in Jira. Otherwise they may be marked as "Considered for Future" and not resolved for this STU Comment period.**
+**These sections are highlighted in pink and marked with the text “Note to Balloters” as demonstrated here. For any comments on content that is not in the list above, balloters are encouraged to submit them as *non-ballot* change requests in Jira. Otherwise, they may be marked as "Considered for Future" and not resolved for this STU Comment period.**
 
 </div> -->
 
 <div markdown="1" class="stu-note">
 
-The attachment transaction and purpose of use content is DRAFT. It has not yet undergone HL7 balloting. The appropriate pages and sections are preceded with a STU-Note indicating the draft content.
+The attachment transaction and purpose of use content is DRAFT. It has not yet undergone HL7 balloting. The appropriate pages and sections are preceded with an STU-Note indicating the draft content.
 
 </div>

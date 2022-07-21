@@ -9,7 +9,7 @@ description: |-
  
   - A default resource ID of "patient"
   - A member ID identifier slice
-  - A patient name
+  - A patient's name
 
   and the following element to be *must support* (min=0):
 

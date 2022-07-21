@@ -51,7 +51,7 @@ differential:
       path: Task.meta.tag
       sliceName: work-queue
       short: Work Queue Tag
-      definition: Payer provided work queue tags that provider may use in their workflow to process request.
+      definition: Payer provided work queue tags that providers may use in their workflow to process requests.
       binding:
         strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
@@ -68,7 +68,7 @@ differential:
     #   path: Task.contained
     #   sliceName: claim
     #   definition: >-
-    #     The contained claim profile represents a claim or prior-authorization and is used to communicate a reason for a clinical data request.
+    #     The contained claim profile represents a claim or prior authorization and is used to communicate a reason for a clinical data request.
     #   short: Contained Claim resource
     #   # min: 1
     #   max: '1'
@@ -129,7 +129,7 @@ differential:
     #   path: Task.for.reference
     #   # short: Contained Patient
     #   # definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
-    #   comment: For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to representing the patient demographic data elements used to verify patient identity for compliance regulations (such as HIPAA).
+    #   comment: For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to represent the patient demographic data elements used to verify patient identity for compliance regulations (such as HIPAA).
     #   # # min: 1
     #   # fixedString: '#patient'
     #   mustSupport: true    
@@ -173,7 +173,7 @@ differential:
     #   path: Task.reasonReference.reference
     #   # short: Contained Claim
     #   # definition: Reference to contained Claim representing claim or pre-authorization for required data.
-    #   comment: A reference to a contained CDex Claim Profile is defined to be contained within the CDex Task Attachment Request Profile or CDex Task Data Request Profile. It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior-authorization (for example, an attachment request or a claims audit).
+    #   comment: A reference to a contained CDex Claim Profile is defined to be contained within the CDex Task Attachment Request Profile or CDex Task Data Request Profile. It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior authorization (for example, an attachment request or a claims audit).
     #   # # min: 1
     #   # fixedString: '#claim'
     #   mustSupport: true    
@@ -193,7 +193,7 @@ differential:
 
     # - id: Task.restriction.period
     #   path: Task.restriction.period
-    #   short: Sumbission due date
+    #   short: Submission due date
     #   definition:  The due date for submitting the requested data
     #   comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
     #   # min: 1
@@ -312,7 +312,7 @@ differential:
     #   path: Task.input
     #   sliceName: payer-url
     #   short: Payer Url
-    #   definition: The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
+    #   definition: The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.
     #   # min: 0
     #   max: '1'
     #   mustSupport: true
