@@ -85,10 +85,10 @@ Some data consumers may require that the data they receive are signed. When sign
 #### The Payer Requirements
 
 <div class="bg-success" markdown="1">
-- For *Unsolicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder whether electronic or digital signatures are required.  If the signatures are required *all* attachments will be signed by the provider submitting them.
-- For *Solicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder whether electronic or digital signatures are required for:
-  1. *all* attachments will be signed or
-  1. *only* attachments for attachment requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
+- For *Unsolicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder on whether electronic or digital signatures are required.  If signatures are required, *all* attachments will be signed by the provider submitting them.
+- For *Solicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder on whether electronic or digital signatures are required for:
+  1. *all* attachments or
+  2. *only* for attachments where the attachment request communicates the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
 - The Payer/Requester follows the documentation on the [Signatures] page for validating signatures.
   - If the signatures fail verification when processing the '$submit-attachments' operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
 </div><!-- new-content -->
