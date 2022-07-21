@@ -7,7 +7,7 @@
 6,Provider ID,,,,ProviderId,Task.owner.identifier,Provider who submitted claim/prior authorization
 7,Claim/PreAuth ID,,,,-,Task.reasonReference.identifier,claim/prior authorization ID (Provider or Payer Assigned)
 8,Line Item(s),,,,Attachment.LineItem,“code” Task.input.extension,claim/prior authorization line item numbers
-9,LOINC Attachment code,STC01-02,,,Attachment.Code,“code” Task.input ,LOINC attachment codes
+9,LOINC Attachment Code,STC01-02,,,Attachment.Code,“code” Task.input ,LOINC attachment codes
 10,Due Date,DPT02,,,-,Task.restriction.period,Deadline form submitting  attachments  to  Payer
 11,Date of Service,DTP03,,,ServiceDate,“service-date” Task.input ,Date of Service for claim/prior authorization
 12,Member ID,X2100D NM,,,MemberId,Patient.identifier,Payer assigned patient identifier

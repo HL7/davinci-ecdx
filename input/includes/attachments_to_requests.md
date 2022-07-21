@@ -6,7 +6,7 @@
 | Organization ID | OrganizationId | - |
 | Provider ID | ProviderId | Task.owner.identifier |
 | Line Item(s) | Attachment.LineItem | “code” Task.input.extension |
-| LOINC Attachment code | Attachment.Code | “code” Task.input |
+| LOINC Attachment Code | Attachment.Code | “code” Task.input |
 | Date of Service | ServiceDate | “service-date” Task.input |
 | Member ID | MemberId | Patient.identifier |
 {:.grid}

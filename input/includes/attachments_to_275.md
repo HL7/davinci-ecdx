@@ -6,7 +6,7 @@
 | Organization ID | OrganizationId | - | Organization of Provider who submitted claim/prior authorization |
 | Provider ID | ProviderId | - | Provider who submitted claim/prior authorization |
 | Line Item(s) | Attachment.LineItem | - | claim/prior authorization line item numbers |
-| LOINC Attachment code | Attachment.Code | - | LOINC attachment codes |
+| LOINC Attachment Code | Attachment.Code | - | LOINC attachment codes |
 | Date of Service | ServiceDate | - | Date of Service for claim/prior authorization |
 | Member ID | MemberId | - | Payer assigned patient identifier |
 {:.grid}
