@@ -1,16 +1,16 @@
 ﻿No,Data Element,X12n 277,X12n 278 Response,X12n 275,CDex #submit-attachment Parameter,CDex Request Attachment Task Profile Element,Comments
-1,Tracking ID (Provider or Payer Assigned),REF02,,,TrackingId,Task.identifier,Tracking ID (Provider or Payer Assigned)
-2,Use,,,,AttachTo,Task.reasonCode,Claim or Prior Authorization.
-3,Payer ID,NM108,,,PayerId,Task.reasonReference.identifier,Payer ID - should be a business ID -requester.reference
-4,Payer URL,-,-,-,(operation endpoint),"""payer-url"" Task.input",Payer URL
-5,Organization ID,-,-,-,OrganizationId,-,Organization of Provider who submitted Claim/Prior-Auth
-6,Provider ID,,,,ProviderId,Task.owner.identifier,Provider who submitted Claim/Prior-Auth
-7,Claim/PreAuth ID,,,,-,Task.reasonReference.identifier,Claim/Prior-Auth ID (Provider or Payer Assigned)
-8,Line Item(s),,,,Attachment.LineItem,“code” Task.input.extension,Claim/Prior-Auth line item # nos
-9,LOINC Attachment code,STC01-02,,,Attachment.Code,“code” Task.input ,LOINCs
-10,Due Date,DPT02,,,-,Task.restriction.period,When attachments are Due
-11,Date of Service,DTP03,,,ServiceDate,“service-date” Task.input ,Claim/Prior-Auth Date of Service (encounter info) 
-12,Member ID,X2100D NM,,,MemberId,Patient.identifier,Member ID (patient info)
-13,Patient Name,X2100D NM103-7,,,-,Patient.name,Patient Name (patient info)
-14,Patient Account No.,CLM01(837),,,-,Patient.identifier,Patient Account No. PreAuth Only (patient info)
-15,Date of Birth,X12,,,-,Patient.birthDate,Date of Birth (patient info)
+1,Tracking ID (Provider or Payer Assigned),REF02,,,TrackingId,Task.identifier,Provider or Payer assigned tracking control number
+2,Use,,,,AttachTo,Task.reasonCode,"Choice of ""claim"" or ""preauthorization"""
+3,Payer ID,NM108,,,PayerId,Task.reasonReference.identifier,Payer ID
+4,Payer URL,-,-,-,(operation endpoint),"""payer-url"" Task.input",Payer endpoint where the attachments are submitted using the $submit-operation
+5,Organization ID,-,-,-,OrganizationId,-,Organization of Provider who submitted claim/prior authorization
+6,Provider ID,,,,ProviderId,Task.owner.identifier,Provider who submitted claim/prior authorization
+7,Claim/PreAuth ID,,,,-,Task.reasonReference.identifier,claim/prior authorization ID (Provider or Payer Assigned)
+8,Line Item(s),,,,Attachment.LineItem,“code” Task.input.extension,claim/prior authorization line item numbers
+9,LOINC Attachment code,STC01-02,,,Attachment.Code,“code” Task.input ,LOINC attachment codes
+10,Due Date,DPT02,,,-,Task.restriction.period,Deadline form submitting  attachments  to  Payer
+11,Date of Service,DTP03,,,ServiceDate,“service-date” Task.input ,Date of Service for claim/prior authorization
+12,Member ID,X2100D NM,,,MemberId,Patient.identifier,Payer assigned patient identifier
+13,Patient Name,X2100D NM103-7,,,-,Patient.name,Patient Demographic information for patient matching
+14,Patient Account No.,CLM01(837),,,-,Patient.identifier,Provider assigned patient identifer only for prior authorizatons
+15,Date of Birth,X12,,,-,Patient.birthDate,Patient Demographic information for patient matching

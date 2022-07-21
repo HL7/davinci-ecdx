@@ -31,7 +31,7 @@
             "use": "in",
             "min": 1,
             "max": "1",
-            "documentation": "A value of either \"claim\" or \"prior-authorization\" to communicate what the additional information is needed for.  This is known by the provider when submitting *unsolicited* attachments, and communicated to the provider through the request for *solicited* attachments.",
+            "documentation": "A value of either \"claim\" or \"preauthorization\" to communicate what the additional information is needed for.  This is known by the provider when submitting *unsolicited* attachments, and communicated to the provider through the request for *solicited* attachments.",
             "type": "code",
             "binding": {
                 "strength": "required",
@@ -67,7 +67,7 @@
             "use": "in",
             "min": 1,
             "max": "1",
-            "documentation": "Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.",
+            "documentation": "Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.  This identifier can either the Payer assigned Member ID or a provider assigned \"Patient Account Number\" for an *unsolicited* attachment for a prior authorization.",
             "type": "Identifier"
         },
         {
@@ -76,7 +76,7 @@
             "min": 0,
             "max": "1",
             "documentation": "Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for a prior authorization.  This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.",
-            "type": "date"
+            "type": "dateTime"
         },
         {
             "name": "Attachment",
