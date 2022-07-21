@@ -8,10 +8,10 @@ For an *unsolicited* attachment the Provider will submit additional documentatio
 
 #### Example Scenarios
 
-1.	A set of pre-defined rules, made by the Payer or State Mandates, necessitates that
-additional information be provided without a specific request.
-2.	A Provider believes the Payer will need additional information to process a claim.
-3.	A Provider is under review and required to provide additional documentation for all claims.
+1.  A set of pre-defined rules, made by the Payer or State Mandates, necessitates that
+additional information is provided without a specific request.
+2.  A Provider believes the Payer will need additional information to process a claim.
+3.  A Provider is under review and required to provide additional documentation for all claims.
 
 
 In all of these cases, the Payer will require a trading partner agreement for sending attachments based on predefined rules.
@@ -38,6 +38,6 @@ For a *solicited* attachment the Provider will submit additional documentation, 
 
 {% include img.html img="solicited-prior-auth-flow.svg" caption="Solicited Attachments for a Prior Authorization" %}
 
-Attachments may be requested via a non-CDex FHIR based request such as an X12 transaction, fax, portal, or other platform or they may be requested using CDex. See the [Requesting Attachments] page and [Sending Attachments] page for how CDex transactions can be used to support  *solicited* attachment transactions.
+Attachments may be requested via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform or they may be requested using CDex. See the [Requesting Attachments] page and [Sending Attachments] page for how CDex transactions can be used to support  *solicited* attachment transactions.
 
 {% include link-list.md %}

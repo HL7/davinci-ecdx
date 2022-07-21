@@ -1,1 +1,1 @@
-\* Consult with your payer and your legal team for questions regarding legal liability associated with sharing and signing data.
+\* Consult with your Payer and your legal team for questions regarding legal liability associated with sharing and signing data.

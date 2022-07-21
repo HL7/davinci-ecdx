@@ -7,12 +7,12 @@ name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
 status: draft
 description: |-
-  This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior-authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
+  This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
   
   It constrains the following elements to be *mandatory* (min=1):
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
-  - A Task.status with a required binding the HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
+  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
@@ -21,9 +21,9 @@ description: |-
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
-    - An extensions representing line item numbers in the Claim or Prior Authorization
+    - An extension representing line item numbers in the Claim or Prior Authorization
   - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
-  - A Task.input element representing date of service or starting date of the service for the claim or prior authorization
+  - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization
 
   and the following elements to be *must support* [min=0]:
   - A Task.Restriction.period element representing the due date for submitting the attachments
@@ -62,7 +62,7 @@ differential:
     #     business logic, processing directives, or semantics (for example,
     #     inpatient or outpatient). Clients should not assume that the Server will
     #     exhaustively indicate all profiles with all versions that this instance
-    #     conforms to. Clients can (and should) perform their own validation of
+    #     conforms to. Clients can (and should) perform their validation of
     #     conformance to the indicated profile(s) and to any other profiles of
     #     interest.
     #   min: 1
@@ -94,7 +94,7 @@ differential:
       path: Task.contained
       sliceName: patient
       definition: >-
-        The contained patient profile representing the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
+        The contained patient profile represents the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).
       short: Contained Patient resource
       min: 1
       max: '1'
@@ -182,7 +182,7 @@ differential:
     - id: Task.for
       path: Task.for
       short: Contained Patient.
-      definition: Reference to a contained Patient resource defined by the CDex Patient Demographics Profile. It represents the member who is subject of claim or preauthorization and demographic data elements that are used by the Provider to verify member identity.
+      definition: Reference to a contained Patient resource defined by the CDex Patient Demographics Profile. It represents the member who is subject of the claim or preauthorization and demographic data elements that are used by the Provider to verify member identity.
       min: 1
       type:
         - code: Reference
@@ -355,7 +355,7 @@ differential:
       path: Task.input
       sliceName: payer-url
       short: Payer Url
-      definition: The Payer Endpoint URL for submitting attachment using the $submit-attachment operation.
+      definition: The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.
       min: 1
       max: '1'
       mustSupport: true

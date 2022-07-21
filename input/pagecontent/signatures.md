@@ -4,13 +4,13 @@ tags: CDEX
 title: Signatures
 --- -->
 
-<div class="bg-success" markdown="1">Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, in order for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
+<div class="bg-success" markdown="1">Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
  </div><!-- new-content -->
 
 ### The Signer
 
 <div class="bg-success" markdown="1">
-As illustrated in the table below, the signatory depends on the transaction.  For synchronous or automated transactions it is a system level signature, for asynchronous transactions involving a human it is a provider signature. 
+As illustrated in the table below, the signatory depends on the transaction.  For synchronous or automated transactions it is a system-level signature, for asynchronous transactions involving a human it is a provider signature. 
 
 ||Direct Query|Task Based Query|Attachments|
 |---|---|---|---|
@@ -18,7 +18,7 @@ As illustrated in the table below, the signatory depends on the transaction.  Fo
 |Human Provider||X|X|
 {:.grid}
 
-System level and a provider signatures represent different levels of attestation:
+System-level and provider signatures represent different levels of attestation:
 
 {% include human-signature.md %}
 {% include system-signature.md %}
@@ -29,7 +29,7 @@ System level and a provider signatures represent different levels of attestation
 
 ### What is Signed?
 
-The data returned in CDEX is not limited to FHIR resources, but may also include C-CDA documents, pdfs, text files and other types of data. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload.  The following table summarizes what artifacts are signed:
+The data returned in CDEX is not limited to FHIR resources, but may also include C-CDA documents, pdfs, text files, and other types of data. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload.  The following table summarizes what artifacts are signed:
 
 |Data Type Returned|Location of Signature|
 |---|---|
@@ -39,7 +39,7 @@ The data returned in CDEX is not limited to FHIR resources, but may also include
 |Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, and/or binary files referenced by DocumentReference)|Combination of Above|
 {:.grid}
 
-\* A *signed [FHIR Document]* is sent for task based requests and attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.
+\* A *signed [FHIR Document]* is sent for task-based requests and attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.
 
 The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [FHIR RESTful queries](direct-query.html#signatures), [Task based requests](task-based-approach.html#signatures) and [Sending](sending-attachments.html#signatures) and [Requesting](requesting-attachments.html#signatures).
 
@@ -64,11 +64,11 @@ The various forms of electronic signatures include:
 - a digitized handwritten signature
 - digital signature using encryption technology
 
-This guide provides specific guidance on how to implement digital signatures in the following sections. Specific guidance for other types of electronic signature is an implementation detail that is out of scope for this guide.
+This guide provides specific guidance on how to implement digital signatures in the following sections. Specific guidance for other types of electronic signatures is an implementation detail that is out of scope for this guide.
 
 #### Electronic Signature Example
 
-In this Example, a `Bundle.signature` is added to a FHIR Document. The electronic signature is a JPG Image that represents this handwritten signature:
+In this example, a `Bundle.signature` is added to a FHIR Document. The electronic signature is a JPG Image that represents this handwritten signature:
 
 <!-- ![](https://hackmd.io/_uploads/H1owYTqVK.jpg)
 
@@ -97,7 +97,7 @@ In this Example, a `Bundle.signature` is added to a FHIR Document. The electroni
 2. integrity -  They ensure the signed document has not been altered.
 3. non-repudiation - The signer can not dispute their authorship (For example, if there is subsequent legal activity related to the signed document).
 
-Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensure the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
+Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensures the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensure that the Data Consumer can trust that the signature is authentic and non-repudiable.
 
 #### Digital Signature Rules For CDEX FHIR Bundles:
 
@@ -109,12 +109,12 @@ Digital Signatures employ encryption technology and a digital certificate issued
     {:.bg-warning}</span><!-- new-content --> 
 
 3. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convenience):
-   >When the signature is an JSON Digital Signature (contentType = application/jose), the following rules apply:
+   >When the signature is a JSON Digital Signature (contentType = application/jose), the following rules apply:
    >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)]
    >- The signature is a [Detached] Signature (where the content that is signed is separate from the signature itself)
    >- When FHIR Resources are signed, the signature is across the [Canonical JSON] form of the resource(s)
-   >- The Signature **SHOULD** use the hashing algorithm SHA256. Signature validation policy will apply to the signature and determine acceptability
-   >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the Purpose(s) of Signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
+   >- The Signature **SHOULD** use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine acceptability
+   >- The Signature **SHALL** include a "CommitmentTypeIndication" element for the purpose(s) of the signature. The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013). The `Signature.type` shall contain the same values as the CommitmentTypeIndication element.
 
     There is no "CommitmentTypeIndication" element in JWS. This is an error in the FHIR specification and a tracker ([FHIR-36158]) has been logged. As documented in the [CDex Signature Bundle Profile], `Signature.type` shall contain the value "1.2.840.10065.1.12.1.5" (Verification Signature).
     {:.stu-note}
@@ -129,8 +129,8 @@ Digital Signatures employ encryption technology and a digital certificate issued
     2. The Issuer should be a trusted CA for the Consumer
     3. The Subject (or Subject Alternative Name (SAN)) should match the data Source
     4. The Validity Dates should be appropriate/long enough as determined by the business partners.
-   - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well documented and standardized canonicalization algorithm, with multiple open-source implementation across several programming languages.
-     - The `Bundle.id`,`Bundle.metadata` and `Bundle.signature` elements on the root Bundle resource **SHALL** be removed prior to canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
+   - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well-documented and standardized canonicalization algorithm, with multiple open-source implementations across several programming languages.
+     - The `Bundle.id`, `Bundle.metadata` and `Bundle.signature` elements on the root Bundle resource **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
     <!--     1. The canonicalization algorithms defined in the FHIR specification *do not work* for the enveloped signatures that are being used in this guide.  -->
 
 ##### Sender/Signer Steps
@@ -141,7 +141,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
     3.  **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).
 The public key is listed in the first certificate in the `"x5c"` specified by the "Modulus" and "Exponent" parameters of the entry.
 1. Prepare JWS Payload
-    1. Prepare valid FHIR Bundle
+    1. Prepare a valid FHIR Bundle
     2. Canonicalize the Bundle resource
     3. base64_url encode the payload
 4. Create the JWS signature using the supported algorithm.
@@ -152,46 +152,46 @@ The public key is listed in the first certificate in the `"x5c"` specified by th
    -  `Signature.when`  - System timestamp when signature created
    -  `Signature.who`  -  Reference or identifier of the organization or practitioner who signed the Bundle
    -  `Signature.data`  - base64 encoded JWS
-8. Send data to consumer:
-   1. For direct queries, the searchset Bundle is returned directly as the payload.
-   2. For Task based requests and Attachments, the  document Bundle is used
+8. Send data to the consumer:
+   1. For direct queries, the search set Bundle is returned directly as the payload.
+   2. For Task-based requests and Attachments, the  document Bundle is used
 
 ##### Receiver/Validation Steps
 
 The following steps outline the process for verifying the Signature on a Bundle.
 
 1. Retrieve and store the Bundle:
-   1. For direct queries, the searchset Bundle is this payload response.
-   2. For Task based requests the completed `Task.output`  is either:
+   1. For direct queries, the search set Bundle is this payload response.
+   2. For Task-based requests the completed `Task.output`  is either:
       -  a contained FHIR document and must first be 'decontained'
       -   a reference to a FHIR document and must be fetched from the referenced endpoint.
    3. For Attachments a FHIR Document is submitted in the operation payload.
 1. Remove the `Bundle.signature` element from the Bundle resource.
 1. Canonicalize the Bundle resource.
-1. Transform the canonicalize Bundle to a base64-url format.
+1. Transform the canonicalized Bundle to a base64-url format.
 1. Get the base64 encoded JWS  from the `Bundle.signature.data`  element
 1. Base64 decode the encoded JWS
 1. Insert the base64 encoded Bundle into the JWS payload element.
-1. Obtain public Key from the first certificate in JWS header `"x5c"` key
+1. Obtain the public key from the first certificate in the JWS header `"x5c"` key
     - base64 decode the key value
     - Use the "Subject Public Key Info"
-1. Verify Issuer, Validity Dates, Subject, and KeyUsage of certificate,
+1. Verify Issuer, Validity Dates, Subject, and KeyUsage of the certificate,
 1. Validate the JWS using the public key or the X.509 Certificate
 
 ##### Step-by-Step Examples
 
-Although [*self-signed* certificates] are used for the purpose of these examples, they are not recommended for production systems.
+Although [*self-signed* certificates] are used for these examples, they are not recommended for production systems.
 {:.bg-warning}
 
 In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate.  The `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value.
 
 - [Signed SearchSet Bundle Example]
 
-  The Searchset level signatures occurs when performing direct queries where signatures are required on the returned results.   In this case the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
+FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results.   In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
 - [Signed Document Bundle Example]
 
-  The Document level signatures occurs when performing Task based requests or Attachments transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate.
+FHIR document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR, or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate.
 
 ---
 

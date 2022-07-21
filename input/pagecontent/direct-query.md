@@ -7,7 +7,7 @@ For Direct Query, the Data Consumer directly queries the <span class="bg-success
 - Widely implemented
 - Simplest workflow
 - Authorization/Authentication protocols established
-- No human intervention needed
+- No human intervention is needed
 
 ### Sequence Diagram
 
@@ -20,19 +20,19 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 ### Discovery of Patient FHIR IDs
 
 <div class="bg-success" markdown="1">
-The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as a MRN or member id not widely supported as FHIR references in HIT systems today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another options is find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
+The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as an MRN or Member ID is not widely supported as FHIR references in HIT systems today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another option is to find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
 
 1. FHIR RESTful search on the Patient resource using a combination of an identifier known by a Data Consumer. For example, a Payer may use a member_id and patient demographics.
 
    `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
-1. FHIR RESTful search on [Coverage] resource using a combination the payor's FHIR id and identifier known by the Data Consumer.  For example, a Payer may use a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
+1. FHIR RESTful search on [Coverage] resource using a combination of the payor's FHIR id and identifier known by the Data Consumer.  For example, a Payer may use a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
 
    `GET /Coverage?payor=[FHIR id]&identifier=[member_id]`
    or
    `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
 
-However, servers may or may not support identifier based searches or searches based on member_id identifiers by HIT systems. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
+However, servers may or may not support identifier-based searches or searches based on member_id identifiers by HIT systems. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
 </div><!-- new-content -->
 
 ### Direct Query Transaction Scenarios
@@ -49,7 +49,7 @@ Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to su
 - Payer A knows the FHIR id of the Patient resource for Patient B
 - Payer A knows the appropriate codes for searching for active conditions
 
-Following guidance in US Core, a search for all active conditions uses the combination of the patient and clinical-status search parameters:
+Following the guidance in US Core, a search for all active conditions uses the combination of the patient and clinical-status search parameters:
 
 `GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
 
@@ -67,7 +67,7 @@ Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test result
 - Payer A knows the FHIR id of the Patient resource for Patient B
 - Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g.: 4548-5 *Hemoglobin A1c/Hemoglobin.total in Blood*)
 
-Following guidance in US Core searches for all HbA1c test results by a date range using using the combination of the patient and code and date search parameters:
+Following the guidance in US Core searches for all HbA1c test results by a date range using the combination of the patient and code and date search parameters:
 
 `GET [base]/Observation?patient=[FHIR id]&code=[code]&date=gt[date]`
 
@@ -86,12 +86,12 @@ Payer A Seeks Insured Person/Patient B's latest Progress notes from Provider C t
 - Payer A knows the appropriate LOINC codes for searching for Progress note CCDA documents (11506-3 *History & Physical Note*)
 - Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent Progress notes for the query results.)
 
-Getting the latest Progress note is typically a two step process:
+Getting the latest Progress note is typically a two-step process:
 
 1. Query DocumentReference which references the actual notes file
 2. Fetch the notes file
 
-Following the US Core Clinical Notes Guidance section, Payer searches for Progress note CCDA document using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets a particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
+Following the US Core Clinical Notes Guidance section, Payer searches for Progress note CCDA documents using the combination of the patient and type search parameters.  In addition, the combination of `_sort` and `_count` is used to return only the latest resource that meets particular criteria. With `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1` the last matching resource will be returned.
 
 `GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
 
@@ -103,7 +103,7 @@ The actual CCDA document is referenced in `DocumentReference.content.attachment.
 
 ### Provenance
 
-To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested as documented in US Core's [Basic Provenance] page. When returning provenance the [HRex Provenance Profile] should be used. An example illustrating this transaction is shown below.
+To the extent that the Provider keeps a record of the provenance for the source of the data, the FHIR Provenance Resource can be requested as documented on US Core's [Basic Provenance] page. When returning provenance the [HRex Provenance Profile] should be used. An example illustrating this transaction is shown below.
 
 #### Example of Direct Query Response Including Provenance
 
@@ -121,7 +121,7 @@ This example is the same as Scenario 1 above except that it also includes the co
 Some data consumers may require that the data they receive are signed.  When signatures are required on the returned results, the following general rules apply:
 
 {% include system-signature.md %}
-- The `Bundle.signature` element on the FHIR searchset Bundle is used to exchange the signature.
+- The `Bundle.signature` element on the FHIR search set Bundle is used to exchange the signature.
 
 {% include signature-disclaimer.md %}
 </div><!-- new-content -->
@@ -130,21 +130,21 @@ Some data consumers may require that the data they receive are signed.  When sig
 
 <div class="bg-success" markdown="1">
 - The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for FHIR RESTful query response data. If the signatures are required *all* search query response data will be signed by the sending organization.
-- The Data Consumer/Requester follows the documentation in the [Signatures] page for validating signatures.
-  - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently there is no standard way to communicate this, and it needs to be done “out of band”.
+- The Data Consumer/Requester follows the documentation on the [Signatures] page for validating signatures.
+  - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently, there is no standard way to communicate this, and it needs to be done “out of band”.
 </div><!-- new-content -->
 
 #### Data Source/Responder Requirements
 
 <div class="bg-success" markdown="1">
-- When an electronic or digital signature is required for a FHIR RESTful queries, the Data Source/Responder returns a *signed FHIR searchset Bundle* using the `Bundle.signature` element for the signature signed by the organization that is responding the query.
-- The Data Source/Responder follows the documentation in the [Signatures] page for producing signatures.
-- As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the searchset Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they can re-request the signed object using Task based request (see [Signatures for Task Based Requests]).
+- When an electronic or digital signature is required for a FHIR RESTful queries, the Data Source/Responder returns a *signed FHIR search set Bundle* using the `Bundle.signature` element for the signature signed by the organization that is responding to the query.
+- The Data Source/Responder follows the documentation on the [Signatures] page for producing signatures.
+- As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they can re-request the signed object using Task-based request (see [Signatures for Task Based Requests]).
 </div><!-- new-content -->
 
 <div markdown="1" class="bg-warning" id="read-warning">
 
-<span class="bg-success" markdown="1">When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instances of a resource instead of a Bundle. </span><!-- new-content --> If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return a http `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
+<span class="bg-success" markdown="1">When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. </span><!-- new-content --> If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
 
   ~~~
   HTTP/1.1 400 Not Found
@@ -169,7 +169,7 @@ Some data consumers may require that the data they receive are signed.  When sig
 
 #### Example of *Signed* Direct Query Response
 
-This example is the same as Scenario 1 above except that it also includes a digital signature. See the [Signatures] page for a complete worked example on how the signature was created and verified.
+This example is the same as Scenario 1 above except that it also includes a digital signature. See the [Signatures] page for a complete worked example of how the signature was created and verified.
 
 **Preconditions and Assumptions:**
 - In addition to the Scenario 1 assumptions above, Payer A pre-negotiated with Provider B that digital signatures are required for direct query responses.

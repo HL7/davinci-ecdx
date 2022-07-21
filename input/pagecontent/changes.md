@@ -1,32 +1,32 @@
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
 - url: <http://hl7.org/fhir/us/davinci-cdex/2022September>
-- Based on FHIR version : 4.0.1
+- Based on FHIR version: 4.0.1
 
 #### Changes:
-Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes: 1) requesting and sending attachments and 2) communicating purpose of use in Task Based Queries.
+Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes 1) requesting and sending attachments and 2) communicating the purpose of use in Task Based Queries.
 
 ### Version = 1.1.0
 - Publication Date: 2022-08-01
 - url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
-- Based on FHIR version : 4.0.1
+- Based on FHIR version: 4.0.1
 
-This STU2 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
+This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
 
 #### What’s new in Version 1.1.0 of CDex:
 
 - <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
     - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
-    - A [Sending Attachments] page that documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - A [Requesting Attachments] page to document a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
+    - A [Sending Attachments] page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
+    - A [Requesting Attachments] page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
     - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
--  A [Signatures] page a signature sections for each transaction in CDex to provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
+-  [Signatures] page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
 - A [Change Log] page to document the changes across the versions of CDex
 - More [examples](artifacts.html#6) and example scenarios
   
 #### Changes:
 
-These changes are the result of almost 60 trackers listed below. They include 2022 May HL7 balloting process, non-ballot issue, and *Draft* new content to meet anticipated Attachments legislation and rules. 
+These changes are the result of almost 60 trackers listed below. They include the 2022 May HL7 balloting process, non-ballot issue, and *Draft* new content to meet anticipated Attachments legislation and rules. 
 
 ##### May 2022 Ballot comments and links to the updated content are below::
 
