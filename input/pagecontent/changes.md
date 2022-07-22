@@ -105,7 +105,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 16. **Applied:** Adds links to operation consistently ([FHIR-36897](https://jira.hl7.org/browse/FHIR-36897)) See Changes [Here](attachments.html)
 17. **Applied:** Rewrite digital signature functional requirements: ([FHIR-36905](https://jira.hl7.org/browse/FHIR-36905)) See Changes [Here](signatures.html#digital-signatures)
 18. **Applied:** Add conformance Verbs to Submit Attachment operation page ([FHIR-36906](https://jira.hl7.org/browse/FHIR-36906)) See Changes [Here](OperationDefinition-submit-attachment.html)
-19. **Submitted:** Missing examples  ([FHIR-37245](https://jira.hl7.org/browse/FHIR-37245)) See Changes [Here](#.html)
+19. **Applied:** Missing examples  ([FHIR-37245](https://jira.hl7.org/browse/FHIR-37245)) See Changes [Here](Bundle-cdex-document-digital-sig-example.html)
 20. **Applied:** Rewrite background on section on Payers([FHIR-37252](https://jira.hl7.org/browse/FHIR-37252)) See Changes [Here](background.html#what-do-payers-do-with-clinical-information)
 21. **Applied:** Clarify support for XML with signatures ([FHIR-37264](https://jira.hl7.org/browse/FHIR-37264)) See Changes:
     -  [Here](signatures.html#digital-signature-rules-for-cdex-fhir-bundles)

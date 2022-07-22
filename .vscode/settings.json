@@ -1,3 +1,14 @@
 {
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "grammarly.selectors": [
+        {
+            "language": "perl",
+            "scheme": "untitled",
+            "pattern": "Untitled-1"
+        },
+        {
+            "language": "plaintext",
+            "scheme": "untitled"
+        }
+    ]
 }
