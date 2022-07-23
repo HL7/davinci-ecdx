@@ -3,15 +3,15 @@
   "id": "data-consumer-server",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h3 class=\"no_toc\" id=\"should_igs\">SHOULD Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core/index.html\">HL7 FHIR® US Core Implementation Guide STU3 Release 3.1.1</a></li> </ul> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/index.html\">Da Vinci Health Record Exchange (HRex) 1.0.0 - STU R1</a></li> </ul> <h3 class=\"no_toc\" id=\"shall_css\">SHALL Implement All Or Parts Of The Following Capability Statements:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-consumer-server\">Data Consumer Server CapabilityStatement</a></li> </ul> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Consumer <strong>SHALL</strong>:</p> <ol> <li>Support at least one of the these FHIR transaction approaches for exchanging clinical information as defined in this Guide: <ol> <li>Task Based Approach</li> <li>Attachments</li> </ol> </li> <li>Follow the guidelines for <a href=\"signatures.html\">Generating and Verifying Signed Resources</a> <em>if signatures are required</em>.</li> <li>Support JSON source formats for all Da Vinci CDex interactions.</li> <li>Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Consumer <strong>MAY</strong>:</p> <ol> <li> <p>Support XML source formats for all Da Vinci CDex interactions.</p> <blockquote> <p>Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p> </blockquote> </li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the FHIR <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the <a href=\"security.html\">Security and Privacy</a> section.</li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <p><strong>Summary of System Wide Operations</strong></p> <ul> <li><strong>SHOULD</strong> support the <a href=\"http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment\"><code>$submit-attachment</code></a> operation.</li> <blockquote><p>If <a href=\"attachments.html\">Attachments</a> is supported, the Data Consumer Server <strong>SHALL</strong> support the <code>$submit-attachment</code> operation.</p> </blockquote></ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#communicationrequest\">CommunicationRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#documentreference\">DocumentReference</a> </td> <td> <a href=\"http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference\">US Core DocumentReference Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#servicerequest\">ServiceRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"communicationrequest\">CommunicationRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a CommunicationRequest resource using: <code class=\"highlighter-rouge\">GET [base]/CommunicationRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"documentreference\">DocumentReference</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to support the <code>$submit-attachment</code> operation</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference\">US Core DocumentReference Profile</a> </li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>search-type</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a DocumentReference resource using: <code class=\"highlighter-rouge\">GET [base]/DocumentReference/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"servicerequest\">ServiceRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a ServiceRequest resource using: <code class=\"highlighter-rouge\">GET [base]/ServiceRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code><sup>&#8224;</sup>, <code>update</code><sup>&#8224;</sup>.</li><li><strong>MAY</strong> support <code>create</code>, <code>read</code>, <code>vread</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>search-type<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote><blockquote>update<sup>&#8224;</sup><p>If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>MAY</strong> be capable of returning a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> </div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h3 class=\"no_toc\" id=\"should_igs\">SHOULD Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core/index.html\">HL7 FHIR® US Core Implementation Guide STU3 Release 3.1.1</a></li> </ul> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/index.html\">Da Vinci Health Record Exchange (HRex) 1.0.0 - STU R1</a></li> </ul> <h3 class=\"no_toc\" id=\"shall_css\">SHALL Implement All Or Parts Of The Following Capability Statements:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-consumer-server\">Data Consumer Server CapabilityStatement</a></li> </ul> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Consumer Server <strong>SHALL</strong>:</p> <ol> <li>Support at least one of the CDex approaches for exchanging clinical information: <ol> <li>Task Based Approach</li> <li>Attachments</li> </ol> </li> <li>Follow the guidelines for <a href=\"signatures.html\">Generating and Verifying Signed Resources</a> <em>if signatures are required</em>.</li> <li>Support JSON source formats for all Da Vinci CDex interactions.</li> <li>Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Consumer Server <strong>MAY</strong>:</p> <ol> <li> <p>Support XML source formats for all Da Vinci CDex interactions.</p> <blockquote> <p>Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p> </blockquote> </li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the FHIR <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the <a href=\"security.html\">Security and Privacy</a> section.</li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <p><strong>Summary of System Wide Operations</strong></p> <ul> <li><strong>SHOULD</strong> support the <a href=\"http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment\"><code>$submit-attachment</code></a> operation.</li> <blockquote><p>If <a href=\"attachments.html\">Attachments</a> is supported, the Data Consumer Server <strong>SHALL</strong> support the <code>$submit-attachment</code> operation.</p> </blockquote></ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#communicationrequest\">CommunicationRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#documentreference\">DocumentReference</a> </td> <td> <a href=\"http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference\">US Core DocumentReference Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#parameters\">Parameters</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#servicerequest\">ServiceRequest</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"communicationrequest\">CommunicationRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a CommunicationRequest resource using: <code class=\"highlighter-rouge\">GET [base]/CommunicationRequest/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"documentreference\">DocumentReference</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to support the <code>$submit-attachment</code> operation</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference\">US Core DocumentReference Profile</a> </li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>search-type</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a DocumentReference resource using: <code class=\"highlighter-rouge\">GET [base]/DocumentReference/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"parameters\">Parameters</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to support the <code>$submit-attachment</code> operation</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Parameters resource using: <code class=\"highlighter-rouge\">GET [base]/Parameters/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"servicerequest\">ServiceRequest</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to carry authorization information regarding for requesting Clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code><sup>&#8224;</sup>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <blockquote>read<sup>&#8224;</sup><p>Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario</p> </blockquote> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a ServiceRequest resource using: <code class=\"highlighter-rouge\">GET [base]/ServiceRequest/[id]</code> </li> </ul> <hr /> </div>"
   },
   "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-consumer-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "DataConsumerServerCapabilityStatement",
   "title": "Data Consumer Server CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2022-06-06T15:57:08.770741-08:00",
+  "date": "2022-07-22T17:08:52.639510-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Server* mode when  responding to a  Data Source  (often an EHR) or one of its proxies during a clinical data exchange.   This includes the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to subscription notification posted to it endpoint updating the status of a task\n1. Responding to `$submit-attachment` operation.",
+  "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or one of its proxies during clinical data exchange.   The capabilities include one or more of the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to  the `$submit-attachment` operation.",
   "jurisdiction": [
     {
       "coding": [
@@ -109,7 +109,7 @@
   "rest": [
     {
       "mode": "server",
-      "documentation": "The  Da Vinci CDex Data Consumer **SHALL**:\n\n1. Support at least one of the these FHIR transaction approaches for exchanging clinical information as defined in this Guide:\n     1. Task Based Approach\n     1. Attachments\n1. Follow the guidelines for [Generating and Verifying Signed Resources](signatures.html) *if signatures are required*.\n1. Support JSON source formats for all Da Vinci CDex interactions.\n1. Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.\n\nThe  Da Vinci CDex Data Consumer **MAY**:\n\n1. Support XML source formats for all Da Vinci CDex interactions.\n   \n   > Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.",
+      "documentation": "The  Da Vinci CDex Data Consumer Server **SHALL**:\n\n 1. Support at least one of the CDex approaches for exchanging clinical information:\n     1. Task Based Approach\n     1. Attachments\n1. Follow the guidelines for [Generating and Verifying Signed Resources](signatures.html) *if signatures are required*.\n1. Support JSON source formats for all Da Vinci CDex interactions.\n1. Declare a CapabilityStatement identifying the scenarios, transactions and profiles supported.\n\nThe  Da Vinci CDex Data Consumer Server **MAY**:\n\n1. Support XML source formats for all Da Vinci CDex interactions.\n   \n   > Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.",
       "security": {
         "description": "1. For general security consideration refer to the FHIR [Security and Privacy Considerations](http://build.fhir.org/secpriv-module.html). \n1. For security considerations specific to this guide refer to the [Security and Privacy](security.html) section."
       },
@@ -321,8 +321,8 @@
               "valueCode": "SHOULD"
             }
           ],
-          "type": "ServiceRequest",
-          "documentation": "Required resource type to carry authorization information regarding for requesting Clinical information",
+          "type": "Parameters",
+          "documentation": "Required resource type to support the `$submit-attachment` operation",
           "interaction": [
             {
               "extension": [
@@ -349,8 +349,7 @@
                   "valueCode": "SHOULD"
                 }
               ],
-              "code": "read",
-              "documentation": "Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario"
+              "code": "read"
             },
             {
               "extension": [
@@ -415,8 +414,8 @@
               "valueCode": "SHOULD"
             }
           ],
-          "type": "Subscription",
-          "documentation": "Required resource type to subscribe to data source",
+          "type": "ServiceRequest",
+          "documentation": "Required resource type to carry authorization information regarding for requesting Clinical information",
           "interaction": [
             {
               "extension": [
@@ -434,26 +433,7 @@
                   "valueCode": "SHOULD"
                 }
               ],
-              "code": "search-type",
-              "documentation": "If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "code": "read"
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
-                  "valueCode": "MAY"
-                }
-              ],
-              "code": "vread"
+              "code": "search-type"
             },
             {
               "extension": [
@@ -462,8 +442,26 @@
                   "valueCode": "SHOULD"
                 }
               ],
-              "code": "update",
-              "documentation": "If subscriptions are supported the subscription notification is posted to it endpoint updating the status of a Task"
+              "code": "read",
+              "documentation": "Either a CommunicationRequest or ServiceRequest is required if an Authorization is required for a particular clinical data exchange scenario"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "update"
             },
             {
               "extension": [

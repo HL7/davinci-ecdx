@@ -9,6 +9,11 @@
         {
             "language": "plaintext",
             "scheme": "untitled"
+        },
+        {
+            "language": "markdown",
+            "scheme": "untitled",
+            "pattern": "Untitled-2"
         }
     ]
 }
