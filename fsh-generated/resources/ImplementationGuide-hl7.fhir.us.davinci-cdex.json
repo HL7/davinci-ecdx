@@ -80,7 +80,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Client* mode when requesting clinical data from the Data Source (often an EHR) during a clinical data exchange.  This includes the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n2. Requesting Attachments\n3. POSTing a Task resource representing a request for clinical data\n4. POSTing a Subscription resource\n5. Polling a Task resource",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n2. Requesting Attachments\n3. POSTing a Task resource representing a request for clinical data\n4. POSTing a Subscription resource\n5. Polling a Task resource",
         "exampleBoolean": false,
         "name": "Data Consumer Client CapabilityStatement"
       },
@@ -88,7 +88,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-server"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer (often a Payer) in *Server* mode when  responding to a  Data Source  (often an EHR) or one of its proxies during a clinical data exchange.   This includes the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to subscription notification posted to it endpoint updating the status of a task\n1. Responding to `$submit-attachment` operation.",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or one of its proxies during clinical data exchange.   The capabilities include one or more of the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to  the `$submit-attachment` operation.",
         "exampleBoolean": false,
         "name": "Data Consumer Server CapabilityStatement"
       },
@@ -96,7 +96,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Client* mode during a clinical data exchange with a Data Consumer. This includes the following interactions:\n1. POSTing the `$submit-attachment` operation to exchange clinical data using a FHIR based Attachments transaction.\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n1. Posting a subscription notification to a Data Consumer endpoint updating the status of a Task.",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange with a Data Consumer. The capabilities include one or more of the following interactions:\n1. Post the `$submit-attachment` operation to a Data Consumer endpoint.\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n1. Post a subscription notification to a Data Consumer endpoint updating the status of a task.",
         "exampleBoolean": false,
         "name": "Data Source Client CapabilityStatement"
       },
@@ -104,7 +104,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-server"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source (often an EHR) in *Server* mode when responding to a Data Consumer (often a Payer)  during a clinical data exchange. This includes the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST of a  Task resource representing a request for clinical data\n1. Responding to a POST of a  Subscription  resource\n1. Responding to polling of a Task resource",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Server* mode when responding to a Data Consumer   during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n1. Responding to a POST of a Task resource representing a request for clinical data\n1. Responding to a POST of a Subscription  resource\n1. Responding to polling of a Task resource",
         "exampleBoolean": false,
         "name": "Data Source Server CapabilityStatement"
       },
@@ -452,7 +452,7 @@
             },
             {
               "nameUrl": "burden-reduction.html",
-              "title": "Using  CDex Attachments with DaVinci PAS",
+              "title": "Using CDex Attachments with DaVinci PAS",
               "generation": "markdown"
             }
           ]
