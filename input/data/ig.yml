@@ -502,7 +502,7 @@ definition:
         title: Requesting Attachments
         generation: markdown
       - nameUrl: burden-reduction.html
-        title: Using  CDex Attachments with DaVinci PAS
+        title: Using CDex Attachments with DaVinci PAS
         generation: markdown
     - nameUrl: signatures.html
       title: Signatures

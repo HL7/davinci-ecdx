@@ -95,7 +95,7 @@
 <page key="toc" name="Table of Contents"/>
 <page key="task-based-approach" name="Task Based Approach"/>
 <page deprecated="true" key="terminology" name="Terminology"/>
-<page key="burden-reduction" name="Using  CDex Attachments with DaVinci PAS"/>
+<page key="burden-reduction" name="Using CDex Attachments with DaVinci PAS"/>
 <page deprecated="true" key="using-subscriptions" name="Using Subscriptions"/>
 <page deprecated="true" key="using-task" name="Using Task"/>
 </specification>

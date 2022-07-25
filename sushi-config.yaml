@@ -55,7 +55,7 @@ pages:
     sending-attachments.md:
     requesting-attachments.md:
     burden-reduction.md:
-      title: Using  CDex Attachments with DaVinci PAS
+      title: Using CDex Attachments with DaVinci PAS
   signatures.md:
     signed-searchset-bundle-example.md:
     signed-document-bundle-example.md:
