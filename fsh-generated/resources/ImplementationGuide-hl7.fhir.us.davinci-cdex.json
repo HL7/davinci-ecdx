@@ -498,7 +498,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU2"
+        "value": "STU1.1.0"
       },
       {
         "code": "path-resource",

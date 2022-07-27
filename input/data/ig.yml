@@ -527,7 +527,7 @@ definition:
   - code: copyrightyear
     value: 2022+
   - code: releaselabel
-    value: STU2
+    value: STU1.1.0
   - code: path-resource
     value: input/resources
   - code: path-resource
