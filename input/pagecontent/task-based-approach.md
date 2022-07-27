@@ -1,7 +1,7 @@
 
 This guide uses a Task Based Approach to satisfy the Data Consumer's need to request the information it needs when it can not perform a direct query. The decision to use this approach is based on the following factors:
 
-- <span class="bg-success" markdown="1">The Access to the data is restricted and a specific authorization is needed (for example due to patient privacy concerns the data needs to be reviewed and/or filtered )</span><!-- new-content -->
+- The Access to the data is restricted and a specific authorization is needed (for example due to patient privacy concerns the data needs to be reviewed and/or filtered )
 - The appropriateness of the request needs to be determined
 - The data needed is described in an unstructured or non-computable form. For example:
   - the payor may not know specific codes or identifiers to make a direct query
@@ -64,14 +64,12 @@ The sequence diagram in Figure 6 below summarizes the basic interaction between 
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 6" %}
 
-<div class="bg-success" markdown="1">
 
 ### Discovery of Providers, Payer, and Patient IDs
 
 Task-based queries require communicating either a business identifier (such as a provider NPI, or Member ID) or a [FHIR id] to uniquely identify providers, payers, and patients.  Business identifiers are used in many of the Payer to Provider based transactions today and the CDex Task Data Request Profile provides an explicit requirement to support them.  Currently, there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
 
 The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Queries. See [this section](direct-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
-</div><!-- new-content -->
 
 It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long-term solution to the issue of FHIR id discovery.
 {:.stu-note}
@@ -79,7 +77,7 @@ It is anticipated other efforts such as [FHIR at Scale Taskforce (FAST)] will pr
 
 ### Fetching the Data
 
-It is up to the Data Source to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is completed, the Data Consumer fetches the data of interest which is referenced by `Task.output`.  The Task can refer to external resources which can be subsequently fetched by the Data Consumer, or it can refer to a search set Bundle [contained] within the Task resource itself. <span class="bg-success" markdown="1">  As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read].  In the circumstances of a contained Bundle, the bundle does not have an independent existence. By using a contained Bundle, the Data Source can provide information to Data Consumers who can not perform a direct query.  For example, the Data Consumer can only access the patient's data via FHIR RESTful reads or searches if they are authorized to access it.  Since the Data Source controls the release of information contained in the Bundle, patient privacy and security is maintained.</span><!-- new-content -->
+It is up to the Data Source to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is completed, the Data Consumer fetches the data of interest which is referenced by `Task.output`.  The Task can refer to external resources which can be subsequently fetched by the Data Consumer, or it can refer to a search set Bundle [contained] within the Task resource itself.   As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read].  In the circumstances of a contained Bundle, the bundle does not have an independent existence. By using a contained Bundle, the Data Source can provide information to Data Consumers who can not perform a direct query.  For example, the Data Consumer can only access the patient's data via FHIR RESTful reads or searches if they are authorized to access it.  Since the Data Source controls the release of information contained in the Bundle, patient privacy and security is maintained.
 
 
 
@@ -99,7 +97,7 @@ This scenario demonstrates these Task-based Query options:
 1. Polling
 1. Fetching contained vs external data
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims <span class="bg-success" markdown="1">audit</span><!-- new-content -->.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims audit.
 
 ##### FHIR RESTful Query Syntax Request
 
@@ -133,15 +131,15 @@ This example repeats the first, except Patient B’s active conditions reference
 
 #### Scenario 2
 
-This scenario demonstrates requesting a non-FHIR document <span class="bg-success" markdown="1">(PDF,CCDA)</span><!-- new-content --> using a code:
+This scenario demonstrates requesting a non-FHIR document (PDF,CCDA) using a code:
 
 Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
-<span class="bg-success" markdown="1">
+
 
 ##### Progress note Exam Notes as PDF
 
-</span><!-- new-content -->
+
 
 Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
@@ -152,12 +150,11 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[9] }}
 1. {{ site.data.base-example-list[4] }}
 2. {{ site.data.base-example-list[5] }} For the actual request, the LOINC attachment code 11506-3, History & Physical Note, is used.
-3. The Patient B’s Documents referenced by Task.output are contained resources and the actual <span class="bg-success" markdown="1">documents are base64 pdf files</span><!-- new-content --> in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
+3. The Patient B’s Documents referenced by Task.output are contained resources and the actual documents are base64 pdf files in the DocumentReference.content.attachment.data elements. By polling the Task, the Payer already has the data when the Task is completed and there is no need to perform an additional RESTful GET to fetch them (documents from the resource are rendered in this example).
 
 
 {% include examplebutton_default.html example="task-scenario-2a" b_title = "Click Here To See Example Task Based Transaction for Patient's Latest Progress note" %}
 
-<div class="bg-success" markdown="1">
 
 ##### Surgical Notes as CCDA
 
@@ -166,7 +163,6 @@ Payer A Seeks an insured Person/Patient B’s operative notes from Provider C to
 Preconditions and Assumptions are the same as above except the Payer POSTS a Task to the Provider endpoint requesting Patient B's operative notes using the LOINC attachment code 11504-8, Surgical operation note.
 
 {% include examplebutton_default.html example="task-scenario-2b" b_title = "Click Here To See Example Task Based Transaction for Patient's Operative Note" %}
-</div><!-- new-content -->
 
 ### When The Task Cannot Be Completed
 
@@ -199,7 +195,7 @@ Task-based exchanges can take one of two forms - *subscription* or *polling* as 
 
 Polling is a mechanism for conveying new data to a Data Consumer as (or shortly after) the data is created or updated without requiring the Data Source to be aware of the specific needs of the Data Consumer.  The Data Consumer repeatedly queries the Data Source to see if there is new data. In the Da Vinci CDex use case, the Data Consumer would poll the Data Source by fetching the Task resource to see if has been updated.  Polling is the *default option* if the Data Source does not support subscribing to the Task as described below.
 
-<span class="bg-success" markdown="1">Data consumers can poll for a single Task or across several Tasks.  The frequency needs to be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it needs to be infrequent enough that the data source's resources are not over-taxed by the repeated query.  Data Consumers **SHOULD** perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.</span><!-- new-content -->
+Data consumers can poll for a single Task or across several Tasks.  The frequency needs to be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it needs to be infrequent enough that the data source's resources are not over-taxed by the repeated query.  Data Consumers **SHOULD** perform this operation in an automated/background manner no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.
 
 #### Subscription
 
@@ -212,7 +208,7 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 - Subscriptions need not be created independently for each Task - a Data Consumer could subscribe to all Tasks where they are the requester.  It's also possible that subscriptions could be established automatically or out-of-band.  However, these are implementation details that are out of scope for this guide.
 </div>
 
-This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the publication of the [Subscription R5 Backport Implementation Guide] for FHIR 4 and <span class="bg-success" markdown="1">recent publication of [FHIR4B](http://hl7.org/fhir/r4b-explanation.html)</span><!-- new-content --> to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Data Consumer may discover it out-of-band or simply through trial and error. <span class="bg-success" markdown="1">As soon as the Subscription Backport Guide is published and R4B named by regulations, the intent to update this guide to support the task-based subscriptions framework.</span><!-- new-content -->
+This project recognizes the major revisions to the reworked R5 subscription "topic-based" pub/sub pattern and the publication of the [Subscription R5 Backport Implementation Guide] for FHIR 4 and recent publication of [FHIR4B](http://hl7.org/fhir/r4b-explanation.html) to address the many shortcomings in the current (R4) approach to subscriptions. Due to these imminent changes in the FHIR pub/sub pattern, the discovery process for subscription support is *out of scope* for this version of the guide.  The Data Consumer may discover it out-of-band or simply through trial and error. As soon as the Subscription Backport Guide is published and R4B named by regulations, the intent to update this guide to support the task-based subscriptions framework.
 {:.stu-note}
 
 
@@ -274,7 +270,6 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 ### Signatures
 
-<div class="bg-success" markdown="1">
 Some data consumers may require that the data they receive are signed. When signatures are required on the returned results, the following general rules apply:
 
 {% include human-signature.md %}
@@ -282,24 +277,19 @@ Some data consumers may require that the data they receive are signed. When sign
 {% include inherently-signed.md %}
 
 {% include signature-disclaimer.md %}
-</div><!-- new-content -->
 
 #### The Data Consumer/Requester Requirements
 
-<div class="bg-success" markdown="1">
 - The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether:
   1. electronic or digital *provider* signatures are required for *all* Task-based query response data and/or
   2. electronic or digital *system-level* signatures are required for *all* or *some* Task-based query response data instead of or in addition to provider signatures (for example, for automated workflows) and/or
   3. electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature).
 - The Data Consumer/Requester follows the documentation on the [Signatures] page for validating signatures.
    - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently, there is no standard way to communicate this, and it needs to be done “out of band”.
-</div><!-- new-content -->
 
 #### Data Source/Responder Requirements
-<div class="bg-success" markdown="1">
 {% include data-source-sig-rules.md %}
 
-</div><!-- new-content -->
 #### Example of a *Signed* Task Based Transaction
 
 The following example repeats Scenario 1 above, however, a signature is required.

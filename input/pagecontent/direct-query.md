@@ -1,5 +1,5 @@
 
-For Direct Query, the Data Consumer directly queries the <span class="bg-success" markdown="1">Data Source</span><!-- new-content --> for specific data using the standard FHIR RESTful search. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
+For Direct Query, the Data Consumer directly queries the Data Source for specific data using the standard FHIR RESTful search. Guidance for exchanging data with FHIR search is fully described in the base FHIR specification and the Da Vinci HRex Implementation Guide.  Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
 ### Benefits
 
@@ -13,13 +13,10 @@ For Direct Query, the Data Consumer directly queries the <span class="bg-success
 
 The sequence diagram in Figure 5 below outlines a successful interaction between the Data Consumer and Data Source to query and retrieve the requested data using a direct query:
 
-<div class="bg-success" markdown="1">
 {% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
-</div><!-- new-content -->
 
 ### Discovery of Patient FHIR IDs
 
-<div class="bg-success" markdown="1">
 The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as an MRN or Member ID is not widely supported as FHIR references in HIT systems today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another option is to find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
 
 1. FHIR RESTful search on the Patient resource using a combination of an identifier known by a Data Consumer. For example, a Payer may use a member_id and patient demographics.
@@ -33,15 +30,14 @@ The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direc
    `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
 
 However, servers may or may not support identifier-based searches or searches based on member_id identifiers by HIT systems. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
-</div><!-- new-content -->
 
 ### Direct Query Transaction Scenarios
 
-The following example transactions show scenarios of using direct query to get clinical data from a <span class="bg-success" markdown="1">Data Source(HIT)</span><!-- new-content -->.
+The following example transactions show scenarios of using direct query to get clinical data from a Data Source(HIT).
 
 #### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims <span class="bg-success" markdown="1">audit</span><!-- new-content -->.
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims audit.
 
 **Preconditions and Assumptions:**
 
@@ -117,34 +113,28 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 ### Signatures
 
-<div class="bg-success" markdown="1">
 Some data consumers may require that the data they receive are signed.  When signatures are required on the returned results, the following general rules apply:
 
 {% include system-signature.md %}
 - The `Bundle.signature` element on the FHIR search set Bundle is used to exchange the signature.
 
 {% include signature-disclaimer.md %}
-</div><!-- new-content -->
 
 #### The Data Consumer/Requester Requirements
 
-<div class="bg-success" markdown="1">
 - The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder whether electronic or digital signatures are required for FHIR RESTful query response data. If the signatures are required *all* search query response data will be signed by the sending organization.
 - The Data Consumer/Requester follows the documentation on the [Signatures] page for validating signatures.
   - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is bad or absent. Currently, there is no standard way to communicate this, and it needs to be done “out of band”.
-</div><!-- new-content -->
 
 #### Data Source/Responder Requirements
 
-<div class="bg-success" markdown="1">
 - When an electronic or digital signature is required for a FHIR RESTful queries, the Data Source/Responder returns a *signed FHIR search set Bundle* using the `Bundle.signature` element for the signature signed by the organization that is responding to the query.
 - The Data Source/Responder follows the documentation on the [Signatures] page for producing signatures.
 - As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. If the Consumer/Requester assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g CCDA, PDF, Image, CDA on FHIR ) and it is not present, they can re-request the signed object using Task-based request (see [Signatures for Task Based Requests]).
-</div><!-- new-content -->
 
 <div markdown="1" class="bg-warning" id="read-warning">
 
-<span class="bg-success" markdown="1">When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. </span><!-- new-content --> If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
+When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle.  If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
 
   ~~~
   HTTP/1.1 400 Not Found

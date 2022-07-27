@@ -4,12 +4,10 @@ tags: CDEX
 title: Signatures
 --- -->
 
-<div class="bg-success" markdown="1">Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
- </div><!-- new-content -->
-
+Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
+ 
 ### The Signer
 
-<div class="bg-success" markdown="1">
 As illustrated in the table below, the signatory depends on the transaction.  For synchronous or automated transactions it is a system-level signature, for asynchronous transactions involving a human it is a provider signature. 
 
 ||Direct Query|Task Based Query|Attachments|
@@ -24,7 +22,6 @@ System-level and provider signatures represent different levels of attestation:
 {% include system-signature.md %}
 
 {% include signature-disclaimer.md %}
-</div><!-- new-content -->
 
 
 ### What is Signed?
@@ -45,14 +42,12 @@ The details for how to indicate the signature requirement and how to respond wit
 
 Requirements for using *FHIR Signatures* to sign a Bundle with electronic or digital signatures are documented in the sections below.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
 
-<div class="bg-success" markdown="1">
 
 ### CDex Signature Bundle Profile
 
 Signatures in CDex are defined as an [enveloped  signature]. The FHIR Bundle is the envelope. The [`Bundle.signature`] element is used for signing the document or payload. {{ site.data.resources.['StructureDefinition/cdex-signature-bundle']['description'] }}
 
 See the [CDex Task Attachment Request Profile] formal definition for further details.
-</div><!-- new-content -->
 
 ### Electronic Signatures
 
@@ -101,12 +96,12 @@ Digital Signatures employ encryption technology and a digital certificate issued
 
 #### Digital Signature Rules For CDEX FHIR Bundles:
 
-1. <span class="bg-success" markdown="1">**SHALL** use the [CDex Signature Bundle Profile]</span><!-- new-content -->
+1. **SHALL** use the [CDex Signature Bundle Profile]
 2. **SHALL** use JSON Web Signature (JWS)(see [RFC 7515])
    >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
 
-    <span class="bg-success" markdown="1">Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.
-    {:.bg-warning}</span><!-- new-content --> 
+    Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON.  Transforms to and from XML will invalidate signatures.
+    {:.bg-warning} 
 
 3. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convenience):
    >When the signature is a JSON Digital Signature (contentType = application/jose), the following rules apply:
@@ -147,7 +142,7 @@ The public key is listed in the first certificate in the `"x5c"` specified by th
 4. Create the JWS signature using the supported algorithm.
 5. Remove the payload element from the JWS.
 6. base64 encode the JWS
-7. <span class="bg-success" markdown="1">Add the Signature element to the [CDex Signature Bundle Profile]</span><!-- new-content --> and populate the mandatory Signature datatype elements and actual signature content:
+7. Add the Signature element to the [CDex Signature Bundle Profile] and populate the mandatory Signature datatype elements and actual signature content:
    -  `Signature.type`  - Fixed to code =  "1.2.840.10065.1.12.1.5" [(Verification Signature)](http://hl7.org/fhir/valueset-signature-type.html)
    -  `Signature.when`  - System timestamp when signature created
    -  `Signature.who`  -  Reference or identifier of the organization or practitioner who signed the Bundle

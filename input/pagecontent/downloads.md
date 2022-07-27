@@ -17,7 +17,6 @@ All the [Examples] that are used in this Implementation Guide are available for 
 - [XML](examples.xml.zip)
 - [JSON](examples.json.zip)
 
-<div class="bg-success" markdown="1">
 
 ### Example Flow Charts:
 
@@ -27,7 +26,6 @@ Individual flowcharts ( the text between the \'\'\') can be viewed using *flowch
 
  - [Technical FlowSheets](techflow_examples.md){:.download="true"}
   
-</div><!-- new-content -->
 
 
 
