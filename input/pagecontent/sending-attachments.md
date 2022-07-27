@@ -12,7 +12,6 @@ See the [`$submit-attachment`] operation definition for further details.
 
 As shown below in figure 7, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
-<div class="bg-success" markdown="1">
 
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
 
@@ -23,11 +22,10 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
    - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
 4. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
 
-</div><!-- new-content -->
 
 ### Data Elements for Sending Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters <span class="bg-danger" markdown="1">and their corresponding x12n 275 analogs</span><!-- new-content --> in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters <span class="bg-danger" markdown="1">and their corresponding x12n 275 analogs in the following table: 
 
 {% include attachments_to_275.md %}
 
@@ -50,11 +48,10 @@ In the following examples, a Provider creates a claim and sends *unsolicited att
   - Typically, when the attachments are CCDA documents as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - Provider knows the Payer's endpoint for sending attachments.  Note that the [`$submit-attachment`] operation can be used by any HTTP endpoint, not just FHIR RESTful servers.
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
-- <span class="bg-success" markdown="1">Payer associates attachments to the claim.</span><!-- new-content -->
+- Payer associates attachments to the claim.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
-<div class="bg-success" markdown="1">
 
 #### Scenario 1b: CCDA Document Attachments Submitted *Prior* to Claim
 
@@ -67,37 +64,30 @@ This Scenario is the same as Scenario 1a above except that the attachments are s
  This scenario is the same as Scenario 1a, except the Provider is submitting laboratory results in support of a claim.  There are multiple attachments each populated with a FHIR Observation resource. If a signature were required it would be converted to a signed FHIR document like the example in the Signatures section.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario2.md" b_title = "Click Here To See Example Laboratory Results Attachments" %}
-</div><!-- new-content -->
 
 ---
 
 ### Signatures
 
-<div class="bg-success" markdown="1">
 Some data consumers may require that the data they receive are signed. When signatures are required, the following general rules apply:
 
 {% include human-signature.md %}
 {% include inherently-signed.md %}
 
 {% include signature-disclaimer.md %}
-</div><!-- new-content -->
 
 #### The Payer Requirements
 
-<div class="bg-success" markdown="1">
 - For *Unsolicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder on whether electronic or digital signatures are required.  If signatures are required, *all* attachments will be signed by the provider submitting them.
 - For *Solicited* Attachments, the Payer/Requester *pre-negotiates* with the organization representing the Provider/Responder on whether electronic or digital signatures are required for:
   1. *all* attachments or
   2. *only* for attachments where the attachment request communicates the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
 - The Payer/Requester follows the documentation on the [Signatures] page for validating signatures.
   - If the signatures fail verification when processing the '$submit-attachments' operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
-</div><!-- new-content -->
 
 #### Provider Requirements
 
-<div class="bg-success" markdown="1">
 {% include data-source-sig-rules.md %}
-</div><!-- new-content -->
 
 #### Example: *Signed* FHIR Resource Attachments
 

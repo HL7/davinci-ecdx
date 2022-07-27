@@ -4,13 +4,13 @@ Da Vinci is a private sector initiative that addresses the needs of the Value-Ba
 
 ### What Do Payers Do with Clinical Information?
 
-Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. <span class="bg-success" markdown="1">Payers also want to create a clinical record of their members to be able to reduce redundant care and make better medical treatment and care planning recommendations to providers.</span><!-- new-content -->
+Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. Payers also want to create a clinical record of their members to be able to reduce redundant care and make better medical treatment and care planning recommendations to providers.
 
 #### Example Scenarios
 
-- <span class="bg-success" markdown="1">Payer requests *attachments* for a claim submission or prior authorization.</span><!-- new-content -->
-  -  <span class="bg-success" markdown="1">For example, additional documentation to support medical necessity or a coverage rule.</span><!-- new-content -->
-- Payer requests <span class="bg-success" markdown="1">additional documentation</span><!-- new-content --> to support a claims audit.
+- Payer requests *attachments* for a claim submission or prior authorization.
+  -  For example, additional documentation to support medical necessity or a coverage rule.
+- Payer requests additional documentation to support a claims audit.
 - Payer requests patient health record information to support their Risk Adjustment submissions to the Centers for Medicare and Medicaid Services (CMS).
 - Payer requests patient health record information to support a [HEDIS] or CMS Five-Star Quality Measure Rating quality program.
 - Payer requests patient health record information to support their member records.
@@ -57,15 +57,15 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 {% include draft_content_note.md  content="section" %}
 
-<span class="bg-success" markdown="1">FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:</span><!-- new-content -->
+FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
 
-1. **[Direct Query]:** <span class="bg-success" markdown="1">Payer or External Provider System</span><!-- new-content --> directly queries <span class="bg-success" markdown="1">Provider system</span><!-- new-content --> for specific data using the standard FHIR RESTful search.
-2. **[Task Based Approach]:** <span class="bg-success" markdown="1">Payer or External Provider System</span><!-- new-content --> requests the information desired using the FHIR *Task* resource and the <span class="bg-success" markdown="1">Provider system</span><!-- new-content --> supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-3. **[Solicited and Unsolicited Attachments]** <span class="bg-success" markdown="1">Payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. Provider system uses a "push" based FHIR operation to submit attachments to Payer.</span><!-- new-content -->
+1. **[Direct Query]:** Payer or External Provider System directly queries Provider system for specific data using the standard FHIR RESTful search.
+2. **[Task Based Approach]:** Payer or External Provider System requests the information desired using the FHIR *Task* resource and the Provider system supplies the data possibly with human involvement to find/aggregate/filter/approve it.
+3. **[Solicited and Unsolicited Attachments]** Payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. Provider system uses a "push" based FHIR operation to submit attachments to Payer.
 
 <div markdown="1" class="stu-note">
 
-<span class="bg-success" markdown="1">Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting a detailed set of clinical information related to their members.  For these requests, the [Bulk Data Access IG] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.</span><!-- new-content -->
+Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting a detailed set of clinical information related to their members.  For these requests, the [Bulk Data Access IG] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
 </div>
 
 
@@ -91,7 +91,6 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 1. The data may be reviewed by a human practitioner before sending it back to the data consumer.
 1. The data is sent back to the data consumer.
 
-<div class="bg-success" markdown="1">
 
 
 #### Attachments Workflow
@@ -107,7 +106,6 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
 - The Payer system acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.
   
-</div><!-- new-content -->
 
 #### Steps
 
@@ -117,6 +115,6 @@ Figure 4 below illustrates the exchange of clinical data between a Payer system 
    - In some cases, attachments are submitted **without an explicit request** as *unsolicited* attachments. 
 3. Payer system accepts attachments.
  
-*Out of Scope*: <span class="bg-success" markdown="1">How Payer systems associates attachments to and processes the claim or prior authorization.</span><!-- new-content -->
+*Out of Scope*: How Payer systems associates attachments to and processes the claim or prior authorization.
 
 {% include link-list.md %}
