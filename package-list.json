@@ -22,26 +22,26 @@
         },
         {
             "version": "1.1.0",
-            "desc": "This STU2 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.  Details of the changes in this version can be seen at http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html",
+            "desc": "This STU1.1.0 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.  Details of the changes in this version can be seen at http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "20220-08-01",
-            "sequence": "STU2",
-            "path": "http://hl7.org/fhir/us/davinci-cdex/STU2",
+            "sequence": "STU1.1.0",
+            "path": "http://hl7.org/fhir/us/davinci-cdex/STU1.1.0",
             "status": "trial-use",
             "fhirversion": "4.0.1",
             "current": true
         },
         {
             "version": "1.1.0-ballot",
-            "desc": "2022 May Ballot Version: this version ballot the draft content in the STU1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide.  The draft content includes handling of Attachments and Digital Signatures. Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html",
+            "desc": "2022 May Ballot Version: this version ballot the draft content in the STU1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide.  The draft content includes handling of Attachments and Digital Signatures. Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "2022-03-25",
-            "sequence": "STU2",
+            "sequence": "STU1.1.0",
             "path": "http://hl7.org/fhir/us/davinci-cdex/2022May",
             "status": "ballot",
             "fhirversion": "4.0.1"
         },
         {
             "version": "1.0.0",
-            "desc": "STU1 Version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide: this version is the first published version of this guide and is the result of the June 2019 and January 2021 HL7 balloting process.  Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html",
+            "desc": "STU1 Version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide: this version is the first published version of this guide and is the result of the June 2019 and January 2021 HL7 balloting process.  Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "2022-03-25",
             "sequence": "STU1",
             "path": "http://hl7.org/fhir/us/davinci-cdex/STU1",
@@ -50,7 +50,7 @@
         },
         {
             "version": "0.2.0",
-            "desc": "January 2021 Ballot Version:  Based on the 2019-06-20 ballot feedback, this version has been completely re-written for this ballot. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes between this ballot version (0.2.0) and the 2019-06-20 ballot version (0.1.0). Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html",
+            "desc": "January 2021 Ballot Version:  Based on the 2019-06-20 ballot feedback, this version has been completely re-written for this ballot. The refactoring has been sufficiently large that it is not practical/useful to enumerate a list of changes between this ballot version (0.2.0) and the 2019-06-20 ballot version (0.1.0). Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "2020-10-23",
             "sequence": "STU1",
             "path": "http://hl7.org/fhir/us/davinci-cdex/2021Jan",
@@ -59,7 +59,7 @@
         },
         {
             "version": "0.1.0",
-            "desc": "June 2019 Ballot Version: this version is the first ballot for Da Vinci CDex. Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html",
+            "desc": "June 2019 Ballot Version: this version is the first ballot for Da Vinci CDex. Details of the changes in this version can be seen at  http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "2019-06-18",
             "sequence": "STU1",
             "path": "http://hl7.org/fhir/us/davinci-cdex/2019Jun",
