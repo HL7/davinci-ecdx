@@ -46,8 +46,7 @@
             "sequence": "STU1",
             "path": "http://hl7.org/fhir/us/davinci-cdex/STU1",
             "status": "trial-use",
-            "fhirversion": "4.0.1",
-            "// current": true
+            "fhirversion": "4.0.1"
         },
         {
             "version": "0.2.0",
