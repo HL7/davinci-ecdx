@@ -568,5 +568,7 @@ definition:
     value: xml
   - code: generate
     value: json
+  - code: version-comparison
+    value: 1.0.0
   - code: path-history
     value: http://hl7.org/fhir/us/davinci-cdex/history.html

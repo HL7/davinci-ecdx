@@ -89,6 +89,8 @@ parameters:
   generate:
     - xml
     - json
+  version-comparison:
+     - 1.0.0
 copyrightyear: '2022+'
 # releaselabel: Ballot
 releaselabel: STU2
