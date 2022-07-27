@@ -1,5 +1,5 @@
 
-{% include new-content-note.md %}
+<!--{% raw %} {% include new-content-note.md %} {% endraw %}-->
 
 {% include draft_intro.md %}
 

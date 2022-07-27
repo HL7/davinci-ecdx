@@ -77,6 +77,8 @@
 [What is Signed]: signatures.html#what-is-signed
 [Signatures for Task Based Requests]: task-based-approach.html#signatures
 [X12 transactions]: https://x12.org/
+[X12n 275 transaction]: https://x12.org/products/transaction-sets
+[X12n 277 and 278 response transactions]: https://x12.org/products/transaction-sets
 [HEDIS]: https://en.wikipedia.org/wiki/Healthcare_Effectiveness_Data_and_Information_Set
 [Specification]: specification.html
 [Patient Match]: {{site.data.fhir.path}}patient-operation-match.html

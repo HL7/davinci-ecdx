@@ -1,6 +1,6 @@
 {% include draft_content_note.md  content="page" %}
 
-This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.  This transaction is used for both *solicited* and *unsolicited* attachments.   It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 275 transaction.
+This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.  This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the [X12n 275 transaction].
 
 ### `$submit-attachment` Operation
 
@@ -27,7 +27,7 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
 
 ### Data Elements for Sending Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 analogs in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters <span class="bg-danger" markdown="1">and their corresponding x12n 275 analogs</span><!-- new-content --> in the following table: 
 
 {% include attachments_to_275.md %}
 

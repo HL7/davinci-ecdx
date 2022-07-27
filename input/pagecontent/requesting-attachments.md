@@ -1,6 +1,6 @@
 {% include draft_content_note.md  content="page" %}
 
-This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
+This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compatible with the [X12n 277 and 278 response transactions].
 
 ### Non-FHIR Request
 
@@ -22,7 +22,7 @@ The sequence diagram in the Figure below summarizes the basic interaction betwee
 
 ### Data Elements for Requesting Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They have been mapped to the [CDex Task Attachment Request Profile] elements and their corresponding x12n 277 and 278 response analogs in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They have been mapped to the [CDex Task Attachment Request Profile] elements <span class="bg-danger" markdown="1">and their corresponding x12n 277 and 278 response analogs</span><!-- new-content --> in the following table: 
 
 {% include requests-277_278.md %}
 
