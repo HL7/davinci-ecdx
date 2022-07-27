@@ -16,15 +16,20 @@ See the [CDex Task Attachment Request Profile] formal definition for further det
 
 ### Technical Workflow
 
-The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
+The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and [`$submit-atgit tachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
 ### Data Elements for Requesting Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They have been mapped to the [CDex Task Attachment Request Profile] elements <span class="bg-danger" markdown="1">and their corresponding x12n 277 and 278 response analogs in the following table: 
+<!-- The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments. They have been mapped to the [CDex Task Attachment Request Profile] elements and their corresponding x12n 277 and 278 response analogs in the following table:  -->
 
-{% include requests-277_278.md %}
+In a future version of this guide, the mapping between these data elements and the corresponding x12n 277 and 278 response fields will be added
+{:.stu-note}
+
+<!-- {% raw %} {% include requests-277_278.md %} {% endraw %} -->
+
+{% include data_elements_to_requests.md %}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 

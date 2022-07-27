@@ -25,9 +25,14 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
 
 ### Data Elements for Sending Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters <span class="bg-danger" markdown="1">and their corresponding x12n 275 analogs in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.<!-- They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 analogs in the following table:  -->
 
-{% include attachments_to_275.md %}
+In a future version of this guide, the mapping between these data elements and the corresponding x12n 275 fields will be added
+{:.stu-note}
+
+<!-- {% raw %} {% include attachments_to_275.md %} {% endraw %} -->
+
+{% include data_elements_to_submit.md %}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and an [Excel](data-element-mapping.xlsx) file.
 
