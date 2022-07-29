@@ -8,7 +8,7 @@ Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the Draft cont
 
 ### Version = 1.1.0
 - Publication Date: 2022-08-01
-- url: <http://hl7.org/fhir/us/davinci-cdex/STU1.1.0>
+- url: <http://hl7.org/fhir/us/davinci-cdex/STU1.1>
 - Based on FHIR version: 4.0.1
 
 This STU1.1.0 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
