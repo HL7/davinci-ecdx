@@ -1,6 +1,6 @@
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
-- url: <http://hl7.org/fhir/us/davinci-cdex/2022September>
+- url: <http://hl7.org/fhir/us/davinci-cdex/2022Sep>
 - Based on FHIR version: 4.0.1
 
 #### Changes:
