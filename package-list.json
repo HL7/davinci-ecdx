@@ -12,6 +12,15 @@
             "fhirversion": "4.0.1"
         },
         {
+            "version": "2.0.0-ballot",
+            "desc": "2022 September Ballot Version: This ballot is restricted to the Draft content in the STU 1.1.0 version of CDex. The draft content includes 1) requesting and sending attachments and 2) communicating the purpose of use in Task Based Queries. Details of the changes in this version can be seen at http://hl7.org/fhir/us/davinci-cdex/2022Sept/changes.html",
+            "date": "20220-08-01",
+            "sequence": "STU2",
+            "path": "http://hl7.org/fhir/us/davinci-cdex/2022Sep",
+            "status": "ballot",
+            "fhirversion": "4.0.1"
+        },
+        {
             "version": "1.1.0",
             "desc": "This STU1.1.0 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.  Details of the changes in this version can be seen at http:/hl7.org/fhir/us/davinci-cdex/STU1.1.0/changes.html",
             "date": "2022-08-01",
