@@ -25,16 +25,16 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
 
 ### Data Elements for Sending Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters <span class="bg-danger" markdown="1">and their corresponding x12n 275 analogs in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when sending attachments.  They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 analogs in the following table: 
+
+The mapping between these data elements and the corresponding x12n 277 and 278 response fields is incomplete. It will be added before the STU publication of this guide.
+{:.note-to-balloters}
 
 {% include attachments_to_275.md %}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and an [Excel](data-element-mapping.xlsx) file.
 
 For *solicited* attachments, the same data elements are sent in the request for attachments. See the [Requesting Attachments] page for a detailed discussion on how these data elements are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response back to the Payer.
-
- <!-- The table below shows the mappings between the corresponding data communicated in the attachments request for CDex Request Attachment, X12n 277, and 278response forms and the  [`$submit-attachment`] parameters.  -->
-
 
 ### Examples
 

@@ -22,7 +22,10 @@ The sequence diagram in the Figure below summarizes the basic interaction betwee
 
 ### Data Elements for Requesting Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They have been mapped to the [CDex Task Attachment Request Profile] elements <span class="bg-danger" markdown="1">and their corresponding x12n 277 and 278 response analogs in the following table: 
+The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments.  They have been mapped to the [CDex Task Attachment Request Profile] elements and their corresponding x12n 277 and 278 response analogs in the following table:
+
+The mapping between these data elements and the corresponding x12n 277 and 278 response fields is incomplete. It will be added before the STU publication of this guide.
+{:.note-to-balloters}
 
 {% include requests-277_278.md %}
 
