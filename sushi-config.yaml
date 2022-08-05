@@ -93,7 +93,7 @@ parameters:
      - 1.0.0
 copyrightyear: '2022+'
 # releaselabel: Ballot
-releaselabel: STU1.1.0
+releaselabel: STU1.1
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
