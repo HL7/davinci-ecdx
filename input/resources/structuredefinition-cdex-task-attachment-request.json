@@ -317,6 +317,23 @@
                 "mustSupport": true
             },
             {
+                "id": "Task.input:code.extension:item-ids",
+                "path": "Task.input.extension",
+                "sliceName": "item-ids",
+                "short": "Line item numbers",
+                "definition": "The line item numbers in the Claim or Prior Authorization the request applies to.",
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Extension",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber"
+                        ]
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
                 "id": "Task.input:code.type",
                 "path": "Task.input.type",
                 "patternCodeableConcept": {

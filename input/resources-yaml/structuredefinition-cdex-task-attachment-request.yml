@@ -336,6 +336,19 @@ differential:
         valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
       mustSupport: true
 
+    - id: 'Task.input:code.extension:item-ids'
+      path: Task.input.extension
+      sliceName: item-ids
+      short: Line item numbers
+      definition: The line item numbers in the Claim or Prior Authorization the request applies to.
+      # min: 0
+      max: '*'
+      type:
+        - code: Extension
+          profile:
+            - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+      mustSupport: true
+
     - id: 'Task.input:code.type'
       path: Task.input.type
       patternCodeableConcept:
