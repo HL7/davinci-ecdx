@@ -1,119 +1,108 @@
 resourceType: CodeSystem
 id: cdex-temp
-url: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+url: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
 name: CDexTempCodes
 title: CDex Temporary Code System
 status: draft
-date: '2021-10-26T18:38:56-07:00'
-description: >-
-  Codes temporarily defined as part of the CDex implementation guide.  These
-  will eventually migrate into an officially maintained terminology (likely
-  HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).
+experimental: false
+date: 2022-10-24
+description: Codes temporarily defined as part of the CDex implementation guide.  These
+  will eventually migrate into an officially maintained terminology (likely HL7's
+  [UTG](https://terminology.hl7.org/codesystems.html) code systems).
 caseSensitive: true
 content: complete
 concept:
-  - code: claims-processing
-    display: Claim Processing
-    definition:  Request for data necessary from payers to support claims for services.
-
-  - code: preauth-processing
-    display: Pre-authorization Processing
-    definition: Request for data necessary from payers to support pre-authorization for services.
-
-  - code: risk-adjustment
-    display: Risk Adjustment
-    definition: Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided.
-
-  - code: quality-metrics
-    display: Quality Metrics
-    definition: Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures.
-
-  - code: referral
-    display: Referral
-    definition: Request for additional clinical information from referring provider to support performing the requested service.
-
-  - code: social-care
-    display: Social Care
-    definition: Request for data from payers to support the non-medical social needs of individuals, especially the elderly, vulnerable or with special needs.
-
-  - code: authorization-other
-    display: Other Authorization
-    definition: Request for data from payers for other authorization request not otherwise specified.
-
-  - code: care-coordination
-    display: Care Coordination
-    definition: Request for data from payers to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care.
-
-  - code: documentation-general
-    display: General Documentation
-    definition: Request for data used from payers or providers for general documentation.
-
-  - code: orders
-    display: Orders
-    definition: Request for additional clinical information from referring provider to support orders.
-
-  - code: patient-status
-    display: Patient Status
-    definition: Requests for patient health record information from payers to support their payer member records.
-
-  - code: signature
-    display: Signature
-    definition: Request for signatures from payers or providers on requested data.
-
-  - code: care-planning
-    display: Care Planning
-    definition: Request for data from payers or providers to determine how to deliver care for a particular patient, group or community.
-
-  - code: social-risk
-    display: Social Risk
-    definition: Request for data from payers or other providers to assess of social risk, establishing coded health concerns/problems, creating patient driven goals, managing interventions, and measuring outcomes.
-
-  - code: operations-nos
-    display: Operations Not Otherwise Specified
-    definition: >-
-      [Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) and isn't defined further to ascertain a more detailed Purpose of Use concept.
-
-  - code: payment-nos
-    display: Payment Not Otherwise Specified
-    definition: >-
-       [Healthcare Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html) and isn't defined further to ascertain a more detailed Purpose of Use concept.
-
-  - code: purpose-of-use
-    display: Purpose Of Use
-    definition: Purpose of use for the requested data.
-
-  - code: signature-flag
-    display: Signature Flag
-    definition: Flag to indicate whether the requested data requires a signature.
-
-  - code: tracking-id
-    display: Tracking Id
-    definition: A business identifier that ties requested attachments back to the claim or prior-authorization (referred to as the “re-association tracking control numbers”). 
-
-  - code: multiple-submits-flag
-    display: Multiple Submits Flag
-    definition: Flag to indicate whether the requested data can be submitted in multiple transactions.  If true the data can be submitted in separate transactions.  if false *all* the data should be submitted in a single transaction.
-
-  - code: payer-url
-    display: Payer URL
-    definition: $submit-attachment operation endpoint where the requested data can be submitted
-
-  - code: service-date
-    display: Service Date
-    definition: Date of service or starting date of the service for the claim or prior authorization.
-
-  # - code: PAC
-  #   display: Patient Account Number
-  #   definition: A provider's unique patient identifier when submitting a claim or prior-authorization.
-    #use C4BB code: pat http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
-
-
-  # - code: CI
-  #   display: Claim or PreAuthorization ID
-  #   definition: A provider issued unique claim or preAuthorization Identifier which is assigned when  submitting a claim or prior-authorization.
-  #use C4BB code: uc http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
-
-
-  - code: attachment-request
-    display: Attachment Request
-    definition: A Task by a Payer requesting attachments for a claim or prior-authorization from the Provider.  The Provider is expected to submit the attachments using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
+- code: claims-processing
+  display: Claim Processing
+  definition: Request for data necessary from payers to support claims for services.
+- code: preauth-processing
+  display: Pre-authorization Processing
+  definition: Request for data necessary from payers to support pre-authorization
+    for services.
+- code: risk-adjustment
+  display: Risk Adjustment
+  definition: Request for data from payers to calculate differences in beneficiary-level
+    risk factors that can affect quality outcomes or medical costs, regardless of
+    the care provided.
+- code: quality-metrics
+  display: Quality Metrics
+  definition: Request for data used for aggregation, calculation and analysis, and
+    ultimately reporting of quality measures.
+- code: referral
+  display: Referral
+  definition: Request for additional clinical information from referring provider
+    to support performing the requested service.
+- code: social-care
+  display: Social Care
+  definition: Request for data from payers to support the non-medical social needs
+    of individuals, especially the elderly, vulnerable or with special needs.
+- code: authorization-other
+  display: Other Authorization
+  definition: Request for data from payers for other authorization request not otherwise
+    specified.
+- code: care-coordination
+  display: Care Coordination
+  definition: Request for data from payers to create a complete clinical record for
+    each of their members to improve care coordination and provide optimum medical
+    care.
+- code: documentation-general
+  display: General Documentation
+  definition: Request for data used from payers or providers for general documentation.
+- code: orders
+  display: Orders
+  definition: Request for additional clinical information from referring provider
+    to support orders.
+- code: patient-status
+  display: Patient Status
+  definition: Requests for patient health record information from payers to support
+    their payer member records.
+- code: signature
+  display: Signature
+  definition: Request for signatures from payers or providers on requested data.
+- code: care-planning
+  display: Care Planning
+  definition: Request for data from payers or providers to determine how to deliver
+    care for a particular patient, group or community.
+- code: social-risk
+  display: Social Risk
+  definition: Request for data from payers or other providers to assess of social
+    risk, establishing coded health concerns/problems, creating patient driven goals,
+    managing interventions, and measuring outcomes.
+- code: operations-nos
+  display: Operations Not Otherwise Specified
+  definition: '[Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
+    and isn''t defined further to ascertain a more detailed Purpose of Use concept.'
+- code: payment-nos
+  display: Payment Not Otherwise Specified
+  definition: '[Healthcare Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
+    and isn''t defined further to ascertain a more detailed Purpose of Use concept.'
+- code: purpose-of-use
+  display: Purpose Of Use
+  definition: Purpose of use for the requested data.
+- code: signature-flag
+  display: Signature Flag
+  definition: Flag to indicate whether the requested data requires a signature.
+- code: tracking-id
+  display: Tracking Id
+  definition: "A business identifier that ties requested attachments back to the claim
+    or prior-authorization (referred to as the \u201Cre-association tracking control
+    numbers\u201D)."
+- code: multiple-submits-flag
+  display: Multiple Submits Flag
+  definition: Flag to indicate whether the requested data can be submitted in multiple
+    transactions.  If true the data can be submitted in separate transactions.  if
+    false *all* the data should be submitted in a single transaction.
+- code: payer-url
+  display: Payer URL
+  definition: $submit-attachment operation endpoint where the requested data can be
+    submitted
+- code: service-date
+  display: Service Date
+  definition: Date of service or starting date of the service for the claim or prior
+    authorization.
+- code: attachment-request
+  display: Attachment Request
+  definition: A Task by a Payer requesting attachments for a claim or prior-authorization
+    from the Provider.  The Provider is expected to submit the attachments using the
+    $submit-attachment operation to the endpoint provided in the "payer-url" input
+    parameter.

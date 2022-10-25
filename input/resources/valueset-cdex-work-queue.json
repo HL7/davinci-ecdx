@@ -5,7 +5,8 @@
     "name": "CDexWorkQueueCodes",
     "title": "CDex Work Queue Value Set",
     "status": "active",
-    "date": "2021-10-26T18:38:56-07:00",
+    "experimental": false,
+    "date": "2022-10-24",
     "description": "The set work queue tags that the provider may use in their workflow to process requests. This code set is composed of codes defined by this Guide.",
     "compose": {
         "include": [
