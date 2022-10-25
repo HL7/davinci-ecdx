@@ -1,7 +1,7 @@
 
-<!--{% raw %} {% include new-content-note.md %} {% endraw %}-->
+{% include new-content-note.md %}
 
-{% include draft_intro.md %}
+<!--{% raw %} { % include draft_intro.md % }  {% endraw %}-->
 
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 

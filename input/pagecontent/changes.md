@@ -1,3 +1,114 @@
+### Version = 2.0.0-preview (CI-Build)
+- Publication Date: Projected Q1 2023
+- url: <http://build.fhir.org/ig/HL7/davinci-ecdx/index.html>
+- Based on FHIR version: 4.0.1
+
+This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the third published version of this guide and is the result of the 2022 September HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
+
+<!-- #### What’s new in Version 2.0.0 of CDex:
+
+- <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
+    - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
+    - A [Sending Attachments] page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
+    - A [Requesting Attachments] page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
+    - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
+-  [Signatures] page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
+- A [Change Log] page to document the changes across the versions of CDex
+- More [examples](artifacts.html#6) and example scenarios -->
+  
+#### Changes:
+
+These changes are the result of over 80 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issue.
+
+##### September 2022 ballot and non-ballot comments and links to the updated content are below:
+
+**Status: Summary (Jira Issue) Link to Change**
+
+1. **Triaged**: Messaging not reflected in data flow. ([FHIR-30837](https://jira.hl7.org/browse/FHIR-30837) See Changes [Here](#)
+1. **Triaged**: overflowing their workflow in-basket impacting patient care ([FHIR-31890](https://jira.hl7.org/browse/FHIR-31890) See Changes [Here](#)
+1. **Triaged**: Incomplete Narrative Content rendering of Submit Attachment Parameters Resource example ([FHIR-36907](https://jira.hl7.org/browse/FHIR-36907) See Changes [Here](#)
+1. **Triaged**: $submit-attachment input parameter is referred to inconsistently; please correct. ([FHIR-37956](https://jira.hl7.org/browse/FHIR-37956) See Changes [Here](#)
+1. **Submitted**: Solicited attachments for claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060) See Changes [Here](#)
+1. **Triaged**: Consider merging flow diagrams for solicited flow ([FHIR-38061](https://jira.hl7.org/browse/FHIR-38061) See Changes [Here](#)
+1. **Triaged**: omitted service item extension to CDex Task Attachment Request Profile ([FHIR-38070](https://jira.hl7.org/browse/FHIR-38070) See Changes [Here](#)
+1. **Submitted**: PoU is insufficiently exchanged in production OAuth to be dynamic ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142) See Changes [Here](#)
+1. **Submitted**: DS4P should be evaluated before required ([FHIR-38144](https://jira.hl7.org/browse/FHIR-38144) See Changes [Here](#)
+1. **Submitted**: capitalization ([FHIR-38145](https://jira.hl7.org/browse/FHIR-38145) See Changes [Here](#)
+1. **Submitted**: at least insufficient, probably unnecessary ([FHIR-38146](https://jira.hl7.org/browse/FHIR-38146) See Changes [Here](#)
+1. **Submitted**: CDEX Request Attachment 	5.3 Requesting Attachments:  last sentence: It is intended to be compatible with the X12n 277 and 278 response transactions. ([FHIR-38152](https://jira.hl7.org/browse/FHIR-38152) See Changes [Here](#)
+1. **Submitted**: CDex Request Attachments Profile: first paragraph, last sentence ([FHIR-38153](https://jira.hl7.org/browse/FHIR-38153) See Changes [Here](#)
+1. **Submitted**: CDex Request Attachments Technical Workflow: Correction first sentence ([FHIR-38154](https://jira.hl7.org/browse/FHIR-38154) See Changes [Here](#)
+1. **Submitted**: CDex Request Attachment Step by Step Solicited Attachment Transaction: Modify sentence ([FHIR-38155](https://jira.hl7.org/browse/FHIR-38155) See Changes [Here](#)
+1. **Submitted**: CDEX Requesting Attachments: Step by Step Solicited Attachment Transaction ([FHIR-38156](https://jira.hl7.org/browse/FHIR-38156) See Changes [Here](#)
+1. **Waiting for Input**: CDex Attachment Request - 15.	Tracking ID (Payer or Provider Assigned) comment ([FHIR-38172](https://jira.hl7.org/browse/FHIR-38172) See Changes [Here](#)
+1. **Submitted**: CDex Attachment Request -	5.3.4.1	Data Elements for requesting attachments – Table questions/ modifications ([FHIR-38173](https://jira.hl7.org/browse/FHIR-38173) See Changes [Here](#)
+1. **Submitted**: CDex Request Attachments  -5.3.4.1 Data Elements for requesting attachments – Table questions/ modifications ([FHIR-38174](https://jira.hl7.org/browse/FHIR-38174) See Changes [Here](#)
+1. **Submitted**: Typo in Solicited Attachments for a  Claim diagram ([FHIR-38175](https://jira.hl7.org/browse/FHIR-38175) See Changes [Here](#)
+1. **Submitted**: CDEX Requesting Attachments: Step by Step Solicited Attachment Transaction:  ([FHIR-38177](https://jira.hl7.org/browse/FHIR-38177) See Changes [Here](#)
+1. **Submitted**: CDEX Requesting Attachments: Step by Step Solicited Attachment Transaction: In flow chart ([FHIR-38178](https://jira.hl7.org/browse/FHIR-38178) See Changes [Here](#)
+1. **Submitted**: CDEX Requesting Attachments: Verifying Patient Identity: Modification request change language ([FHIR-38179](https://jira.hl7.org/browse/FHIR-38179) See Changes [Here](#)
+1. **Submitted**: CDex Requesting Attachments: Modify first and second sentence ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184) See Changes [Here](#)
+1. **Submitted**: CDex Requesting Attachments: General Comment ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186) See Changes [Here](#)
+1. **Submitted**: CDex Requesting Attachments: Modify sentence 2 ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187) See Changes [Here](#)
+1. **Triaged**: spec should be clarified that prior auth doesn't require signatures ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188) See Changes [Here](#)
+1. **Submitted**: Submit-attachment operation should require either an OrganizationId or ProviderId, Not both ([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189) See Changes [Here](#)
+1. **Triaged**: service date should not be required for prior auth ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191) See Changes [Here](#)
+1. **Triaged**: clarify conformance expectations are for prior auth attachments, not claim attachments ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192) See Changes [Here](#)
+1. **Triaged**: Verifying Patient Identity ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194) See Changes [Here](#)
+1. **Submitted**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195) See Changes [Here](#)
+1. **Triaged**: Claim Information ([FHIR-38196](https://jira.hl7.org/browse/FHIR-38196) See Changes [Here](#)
+1. **Submitted**: Incorrect URL ([FHIR-38208](https://jira.hl7.org/browse/FHIR-38208) See Changes [Here](#)
+1. **Submitted**: Include Workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210) See Changes [Here](#)
+1. **Submitted**: Patient example missing XML and JSCON ([FHIR-38230](https://jira.hl7.org/browse/FHIR-38230) See Changes [Here](#)
+1. **Submitted**: LOINC code 11504-8 display and text inconsistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233) See Changes [Here](#)
+1. **Submitted**: Typo in example glycated hemoglobin ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236) See Changes [Here](#)
+1. **Submitted**: Clarification of Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240) See Changes [Here](#)
+1. **Submitted**: Definition of Attachment is limited ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241) See Changes [Here](#)
+1. **Submitted**: Change ""possibly"" with ""if necessary"" ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242) See Changes [Here](#)
+1. **Submitted**: CDex Attachment Request appears to be missing data ([FHIR-38243](https://jira.hl7.org/browse/FHIR-38243) See Changes [Here](#)
+1. **Submitted**: Unclear what transaction communicates Payer request ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244) See Changes [Here](#)
+1. **Submitted**: The POU for an Attachment Request is unclear ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245) See Changes [Here](#)
+1. **Submitted**: CDex Patient Demographics Profile ([FHIR-38252](https://jira.hl7.org/browse/FHIR-38252) See Changes [Here](#)
+1. **Submitted**: Incorrect operation name ([FHIR-38253](https://jira.hl7.org/browse/FHIR-38253) See Changes [Here](#)
+1. **Submitted**: Duplicate text ([FHIR-38254](https://jira.hl7.org/browse/FHIR-38254) See Changes [Here](#)
+1. **Submitted**: small typo ([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255) See Changes [Here](#)
+1. **Submitted**: cdex-temp code system must not be used in implemented systems ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259) See Changes [Here](#)
+1. **Submitted**: Clarify use of data tagging ([FHIR-38286](https://jira.hl7.org/browse/FHIR-38286) See Changes [Here](#)
+1. **Submitted**: Reference to X12 elements and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287) See Changes [Here](#)
+1. **Triaged**: FHIR ID Support and Usage ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318) See Changes [Here](#)
+1. **Waiting for Input**: Liability and Privacy Concerns with Digital Signature ([FHIR-38320](https://jira.hl7.org/browse/FHIR-38320) See Changes [Here](#)
+1. **Submitted**: Clarification regarding reassociation being out of scope ([FHIR-38322](https://jira.hl7.org/browse/FHIR-38322) See Changes [Here](#)
+1. **Triaged**: Task Reason Code ([FHIR-38325](https://jira.hl7.org/browse/FHIR-38325) See Changes [Here](#)
+1. **Triaged**: X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326) See Changes [Here](#)
+1. **Triaged**: Adding Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327) See Changes [Here](#)
+1. **Submitted**: Remove words ""transaction layer"" for conciseness ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328) See Changes [Here](#)
+1. **Submitted**: Word change ""analogs"" to ""fields"" ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330) See Changes [Here](#)
+1. **Submitted**: Confirm parameter naming style ([FHIR-38366](https://jira.hl7.org/browse/FHIR-38366) See Changes [Here](#)
+1. **Submitted**: Improve rendered document rendering ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367) See Changes [Here](#)
+1. **Submitted**: *Signed* should be in italics ([FHIR-38368](https://jira.hl7.org/browse/FHIR-38368) See Changes [Here](#)
+1. **Triaged**: stronger language needed  ([FHIR-38576](https://jira.hl7.org/browse/FHIR-38576) See Changes [Here](#)
+1. **Triaged**: revise section 'what Do Payers Do with Clinical Information?' ([FHIR-38578](https://jira.hl7.org/browse/FHIR-38578) See Changes [Here](#)
+1. **Triaged**: add supplemental guide to example scenarios  ([FHIR-38580](https://jira.hl7.org/browse/FHIR-38580) See Changes [Here](#)
+1. **Triaged**: CDex use case examples  ([FHIR-38585](https://jira.hl7.org/browse/FHIR-38585) See Changes [Here](#)
+1. **Submitted**: question related to authoring/sign off ([FHIR-38588](https://jira.hl7.org/browse/FHIR-38588) See Changes [Here](#)
+1. **Submitted**: Concerned about the need for human intervention if the patient matching tech isn't built out ([FHIR-38592](https://jira.hl7.org/browse/FHIR-38592) See Changes [Here](#)
+1. **Triaged**: add limited payer access for the preconditions and assumptions  ([FHIR-38595](https://jira.hl7.org/browse/FHIR-38595) See Changes [Here](#)
+1. **Triaged**: does Da Vinci plan to standardize a way to communicate failed signatures?  ([FHIR-38596](https://jira.hl7.org/browse/FHIR-38596) See Changes [Here](#)
+1. **Triaged**: statement on purpose of use should be stronger  ([FHIR-38598](https://jira.hl7.org/browse/FHIR-38598) See Changes [Here](#)
+1. **Triaged**: change SHOULD to SHALL ([FHIR-38599](https://jira.hl7.org/browse/FHIR-38599) See Changes [Here](#)
+1. **Triaged**: term used  ([FHIR-38600](https://jira.hl7.org/browse/FHIR-38600) See Changes [Here](#)
+1. **Triaged**: Would there be a claim associated with a HEDIS lab value request for quality reporting? ([FHIR-38601](https://jira.hl7.org/browse/FHIR-38601) See Changes [Here](#)
+1. **Triaged**: Polling frequency ([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602) See Changes [Here](#)
+1. **Triaged**: trading partner agreements could be a barrier  ([FHIR-38603](https://jira.hl7.org/browse/FHIR-38603) See Changes [Here](#)
+1. **Submitted**: used word provider when you meant payer  ([FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) See Changes [Here](#)
+1. **Triaged**: scope  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605) See Changes [Here](#)
+1. **Triaged**: Need a new example for Signed FHIR Resource Attachments ([FHIR-38609](https://jira.hl7.org/browse/FHIR-38609) See Changes [Here](#)
+1. **Triaged**: remove reference to HIPAA attachments rule  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612) See Changes [Here](#)
+1. **Waiting for Input**: change SHOULD to SHALL ([FHIR-38613](https://jira.hl7.org/browse/FHIR-38613) See Changes [Here](#)
+1. **Triaged**: Suspected typo in cardinality for $submit-attachment's Attachment input parameter needs to be corrected. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632) See Changes [Here](#)
+
+
+
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
 - url: <http://hl7.org/fhir/us/davinci-cdex/2022Sep>
@@ -11,7 +122,7 @@ Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the *Draft* co
 - url: <http://hl7.org/fhir/us/davinci-cdex/STU1.1>
 - Based on FHIR version: 4.0.1
 
-This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
+This STU1.1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
 
 #### What’s new in Version 1.1.0 of CDex:
 
@@ -117,7 +228,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 23. **Applied:** Update $submit-attachments diagram to show 200 w/ OperationOutcome ([FHIR-37271](https://jira.hl7.org/browse/FHIR-37271)) See Changes:
     -  [Here](sending-attachments.html#technical-workflow)
     -  [Here]sending-attachments.html#scenario-1b-ccda-document-attachments-submitted-prior-to-claim)
-    -  [Here](OperationDefinition-submit-attachment.html#submitattachment)
+    -  [Here](OperationDefinition-submit-attachment.html)
 24. **Applied:** Add PayerId to $submit-attachments ([FHIR-37331](https://jira.hl7.org/browse/FHIR-37331)) See Changes [Here](OperationDefinition-submit-attachment.html)
 25. **Applied:** Clarify that claim's attachment submitter is same as claim submitter ([FHIR-37332](https://jira.hl7.org/browse/FHIR-37332)) See Changes:
    - [Here](sending-attachments.html#data-elements-for-sending-attachments)
@@ -138,7 +249,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 31. **Applied:** Rewrite section on Discovery of FHIR IDs ([FHIR-37652] (https://jira.hl7.org/browse/FHIR-37652)) See Changes:  
     -  [Here](task-based-approach.html#discovery-of-providers-payer-and-patient-ids)
     -  [Here](direct-query.html#discovery-of-patient-fhir-ids) 
-32. **Applied:** Document how implementers locate the proper identifier ([FHIR-37651](https://jira.hl7.org/browse/FHIR-37651)) See Changes [Here](OperationDefinition-submit-attachment.html#submitattachment)
+32. **Applied:** Document how implementers locate the proper identifier ([FHIR-37651](https://jira.hl7.org/browse/FHIR-37651)) See Changes [Here](OperationDefinition-submit-attachment.html)
 33. **Applied:** Clarify how to fetch data if can not perform a direct query. ([FHIR-37649](https://jira.hl7.org/browse/FHIR-37649)) See Changes [Here](task-based-approach.html#fetching-the-data)
 
 ---
