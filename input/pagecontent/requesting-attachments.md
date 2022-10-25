@@ -226,7 +226,7 @@ Business identifiers are used to identify the Patient, the Payer, and the Provid
 
 ##### Claim Information
 
-<span class="bg-success" markdown="1">The Task communicates whether the attachments are for a claim or a prior authorization.  The payer system's claim or prior-auth business identifier is supplied, which ties the claim or prior-auth to the attachments.</span><!-- new-content -->
+The Task communicates whether the attachments are for a Claim or Prior Authorization and the Claim or Prior Authorization ID is identified by its business Identifier. 
 
 |Data|CDex Claim Profile element|
 |---|---|
