@@ -70,14 +70,6 @@
     "resource": [
       {
         "reference": {
-          "reference": "OperationDefinition/submit-attachment"
-        },
-        "description": "This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or prior authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the code, free text, or search string for information that was requested\n1. Data elements for the association to the claim/prior authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")*\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters.",
-        "exampleBoolean": false,
-        "name": "Submit Attachment Operation"
-      },
-      {
-        "reference": {
           "reference": "CapabilityStatement/data-consumer-client"
         },
         "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Requesting Clinical Data using a FHIR RESTful query\n2. Requesting Attachments\n3. POSTing a Task resource representing a request for clinical data\n4. POSTing a Subscription resource\n5. Polling a Task resource",
@@ -115,6 +107,14 @@
         "description": "Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).",
         "exampleBoolean": false,
         "name": "CDex Temporary Code System"
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/submit-attachment"
+        },
+        "description": "This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or prior authorization. This operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the code, free text, or search string for information that was requested\n1. Data elements for the association to the claim/prior authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")*\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., NPI)\n    - A unique provider identifier (e.g., NPI)\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters.",
+        "exampleBoolean": false,
+        "name": "Submit Attachment Operation"
       },
       {
         "reference": {
