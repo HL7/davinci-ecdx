@@ -1,28 +1,25 @@
 resourceType: ValueSet
 id: cdex-POU
-url: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU
+url: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU'
 name: CDexPOUCodes
 title: CDex Purpose of Use Value Set
 status: draft
-experimental: false
-date: 2022-10-24
-description: The set of purpose of use codes for the requested data (the output of
-  the task). This code set is composed of [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core)
-  and additional codes defined by this Guide.
+date: '2021-10-26T18:38:56-07:00'
+description: The set of purpose of use codes for the requested data (the output of the task). This code set is composed of [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide.
 compose:
   include:
-  - system: http://terminology.hl7.org/CodeSystem/v3-ActReason
-    concept:
-    - code: COVERAGE
-    - code: CLMATTCH
-    - code: COVAUTH
-    - code: HQUALIMP
-    - code: HDM
-    - code: COC
-    - code: TREAT
-  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-    concept:
-    - code: care-planning
-    - code: social-risk
-    - code: payment-nos
-    - code: operations-nos
+    - system: 'http://terminology.hl7.org/CodeSystem/v3-ActReason'
+      concept:
+        - code: COVERAGE
+        - code:  CLMATTCH
+        - code:  COVAUTH
+        - code:  HQUALIMP
+        - code:  HDM
+        - code:  COC
+        - code:  TREAT
+    - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+      concept:
+        - code: care-planning
+        - code: social-risk
+        - code: payment-nos
+        - code: operations-nos

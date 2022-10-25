@@ -20,7 +20,7 @@
                 "short": "Resource ID Default Value",
                 "min": 1,
                 "max": "1",
-                "fixedId": "patient",
+                "fixedString": "patient",
                 "mustSupport": true
             },
             {

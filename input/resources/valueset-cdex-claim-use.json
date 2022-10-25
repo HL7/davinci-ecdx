@@ -5,8 +5,7 @@
     "name": "CDexClaimUseCodes",
     "title": "CDex Claim Use Value Set",
     "status": "draft",
-    "experimental": false,
-    "date": "2022-10-24",
+    "date": "2022-06-13",
     "description": "The purpose of a Claim resource and the reason for attachments. It includes the codes \"preauthorization\" and \"claim\".",
     "compose": {
         "include": [

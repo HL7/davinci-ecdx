@@ -5,8 +5,7 @@
     "name": "CDexIdentifierTypes",
     "title": "CDex Identifier Types Value Set",
     "status": "active",
-    "experimental": false,
-    "date": "2022-10-24",
+    "date": "2022-07-15",
     "description": "Identifiers type for providers and organizations limited to NPI or US Tax id.",
     "compose": {
         "include": [
