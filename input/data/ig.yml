@@ -151,21 +151,6 @@ definition:
     exampleBoolean: false
     name: CDex Patient Demographics Profile
   - reference:
-      reference: StructureDefinition/cdex-practitionerrole
-    description: 'This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)
-      within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`to
-      communicate the Provider ID as *both* a practitioner and organization identifier.  It
-      constrains the following elements to be *mandatory* (min=1):
-
-
-      - A default resource ID of "practitionerrole"
-
-      - A practitioner.identifier
-
-      - An organization.identifier'
-    exampleBoolean: false
-    name: CDex PractitionerRole Profile
-  - reference:
       reference: StructureDefinition/cdex-signature-bundle
     description: "This Bundle profile enforces the various elements of signature documented\
       \ in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\
