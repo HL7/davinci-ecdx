@@ -1,0 +1,75 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "cdex-practitionerrole",
+    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole",
+    "name": "CDexPractitionerRoleProfile",
+    "title": "CDex PractitionerRole Profile",
+    "status": "active",
+    "experimental": false,
+    "date": "2022-11-09",
+    "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`to communicate the Provider ID as *both* a practitioner and organization identifier.  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier\n- An organization.identifier",
+    "fhirVersion": "4.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "PractitionerRole",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "PractitionerRole.id",
+                "path": "PractitionerRole.id",
+                "min": 1,
+                "max": "1",
+                "fixedId": "practitionerrole",
+                "mustSupport": true
+            },
+            {
+                "id": "PractitionerRole.practitioner",
+                "path": "PractitionerRole.practitioner",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+                        ]
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "PractitionerRole.practitioner.identifier",
+                "path": "PractitionerRole.practitioner.identifier",
+                "short": "Practitioner ID (e.g., Type 1 NPI)",
+                "definition": "business identifier representing the provider practitioner",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "PractitionerRole.organization",
+                "path": "PractitionerRole.organization",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization"
+                        ]
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "PractitionerRole.organization.identifier",
+                "path": "PractitionerRole.organization.identifier",
+                "short": "Organization ID (e.g., Type 2 NPI)",
+                "definition": "business identifier representing the provider organization",
+                "min": 1,
+                "mustSupport": true
+            }
+        ]
+    }
+}

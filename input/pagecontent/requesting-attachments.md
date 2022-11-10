@@ -16,7 +16,7 @@ See the [CDex Task Attachment Request Profile] formal definition for further det
 
 ### Technical Workflow
 
-The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and [`$submit-atgit tachment`] operation.
+The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
@@ -27,9 +27,9 @@ The sequence diagram in the Figure below summarizes the basic interaction betwee
 In a future version of this guide, the mapping between these data elements and the corresponding x12n 277 and 278 response fields will be added
 {:.stu-note}
 
-<!-- {% raw %} {% include requests-277_278.md %} {% endraw %} -->
+{% include requests-277_278.md %}
 
-{% include data_elements_to_requests.md %}
+<!-- {% raw %}{% include data_elements_to_requests.md %} {% endraw %} -->
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 
@@ -197,7 +197,13 @@ convey what the task is about, its status, and the intent of the request.  The T
 
 ##### Identifying the Payer, Provider, and Patient
 
-Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim.  The attachment request will be directed to the same Provider who submitted the claim or prior authorization. As discussed above, the Patient identifier is in the contained Patient resource which is referenced by the Task.for element. These IDs are echoed back to the Payer when submitting the attachments. (note the various Task dates as well)
+<div class="bg-success" markdown="1">
+The attachment request will be directed to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim, and these identifiers are echoed back to the Payer when submitting the attachments.
+
+As discussed above, the Patient identifier is in the contained Patient resource, referenced by the Task.for element. The Provider identifier(s) are referenced in the Task.owner element for the Practitioner (i,e., a Type1 NPI) or the Practitioner's Organization (i,e., a Type2 NPI) or both. A contained PractitionerRole resource is used to communicate both identifiers if present.
+
+(note the various Task dates in the request fragment below)
+</div><!-- new-content -->
 
 |Actor|CDex Claim Profile element|
 |---|---|
@@ -410,7 +416,7 @@ The Tracking ID is an identifier that ties the attachments back to the claim or 
 
 ##### Identifying the Payer, Provider, Organization, and Patient
 
-As documented above, business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the Claim. These should be the same as communicated in the request.  The NPI should be used for the Provider and Provider Organization IDs.
+As documented above, business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the Claim. These should be the same as communicated in the request.  The NPI should be used for the Practitioner and Organization IDs.
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|

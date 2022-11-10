@@ -30,9 +30,9 @@ The following data elements are needed to associate an attachment to a claim or 
 In a future version of this guide, the mapping between these data elements and the corresponding x12n 275 fields will be added
 {:.stu-note}
 
-<!-- {% raw %} {% include attachments_to_275.md %} {% endraw %} -->
+{% include attachments_to_275.md %}
 
-{% include data_elements_to_submit.md %}
+<!-- {% raw %} {% include data_elements_to_submit.md %} {% endraw %} -->
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and an [Excel](data-element-mapping.xlsx) file.
 

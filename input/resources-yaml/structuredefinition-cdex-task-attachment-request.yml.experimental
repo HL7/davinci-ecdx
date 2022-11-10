@@ -10,13 +10,13 @@ description: |-
   This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
   
   It constrains the following elements to be *mandatory* (min=1):
-  - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
+  - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements.
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element)
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
-  - A Task.owner.identifier element representing the Provider ID
+  - A Task.owner.identifier element representing the Provider ID which can be for a practitioner (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)) and/or an organization (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)).
   - A Task.for.reference element fixed to "\#string" - a reference the contained Patient Resource
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
@@ -26,6 +26,7 @@ description: |-
   - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization
 
   and the following elements to be *must support* [min=0]:
+  - A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole) to communicate the Provider ID as *both* a practitioner and organization identifier.
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)
   - A Task.input element representing a flag to indicate whether the requested data requires a signature
@@ -227,25 +228,67 @@ differential:
 
     - id: Task.owner
       path: Task.owner
-      short: Provider who submitted claim or preauthorization
+      slicing:
+        discriminator:
+          - type: type
+            path: $this.resolve()
+        rules: open
+      short: Provider (practitioner and/or organization) who submitted claim or preauthorization
       min: 1
+      mustSupport: true
+
+    - id: Task.owner:practitioner
+      path: Task.owner
+      sliceName: practitioner
+      short: Practitioner who submitted claim or preauthorization
       type:
         - code: Reference
           targetProfile:
             - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'
-            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'
-        # - code: Reference
-        #   targetProfile:
-        #     - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
-        #   aggregation: 
-        #     - contained
       mustSupport: true
 
-    - id: Task.owner.identifier
+    - id: Task.owner:practitioner.identifier
       path: Task.owner.identifier
-      short: Provider ID
-      definition: business identifier representing the Provider
+      short: Practitioner ID (e.g., Type 1 NPI)
+      definition: business identifier representing the Practitioner
       min: 1 
+      mustSupport: true
+
+    - id: Task.owner:organization
+      path: Task.owner
+      sliceName: organization
+      short: Organization who submitted claim or preauthorization
+      type:
+        - code: Reference
+          targetProfile:
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'
+      mustSupport: true
+
+    - id: Task.owner:organization.identifier
+      path: Task.owner.identifier
+      short: Organization ID (e.g., Type 2 NPI)
+      definition: business identifier representing the provider Organization
+      min: 1 
+      mustSupport: true
+
+
+    - id: Task.owner:practitionerrole
+      sliceName: practitionerrole
+      path: Task.owner
+      short: Both practitioner and organization who submitted claim or preauthorization
+      type:
+        - code: Reference
+          targetProfile:
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
+          aggregation:
+            - contained
+      mustSupport: true
+  
+    - id: Task.owner:practitionerrole.reference
+      path: Task.owner.reference
+      short: Contained resource reference
+      min: 1
+      fixedString: '#practionerrole'
       mustSupport: true
 
     - id: Task.reasonCode
@@ -332,7 +375,7 @@ differential:
       sliceName: code
       short: Attachment Codes
       definition: A code indicating the type of data/document to be returned
-      comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.
+      comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.
       min: 1
       # max: '*'
       binding:

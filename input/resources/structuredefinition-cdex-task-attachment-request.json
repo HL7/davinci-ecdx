@@ -308,7 +308,7 @@
                 "sliceName": "code",
                 "short": "Attachment Codes",
                 "definition": "A code indicating the type of data/document to be returned",
-                "comment": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.",
+                "comment": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.",
                 "min": 1,
                 "binding": {
                     "strength": "extensible",
