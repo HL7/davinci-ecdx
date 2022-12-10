@@ -24,12 +24,7 @@ The sequence diagram in the Figure below summarizes the basic interaction betwee
 
 <!-- The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments. They have been mapped to the [CDex Task Attachment Request Profile] elements and their corresponding x12n 277 and 278 response analogs in the following table:  -->
 
-In a future version of this guide, the mapping between these data elements and the corresponding x12n 277 and 278 response fields will be added
-{:.stu-note}
-
 {% include requests-277_278.md %}
-
-<!-- {% raw %}{% include data_elements_to_requests.md %} {% endraw %} -->
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
 
@@ -213,7 +208,7 @@ A Task.input element represents the date of service or starting date of the serv
 
 #### Provider Submits Solicited Attachments
 
-The Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint. As stated above, the Payer endpoint is communicated to the Payer in the CDex Task Attachment Request Profile. The same data elements sent in the request for attachments are echoed back when submitting the attachments using the [`$submit-attachment`] operation. The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters. These parameters are documented in more detail below.
+The Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint. As stated above, the Payer endpoint is communicated to the Payer in the CDex Task Attachment Request Profile. The same data elements sent in the request for attachments are echoed back when submitting the attachments using the [`$submit-attachment`] operation. <span class="bg-success" markdown="1">The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters.</span><!-- new-content --> These parameters are documented in more detail below.
 
 **Request**
 
