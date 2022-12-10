@@ -115,7 +115,7 @@ parameter:
 
   - name: Attachment
     use: in
-    min: 0
+    min: 1
     max: "*"
     documentation: >-
       The attachments that are communicated for a claim or prior authorization. They are applied to the ItemId (line items) and/or Code (LOINC) parameters if present.  If no ItemId is present, then the attachment is applied to the entire claim or prior authorization.
