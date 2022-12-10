@@ -1,13 +1,5 @@
 {
     "resourceType": "Task",
-    "meta": {
-        "tag": [
-            {
-                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "care-coordination"
-            }
-        ]
-    },
     "status": "requested",
     "intent": "order",
     "code": {

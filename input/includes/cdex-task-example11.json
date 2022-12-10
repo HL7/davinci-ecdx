@@ -1,13 +1,5 @@
 {
     "resourceType": "Task",
-    "meta": {
-        "tag": [
-            {
-                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "orders"
-            }
-        ]
-    },
     "basedOn": [
         {
             "reference": "http://example.org/fhir/CommunicationRequest/cdex-example-authorization"

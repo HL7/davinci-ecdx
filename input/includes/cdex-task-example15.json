@@ -1,13 +1,5 @@
 {
     "resourceType": "Task",
-    "meta": {
-        "tag": [
-            {
-                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "claims-processing"
-            }
-        ]
-    },
     "status": "requested",
     "intent": "order",
     "code": {

@@ -13,7 +13,7 @@ parameter:
     - 
         name: TrackingId
         valueIdentifier:
-            system: 'http://example.org/cdex/payer/tracking-ids'
+            system: http://example.org/provider
             value: '21234657'
 
     - 

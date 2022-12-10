@@ -12,7 +12,7 @@ meta:
 parameter:
 - name: TrackingId
   valueIdentifier:
-    system: http://example.org/cdex/payer/tracking-ids
+    system: http://example.org/provider
     value: '11234657'
 - name: AttachTo
   valueCode: claim

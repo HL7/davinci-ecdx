@@ -113,6 +113,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 63. **Triaged**: remove reference to HIPAA attachments rule  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612)) See Changes [Here](#)
 64. **Waiting for Input**: change SHOULD to SHALL ([FHIR-38613](https://jira.hl7.org/browse/FHIR-38613)) See Changes [Here](#)
 65. **Applied**: Change $submit-attachment's Attachment input parameter to min=1. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632)) See Changes [Here](OperationDefinition-submit-attachment.html)
+66. **Applied**: Change Tracking-id.system to Must Support; and $submit-attachment TrackingId to type Identifier. ([FHIR-39337](https://jira.hl7.org/browse/FHIR-39337)) See Changes [Here](OperationDefinition-submit-attachment.html) and [Here](StructureDefinition-cdex-task-attachment-request.html)
 
 
 
