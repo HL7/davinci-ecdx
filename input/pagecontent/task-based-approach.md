@@ -42,7 +42,7 @@ The details for these Task-based transactions are described in detail in the [Re
 
 #### Purpose of Use
 
-{% include draft_content_note.md  content="section" %}
+
 
 The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. This element intends to define a potentially new way to exchange data with a dynamically defined POU.
 

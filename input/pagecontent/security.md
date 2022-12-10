@@ -15,7 +15,7 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
-{% include draft_content_note.md  content="section" %}
+
 
 1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer.  Organizational user access scopes are typically pre-negotiated and documented via business agreements. These agreements shall be translated into the appropriate SMART App Launch scopes.
 
@@ -23,7 +23,7 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### Purpose of Use
 
-{% include draft_content_note.md  content="section" %}
+
 
 The purpose for which data may be used by or on behalf of an organization is known as the Purpose of Use (POU). It is an important part of the data sharing agreement between Data Consumers and Data Sources because privacy policies and consent directives dictate the response to data requests.  Typically, a single POU is assigned for a client application when the app is registered and broadly defined POU types such as those listed in the [NHIN Purpose Of Use Code System].  For example, a Payer’s POU is typically “OPERATIONS” and a Provider’s is typically “TREATMENT”.  Therefore, it is implicit when the Data Consumer makes a direct query or an “automatically fulfilled” Task to the Data Source using that app.
 

@@ -1,4 +1,4 @@
-{% include draft_content_note.md  content="page" %}
+
 
 This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compatible with the X12n 277 and 278 response transactions. <span class="bg-success" markdown="1">For more information on X12 defined transactions, see [X12 Transaction Sets].</span><!-- new-content -->
 

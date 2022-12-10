@@ -1,4 +1,4 @@
-{% include draft_content_note.md  content="page" %}
+
 
 This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer. This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, <span class="bg-success" markdown="1">the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request.</span><!-- new-content -->
 
