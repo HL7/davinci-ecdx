@@ -127,3 +127,6 @@
 [CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
 [CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
 [Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/STU1/
+[validating profiles and resources]: {{site.data.fhir.path}}validation.html
+[ImplementationGuide]: {{site.data.fhir.path}}implementationguide.html
+[CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html

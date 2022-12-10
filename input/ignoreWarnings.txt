@@ -5,30 +5,17 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/St
 
 # the example demonstrate the legitimate use case for using free text instead of codes for requesting information using a Task-based Query
 
-WARNING: Task/cdex-task-example13: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
-WARNING: Task/cdex-task-example14: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
-WARNING: Task/cdex-task-example4: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
-WARNING: Task/cdex-task-example5: Task.input[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type)
+No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|3.1.0)
 
 # The referenced ValueSet is a valid external and not recognized by the Terminology server.
 
 WARNING: StructureDefinition/cdex-task-attachment-request: StructureDefinition.differential.element[28].binding: The valueSet reference http://loinc.org/vs/valid-hl7-attachment-requests on element Task.input could not be resolved
 
-# The example used a sham condition "Examplitis" to illustrate the transaction and thus uses a sham code and code system:
-
-INFORMATION: Bundle/cdex-searchset-digital-sig-example: Bundle.entry[0].resource.ofType(Condition).code.coding[0]: Code System URI 'http://example.org/terminology' is unknown so the code cannot be validated
 
 # The use CPT codes can used as additional codings which, because of IP issues, are not validated by the terminology server
 
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[7].part[2].resource.ofType(Observation).code.coding[1]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[8].part[2].resource.ofType(Observation).code.coding[1]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[9].part[2].resource.ofType(Observation).code.coding[1]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
-# These example use example/org codes to demonstrate how local codes can used as additional codings.
-
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[7].part[2].resource.ofType(Observation).code.coding[2]: Code System URI 'http://example.org/lab-results' is unknown so the code cannot be validated
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[8].part[2].resource.ofType(Observation).code.coding[2]: Code System URI 'http://example.org/lab-results' is unknown so the code cannot be validated
-INFORMATION: Parameters/cdex-parameters-example4: Parameters.parameter[9].part[2].resource.ofType(Observation).code.coding[2]: Code System URI 'http://example.org/lab-results' is unknown so the code cannot be validated
 
 # this Profile is used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resource.
 

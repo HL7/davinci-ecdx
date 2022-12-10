@@ -22,7 +22,6 @@
 <artifact id="Parameters/cdex-parameters-example4" key="Parameters-cdex-parameters-example4" name="CDex Parameters Example 4"/>
 <artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example1"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
-<artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
@@ -76,6 +75,7 @@
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="attachments" name="Attachments"/>
 <page key="background" name="Background"/>
+<page key="ImplementationGuide-hl7.fhir.us.davinci-cdex" name="CDex ImplementationGuide Resource"/>
 <page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
 <page key="changes" name="Change Log"/>
 <page key="direct-query" name="Direct Query"/>

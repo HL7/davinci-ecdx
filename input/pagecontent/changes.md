@@ -1,12 +1,15 @@
 ### Version = 2.0.0-preview (CI-Build)
 - Publication Date: Projected Q1 2023
-- url: <http://build.fhir.org/ig/HL7/davinci-ecdx/index.html>
+- url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
 - Based on FHIR version: 4.0.1
 
 This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the third published version of this guide and is the result of the 2022 September HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
 
-<!-- #### What’s new in Version 2.0.0 of CDex:
+#### What’s new in Version 2.0.0 of CDex:
 
+...TODO...
+
+<!--
 - <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
     - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
     - A [Sending Attachments] page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.

@@ -6,7 +6,7 @@
   "name": "DaVinciCDex",
   "title": "Da Vinci Clinical Data Exchange (CDex)",
   "status": "active",
-  "date": "2022-10-24",
+  "date": "2022-12-09",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -482,6 +482,11 @@
         {
           "nameUrl": "downloads.html",
           "title": "Downloads",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "ImplementationGuide-hl7.fhir.us.davinci-cdex.html",
+          "title": "CDex ImplementationGuide Resource",
           "generation": "markdown"
         },
         {
