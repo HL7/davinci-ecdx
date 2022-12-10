@@ -1,0 +1,60 @@
+{% comment -%}{% raw %}<!--
+Includes the specified lines from another file.  Typically this include is used for fragments of FHIR resources and therefore is wrapped in a code block.
+It also optionally displays the line number of the included fragment.  The line number is the line number in the source file, not the line number in the output file.
+this helper lives in the input/images folder not the include file folder
+
+├── examples
+│   ├── patient-deceased-example.json
+│   └── patient-example.json
+├── fsh
+│   ├── fsh
+│   ├── my-extensions.fsh
+│   └── my-profiles.fsh
+├── ignoreWarnings.txt
+├── images
+│   ├── cat.jpg
+│   ├── includelines  <<<< HERE
+├── includes  <<<< NOT HERE
+│   ├── DAR-exception.md
+│ 
+
+Usage:
+  {% include_relative includelines filename=PATH start=INT|STR count=INT|STR %}
+
+  - filename: path to file in temp/pages  (use  _include/file.ext for includes files )
+  - start: integer (only 1) or common separated string (> 1) of first line numbers to include, starting at 1
+  - count: integer (only 1) or common separated string (> 1) of number of lines to include
+  - linenumber: optional boolean to display line number (default is false) !think about right justifying the line numbers
+  - rel: optional boolean to use relative path (default is false) - use this if you are including a file in the same folder as the includelines file
+
+The start and count item are aggregated into a (start, count) tuple and therefore need to be the same size.  If there are more than one start and count items, ellipses ("...") will be inserted between the line fragments. 
+The helper file checks if the line overlap.  If they do it will print a warning message instead of your intended output.
+  
+Example:
+1. single snippet:
+
+  {% include_relative includelines filename='patient-deceased-example.json' start=10 count=5 linenumber=true %}
+
+2. multiple snippets separated by "...": 
+  
+  {% include_relative includelines filename='patient-deceased-example.json' start = "10,20,30" count="5,5,5" %}
+
+3. The helper file checks if the line overlap.  If they do it will print a warning message instead of your intended output.
+The following will result in a warning message because the start line (15) is less than the previous plus the number of lines (20)
+
+   {% include_relative includelines filename='patient-deceased-example.json' start = "10,15,30" count="10,5,5" %}
+  
+-->{% endraw %}{% endcomment -%}
+
+{%- if include.rel %}{% capture filecontent %}{% include_relative {{include.filename}} %}{% endcapture -%}
+{%- else %}{% capture filecontent %}{% include {{include.filename}} %}{% endcapture %}{% endif -%}
+{%- assign lines = filecontent | newline_to_br | strip_newlines | split: '<br />' -%}
+{%- assign starts = include.start | split: ',' -%}
+{%-assign counts = include.count | split: ',' -%}
+{%- for start in starts -%}
+{% unless forloop.first %}{% assign next = start | plus: 0 %}{% if next <= prev %}!!!INCLUDELINES HELPER FILE WARNING OVERLAPPING LINES next startline = {{next}} <= previous fragment end = {{prev}} - CHECK YOUR SOURCE FILE!!!{% break %}{% endif %}{% endunless -%}
+{% for line in lines offset: start limit:counts[forloop.index0] %}{% if include.linenumber %}{{ forloop.index0 | plus: start}}  {% endif %}{{ line }}
+{% endfor -%}
+{%- unless forloop.last %}...
+{% assign prev = start | plus: counts[forloop.index0] %}{% endunless -%}
+{%- endfor -%}

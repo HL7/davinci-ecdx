@@ -69,13 +69,7 @@ The optional profile declaration shown below asserts that the resource conforms 
 <!-- The request body's various elements are annotated to show how each of the data elements is communicated to the Provider. -->
 
 ~~~
- 1:  {
-  2:      "resourceType": "Task",
-  3:      "meta": {
-  4:          "profile": [
-  5:              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-  6:          ]
-  7:      },
+{% include_relative includelines filename='cdex-task-example19.json' start=0 count=7 linenumber=true %}
 ~~~
 
 ##### Verifying Patient Identity
@@ -91,45 +85,11 @@ The following data elements are used to verify patient identity for compliance r
 
 \* Patient Account No is a Provider assigned identifier and is only present for Prior-Auth use cases.
 
+
 ~~~
-  8:      "contained": [
-  9:          {
- 10:              "resourceType": "Patient",
- 11:              "id": "patient",
- 12:              "meta": {
- 13:                  "profile": [
- 14:                      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
- 15:                  ]
- 16:              },
- 17:              "identifier": [
- 18:                  {
- 19:                      "use": "usual",
- 20:                      "type": {
- 21:                          "coding": [
- 22:                              {
- 23:                                  "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
- 24:                                  "code": "UMB",
- 25:                                  "display": "Member Number"
- 26:                              }
- 27:                          ],
- 28:                          "text": "Member Number"
- 29:                      },
- 30:                      "system": "http://example.org/cdex/payer/member-ids",
- 31:                      "value": "Member123"
- 32:                  }
- 33:              ],
- 34:              "name": [
- 35:                  {
- 36:                      "family": "Shaw",
- 37:                      "given": [
- 38:                          "Amy"
- 39:                      ]
- 40:                  }
- 41:              ],
- 42:              "birthDate": "1987-02-20"
- 43:          }
- 44:      ],
+{% include_relative includelines filename='cdex-task-example19.json' start=7 count=37 linenumber=true %}
 ~~~
+
 
 <!-- ##### Supplying the Claim/PreAuthorization Data
 
@@ -151,23 +111,9 @@ The Payer supplies the necessary Claim/PreAuthorization Data so the Provider can
 
 The mandatory `Task.identifier` "tracking-id" slice element represents the Payer tracking identifier.  This is an identifier that ties the attachments back to the claim or prior-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
+
 ~~~
- 45:      "identifier": [
- 46:          {
- 47:              "type": {
- 48:                  "coding": [
- 49:                      {
- 50:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
- 51:                          "code": "tracking-id", 
- 52:                          "display": "Tracking Id"
- 53:                      }
- 54:                  ],
- 55:                  "text": "Re-Association Tracking Control Number"
- 56:              },
- 57:              "system": "http://example.org/payer",
- 58:              "value": "trackingid123"
- 59:          }
- 60:      ],
+{% include_relative includelines filename='cdex-task-example19.json' start=44 count=16 linenumber=true %}
 ~~~
 
 ##### Task *Infrastructure* Elements
@@ -181,19 +127,8 @@ These required Task *infrastructural* elements:
 convey what the task is about, its status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".  The Task.code is fixed to “attachment-request” to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the “payer-url” input parameter.
 
 ~~~
- 61:      "status": "requested",
- 62:      "intent": "order",
- 63:      "code": {
- 64:          "coding": [
- 65:              {
- 66:                  "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
- 67:                  "code": "attachment-request"
- 68:              }
- 69:          ],
- 70:          "text": "Attachment Request"
- 71:      },
+{% include_relative includelines filename='cdex-task-example19.json' start=60 count=11 linenumber=true %}
 ~~~
-
 
 ##### Identifying the Payer, Provider, and Patient
 
@@ -213,23 +148,7 @@ As discussed above, the Patient identifier is in the contained Patient resource,
 {: .grid}
 
 ~~~
- 72:      "for": {
- 73:          "reference": "#patient"
- 74:      },
- 75:      "authoredOn": "2022-06-17T16:16:06Z",
- 76:      "lastModified": "2022-06-17T16:16:06Z",
- 77:      "requester": {
- 78:          "identifier": {
- 79:              "system": "http://example.org/cdex/payer/payer-ids",
- 80:              "value": "Payer123"
- 81:          }
- 82:      },
- 83:      "owner": {
- 84:          "identifier": {
- 85:              "system": "http://hl7.org/fhir/sid/us-npi",
- 86:              "value": "9941339108"
- 87:          }
- 88:      },
+{% include_relative includelines filename='cdex-task-example19.json' start=71 count=17 linenumber=true %}
 ~~~
 
 ##### Claim Information
@@ -243,22 +162,7 @@ The Task communicates whether the attachments are for a Claim or Prior Authoriza
 {: .grid}
 
 ~~~
- 89:      "reasonCode": {
- 90:          "coding": [
- 91:              {
- 92:                  "system": "http://hl7.org/fhir/claim-use",
- 93:                  "code": "claim",
- 94:                  "display": "Claim"
- 95:              }
- 96:          ],
- 97:          "text": "claim"
- 98:      },
- 99:      "reasonReference": {
-100:          "identifier": {
-101:              "system": "http://example.org/cdex/payer/claim-ids",
-102:              "value": "Claim123"
-103:          }
-104:      },
+{% include_relative includelines filename='cdex-task-example19.json' start=88 count=16 linenumber=true %}
 ~~~
 
 ##### Attachment Due Date
@@ -266,11 +170,7 @@ The Task communicates whether the attachments are for a Claim or Prior Authoriza
 The Due Date for attachment is communicated in the `Task.restriction.period`  element. Note that `Task.restriction.period.end` is the due date representing the time by which the attachments should be submitted.
 
 ~~~
-105:      "restriction": {
-106:          "period": {
-107:              "end": "2022-06-21"
-108:          }
-109:      },
+{% include_relative includelines filename='cdex-task-example19.json' start=104 count=5 linenumber=true %}
 ~~~
 
 ##### Communicating What Attachments are Needed
@@ -279,33 +179,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 
 
 ~~~
-110:      "input": [
-111:          {
-112:              "type": {
-113:                  "coding": [
-114:                      {
-115:                          "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-116:                          "code": "data-code"
-117:                      }
-118:                  ]
-119:              },
-120:              "valueCodeableConcept": {
-121:                  "coding": [
-122:                      {
-123:                          "system": "http://loinc.org",
-124:                          "code": "11506-3",
-125:                          "display": "Progress note"
-126:                      }
-127:                  ],
-128:                  "text": "Progress note"
-129:              },
-130:              "extension": [
-131:                  {
-132:                      "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
-133:                      "valuePositiveInt": 1
-134:                  }
-135:              ]
-136:          },
+{% include_relative includelines filename='cdex-task-example19.json' start=109 count=38 linenumber=true %}
 ~~~
 
 ##### Communicating the Signature Requirements
@@ -313,17 +187,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
  This Task.input "signature-flag" may be used to indicate that the attachments must be signed. See the [Signatures] and [Sending Attachments] page for more information about using Signatures in CDex.
 
 ~~~
-137:          {
-138:              "type": {
-139:                  "coding": [
-140:                      {
-141:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-142:                          "code": "signature-flag"
-143:                      }
-144:                  ]
-145:              },
-146:              "valueBoolean": false
-147:          },
+{% include_relative includelines filename='cdex-task-example19.json' start=136 count=11 linenumber=true %}
 ~~~
 
 ##### Supplying the $submit-attachment Operation Endpoint
@@ -333,40 +197,16 @@ The Payer supplies the url endpoint as a Task input parameter. The Provider Syst
 <!-- If no url endpoint is supplied the attachments are provided either as references or contained Task resources and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
 ~~~
-148:          {
-149:              "type": {
-150:                  "coding": [
-151:                      {
-152:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-153:                          "code": "payer-url"
-154:                      }
-155:                  ]
-156:              },
-157:              "valueUrl": "http://example.org/cdex/payer/$submit-attachment"
-158:          },
+{% include_relative includelines filename='cdex-task-example19.json' start=147 count=11 linenumber=true %}
 ~~~
 
 ##### Date of Service for the Claim
 
 A Task.input element represents the date of service or starting date of the service for the claim or prior authorization.
 
-
 ~~~
-159:          {
-160:              "type": {
-161:                  "coding": [
-162:                      {
-163:                          "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-164:                          "code": "service-date"
-165:                      }
-166:                  ]
-167:              },
-168:              "valueDate": "2022-06-13"
-169:          }
-170:      ]
-171:  }
+{% include_relative includelines filename='cdex-task-example19.json' start=158 count=13 linenumber=true %}
 ~~~
-
 
 #### Provider Submits Solicited Attachments
 
@@ -389,9 +229,7 @@ POST [base]/$submit-attachment
 The attachments along with the metadata needed to associate the attachment to the Claim or Pre-Auth are in the $submit-attachments payload, a [Parameters] resource.
 
 ~~~
- 1:  {
- 2:      "resourceType": "Parameters",
- 3:      "parameter": [
+{% include_relative includelines filename='cdex-parameters-example3.json' start=0 count=3 linenumber=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
@@ -404,15 +242,8 @@ The Tracking ID is an identifier that ties the attachments back to the claim or 
 {:.grid}
 
 ~~~
-  4:          {
-  5:              "name": "TrackingId",
-  6:              "valueString": "targetid123"
-  7:          },
-  8:          {
-  9:              "name": "AttachTo",
- 10:              "valueCode": "claim"
- 11:          },
-~~~    
+{% include_relative includelines filename='cdex-parameters-example3.json' start=3 count=11 linenumber=true %}
+~~~   
 
 ##### Identifying the Payer, Provider, Organization, and Patient
 
@@ -421,52 +252,25 @@ As documented above, business identifiers are used to identify the Patient, the 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |Payer URL|"payer-url"Task.input|(operation endpoint)|
-|Organiztion ID|-|OrganizationId|
+|Organization ID|-|OrganizationId|
 |Provider ID|Task.owner.identifier|ProviderId|
 |Member ID|Patient.identifier|MemberId|
 {:.grid}
 
 ~~~
- 12:          {
- 13:              "name": "PayerId",
- 14:              "valueIdentifier": {
- 15:                  "system": "http://example.org/cdex/payer-ids",
- 16:                  "value": "payer123"
- 17:              }
- 18:          },
- 19:          {
- 20:              "name": "OrganizationId",
- 21:              "valueIdentifier": {
- 22:                  "system": "http://hl7.org/fhir/sid/us-npi",
- 23:                  "value": "1407071236"
- 24:              }
- 25:          },
- 26:          {
- 27:              "name": "ProviderId",
- 28:              "valueIdentifier": {
- 29:                  "system": "http://hl7.org/fhir/sid/us-npi",
- 30:                  "value": "9941339108"
- 31:              }
- 32:          },
- 33:          {
- 34:              "name": "MemberId",
- 35:              "valueIdentifier": {
- 36:                  "system": "http://example.org/cdex/member-ids",
- 37:                  "value": "234567"
- 38:              }
- 39:          },
-~~~
+{% include_relative includelines filename='cdex-parameters-example3.json' start=14 count=28 linenumber=true %}
+~~~ 
+
 
 ##### The Service Date
 
 The service date parameter is taken from the “service-date” Task.input element in the CDex Attachment request.
 
+
 ~~~
-40:          {
- 41:              "name": "ServiceDate",
- 42:              "valueDate": "2022-06-16"
- 43:          },
-~~~
+{% include_relative includelines filename='cdex-parameters-example3.json' start=42 count=4 linenumber=true %}
+~~~ 
+
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
@@ -483,71 +287,9 @@ The Requested Attachments and the corresponding coded requests and/or line item 
 {:.grid}
 
 ~~~
- 44:          {
- 45:              "name": "Attachment",
- 46:              "part": [
- 47:                  {
- 48:                      "name": "LineItem",
- 49:                      "valueString": "1"
- 50:                  },
- 51:                  {
- 52:                      "name": "Code",
- 53:                      "valueCodeableConcept": {
- 54:                          "coding": [
- 55:                              {
- 56:                                  "system": "http://loinc.org",
- 57:                                  "code": "11506-3",
- 58:                                  "display": "Progress note"
- 59:                              }
- 60:                          ],
- 61:                          "text": "Progress note"
- 62:                      }
- 63:                  },
- 64:                  {
- 65:                      "name": "Content",
- 66:                      "resource": {
- 67:                          "resourceType": "DocumentReference",
- 68:                          "id": "cdex-example-doc1",
- 69:                          "status": "current",
- 70:                          "type": {
- 71:                              "coding": [
- 72:                                  {
- 73:                                      "system": "http://loinc.org",
- 74:                                      "code": "11506-3",
- 75:                                      "display": "Progress note"
- 76:                                  }
- 77:                              ],
- 78:                              "text": "Progress note"
- 79:                          },
- 80:                          "category": [
- 81:                              {
- 82:                                  "coding": [
- 83:                                      {
- 84:                                          "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
- 85:                                          "code": "clinical-note",
- 86:                                          "display": "Clinical Note"
- 87:                                      }
- 88:                                  ],
- 89:                                  "text": "Clinical Note 1"
- 90:                              }
- 91:                          ],
- 92:                          "date": "2021-12-03T18:30:56-08:00",
- 93:                          "content": [
- 94:                              {
- 95:                                  "attachment": {
- 96:                                      "contentType": "application/pdf",
- 97:                                      "data": ">>>>>>Base64 here<<<<<<",
- 98:                                      "title": "sample1.pdf"
- 99:                                  }
-100:                              }
-101:                          ]
-102:                      }
-103:                  }
-104:              ]
-105:          }
-106:      ]
-107:  }
+{% include_relative includelines filename='cdex-parameters-example3.json' start=46 count=65 linenumber=true %}
 ~~~
+
 
 
 ### Complete *Solicited* Attachment Transaction

@@ -16,7 +16,10 @@
     "parameter": [
         {
             "name": "TrackingId",
-            "valueString": "trackkingid123"
+            "valueIdentifier": {
+                "system": "http://example.org/cdex/payer/tracking-ids",
+                "value": "trackingid456"
+            }
         },
         {
             "name": "AttachTo",

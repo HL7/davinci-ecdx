@@ -2,10 +2,13 @@ resourceType: Parameters
 parameter:
     - 
         name: TrackingId
-        valueString: '11234657'
+        valueIdentifier:
+            system: 'http://example.org/cdex/payer/tracking-ids'
+            value: '21234657'
+
     - 
         name: AttachTo
-        valueCode: claim
+        valueCode: preauthorization
     - 
         name: PayerId
         valueIdentifier:

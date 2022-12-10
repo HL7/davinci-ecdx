@@ -2,7 +2,9 @@ resourceType: Parameters
 parameter:
     - 
         name: TrackingId
-        valueString: targetid123
+        valueIdentifier:
+            system: 'http://example.org/cdex/payer/tracking-ids'
+            value: trackingid456
     - 
         name: AttachTo
         valueCode: claim
@@ -74,7 +76,6 @@ parameter:
                                 display: Hglycated hemoglobin (HbA1c)
                         text: glycated hemoglobin (HbA1c)
                     subject:
-                        reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                         display: Elden718 Halvorson124
                     effectiveDateTime: '2022-06-16T10:21:08-07:00'
                     valueQuantity:
@@ -127,7 +128,6 @@ parameter:
                                 display: Hglycated hemoglobin (HbA1c)
                         text: glycated hemoglobin (HbA1c)
                     subject:
-                        reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                         display: Elden718 Halvorson124
                     effectiveDateTime: '2022-05-16T10:21:08-07:00'
                     valueQuantity:
@@ -180,7 +180,6 @@ parameter:
                                 display: Hglycated hemoglobin (HbA1c)
                         text: glycated hemoglobin (HbA1c)
                     subject:
-                        reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                         display: Elden718 Halvorson124
                     effectiveDateTime: '2022-04-16T10:21:08-07:00'
                     valueQuantity:
