@@ -43,9 +43,11 @@ In this scenario, a Provider creates a claim and sends it to the Payer.  The Pay
 - LOINC attachment code(s) for the requested documents
 - What line numbers on the claim the requested attachment(s) are for
 
-<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the `[$submit-attachment]` operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicate whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
+<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the [`$submit-attachment`] operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicate whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
 
-After receiving the attachment request, the Provider collects the documentation and returns them using the `[$submit-attachment]` operation, posting it to the endpoint supplied in the request.
+After receiving the attachment request, the Provider collects the documentation and returns them using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters:
+
+{% include attachments_to_requests.md %}
 
 
 The flow diagram for this transaction is shown in the figure below:
@@ -192,7 +194,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 
 ##### Supplying the $submit-attachment Operation Endpoint
 
-The Payer supplies the url endpoint as a Task input parameter. The Provider System will use this information as the endpoint for the `[$submit-attachment]` Operation.
+The Payer supplies the url endpoint as a Task input parameter. The Provider System will use this information as the endpoint for the [`$submit-attachment`] Operation.
 
 <!-- If no url endpoint is supplied the attachments are provided either as references or contained Task resources and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
@@ -210,11 +212,7 @@ A Task.input element represents the date of service or starting date of the serv
 
 #### Provider Submits Solicited Attachments
 
-The Provider POSTs the `[$submit-attachment]` operation and its payload to the Payer's endpoint.  As stated above, the Payer endpoint is communicated to the Payer in the CDex Task Attachment Request Profile. The same data elements sent in the request for attachments are echoed back when submitting the attachments using the `[$submit-attachment]` operation. The mappings between the corresponding data communicated in the CDex Request Attachment Profile elements and the `[$submit-attachment]` parameters are shown in the table below:
-
-{% include attachments_to_requests.md %}
-
-These parameters are documented in more detail below.
+The Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint. As stated above, the Payer endpoint is communicated to the Payer in the CDex Task Attachment Request Profile. The same data elements sent in the request for attachments are echoed back when submitting the attachments using the [`$submit-attachment`] operation. The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters. These parameters are documented in more detail below.
 
 **Request**
 
