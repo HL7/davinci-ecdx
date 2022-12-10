@@ -86,7 +86,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 36. **Waiting for Input**: Liability and Privacy Concerns with Digital Signature ([FHIR-38320](https://jira.hl7.org/browse/FHIR-38320)) See Changes [Here](#)
 37. **Submitted**: Clarification regarding reassociation being out of scope ([FHIR-38322](https://jira.hl7.org/browse/FHIR-38322)) See Changes [Here](#)
 38. **Triaged**: Task Reason Code ([FHIR-38325](https://jira.hl7.org/browse/FHIR-38325)) See Changes [Here](#)
-39. **Triaged**: X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](#)
+39. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](sending-attachments.html#sending-attachments)
 40. **Triaged**: Adding Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](#)
 41. **Submitted**: Remove words ""transaction layer"" for conciseness ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](#)
 42. **Submitted**: Word change ""analogs"" to ""fields"" ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](#)
