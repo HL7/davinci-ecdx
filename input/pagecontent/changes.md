@@ -81,7 +81,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 31. **Submitted**: small typo ([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](#)
 32. **Submitted**: cdex-temp code system must not be used in implemented systems ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259)) See Changes [Here](#)
 33. **Submitted**: Clarify use of data tagging ([FHIR-38286](https://jira.hl7.org/browse/FHIR-38286)) See Changes [Here](#)
-34. **Submitted**: Reference to X12 elements and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](#)
+34. **Partially Applied**: Updated X12 element mappings and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](requesting-attachments.html#data-elements-for-requesting-attachments) and Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
 35. **Triaged**: FHIR ID Support and Usage ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318)) See Changes [Here](#)
 36. **Waiting for Input**: Liability and Privacy Concerns with Digital Signature ([FHIR-38320](https://jira.hl7.org/browse/FHIR-38320)) See Changes [Here](#)
 37. **Submitted**: Clarification regarding reassociation being out of scope ([FHIR-38322](https://jira.hl7.org/browse/FHIR-38322)) See Changes [Here](#)
