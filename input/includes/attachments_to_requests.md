@@ -10,7 +10,7 @@
 
 | Data Element | CDex $submit-attachment Parameter | CDex Request Attachment Task Profile Element |
 |-----|----|-----|
-| Tracking ID (Provider or Payer Assigned) | TrackingId | Task.identifier |
+| Tracking ID(Provider or Payer Assigned) | TrackingId | Task.identifier |
 | Use | AttachTo | Task.reasonCode |
 | Payer URL | (operation endpoint) | "payer-url" Task.input |
 | Organization ID | OrganizationId | Task.owner.identifier |
@@ -20,3 +20,5 @@
 | Date of Service | ServiceDate | “service-date” Task.input |
 | Member ID | MemberId | Patient.identifier |
 {:.grid}
+
+The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
