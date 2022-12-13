@@ -7,7 +7,7 @@ name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
 status: draft
 description: |-
-  Payers use the [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements to request attachments. It complies with HIPAA Attachment rules for CMS and is an alternative to the X12n 277 and 278 response transactions.
+  Payers use the [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation ("attachments") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements to request attachments. It complies with HIPAA Attachment rules for CMS and is an alternative to the X12n 277 and 278 response transactions.
   
   It constrains the following elements to be *mandatory* (min=1):
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements. 
@@ -23,12 +23,12 @@ description: |-
   - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
     - An extension representing line item numbers in the Claim or Prior Authorization
   - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
-  - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization
-
+ 
   and the following elements to be *must support* [min=0]:
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
   - A Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
   and the following elements to be *optional*:
   - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
@@ -42,7 +42,17 @@ baseDefinition: 'http://hl7.org/fhir/StructureDefinition/Task'
 derivation: constraint
 differential:
   element:
-
+    - id: Task
+      path: Task
+      definition: >-
+        This Task profile is used to request additional documentation ("attachments") for claims or prior authorizations.
+      constraint:
+        - key: cdex-1
+          severity: error
+          human: >-
+            The "service-date" input SHALL be present if the attachment is for a claim.
+          expression: >-
+            Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()
     # - id: Task.meta
     #   path: Task.meta
     #   min: 1
@@ -143,14 +153,16 @@ differential:
               code: tracking-id
       mustSupport: true
 
+    - id: 'Task.identifier:tracking-id.system'
+      path: Task.identifier.system
+      mustSupport: true
+
+
     - id: 'Task.identifier:tracking-id.value'
       path: Task.identifier.value
       min: 1
       mustSupport: true
 
-    - id: 'Task.identifier:tracking-id.system'
-      path: Task.identifier.system
-      mustSupport: true
 
     - id: Task.status
       path: Task.status
@@ -388,9 +400,10 @@ differential:
       path: Task.input
       sliceName: service-date
       short: Service Date
-      definition: Date of service or starting date of the service for the claim or prior authorization. This parameter **SHALL** be present and precise to the day.
-      min: 1
+      definition: Date of service or starting date of the service for the claim or prior authorization. This element SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization.
       max: '1'
+      condition: 
+        - cdex-1
       mustSupport: true
 
     - id: 'Task.input:service-date.type'
@@ -406,6 +419,13 @@ differential:
       short: Service Date value
       type:
         - code: date
+      condition: 
+        - cdex-2
+      constraint:
+        - key: cdex-2
+          severity: error
+          human: Date must be to day.
+          expression: $this.toString().length() = 10
       mustSupport: true
 
     - id: 'Task.input:signature'
@@ -424,10 +444,17 @@ differential:
             code: signature-flag
       mustSupport: true
 
+    - id: 'Task.input:signature.value[x]'
+      path: 'Task.input.value[x]'
+      short: Signature flag value
+      type:
+        - code: boolean
+      mustSupport: true
+
     - id: 'Task.input:POU'
-      extension:
-        - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: draft   
+      # extension:
+      #   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      #     valueCode: draft   
       path: Task.input
       sliceName: POU
       short: Purpose of use code'
@@ -452,14 +479,6 @@ differential:
         strength: extensible
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU'
       # mustSupport: true
-
-
-    - id: 'Task.input:signature.value[x]'
-      path: 'Task.input.value[x]'
-      short: Signature flag value
-      type:
-        - code: boolean
-      mustSupport: true
 
     - id: 'Task.input:multiple-submits'
       path: Task.input

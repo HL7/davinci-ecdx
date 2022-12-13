@@ -214,12 +214,13 @@ The Payer supplies the url endpoint as a Task input parameter. The Provider Syst
 
 ###### Date of Service for the Claim
 
-This Task.input element represents the service date or the service's starting date for the claim or prior authorization.
+This Task.input element represents the service date or the service's starting date for the claim or prior authorization. <span class="bg-success" markdown="1"> It SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization. </span><!-- new-content -->
 
 ~~~
 {% include_relative includelines filename='cdex-task-example19.json' start=158 count=13 linenumber=true %}
 ~~~
 
+<div class="bg-success" markdown="1">
 ###### Purpose of Use for the Request
 
 This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for Pre-Auth, it would be "COVAUTH".
@@ -227,6 +228,7 @@ This optional Task.input element represents the request's purpose of use (POU). 
 ~~~
 {% include_relative includelines filename='cdex-task-example19.json' start=169 count=21 linenumber=true %}
 ~~~
+</div><!-- new-content -->
 
 ##### Provider Submits Solicited Attachments
 

@@ -49,7 +49,7 @@ identifier:
       display: Tracking Id
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
-  value: trackingid123
+  value: trackingid789
 status: requested
 intent: order
 code:
@@ -106,11 +106,6 @@ input:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
       code: payer-url
   valueUrl: http://example.org/cdex/payer/$submit-attachment
-- type:
-    coding:
-    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-      code: service-date
-  valueDate: '2022-06-13'
 - type:
     coding:
     - code: purpose-of-use
