@@ -1,4 +1,5 @@
 Express permission to use X12 copyrighted materials within this document has been granted.
+
 <!-- More information is available at https://x12.org/products/ip-use but the general citation requirement is included below.
 
 Citation Format
