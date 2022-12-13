@@ -7,11 +7,13 @@ status: active
 experimental: false
 date: '2022-11-09'
 description: |-
-  This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`to communicate the Provider ID as *both* a practitioner and organization identifier.  It constrains the following elements to be *mandatory* (min=1):
- 
+  This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both. It constrains the following elements to be *must support* (min=0).:
+
   - A default resource ID of "practitionerrole"
-  - A practitioner.identifier
-  - An organization.identifier
+  - A practitioner.identifier: 
+  - An organization.identifier:
+  
+  At least a practitioner identifier or organization identifier SHALL be present.
 fhirVersion: 4.0.1
 kind: resource
 abstract: false
@@ -19,7 +21,19 @@ type: PractitionerRole
 baseDefinition: 'http://hl7.org/fhir/StructureDefinition/PractitionerRole'
 derivation: constraint
 differential:
+
+
   element:
+
+    - id: 'PractitionerRole'
+      path: PractitionerRole
+      constraint:
+        -
+          key: 'cdex-3'
+          severity: error
+          human: 'At least a practitioner.identifier or organization.identifier SHALL be present.'
+          expression: 'practitioner.identifier.exists() or organization.identifier.exists()'
+
     - id: 'PractitionerRole.id'
       path: PractitionerRole.id
       min: 1
@@ -29,8 +43,6 @@ differential:
 
     - id: PractitionerRole.practitioner
       path: PractitionerRole.practitioner
-      min: 1
-      max: '1'
       type:
         - code: Reference
           targetProfile:
@@ -43,13 +55,12 @@ differential:
       short: Practitioner ID (e.g., Type 1 NPI)
       definition: business identifier representing the provider practitioner
       min: 1 
+      condition: 
+        - cdex-3
       mustSupport: true  
-
 
     - id: PractitionerRole.organization
       path: PractitionerRole.organization
-      min: 1
-      max: '1'
       type:
         - code: Reference
           targetProfile:
@@ -62,4 +73,6 @@ differential:
       short: Organization ID (e.g., Type 2 NPI)
       definition: business identifier representing the provider organization
       min: 1 
+      condition: 
+        - cdex-3
       mustSupport: true  

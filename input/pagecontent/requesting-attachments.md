@@ -147,7 +147,7 @@ convey what the task is about, its status, and the intent of the request.  The T
 <div class="bg-success" markdown="1">
 The attachment request will be directed to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim, and these identifiers are echoed back to the Payer when submitting the attachments.
 
-As discussed above, the Patient identifier is in the contained Patient resource, referenced by the Task.for element. The Provider identifier(s) are referenced in the Task.owner element for the Practitioner (i,e., a Type1 NPI) or the Practitioner's Organization (i,e., a Type2 NPI) or both. A contained PractitionerRole resource is used to communicate both identifiers if present.
+As discussed above, the Patient id is in the contained Patient resource, referenced by the Task.for element, and the Provider id is in the contained PractitionerRole resource referenced by the Task.owner element.  The Provider id can be a Practitioner indentifier (i,e., a Type1 NPI) or the Practitioner's Organization identifier (i,e., a Type2 NPI) or both.
 
 (note the various Task dates in the request fragment below)
 </div><!-- new-content -->
@@ -155,7 +155,7 @@ As discussed above, the Patient identifier is in the contained Patient resource,
 |Actor|CDex Claim Profile element|
 |---|---|
 |payer ID|`Task.reasonReference.identifier`|
-|provider ID|`Task.owner.identifier`|
+|provider ID|(contained)PractitionerRole.practitioner.identifier and/or PractitionerRole.Organization.identifier|
 |patient member ID or Patient Account No|(contained)Patient.identifier|
 {: .grid}
 

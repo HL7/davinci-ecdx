@@ -56,7 +56,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 8. **Submitted**: CDex Requesting Attachments: General Comment ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](#)
 9.  **Submitted**: CDex Requesting Attachments: Modify sentence 2 ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](#)
 10. **Triaged**: spec should be clarified that prior auth doesn't require signatures ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](#)
-11. **Pre-Applied**: Submit-attachment operation should require either an OrganizationId or ProviderId, Not both ([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189)) See Changes:
+11. **Applied**: Clarify in operation that either an OrganizationId or ProviderId is required. Allow for both Ids to be sent in request.([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189)) See Changes:
     - [Here](OperationDefinition-submit-attachment.html)
     - [Here](requesting-attachments.html#identifying-the-payer-provider-and-patient)
 12. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments.html#date-of-service-for-the-claim) 

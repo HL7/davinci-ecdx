@@ -151,6 +151,18 @@ definition:
     exampleBoolean: false
     name: CDex Patient Demographics Profile
   - reference:
+      reference: StructureDefinition/cdex-practitionerrole
+    description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
+      \ within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`\
+      \ to communicate the provider ID as either a unique organization/location identifier\
+      \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\
+      \ It constrains the following elements to be *must support* (min=0).:\n\n- A\
+      \ default resource ID of \"practitionerrole\"\n- A practitioner.identifier:\
+      \ \n- An organization.identifier:\n\nAt least a practitioner identifier or organization\
+      \ identifier SHALL be present."
+    exampleBoolean: false
+    name: CDex PractitionerRole Profile
+  - reference:
       reference: StructureDefinition/cdex-signature-bundle
     description: "This Bundle profile enforces the various elements of signature documented\
       \ in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\
@@ -168,11 +180,11 @@ definition:
   - reference:
       reference: StructureDefinition/cdex-task-attachment-request
     description: "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based\
-      \ profile to request additional documentation for claims or prior authorizations.\
-      \ It constrains the Task resource to minimal necessary data elements to request\
-      \ attachments. It complies with HIPAA Attachment rules for CMS and is an alternative\
-      \ to the X12n 277 and 278 response transactions.\n\nIt constrains the following\
-      \ elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html)\
+      \ profile to request additional documentation (\"attachments\") for claims or\
+      \ prior authorizations. It constrains the Task resource to minimal necessary\
+      \ data elements to request attachments. It complies with HIPAA Attachment rules\
+      \ for CMS and is an alternative to the X12n 277 and 278 response transactions.\n\
+      \nIt constrains the following elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html)\
       \ Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics)\
       \ and communicating additional patient demographic data elements. \n- A Task.identifier\
       \ element representing the payers tracking identifier (referred to as the \u201C\
@@ -186,28 +198,31 @@ definition:
       \ is requesting attachments for a claim or prior-authorization and is expecting\
       \ they will be submitted using the $submit-attachment operation to the endpoint\
       \ provided in the \"payer-url\" input parameter.\n- A Task.requester.identifier\
-      \ element representing the Payer ID\n- A Task.owner.identifier element representing\
-      \ the Provider ID\n- A Task.for.reference element fixed to \"\\#patient\" -\
-      \ a reference the contained Patient Resource\n- A Task.reasonCode to communicate\
-      \ whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference\
+      \ element representing the Payer ID\n- A Task.owner.reference element fixed\
+      \ to \"\\#practionerrole\" -  a reference the contained PractitionerRole Resource\
+      \ that represents the Provider ID.\n- A Task.for.reference element fixed to\
+      \ \"\\#patient\" - a reference the contained Patient Resource that represents\
+      \ basic Patient demographic data.\n- A Task.reasonCode to communicate whether\
+      \ the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference\
       \ referencing the Claim or Prior Authorization ID (business Identifier)\n- A\
       \ Task.input element to communicate to the provider what attachments are needed\
       \ using LOINC attachment codes\n  - An extension representing line item numbers\
       \ in the Claim or Prior Authorization\n- A Task.input element representing the\
       \ Payer endpoint URL to communicate to the provider to submit the attachments\
-      \ using the `$submit-attachment` operation\n- A Task.input element representing\
-      \ the date of service or starting date of the service for the claim or prior\
-      \ authorization\n\nand the following elements to be *must support* [min=0]:\n\
-      - A Task.Restriction.period element representing the due date for submitting\
-      \ the attachments\n- A Task.statusReason.text to communicate the reason for\
-      \ the status (for example, if the Task is rejected or failed)\n- A Task.input\
-      \ element representing a flag to indicate whether the requested data requires\
-      \ a signature. For more information about requiring and requesting signatures,\
-      \ refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n\
-      \nand the following elements to be *optional*:\n- A Task.input element representing\
-      \ a flag to indicate whether the requested data can be sent in multiple submissions\n\
-      - A Task.input element representing the purpose of use (POU) for the requested\
-      \ data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
+      \ using the `$submit-attachment` operation\n\nand the following elements to\
+      \ be *must support* [min=0]:\n- A Task.Restriction.period element representing\
+      \ the due date for submitting the attachments\n- A Task.statusReason.text to\
+      \ communicate the reason for the status (for example, if the Task is rejected\
+      \ or failed)\n- A Task.input element representing a flag to indicate whether\
+      \ the requested data requires a signature. For more information about requiring\
+      \ and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n\
+      - A Task.input element representing the date of service or starting date of\
+      \ the service for the claim or prior authorization. It SHALL be present if the\
+      \ attachment is for a claim.\n\nand the following elements to be *optional*:\n\
+      - A Task.input element representing a flag to indicate whether the requested\
+      \ data can be sent in multiple submissions\n- A Task.input element representing\
+      \ the purpose of use (POU) for the requested data using an extensible [CDex\
+      \ Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
       \ For more information about sending purpose POU codes, refer to the [Purpose\
       \ of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures)."
     exampleBoolean: false
@@ -412,8 +427,8 @@ definition:
   - reference:
       reference: Task/cdex-task-example20
     description: '**Prior-Auth Attachment Request Example:**   Prior Authorization
-      Attachment Request sent by payer to a provider requesting a signed History and
-      physical (H&P) note'
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting a signed History and physical (H&P) note.'
     name: Cdex Task Example 20
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
   - reference:

@@ -3,6 +3,9 @@
 # CDex needs a contained patient for 3 specific demographic elements- US Core variance approved: http://jira.hl7.org/browse/FHIR-37738
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
 
+# CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 referencs. A Jira ticket has been lodged for Task to allow for >1 task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-39618
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile
+
 # the example demonstrate the legitimate use case for using free text instead of codes for requesting information using a Task-based Query
 
 No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|3.1.0)
@@ -17,6 +20,7 @@ WARNING: StructureDefinition/cdex-task-attachment-request: StructureDefinition.d
 Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 
-# this Profile is used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resource.
+# these Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources.
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
+INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile

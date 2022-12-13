@@ -16,8 +16,8 @@ description: |-
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
   - A Task.requester.identifier element representing the Payer ID
-  - A Task.owner.identifier element representing the Provider ID
-  - A Task.for.reference element fixed to "\#patient" - a reference the contained Patient Resource
+  - A Task.owner.reference element fixed to "\#practionerrole" -  a reference the contained PractitionerRole Resource that represents the Provider ID.
+  - A Task.for.reference element fixed to "\#patient" - a reference the contained Patient Resource that represents basic Patient demographic data.
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
@@ -99,6 +99,20 @@ differential:
           - type: type
             path: $this
         rules: open
+      mustSupport: true
+
+    - id: Task.contained:practitionerrole
+      path: Task.contained
+      sliceName: practitionerrole
+      definition: >-
+        The contained practitionerrole profile communicates the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.
+      short: Contained PractitionerRole resource
+      min: 1
+      max: '1'
+      type:
+        - code: PractitionerRole
+          profile:
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
       mustSupport: true
 
     - id: Task.contained:patient
@@ -244,25 +258,33 @@ differential:
     - id: Task.owner
       path: Task.owner
       short: Provider who submitted claim or preauthorization
+      comment: The term "Provider" means a person or organization that provided the health care services to a patient.
       min: 1
       type:
-        - code: Reference
-          targetProfile:
-            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'
-            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'
         # - code: Reference
         #   targetProfile:
-        #     - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
-        #   aggregation: 
-        #     - contained
+        #     - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner'
+        #     - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization'
+        - code: Reference
+          targetProfile:
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
+          aggregation: 
+            - contained
       mustSupport: true
 
-    - id: Task.owner.identifier
-      path: Task.owner.identifier
-      short: Provider ID
-      definition: business identifier representing the Provider
-      min: 1 
+    - id: Task.owner.reference
+      path: Task.owner.reference
+      short: Contained resource reference
+      min: 1
+      fixedString: '#practitionerrole'
       mustSupport: true
+
+    # - id: Task.owner.identifier
+    #   path: Task.owner.identifier
+    #   short: Provider ID
+    #   definition: business identifier representing the Provider
+    #   min: 1 
+    #   mustSupport: true
 
     - id: Task.reasonCode
       path: Task.reasonCode
