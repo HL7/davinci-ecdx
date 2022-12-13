@@ -29,6 +29,19 @@ contained:
     given:
     - Amy
   birthDate: '1987-02-20'
+- resourceType: PractitionerRole
+  id: practitionerrole
+  meta:
+    profile:
+    - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole
+  practitioner:
+    identifier:
+      system: http://hl7.org/fhir/sid/us-npi
+      value: '9941339100'
+  organization:
+    identifier:
+      system: http://hl7.org/fhir/sid/us-npi
+      value: '1234567893'
 identifier:
 - type:
     coding:
@@ -37,7 +50,7 @@ identifier:
       display: Tracking Id
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
-  value: trackingid123
+  value: trackingid789
 status: requested
 intent: order
 code:
@@ -54,9 +67,7 @@ requester:
     system: http://example.org/cdex/payer/payer-ids
     value: Payer123
 owner:
-  identifier:
-    system: http://hl7.org/fhir/sid/us-npi
-    value: '9941339108'
+  reference: '#practitionerrole'
 reasonCode:
   coding:
   - system: http://hl7.org/fhir/claim-use
@@ -94,11 +105,6 @@ input:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
       code: payer-url
   valueUrl: http://example.org/cdex/payer/$submit-attachment
-- type:
-    coding:
-    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-      code: service-date
-  valueDate: '2022-06-13'
 - type:
     coding:
     - code: purpose-of-use

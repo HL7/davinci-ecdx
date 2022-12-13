@@ -48,21 +48,13 @@ definition:
   resource:
   - reference:
       reference: CapabilityStatement/data-consumer-client
-    description: 'This CapabilityStatement describes the expected capabilities of
-      a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data
-      from the Data Source  during clinical data exchange. The capabilities include
-      one or more of the following interactions:
-
-
-      1. Requesting Clinical Data using a FHIR RESTful query
-
-      2. Requesting Attachments
-
-      3. POSTing a Task resource representing a request for clinical data
-
-      4. POSTing a Subscription resource
-
-      5. Polling a Task resource'
+    description: "This CapabilityStatement describes the expected capabilities of\
+      \ a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data\
+      \ from the Data Source  during clinical data exchange. The capabilities include\
+      \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
+      \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
+      \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
+      \ update notifications\n1. Requesting Attachments"
     exampleBoolean: false
     name: Data Consumer Client CapabilityStatement
   - reference:
@@ -98,12 +90,12 @@ definition:
   - reference:
       reference: CapabilityStatement/data-source-server
     description: "This CapabilityStatement describes the expected capabilities of\
-      \ a Da Vinci CDex Data Source  in *Server* mode when responding to a Data Consumer\
-      \   during clinical data exchange. The capabilities include one or more of the\
+      \ a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer\
+      \ during clinical data exchange. The capabilities include one or more of the\
       \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
-      \ Data \n1. Responding to a POST of a Task resource representing a request for\
-      \ clinical data\n1. Responding to a POST of a Subscription  resource\n1. Responding\
-      \ to polling of a Task resource"
+      \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
+      \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
+      \ to a request for Attachments"
     exampleBoolean: false
     name: Data Source Server CapabilityStatement
   - reference:
@@ -186,10 +178,13 @@ definition:
       \ for CMS and is an alternative to the X12n 277 and 278 response transactions.\n\
       \nIt constrains the following elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html)\
       \ Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics)\
-      \ and communicating additional patient demographic data elements. \n- A Task.identifier\
-      \ element representing the payers tracking identifier (referred to as the \u201C\
-      re-association tracking control numbers\u201D)\n- A Task.status with a required\
-      \ binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
+      \ and communicating additional patient demographic data elements.\n- A [contained](http://hl7.org/fhir/R4/references.html)\
+      \ PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole)\
+      \ to communicate the provider ID as either a unique organization/location identifier\
+      \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\n\
+      - A Task.identifier element representing the payers tracking identifier (referred\
+      \ to as the \u201Cre-association tracking control numbers\u201D)\n- A Task.status\
+      \ with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
       \ section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).\n\

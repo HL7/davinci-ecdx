@@ -86,7 +86,7 @@ The optional profile declaration shown below asserts that the resource conforms 
 
 ##### Verifying Patient Identity
 
-The following data elements are used to verify patient identity for compliance regulations (such as HIPAA). (How the Provider system verifies the patient is not covered in this guide.) The Payer communicates them in a `contained` Patient resource using the [CDex Patient Demographics Profile]. This contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".:
+The following data elements are used to verify patient identity for compliance regulations (such as HIPAA). (How the Provider system verifies the patient is not covered in this guide.) The Payer communicates them in a  *contained* Patient resource using the [CDex Patient Demographics Profile]. This contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".:
 
 |Data|HRex Patient Demographics Profile.|
 |---|---|
@@ -102,22 +102,13 @@ The following data elements are used to verify patient identity for compliance r
 {% include_relative includelines filename='cdex-task-example19.json' start=7 count=37 linenumber=true %}
 ~~~
 
+##### Supplying the Provider ID(s)
 
-<!-- #### Supplying the Claim/PreAuthorization Data
+The Payer communicates the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both in a *contained* PractitionerRole resource using the [CDex PractitionerRole Profile]. This contained PractitionerRole is referenced in `Task.owner.reference` using a fixed reference value of "#practitionerrole".
 
-The Payer supplies the necessary Claim/PreAuthorization Data so the Provider can locate the claim.  The data is communicated in a `contained` Claim resource using the [**CDex Claim Profile**](http://build.fhir.org/ig/HL7/davinci-ecdx/StructureDefinition-cdex-claim.html). This contained Claim is referenced in `Task.reasonReference.reference` using a fixed reference value of "#claim".   In addition to required (min=1) elements inherited from the FHIR Base resource, these elements are required:
-
-|Data|CDex Claim Profile element|
-|---|---|
-|claim/pre-auth id|`Claim.identifer`|
-|claim or preauthorization|`Claim.use`|
-|date of service|`Claim.supportingInfo.timing[x]`|
-|patient member id or patient account no|`Claim.patient.identifier` (note: this is the same  value as `Task.for.identifier`)|
-|provider id|`Claim.provider.identifier` (note: this is the same  value as `Task.owner.identifier`)|
-{: .grid}
--->
-
-
+~~~
+{% include_relative includelines filename='cdex-task-example19.json' start=43 count=21 linenumber=true %}
+~~~
 
 ##### Supplying the Tracking ID
 
@@ -125,7 +116,7 @@ The mandatory `Task.identifier` "tracking-id" slice element represents the Payer
 
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=44 count=16 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=65 count=16 linenumber=true %}
 ~~~
 
 ##### Task *Infrastructure* Elements
@@ -139,7 +130,7 @@ These required Task *infrastructural* elements:
 convey what the task is about, its status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".  The Task.code is fixed to “attachment-request” to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the “payer-url” input parameter.
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=60 count=11 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=81 count=11 linenumber=true %}
 ~~~
 
 ##### Identifying the Payer, Provider, and Patient
@@ -147,7 +138,7 @@ convey what the task is about, its status, and the intent of the request.  The T
 <div class="bg-success" markdown="1">
 The attachment request will be directed to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim, and these identifiers are echoed back to the Payer when submitting the attachments.
 
-As discussed above, the Patient id is in the contained Patient resource, referenced by the Task.for element, and the Provider id is in the contained PractitionerRole resource referenced by the Task.owner element.  The Provider id can be a Practitioner indentifier (i,e., a Type1 NPI) or the Practitioner's Organization identifier (i,e., a Type2 NPI) or both.
+As discussed above, the Patient id is in the contained Patient resource, referenced by the Task.for element, and the Provider id is in the contained PractitionerRole resource referenced by the Task.owner element.  The Provider id can be a Practitioner identifier (i,e., a Type1 NPI) or the Practitioner's Organization identifier (i,e., a Type2 NPI) or both.
 
 (note the various Task dates in the request fragment below)
 </div><!-- new-content -->
@@ -160,7 +151,7 @@ As discussed above, the Patient id is in the contained Patient resource, referen
 {: .grid}
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=71 count=17 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=92 count=14 linenumber=true %}
 ~~~
 
 ##### Claim Information
@@ -174,7 +165,7 @@ The Task communicates whether the attachments are for a Claim or Prior Authoriza
 {: .grid}
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=88 count=16 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=105 count=16 linenumber=true %}
 ~~~
 
 ##### Attachment Due Date
@@ -182,7 +173,7 @@ The Task communicates whether the attachments are for a Claim or Prior Authoriza
 The Due Date for attachment is communicated in the `Task.restriction.period`  element. Note that `Task.restriction.period.end` is the due date representing the time by which the attachments should be submitted.
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=104 count=5 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=122 count=5 linenumber=true %}
 ~~~
 
 ##### Communicating What Attachments are Needed
@@ -191,7 +182,7 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
 
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=109 count=38 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=131 count=38 linenumber=true %}
 ~~~
 
 ##### Communicating the Signature Requirements
@@ -199,8 +190,10 @@ The payer supplies the [LOINC attachment codes] to communicate what attachments 
  This Task.input "signature-flag" may be used to indicate that the attachments must be signed. See the [Signatures] and [Sending Attachments] page for more information about using Signatures in CDex.
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=136 count=11 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=154 count=11 linenumber=true %}
 ~~~
+
+<div class="bg-success" markdown="1">
 
 ##### Supplying the $submit-attachment Operation Endpoint
 
@@ -209,15 +202,17 @@ The Payer supplies the url endpoint as a Task input parameter. The Provider Syst
 <!-- If no url endpoint is supplied the attachments are provided either as references or contained Task resources and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=147 count=11 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=165 count=11 linenumber=true %}
 ~~~
+
+</div><!-- new-content -->
 
 ##### Date of Service for the Claim
 
 This Task.input element represents the service date or the service's starting date for the claim or prior authorization. <span class="bg-success" markdown="1"> It SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization. </span><!-- new-content -->
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=158 count=13 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=174 count=13 linenumber=true %}
 ~~~
 
 <div class="bg-success" markdown="1">
@@ -226,7 +221,7 @@ This Task.input element represents the service date or the service's starting da
 This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for Pre-Auth, it would be "COVAUTH".
 
 ~~~
-{% include_relative includelines filename='cdex-task-example19.json' start=169 count=21 linenumber=true %}
+{% include_relative includelines filename='cdex-task-example19.json' start=188 count=21 linenumber=true %}
 ~~~
 </div><!-- new-content -->
 
