@@ -5,9 +5,10 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Cdex Task Example 20
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Prior-Auth Attachment Request Example:**   Prior Authorization
-      Attachment Request sent by payer to a provider requesting a signed History and
-      physical (H&P) note'
+    valueMarkdown: >-
+      **Prior-Auth Attachment Request Example:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a provider requesting a signed History and
+      physical (H&P) note.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 contained:
@@ -110,3 +111,12 @@ input:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
       code: service-date
   valueDate: '2022-06-13'
+- type:
+    coding:
+    - code: purpose-of-use
+      system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+  valueCodeableConcept:
+    coding:
+    - code: COVAUTH
+      system: http://terminology.hl7.org/CodeSystem/v3-ActReason
+      display: coverage authorization

@@ -38,13 +38,11 @@ In most of these situations, there is human intervention (e.g., a provider or de
       - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
 1. `Task.status` is updated as the task is fulfilled
 
-The details for these Task-based transactions are described in detail in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+
 
 #### Purpose of Use
 
-
-
-The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the purpose of use( POU) for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. This element intends to define a potentially new way to exchange data with a dynamically defined POU.
+The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the POU for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. This element intends to define a potentially new way to exchange data with a dynamically defined POU.
 
 If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task-based queries which may even differ from the ‘default’ purpose of use for that data-consuming system. It allows the Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.
 

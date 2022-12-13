@@ -185,8 +185,8 @@
                 ],
                 "path": "Task.input",
                 "sliceName": "POU",
-                "short": "THIS ELEMENT IS DRAFT: Purpose of use code",
-                "definition": "**This element is DRAFT. It has not yet undergone HL7 balloting.** Represent the purpose of use for the requested data.",
+                "short": "Purpose of use code",
+                "definition": "Represent the purpose of use for the requested data.",
                 "max": "1"
             },
             {
