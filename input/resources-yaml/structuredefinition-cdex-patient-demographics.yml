@@ -1,7 +1,7 @@
 resourceType: StructureDefinition
 id: cdex-patient-demographics
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
-name: CDexPatientDemographicsProfile
+name: CDexPatientDemographics
 title: CDex Patient Demographics Profile
 status: draft
 description: |-

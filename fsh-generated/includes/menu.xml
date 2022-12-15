@@ -34,7 +34,10 @@
         <a href="sending-attachments.html">Sending Attachments</a>
       </li>
       <li>
-        <a href="requesting-attachments.html">Requesting Attachments</a>
+        <a href="requesting-attachments-code.html">Requesting Attachments Using Attachments Codes</a>
+      </li>
+      <li>
+        <a href="requesting-attachments-form.html">Requesting Attachments Using Forms</a>
       </li>
       <li>
         <a href="burden-reduction.html">Using CDex Attachments with DaVinci PAS</a>
@@ -53,22 +56,40 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="artifacts.html#1">CapabilityStatements</a>
+        <a href="artifacts.html#1">Attachments Profiles</a>
       </li>
       <li>
-        <a href="artifacts.html#2">Operations</a>
+        <a href="artifacts.html#2">Attachments Operations</a>
       </li>
       <li>
-        <a href="artifacts.html#3">Profiles</a>
+        <a href="artifacts.html#3">Attachments Terminology</a>
       </li>
       <li>
-        <a href="artifacts.html#4">Value Sets</a>
+        <a href="artifacts.html#4">Attachments Examples</a>
       </li>
       <li>
-        <a href="artifacts.html#5">Code Systems</a>
+        <a href="artifacts.html#5">Task Based Approach Profiles</a>
       </li>
       <li>
-        <a href="artifacts.html#6">Examples</a>
+        <a href="artifacts.html#6">Task Based Approach Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#7">Task Based Approach Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#8">Signature Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#9">Signature Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#10">Signature Examples</a>
+      </li>
+      <li>
+        <a href="artifacts.html#11">Common Terminology</a>
+      </li>
+      <li>
+        <a href="artifacts.html#12">CDex Capability Statements</a>
       </li>
     </ul>
   </li>

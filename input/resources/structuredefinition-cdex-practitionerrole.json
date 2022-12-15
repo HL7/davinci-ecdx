@@ -2,7 +2,7 @@
     "resourceType": "StructureDefinition",
     "id": "cdex-practitionerrole",
     "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole",
-    "name": "CDexPractitionerRoleProfile",
+    "name": "CDexPractitionerRole",
     "title": "CDex PractitionerRole Profile",
     "status": "active",
     "experimental": false,

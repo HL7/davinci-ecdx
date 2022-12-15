@@ -53,6 +53,48 @@ dependsOn:
   uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
   version: 3.0.0
 definition:
+  grouping:
+  - id: AttachmentsProfiles
+    name: Attachments Profiles
+    description: Profiles Associated with CDex Attachments Transactions
+  - id: AttachmentsOperations
+    name: Attachments Operations
+    description: Operations Associated with CDex Attachments Transactions
+  - id: AttachmentsTerminology
+    name: Attachments Terminology
+    description: ValueSets Associated with CDex Attachments Transactions
+  - id: AttachmentsExamples
+    name: Attachments Examples
+    description: Examples Associated with CDex Attachments Transactions
+  - id: TaskBasedProfiles
+    name: Task Based Approach Profiles
+    description: Profiles Associated with CDex Task Based Approach Transactions
+  - id: TaskBasedTerminology
+    name: Task Based Approach Terminology
+    description: ValueSets Associated with CDex Task Based Approach Transactions
+  - id: TaskBasedExamples
+    name: Task Based Approach Examples
+    description: Examples Associated with CDex Task Based Approach Transactions
+  - id: SignatureProfiles
+    name: Signature Profiles
+    description: Profiles Associated with CDex Signatures
+  - id: SignatureTerminology
+    name: Signature Terminology
+    description: ValueSets Associated with CDex Signatures
+  - id: SignatureExamples
+    name: Signature Examples
+    description: Examples Associated with CDex Signatures (Several examples are in
+      Task Based and Attachments Examples groupings as well)
+  - id: CommonTerminology
+    name: Common Terminology
+    description: ValueSets and CodeSystems Used in both CDex Attachments and Task
+      Based Approach Transactions
+  - id: CapabilityStatements
+    name: CDex Capability Statements
+    description: The following artifacts define the specific capabilities that different
+      types of systems are expected to have in order to comply with this implementation
+      guide. Systems conforming to this implementation guide are expected to declare
+      conformance to one or more of the following capability statements.
   resource:
   - reference:
       reference: CapabilityStatement/data-consumer-client
@@ -65,6 +107,7 @@ definition:
       \ update notifications\n1. Requesting Attachments"
     exampleBoolean: false
     name: Data Consumer Client CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
       reference: CapabilityStatement/data-consumer-server
     description: 'This CapabilityStatement describes the expected capabilities of
@@ -79,6 +122,7 @@ definition:
       1. Responding to  the `$submit-attachment` operation.'
     exampleBoolean: false
     name: Data Consumer Server CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
       reference: CapabilityStatement/data-source-client
     description: 'This CapabilityStatement describes the expected capabilities of
@@ -95,6 +139,7 @@ definition:
       status of a task.'
     exampleBoolean: false
     name: Data Source Client CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
       reference: CapabilityStatement/data-source-server
     description: "This CapabilityStatement describes the expected capabilities of\
@@ -106,6 +151,7 @@ definition:
       \ to a request for Attachments"
     exampleBoolean: false
     name: Data Source Server CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
       reference: CodeSystem/cdex-temp
     description: Codes temporarily defined as part of the CDex implementation guide.  These
@@ -113,6 +159,7 @@ definition:
       [UTG](https://terminology.hl7.org/codesystems.html) code systems).
     exampleBoolean: false
     name: CDex Temporary Code System
+    groupingId: CommonTerminology
   - reference:
       reference: OperationDefinition/submit-attachment
     description: "This [operation](http://hl7.org/fhir/operations.html) is used to\
@@ -138,6 +185,7 @@ definition:
       \ the claim or prior authorization.\n\nThere are no output parameters."
     exampleBoolean: false
     name: Submit Attachment Operation
+    groupingId: AttachmentsOperations
   - reference:
       reference: StructureDefinition/cdex-patient-demographics
     description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
@@ -150,6 +198,7 @@ definition:
       \ (min=0):\n\n- A patient account number identifier slice  \n- A date of birth"
     exampleBoolean: false
     name: CDex Patient Demographics Profile
+    groupingId: AttachmentsProfiles
   - reference:
       reference: StructureDefinition/cdex-practitionerrole
     description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
@@ -162,6 +211,7 @@ definition:
       \ identifier SHALL be present."
     exampleBoolean: false
     name: CDex PractitionerRole Profile
+    groupingId: AttachmentsProfiles
   - reference:
       reference: StructureDefinition/cdex-signature-bundle
     description: "This Bundle profile enforces the various elements of signature documented\
@@ -177,6 +227,7 @@ definition:
       \ timestamp when the signature was created"
     exampleBoolean: false
     name: CDex Signature Bundle Profile
+    groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-task-attachment-request
     description: "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based\
@@ -241,6 +292,7 @@ definition:
       \ whether the requested data can be sent in multiple submissions"
     exampleBoolean: false
     name: CDex Task Attachment Request Profile
+    groupingId: AttachmentsProfiles
   - reference:
       reference: StructureDefinition/cdex-task-data-request
     description: "This Task profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request).\
@@ -258,6 +310,7 @@ definition:
       \ for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)"
     exampleBoolean: false
     name: CDex Task Data Request Profile
+    groupingId: TaskBasedProfiles
   - reference:
       reference: ValueSet/cdex-POU
     description: The set of purpose of use codes for the requested data (the output
@@ -266,30 +319,35 @@ definition:
       defined by this Guide.
     exampleBoolean: false
     name: CDex Purpose of Use Value Set
+    groupingId: CommonTerminology
   - reference:
       reference: ValueSet/cdex-attachment-task-code
     description: Codes used to identify the type of attachment request and control
       the payer system's behavior.
     exampleBoolean: false
     name: CDex Attachment Task Code Value Set
+    groupingId: AttachmentsTerminology
   - reference:
       reference: ValueSet/cdex-claim-use
     description: The purpose of a Claim resource and the reason for attachments. It
       includes the codes "preauthorization" and "claim".
     exampleBoolean: false
     name: CDex Claim Use Value Set
+    groupingId: AttachmentsTerminology
   - reference:
       reference: ValueSet/cdex-identifier-types
     description: Identifiers type for providers and organizations limited to NPI or
       US Tax id.
     exampleBoolean: false
     name: CDex Identifier Types Value Set
+    groupingId: SignatureTerminology
   - reference:
       reference: ValueSet/cdex-work-queue
     description: The set work queue tags that the provider may use in their workflow
       to process requests. This code set is composed of codes defined by this Guide.
     exampleBoolean: false
     name: CDex Work Queue Value Set
+    groupingId: TaskBasedTerminology
   - reference:
       reference: Bundle/cdex-document-digital-sig-example
     description: Digital signature example showing how it is used to sign a FHIR Document.  The
@@ -298,6 +356,7 @@ definition:
       would typically be in the form of an individual resource.
     name: CDEX Document with Digital Signature Example
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
   - reference:
       reference: Bundle/cdex-electronic-sig-example
     description: Electronic signature example showing how an image file can be used
@@ -307,6 +366,7 @@ definition:
       individual resource.
     name: CDEX Document with Electronic Signature Example
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
   - reference:
       reference: Parameters/cdex-parameters-example1
     description: '**CCDA Attachment Example:** Parameters Resource example showing
@@ -315,6 +375,7 @@ definition:
       them to the claim.'
     name: CDex Parameters Example1
     exampleBoolean: true
+    groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example2
     description: '**Signed FHIR Document Attachment Example:** Parameters Resource
@@ -323,6 +384,7 @@ definition:
       needed to associate it to a prior authorization.'
     name: CDex Parameters Example 2
     exampleBoolean: true
+    groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example3
     description: '**PDF Attachment Example:** Parameters Resource example showing
@@ -331,6 +393,7 @@ definition:
       them to the claim.'
     name: CDex Parameters Example 3
     exampleBoolean: true
+    groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example4
     description: '**Laboratory Results Attachment Example:** Parameters Resource example
@@ -339,16 +402,21 @@ definition:
       information needed to associate them to the claim.'
     name: CDex Parameters Example 4
     exampleBoolean: true
+    groupingId: AttachmentsExamples
   - reference:
       reference: Questionnaire/cdex-questionnaire-example1
-    name: cdex-questionnaire-example1
+    description: This Questionnaire example demonstrates the response to a CDEX Attachments
+      data request form request.
+    name: CDex Questionnaire Example1
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire
+    groupingId: AttachmentsExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
     description: This Questionnaire Response example demonstrates the response to
       a CDEX Attachments data request form request.
     name: CDex QuestionnaireResponse Example1
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+    groupingId: AttachmentsExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
     description: This Questionnaire Response example demonstrates the response to
@@ -358,6 +426,7 @@ definition:
       in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).
     name: CDex QuestionnaireResponse Example2
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
+    groupingId: AttachmentsExamples
   - reference:
       reference: Bundle/cdex-searchset-digital-sig-example
     description: Digital signature example showing how it is used to sign a search
@@ -365,6 +434,7 @@ definition:
       digital signature was required.
     name: CDEX SearchSet Bundle with Digital Signature Example
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
   - reference:
       reference: Task/cdex-task-example1
     description: '**Query String Request for Condition:** Task to seek a patient''s
@@ -373,6 +443,7 @@ definition:
       references the various actors.'
     name: CDex Task Example 1
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example10
     description: '**Coded Request for A1C Results:**   Task to seek a patient''s HbA1c
@@ -380,6 +451,7 @@ definition:
       use of FHIR resource references to the various actors.'
     name: Cdex Task Example 10
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example11
     description: '**Query String Request for Condition with Authorization:**  In this
@@ -389,6 +461,7 @@ definition:
       of pointing to a FHIR resource) to references the various actors.'
     name: Cdex Task Example 11
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example12
     description: '**Completed Query String Request for Condition with Authorization:**
@@ -399,6 +472,7 @@ definition:
       actors.'
     name: Cdex Task Example 12
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example13
     description: '**Free Text Request for Condition with Provenance:**   Task to seek
@@ -407,6 +481,7 @@ definition:
       of pointing to a FHIR resource) to references the various actors.'
     name: Cdex Task Example 13
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example14
     description: '**Completed Free Text Request for Condition with Provenance:**   Completed
@@ -416,6 +491,7 @@ definition:
       actors.'
     name: Cdex Task Example 14
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example15
     description: '**Query String Request for Condition with Provenance:**  Task to
@@ -424,6 +500,7 @@ definition:
       (instead of pointing to a FHIR resource) to references the various actors.'
     name: Cdex Task Example 15
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example16
     description: '**Completed Query String Request for Condition with Provenance:**   Completed
@@ -432,6 +509,7 @@ definition:
       of pointing to a FHIR resource) to references the various actors.'
     name: Cdex Task Example 16
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example17
     description: '**Query String Request for Signed Condition Data:**   Task to seek
@@ -441,6 +519,7 @@ definition:
       references the various actors.'
     name: Cdex Task Example 17
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example18
     description: '**Completed Query String Request for Signed Condition Data:**   Completed
@@ -449,12 +528,14 @@ definition:
       references the various actors.'
     name: Cdex Task Example 18
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example19
     description: '**Claim Attachment Request Example:**   Claim Attachment Request
       sent by payer to a provider requesting a signed Progress note (H&P) note'
     name: Cdex Task Example 19
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example2
     description: '**Completed Query String Request for Condition:**   Completed Task
@@ -463,6 +544,7 @@ definition:
       a FHIR resource) to references the various actors.'
     name: Cdex Task Example 2
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example20
     description: '**Prior-Auth Attachment Request Example:**   Prior Authorization
@@ -470,6 +552,7 @@ definition:
       provider requesting a signed History and physical (H&P) note.'
     name: Cdex Task Example 20
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example21
     description: '**Coded Request for Surgical Operation Note:**   Task to seek a
@@ -477,6 +560,7 @@ definition:
       illustrates the use of FHIR resource references to the various actors.'
     name: Cdex Task Example 21
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example22
     description: '**Prior-Auth Form Request Example:**   Prior Authorization Attachment
@@ -484,6 +568,7 @@ definition:
       a questionnaire be completed.'
     name: Cdex Task Example 22
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example23
     description: '**Prior-Auth Form Request Example:**   Prior Authorization Attachment
@@ -491,6 +576,7 @@ definition:
       an adaptive questionnaire be completed.'
     name: Cdex Task Example 23
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example3
     description: '**Completed Query String Request for Condition with Contained Output:**   Completed
@@ -500,6 +586,7 @@ definition:
       references the various actors.'
     name: Cdex Task Example 3
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example4
     description: '**Free Text Request for Condition:**   Task to seek a patient active
@@ -508,6 +595,7 @@ definition:
       references the various actors.'
     name: Cdex Task Example 4
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example5
     description: '**Completed Free Text Request for Condition:**   Completed Task
@@ -516,6 +604,7 @@ definition:
       (instead of pointing to a FHIR resource) to references the various actors.'
     name: Cdex Task Example 5
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example6
     description: '**Coded Request for Progress note:**   Task to seek a patient''s
@@ -523,6 +612,7 @@ definition:
       the use of FHIR resource references to the various actors.'
     name: Cdex Task Example 6
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example7
     description: '**Completed Coded Request for Progress note - PDF:**   Completed
@@ -532,6 +622,7 @@ definition:
       encoded PDF document.'
     name: Cdex Task Example 7
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example8
     description: '**Completed Coded RequestOperative note -CCDA:**   Completed Task
@@ -541,6 +632,7 @@ definition:
       CCDA document.'
     name: Cdex Task Example 8
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example9
     description: '**Failed Coded Request for A1C Results:**  Task to seek a patient''s
@@ -549,6 +641,7 @@ definition:
       actors.'
     name: Cdex Task Example 9
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   page:
     nameUrl: toc.html
     title: Table of Contents
@@ -576,8 +669,11 @@ definition:
       - nameUrl: sending-attachments.html
         title: Sending Attachments
         generation: markdown
-      - nameUrl: requesting-attachments.html
-        title: Requesting Attachments
+      - nameUrl: requesting-attachments-code.html
+        title: Requesting Attachments Using Attachments Codes
+        generation: markdown
+      - nameUrl: requesting-attachments-form.html
+        title: Requesting Attachments Using Forms
         generation: markdown
       - nameUrl: burden-reduction.html
         title: Using CDex Attachments with DaVinci PAS

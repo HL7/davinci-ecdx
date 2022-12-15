@@ -79,6 +79,68 @@
     }
   ],
   "definition": {
+    "grouping": [
+      {
+        "id": "AttachmentsProfiles",
+        "name": "Attachments Profiles",
+        "description": "Profiles Associated with CDex Attachments Transactions"
+      },
+      {
+        "id": "AttachmentsOperations",
+        "name": "Attachments Operations",
+        "description": "Operations Associated with CDex Attachments Transactions"
+      },
+      {
+        "id": "AttachmentsTerminology",
+        "name": "Attachments Terminology",
+        "description": "ValueSets Associated with CDex Attachments Transactions"
+      },
+      {
+        "id": "AttachmentsExamples",
+        "name": "Attachments Examples",
+        "description": "Examples Associated with CDex Attachments Transactions"
+      },
+      {
+        "id": "TaskBasedProfiles",
+        "name": "Task Based Approach Profiles",
+        "description": "Profiles Associated with CDex Task Based Approach Transactions"
+      },
+      {
+        "id": "TaskBasedTerminology",
+        "name": "Task Based Approach Terminology",
+        "description": "ValueSets Associated with CDex Task Based Approach Transactions"
+      },
+      {
+        "id": "TaskBasedExamples",
+        "name": "Task Based Approach Examples",
+        "description": "Examples Associated with CDex Task Based Approach Transactions"
+      },
+      {
+        "id": "SignatureProfiles",
+        "name": "Signature Profiles",
+        "description": "Profiles Associated with CDex Signatures"
+      },
+      {
+        "id": "SignatureTerminology",
+        "name": "Signature Terminology",
+        "description": "ValueSets Associated with CDex Signatures"
+      },
+      {
+        "id": "SignatureExamples",
+        "name": "Signature Examples",
+        "description": "Examples Associated with CDex Signatures (Several examples are in Task Based and Attachments Examples groupings as well)"
+      },
+      {
+        "id": "CommonTerminology",
+        "name": "Common Terminology",
+        "description": "ValueSets and CodeSystems Used in both CDex Attachments and Task Based Approach Transactions"
+      },
+      {
+        "id": "CapabilityStatements",
+        "name": "CDex Capability Statements",
+        "description": "The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements."
+      }
+    ],
     "resource": [
       {
         "reference": {
@@ -86,7 +148,8 @@
         },
         "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Requesting and Fetching Clinical Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data using a Task-based query including:\n   -  Polling or Subscribing for Task update notifications\n1. Requesting Attachments",
         "exampleBoolean": false,
-        "name": "Data Consumer Client CapabilityStatement"
+        "name": "Data Consumer Client CapabilityStatement",
+        "groupingId": "CapabilityStatements"
       },
       {
         "reference": {
@@ -94,7 +157,8 @@
         },
         "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or one of its proxies during clinical data exchange.   The capabilities include one or more of the following interactions:\n\n1. Responding to a query for authorization information represented by a CommunicationRequest or ServiceRequest\n1. Responding to  the `$submit-attachment` operation.",
         "exampleBoolean": false,
-        "name": "Data Consumer Server CapabilityStatement"
+        "name": "Data Consumer Server CapabilityStatement",
+        "groupingId": "CapabilityStatements"
       },
       {
         "reference": {
@@ -102,7 +166,8 @@
         },
         "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange with a Data Consumer. The capabilities include one or more of the following interactions:\n1. Post the `$submit-attachment` operation to a Data Consumer endpoint.\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n1. Post a subscription notification to a Data Consumer endpoint updating the status of a task.",
         "exampleBoolean": false,
-        "name": "Data Source Client CapabilityStatement"
+        "name": "Data Source Client CapabilityStatement",
+        "groupingId": "CapabilityStatements"
       },
       {
         "reference": {
@@ -110,7 +175,8 @@
         },
         "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to a request for Attachments",
         "exampleBoolean": false,
-        "name": "Data Source Server CapabilityStatement"
+        "name": "Data Source Server CapabilityStatement",
+        "groupingId": "CapabilityStatements"
       },
       {
         "reference": {
@@ -118,7 +184,8 @@
         },
         "description": "Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).",
         "exampleBoolean": false,
-        "name": "CDex Temporary Code System"
+        "name": "CDex Temporary Code System",
+        "groupingId": "CommonTerminology"
       },
       {
         "reference": {
@@ -126,7 +193,8 @@
         },
         "description": "This [operation](http://hl7.org/fhir/operations.html) is used to submit attachments (additional documentation) for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the necessary information needed to associate them to the claim or prior authorization and returns a transaction layer HTTP response.  The operation may be invoked *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer.  This operation can be used by any HTTP endpoint, not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more attachments as FHIR Resources\n    - Optionally, one or more unique line item numbers associated with the attachment\n    - Optionally, the code, free text, or search string for information that was requested\n1. Data elements for the association to the claim/prior authorization\n    - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the \"re-association tracking control numbers\")*\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique payer identifier\n    - A unique organization/location identifier (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)) and/or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n    - A unique Patient member identifier\n    - A Date of Service\n    - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.\n\nThere are no output parameters.",
         "exampleBoolean": false,
-        "name": "Submit Attachment Operation"
+        "name": "Submit Attachment Operation",
+        "groupingId": "AttachmentsOperations"
       },
       {
         "reference": {
@@ -134,7 +202,8 @@
         },
         "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n- A patient's name\n\nand the following element to be *must support* (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
         "exampleBoolean": false,
-        "name": "CDex Patient Demographics Profile"
+        "name": "CDex Patient Demographics Profile",
+        "groupingId": "AttachmentsProfiles"
       },
       {
         "reference": {
@@ -142,7 +211,8 @@
         },
         "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both. It constrains the following elements to be *must support* (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier: \n- An organization.identifier:\n\nAt least a practitioner identifier or organization identifier SHALL be present.",
         "exampleBoolean": false,
-        "name": "CDex PractitionerRole Profile"
+        "name": "CDex PractitionerRole Profile",
+        "groupingId": "AttachmentsProfiles"
       },
       {
         "reference": {
@@ -150,7 +220,8 @@
         },
         "description": "This Bundle profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A Bundle.signature element representing the enveloped signature\n- A Bundle.signature.type fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)\n- A Bundle.signature.who for the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, PractitionerRole or Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n- A Bundle.signature.data representing base64 encoded JWS-Signature \n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- Bundle.signature.when - system timestamp when the signature was created",
         "exampleBoolean": false,
-        "name": "CDex Signature Bundle Profile"
+        "name": "CDex Signature Bundle Profile",
+        "groupingId": "SignatureProfiles"
       },
       {
         "reference": {
@@ -158,7 +229,8 @@
         },
         "description": "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (\"attachments\") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements to request attachments. It complies with HIPAA Attachment rules for CMS and is an alternative to the X12n 277 and 278 response transactions.\n\nIt constrains the following elements to be *mandatory* (min=1):\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements.\n- A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole) to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\n- A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).\n- A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n- A Task.code of either \"attachment-request-code\" or \"attachment-request-form\"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request form.\n  - If the code is \"attachment-request-code\", the provider system returns attachment(s) identified by the LOINC attachment code(s) in the \"data-code\" input parameter.\n  - If the code is \"attachment-request-form\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the form referenced in the \"form-url\" input parameter.\n  - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in \"payer-url\" input parameter.    \n- A Task.requester.identifier element representing the Payer ID\n- A Task.owner.reference element fixed to \"\\#practionerrole\" -  a reference the contained PractitionerRole Resource that represents the Provider ID.\n- A Task.for.reference element fixed to \"\\#patient\" - a reference the contained Patient Resource that represents basic Patient demographic data.\n- A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)\n- *Either*:\n   - A \"data-code\" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes or\n   - A \"form-url\" Task.input element to communicate to the provider a URL of a data request form ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) for attachments or additional data.\n- A Task.input.extension in the \"data-code\" or \"form-url\" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.\n- A \"payer-url\" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation\n\nand the following elements to be *must support* (min=0):\n- A Task.Restriction.period element representing the due date for submitting the attachments\n- A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)\n- A \"signature\" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n- A \"service-date\" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.\n\nand the following elements to be *optional*:\n- A \"POU\" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n- A \"multiple-submits\" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions",
         "exampleBoolean": false,
-        "name": "CDex Task Attachment Request Profile"
+        "name": "CDex Task Attachment Request Profile",
+        "groupingId": "AttachmentsProfiles"
       },
       {
         "reference": {
@@ -166,7 +238,8 @@
         },
         "description": "This Task profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n\n- A meta.tag element representing work-queue hints.\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
         "exampleBoolean": false,
-        "name": "CDex Task Data Request Profile"
+        "name": "CDex Task Data Request Profile",
+        "groupingId": "TaskBasedProfiles"
       },
       {
         "reference": {
@@ -174,7 +247,8 @@
         },
         "description": "The set of purpose of use codes for the requested data (the output of the task). This code set is composed of [FHIR core Purpose of Use security labels](http://hl7.org/fhir/security-labels.html#core) and additional codes defined by this Guide.",
         "exampleBoolean": false,
-        "name": "CDex Purpose of Use Value Set"
+        "name": "CDex Purpose of Use Value Set",
+        "groupingId": "CommonTerminology"
       },
       {
         "reference": {
@@ -182,7 +256,8 @@
         },
         "description": "Codes used to identify the type of attachment request and control the payer system's behavior.",
         "exampleBoolean": false,
-        "name": "CDex Attachment Task Code Value Set"
+        "name": "CDex Attachment Task Code Value Set",
+        "groupingId": "AttachmentsTerminology"
       },
       {
         "reference": {
@@ -190,7 +265,8 @@
         },
         "description": "The purpose of a Claim resource and the reason for attachments. It includes the codes \"preauthorization\" and \"claim\".",
         "exampleBoolean": false,
-        "name": "CDex Claim Use Value Set"
+        "name": "CDex Claim Use Value Set",
+        "groupingId": "AttachmentsTerminology"
       },
       {
         "reference": {
@@ -198,7 +274,8 @@
         },
         "description": "Identifiers type for providers and organizations limited to NPI or US Tax id.",
         "exampleBoolean": false,
-        "name": "CDex Identifier Types Value Set"
+        "name": "CDex Identifier Types Value Set",
+        "groupingId": "SignatureTerminology"
       },
       {
         "reference": {
@@ -206,7 +283,8 @@
         },
         "description": "The set work queue tags that the provider may use in their workflow to process requests. This code set is composed of codes defined by this Guide.",
         "exampleBoolean": false,
-        "name": "CDex Work Queue Value Set"
+        "name": "CDex Work Queue Value Set",
+        "groupingId": "TaskBasedTerminology"
       },
       {
         "reference": {
@@ -214,7 +292,8 @@
         },
         "description": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Digital Signature Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
+        "groupingId": "SignatureExamples"
       },
       {
         "reference": {
@@ -222,7 +301,8 @@
         },
         "description": "Electronic signature example showing how an image file can be used to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Electronic Signature Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
+        "groupingId": "SignatureExamples"
       },
       {
         "reference": {
@@ -230,7 +310,8 @@
         },
         "description": "**CCDA Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a CCDA attachment and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example1",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -238,7 +319,8 @@
         },
         "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a prior authorization.",
         "name": "CDex Parameters Example 2",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -246,7 +328,8 @@
         },
         "description": "**PDF Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a PDF attachment and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example 3",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -254,14 +337,17 @@
         },
         "description": "**Laboratory Results Attachment Example:** Parameters Resource example showing how it is used to submit multiple attachments using the `$submit-attachment` operation. It contains 3 Hemoglobin A1c results as attachments and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example 4",
-        "exampleBoolean": true
+        "exampleBoolean": true,
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
           "reference": "Questionnaire/cdex-questionnaire-example1"
         },
-        "name": "cdex-questionnaire-example1",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+        "description": "This Questionnaire example demonstrates the response to a CDEX Attachments data request form request.",
+        "name": "CDex Questionnaire Example1",
+        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -269,7 +355,8 @@
         },
         "description": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request.",
         "name": "CDex QuestionnaireResponse Example1",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
+        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -277,7 +364,8 @@
         },
         "description": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request. The data request form is an adaptive questionnaire and the resulting QuestionnaireResponse contains the Questionnaire instance the was generated.  For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).",
         "name": "CDex QuestionnaireResponse Example2",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
+        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -285,7 +373,8 @@
         },
         "description": "Digital signature example showing how it is used to sign a search set Bundle.  The CDEX use case would be a response to a Direct Query where a digital signature was required.",
         "name": "CDEX SearchSet Bundle with Digital Signature Example",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
+        "groupingId": "SignatureExamples"
       },
       {
         "reference": {
@@ -293,7 +382,8 @@
         },
         "description": "**Query String Request for Condition:** Task to seek a patient's active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "CDex Task Example 1",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -301,7 +391,8 @@
         },
         "description": "**Coded Request for A1C Results:**   Task to seek a patient's HbA1c test results using the CDex Profile query input. This example illustrates the use of FHIR resource references to the various actors.",
         "name": "Cdex Task Example 10",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -309,7 +400,8 @@
         },
         "description": "**Query String Request for Condition with Authorization:**  In this provider to provider request, a Task is used to request a patient active conditions using the CDex Profile query input.  A reference to a formal authorization is provided.  This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 11",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -317,7 +409,8 @@
         },
         "description": "**Completed Query String Request for Condition with Authorization:** In this completed provider to provider request, a Task is used to request a patient active conditions using the CDex Profile query input.  A reference to a formal authorization is provided.  This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 12",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -325,7 +418,8 @@
         },
         "description": "**Free Text Request for Condition with Provenance:**   Task to seek a patient active conditions and its provenance using free text in the CDex Profile code input. This example illustrates the use of  business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 13",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -333,7 +427,8 @@
         },
         "description": "**Completed Free Text Request for Condition with Provenance:**   Completed Task to seek a patient active conditions and its provenance using free text in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 14",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -341,7 +436,8 @@
         },
         "description": "**Query String Request for Condition with Provenance:**  Task to seek a patient active conditions and its provenance using query string in the CDex Profile query input. This example illustrates the use of  business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 15",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -349,7 +445,8 @@
         },
         "description": "**Completed Query String Request for Condition with Provenance:**   Completed Task to seek a patient active conditions their provenance using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 16",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -357,7 +454,8 @@
         },
         "description": "**Query String Request for Signed Condition Data:**   Task to seek a patient active conditions using the CDex Profile query input and using the signature input to indicate a signature is required. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 17",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -365,7 +463,8 @@
         },
         "description": "**Completed Query String Request for Signed Condition Data:**   Completed Task to seek a *signed* patient active conditions. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 18",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -373,7 +472,8 @@
         },
         "description": "**Claim Attachment Request Example:**   Claim Attachment Request sent by payer to a provider requesting a signed Progress note (H&P) note",
         "name": "Cdex Task Example 19",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -381,7 +481,8 @@
         },
         "description": "**Completed Query String Request for Condition:**   Completed Task to seek a patient active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 2",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -389,7 +490,8 @@
         },
         "description": "**Prior-Auth Attachment Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting a signed History and physical (H&P) note.",
         "name": "Cdex Task Example 20",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -397,7 +499,8 @@
         },
         "description": "**Coded Request for Surgical Operation Note:**   Task to seek a patient's latest operative notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors.",
         "name": "Cdex Task Example 21",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -405,7 +508,8 @@
         },
         "description": "**Prior-Auth Form Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting a questionnaire be completed.",
         "name": "Cdex Task Example 22",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -413,7 +517,8 @@
         },
         "description": "**Prior-Auth Form Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed.",
         "name": "Cdex Task Example 23",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+        "groupingId": "AttachmentsExamples"
       },
       {
         "reference": {
@@ -421,7 +526,8 @@
         },
         "description": "**Completed Query String Request for Condition with Contained Output:**   Completed Task to seek a patient active conditions using the CDex Profile query input and using a contained resource for the output data. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 3",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -429,7 +535,8 @@
         },
         "description": "**Free Text Request for Condition:**   Task to seek a patient active conditions using free text in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 4",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -437,7 +544,8 @@
         },
         "description": "**Completed Free Text Request for Condition:**   Completed Task to seek a patient active conditions using free text for the input in the CDex Profile code input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.",
         "name": "Cdex Task Example 5",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -445,7 +553,8 @@
         },
         "description": "**Coded Request for Progress note:**   Task to seek a patient's latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors.",
         "name": "Cdex Task Example 6",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -453,7 +562,8 @@
         },
         "description": "**Completed Coded Request for Progress note - PDF:**   Completed Task to seek a patient's latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded PDF document.",
         "name": "Cdex Task Example 7",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -461,7 +571,8 @@
         },
         "description": "**Completed Coded RequestOperative note -CCDA:**   Completed Task to seek a patient's Operative notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded CCDA document.",
         "name": "Cdex Task Example 8",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       },
       {
         "reference": {
@@ -469,7 +580,8 @@
         },
         "description": "**Failed Coded Request for A1C Results:**  Task to seek a patient's HbA1c test results using the CDex Profile query input with a failed status. This example illustrates the use of FHIR resource references to the various actors.",
         "name": "Cdex Task Example 9",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
+        "groupingId": "TaskBasedExamples"
       }
     ],
     "page": {
@@ -513,8 +625,13 @@
               "generation": "markdown"
             },
             {
-              "nameUrl": "requesting-attachments.html",
-              "title": "Requesting Attachments",
+              "nameUrl": "requesting-attachments-code.html",
+              "title": "Requesting Attachments Using Attachments Codes",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "requesting-attachments-form.html",
+              "title": "Requesting Attachments Using Forms",
               "generation": "markdown"
             },
             {

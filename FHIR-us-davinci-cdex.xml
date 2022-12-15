@@ -24,7 +24,7 @@
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
-<artifact id="Questionnaire/cdex-questionnaire-example1" key="Questionnaire-cdex-questionnaire-example1" name="cdex-questionnaire-example1"/>
+<artifact id="Questionnaire/cdex-questionnaire-example1" key="Questionnaire-cdex-questionnaire-example1" name="CDex Questionnaire Example1"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example1" key="QuestionnaireResponse-cdex-questionnaireresponse-example1" name="CDex QuestionnaireResponse Example1"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example2" key="QuestionnaireResponse-cdex-questionnaireresponse-example2" name="CDex QuestionnaireResponse Example2"/>
 <artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
@@ -93,7 +93,9 @@
 <page deprecated="true" key="general-guidance" name="General Guidance"/>
 <page key="index" name="Home"/>
 <page deprecated="true" key="profiles" name="Profiles"/>
-<page key="requesting-attachments" name="Requesting Attachments"/>
+<page deprecated="true" key="requesting-attachments" name="Requesting Attachments"/>
+<page key="requesting-attachments-code" name="Requesting Attachments Using Attachments Codes"/>
+<page key="requesting-attachments-form" name="Requesting Attachments Using Forms"/>
 <page key="security" name="Security and Privacy"/>
 <page key="sending-attachments" name="Sending Attachments"/>
 <page key="signatures" name="Signatures"/>

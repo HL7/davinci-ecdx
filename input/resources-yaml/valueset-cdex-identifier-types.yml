@@ -10,9 +10,7 @@ description: Identifiers type for providers and organizations limited to NPI or 
   Tax id.
 compose:
   include:
-  - system: http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType
-    concept:
-    - code: npi
   - system: http://terminology.hl7.org/CodeSystem/v2-0203
     concept:
     - code: TAX
+    - code: NPI

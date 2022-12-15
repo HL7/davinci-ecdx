@@ -48,7 +48,110 @@ dependencies:
     version: 3.0.0
     id: sdc
 
-  
+# Groups can control certain aspects of the IG generation.  The IG
+# documentation recommends that authors use the default groups that
+# are provided by the templating framework, but if authors want to
+# use their own instead, they can use the mechanism below.  This will
+# create IG.definition.grouping entries and associate the individual
+# resource entries with the corresponding groupIds.
+groups:
+  AttachmentsProfiles:
+    name: Attachments Profiles
+    description: Profiles Associated with CDex Attachments Transactions
+    resources:
+      - StructureDefinition/cdex-task-attachment-request
+      - StructureDefinition/cdex-practitionerrole
+      - StructureDefinition/cdex-patient-demographics
+  AttachmentsOperations:
+    name: Attachments Operations
+    description: Operations Associated with CDex Attachments Transactions
+    resources:
+      - OperationDefinition/submit-attachment
+  AttachmentsTerminology:
+    name: Attachments Terminology
+    description: ValueSets Associated with CDex Attachments Transactions
+    resources:
+      - ValueSet/cdex-attachment-task-code
+      - ValueSet/cdex-claim-use
+  AttachmentsExamples:
+    name: Attachments Examples 
+    description: Examples Associated with CDex Attachments Transactions
+    resources:
+      - Task/cdex-task-example19
+      - Task/cdex-task-example20
+      - Task/cdex-task-example22
+      - Task/cdex-task-example23
+      - Parameters/cdex-parameters-example1
+      - Parameters/cdex-parameters-example2
+      - Parameters/cdex-parameters-example3
+      - Parameters/cdex-parameters-example4
+      - Questionnaire/cdex-questionnaire-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example2
+  TaskBasedProfiles:
+    name: Task Based Approach Profiles
+    description: Profiles Associated with CDex Task Based Approach Transactions
+    resources:
+      - StructureDefinition/cdex-task-data-request
+  TaskBasedTerminology:
+    name: Task Based Approach Terminology
+    description: ValueSets Associated with CDex Task Based Approach Transactions
+    resources:
+      - ValueSet/cdex-work-queue
+  TaskBasedExamples:
+    name: Task Based Approach Examples
+    description: Examples Associated with CDex Task Based Approach Transactions
+    resources:
+      - Task/cdex-task-example1
+      - Task/cdex-task-example2
+      - Task/cdex-task-example3
+      - Task/cdex-task-example4
+      - Task/cdex-task-example5
+      - Task/cdex-task-example6
+      - Task/cdex-task-example7
+      - Task/cdex-task-example8
+      - Task/cdex-task-example9
+      - Task/cdex-task-example10
+      - Task/cdex-task-example11
+      - Task/cdex-task-example12
+      - Task/cdex-task-example13
+      - Task/cdex-task-example14
+      - Task/cdex-task-example15
+      - Task/cdex-task-example16
+      - Task/cdex-task-example17
+      - Task/cdex-task-example18
+      - Task/cdex-task-example21
+  SignatureProfiles:
+    name: Signature Profiles
+    description: Profiles Associated with CDex Signatures
+    resources:
+      - StructureDefinition/cdex-signature-bundle
+  SignatureTerminology:
+    name: Signature Terminology
+    description: ValueSets Associated with CDex Signatures
+    resources:
+      - ValueSet/cdex-identifier-types
+  SignatureExamples:
+    name: Signature Examples
+    description: Examples Associated with CDex Signatures (Several examples are in Task Based and Attachments Examples groupings as well)
+    resources:
+      - Bundle/cdex-searchset-digital-sig-example
+      - Bundle/cdex-document-digital-sig-example
+      - Bundle/cdex-electronic-sig-example
+  CommonTerminology:
+    name: Common Terminology
+    description: ValueSets and CodeSystems Used in both CDex Attachments and Task Based Approach Transactions
+    resources:
+      - ValueSet/cdex-POU
+      - CodeSystem/cdex-temp
+  CapabilityStatements:
+    name: CDex Capability Statements
+    description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+    resources:
+      - CapabilityStatement/data-consumer-client
+      - CapabilityStatement/data-consumer-server
+      - CapabilityStatement/data-source-client
+      - CapabilityStatement/data-source-server
 
 pages:
   index.md:
@@ -62,7 +165,10 @@ pages:
     solicited-unsolicited-attachments.md:
       title: Solicited and Unsolicited Attachments
     sending-attachments.md:
-    requesting-attachments.md:
+    requesting-attachments-code.md:
+      title: Requesting Attachments Using Attachments Codes
+    requesting-attachments-form.md:
+      title: Requesting Attachments Using Forms
     burden-reduction.md:
       title: Using CDex Attachments with DaVinci PAS
   signatures.md:
@@ -121,16 +227,23 @@ menu:
   Attachments:
     Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
     Sending Attachments: sending-attachments.html
-    Requesting Attachments: requesting-attachments.html
+    Requesting Attachments Using Attachments Codes: requesting-attachments-code.html
+    Requesting Attachments Using Forms: requesting-attachments-form.html
     Using CDex Attachments with DaVinci PAS: burden-reduction.html
   Signatures: signatures.html
   Security and Privacy: security.html
   FHIR Artifacts:
-      CapabilityStatements: artifacts.html#1
-      Operations: artifacts.html#2
-      Profiles: artifacts.html#3
-      Value Sets: artifacts.html#4
-      Code Systems: artifacts.html#5
-      Examples: artifacts.html#6
+    Attachments Profiles: artifacts.html#1
+    Attachments Operations: artifacts.html#2
+    Attachments Terminology: artifacts.html#3
+    Attachments Examples: artifacts.html#4
+    Task Based Approach Profiles: artifacts.html#5
+    Task Based Approach Terminology: artifacts.html#6
+    Task Based Approach Examples: artifacts.html#7
+    Signature Profiles: artifacts.html#8
+    Signature Terminology: artifacts.html#9
+    Signature Examples: artifacts.html#10
+    Common Terminology: artifacts.html#11
+    CDex Capability Statements: artifacts.html#12
   Downloads: downloads.html
   Change Log: changes.html
