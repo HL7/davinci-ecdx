@@ -105,7 +105,9 @@
 [FHIR-36158]: https://jira.hl7.org/browse/FHIR-36158
 [Solicited and Unsolicited Attachments]: solicited-unsolicited-attachments.html
 [Sending Attachments]: sending-attachments.html
-[Requesting Attachments]: requesting-attachments.html
+[Requesting Attachments]: requesting-attachments-code.html
+[Requesting Attachments Using Attachment Codes]: requesting-attachments-code.html
+[Requesting Attachments Using Forms]: requesting-attachments-code.html
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
