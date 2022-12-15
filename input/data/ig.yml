@@ -404,6 +404,15 @@ definition:
     exampleBoolean: true
     groupingId: AttachmentsExamples
   - reference:
+      reference: Parameters/cdex-parameters-example5
+    description: '**Completed Form Attachment Example:** Parameters Resource example
+      showing how it is used to submit a solicited attachment using the `$submit-attachment`
+      operation. The attachment parameter payload is a QuestionnaireResponse completed
+      using DTR in response to data request form sent in the Attachments request.'
+    name: CDex Parameters Example 5
+    exampleBoolean: true
+    groupingId: AttachmentsExamples
+  - reference:
       reference: Questionnaire/cdex-questionnaire-example1
     description: This Questionnaire example demonstrates the response to a CDEX Attachments
       data request form request.
@@ -563,9 +572,9 @@ definition:
     groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example22
-    description: '**Prior-Auth Form Request Example:**   Prior Authorization Attachment
-      Request with a POU of "coverage authorization" sent by payer to a provider requesting
-      a questionnaire be completed.'
+    description: '**Request Additional Data using a Form:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting a questionnaire form be completed.'
     name: Cdex Task Example 22
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
     groupingId: AttachmentsExamples

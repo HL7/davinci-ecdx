@@ -21,6 +21,7 @@
 <artifact id="Parameters/cdex-parameters-example2" key="Parameters-cdex-parameters-example2" name="CDex Parameters Example 2"/>
 <artifact id="Parameters/cdex-parameters-example3" key="Parameters-cdex-parameters-example3" name="CDex Parameters Example 3"/>
 <artifact id="Parameters/cdex-parameters-example4" key="Parameters-cdex-parameters-example4" name="CDex Parameters Example 4"/>
+<artifact id="Parameters/cdex-parameters-example5" key="Parameters-cdex-parameters-example5" name="CDex Parameters Example 5"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>

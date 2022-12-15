@@ -85,6 +85,7 @@ groups:
       - Parameters/cdex-parameters-example2
       - Parameters/cdex-parameters-example3
       - Parameters/cdex-parameters-example4
+      - Parameters/cdex-parameters-example5
       - Questionnaire/cdex-questionnaire-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example2
