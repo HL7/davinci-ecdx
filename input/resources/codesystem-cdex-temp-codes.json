@@ -122,9 +122,19 @@
             "definition": "Date of service or starting date of the service for the claim or prior authorization."
         },
         {
-            "code": "attachment-request",
-            "display": "Attachment Request",
-            "definition": "A Task by a Payer requesting attachments for a claim or prior-authorization from the Provider.  The Provider is expected to submit the attachments using the $submit-attachment operation to the endpoint provided in the \"payer-url\" input parameter."
+            "code": "attachment-request-code",
+            "display": "Coded Attachment Request",
+            "definition": "A Task by a Payer requesting attachments for a Provider claim or prior-authorization using LOINC attachment codes."
+        },
+        {
+            "code": "attachment-request-form",
+            "display": "Attachment Request Form",
+            "definition": "A Task by a Payer requesting attachments or for a Provider claim or prior-authorization using a data request form ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html))."
+        },
+        {
+            "code": "form-url",
+            "display": "Form URL",
+            "definition": "URL for a ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) that can be used to fetch and complete the form."
         }
     ]
 }

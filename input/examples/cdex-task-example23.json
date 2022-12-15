@@ -1,15 +1,15 @@
 {
     "resourceType": "Task",
-    "id": "cdex-task-example20",
+    "id": "cdex-task-example23",
     "meta": {
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Cdex Task Example 20"
+                "valueString": "Cdex Task Example 23"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Prior-Auth Attachment Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting a signed History and physical (H&P) note."
+                "valueMarkdown": "**Prior-Auth Form Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed."
             }
         ],
         "profile": [
@@ -102,7 +102,7 @@
                 "text": "Re-Association Tracking Control Number"
             },
             "system": "http://example.org/payer",
-            "value": "trackingid789"
+            "value": "trackingid1012"
         }
     ],
     "status": "requested",
@@ -111,10 +111,10 @@
         "coding": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "attachment-request-code"
+                "code": "attachment-request-form"
             }
         ],
-        "text": "Coded Attachment Request"
+        "text": "Attachment Request Form"
     },
     "for": {
         "reference": "#patient"
@@ -156,21 +156,12 @@
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-                        "code": "data-code"
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                        "code": "form-url"
                     }
                 ]
             },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "11506-3",
-                        "display": "Progress note"
-                    }
-                ],
-                "text": "Progress note"
-            },
+            "valueUrl": "http://example.org/base_adaptive_questionnaire",
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",

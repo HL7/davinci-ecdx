@@ -61,8 +61,8 @@ intent: order
 code:
   coding:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-    code: attachment-request
-  text: Attachment Request
+    code: attachment-request-code
+  text: Coded Attachment Request
 for:
   reference: '#patient'
 authoredOn: '2022-06-17T16:16:06Z'

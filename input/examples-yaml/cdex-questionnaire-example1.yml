@@ -1,0 +1,51 @@
+resourceType: Questionnaire
+id: cdex-questionnaire-example1
+meta:
+  profile:
+    - >-
+      http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire
+  extension:
+    - url: http://hl7.org/fhir/StructureDefinition/instance-name
+      valueString: CDex Questionnaire Example1
+    - url: http://hl7.org/fhir/StructureDefinition/instance-description
+      valueMarkdown: >-
+        This Questionnaire example demonstrates the response to a CDEX Attachments data request form request.
+version: 0.1.0
+name: HomeOxygenTherapyAdaptiveSDCQuestionnaire
+title: Adaptive Home Oxygen Therapy Order Template (SDC)
+url: 'http://example.org/cdex-questionnaire-example1'
+status: draft
+subjectType:
+  - Patient
+date: '2022-12-14T16:58:43Z'
+publisher: Da Vinci CDex
+contact:
+  - name: Example Author
+item:
+  - linkId: '1'
+    text: >-
+      Relevant Patient Diagnoses (conditions that might be expected to
+      improve with oxygen therapy)
+    type: text
+    required: true
+  - linkId: '2'
+    text: Order Reason
+    type: choice
+    required: true
+    answerOption:
+      - valueCoding:
+          system: 'http://example.org'
+          code: '1'
+          display: Initial or original order for certification
+      - valueCoding:
+          system: 'http://example.org'
+          code: '2'
+          display: Change in status
+      - valueCoding:
+          system: 'http://example.org'
+          code: '3'
+          display: Revision or change in equipment
+      - valueCoding:
+          system: 'http://example.org'
+          code: '4'
+          display: Replacement

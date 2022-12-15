@@ -1,4 +1,4 @@
-<!-- <div markdown="1" class="note-to-balloters">
+<!-- <div markdown="1" class="stu-note">
 
 **All comments for this ballot are restricted to the following Draft content in the upcoming STU 1.1.0 version of CDex which includes the topics requesting and submitting attachments and purpose of use:**
 
@@ -30,6 +30,6 @@
 
 <div markdown="1" class="stu-note">
 
-The attachment transaction and purpose of use content is DRAFT. It has not yet undergone HL7 balloting. The appropriate pages and sections are preceded with an STU-Note indicating the draft content.
+Using data request forms with Task-based queries and requesting attachment transactions is DRAFT content. It requires further community review and testing. The appropriate pages and sections are preceded with an STU-Note indicating the draft content.
 
 </div>

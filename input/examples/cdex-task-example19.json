@@ -96,10 +96,10 @@
         "coding": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "attachment-request"
+                "code": "attachment-request-code"
             }
         ],
-        "text": "Attachment Request"
+        "text": "Coded Attachment Request"
     },
     "for": {
         "reference": "#patient"

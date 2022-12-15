@@ -15,25 +15,30 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
-  - A Task.code fixed to "attachment-request" to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the "payer-url" input parameter.
+  - A Task.code of either "attachment-request-code" or "attachment-request-form"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request form.
+    - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the LOINC attachment code(s) in the "data-code" input parameter.
+    - If the code is "attachment-request-form", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the form referenced in the "form-url" input parameter.
+    - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in "payer-url" input parameter.    
   - A Task.requester.identifier element representing the Payer ID
   - A Task.owner.reference element fixed to "\#practionerrole" -  a reference the contained PractitionerRole Resource that represents the Provider ID.
   - A Task.for.reference element fixed to "\#patient" - a reference the contained Patient Resource that represents basic Patient demographic data.
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
-  - A Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes
-    - An extension representing line item numbers in the Claim or Prior Authorization
-  - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
+  - *Either*:
+     - A "data-code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes or
+     - A "form-url" Task.input element to communicate to the provider a URL of a data request form ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) for attachments or additional data.
+  - A Task.input.extension in the "data-code" or "form-url" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.
+  - A "payer-url" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
  
-  and the following elements to be *must support* [min=0]:
+  and the following elements to be *must support* (min=0):
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
-  - A Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
-  - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
+  - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A "service-date" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
   and the following elements to be *optional*:
-  - A Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
-  - A Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
 
 fhirVersion: 4.0.1
 kind: resource
@@ -54,6 +59,21 @@ differential:
             The "service-date" input SHALL be present if the attachment is for a claim.
           expression: >-
             Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()
+        - key: cdex-4
+          severity: error
+          human: If code = "attachment-request-code", must have one or more "code" inputs.
+          expression: >-
+            Task.code.coding.code.where($this='attachment-request-code').exists() implies Task.input.type.coding.code.where($this='data-code').exists()
+        - key: cdex-5
+          severity: error
+          human: If code = "attachment-request-form", must have one "form-url" input.
+          expression: >-
+            Task.code.coding.code.where($this='attachment-request-form').exists() implies Task.input.type.coding.code.where($this='form-url').exists()
+        - key: cdex-6
+          severity: error
+          human: Must only have "code" inputs or one "form-url" input not both.
+          expression: >-
+            Task.input.type.coding.code.where($this='data-code').exists() implies Task.input.type.coding.code.where($this='form-url').empty()
     # - id: Task.meta
     #   path: Task.meta
     #   min: 1
@@ -203,11 +223,31 @@ differential:
 
     - id: Task.code
       path: Task.code
+      short: attachment-request-code | attachment-request-form
+      definition: >-
+        The code element is used to indicate the type of attachment request. The code element is a required element and must be populated with one of the following values: attachment-request-code or attachment-request-form.
       min: 1
-      patternCodeableConcept:
-        coding:
-          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-            code: attachment-request
+      condition:
+        - cdex-4
+        - cdex-5
+      mustSupport: true
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-task-code'
+
+    - id: Task.code.coding
+      path: Task.code.coding
+      min: 1
+      mustSupport: true
+
+    - id: Task.code.coding.system
+      path: Task.code.coding.system
+      fixedUri: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+      mustSupport: true
+
+    - id: Task.code.coding.code
+      path: Task.code.coding.code
+      min: 1
       mustSupport: true
 
     - id: Task.for
@@ -372,12 +412,15 @@ differential:
       short: Attachment Codes
       definition: A code indicating the type of data/document to be returned
       comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.
-      min: 1
+      # min: 1
       # max: '*'
       binding:
         strength: extensible
         # valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment' 
         valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
+      condition:
+        - cdex-4
+        - cdex-6
       mustSupport: true
 
     - id: 'Task.input:code.type'
@@ -395,6 +438,38 @@ differential:
         - code: CodeableConcept
       mustSupport: true
       
+
+    - id: 'Task.input:form-url'
+      extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: draft
+      path: Task.input
+      sliceName: form-url
+      short: Data Request Form
+      definition: The Questionnaire URL for a data request form.
+      max: '1'
+      condition:
+        - cdex-5
+        - cdex-6
+      # mustSupport: true
+
+    - id: 'Task.input:form-url.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+            code: form-url
+      # mustSupport: true
+
+    - id: 'Task.input:form-url.value[x]'
+      path: 'Task.input.value[x]'
+      short: Questionnaire url value
+      type:
+        - code: url
+      # mustSupport: true
+
+
     - id: 'Task.input:payer-url'
       path: Task.input
       sliceName: payer-url
@@ -402,7 +477,7 @@ differential:
       definition: The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.
       min: 1
       max: '1'
-      mustSupport: true
+      mustSupport: true     
 
     - id: 'Task.input:payer-url.type'
       path: Task.input.type
