@@ -77,7 +77,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 25.  - [Here](ValueSet-cdex-attachment-task-code.html)
 26.  - [Here](Task-cdex-task-example22.html)
 27.  - [Here](Task-cdex-task-example23.html)
-28.  - [Here](#)
+28.  - [Here](Parameters-cdex-parameters-example5.html)
 28.  - [Here](#)
 28.  - [Here](#)
 28.  - [Here](#)
