@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Prior-Auth Form Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed."
+                "valueMarkdown": "**Prior-Auth Questionnaire Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed."
             }
         ],
         "profile": [
@@ -111,10 +111,10 @@
         "coding": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "attachment-request-form"
+                "code": "attachment-request-questionnaire"
             }
         ],
-        "text": "Attachment Request Form"
+        "text": "Attachment Request Questionnaire"
     },
     "for": {
         "reference": "#patient"
@@ -157,7 +157,7 @@
                 "coding": [
                     {
                         "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "form-url"
+                        "code": "questionnaire-url"
                     }
                 ]
             },

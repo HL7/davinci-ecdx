@@ -6,8 +6,8 @@ meta:
     valueString: Cdex Task Example 22
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: >-
-      **Request Additional Data using a Form:**   Prior Authorization
-      Attachment Request with a POU of "coverage authorization" sent by payer to a provider requesting a questionnaire form be completed.
+      **Request Additional Data using a Questionnaire:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a provider requesting a data request questionnaire be completed.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 contained:
@@ -69,8 +69,8 @@ intent: order
 code:
   coding:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-    code: attachment-request-form
-  text: Attachment Request Form
+    code: attachment-request-questionnaire
+  text: Attachment Request Questionnaire
 for:
   reference: '#patient'
 authoredOn: '2022-06-17T16:16:06Z'
@@ -98,8 +98,8 @@ input:
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-      code: form-url
-  valueUrl: http://example.org/cdex-questionnaire-example1 # <<<<<<<< This is the URL of the questionnaire for a prior auth data request form using CDex attachments.
+      code: questionnaire-url
+  valueUrl: http://example.org/cdex-questionnaire-example1 # <<<<<<<< This is the URL of the data request questionnaire for a prior auth data.
   extension:
     - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
       valuePositiveInt: 1

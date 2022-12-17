@@ -104,10 +104,13 @@ concept:
   display: Coded Attachment Request
   definition: A Task by a Payer requesting attachments for a Provider claim or prior-authorization
     using LOINC attachment codes.
-- code: attachment-request-form
-  display:  Attachment Request Form
-  definition: A Task by a Payer requesting attachments or for a Provider claim or prior-authorization
-    using a data request form ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
-- code: form-url
-  display: Form URL
-  definition: URL for a ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) that can be used to fetch and complete the form.
+- code: data-request-questionnaire
+  display:  Data Request Questionnaire
+  definition: A Task requesting data using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
+- code: attachment-request-questionnaire
+  display:  Attachment Request Questionnaire
+  definition: A Task by a Payer requesting attachments or additional data for a Provider claim or prior-authorization
+    using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
+- code: questionnaire-url
+  display: Questionnaire URL
+  definition: URL for a ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) that can be used to fetch and complete the questionnaire.

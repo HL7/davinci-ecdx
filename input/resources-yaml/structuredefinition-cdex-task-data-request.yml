@@ -17,8 +17,10 @@ description: |-
   - A Task.input element representing a flag to indicate whether the requested data requires a signature
 
   In addition, the following *optional* constraint:
-
+  - A Task.code.coding of 'data-request-questionnaire" communicating to the data source that a data request questionnaire is being submitted.
+     - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the "questionnaire-url" input parameter.
   - A meta.tag element representing work-queue hints.
+  - A "questionnaire-url" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
   - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)
 
 fhirVersion: 4.0.1
@@ -29,6 +31,34 @@ baseDefinition: 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-ta
 derivation: constraint
 differential:
   element:
+
+    - id: Task
+      path: Task
+      definition: >-
+        This Task profile is used by the CDex Data Consumer (e.g. Payer or other Provider) to solicit information from a Data Source (e.g., Provider) asynchronously where human involvement to find/aggregate/filter/approve requests may be required.
+      constraint:
+        # - key: cdex-1
+        #   severity: error
+        #   human: >-
+        #     The "service-date" input SHALL be present if the attachment is for a claim.
+        #   expression: >-
+        #     Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()
+        - key: cdex-7
+          severity: error
+          human: If no code = "data-request-questionnaire", must have "code" or "query" input.
+          expression: >-
+            Task.code.coding.code.where($this='attachment-request-code').empty() implies Task.input.type.coding.code.where($this='data-query' or $this='data-code').exists()
+        - key: cdex-8
+          severity: error
+          human: If code = "data-request-questionnaire", must have one "questionnaire-url" input.
+          expression: >-
+            Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()
+        - key: cdex-9
+          severity: error
+          human: Must have exactly one input that is data-query or data-code or questionnaire_url (note this conflicts with HREX tdr-1).
+          expression: >-
+            Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire_url').count()=1
+            
     - id: Task.meta
       path: Task.meta
 
@@ -92,6 +122,8 @@ differential:
     #         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
     #   mustSupport: true
 
+
+
     - id: Task.identifier
       path: Task.identifier
       # slicing:
@@ -120,6 +152,34 @@ differential:
     #         - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
     #           code: tracking-id
     #   mustSupport: true
+
+    - id: Task.code
+      path: Task.code
+      short: Data Request
+      definition: >-
+        The code element is used to indicate that Task is a request for data and must be populated with the value "data-request".
+
+    - id: Task.code.coding
+      path: Task.code.coding
+      slicing:
+        discriminator:
+          - type: pattern
+            path: $this
+        rules: open
+
+    - id: Task.code.coding:questionnaire
+      path: Task.code.coding
+      sliceName: questionnaire
+      short: Data Request Questionnaire
+      definition: A Task.code.coding of 'data-request-questionnaire" communicating to the data source that a data request questionnaire is being submitted.
+      min: 0
+      max: '1'
+      # type:
+      #   - code: Coding
+      patternCoding:
+        system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+        code: data-request-questionnaire
+      # mustSupport: true
 
     - id: Task.for
       path: Task.for
@@ -245,7 +305,6 @@ differential:
     #       profile:
     #         - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
     #   mustSupport: true
-  
 
     - id: 'Task.input:code.valueCodeableConcept'
       path: Task.input.valueCodeableConcept
@@ -254,6 +313,37 @@ differential:
       binding:
         strength: extensible
         valueSet: 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type'
+
+    - id: 'Task.input:questionnaire-url'
+      extension:
+        - url: >-
+            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: draft
+      path: Task.input
+      sliceName: questionnaire-url
+      short: Data Request questionnaire
+      definition: The Questionnaire URL for a data request questionnaire.
+      max: '1'
+      condition:
+        - cdex-5
+        - cdex-6
+      # mustSupport: true
+
+    - id: 'Task.input:questionnaire-url.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+            code: questionnaire-url
+      # mustSupport: true
+
+    - id: 'Task.input:questionnaire-url.value[x]'
+      path: 'Task.input.value[x]'
+      short: Questionnaire URL value
+      type:
+        - code: url
+      # mustSupport: true
+
 
     - id: 'Task.input:signature'
       path: Task.input

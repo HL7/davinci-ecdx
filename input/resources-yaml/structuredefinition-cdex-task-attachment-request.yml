@@ -15,9 +15,9 @@ description: |-
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
   - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
-  - A Task.code of either "attachment-request-code" or "attachment-request-form"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request form.
+  - A Task.code of either "attachment-request-code" or "attachment-request-questionnaire"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.
     - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the LOINC attachment code(s) in the "data-code" input parameter.
-    - If the code is "attachment-request-form", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the form referenced in the "form-url" input parameter.
+    - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the "questionnaire-url" input parameter.
     - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in "payer-url" input parameter.    
   - A Task.requester.identifier element representing the Payer ID
   - A Task.owner.reference element fixed to "\#practionerrole" -  a reference the contained PractitionerRole Resource that represents the Provider ID.
@@ -26,8 +26,8 @@ description: |-
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - *Either*:
      - A "data-code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes or
-     - A "form-url" Task.input element to communicate to the provider a URL of a data request form ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) for attachments or additional data.
-  - A Task.input.extension in the "data-code" or "form-url" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.
+     - A "questionnaire-url" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) for attachments or additional data.
+  - A Task.input.extension in the "data-code" or "questionnaire-url" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.
   - A "payer-url" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
  
   and the following elements to be *must support* (min=0):
@@ -66,14 +66,14 @@ differential:
             Task.code.coding.code.where($this='attachment-request-code').exists() implies Task.input.type.coding.code.where($this='data-code').exists()
         - key: cdex-5
           severity: error
-          human: If code = "attachment-request-form", must have one "form-url" input.
+          human: If code = "attachment-request-questionnaire", must have one "questionnaire-url" input.
           expression: >-
-            Task.code.coding.code.where($this='attachment-request-form').exists() implies Task.input.type.coding.code.where($this='form-url').exists()
+            Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()
         - key: cdex-6
           severity: error
-          human: Must only have "code" inputs or one "form-url" input not both.
+          human: Must only have "code" inputs or one "questionnaire-url" input not both.
           expression: >-
-            Task.input.type.coding.code.where($this='data-code').exists() implies Task.input.type.coding.code.where($this='form-url').empty()
+            Task.input.type.coding.code.where($this='data-code').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').empty()
     # - id: Task.meta
     #   path: Task.meta
     #   min: 1
@@ -223,9 +223,9 @@ differential:
 
     - id: Task.code
       path: Task.code
-      short: attachment-request-code | attachment-request-form
+      short: attachment-request-code | attachment-request-questionnaire
       definition: >-
-        The code element is used to indicate the type of attachment request. The code element is a required element and must be populated with one of the following values: attachment-request-code or attachment-request-form.
+        The code element is used to indicate the type of attachment request. The code element is a required element and must be populated with one of the following values: "attachment-request-code" or "attachment-request-questionnaire".
       min: 1
       condition:
         - cdex-4
@@ -439,32 +439,32 @@ differential:
       mustSupport: true
       
 
-    - id: 'Task.input:form-url'
+    - id: 'Task.input:questionnaire-url'
       extension:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
           valueCode: draft
       path: Task.input
-      sliceName: form-url
-      short: Data Request Form
-      definition: The Questionnaire URL for a data request form.
+      sliceName: questionnaire-url
+      short: Data Request questionnaire
+      definition: The Questionnaire URL for a data request questionnaire.
       max: '1'
       condition:
         - cdex-5
         - cdex-6
       # mustSupport: true
 
-    - id: 'Task.input:form-url.type'
+    - id: 'Task.input:questionnaire-url.type'
       path: Task.input.type
       patternCodeableConcept:
         coding:
           - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-            code: form-url
+            code: questionnaire-url
       # mustSupport: true
 
-    - id: 'Task.input:form-url.value[x]'
+    - id: 'Task.input:questionnaire-url.value[x]'
       path: 'Task.input.value[x]'
-      short: Questionnaire url value
+      short: Questionnaire URL value
       type:
         - code: url
       # mustSupport: true
