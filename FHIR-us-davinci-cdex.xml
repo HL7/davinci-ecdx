@@ -96,7 +96,7 @@
 <page deprecated="true" key="profiles" name="Profiles"/>
 <page deprecated="true" key="requesting-attachments" name="Requesting Attachments"/>
 <page key="requesting-attachments-code" name="Requesting Attachments Using Attachments Codes"/>
-<page key="requesting-attachments-form" name="Requesting Attachments Using Forms"/>
+<page key="requesting-attachments-questionnaire" name="Requesting Attachments Using Questionnaires"/>
 <page key="security" name="Security and Privacy"/>
 <page key="sending-attachments" name="Sending Attachments"/>
 <page key="signatures" name="Signatures"/>

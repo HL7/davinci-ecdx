@@ -581,17 +581,17 @@ definition:
     groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example22
-    description: '**Request Additional Data using a Form:**   Prior Authorization
+    description: '**Request Additional Data using a Questionnaire:**   Prior Authorization
       Attachment Request with a POU of "coverage authorization" sent by payer to a
-      provider requesting a questionnaire form be completed.'
+      provider requesting a data request questionnaire be completed.'
     name: Cdex Task Example 22
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
     groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example23
-    description: '**Prior-Auth Form Request Example:**   Prior Authorization Attachment
-      Request with a POU of "coverage authorization" sent by payer to a provider requesting
-      an adaptive questionnaire be completed.'
+    description: '**Prior-Auth Questionnaire Request Example:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting an adaptive questionnaire be completed.'
     name: Cdex Task Example 23
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
     groupingId: AttachmentsExamples
@@ -690,8 +690,8 @@ definition:
       - nameUrl: requesting-attachments-code.html
         title: Requesting Attachments Using Attachments Codes
         generation: markdown
-      - nameUrl: requesting-attachments-form.html
-        title: Requesting Attachments Using Forms
+      - nameUrl: requesting-attachments-questionnaire.html
+        title: Requesting Attachments Using Questionnaires
         generation: markdown
       - nameUrl: burden-reduction.html
         title: Using CDex Attachments with DaVinci PAS

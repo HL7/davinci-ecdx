@@ -168,8 +168,8 @@ pages:
     sending-attachments.md:
     requesting-attachments-code.md:
       title: Requesting Attachments Using Attachments Codes
-    requesting-attachments-form.md:
-      title: Requesting Attachments Using Forms
+    requesting-attachments-questionnaire.md:
+      title: Requesting Attachments Using Questionnaires
     burden-reduction.md:
       title: Using CDex Attachments with DaVinci PAS
   signatures.md:
@@ -229,7 +229,7 @@ menu:
     Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
     Sending Attachments: sending-attachments.html
     Requesting Attachments Using Attachments Codes: requesting-attachments-code.html
-    Requesting Attachments Using Forms: requesting-attachments-form.html
+    Requesting Attachments Using Questionnaires: requesting-attachments-questionnaire.html
     Using CDex Attachments with DaVinci PAS: burden-reduction.html
   Signatures: signatures.html
   Security and Privacy: security.html
