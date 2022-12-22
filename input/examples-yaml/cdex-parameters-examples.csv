@@ -5,7 +5,7 @@ x,check sig,,unsolicited-attachment-scenario3,attachment-scenario2,Example: Sign
 x,keep as pdf add b64,x,task-scenario-8.md,task-scenario-8.md,Complete Solicited Attachment Transaction,,Scenario 1: Solicited Attachment,cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example1-body,cdex-parameters-example3,trackingid123,payer
 x,add sig and b64 example (get from old version),,,solicited-attachment-scenario2,Complete Signed Solicited Attachment Transaction,,Scenario 1: Signed Solicited Attachment,cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example1-body,cdex-parameters-example3,trackingid123,payer
 x,todo,,unsolicited-attachment-scenario2,unsolicited-attachment-scenario2,Scenario 2: Laboratory Results Attachments,NA,Scenario 2: Unsolicited Attachments  - Laboratory Results,cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example2-body,cdex-parameters-example4,trackingid456,provider
-,,,,,,,,,,,,
+,,,solicited-attachments-scenario4,solicited-attachments-scenario4,Scenario 5: Solicited Attachments Completed Form (QuestionnaireResponse),,Scenario 5: Solicited Attachments Completed Form (QuestionnaireResponse),cdex-solicited-attachment-example1-body,cdex-solicited-attachment-example1-body,cdex-parameters-example5,trackingid1012,payer
 ,,,,,,,,,,,,
 ,,,,,,,,,,,,
 ,,,unsolicited-attachment-scenario1b,attachment-scenario1b,Scenario 1b: CCDA Document Attachments Submitted Prior to Claim,,Scenario 1b: CCDA Document Attachments Submitted Prior to Claim,cdex-unsolicited-attachment-example1b-operationoutcome,cdex-unsolicited-attachment-example1b-operationoutcome,cdex-operationoutcome-example2,,

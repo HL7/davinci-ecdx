@@ -12,7 +12,7 @@ No code provided, and a code should be provided from the value set 'US Core Docu
 
 # The referenced ValueSet is a valid external and not recognized by the Terminology server.
 
-WARNING: StructureDefinition/cdex-task-attachment-request: StructureDefinition.differential.element[28].binding: The valueSet reference http://loinc.org/vs/valid-hl7-attachment-requests on element Task.input could not be resolved
+The valueSet reference http://loinc.org/vs/valid-hl7-attachment-requests on element Task.input could not be resolved
 
 
 # The use CPT codes can used as additional codings which, because of IP issues, are not validated by the terminology server

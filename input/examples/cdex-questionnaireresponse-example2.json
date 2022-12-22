@@ -12,7 +12,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request. The data request form is an adaptive questionnaire and the resulting QuestionnaireResponse contains the Questionnaire instance the was generated.  For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."
+                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request. The data request form is an adaptive questionnaire and the resulting QuestionnaireResponse contains the Questionnaire instance the was generated.  It is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."
             }
         ]
     },
@@ -31,7 +31,6 @@
                     "valueBoolean": true
                 }
             ],
-            "version": "0.1.0",
             "name": "HomeOxygenTherapyAdaptiveSDCQuestionnaire",
             "title": "Adaptive Home Oxygen Therapy Order Template (SDC)",
             "derivedFrom": [
@@ -41,13 +40,7 @@
             "subjectType": [
                 "Patient"
             ],
-            "date": "2022-12-14T16:58:43Z",
-            "publisher": "Da Vinci DTR",
-            "contact": [
-                {
-                    "name": "Example Author"
-                }
-            ],
+            "date": "2022-06-17",
             "item": [
                 {
                     "linkId": "1",
@@ -113,7 +106,7 @@
         },
         "display": "Amy Shaw"
     },
-    "authored": "2022-12-14T16:59:15Z",
+    "authored": "2022-06-17",
     "author": {
         "identifier": {
             "system": "http://hl7.org/fhir/sid/us-npi",

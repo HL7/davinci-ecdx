@@ -1,15 +1,15 @@
 {
     "resourceType": "Task",
-    "id": "cdex-task-example20",
+    "id": "cdex-task-example24",
     "meta": {
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Task Example 20"
+                "valueString": "CDex Task Example 24"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Prior-Auth Attachment Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting a signed History and physical (H&P) note."
+                "valueMarkdown": "**Request Additional Data using a Questionnaire:**   Completed Task for CDex Task Example 22. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse."
             }
         ],
         "profile": [
@@ -102,25 +102,25 @@
                 "text": "Re-Association Tracking Control Number"
             },
             "system": "http://example.org/payer",
-            "value": "trackingid789"
+            "value": "trackingid1012"
         }
     ],
-    "status": "requested",
+    "status": "completed",
     "intent": "order",
     "code": {
         "coding": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "attachment-request-code"
+                "code": "attachment-request-questionnaire"
             }
         ],
-        "text": "Coded Attachment Request"
+        "text": "Attachment Request Questionnaire"
     },
     "for": {
         "reference": "#patient"
     },
     "authoredOn": "2022-06-17T16:16:06Z",
-    "lastModified": "2022-06-17T16:16:06Z",
+    "lastModified": "2022-06-17T16:17:06Z",
     "requester": {
         "identifier": {
             "system": "http://example.org/cdex/payer/payer-ids",
@@ -156,38 +156,18 @@
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-                        "code": "data-code"
+                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                        "code": "questionnaire-url"
                     }
                 ]
             },
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "11506-3",
-                        "display": "Progress note"
-                    }
-                ],
-                "text": "Progress note"
-            },
+            "valueUrl": "http://example.org/cdex-questionnaire-example1",
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
                     "valuePositiveInt": 1
                 }
             ]
-        },
-        {
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "signature-flag"
-                    }
-                ]
-            },
-            "valueBoolean": true
         },
         {
             "type": {
@@ -217,6 +197,21 @@
                         "display": "coverage authorization"
                     }
                 ]
+            }
+        }
+    ],
+    "output": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                        "code": "data-value"
+                    }
+                ]
+            },
+            "valueReference": {
+                "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
             }
         }
     ]

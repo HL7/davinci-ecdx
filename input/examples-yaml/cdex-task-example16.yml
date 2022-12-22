@@ -3,7 +3,7 @@ id: cdex-task-example16
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 16
+    valueString: CDex Task Example 16
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Query String Request for Condition with Provenance:**   Completed Task to seek a patient active conditions their provenance using
       the CDex Profile query input. This example illustrates the use of business identifiers

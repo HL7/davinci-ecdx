@@ -3,7 +3,7 @@ id: cdex-task-example21
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 21
+    valueString: CDex Task Example 21
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Coded Request for Surgical Operation Note:**   Task to seek
       a patient''s latest operative notes using the CDex Profile code

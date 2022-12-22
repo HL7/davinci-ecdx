@@ -3,7 +3,7 @@ id: cdex-task-example23
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 23
+    valueString: CDex Task Example 23
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: >-
       **Prior-Auth Questionnaire Request Example:**   Prior Authorization

@@ -3,7 +3,7 @@ id: cdex-task-example18
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 18
+    valueString: CDex Task Example 18
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Query String Request for Signed Condition Data:**   Completed Task to seek a *signed* patient active conditions. This example
       illustrates the use of business identifiers (instead of pointing to a FHIR resource)

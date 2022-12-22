@@ -3,7 +3,7 @@ id: cdex-task-example8
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 8
+    valueString: CDex Task Example 8
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Coded RequestOperative note -CCDA:**   Completed
       Task to seek a patient''s Operative notes using the CDex

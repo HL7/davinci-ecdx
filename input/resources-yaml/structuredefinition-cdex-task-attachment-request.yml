@@ -24,22 +24,23 @@ description: |-
   - A Task.for.reference element fixed to "\#patient" - a reference the contained Patient Resource that represents basic Patient demographic data.
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
-  - *Either*:
-     - A "data-code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes or
-     - A "questionnaire-url" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) for attachments or additional data.
   - A Task.input.extension in the "data-code" or "questionnaire-url" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.
   - A "payer-url" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
  
   and the following elements to be *must support* (min=0):
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
+  - A "data-code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes.*
   - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
   - A "service-date" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
   and the following elements to be *optional*:
+  - An optional "questionnaire-url" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*
   - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
   - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
+  - A "data-value" Task.output element referring to FHIR resource(s) representing the result(s) of the data request.
 
+  \* Either a "data-code" or a "questionnaire-url" Task.input element is required
 fhirVersion: 4.0.1
 kind: resource
 abstract: false
@@ -74,6 +75,11 @@ differential:
           human: Must only have "code" inputs or one "questionnaire-url" input not both.
           expression: >-
             Task.input.type.coding.code.where($this='data-code').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').empty()
+        - key: cdex-10
+          severity: warning
+          human: If code = "attachment-request-questionnaire" and status = "completed", should have one "data-value" output referencing the QuestionnaireResponse.
+          expression: >-
+            (Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies (Task.output.valueReference.count()=1 and Task.output.valueReference.exists(resolve() is QuestionnaireResponse))
     # - id: Task.meta
     #   path: Task.meta
     #   min: 1
@@ -403,7 +409,7 @@ differential:
           - type: pattern
             path: type
         rules: open
-      min: 3
+      min: 2
       mustSupport: true
 
     - id: 'Task.input:code'
@@ -603,3 +609,34 @@ differential:
         - code: boolean
       # mustSupport: true
 
+    - id: Task.output # struct copied from HRex
+      path: Task.output
+      slicing:
+        discriminator:
+          - type: pattern
+            path: type
+        rules: open
+      # mustSupport: true
+    - id: 'Task.output:data'
+      path: Task.output
+      sliceName: data
+      short: Requested data
+      definition: >-
+        FHIR resource(s) representing the result(s) of the data request.
+      comment: >-
+        Note that all returned data SHOULD comply with appropriate US-Core
+        and/or Da Vinci profiles. If code = "attachment-request-questionnaire", the output can only have one reference to QuestionnaireResponse.
+      # mustSupport: true
+    - id: 'Task.output:data.type'
+      path: Task.output.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+            code: data-value
+      # mustSupport: true
+    - id: 'Task.output:data.value[x]'
+      path: 'Task.output.value[x]'
+      short: data reference
+      type:
+        - code: Reference
+      # mustSupport: true

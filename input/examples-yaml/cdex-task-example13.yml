@@ -3,7 +3,7 @@ id: cdex-task-example13
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 13
+    valueString: CDex Task Example 13
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Free Text Request for Condition with Provenance:**   Task
       to seek a patient active conditions and its provenance using free text in the

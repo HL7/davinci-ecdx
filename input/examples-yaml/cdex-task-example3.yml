@@ -43,7 +43,7 @@ contained:
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 3
+    valueString: CDex Task Example 3
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Query String Request for Condition with Contained
       Output:**   Completed Task to seek a patient active conditions using the

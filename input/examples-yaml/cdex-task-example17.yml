@@ -3,7 +3,7 @@ id: cdex-task-example17
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 17
+    valueString: CDex Task Example 17
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Query String Request for Signed Condition Data:**   Task
       to seek a patient active conditions using the CDex Profile query input and using

@@ -3,7 +3,7 @@ id: cdex-task-example19
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 19
+    valueString: CDex Task Example 19
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Claim Attachment Request Example:**   Claim Attachment
       Request sent by payer to a provider requesting a signed Progress note

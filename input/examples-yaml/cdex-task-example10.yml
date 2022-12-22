@@ -3,7 +3,7 @@ id: cdex-task-example10
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 10
+    valueString: CDex Task Example 10
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Coded Request for A1C Results:**   Task to seek a patient''s
       HbA1c test results using the CDex Profile query input. This example illustrates

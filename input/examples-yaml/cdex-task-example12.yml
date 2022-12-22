@@ -3,7 +3,7 @@ id: cdex-task-example12
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 12
+    valueString: CDex Task Example 12
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Query String Request for Condition with Authorization:** In this completed provider to provider request, a Task is used to request
       a patient active conditions using the CDex Profile query input.  A reference

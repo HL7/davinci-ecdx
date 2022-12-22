@@ -3,7 +3,7 @@ id: cdex-task-example15
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 15
+    valueString: CDex Task Example 15
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Query String Request for Condition with Provenance:**  Task
       to seek a patient active conditions and its provenance using query string in

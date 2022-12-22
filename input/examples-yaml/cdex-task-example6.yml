@@ -3,7 +3,7 @@ id: cdex-task-example6
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 6
+    valueString: CDex Task Example 6
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Coded Request for Progress note:**   Task to seek
       a patient''s latest Progress notes using the CDex Profile code

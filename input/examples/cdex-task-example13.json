@@ -5,7 +5,7 @@
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Cdex Task Example 13"
+                "valueString": "CDex Task Example 13"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",

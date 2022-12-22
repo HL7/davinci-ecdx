@@ -3,7 +3,7 @@ id: cdex-task-example5
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: Cdex Task Example 5
+    valueString: CDex Task Example 5
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**Completed Free Text Request for Condition:**   Completed
       Task to seek a patient active conditions using free text for the input in the
