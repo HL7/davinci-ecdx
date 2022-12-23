@@ -5,10 +5,11 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 14
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Completed Free Text Request for Condition with Provenance:**   Completed Task to seek a patient active conditions and its provenance using
-      free text in the CDex Profile code input. This example illustrates the use of
-      business identifiers (instead of pointing to a FHIR resource) to references
-      the various actors.'
+    valueMarkdown: '**Completed Free Text Request for Condition with Provenance:**   Completed
+      Task to seek a patient active conditions and its provenance using free text
+      in the CDex Profile code input. This example illustrates the use of business
+      identifiers (instead of pointing to a FHIR resource) to references the various
+      actors.'
   versionId: '3'
   lastUpdated: '2020-10-26T04:04:52.000+00:00'
   source: '#tgH2FoPFuCq0yjw5'
@@ -23,8 +24,8 @@ businessStatus:
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-    code: data-request
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: data-request-code
 for:
   identifier:
     type:

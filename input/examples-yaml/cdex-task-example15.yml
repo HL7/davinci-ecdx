@@ -19,8 +19,8 @@ status: requested
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-    code: data-request
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: data-request-query
 for:
   identifier:
     type:

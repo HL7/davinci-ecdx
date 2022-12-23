@@ -2,16 +2,15 @@
     "resourceType": "StructureDefinition",
     "id": "cdex-task-data-request",
     "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
-    "version": "0.2.0",
     "name": "CDexTaskDataRequest",
     "title": "CDex Task Data Request Profile",
     "status": "active",
-    "description": "This Task profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"attachment-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire-url\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire-url\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
+    "description": "This Task profile is used to solicit information from a system when direct\nquery is not possible and human intervention might be required. It is used For CDex *Task-based transactions* by the Data Consumer to solicit information from a system. It represents both the data request and the returned \"data-request\".\n\nIt adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire-url\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire-url\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
     "type": "Task",
-    "baseDefinition": "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Task",
     "derivation": "constraint",
     "differential": {
         "element": [
@@ -23,20 +22,44 @@
                     {
                         "key": "cdex-7",
                         "severity": "error",
-                        "human": "If no code = \"data-request-questionnaire\", must have \"code\" or \"query\" input.",
-                        "expression": "Task.code.coding.code.where($this='attachment-request-code').empty() implies Task.input.type.coding.code.where($this='data-query' or $this='data-code').exists()"
+                        "human": "If code = \"data-request-code\", must have one \"code\" input.",
+                        "expression": "Task.code.coding.code.where($this='data-request-code').exists() implies Task.input.type.coding.code.where($this='data-code').exists()"
+                    },
+                    {
+                        "key": "cdex-12",
+                        "severity": "error",
+                        "human": "If code = \"data-request-query\", must have one \"query\" input.",
+                        "expression": "Task.code.coding.code.where($this='data-request-query').exists() implies Task.input.type.coding.code.where($this='data-query').exists()"
                     },
                     {
                         "key": "cdex-8",
                         "severity": "error",
                         "human": "If code = \"data-request-questionnaire\", must have one \"questionnaire-url\" input.",
-                        "expression": "Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()"
+                        "expression": "Task.code.coding.code.where($this='data-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()"
                     },
                     {
                         "key": "cdex-9",
                         "severity": "error",
-                        "human": "Must have exactly one input that is data-query or data-code or questionnaire_url (note this conflicts with HREX tdr-1).",
+                        "human": "Must have exactly one input that is data-query or data-code or questionnaire_url",
                         "expression": "Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire_url').count()=1"
+                    },
+                    {
+                        "key": "tdr-2",
+                        "severity": "error",
+                        "human": "Task statusReason SHALL be populated if status is 'rejected' or 'failed'",
+                        "expression": "(status = 'rejected' or status = 'failed') implies statusReason.exists()"
+                    },
+                    {
+                        "key": "tdr-3",
+                        "severity": "error",
+                        "human": "Task output SHALL be populated if status is 'completed'",
+                        "expression": "(status = 'completed') implies output.exists()"
+                    },
+                    {
+                        "key": "cdex-11",
+                        "severity": "warning",
+                        "human": "If code = \"data-request-questionnaire\" and status = \"completed\", should have one \"data-value\" output referencing the QuestionnaireResponse.",
+                        "expression": "(Task.code.coding.code.where($this='data-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies (Task.output.valueReference.count()=1 and Task.output.valueReference.exists(resolve() is QuestionnaireResponse))"
                     }
                 ]
             },
@@ -83,40 +106,118 @@
                 "mustSupport": true
             },
             {
+                "id": "Task.basedOn",
+                "path": "Task.basedOn",
+                "short": "Authorization for data request",
+                "requirements": "Indicates the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.status",
+                "path": "Task.status",
+                "condition": [
+                    "tdr-2",
+                    "tdr-3",
+                    "cdex-11"
+                ],
+                "mustSupport": true,
+                "binding": {
+                    "strength": "required",
+                    "valueSet": "http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status"
+                }
+            },
+            {
+                "id": "Task.statusReason",
+                "path": "Task.statusReason",
+                "requirements": "Indicates why task failed or was rejected.",
+                "condition": [
+                    "tdr-2"
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "Task.statusReason.text",
+                "path": "Task.statusReason.text",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.businessStatus",
+                "path": "Task.businessStatus",
+                "short": "For example, 'waiting on internal review'",
+                "comment": "Conveys the internal business progress of the request and provides more nuance than the overall status.  There is no expectation this will be coded, but negotiation of agreed codes can be used between partners",
+                "requirements": "Indicates progress in retrieving the data",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.businessStatus.text",
+                "path": "Task.businessStatus.text",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.intent",
+                "path": "Task.intent",
+                "fixedCode": "order",
+                "mustSupport": true
+            },
+            {
                 "id": "Task.code",
                 "path": "Task.code",
-                "short": "Data Request",
-                "definition": "The code element is used to indicate that Task is a request for data and must be populated with the value \"data-request\"."
+                "short": "data-request-code | data-request-query | data-request-questionnaire",
+                "definition": "The code element is used to indicate that Task is a request for data and whether the data request is a code, FHIR query syntax or a questionnaire.  The code element is a required element and must be populated with one of the following values: \"data-request-code\", \"data-request-query\",or \"data-request-questionnaire\".",
+                "min": 1,
+                "condition": [
+                    "cdex-7",
+                    "cdex-8",
+                    "cdex-11",
+                    "cdex-12"
+                ],
+                "mustSupport": true,
+                "binding": {
+                    "strength": "required",
+                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-data-request-task-code"
+                }
             },
             {
                 "id": "Task.code.coding",
                 "path": "Task.code.coding",
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "pattern",
-                            "path": "$this"
-                        }
-                    ],
-                    "rules": "open"
-                }
+                "min": 1,
+                "mustSupport": true
             },
             {
-                "id": "Task.code.coding:questionnaire",
-                "path": "Task.code.coding",
-                "sliceName": "questionnaire",
-                "short": "Data Request Questionnaire",
-                "definition": "A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.",
+                "id": "Task.code.coding.system",
+                "path": "Task.code.coding.system",
+                "fixedUri": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.code.coding.code",
+                "path": "Task.code.coding.code",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
+                "id": "Task.focus",
+                "path": "Task.focus",
+                "short": "What task is acting on",
                 "min": 0,
-                "max": "1",
-                "patternCoding": {
-                    "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                    "code": "data-request-questionnaire"
-                }
+                "max": "0"
             },
             {
                 "id": "Task.for",
                 "path": "Task.for",
+                "short": "Member (i.e., patient) being queried",
+                "comment": "Queries must always be in the scope of a single member",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+                        ]
+                    }
+                ],
                 "mustSupport": true
             },
             {
@@ -127,8 +228,25 @@
                 "mustSupport": true
             },
             {
+                "id": "Task.authoredOn",
+                "path": "Task.authoredOn",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
                 "id": "Task.requester",
                 "path": "Task.requester",
+                "short": "Who is asking for data",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+                        ]
+                    }
+                ],
                 "mustSupport": true
             },
             {
@@ -141,6 +259,17 @@
             {
                 "id": "Task.owner",
                 "path": "Task.owner",
+                "short": "Who is being asked for data",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization",
+                            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+                        ]
+                    }
+                ],
                 "mustSupport": true
             },
             {
@@ -151,8 +280,32 @@
                 "mustSupport": true
             },
             {
+                "id": "Task.reasonCode",
+                "path": "Task.reasonCode",
+                "comment": "Only text is expected, though codes can be used for partners with agreed value sets",
+                "requirements": "Indicates why the information request is occurring",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.reasonCode.text",
+                "path": "Task.reasonCode.text",
+                "min": 1,
+                "mustSupport": true
+            },
+            {
                 "id": "Task.reasonReference",
                 "path": "Task.reasonReference",
+                "comment": "Example targets would be HRex Coverage, PCDE Claim (for prior authorization) or a bare Claim resource for referencing an actual Claim.",
+                "requirements": "Indicates why the information request is occurring",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Claim",
+                            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage"
+                        ]
+                    }
+                ],
                 "mustSupport": true
             },
             {
@@ -175,25 +328,86 @@
                     ],
                     "rules": "open"
                 },
+                "min": 1,
                 "mustSupport": true
             },
             {
                 "id": "Task.input:query",
                 "path": "Task.input",
                 "sliceName": "query",
+                "short": "Requested query",
+                "definition": "Indicates the specific FHIR RESTful query to be executed",
+                "comment": "This will contain the text that should go after the '?' when executing the query.",
+                "max": "1",
+                "condition": [
+                    "cdex-9",
+                    "cdex-12"
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:query.type",
+                "path": "Task.input.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                            "code": "data-query"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:query.value[x]",
+                "path": "Task.input.value[x]",
+                "short": "query value",
+                "type": [
+                    {
+                        "code": "string"
+                    }
+                ],
                 "mustSupport": true
             },
             {
                 "id": "Task.input:code",
                 "path": "Task.input",
                 "sliceName": "code",
+                "short": "Requested data code",
+                "definition": "A code indicating the type of data/document to be returned",
+                "comment": "This might be a document code or other code describing the requested information.  If no appropriate standard code exists, local codes may be used between partners, or a human-readable textual description of the desired data can be provided.  Downstream profiles may tighten expectations for this element.",
+                "max": "1",
+                "condition": [
+                    "cdex-7",
+                    "cdex-9"
+                ],
                 "mustSupport": true
             },
             {
-                "id": "Task.input:code.valueCodeableConcept",
-                "path": "Task.input.valueCodeableConcept",
+                "id": "Task.input:code.type",
+                "path": "Task.input.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                            "code": "data-code"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.input:code.value[x]",
+                "path": "Task.input.value[x]",
+                "short": "query value",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ],
                 "min": 1,
                 "max": "1",
+                "mustSupport": true,
                 "binding": {
                     "strength": "extensible",
                     "valueSet": "http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type"
@@ -213,8 +427,8 @@
                 "definition": "The Questionnaire URL for a data request questionnaire.",
                 "max": "1",
                 "condition": [
-                    "cdex-5",
-                    "cdex-6"
+                    "cdex-8",
+                    "cdex-9"
                 ]
             },
             {
@@ -305,6 +519,57 @@
                     "strength": "extensible",
                     "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU"
                 }
+            },
+            {
+                "id": "Task.output",
+                "path": "Task.output",
+                "slicing": {
+                    "discriminator": [
+                        {
+                            "type": "pattern",
+                            "path": "type"
+                        }
+                    ],
+                    "rules": "open"
+                },
+                "condition": [
+                    "tdr-3",
+                    "cdex-11"
+                ],
+                "mustSupport": true
+            },
+            {
+                "id": "Task.output:data",
+                "path": "Task.output",
+                "sliceName": "data",
+                "short": "Requested data",
+                "definition": "The data content requested.  Multiple repetitions are permitted in the event that a single request returns multiple instances and packaging in a Bundle is not necessary/approrpriate.  Also, in most cases Provenance instances should accompany returned data so that the requester can best integrate and allocate trust/confidence to the provided data.",
+                "mustSupport": true
+            },
+            {
+                "id": "Task.output:data.type",
+                "path": "Task.output.type",
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+                            "code": "data-value"
+                        }
+                    ]
+                },
+                "mustSupport": true
+            },
+            {
+                "id": "Task.output:data.value[x]",
+                "path": "Task.output.value[x]",
+                "short": "data reference",
+                "comment": "The referenced data might be contained within the Task (if it doesn't have/shouldn't have independent persistence), but can also refer to data stored elsewhere - either on the owner's system or some other system.  Note that all returned data SHOULD comply with appropriate US-Core and/or Da Vinci profiles.",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ],
+                "mustSupport": true
             }
         ]
     }

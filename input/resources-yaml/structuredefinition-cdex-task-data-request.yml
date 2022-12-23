@@ -1,12 +1,14 @@
 resourceType: StructureDefinition
 id: cdex-task-data-request
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request'
-version: 0.2.0
 name: CDexTaskDataRequest
 title: CDex Task Data Request Profile
 status: active
 description: |-
-  This Task profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:
+  This Task profile is used to solicit information from a system when direct
+  query is not possible and human intervention might be required. It is used For CDex *Task-based transactions* by the Data Consumer to solicit information from a system. It represents both the data request and the returned "data-request".
+  
+  It adds the following *must support* constraints for CDex:
 
   - A Task.identifier element representing the unique data request identifier
   - A Task.for.reference.identifier element representing a patient business identifier like a Member ID
@@ -18,7 +20,7 @@ description: |-
 
   In addition, the following *optional* constraint:
   - A Task.code.coding of 'data-request-questionnaire" communicating to the data source that a data request questionnaire is being submitted.
-     - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the "questionnaire-url" input parameter.
+     - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the "questionnaire-url" input parameter.
   - A meta.tag element representing work-queue hints.
   - A "questionnaire-url" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
   - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)
@@ -27,7 +29,7 @@ fhirVersion: 4.0.1
 kind: resource
 abstract: false
 type: Task
-baseDefinition: 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request'
+baseDefinition: 'http://hl7.org/fhir/StructureDefinition/Task'
 derivation: constraint
 differential:
   element:
@@ -37,27 +39,49 @@ differential:
       definition: >-
         This Task profile is used by the CDex Data Consumer (e.g. Payer or other Provider) to solicit information from a Data Source (e.g., Provider) asynchronously where human involvement to find/aggregate/filter/approve requests may be required.
       constraint:
-        # - key: cdex-1
-        #   severity: error
-        #   human: >-
-        #     The "service-date" input SHALL be present if the attachment is for a claim.
-        #   expression: >-
-        #     Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()
+
         - key: cdex-7
           severity: error
-          human: If no code = "data-request-questionnaire", must have "code" or "query" input.
+          human: If code = "data-request-code", must have one "code" input.
           expression: >-
-            Task.code.coding.code.where($this='attachment-request-code').empty() implies Task.input.type.coding.code.where($this='data-query' or $this='data-code').exists()
+            Task.code.coding.code.where($this='data-request-code').exists() implies Task.input.type.coding.code.where($this='data-code').exists()
+
+        - key: cdex-12
+          severity: error
+          human: If code = "data-request-query", must have one "query" input.
+          expression: >-
+            Task.code.coding.code.where($this='data-request-query').exists() implies Task.input.type.coding.code.where($this='data-query').exists()
+
         - key: cdex-8
           severity: error
           human: If code = "data-request-questionnaire", must have one "questionnaire-url" input.
           expression: >-
-            Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()
+            Task.code.coding.code.where($this='data-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()
         - key: cdex-9
           severity: error
-          human: Must have exactly one input that is data-query or data-code or questionnaire_url (note this conflicts with HREX tdr-1).
+          human: Must have exactly one input that is data-query or data-code or questionnaire_url  #note this conflicts with HREX tdr-1
           expression: >-
             Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire_url').count()=1
+
+        - key: tdr-2
+          severity: error
+          human: >-
+            Task statusReason SHALL be populated if status is 'rejected' or
+            'failed'
+          expression: >-
+            (status = 'rejected' or status = 'failed') implies
+            statusReason.exists()
+
+        - key: tdr-3
+          severity: error
+          human: Task output SHALL be populated if status is 'completed'
+          expression: (status = 'completed') implies output.exists()
+
+        - key: cdex-11
+          severity: warning
+          human: If code = "data-request-questionnaire" and status = "completed", should have one "data-value" output referencing the QuestionnaireResponse.
+          expression: >-
+            (Task.code.coding.code.where($this='data-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies (Task.output.valueReference.count()=1 and Task.output.valueReference.exists(resolve() is QuestionnaireResponse))
             
     - id: Task.meta
       path: Task.meta
@@ -86,115 +110,103 @@ differential:
         strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
 
-    # - id: Task.contained
-    #   path: Task.contained
-    #   slicing:
-    #     discriminator:
-    #       - type: type
-    #         path: $this
-    #     rules: open
-
-    # - id: Task.contained:claim
-    #   path: Task.contained
-    #   sliceName: claim
-    #   definition: >-
-    #     The contained claim profile represents a claim or prior authorization and is used to communicate a reason for a clinical data request.
-    #   short: Contained Claim resource
-    #   # min: 1
-    #   max: '1'
-    #   type:
-    #     - code: Claim
-    #       profile:
-    #         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-claim'
-    #   mustSupport: true
-
-    # - id: Task.contained:patient
-    #   path: Task.contained
-    #   sliceName: patient
-    #   definition: >-
-    #     The contained patient profile representing is used to communicate additional patient demographic data.
-    #   short: Contained Patient resource
-    #   # min: 1
-    #   max: '1'
-    #   type:
-    #     - code: Patient
-    #       profile:
-    #         - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'
-    #   mustSupport: true
-
-
-
     - id: Task.identifier
       path: Task.identifier
-      # slicing:
-      #   discriminator:
-      #     - type: pattern
-      #       path: $this
-      #   rules: open
       mustSupport: true
 
-    # - id: Task.identifier.value
-    #   path: Task.identifier.value
-    #   min: 1
-    #   max: '1'
-    #   mustSupport: true
-
-    # - id: 'Task.identifier:tracking-id'
-    #   path: Task.identifier
-    #   sliceName: tracking-id
-    #   short: tracking identifier
-    #   definition: A unique requester assigned identifier to track the request
-    #   # min: 1
-    #   max: '1'
-    #   patternIdentifier:
-    #     type:         
-    #       coding:
-    #         - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-    #           code: tracking-id
-    #   mustSupport: true
+    - id: Task.basedOn
+      path: Task.basedOn
+      short: Authorization for data request
+      requirements: >-
+        Indicates the order (ServiceRequest, CommunicationRequest, etc.) that
+        authorizes the data request
+      mustSupport: true
+    - id: Task.status
+      path: Task.status
+      condition:
+        - 'tdr-2'
+        - 'tdr-3'
+        - 'cdex-11'
+      mustSupport: true
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status'
+    - id: Task.statusReason
+      path: Task.statusReason
+      requirements: Indicates why task failed or was rejected.
+      condition:
+        - 'tdr-2'
+      mustSupport: true
+    - id: Task.statusReason.text
+      path: Task.statusReason.text
+      min: 1
+      mustSupport: true
+    - id: Task.businessStatus
+      path: Task.businessStatus
+      short: For example, 'waiting on internal review'
+      comment: >-
+        Conveys the internal business progress of the request and provides more
+        nuance than the overall status.  There is no expectation this will be
+        coded, but negotiation of agreed codes can be used between partners
+      requirements: Indicates progress in retrieving the data
+      mustSupport: true
+    - id: Task.businessStatus.text
+      path: Task.businessStatus.text
+      min: 1
+      mustSupport: true
+    - id: Task.intent
+      path: Task.intent
+      fixedCode: order
+      mustSupport: true
 
     - id: Task.code
       path: Task.code
-      short: Data Request
+      short: data-request-code | data-request-query | data-request-questionnaire
       definition: >-
-        The code element is used to indicate that Task is a request for data and must be populated with the value "data-request".
+        The code element is used to indicate that Task is a request for data and whether the data request is a code, FHIR query syntax or a questionnaire.  The code element is a required element and must be populated with one of the following values: "data-request-code", "data-request-query",or "data-request-questionnaire".
+      min: 1
+      condition:
+        - cdex-7
+        - cdex-8
+        - cdex-11
+        - cdex-12
+      mustSupport: true
+      binding:
+        strength: required
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-data-request-task-code'
 
     - id: Task.code.coding
       path: Task.code.coding
-      slicing:
-        discriminator:
-          - type: pattern
-            path: $this
-        rules: open
+      min: 1
+      mustSupport: true
 
-    - id: Task.code.coding:questionnaire
-      path: Task.code.coding
-      sliceName: questionnaire
-      short: Data Request Questionnaire
-      definition: A Task.code.coding of 'data-request-questionnaire" communicating to the data source that a data request questionnaire is being submitted.
+    - id: Task.code.coding.system
+      path: Task.code.coding.system
+      fixedUri: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+      mustSupport: true
+
+    - id: Task.code.coding.code
+      path: Task.code.coding.code
+      min: 1
+      mustSupport: true
+
+    - id: Task.focus
+      path: Task.focus
+      short: What task is acting on
       min: 0
-      max: '1'
-      # type:
-      #   - code: Coding
-      patternCoding:
-        system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-        code: data-request-questionnaire
-      # mustSupport: true
+      max: '0'
 
     - id: Task.for
       path: Task.for
+      short: Member (i.e., patient) being queried
+      comment: Queries must always be in the scope of a single member
+      min: 1
+      type:
+        - code: Reference
+          targetProfile:
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient'
       mustSupport: true
   
-    # - id: Task.for.reference
-    #   path: Task.for.reference
-    #   # short: Contained Patient
-    #   # definition: Reference to contained Patient representing patient data elements are used to verify patient identity for compliance regulations (such as HIPAA).
-    #   comment: For requesting attachments, a reference to a contained Patient Resource defined by the CDex Patient Demographics Profile is used to represent the patient demographic data elements used to verify patient identity for compliance regulations (such as HIPAA).
-    #   # # min: 1
-    #   # fixedString: '#patient'
-    #   mustSupport: true    
-    #   # add invariant  
-
     - id: Task.for.identifier
       path: Task.for.identifier
       short: Patient Member ID
@@ -202,8 +214,22 @@ differential:
       # min: 0
       mustSupport: true    
 
+    - id: Task.authoredOn
+      path: Task.authoredOn
+      min: 1
+      mustSupport: true
+
     - id: Task.requester
       path: Task.requester
+      short: Who is asking for data
+      min: 1
+      type:
+        - code: Reference
+          targetProfile:
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
       mustSupport: true
 
     - id: Task.requester.identifier
@@ -216,6 +242,15 @@ differential:
 
     - id: Task.owner
       path: Task.owner
+      short: Who is being asked for data
+      min: 1
+      type:
+        - code: Reference
+          targetProfile:
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+            - >-
+              http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
       mustSupport: true
 
     - id: Task.owner.identifier
@@ -223,21 +258,32 @@ differential:
       short: Provider ID
       definition: business identifier representing the Provider
       # min: 
-      mustSupport: true
+      mustSupport: true 
 
+    - id: Task.reasonCode
+      path: Task.reasonCode
+      comment: >-
+        Only text is expected, though codes can be used for partners with agreed
+        value sets
+      requirements: Indicates why the information request is occurring
+      mustSupport: true
+    - id: Task.reasonCode.text
+      path: Task.reasonCode.text
+      min: 1
+      mustSupport: true
     - id: Task.reasonReference
       path: Task.reasonReference
+      comment: >-
+        Example targets would be HRex Coverage, PCDE Claim (for prior
+        authorization) or a bare Claim resource for referencing an actual Claim.
+      requirements: Indicates why the information request is occurring
+      type:
+        - code: Reference
+          targetProfile:
+            - 'http://hl7.org/fhir/StructureDefinition/Claim'
+            - >-
+              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
       mustSupport: true
-
-    # - id: Task.reasonReference.reference
-    #   path: Task.reasonReference.reference
-    #   # short: Contained Claim
-    #   # definition: Reference to contained Claim representing claim or pre-authorization for required data.
-    #   comment: A reference to a contained CDex Claim Profile is defined to be contained within the CDex Task Attachment Request Profile or CDex Task Data Request Profile. It is referenced when a reason for a clinical data request is communicated and the reason is a claim or prior authorization (for example, an attachment request or a claims audit).
-    #   # # min: 1
-    #   # fixedString: '#claim'
-    #   mustSupport: true    
-    #   # add invariant 
 
     - id: Task.reasonReference.identifier
       path: Task.reasonReference.identifier
@@ -247,18 +293,6 @@ differential:
       # min: 1 
       mustSupport: true
 
-    # - id: Task.restriction
-    #   path: Task.restriction
-    #   mustSupport: true
-
-    # - id: Task.restriction.period
-    #   path: Task.restriction.period
-    #   short: Submission due date
-    #   definition:  The due date for submitting the requested data
-    #   comment: Note that `Task.restriction.period.end` is the due date representing the time by which the task should be completed.
-    #   # min: 1
-    #   mustSupport: true
-
     - id: Task.input
       path: Task.input
       slicing:
@@ -266,50 +300,68 @@ differential:
           - type: pattern
             path: type
         rules: open
-      # min: 1
+      min: 1
       mustSupport: true
 
 
     - id: 'Task.input:query'
       path: Task.input
       sliceName: query
+      short: Requested query
+      definition: Indicates the specific FHIR RESTful query to be executed
+      comment: >-
+        This will contain the text that should go after the '?' when executing
+        the query.
+      max: '1'
+      condition:
+        - cdex-9
+        - cdex-12
       mustSupport: true
-   
-    # - id: 'Task.input:query.extension:item-ids'
-    #   path: Task.input.extension
-    #   sliceName: item-ids
-    #   short: Line item numbers
-    #   definition: The line item numbers in the Claim or Prior Authorization
-    #   # min: 0
-    #   max: '*'
-    #   type:
-    #     - code: Extension
-    #       profile:
-    #         - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
-    #   mustSupport: true
+    - id: 'Task.input:query.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+            code: data-query
+      mustSupport: true
+    - id: 'Task.input:query.value[x]'
+      path: 'Task.input.value[x]'
+      short: query value
+      type:
+        - code: string
+      mustSupport: true
 
     - id: 'Task.input:code'
       path: Task.input
       sliceName: code
+      short: Requested data code
+      definition: A code indicating the type of data/document to be returned
+      comment: >-
+        This might be a document code or other code describing the requested
+        information.  If no appropriate standard code exists, local codes may be
+        used between partners, or a human-readable textual description of the
+        desired data can be provided.  Downstream profiles may tighten
+        expectations for this element.
+      max: '1'
+      condition:
+        - cdex-7
+        - cdex-9
       mustSupport: true
-
-    # - id: 'Task.input:code.extension:item-ids'
-    #   path: Task.input.extension
-    #   sliceName: item-ids
-    #   short: Line item numbers
-    #   definition: The line item numbers in the Claim or Prior Authorization the request applies to.
-    #   # min: 0
-    #   max: '*'
-    #   type:
-    #     - code: Extension
-    #       profile:
-    #         - 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
-    #   mustSupport: true
-
-    - id: 'Task.input:code.valueCodeableConcept'
-      path: Task.input.valueCodeableConcept
+    - id: 'Task.input:code.type'
+      path: Task.input.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+            code: data-code
+      mustSupport: true
+    - id: 'Task.input:code.value[x]'
+      path: 'Task.input.value[x]'
+      short: query value
+      type:
+        - code: CodeableConcept
       min: 1
       max: '1'
+      mustSupport: true
       binding:
         strength: extensible
         valueSet: 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type'
@@ -325,8 +377,8 @@ differential:
       definition: The Questionnaire URL for a data request questionnaire.
       max: '1'
       condition:
-        - cdex-5
-        - cdex-6
+        - cdex-8
+        - cdex-9
       # mustSupport: true
 
     - id: 'Task.input:questionnaire-url.type'
@@ -398,49 +450,44 @@ differential:
       # mustSupport: true
 
 
-    # - id: 'Task.input:payer-url'
-    #   path: Task.input
-    #   sliceName: payer-url
-    #   short: Payer Url
-    #   definition: The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.
-    #   # min: 0
-    #   max: '1'
-    #   mustSupport: true
-
-    # - id: 'Task.input:payer-url.type'
-    #   path: Task.input.type
-    #   patternCodeableConcept:
-    #     coding:
-    #       - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-    #         code: payer-url
-    #   mustSupport: true
-
-    # - id: 'Task.input:payer-url.value[x]'
-    #   path: 'Task.input.value[x]'
-    #   short: Payer url value
-    #   type:
-    #     - code: url
-    #   mustSupport: true
-
-    # - id: 'Task.input:multiple-submits'
-    #   path: Task.input
-    #   sliceName: multiple-submits
-    #   short: Multiple submits flag
-    #   definition: |-
-    #     Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = "false" -  all the requested data should be submitted in a single transaction.
-    #   max: '1'
-
-    # - id: 'Task.input:multiple-submits.type'
-    #   path: Task.input.type
-    #   patternCodeableConcept:
-    #     coding:
-    #       - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
-    #         code: multiple-submits-flag
-
-    # - id: 'Task.input:multiple-submits.value[x]'
-    #   path: 'Task.input.value[x]'
-    #   short: Multiple submits flag value
-    #   type:
-    #     - code: boolean
-
-
+    - id: Task.output
+      path: Task.output
+      slicing:
+        discriminator:
+          - type: pattern
+            path: type
+        rules: open
+      condition:
+        - tdr-3
+        - cdex-11
+      mustSupport: true
+    - id: 'Task.output:data'
+      path: Task.output
+      sliceName: data
+      short: Requested data
+      definition: >-
+        The data content requested.  Multiple repetitions are permitted in the
+        event that a single request returns multiple instances and packaging in
+        a Bundle is not necessary/approrpriate.  Also, in most cases Provenance
+        instances should accompany returned data so that the requester can best
+        integrate and allocate trust/confidence to the provided data.
+      mustSupport: true
+    - id: 'Task.output:data.type'
+      path: Task.output.type
+      patternCodeableConcept:
+        coding:
+          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+            code: data-value
+      mustSupport: true
+    - id: 'Task.output:data.value[x]'
+      path: 'Task.output.value[x]'
+      short: data reference
+      comment: >-
+        The referenced data might be contained within the Task (if it doesn't
+        have/shouldn't have independent persistence), but can also refer to data
+        stored elsewhere - either on the owner's system or some other system. 
+        Note that all returned data SHOULD comply with appropriate US-Core
+        and/or Da Vinci profiles.
+      type:
+        - code: Reference
+      mustSupport: true

@@ -5,10 +5,12 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 7
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Completed Coded Request for Progress note - PDF:**   Completed Task to seek a patient''s latest Progress notes
-      using the CDex Profile code input. This example illustrates the use of FHIR
-      resource references to the various actors. The output data is a contained DocumentReference
-      with an inline base64 encoded PDF document.'
+    valueMarkdown: >-
+      **Completed Coded Request for Progress note - PDF:**   Completed
+      Task to seek a patient''''s latest Progress notes using the CDex Profile code
+      input. This example illustrates the use of FHIR resource references to the various
+      actors. The output data is a contained DocumentReference with an inline base64
+      encoded PDF document.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:
@@ -77,8 +79,8 @@ status: completed
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-    code: data-request
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: data-request-code
 for:
   reference: http://example.org/fhir/Patient/cdex-example-patient
 authoredOn: '2020-10-27T11:05:34-07:00'

@@ -5,8 +5,10 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 1
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: >-
-     **Query String Request for Condition:** Task to seek a patient's active conditions using the CDex Profile query input. This example illustrates the use of business identifiers (instead of pointing to a FHIR resource) to references the various actors.
+    valueMarkdown: '**Query String Request for Condition:** Task to seek a patient''s
+      active conditions using the CDex Profile query input. This example illustrates
+      the use of business identifiers (instead of pointing to a FHIR resource) to
+      references the various actors.'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:
@@ -16,8 +18,8 @@ status: requested
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-    code: data-request
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: data-request-query
 for:
   identifier:
     type:

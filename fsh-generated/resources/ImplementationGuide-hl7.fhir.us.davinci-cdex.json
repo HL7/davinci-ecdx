@@ -236,7 +236,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-task-data-request"
         },
-        "description": "This Task profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request). It adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"attachment-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire-url\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire-url\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
+        "description": "This Task profile is used to solicit information from a system when direct\nquery is not possible and human intervention might be required. It is used For CDex *Task-based transactions* by the Data Consumer to solicit information from a system. It represents both the data request and the returned \"data-request\".\n\nIt adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire-url\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire-url\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
         "exampleBoolean": false,
         "name": "CDex Task Data Request Profile",
         "groupingId": "TaskBasedProfiles"
@@ -267,6 +267,14 @@
         "exampleBoolean": false,
         "name": "CDex Claim Use Value Set",
         "groupingId": "AttachmentsTerminology"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cdex-data-request-task-code"
+        },
+        "description": "Codes used to identify the type of data request and control the payer system's behavior.",
+        "exampleBoolean": false,
+        "name": "CDex Data Request Task Code Value Set"
       },
       {
         "reference": {
@@ -585,7 +593,7 @@
         "reference": {
           "reference": "Task/cdex-task-example7"
         },
-        "description": "**Completed Coded Request for Progress note - PDF:**   Completed Task to seek a patient's latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded PDF document.",
+        "description": "**Completed Coded Request for Progress note - PDF:**   Completed Task to seek a patient''''s latest Progress notes using the CDex Profile code input. This example illustrates the use of FHIR resource references to the various actors. The output data is a contained DocumentReference with an inline base64 encoded PDF document.",
         "name": "CDex Task Example 7",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
         "groupingId": "TaskBasedExamples"

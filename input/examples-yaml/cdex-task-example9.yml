@@ -5,10 +5,10 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 9
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Failed Coded Request for A1C Results:**  Task to seek a
-      patient''s HbA1c test results using the CDex Profile query input with a failed
-      status. This example illustrates the use of FHIR resource references to the
-      various actors.'
+    valueMarkdown: '**Failed Coded Request for A1C Results:**  Task to seek a patient''s
+      HbA1c test results using the CDex Profile query input with a failed status.
+      This example illustrates the use of FHIR resource references to the various
+      actors.'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:
@@ -20,8 +20,8 @@ statusReason:
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-    code: data-request
+  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    code: data-request-query
 for:
   reference: http://example.org/fhir/Patient/cdex-example-patient
 authoredOn: '2020-10-27T11:05:34-07:00'

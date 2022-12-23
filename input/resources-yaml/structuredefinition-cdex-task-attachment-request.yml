@@ -80,6 +80,14 @@ differential:
           human: If code = "attachment-request-questionnaire" and status = "completed", should have one "data-value" output referencing the QuestionnaireResponse.
           expression: >-
             (Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies (Task.output.valueReference.count()=1 and Task.output.valueReference.exists(resolve() is QuestionnaireResponse))
+        - key: tdr-2
+          severity: error
+          human: >-
+            Task statusReason SHALL be populated if status is 'rejected' or
+            'failed'
+          expression: >-
+            (status = 'rejected' or status = 'failed') implies
+            statusReason.exists()
     # - id: Task.meta
     #   path: Task.meta
     #   min: 1
@@ -207,6 +215,9 @@ differential:
 
     - id: Task.status
       path: Task.status
+      condition:
+        - cdex-10
+        - tdr-2
       mustSupport: true
       binding:
         strength: required
@@ -215,6 +226,8 @@ differential:
     - id: Task.statusReason
       path: Task.statusReason
       requirements: Indicates why task failed or was rejected.
+      condition:
+        - tdr-2
       mustSupport: true
 
     - id: Task.statusReason.text
@@ -236,6 +249,7 @@ differential:
       condition:
         - cdex-4
         - cdex-5
+        - cdex-10
       mustSupport: true
       binding:
         strength: required
@@ -346,6 +360,8 @@ differential:
           - type: value
             path: $this  #if the element has a terminology binding, a required binding with a Value Set that enumerates the list of possible codes in the value set ("extensional definition")
         rules: open
+      condition:
+        - cdex-1
       mustSupport: true
 
     - id: Task.reasonCode.coding:use
@@ -616,6 +632,8 @@ differential:
           - type: pattern
             path: type
         rules: open
+      condition:
+        - cdex-10
       # mustSupport: true
     - id: 'Task.output:data'
       path: Task.output
