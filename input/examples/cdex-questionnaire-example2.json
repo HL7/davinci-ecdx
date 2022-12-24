@@ -1,6 +1,6 @@
 {
     "resourceType": "Questionnaire",
-    "id": "cdex-questionnaire-example1",
+    "id": "cdex-questionnaire-example2",
     "meta": {
         "profile": [
             "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
@@ -12,13 +12,27 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG."
+                "valueMarkdown": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG."
             }
         ]
     },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "urn:iso-astm:E1762-95:2013",
+                        "code": "1.2.840.10065.1.12.1.5",
+                        "display": "Verification Signature"
+                    }
+                ]
+            }
+        }
+    ],
     "name": "HomeOxygenTherapyQuestionnaire",
     "title": "Home Oxygen Therapy Questionnaire",
-    "url": "http://example.org/cdex-questionnaire-example1",
+    "url": "http://example.org/cdex-questionnaire-example2",
     "status": "draft",
     "subjectType": [
         "Patient"

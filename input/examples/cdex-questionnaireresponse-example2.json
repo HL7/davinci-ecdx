@@ -12,7 +12,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request. The data request form is an adaptive questionnaire and the resulting QuestionnaireResponse contains the Questionnaire instance the was generated.  It is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."
+                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a Task Based and Attachments transactions data request questionnaire. The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse contains the generated Questionnaire instance.  This example is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."
             }
         ]
     },

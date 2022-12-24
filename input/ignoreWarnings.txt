@@ -28,3 +28,4 @@ INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cde
 # Slice is optional
 
 This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.0.0-preview
+This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|3.0.0

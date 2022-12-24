@@ -12,7 +12,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Attachments data request form request.   It is adapted from the Da Vinci DTR IG."
+                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments data request form request.  It is adapted from the Da Vinci DTR IG."
             }
         ]
     },

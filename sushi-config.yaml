@@ -86,9 +86,6 @@ groups:
       - Parameters/cdex-parameters-example3
       - Parameters/cdex-parameters-example4
       - Parameters/cdex-parameters-example5
-      - Questionnaire/cdex-questionnaire-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example2
   TaskBasedProfiles:
     name: Task Based Approach Profiles
     description: Profiles Associated with CDex Task Based Approach Transactions
@@ -142,9 +139,19 @@ groups:
       - Bundle/cdex-searchset-digital-sig-example
       - Bundle/cdex-document-digital-sig-example
       - Bundle/cdex-electronic-sig-example
+      - Questionnaire/cdex-questionnaire-example2
+      - QuestionnaireResponse/cdex-questionnaireresponse-example3
+      - QuestionnaireResponse/cdex-questionnaireresponse-example4
   CommonTerminology:
     name: Common Terminology
-    description: ValueSets and CodeSystems Used in both CDex Attachments and Task Based Approach Transactions
+    description: ValueSets and CodeSystems used in both CDex Attachments and Task Based Approach Transactions
+    resources:
+      - Questionnaire/cdex-questionnaire-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example2
+  CommonExamples:
+    name: Common Examples
+    description: Examples used in both CDex Attachments and Task Based Approach Transactions
     resources:
       - ValueSet/cdex-POU
       - CodeSystem/cdex-temp
