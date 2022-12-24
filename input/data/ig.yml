@@ -255,25 +255,25 @@ definition:
       \ identified by the LOINC attachment code(s) in the \"data-code\" input parameter.\n\
       \  - If the code is \"attachment-request-questionnaire\", the provider system\
       \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/)\
-      \ to complete the questionnaire referenced in the \"questionnaire-url\" input\
-      \ parameter.\n  - When either code is present, the provider system uses the\
-      \ $submit-attachment operation to return the information to the endpoint provided\
-      \ in \"payer-url\" input parameter.    \n- A Task.requester.identifier element\
-      \ representing the Payer ID\n- A Task.owner.reference element fixed to \"\\\
-      #practionerrole\" -  a reference the contained PractitionerRole Resource that\
-      \ represents the Provider ID.\n- A Task.for.reference element fixed to \"\\\
-      #patient\" - a reference the contained Patient Resource that represents basic\
-      \ Patient demographic data.\n- A Task.reasonCode to communicate whether the\
-      \ attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference\
-      \ referencing the Claim or Prior Authorization ID (business Identifier)\n- A\
-      \ Task.input.extension in the \"data-code\" or \"questionnaire-url\" Task.input\
-      \ elements. This extension represents claim or prior authorization line item\
-      \ numbers associated with the attachment or data request.\n- A \"payer-url\"\
-      \ Task.input element representing the Payer endpoint URL to communicate to the\
-      \ provider to submit the attachments using the `$submit-attachment` operation\n\
-      \nand the following elements to be *must support* (min=0):\n- A Task.Restriction.period\
-      \ element representing the due date for submitting the attachments\n- A Task.statusReason.text\
-      \ to communicate the reason for the status (for example, if the Task is rejected\
+      \ to complete the questionnaire referenced in the \"questionnaire\" input parameter.\n\
+      \  - When either code is present, the provider system uses the $submit-attachment\
+      \ operation to return the information to the endpoint provided in \"payer-url\"\
+      \ input parameter.    \n- A Task.requester.identifier element representing the\
+      \ Payer ID\n- A Task.owner.reference element fixed to \"\\#practionerrole\"\
+      \ -  a reference the contained PractitionerRole Resource that represents the\
+      \ Provider ID.\n- A Task.for.reference element fixed to \"\\#patient\" - a reference\
+      \ the contained Patient Resource that represents basic Patient demographic data.\n\
+      - A Task.reasonCode to communicate whether the attachments are for a Claim or\
+      \ Prior Authorization\n- A Task.reasonReference.reference referencing the Claim\
+      \ or Prior Authorization ID (business Identifier)\n- A Task.input.extension\
+      \ in the \"data-code\" or \"questionnaire\" Task.input elements. This extension\
+      \ represents claim or prior authorization line item numbers associated with\
+      \ the attachment or data request.\n- A \"payer-url\" Task.input element representing\
+      \ the Payer endpoint URL to communicate to the provider to submit the attachments\
+      \ using the `$submit-attachment` operation\n\nand the following elements to\
+      \ be *must support* (min=0):\n- A Task.Restriction.period element representing\
+      \ the due date for submitting the attachments\n- A Task.statusReason.text to\
+      \ communicate the reason for the status (for example, if the Task is rejected\
       \ or failed)\n- A \"data-code\" Task.input element to communicate to the provider\
       \ what attachments are needed using LOINC attachment codes.*\n- A \"signature\"\
       \ Task.input element representing a flag to indicate whether the requested data\
@@ -282,18 +282,19 @@ definition:
       - A \"service-date\" Task.input element representing the date of service or\
       \ starting date of the service for the claim or prior authorization. It SHALL\
       \ be present if the attachment is for a claim.\n\nand the following elements\
-      \ to be *optional*:\n- An optional \"questionnaire-url\" Task.input element\
-      \ to communicate to the provider a URL of a data request questionnaire ([FHIR\
-      \ Questionnaire](http://hl7.org/fhir/questionnaire.html)).*\n- A \"POU\" Task.input\
-      \ element representing the purpose of use (POU) for the requested data using\
-      \ an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
+      \ to be *optional*:\n- An optional \"questionnaire\" Task.input element to communicate\
+      \ to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*\n\
+      - A \"POU\" Task.input element representing the purpose of use (POU) for the\
+      \ requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
       \ For more information about sending purpose POU codes, refer to the [Purpose\
       \ of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n\
       - A \"multiple-submits\" Task.input element representing a flag to indicate\
       \ whether the requested data can be sent in multiple submissions\n- A \"data-value\"\
       \ Task.output element referring to FHIR resource(s) representing the result(s)\
-      \ of the data request.\n\n\\* Either a \"data-code\" or a \"questionnaire-url\"\
-      \ Task.input element is required"
+      \ of the data request code.\n- A \"response\" Task.output element which is a\
+      \ local reference to the QuestionnaireResponse resulting from the data request\
+      \ Questionnaire.\n\n\\* Either a \"data-code\" or a \"questionnaire\" Task.input\
+      \ element is required"
     exampleBoolean: false
     name: CDex Task Attachment Request Profile
     groupingId: AttachmentsProfiles
@@ -355,6 +356,7 @@ definition:
       system's behavior.
     exampleBoolean: false
     name: CDex Data Request Task Code Value Set
+    groupingId: TaskBasedTerminology
   - reference:
       reference: ValueSet/cdex-identifier-types
     description: Identifiers type for providers and organizations limited to NPI or
@@ -625,6 +627,23 @@ definition:
       is a QuestionnaireResponse.'
     name: CDex Task Example 25
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+  - reference:
+      reference: Task/cdex-task-example26
+    description: '**Data Request Using a Questionnaire:** Task to seek reason for
+      home oxygen therapy using the CDex Profile questionnaire input. This example
+      illustrates the use of Questionnaire to request data from a data source'
+    name: CDex Task Example 26
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example27
+    description: '**Data Request Using a Questionnaire:** Completed Task for CDex
+      Task Example 26. This example has a status of "completed" and a "lastModified"
+      date of 6/19/2022. The "output" is a QuestionnaireResponse.Task to seek reason
+      for home oxygen therapy.'
+    name: CDex Task Example 27
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: Task/cdex-task-example3
     description: '**Completed Query String Request for Condition with Contained Output:**   Completed

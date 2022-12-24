@@ -5,7 +5,7 @@ name: CDexTempCodes
 title: CDex Temporary Code System
 status: draft
 experimental: false
-date: 2022-10-24
+date: '2022-12-23'
 description: Codes temporarily defined as part of the CDex implementation guide.  These
   will eventually migrate into an officially maintained terminology (likely HL7's
   [UTG](https://terminology.hl7.org/codesystems.html) code systems).
@@ -100,18 +100,18 @@ concept:
   display: Service Date
   definition: Date of service or starting date of the service for the claim or prior
     authorization.
-
+    
 - code: attachment-request-code
   display: Coded Attachment Request
   definition: A Task by a Payer requesting attachments for a Provider claim or prior-authorization
     using LOINC attachment codes.
 
 - code: data-request-code
-  display:  Data Request Questionnaire
+  display:  Data Request Code
   definition: A Task requesting data using a code.
 
 - code: data-request-query
-  display:  Data Request Questionnaire
+  display:  Data Request Query
   definition: A Task requesting data using FHIR query syntax.
 
 - code: data-request-questionnaire
@@ -122,7 +122,3 @@ concept:
   display:  Attachment Request Questionnaire
   definition: A Task by a Payer requesting attachments or additional data for a Provider claim or prior-authorization
     using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).
-
-- code: questionnaire-url
-  display: Questionnaire URL
-  definition: URL for a ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)) that can be used to fetch and complete the questionnaire.

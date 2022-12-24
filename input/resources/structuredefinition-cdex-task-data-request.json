@@ -5,7 +5,7 @@
     "name": "CDexTaskDataRequest",
     "title": "CDex Task Data Request Profile",
     "status": "active",
-    "description": "This Task profile is used to solicit information from a system when direct\nquery is not possible and human intervention might be required. It is used For CDex *Task-based transactions* by the Data Consumer to solicit information from a system. It represents both the data request and the returned \"data-request\".\n\nIt adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire-url\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire-url\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
+    "description": "This Task profile is used to solicit information from a system when direct\nquery is not possible and human intervention might be required. It is used For CDex *Task-based transactions* by the Data Consumer to solicit information from a system. It represents both the data request and the returned \"data-request\".\n\nIt adds the following *must support* constraints for CDex:\n\n- A Task.identifier element representing the unique data request identifier\n- A Task.for.reference.identifier element representing a patient business identifier like a Member ID\n- A Task.requester.reference.identifier element representing the Payer business identifier\n- A Task.owner.reference.identifier element representing the Provider business identifier\n- A Task.reasonReference.reference.identifier for the claim, pre-auth or coverage business identifier\n- For the \"code\" Task.input element, an extensible LOINC\u00ae Document types value set to communicate the specific information being requested\n- A Task.input element representing a flag to indicate whether the requested data requires a signature\n\nIn addition, the following *optional* constraint:\n- A Task.code.coding of 'data-request-questionnaire\" communicating to the data source that a data request questionnaire is being submitted.\n   - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the questionnaire referenced in the \"questionnaire\" input parameter.\n- A meta.tag element representing work-queue hints.\n- A \"questionnaire\" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).\n- A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,
@@ -34,14 +34,14 @@
                     {
                         "key": "cdex-8",
                         "severity": "error",
-                        "human": "If code = \"data-request-questionnaire\", must have one \"questionnaire-url\" input.",
-                        "expression": "Task.code.coding.code.where($this='data-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-url').exists()"
+                        "human": "If code = \"data-request-questionnaire\", must have one \"questionnaire\" input.",
+                        "expression": "Task.code.coding.code.where($this='data-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire').exists()"
                     },
                     {
                         "key": "cdex-9",
                         "severity": "error",
-                        "human": "Must have exactly one input that is data-query or data-code or questionnaire_url",
-                        "expression": "Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire_url').count()=1"
+                        "human": "Must have exactly one input that is data-query or data-code or questionnaire",
+                        "expression": "Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire').count()=1"
                     },
                     {
                         "key": "tdr-2",
@@ -58,8 +58,8 @@
                     {
                         "key": "cdex-11",
                         "severity": "warning",
-                        "human": "If code = \"data-request-questionnaire\" and status = \"completed\", should have one \"data-value\" output referencing the QuestionnaireResponse.",
-                        "expression": "(Task.code.coding.code.where($this='data-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies (Task.output.valueReference.count()=1 and Task.output.valueReference.exists(resolve() is QuestionnaireResponse))"
+                        "human": "If code = \"data-request-questionnaire\" and status = \"completed\", should have one \"questionnaire-response\" output referencing the QuestionnaireResponse.",
+                        "expression": "(Task.code.coding.code.where($this='data-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaire-response').exists()"
                     }
                 ]
             },
@@ -414,7 +414,7 @@
                 }
             },
             {
-                "id": "Task.input:questionnaire-url",
+                "id": "Task.input:questionnaire",
                 "extension": [
                     {
                         "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
@@ -422,34 +422,44 @@
                     }
                 ],
                 "path": "Task.input",
-                "sliceName": "questionnaire-url",
+                "sliceName": "questionnaire",
                 "short": "Data Request questionnaire",
-                "definition": "The Questionnaire URL for a data request questionnaire.",
+                "definition": "Indicates the questionnaire to be completed.",
                 "max": "1",
                 "condition": [
                     "cdex-8",
                     "cdex-9"
-                ]
+                ],
+                "mustSupport": true
             },
             {
-                "id": "Task.input:questionnaire-url.type",
+                "id": "Task.input:questionnaire.type",
                 "path": "Task.input.type",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ],
                 "patternCodeableConcept": {
                     "coding": [
                         {
-                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                            "code": "questionnaire-url"
+                            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+                            "code": "questionnaire"
                         }
                     ]
                 }
             },
             {
-                "id": "Task.input:questionnaire-url.value[x]",
+                "id": "Task.input:questionnaire.value[x]",
                 "path": "Task.input.value[x]",
-                "short": "Questionnaire URL value",
+                "short": "URL",
+                "min": 1,
+                "max": "1",
                 "type": [
                     {
-                        "code": "url"
+                        "code": "canonical"
                     }
                 ]
             },
@@ -533,8 +543,7 @@
                     "rules": "open"
                 },
                 "condition": [
-                    "tdr-3",
-                    "cdex-11"
+                    "tdr-3"
                 ],
                 "mustSupport": true
             },
@@ -543,7 +552,7 @@
                 "path": "Task.output",
                 "sliceName": "data",
                 "short": "Requested data",
-                "definition": "The data content requested.  Multiple repetitions are permitted in the event that a single request returns multiple instances and packaging in a Bundle is not necessary/approrpriate.  Also, in most cases Provenance instances should accompany returned data so that the requester can best integrate and allocate trust/confidence to the provided data.",
+                "definition": "The data content requested.  Multiple repetitions are permitted in the event that a single request returns multiple instances and packaging in a Bundle is not necessary/appropriate.  Also, in most cases Provenance instances should accompany returned data so that the requester can best integrate and allocate trust/confidence to the provided data.",
                 "mustSupport": true
             },
             {
@@ -563,13 +572,61 @@
                 "id": "Task.output:data.value[x]",
                 "path": "Task.output.value[x]",
                 "short": "data reference",
-                "comment": "The referenced data might be contained within the Task (if it doesn't have/shouldn't have independent persistence), but can also refer to data stored elsewhere - either on the owner's system or some other system.  Note that all returned data SHOULD comply with appropriate US-Core and/or Da Vinci profiles.",
+                "comment": "The referenced data might be contained within the Task (if it doesn't have/shouldn't have independent persistence), but can also refer to data stored elsewhere - either on the owner's system or some other system.  Note that all returned data SHOULD comply with appropriate US-Core and/or Da Vinci profiles. The \"questionnaire-response\" output type is for a QuestionnaireResponse resulting from the request.",
                 "type": [
                     {
                         "code": "Reference"
                     }
                 ],
                 "mustSupport": true
+            },
+            {
+                "id": "Task.output:response",
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+                        "valueCode": "draft"
+                    }
+                ],
+                "path": "Task.output",
+                "sliceName": "response",
+                "definition": "Indicates the questionnaire response resulting from the request.",
+                "max": "1",
+                "condition": [
+                    "cdex-11"
+                ]
+            },
+            {
+                "id": "Task.output:response.type",
+                "path": "Task.output.type",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ],
+                "patternCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+                            "code": "questionnaire-response"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "Task.output:response.value[x]",
+                "path": "Task.output.value[x]",
+                "short": "url",
+                "min": 1,
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference",
+                        "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"
+                        ]
+                    }
+                ]
             }
         ]
     }

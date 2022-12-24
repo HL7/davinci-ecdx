@@ -5,9 +5,9 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 22
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: >-
-      **Request Additional Data using a Questionnaire:**   Prior Authorization
-      Attachment Request with a POU of "coverage authorization" sent by payer to a provider requesting a data request questionnaire be completed.
+    valueMarkdown: '**Request Additional Data using a Questionnaire:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting a data request questionnaire be completed.'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 contained:
@@ -44,13 +44,11 @@ contained:
   id: practitionerrole
   meta:
     profile:
-    - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
-
+    - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole
   practitioner:
     identifier:
       system: http://hl7.org/fhir/sid/us-npi
       value: '9941339100'
-
   organization:
     identifier:
       system: http://hl7.org/fhir/sid/us-npi
@@ -97,12 +95,12 @@ restriction:
 input:
 - type:
     coding:
-    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
-      code: questionnaire-url
-  valueUrl: http://example.org/cdex-questionnaire-example1 # <<<<<<<< This is the URL of the data request questionnaire for a prior auth data.
+    - system: http://hl7.org/fhir/uv/sdc/CodeSystem/temp
+      code: questionnaire
   extension:
-    - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
-      valuePositiveInt: 1
+  - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
+    valuePositiveInt: 1
+  valueCanonical: http://example.org/cdex-questionnaire-example1
 - type:
     coding:
     - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp

@@ -99,6 +99,7 @@ groups:
     description: ValueSets Associated with CDex Task Based Approach Transactions
     resources:
       - ValueSet/cdex-work-queue
+      - ValueSet/cdex-data-request-task-code
   TaskBasedExamples:
     name: Task Based Approach Examples
     description: Examples Associated with CDex Task Based Approach Transactions
@@ -122,6 +123,8 @@ groups:
       - Task/cdex-task-example17
       - Task/cdex-task-example18
       - Task/cdex-task-example21
+      - Task/cdex-task-example26
+      - Task/cdex-task-example27
   SignatureProfiles:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures

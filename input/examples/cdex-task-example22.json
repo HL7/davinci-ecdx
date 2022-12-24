@@ -156,18 +156,18 @@
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                        "code": "questionnaire-url"
+                        "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+                        "code": "questionnaire"
                     }
                 ]
             },
-            "valueUrl": "http://example.org/cdex-questionnaire-example1",
             "extension": [
                 {
                     "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
                     "valuePositiveInt": 1
                 }
-            ]
+            ],
+            "valueCanonical": "http://example.org/cdex-questionnaire-example1"
         },
         {
             "type": {

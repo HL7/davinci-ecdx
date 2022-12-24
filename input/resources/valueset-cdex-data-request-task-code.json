@@ -6,7 +6,7 @@
     "title": "CDex Data Request Task Code Value Set",
     "status": "draft",
     "experimental": false,
-    "date": "2022-10-24",
+    "date": "2022-12-23",
     "description": "Codes used to identify the type of data request and control the payer system's behavior.",
     "compose": {
         "include": [
