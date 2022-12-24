@@ -162,7 +162,7 @@ definition:
       [UTG](https://terminology.hl7.org/codesystems.html) code systems).
     exampleBoolean: false
     name: CDex Temporary Code System
-    groupingId: CommonExamples
+    groupingId: CommonTerminology
   - reference:
       reference: OperationDefinition/submit-attachment
     description: "This [operation](http://hl7.org/fhir/operations.html) is used to\
@@ -379,7 +379,7 @@ definition:
       defined by this Guide.
     exampleBoolean: false
     name: CDex Purpose of Use Value Set
-    groupingId: CommonExamples
+    groupingId: CommonTerminology
   - reference:
       reference: ValueSet/cdex-attachment-task-code
     description: Codes used to identify the type of attachment request and control
@@ -485,7 +485,7 @@ definition:
       Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
     name: CDex Questionnaire Example1
     exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
-    groupingId: CommonTerminology
+    groupingId: CommonExamples
   - reference:
       reference: Questionnaire/cdex-questionnaire-example2
     description: This example is a simple data request Questionnaire used in the Task
@@ -493,7 +493,7 @@ definition:
       is needed when completing the QuestionnaireResponse.  It is adapted from the
       Da Vinci DTR IG.
     name: CDex Questionnaire Example1
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
     groupingId: SignatureExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
@@ -502,7 +502,7 @@ definition:
       the Da Vinci DTR IG.
     name: CDex QuestionnaireResponse Example1
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
-    groupingId: CommonTerminology
+    groupingId: CommonExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
     description: This Questionnaire Response example demonstrates the response to
@@ -513,7 +513,7 @@ definition:
       Implementation Guide](http://hl7.org/fhir/uv/sdc/).
     name: CDex QuestionnaireResponse Example2
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
-    groupingId: CommonTerminology
+    groupingId: CommonExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example3
     description: This Questionnaire Response example demonstrates the response to
@@ -521,7 +521,7 @@ definition:
       Verification signature is required. The electronic signature is an image file
       in the QuestionnaireResponse signature extension. This example is adapted from
       the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example1
+    name: CDex QuestionnaireResponse Example3
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
     groupingId: SignatureExamples
   - reference:
@@ -531,7 +531,7 @@ definition:
       digital Verification signature is required. The digital signature is a JSON
       [FHIR Signature](http://hl7.org/fhir/R4/signatures.html) in the QuestionnaireResponse
       signature extension. This example is adapted from the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example1
+    name: CDex QuestionnaireResponse Example4
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
     groupingId: SignatureExamples
   - reference:
@@ -692,6 +692,7 @@ definition:
       is a QuestionnaireResponse.'
     name: CDex Task Example 24
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example25
     description: '**Request Additional Data using a Questionnaire:**   Completed Task
@@ -700,6 +701,7 @@ definition:
       is a QuestionnaireResponse.'
     name: CDex Task Example 25
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example26
     description: '**Data Request Using a Questionnaire:** Task to seek reason for
@@ -718,6 +720,24 @@ definition:
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:
+      reference: Task/cdex-task-example28
+    description: '**Request Additional Data using a Questionnaire Requiring a Verification
+      Signature:** Prior Authorization Attachment Request with a POU of "coverage
+      authorization" and Signature required sent by payer to a provider requesting
+      a data request questionnaire be completed and signed.'
+    name: CDex Task Example 28
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example29
+    description: "**Completed Request for Additional Data using a Questionnaire Re-Association\
+      \ Requiring a Verification Signature:**  Completed Prior Authorization\n Attachment\
+      \ Request (CDex Task Example 28) with a status of \"completed\" and output referencing\
+      \ the digitally signed QuestionnaireResponse."
+    name: CDex Task Example 29
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
       reference: Task/cdex-task-example3
     description: '**Completed Query String Request for Condition with Contained Output:**   Completed
       Task to seek a patient active conditions using the CDex Profile query input
@@ -725,6 +745,23 @@ definition:
       the use of business identifiers (instead of pointing to a FHIR resource) to
       references the various actors.'
     name: CDex Task Example 3
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example30
+    description: '**Data Request Using a Questionnaire Requiring a Verification Signature:**
+      Task to seek reason for home oxygen therapy using the CDex Profile questionnaire
+      input. This example illustrates the use of Questionnaire to request data from
+      a data source and requires a digitally signed QuestionnaireResponse.'
+    name: CDex Task Example 30
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example31
+    description: '**Completed Data Request Using a Questionnaire Requiring a Verification
+      Signature:** Completed Task (CDex Task Example 30) with a status of "completed"
+      and output referencing the digitally signed QuestionnaireResponse.'
+    name: CDex Task Example 31
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:

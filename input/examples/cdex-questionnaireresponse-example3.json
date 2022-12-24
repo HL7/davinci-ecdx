@@ -8,7 +8,7 @@
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex QuestionnaireResponse Example1"
+                "valueString": "CDex QuestionnaireResponse Example3"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
