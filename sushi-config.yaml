@@ -83,6 +83,8 @@ groups:
       - Task/cdex-task-example23
       - Task/cdex-task-example24
       - Task/cdex-task-example25
+      - Task/cdex-task-example28
+      - Task/cdex-task-example29
       - Parameters/cdex-parameters-example1
       - Parameters/cdex-parameters-example2
       - Parameters/cdex-parameters-example3
@@ -124,6 +126,8 @@ groups:
       - Task/cdex-task-example21
       - Task/cdex-task-example26
       - Task/cdex-task-example27
+      - Task/cdex-task-example30
+      - Task/cdex-task-example31
   SignatureProfiles:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
