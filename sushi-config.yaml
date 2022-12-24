@@ -81,6 +81,8 @@ groups:
       - Task/cdex-task-example20
       - Task/cdex-task-example22
       - Task/cdex-task-example23
+      - Task/cdex-task-example24
+      - Task/cdex-task-example25
       - Parameters/cdex-parameters-example1
       - Parameters/cdex-parameters-example2
       - Parameters/cdex-parameters-example3
@@ -146,15 +148,15 @@ groups:
     name: Common Terminology
     description: ValueSets and CodeSystems used in both CDex Attachments and Task Based Approach Transactions
     resources:
-      - Questionnaire/cdex-questionnaire-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example2
+      - ValueSet/cdex-POU
+      - CodeSystem/cdex-temp
   CommonExamples:
     name: Common Examples
     description: Examples used in both CDex Attachments and Task Based Approach Transactions
     resources:
-      - ValueSet/cdex-POU
-      - CodeSystem/cdex-temp
+      - Questionnaire/cdex-questionnaire-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example2
   CapabilityStatements:
     name: CDex Capability Statements
     description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
