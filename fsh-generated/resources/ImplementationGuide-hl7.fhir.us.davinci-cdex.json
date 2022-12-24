@@ -369,7 +369,7 @@
         },
         "description": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.",
         "name": "CDex Questionnaire Example1",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire",
         "groupingId": "CommonTerminology"
       },
       {
@@ -378,7 +378,7 @@
         },
         "description": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG.",
         "name": "CDex Questionnaire Example1",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire",
+        "exampleBoolean": true,
         "groupingId": "SignatureExamples"
       },
       {

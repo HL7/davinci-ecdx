@@ -3,7 +3,7 @@
     "id": "cdex-questionnaire-example1",
     "meta": {
         "profile": [
-            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire"
+            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire"
         ],
         "extension": [
             {

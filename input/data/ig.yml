@@ -484,7 +484,7 @@ definition:
     description: This example is a simple data request Questionnaire used in the Task
       Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
     name: CDex Questionnaire Example1
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
     groupingId: CommonTerminology
   - reference:
       reference: Questionnaire/cdex-questionnaire-example2
@@ -493,7 +493,7 @@ definition:
       is needed when completing the QuestionnaireResponse.  It is adapted from the
       Da Vinci DTR IG.
     name: CDex Questionnaire Example1
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire
+    exampleBoolean: true
     groupingId: SignatureExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
