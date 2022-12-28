@@ -307,9 +307,9 @@ The Requested Attachments and the corresponding coded requests and/or line item 
 
 ### Complete *Solicited* Attachment Transaction
 
-The complete *solicited* attachment transaction using the combination of a Task-based CDex Task Attachment Request Profile to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer is shown below:
+The complete *solicited* attachment transaction is shown below. A CDex Task Attachment Request Profile is used to request the attachment using an attachment code, and the [`$submit-attachment`] operation is used to submit the attachments to the Payer:
 
-{% include examplebutton_default.html example="task-scenario-8.md" b_title = "Click Here To See FHIR Based Solicited Attachment Example" %}
+{% include examplebutton_default.html example="solicited-attachment-scenario-1.md" b_title = "Click Here To See FHIR Based Solicited Attachment Example" %}
 
 ### Signatures
 

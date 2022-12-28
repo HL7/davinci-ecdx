@@ -29,9 +29,9 @@
 <artifact id="Questionnaire/cdex-questionnaire-example1" key="Questionnaire-cdex-questionnaire-example1" name="CDex Questionnaire Example1"/>
 <artifact id="Questionnaire/cdex-questionnaire-example2" key="Questionnaire-cdex-questionnaire-example2" name="CDex Questionnaire Example1"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example1" key="QuestionnaireResponse-cdex-questionnaireresponse-example1" name="CDex QuestionnaireResponse Example1"/>
-<artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example3" key="QuestionnaireResponse-cdex-questionnaireresponse-example3" name="CDex QuestionnaireResponse Example1"/>
-<artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example4" key="QuestionnaireResponse-cdex-questionnaireresponse-example4" name="CDex QuestionnaireResponse Example1"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example2" key="QuestionnaireResponse-cdex-questionnaireresponse-example2" name="CDex QuestionnaireResponse Example2"/>
+<artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example3" key="QuestionnaireResponse-cdex-questionnaireresponse-example3" name="CDex QuestionnaireResponse Example3"/>
+<artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example4" key="QuestionnaireResponse-cdex-questionnaireresponse-example4" name="CDex QuestionnaireResponse Example4"/>
 <artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
@@ -57,7 +57,11 @@
 <artifact id="Task/cdex-task-example25" key="Task-cdex-task-example25" name="CDex Task Example 25"/>
 <artifact id="Task/cdex-task-example26" key="Task-cdex-task-example26" name="CDex Task Example 26"/>
 <artifact id="Task/cdex-task-example27" key="Task-cdex-task-example27" name="CDex Task Example 27"/>
+<artifact id="Task/cdex-task-example28" key="Task-cdex-task-example28" name="CDex Task Example 28"/>
+<artifact id="Task/cdex-task-example29" key="Task-cdex-task-example29" name="CDex Task Example 29"/>
 <artifact id="Task/cdex-task-example3" key="Task-cdex-task-example3" name="CDex Task Example 3"/>
+<artifact id="Task/cdex-task-example30" key="Task-cdex-task-example30" name="CDex Task Example 30"/>
+<artifact id="Task/cdex-task-example31" key="Task-cdex-task-example31" name="CDex Task Example 31"/>
 <artifact id="Task/cdex-task-example4" key="Task-cdex-task-example4" name="CDex Task Example 4"/>
 <artifact id="Task/cdex-task-example5" key="Task-cdex-task-example5" name="CDex Task Example 5"/>
 <artifact id="Task/cdex-task-example6" key="Task-cdex-task-example6" name="CDex Task Example 6"/>

@@ -6,7 +6,7 @@ meta:
     valueString: CDex Task Example 31
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: >-
-      **Completed Data Request Using a Questionnaire Requiring a Verification Signature:** Completed Task (CDex Task Example 30) with a status of "completed" and output referencing the digitally signed QuestionnaireResponse.
+      **Completed Data Request Requiring a Verification Signature Using Questionnaire:** Completed Task (CDex Task Example 30) with a status of "completed" and output referencing the digitally signed QuestionnaireResponse.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
   tag:

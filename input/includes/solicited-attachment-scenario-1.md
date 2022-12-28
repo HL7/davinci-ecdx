@@ -1,7 +1,7 @@
 
 
 
-###### Step 1 - POST Task to Provider endpoint
+#### Step 1 - POST Task to Provider endpoint
 
 
 **Request**
@@ -35,15 +35,18 @@ HTTP/1.1 200 OK
 
 Server: CDEX Example Provider Server
 
-Location: http://example.org/FHIR/Task/cdex-task-example2/_history/1
+Location: http://example.org/FHIR/Task/cdex-task-example19/_history/1
 
 ...(other headers)
 
 ~~~
 
 
-###### Step 2 - POST Operation to Payer endpoint
+#### Step 2 - HIT/EHR Gathers Requested Information
 
+{% include img-small.html img='gather-data-icon.svg' %}
+
+#### Step 2 - POST $submit-attachment Operation to Payer endpoint
 
 **Request**
 

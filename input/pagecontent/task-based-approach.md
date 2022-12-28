@@ -31,12 +31,14 @@ In most of these situations, there is human intervention (e.g., a provider or de
   - [FHIR RESTful Search syntax]
   - coded
   - free text
+  - <span class="bg-success" markdown="1">FHIR Questionnaire</span><!-- new-content -->
 1. `Task.output` represents the requested data. This output is a FHIR reference to:
-      - Individual FHIR resources (e.g., Condition)
       - FHIR Search Bundle (e.g., a query response)
       - FHIR Documents (e.g., CCDA on FHIR)
       - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
-1. `Task.status` is updated as the task is fulfilled
+      - <span class="bg-success" markdown="1">a FHIR QuestionnaireResponse</span><!-- new-content -->
+      - Other Individual FHIR resources (e.g., Condition)
+2. `Task.status` is updated as the task is fulfilled
 
 
 
@@ -161,6 +163,46 @@ Payer A Seeks an insured Person/Patient B’s operative notes from Provider C to
 Preconditions and Assumptions are the same as above except the Payer POSTS a Task to the Provider endpoint requesting Patient B's operative notes using the LOINC attachment code 11504-8, Surgical operation note.
 
 {% include examplebutton_default.html example="task-scenario-2b" b_title = "Click Here To See Example Task Based Transaction for Patient's Operative Note" %}
+
+---
+
+**The following section is DRAFT. It requires further community review and testing.**
+{:.stu-note}
+
+<div class="bg-success" markdown="1">
+
+### Requesting Data Using A FHIR Questionnaire
+
+TODO ...documentation
+
+{% include img.html img="taskbased-task-Q-summary.svg" %} 
+
+#### Sequence Diagram
+
+TODO ...documentation
+
+{% include img.html img="taskbased-task-Q-sequencediagram.svg" %} 
+
+#### Example of Requesting Data Using A FHIR Questionnaire
+
+This scenario demonstrates requesting data using a FHIR Questionnaire:
+
+Payer A Seeks documentation from Provider P for Insured Person/Patient B’s Home Oxygen Therapy order as part of a claims audit.
+
+Preconditions and Assumptions:
+
+1. {{ site.data.base-example-list[0] }}
+2. {{ site.data.base-example-list[2] }}
+3. {{ site.data.base-example-list[3] }}
+4. {{ site.data.base-example-list[4] }}
+5. The Payer POSTS a Task to the Provider endpoint requesting the referenced Questionnaire be completed.
+6. The Provider uses a  DTR SMART App or EHR native application to complete the Questionnaire.
+7. {{ site.data.base-example-list[6] }}
+8. The Payer fetches the QuestionnaireResponse referenced by Task.output.
+
+{% include examplebutton_default.html example="task-scenario-10" b_title = 'Click Here To See Example Task Based Transaction (FHIR Questionnaire' %}
+
+</div><!-- new-content -->
 
 ### When The Task Cannot Be Completed
 

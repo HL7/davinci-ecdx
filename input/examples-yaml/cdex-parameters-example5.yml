@@ -75,7 +75,7 @@ parameter:
                       system: http://example.org/cdex/payer/member-ids
                       value: Member123
                     display: Amy Shaw
-                  authored: '2022-12-14T16:59:15Z'
+                  authored: '2022-06-17'
                   author:
                     identifier:
                         system: http://hl7.org/fhir/sid/us-npi

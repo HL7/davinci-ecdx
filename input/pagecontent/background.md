@@ -44,8 +44,8 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 
 There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
 
-- An alternative is needed to cover some aspects of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery], if a CDS hook client refuses pre-fetch requests, the CDS service could use CDex to request the data instead.
-- There is a specific exchange that is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS) FHIR IG], the Payer could request additional information for prior authorization using CDex.
+- An alternative is needed to cover some aspects of an exchange. For example, in [Da Vinci - Coverage Requirements Discovery (DTR)], if a CDS hook client refuses pre-fetch requests, the CDS service could use CDex to request the data instead.
+- There is a specific exchange that is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS)], the Payer could request additional information for prior authorization using CDex.
 - The other IG has not been or can not be implemented for the use case.  For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of Quality Measures. CDex can be used when:
   1. The measure is not yet implementable using DEQM
   1. A Provider has not implemented DEQM

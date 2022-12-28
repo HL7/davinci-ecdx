@@ -5,7 +5,7 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 25
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Request Additional Data using a Questionnaire:**   Completed
+    valueMarkdown: '**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed
       Task for CDex Task Example 23. This example has a status of "completed" and
       a "lastModified" date of 6/17/2022. The "reasonCode" is "request additional
       data" and the "output" is a QuestionnaireResponse.'
@@ -62,7 +62,7 @@ identifier:
       display: Tracking Id
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
-  value: trackingid1012
+  value: trackingid1034
 status: completed
 intent: order
 code:
@@ -91,7 +91,7 @@ reasonReference:
     system: http://example.org/cdex/payer/claim-ids
     value: Preauth123
 restriction:
-  period:
+  period: 
     end: '2022-06-21'
 input:
 - type:

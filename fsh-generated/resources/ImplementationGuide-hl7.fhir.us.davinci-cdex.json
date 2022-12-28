@@ -565,7 +565,7 @@
         "reference": {
           "reference": "Task/cdex-task-example23"
         },
-        "description": "**Prior-Auth Questionnaire Request Example:**   Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed.",
+        "description": "**Request Additional Data using an Adaptive Questionnaire:**  Prior Authorization Attachment Request with a POU of \"coverage authorization\" sent by payer to a provider requesting an adaptive questionnaire be completed.",
         "name": "CDex Task Example 23",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
         "groupingId": "AttachmentsExamples"
@@ -574,7 +574,7 @@
         "reference": {
           "reference": "Task/cdex-task-example24"
         },
-        "description": "**Request Additional Data using a Questionnaire:**   Completed Task for CDex Task Example 22. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse.",
+        "description": "**Completed Request for Additional Data using a Questionnaire:**   Completed Task for CDex Task Example 22. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse.",
         "name": "CDex Task Example 24",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
         "groupingId": "AttachmentsExamples"
@@ -583,7 +583,7 @@
         "reference": {
           "reference": "Task/cdex-task-example25"
         },
-        "description": "**Request Additional Data using a Questionnaire:**   Completed Task for CDex Task Example 23. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse.",
+        "description": "**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed Task for CDex Task Example 23. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse.",
         "name": "CDex Task Example 25",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
         "groupingId": "AttachmentsExamples"
@@ -601,7 +601,7 @@
         "reference": {
           "reference": "Task/cdex-task-example27"
         },
-        "description": "**Data Request Using a Questionnaire:** Completed Task for CDex Task Example 26. This example has a status of \"completed\" and a \"lastModified\" date of 6/19/2022. The \"output\" is a QuestionnaireResponse.Task to seek reason for home oxygen therapy.",
+        "description": "** Completed Data Request Using a Questionnaire:** Completed Task for CDex Task Example 26. This example has a status of \"completed\" and a \"lastModified\" date of 6/19/2022. The \"output\" is a QuestionnaireResponse.Task to seek reason for home oxygen therapy.",
         "name": "CDex Task Example 27",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
         "groupingId": "TaskBasedExamples"
@@ -610,7 +610,7 @@
         "reference": {
           "reference": "Task/cdex-task-example28"
         },
-        "description": "**Request Additional Data using a Questionnaire Requiring a Verification Signature:** Prior Authorization Attachment Request with a POU of \"coverage authorization\" and Signature required sent by payer to a provider requesting a data request questionnaire be completed and signed.",
+        "description": "**Request Additional Data Requiring a Verification Signature Using a Questionnaire:** Prior Authorization Attachment Request with a POU of \"coverage authorization\" and Signature required sent by payer to a provider requesting a data request questionnaire be completed and signed.",
         "name": "CDex Task Example 28",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
         "groupingId": "AttachmentsExamples"
@@ -619,7 +619,7 @@
         "reference": {
           "reference": "Task/cdex-task-example29"
         },
-        "description": "**Completed Request for Additional Data using a Questionnaire Re-Association Requiring a Verification Signature:**  Completed Prior Authorization\n Attachment Request (CDex Task Example 28) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse.",
+        "description": "**Completed valueMarkdown: '**Completed Request for Additional Data Requiring a Verification Signature Using a Questionnaire:**  Completed Prior Authorization\n Attachment Request (CDex Task Example 28) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse.",
         "name": "CDex Task Example 29",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
         "groupingId": "AttachmentsExamples"
@@ -637,7 +637,7 @@
         "reference": {
           "reference": "Task/cdex-task-example30"
         },
-        "description": "**Data Request Using a Questionnaire Requiring a Verification Signature:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source and requires a digitally signed QuestionnaireResponse.",
+        "description": "**Data Request Requiring a Verification Signature Using Questionnaire:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source and requires a digitally signed QuestionnaireResponse.",
         "name": "CDex Task Example 30",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
         "groupingId": "TaskBasedExamples"
@@ -646,7 +646,7 @@
         "reference": {
           "reference": "Task/cdex-task-example31"
         },
-        "description": "**Completed Data Request Using a Questionnaire Requiring a Verification Signature:** Completed Task (CDex Task Example 30) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse.",
+        "description": "**Completed Data Request Requiring a Verification Signature Using Questionnaire:** Completed Task (CDex Task Example 30) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse.",
         "name": "CDex Task Example 31",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request",
         "groupingId": "TaskBasedExamples"

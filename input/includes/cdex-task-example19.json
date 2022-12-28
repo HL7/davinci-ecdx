@@ -1,10 +1,5 @@
 {
     "resourceType": "Task",
-    "meta": {
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
-        ]
-    },
     "contained": [
         {
             "resourceType": "Patient",
@@ -85,10 +80,10 @@
         "coding": [
             {
                 "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                "code": "attachment-request"
+                "code": "attachment-request-code"
             }
         ],
-        "text": "Attachment Request"
+        "text": "Coded Attachment Request"
     },
     "for": {
         "reference": "#patient"

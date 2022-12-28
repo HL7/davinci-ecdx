@@ -5,7 +5,7 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 23
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Prior-Auth Questionnaire Request Example:**   Prior Authorization
+    valueMarkdown: '**Request Additional Data using an Adaptive Questionnaire:**  Prior Authorization
       Attachment Request with a POU of "coverage authorization" sent by payer to a
       provider requesting an adaptive questionnaire be completed.'
   profile:
@@ -61,7 +61,7 @@ identifier:
       display: Tracking Id
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
-  value: trackingid1012
+  value: trackingid1034
 status: requested
 intent: order
 code:

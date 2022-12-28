@@ -15,5 +15,6 @@
             "scheme": "untitled",
             "pattern": "Untitled-2"
         }
-    ]
+    ],
+    "svg.preview.background": "transparent"
 }

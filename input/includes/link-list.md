@@ -71,8 +71,8 @@
 [Basic Provenance]: {{site.data.fhir.ver.uscore}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
-[Da Vinci - Coverage Requirements Discovery]: http://hl7.org/fhir/us/davinci-crd/index.html
-[Da Vinci Prior Authorization Support (PAS) FHIR IG]: http://hl7.org/fhir/us/davinci-pas/index.html
+[Da Vinci - Coverage Requirements Discovery (DTR)]: http://hl7.org/fhir/us/davinci-crd/index.html
+[Da Vinci Prior Authorization Support (PAS)]: http://hl7.org/fhir/us/davinci-pas/index.html
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
 [Signatures for Task Based Requests]: task-based-approach.html#signatures
@@ -105,9 +105,8 @@
 [FHIR-36158]: https://jira.hl7.org/browse/FHIR-36158
 [Solicited and Unsolicited Attachments]: solicited-unsolicited-attachments.html
 [Sending Attachments]: sending-attachments.html
-[Requesting Attachments]: requesting-attachments-code.html
 [Requesting Attachments Using Attachment Codes]: requesting-attachments-code.html
-[Requesting Attachments Using Forms]: requesting-attachments-code.html
+[Requesting Attachments Using Questionnaires]: requesting-attachments-questionnaire.html
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
@@ -131,3 +130,5 @@
 [validating profiles and resources]: {{site.data.fhir.path}}validation.html
 [ImplementationGuide]: {{site.data.fhir.path}}implementationguide.html
 [CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html
+[Da Vinci DTR]: {{site.data.fhir.ver.dtr}}
+[Questionnaire]: {{site.data.fhir.path}}questionnaire.html

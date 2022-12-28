@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Data Request Using a Questionnaire Requiring a Verification Signature:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source and requires a digitally signed QuestionnaireResponse."
+                "valueMarkdown": "**Data Request Requiring a Verification Signature Using Questionnaire:** Task to seek reason for home oxygen therapy using the CDex Profile questionnaire input. This example illustrates the use of Questionnaire to request data from a data source and requires a digitally signed QuestionnaireResponse."
             }
         ],
         "profile": [

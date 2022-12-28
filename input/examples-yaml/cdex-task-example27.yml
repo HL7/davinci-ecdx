@@ -5,7 +5,7 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 27
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Data Request Using a Questionnaire:** Completed Task for CDex
+    valueMarkdown: '** Completed Data Request Using a Questionnaire:** Completed Task for CDex
       Task Example 26. This example has a status of "completed" and a "lastModified"
       date of 6/19/2022. The "output" is a QuestionnaireResponse.Task to seek reason
       for home oxygen therapy.'

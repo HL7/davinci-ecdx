@@ -6,7 +6,7 @@ meta:
     valueString: CDex Task Example 29
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: >-
-     **Completed Request for Additional Data using a Questionnaire Re-Association Requiring a Verification Signature:**  Completed Prior Authorization
+     **Completed valueMarkdown: '**Completed Request for Additional Data Requiring a Verification Signature Using a Questionnaire:**  Completed Prior Authorization
       Attachment Request (CDex Task Example 28) with a status of "completed" and output referencing the digitally signed QuestionnaireResponse.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
@@ -61,7 +61,7 @@ identifier:
       display: Tracking Id
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
-  value: trackingid1012
+  value: trackingid1056
 status: completed
 intent: order
 code:
