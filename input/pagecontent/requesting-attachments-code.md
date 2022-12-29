@@ -47,22 +47,20 @@ The following data elements are needed to associate an attachment to a claim or 
 In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how the CDex Task Attachment Request Profile is used to communicate the required data elements to the Provider and how the $submit-attachment is used to communicate the response back to the Payer.
 {: .bg-info}
 
-In this scenario, a Provider creates a claim and sends it to the Payer.  The Payer reviews the claim and responds with a request for <span class="bg-success" markdown="1">supporting documentation/attachments</span><!-- new-content --> using the  CDex Attachment Request Profile.  In addition to the information needed to successfully submit and associate the attachments to the claim, the payer supplies the following details about what information is needed to complete the adjudication of the claim:
+In this scenario, a Provider creates a claim and sends it to the Payer.  The Payer reviews the claim and responds with a request for <span class="bg-success" markdown="1">supporting documentation/attachments</span><!-- new-content --> using the  CDex Attachment Request Profile. The flow diagram for this transaction is shown in figure 3 below:
+
+{% include img.html img="cdex-request-attach-claim-flow.svg" caption="Figure 3: CDex Request Attachments for Claims Using Attachments Codes" %}
+
+ In addition to the information needed to successfully submit and associate the attachments to the claim, the payer supplies the following details about what information is needed to complete the adjudication of the claim:
 
 - LOINC attachment code(s) for the requested documents
 - What line numbers on the claim the requested attachment(s) are for
-
-<!-- An endpoint where the Provider submits the attachments is supplied. This endpoint is used by the [`$submit-attachment`] operation and can be used by any HTTP endpoint, not just FHIR RESTful servers. The payer may also indicate whether a Digital Signature is required and whether the attachments need to be submitted in a single transaction. -->
 
 After receiving the attachment request, the Provider collects the documentation and returns them using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. <span class="bg-success" markdown="1">The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters:</span><!-- new-content -->
 
 <div class="bg-success" markdown="1">
 {% include attachments_to_requests.md %}
 </div><!-- new-content -->
-
-The flow diagram for this transaction is shown in figure 3 below:
-
-{% include img.html img="cdex-request-attach-claim-flow.svg" caption="Figure 3: CDex Request Attachments for Claims Using Attachments Codes" %}
 
 #### Payer Requests Attachments for Claim
 
