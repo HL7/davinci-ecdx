@@ -84,7 +84,7 @@ The optional profile declaration shown below asserts that the resource conforms 
 
 ##### Verifying Patient Identity
 
-The following data elements are used to verify patient identity for compliance regulations (such as HIPAA). (How the Provider system verifies the patient is not covered in this guide.) The Payer communicates them in a  *contained* Patient resource using the [CDex Patient Demographics Profile]. This contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".:
+The following data elements are used to verify patient identity. (How the Provider system verifies the patient is not covered in this guide.) The Payer communicates them in a  *contained* Patient resource using the [CDex Patient Demographics Profile]. This contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".:
 
 |Data|HRex Patient Demographics Profile.|
 |---|---|

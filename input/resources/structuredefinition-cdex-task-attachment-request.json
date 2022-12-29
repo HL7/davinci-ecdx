@@ -94,7 +94,7 @@
                 "id": "Task.contained:patient",
                 "path": "Task.contained",
                 "sliceName": "patient",
-                "definition": "The contained patient profile represents the patient data elements used to verify patient identity for compliance regulations (such as HIPAA).",
+                "definition": "The contained patient profile represents the patient data elements used to verify patient identity.",
                 "short": "Contained Patient resource",
                 "min": 1,
                 "max": "1",
