@@ -1,6 +1,6 @@
 
 
-This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compatible with the X12n 277 and 278 response transactions. <span class="bg-success" markdown="1">For more information on X12 defined transactions, see [X12 Transaction Sets].</span><!-- new-content -->
+This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compatible with the X12n <span class="bg-success" markdown="1">277 Request for Additional Information (RFAI)</span><!-- new-content --> and 278 response transactions. <span class="bg-success" markdown="1">For more information on X12 defined transactions, see [X12 Transaction Sets].</span><!-- new-content -->
 
 ### Non-FHIR Request
 
@@ -36,7 +36,7 @@ See the [CDex Task Attachment Request Profile] formal definition for further det
 
 ### Data Elements for Requesting Attachments
 
-The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments. <span class="bg-success" markdown="1">They are mapped to the [CDex Task Attachment Request Profile] elements and the corresponding x12n 277 and x12n 278 response elements in the following table. {% include X12_IP.md %} </span><!-- new-content -->
+The following data elements are needed to associate an attachment to a claim or prior authorization when requesting attachments. <span class="bg-success" markdown="1">They are mapped to the [CDex Task Attachment Request Profile] elements and the corresponding x12n 277 Request for Additional Information (RFAI) and x12n 278 response elements in the following table. {% include X12_IP.md %} </span><!-- new-content -->
 
 {% include requests-277_278.md %}
 
