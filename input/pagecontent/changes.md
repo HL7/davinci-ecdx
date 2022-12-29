@@ -34,7 +34,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 6. **Applied**: DS4P should be evaluated before required ([FHIR-38144](https://jira.hl7.org/browse/FHIR-38144)) See Changes [Here](security.html#sensitive-and-confidential-data)
 7. **Applied**: Correct capitalization ([FHIR-38145](https://jira.hl7.org/browse/FHIR-38145)) See Changes [Here](solicited-unsolicited-attachments.html)
 9. **Applied**: Change 277 to: “277 Request for Additional Information (RFAI)” ([FHIR-38152](https://jira.hl7.org/browse/FHIR-38152)) See Changes [Here](requesting-attachments.html)
-10. **Submitted**: CDex Request Attachments Profile: first paragraph, last sentence ([FHIR-38153](https://jira.hl7.org/browse/FHIR-38153)) See Changes [Here](#)
+10. **Applied**: Update sentence ([FHIR-38153](https://jira.hl7.org/browse/FHIR-38153)) See Changes [Here](requesting-attachments.html)
 11. **Submitted**: CDex Request Attachments Technical Workflow: Correction first sentence ([FHIR-38154](https://jira.hl7.org/browse/FHIR-38154)) See Changes [Here](#)
 12. **Submitted**: CDex Request Attachment Step by Step Solicited Attachment Transaction: Modify sentence ([FHIR-38155](https://jira.hl7.org/browse/FHIR-38155)) See Changes [Here](#)
 13. **Submitted**: CDEX Requesting Attachments: Step by Step Solicited Attachment Transaction ([FHIR-38156](https://jira.hl7.org/browse/FHIR-38156)) See Changes [Here](#)
