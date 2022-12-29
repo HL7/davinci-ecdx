@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Completed valueMarkdown: '**Completed Request for Additional Data Requiring a Verification Signature Using a Questionnaire:**  Completed Prior Authorization\n Attachment Request (CDex Task Example 28) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse."
+                "valueMarkdown": "**Completed Request for Additional Data Requiring a Verification Signature Using a Questionnaire:**  Completed Prior Authorization Attachment Request (CDex Task Example 28) with a status of \"completed\" and output referencing the digitally signed QuestionnaireResponse."
             }
         ],
         "profile": [
