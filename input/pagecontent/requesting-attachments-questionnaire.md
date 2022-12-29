@@ -41,13 +41,15 @@ The [Requesting Attachments Using Attachment Codes] page documents the data elem
 
 ### *Step-by-Step* Solicited Attachment Transaction
 
-In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how:
+<div class="bg-info" markdown="1">
 
+In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how:
 - The Payer uses a FHIR Questionnaire to communicate to the Provider what additional attachments-related data is needed.
 - The Payer uses the CDex Task Attachment Request Profile to communicate to the Provider to complete the Questionniare.
 - The Provider launches DTR to fill out the FHIR Questionnaire using QuestionnaireResponse.
 - The DTR completes the QuestionaireResponse and updates the Task.
 - The Provider uses the $submit-attachment operation to communicate the completed QuestionnaireResponse back to the Payer.
+</div><!-- bg-info -->
 
 In this scenario, a Provider creates a prior-authorization and sends it to the Payer.  The Payer reviews the prior-authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR which completes a QuestionnaireResponse.  The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram for this scenario is shown in figure 3 below.
 
