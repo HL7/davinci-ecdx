@@ -34,6 +34,6 @@ For CDex Task-based queries, the POU for the requested data **MAY** also be comm
 
 If a data-consuming system requests sensitive information, then the data source must decide whether the requester is authorized to access some/all of this information.  In the US, if the level of confidentiality protection required for some/all of the information requested by a data-consuming system is more stringent than the "default" confidentiality protection provided for HIPAA PHI, then the data source needs to be able to make decisions about whether to provide the information at all or whether to filter the information.
 
-There is work in progress in [FHIR Data Segmentation for Privacy] (ballot version) on standardizing how this information can be conveyed in FHIR. Once a suitable approach has been agreed upon and published, it will be referenced in a future version of this guide.  In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
+There is work in progress in [FHIR Data Segmentation for Privacy] (ballot version) on standardizing how this information can be conveyed in FHIR. Once a suitable approach has been adopted by ONC or CMS regulation, it will be referenced in a future version of this guide. In the interim, implementers should consult with their compliance department to determine what requirements exist and how best to satisfy them, whether with in-band or out-of-band communications.
 
 {% include link-list.md %}

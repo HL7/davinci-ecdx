@@ -7,7 +7,7 @@ For an *unsolicited* attachment the Provider will submit additional documentatio
 
 #### Example Scenarios
 
-1.  A set of pre-defined rules, made by the Payer or State Mandates, necessitates that
+1.  A set of pre-defined rules, made by the Payer or state mandates, necessitates that
 additional information is provided without a specific request.
 2.  A Provider believes the Payer will need additional information to process a claim.
 3.  A Provider is under review and required to provide additional documentation for all claims.
