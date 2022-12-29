@@ -93,7 +93,7 @@ The following data elements are used to verify patient identity. (How the Provid
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account No is a Provider assigned identifier and is only present for prior-auth use cases.
+\* Patient Account No is a Provider assigned identifier and is only present for prior authorization use cases.
 
 
 ~~~
@@ -110,7 +110,7 @@ The Payer communicates the provider ID as either a unique organization/location 
 
 ##### Supplying the Tracking ID
 
-The mandatory `Task.identifier` "tracking-id" slice element represents the Payer tracking identifier.  This is an identifier that ties the attachments back to the claim or prior-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
+The mandatory `Task.identifier` "tracking-id" slice element represents the Payer tracking identifier.  This is an identifier that ties the attachments back to the claim or prior authorization and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
 
 ~~~
@@ -125,7 +125,7 @@ These required Task *infrastructural* elements:
 - Task.intent
 - Task.code
 
-convey what the task is about, its status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".  The Task.code is fixed to “attachment-request” to communicate that the Payer is requesting attachments for a claim or prior-authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the “payer-url” input parameter.
+convey what the task is about, its status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".  The Task.code is fixed to “attachment-request” to communicate that the Payer is requesting attachments for a claim or prior authorization and is expecting they will be submitted using the $submit-attachment operation to the endpoint provided in the “payer-url” input parameter.
 
 ~~~
 {% include_relative includelines filename='cdex-task-example19.json' start=81 count=11 linenumber=true %}
@@ -176,7 +176,7 @@ The Due Date for attachment is communicated in the `Task.restriction.period`  el
 
 ##### Communicating What Attachments are Needed
 
-The payer supplies the [LOINC attachment codes] to communicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or prior-auth.  This information is represented in the `Task.input` "code". The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
+The payer supplies the [LOINC attachment codes] to communicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or prior authorization.  This information is represented in the `Task.input` "code". The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
 
 
 ~~~
@@ -216,7 +216,7 @@ This Task.input element represents the service date or the service's starting da
 <div class="bg-success" markdown="1">
 ##### Purpose of Use for the Request
 
-This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for prior-auth, it would be "COVAUTH".
+This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for prior authorization, it would be "COVAUTH".
 
 ~~~
 {% include_relative includelines filename='cdex-task-example19.json' start=188 count=21 linenumber=true %}
@@ -237,14 +237,14 @@ POST [base]/$submit-attachment
 
 ##### The Submit Attachment Operation Payload
 
-The attachments along with the metadata needed to associate the attachment to the claim or prior-auth are in the $submit-attachments payload, a [Parameters] resource.
+The attachments along with the metadata needed to associate the attachment to the claim or prior authorization are in the $submit-attachments payload, a [Parameters] resource.
 
 ~~~
 {% include_relative includelines filename='cdex-parameters-example3.json' start=0 count=3 linenumber=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The Tracking ID is an identifier that ties the attachments back to the claim or prior-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
+The Tracking ID is an identifier that ties the attachments back to the claim or prior authorization.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|

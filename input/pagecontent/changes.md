@@ -44,9 +44,9 @@ These changes are the result of over 80 trackers listed below. They include the 
 18. **Applied**:Change *all* documents to *submitted* documents ([FHIR-38178](https://jira.hl7.org/browse/FHIR-38178)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
 19. **Applied**: Remove HIPAA compliance language ([FHIR-38179](https://jira.hl7.org/browse/FHIR-38179)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
 20. **Applied**: Change *Claim* to *claim or prior authorization* ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
-21. **Submitted**: CDex Requesting Attachments: General Comment ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](#)
+21. **Applied**: Normalize term “prior authorization” ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](requesting-attachments-code.html)
 22. **Submitted**: CDex Requesting Attachments: Modify sentence 2 ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](#)
-23. **Applied**: Clarify that signature support is not required ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](signature.html) and [Here](sending-attachments.html#signatures)
+23. **Applied**: Clarify that signature support is not required ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](signatures.html) and [Here](sending-attachments.html#signatures)
 24. **Applied**: Clarify in operation that either an OrganizationId or ProviderId is required. Allow for both Ids to be sent in request.([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189)) See Changes:[
    - [Here](OperationDefinition-submit-attachment.html) 
    - [Here](StructureDefinition-cdex-practitionerrole.html)

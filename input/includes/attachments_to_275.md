@@ -9,13 +9,14 @@
 -->
 
 | Data Element | CDex $submit-attachment Parameter | <span class="bg-success" markdown="1">X12n 275-v6020</span><!-- new-content --> | <span class="bg-success" markdown="1">X12n 275-v5010</span><!-- new-content --> | Submit Attachments Comments |
-|-----|----|--------------|-------|-------------------|
+|-----|----|-----------|-------|-------------------|
 | Tracking ID (Provider or Payer Assigned) | TrackingId | <span class="bg-success" markdown="1">2000A TRN02</span><!-- new-content --> | <span class="bg-success" markdown="1">2000A TRN02</span><!-- new-content --> | <span class="bg-success" markdown="1">For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number.</span><!-- new-content --> |
 | Use | AttachTo | <span class="bg-success" markdown="1">Claim</span><!-- new-content --> | <span class="bg-success" markdown="1">Prior Auth</span><!-- new-content --> | Choice of "claim" or "preauthorization" |
 | Payer URL | (operation endpoint) | <span class="bg-success" markdown="1">-</span><!-- new-content --> | <span class="bg-success" markdown="1">-</span><!-- new-content --> | Payer endpoint where the attachments are submitted using the $submit-operation |
 | Organization ID | OrganizationId | <span class="bg-success" markdown="1">Loop 1000B NM109 qualifer 46 Electronic Transmitter ID Number</span><!-- new-content --> | <span class="bg-success" markdown="1">-</span><!-- new-content --> | Organization of provider who submitted claim/prior authorization |
 | Provider ID | ProviderId | <span class="bg-success" markdown="1">1000C NM109 qualifer of XX is provider ID which is NPI</span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | Provider who submitted claim/prior authorization |
-| Line Item(s) | Attachment.LineItem | <span class="bg-success" markdown="1">Loop 2000A STC10 Used to convey status of the entire claim or a specific service line. Situational.<br /></span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | Claim/prior-authorization line item numbers |
+| Line Item(s) | Attachment.LineItem | <span class="bg-success" markdown="1">Loop 2000A STC10 Used to convey status of the entire claim or a specific service line. Situational.
+</span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | Claim/prior authorization line item numbers |
 | LOINC Attachment Code | Attachment.Code | <span class="bg-success" markdown="1">2000A STC01-01 is the code. Ex. STC*R4:19002-5::LOI~</span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | LOINC attachment codes |
 | Date of Service | ServiceDate | <span class="bg-success" markdown="1">Loop 2100A DTP03</span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | Date of service for claim/prior authorization |
 | Member ID | MemberId | <span class="bg-success" markdown="1">1000D NM108==Qualifier MI, NM109 is the number</span><!-- new-content --> | <span class="bg-success" markdown="1"></span><!-- new-content --> | Payer assigned patient identifier |

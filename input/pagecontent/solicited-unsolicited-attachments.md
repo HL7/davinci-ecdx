@@ -3,7 +3,7 @@ Currently claims <span class="bg-success" markdown="1">and prior authorization</
 
 ### *Unsolicited* Attachments
 
-For an *unsolicited* attachment the Provider will submit additional documentation to support a claim or prior authorization based on Payer predefined rules without any type of request.  The attachments may be submitted *before, at the same time as, or after* the claim or pre-authorization has been supplied to the Payer. Following submission, the attachment is then associated with the claim or prior authorization. 
+For an *unsolicited* attachment the Provider will submit additional documentation to support a claim or prior authorization based on Payer predefined rules without any type of request.  The attachments may be submitted *before, at the same time as, or after* the claim or prior authorization has been supplied to the Payer. Following submission, the attachment is then associated with the claim or prior authorization. 
 
 #### Example Scenarios
 

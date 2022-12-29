@@ -51,7 +51,7 @@ In the following sections, A detailed look at an example *Solicited* attachment 
 - The Provider uses the $submit-attachment operation to communicate the completed QuestionnaireResponse back to the Payer.
 </div><!-- bg-info -->
 
-In this scenario, a Provider creates a prior-authorization and sends it to the Payer.  The Payer reviews the prior-authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR which completes a QuestionnaireResponse.  The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram for this scenario is shown in figure 3 below.
+In this scenario, a Provider creates a prior authorization and sends it to the Payer.  The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR which completes a QuestionnaireResponse.  The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram for this scenario is shown in figure 3 below.
 
 
 {% include img.html img="cdex-request-questionnaire-priorauth-flow.svg" caption="Figure 3: CDex Request Attachment for Prior-Auth Using Questionnaires" %}
@@ -64,21 +64,7 @@ In addition to the information needed to successfully submit and associate the a
 
 The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters:
 
-| Data Element | CDex $submit-attachment Parameter | CDex Request Attachment Task Profile Element |
-|-----|----|---------|
-| Tracking ID (Provider or Payer Assigned) | TrackingId | Task.identifier |
-| Use | AttachTo | Task.reasonCode |
-| Payer URL | (operation endpoint) | "payer-url" Task.input |
-| Organization ID | OrganizationId | <span class="bg-success" markdown="1">PractitionerRole.practitioner.identifier</span><!-- new-content --> |
-| Provider ID | ProviderId | <span class="bg-success" markdown="1">PractitionerRole.organization.identifier</span><!-- new-content --> |
-| Line Item(s) | Attachment.LineItem | “code” Task.input.extension |
-| Date of Service | ServiceDate | “service-date” Task.input |
-| Member ID | MemberId | Patient.identifier |
-|Questionnaire|-|“questionnaire” Task.input| 
-|QuestionnaireResponse|Attachment.content|-|
-{:.grid}
-
-The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.
+{% include q-attachments_to_requests.md %}
 
 #### Payer Requests Attachments for Prior Authorization
 
@@ -111,7 +97,7 @@ The following data elements are used to verify patient identity. (How the Provid
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account No is a Provider assigned identifier and is only present for Prior-Auth use cases.
+\* Patient Account No is a Provider assigned identifier and is only present for prior authorization use cases.
 
 
 ~~~
@@ -128,7 +114,7 @@ The Payer communicates the provider ID as either a unique organization/location 
 
 ##### Supplying the Tracking ID
 
-The mandatory `Task.identifier` "tracking-id" slice element represents the Payer tracking identifier.  This is an identifier that ties the attachments back to the claim or prior-auth and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
+The mandatory `Task.identifier` "tracking-id" slice element represents the Payer tracking identifier.  This is an identifier that ties the attachments back to the claim or prior authorization and is echoed back to the Payer when submitting the attachments.  It is often referred to as the “re-association tracking control number”.
 
 
 ~~~
@@ -199,7 +185,7 @@ The Due Date for attachment is communicated in the `Task.restriction.period`  el
 
 ##### Using Questionnaire to Communicate What Attachments Data is Needed
 
-In this scenario, the Payer supplies the URL of a questionnaire (FHIR Questionnaire) to communicate what attachments-related data is needed. Line item numbers may also be supplied to match the attachment to a line item in the claim or prior-auth. This information is represented in the “questionnaire” Task input element. The Provider launches the Documentation Templates and Rules (DTR) application to complete the Questionnaire. The code snippet below contains a URL to a Home Oxygen Therapy Questionnaire.
+In this scenario, the Payer supplies the URL of a questionnaire (FHIR Questionnaire) to communicate what attachments-related data is needed. Line item numbers may also be supplied to match the attachment to a line item in the claim or prior authorization. This information is represented in the “questionnaire” Task input element. The Provider launches the Documentation Templates and Rules (DTR) application to complete the Questionnaire. The code snippet below contains a URL to a Home Oxygen Therapy Questionnaire.
 
 ~~~
 {% include_relative includelines filename='cdex-task-example22.json' start=142 count=18 linenumber=true %}
@@ -233,7 +219,7 @@ This Task.input element represents the service date or the service's starting da
 
 ##### Purpose of Use for the Request
 
-This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for prior-auth, it would be "COVAUTH".
+This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for prior authorization, it would be "COVAUTH".
 
 ~~~
 {% include_relative includelines filename='cdex-task-example22.json' start=171 count=21 linenumber=true %}
@@ -327,14 +313,14 @@ POST [base]/$submit-attachment
 
 ##### The Submit Attachment Operation Payload
 
-The QuestionnaireRespsonse along with the metadata needed to associate it to the claim or Pre-Auth are in the $submit-attachments payload, a [Parameters] resource.
+The QuestionnaireRespsonse along with the metadata needed to associate it to the claim or prior authorization are in the $submit-attachments payload, a [Parameters] resource.
 
 ~~~
 {% include_relative includelines filename='cdex-parameters-example5.json' start=0 count=3 linenumber=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The Tracking ID is an identifier that ties the attachments back to the claim or prior-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
+The Tracking ID is an identifier that ties the attachments back to the claim or prior authorization.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
