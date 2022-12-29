@@ -132,3 +132,5 @@
 [CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html
 [Da Vinci DTR]: {{site.data.fhir.ver.dtr}}
 [Questionnaire]: {{site.data.fhir.path}}questionnaire.html
+[SMART's EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
+[Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire

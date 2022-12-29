@@ -472,10 +472,10 @@ definition:
     groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example5
-    description: '**Completed Form Attachment Example:** Parameters Resource example
-      showing how it is used to submit a solicited attachment using the `$submit-attachment`
-      operation. The attachment parameter payload is a QuestionnaireResponse completed
-      using DTR in response to data request form sent in the Attachments request.'
+    description: '**Completed QuestionnaireResponse Attachment Example:** Parameters
+      Resource example showing how it is used to submit a solicited attachment using
+      the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse
+      completed using DTR in response to a Questionnaire sent in the Attachments request.'
     name: CDex Parameters Example 5
     exampleBoolean: true
     groupingId: AttachmentsExamples

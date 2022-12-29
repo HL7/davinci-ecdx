@@ -129,7 +129,7 @@ Location: http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 
 ~~~
 
-POST [base]/Task
+POST [base]/QuestionnaireResponse
 
 ~~~
 
@@ -162,7 +162,7 @@ Location: http://example.org/FHIR/Task/cdex-questionnaireresponse-example1/_hist
 
 ~~~
 
-#### Step 7 -  The DTR SMART App or EHR native application Updates Task.output to Reference QuestionnaireResponse and Task.status Updated to "completed"
+#### Step 7 -  The DTR SMART App or EHR native application Updates Task.output to Reference QuestionnaireResponse and Task.status to "completed"
 
 **Request**
 

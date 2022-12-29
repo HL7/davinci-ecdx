@@ -52,19 +52,6 @@
                     "valueString": "1"
                 },
                 {
-                    "name": "Code",
-                    "valueCodeableConcept": {
-                        "coding": [
-                            {
-                                "system": "http://loinc.org",
-                                "code": "11506-3",
-                                "display": "Progress note"
-                            }
-                        ],
-                        "text": "Progress note"
-                    }
-                },
-                {
                     "name": "Content",
                     "resource": {
                         "resourceType": "QuestionnaireResponse",

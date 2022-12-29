@@ -26,8 +26,6 @@ The sequence diagram in the Figure below summarizes the basic interaction betwee
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
-
-
 ### CDex Attachment Request Profile
 
 **For CDex attachment requests transactions the [CDex Task Attachment Request Profile] SHALL be used by the Payer to solicit information from a Provider.** 
@@ -60,9 +58,9 @@ After receiving the attachment request, the Provider collects the documentation 
 {% include attachments_to_requests.md %}
 </div><!-- new-content -->
 
-The flow diagram for this transaction is shown in the figure below:
+The flow diagram for this transaction is shown in figure 3 below:
 
-{% include img.html img="cdex-request-attach-claim-flow.svg" caption="CDex Request Attachment Overview for a Claim" %}
+{% include img.html img="cdex-request-attach-claim-flow.svg" caption="Figure 3: CDex Request Attachments for Claims Using Attachments Codes" %}
 
 #### Payer Requests Attachments for Claim
 
@@ -95,7 +93,7 @@ The following data elements are used to verify patient identity for compliance r
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account No is a Provider assigned identifier and is only present for Prior-Auth use cases.
+\* Patient Account No is a Provider assigned identifier and is only present for prior-auth use cases.
 
 
 ~~~
@@ -156,7 +154,7 @@ As discussed above, the Patient id is in the contained Patient resource, referen
 
 ##### Claim Information
 
-The Task communicates whether the attachments are for a Claim or Prior Authorization and the Claim or Prior Authorization ID is identified by its business Identifier. 
+The Task communicates whether the attachments are for a claim or prior authorization and the claim or prior authorization ID is identified by its business Identifier. 
 
 |Data|CDex Claim Profile element|
 |---|---|
@@ -178,7 +176,7 @@ The Due Date for attachment is communicated in the `Task.restriction.period`  el
 
 ##### Communicating What Attachments are Needed
 
-The payer supplies the [LOINC attachment codes] to communicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or pre-auth.  This information is represented in the `Task.input` "code". The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
+The payer supplies the [LOINC attachment codes] to communicate what attachments are needed.  Line item numbers may also be supplied to match the attachment to a line item in the claim or prior-auth.  This information is represented in the `Task.input` "code". The code snippet below shows a single request for line item 1 using a LOINC attachment code.  The codes and line items are echoed back to the Payer when submitting the attachments.
 
 
 ~~~
@@ -218,7 +216,7 @@ This Task.input element represents the service date or the service's starting da
 <div class="bg-success" markdown="1">
 ##### Purpose of Use for the Request
 
-This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for Pre-Auth, it would be "COVAUTH".
+This optional Task.input element represents the request's purpose of use (POU).  In this example, it is to support a request for a claim, "CLMATTCH".  When requesting attachments for prior-auth, it would be "COVAUTH".
 
 ~~~
 {% include_relative includelines filename='cdex-task-example19.json' start=188 count=21 linenumber=true %}
@@ -239,14 +237,14 @@ POST [base]/$submit-attachment
 
 ##### The Submit Attachment Operation Payload
 
-The attachments along with the metadata needed to associate the attachment to the Claim or Pre-Auth are in the $submit-attachments payload, a [Parameters] resource.
+The attachments along with the metadata needed to associate the attachment to the claim or prior-auth are in the $submit-attachments payload, a [Parameters] resource.
 
 ~~~
 {% include_relative includelines filename='cdex-parameters-example3.json' start=0 count=3 linenumber=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The Tracking ID is an identifier that ties the attachments back to the claim or pre-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
+The Tracking ID is an identifier that ties the attachments back to the claim or prior-auth.  It is often referred to as the “re-association tracking control number”.  The operation needs to indicate whether the attachments are for claim or prior-authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
@@ -265,8 +263,8 @@ As documented above, business identifiers are used to identify the Patient, the 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |Payer URL|"payer-url"Task.input|(operation endpoint)|
-|Organization ID|-|OrganizationId|
-|Provider ID|Task.owner.identifier|ProviderId|
+|Organization ID|PractitionerRole.organization.identifier|OrganizationId|
+|Provider ID|PractitionerRole.practitioner.identifier|ProviderId|
 |Member ID|Patient.identifier|MemberId|
 {:.grid}
 

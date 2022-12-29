@@ -181,7 +181,11 @@ TODO ...documentation
 
 TODO ...documentation
 
-{% include img.html img="taskbased-task-Q-sequencediagram.svg" %} 
+{% include img.html img="taskbased-task-Q-sequencediagram.svg" %}
+
+#### Using Da Vinci DTR to Complete the Questionnaire
+
+Refer to the [Using Da Vinci DTR to Complete the Questionnaire] on the Requesting Attachment using Questionnaires page.
 
 #### Example of Requesting Data Using A FHIR Questionnaire
 

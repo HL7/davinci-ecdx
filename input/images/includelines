@@ -22,8 +22,8 @@ Usage:
   {% include_relative includelines filename=PATH start=INT|STR count=INT|STR %}
 
   - filename: path to file in temp/pages  (use  _include/file.ext for includes files )
-  - start: integer (only 1) or common separated string (> 1) of first line numbers to include, starting at 1
-  - count: integer (only 1) or common separated string (> 1) of number of lines to include
+  - start: integer (only 1) or common separated string (> 1) of first line numbers to include, starting at 0, default = 0
+  - count: integer (only 1) or common separated string (> 1) of number of lines to include, default = all lines
   - linenumber: optional boolean to display line number (default is false) !think about right justifying the line numbers
   - rel: optional boolean to use relative path (default is false) - use this if you are including a file in the same folder as the includelines file
 
@@ -49,8 +49,8 @@ The following will result in a warning message because the start line (15) is le
 {%- if include.rel %}{% capture filecontent %}{% include_relative {{include.filename}} %}{% endcapture -%}
 {%- else %}{% capture filecontent %}{% include {{include.filename}} %}{% endcapture %}{% endif -%}
 {%- assign lines = filecontent | newline_to_br | strip_newlines | split: '<br />' -%}
-{%- assign starts = include.start | split: ',' -%}
-{%-assign counts = include.count | split: ',' -%}
+{%- assign starts = include.start | default: '0' | split: ',' -%}
+{%-assign counts = include.count | default: lines.size | split: ',' -%}
 {%- for start in starts -%}
 {% unless forloop.first %}{% assign next = start | plus: 0 %}{% if next <= prev %}!!!INCLUDELINES HELPER FILE WARNING OVERLAPPING LINES next startline = {{next}} <= previous fragment end = {{prev}} - CHECK YOUR SOURCE FILE!!!{% break %}{% endif %}{% endunless -%}
 {% for line in lines offset: start limit:counts[forloop.index0] %}{% if include.linenumber %}{{ forloop.index0 | plus: start}}  {% endif %}{{ line }}
