@@ -2,7 +2,7 @@
 
 This page documents a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.  This transaction is used for *solicited*  attachments and uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and the [`$submit-attachment`] operation to submit the attachments to the Payer as documented in the [Sending Attachments] page. It is intended to be compatible with the X12n <span class="bg-success" markdown="1">277 Request for Additional Information (RFAI)</span><!-- new-content --> and 278 response transactions. <span class="bg-success" markdown="1">For more information on X12 defined transactions, see [X12 Transaction Sets].</span><!-- new-content -->
 
-### Non-FHIR Request
+### <span class="bg-success" markdown="1">Requesting Attachments Background</span><!-- new-content -->
 
 In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities.  The Provider can submit these *solicited* attachments using a variety of Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
 
@@ -10,8 +10,8 @@ In the current state of healthcare data exchange, the Payer requests additional 
 
 <div class="bg-success" markdown="1">
 
-### FHIR Request
-
+### <span class="bg-success" markdown="1">Requesting Attachments Using FHIR
+</span><!-- new-content -->
 To request attachments for claims and prior authorizations as a FHIR transaction, payers can use the [Task] based [CDex Task Attachment Request Profile]. It communicates the attachment request as either a:
   - a LOINC attachment code
   - a reference to a questionnaire or form.
@@ -24,10 +24,18 @@ The [Task Based Approach section](http://build.fhir.org/ig/HL7/davinci-ecdx/task
 
 </div><!-- new-content -->
 
+
+<div class="bg-success" markdown="1">
+
+### Requesting Attachments Using Attachments Codes
+
+{% include img-small.html img="todo.png" %}
+
 The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and the [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
+</div><!-- new-content -->
 ### CDex Attachment Request Profile
 
 **For CDex attachment requests transactions the [CDex Task Attachment Request Profile] SHALL be used by the Payer to solicit information from a Provider.** 
@@ -285,10 +293,7 @@ The service date parameter is taken from the “service-date” Task.input eleme
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
-The Requested Attachments and the corresponding coded requests and/or line item numbers are communicated back as Attachment parameter parts. The actual attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents.  What attachments are returned are determined by the [LOINC attachment codes] in the CDex Attachment requests in Task.input "code" slice.   Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
-
- <!-- What attachments are returned are determined by the CDex Attachment requests in `Task.input` "code" or "query" slices.  These may be coded in LOINC or non-LOINC, free text, or FHIR RESTful search syntax queries.  Codes are represented in the Attachment.code parameter part in the `valueCodeableConcept.Coding` field and free text or FHIR RESTful search syntax queries are represented in `valueCodeableConcept.text` field. Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
-  -->
+The Requested Attachments and the corresponding coded requests and/or line item numbers are communicated back as Attachment parameter parts. The actual attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. <span class="bg-success" markdown="1">The [LOINC attachment codes] represented in the Task.input “code” slice, define the document(s) that are to be returned via submit_attachment.</span><!-- new-content --> Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
