@@ -173,17 +173,22 @@ Preconditions and Assumptions are the same as above except the Payer POSTS a Tas
 
 ### Requesting Data Using A FHIR Questionnaire
 
-TODO ...documentation
+{% include img-small.html img="todo.png" %}
+
 
 {% include img.html img="taskbased-task-Q-summary.svg" %} 
 
 #### Sequence Diagram
 
-TODO ...documentation
+{% include img-small.html img="todo.png" %}
+
 
 {% include img.html img="taskbased-task-Q-sequencediagram.svg" %}
 
 #### Using Da Vinci DTR to Complete the Questionnaire
+
+{% include img-small.html img="todo.png" %}
+
 
 Refer to the [Using Da Vinci DTR to Complete the Questionnaire] on the Requesting Attachment using Questionnaires page.
 
