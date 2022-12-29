@@ -348,7 +348,7 @@ The Tracking ID is an identifier that ties the attachments back to the claim or 
 
 ##### Identifying the Payer, Provider, Organization, and Patient
 
-As documented above, business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim. These should be the same as communicated in the request.  The NPI should be used for the Practitioner and Organization IDs.
+As documented above, business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim or prior authorization. These should be the same as communicated in the request.  The NPI should be used for the Practitioner and Organization IDs.
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|

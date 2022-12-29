@@ -43,7 +43,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 17. **Applied**:Change X12n 275 *message* to X12n 275 *transaction* ([FHIR-38177](https://jira.hl7.org/browse/FHIR-38177)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
 18. **Applied**:Change *all* documents to *submitted* documents ([FHIR-38178](https://jira.hl7.org/browse/FHIR-38178)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
 19. **Applied**: Remove HIPAA compliance language ([FHIR-38179](https://jira.hl7.org/browse/FHIR-38179)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
-20. **Submitted**: CDex Requesting Attachments: Modify first and second sentence ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184)) See Changes [Here](#)
+20. **Applied**: Change *Claim* to *claim or prior authorization* ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
 21. **Submitted**: CDex Requesting Attachments: General Comment ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](#)
 22. **Submitted**: CDex Requesting Attachments: Modify sentence 2 ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](#)
 23. **Triaged**: spec should be clarified that prior auth doesn't require signatures ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](#)
