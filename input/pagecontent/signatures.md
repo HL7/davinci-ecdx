@@ -1,10 +1,7 @@
 
-<!-- ---
-tags: CDEX
-title: Signatures
---- -->
+{% include signature-support.md %}
 
-Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
+Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions. 
  
 ### The Signer
 

@@ -319,6 +319,8 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 ### Signatures
 
+{% include signature-support.md %}
+
 Some data consumers may require that the data they receive are signed. When signatures are required on the returned results, the following general rules apply:
 
 {% include human-signature.md %}

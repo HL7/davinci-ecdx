@@ -64,6 +64,8 @@ This Scenario is the same as Scenario 1a above except that the attachments are s
 
 ### Signatures
 
+{% include signature-support.md %}
+
 Some data consumers may require that the data they receive are signed. When signatures are required, the following general rules apply:
 
 {% include human-signature.md %}

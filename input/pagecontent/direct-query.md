@@ -113,6 +113,8 @@ This example is the same as Scenario 1 above except that it also includes the co
 
 ### Signatures
 
+{% include signature-support.md %}
+
 Some data consumers may require that the data they receive are signed.  When signatures are required on the returned results, the following general rules apply:
 
 {% include system-signature.md %}
