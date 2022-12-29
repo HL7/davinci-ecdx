@@ -28,7 +28,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 **Status: Summary (Jira Issue) Link to Change**
 
 1. **Applied**: Correct $submit-attachment input parameter Typo. ([FHIR-37956](https://jira.hl7.org/browse/FHIR-37956)) See Changes [Here](OperationDefinition-submit-attachment.html)
-2. **Submitted**: Solicited attachments for claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060)) See Changes [Here](#)
+2. **Applied**: Correct claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060)) See Changes [Here](solicited-unsolicited-attachments.html#solicited-attachments)
 3. **Triaged**: Consider merging flow diagrams for solicited flow ([FHIR-38061](https://jira.hl7.org/browse/FHIR-38061)) See Changes [Here](#)
 4. **Triaged**: omitted service item extension to CDex Task Attachment Request Profile ([FHIR-38070](https://jira.hl7.org/browse/FHIR-38070)) See Changes [Here](#)
 5. **Submitted**: PoU is insufficiently exchanged in production OAuth to be dynamic ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142)) See Changes [Here](#)
