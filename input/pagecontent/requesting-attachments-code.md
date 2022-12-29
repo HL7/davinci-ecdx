@@ -9,6 +9,7 @@ In the current state of healthcare data exchange, the Payer requests additional 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
 <div class="bg-success" markdown="1">
+
 ### FHIR Request
 
 To request attachments for claims and prior authorizations as a FHIR transaction, payers can use the [Task] based [CDex Task Attachment Request Profile]. It communicates the attachment request as either a:
@@ -22,7 +23,8 @@ When the task is completed, the provider submits the attachments to the payer su
 The [Task Based Approach section](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments.  Details for Task-based transactions are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
 </div><!-- new-content -->
-The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and [`$submit-attachment`] operation.
+
+The sequence diagram in the Figure below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] and the [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Request Attachment Sequence Diagram Using CDex Task" %}
 
@@ -45,7 +47,7 @@ The following data elements are needed to associate an attachment to a claim or 
 In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how the CDex Task Attachment Request Profile is used to communicate the required data elements to the Provider and how the $submit-attachment is used to communicate the response back to the Payer.
 {: .bg-info}
 
-In this scenario, a Provider creates a claim and sends it to the Payer.  The Payer reviews the claim and responds with a request for attachments using the  CDex Attachment Request Profile.  In addition to the information needed to successfully submit and associate the attachments to the claim, the payer supplies the following details about what information is needed to complete the adjudication of the claim:
+In this scenario, a Provider creates a claim and sends it to the Payer.  The Payer reviews the claim and responds with a request for <span class="bg-success" markdown="1">supporting documentation/attachments</span><!-- new-content --> using the  CDex Attachment Request Profile.  In addition to the information needed to successfully submit and associate the attachments to the claim, the payer supplies the following details about what information is needed to complete the adjudication of the claim:
 
 - LOINC attachment code(s) for the requested documents
 - What line numbers on the claim the requested attachment(s) are for
