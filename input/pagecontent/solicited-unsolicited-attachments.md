@@ -7,25 +7,16 @@ For an *unsolicited* attachment the Provider will submit additional documentatio
 
 #### Example Scenarios
 
-1.  A set of pre-defined rules, made by the Payer or state mandates, necessitates that
+1.  A set of pre-defined rules, made by the <span class="bg-success" markdown="1">Payer or state mandates</span><!-- new-content -->, necessitates that
 additional information is provided without a specific request.
 2.  A Provider believes the Payer will need additional information to process a claim.
 3.  A Provider is under review and required to provide additional documentation for all claims.
 
-
-In all of these cases, the Payer will require a trading partner agreement for sending attachments based on predefined rules.
-{:.bg-warning}
-
-
 The flow diagram for this transaction is shown in the figure below:
-
 
 {% include img.html img="unsolicited-flow.svg" caption="Unsolicited Attachments Flow Diagram" %}
 
-
 See the [Sending Attachments] page for how CDex transactions can be used to support  *unsolicited* attachment transactions.
-
-
 
 ### *Solicited* Attachments
 
