@@ -25,7 +25,6 @@ description: |-
   - A Task.for.reference element fixed to "\#patient" - a reference the contained Patient Resource that represents basic Patient demographic data.
   - A Task.reasonCode to communicate whether the attachments are for a Claim or Prior Authorization
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
-  - A Task.input.extension in the "data-code" or "questionnaire" Task.input elements. This extension represents claim or prior authorization line item numbers associated with the attachment or data request.
   - A "payer-url" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
  
   It constrains following elements to be *must support* (min=0):
@@ -33,6 +32,7 @@ description: |-
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
   - A "code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes.*
+  - A "code" or "questionnaire" Task.input element extension representing a claim or prior authorization line item numbers associated with the attachment or questionnaire.
   - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
   - A "service-date" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
@@ -449,6 +449,25 @@ differential:
         - cdex-6
       mustSupport: true
 
+
+    - id: 'Task.input:code.extension'
+      path: Task.input.extension
+      min: 0
+      mustSupport: true
+
+    - id: 'Task.input:code.extension.url'
+      path: Task.input.extension.url
+      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+      mustSupport: true
+
+    - id: 'Task.input:code.extension.value[x]'
+      path: Task.input.extension.value[x]
+      min: 1
+      type:
+        - code: positiveInt
+      mustSupport: true
+ 
+
     - id: 'Task.input:code.type'
       path: Task.input.type
       patternCodeableConcept:
@@ -478,6 +497,25 @@ differential:
         - cdex-5
         - cdex-6
       mustSupport: true
+
+
+    - id: 'Task.input:questionnaire.extension'
+      path: Task.input.extension
+      min: 0
+      mustSupport: true
+
+    - id: 'Task.input:questionnaire.extension.url'
+      path: Task.input.extension.url
+      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+      mustSupport: true
+
+    - id: 'Task.input:questionnaire.extension.value[x]'
+      path: Task.input.extension.value[x]
+      min: 1
+      type:
+        - code: positiveInt
+      mustSupport: true
+
     - id: 'Task.input:questionnaire.type'
       path: Task.input.type
       min: 1
