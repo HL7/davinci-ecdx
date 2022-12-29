@@ -7,7 +7,7 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
 
 #### What’s new in Version 2.0.0 of CDex:
 
-...TODO...
+{% include img-small.html img="todo.png" %}
 
 <!--
 - <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
