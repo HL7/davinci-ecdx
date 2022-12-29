@@ -38,7 +38,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 11. **Applied**: Correct Typo ([FHIR-38154](https://jira.hl7.org/browse/FHIR-38154)) See Changes [Here](requesting-attachments-code.html#fhir-request)
 12. **Applied**: Modify sentence ([FHIR-38155](https://jira.hl7.org/browse/FHIR-38155)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
 13. **Applied**: Change X12n 277 message to:  X12n 277 RFAI transaction. ([FHIR-38156](https://jira.hl7.org/browse/FHIR-38156)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-14. **Waiting for Input**: CDex Attachment Request - 15.	Tracking ID (Payer or Provider Assigned) comment ([FHIR-38172](https://jira.hl7.org/browse/FHIR-38172)) See Changes [Here](#)
+14. **Applied**: Update Data Elements table ([FHIR-38172](https://jira.hl7.org/browse/FHIR-38172)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
 15. **Pre-Applied**:: CDex Attachment Request -	5.3.4.1	Data Elements for requesting attachments – Table questions/ modifications ([FHIR-38173](https://jira.hl7.org/browse/FHIR-38173)) See Changes:
    - [Here](sending-attachments.html#data-elements-for-sending-attachments)
    - [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
