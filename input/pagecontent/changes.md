@@ -112,7 +112,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 63. **Applied**: change SHOULD to SHALL ([FHIR-38599](https://jira.hl7.org/browse/FHIR-38599)) See Changes [Here](task-based-approach.html#task-reason)
 64. **Applied**: Correct Preconditions and Assumptions ([FHIR-38600](https://jira.hl7.org/browse/FHIR-38600)) See Changes [Here](task-based-approach.html#scenario-2)
 65. **Applied**: Correct Preconditions and Assumptions ([FHIR-38601](https://jira.hl7.org/browse/FHIR-38601)) See Changes [Here](task-based-approach.html#scenario-2)
-66. **Triaged**: Polling frequency ([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602)) See Changes [Here](#)
+66. **Applied**: Update polling frequency guidance([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602)) See Changes [Here](task-based-approach.html#polling)
 67. **Applied**: Remove trading partner agreement statement ([FHIR-38603](https://jira.hl7.org/browse/FHIR-38603)) See Changes [Here](solicited-unsolicited-attachments.html#unsolicited-attachments)
 68. **Submitted**: used word provider when you meant payer  ([FHIR-38604](https://jira.hl7.org/browse/FHIR-38604)) See Changes [Here](#)
 69. **Resolved-Change Required**: Clarify association comment and assign FMM levels to guide  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605)) See Changes [Here](background.html#steps-2)
