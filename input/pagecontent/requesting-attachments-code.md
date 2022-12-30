@@ -101,7 +101,7 @@ The following data elements are used to verify patient identity. (How the Provid
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account No is a Provider assigned identifier and is only present for prior authorization use cases.
+\* <span class="bg-success" markdown="1">Patient Account Number is a Provider assigned identifier</span><!-- new-content -->
 
 
 ~~~

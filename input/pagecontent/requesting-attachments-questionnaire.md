@@ -97,7 +97,7 @@ The following data elements are used to verify patient identity. (How the Provid
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account No is a Provider assigned identifier and is only present for prior authorization use cases.
+\* Patient Account Number is a Provider assigned identifier
 
 
 ~~~
@@ -362,9 +362,6 @@ The service date parameter is taken from the “service-date” Task.input eleme
 ##### Supply the QuestionnaireResponse
 
 The completed QuestionnaireResponse and the corresponding line item numbers are communicated as named parts of the multi-part Attachment parameter. The Attachment.content parameter represents the QuestionnaireResponse as an inline FHIR resource. The Attachment.LineItem parameter lists the line item numbers associated with it.
-
- <!-- What attachments are returned are determined by the CDex Attachment requests in `Task.input` "code" or "query" slices.  These may be coded in LOINC or non-LOINC, free text, or FHIR RESTful search syntax queries.  Codes are represented in the Attachment.code parameter part in the `valueCodeableConcept.Coding` field and free text or FHIR RESTful search syntax queries are represented in `valueCodeableConcept.text` field. Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
-  -->
 
 |Data Element|CDex Request Element|CDex #submit-attachment Parameter|
 |---|---|---|
