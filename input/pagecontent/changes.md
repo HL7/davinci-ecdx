@@ -100,7 +100,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 49. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](sending-attachments.html#sending-attachments)
 50. **Applied**: Add Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](signatures.html#step-by-step-examples)
 51. **Applied**: Remove words *transaction layer* ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](sending-attachments.html#technical-workflow)
-52. **Submitted**: Word change ""analogs"" to ""fields"" ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](#)
+52. **Applied**: Word change *analogs* to *fields* ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
 53. **Submitted**: Confirm parameter naming style ([FHIR-38366](https://jira.hl7.org/browse/FHIR-38366)) See Changes [Here](#)
 54. **Submitted**: Improve rendered document rendering ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367)) See Changes [Here](#)
 55. **Submitted**: *Signed* should be in italics ([FHIR-38368](https://jira.hl7.org/browse/FHIR-38368)) See Changes [Here](#)
