@@ -496,7 +496,7 @@ differential:
       condition:
         - cdex-5
         - cdex-6
-      mustSupport: true
+      # mustSupport: true
 
 
     - id: 'Task.input:questionnaire.extension'

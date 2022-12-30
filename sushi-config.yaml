@@ -188,6 +188,8 @@ pages:
       title: Requesting Attachments Using Questionnaires
     burden-reduction.md:
       title: Using CDex Attachments with DaVinci PAS
+    attachments-conformance.md:
+      title: Conforming to CDex Attachments
   signatures.md:
     signed-searchset-bundle-example.md:
     signed-document-bundle-example.md:
@@ -247,6 +249,7 @@ menu:
     Requesting Attachments Using Attachments Codes: requesting-attachments-code.html
     Requesting Attachments Using Questionnaires: requesting-attachments-questionnaire.html
     Using CDex Attachments with DaVinci PAS: burden-reduction.html
+    Conforming to CDex Attachments: attachments-conformance.html
   Signatures: signatures.html
   Security and Privacy: security.html
   FHIR Artifacts:

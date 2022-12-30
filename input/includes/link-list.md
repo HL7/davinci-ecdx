@@ -1,6 +1,6 @@
 
 [Bundle]: {{site.data.fhir.path}}bundle.html
-[Capability Statements]: capabilitystatements.html
+[CapabilityStatements]: artifacts.html#13
 [Downloads]: downloads.html "Downloads Page"
 [ElementDefinition.mustSupport]: {{site.data.fhir.path}}elementdefinition-definitions.html#ElementDefinition.mustSupport
 [Examples]: artifacts.html#6
