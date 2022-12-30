@@ -57,8 +57,8 @@ parameter:
         coding:
         - system: http://loinc.org
           code: 11504-8
-          display: Operative note
-        text: Surgical Note
+          display: Surgical operation note
+        text: Surgical operation note
       category:
       - coding:
         - system: http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category

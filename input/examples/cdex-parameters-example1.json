@@ -95,10 +95,10 @@
                                 {
                                     "system": "http://loinc.org",
                                     "code": "11504-8",
-                                    "display": "Operative note"
+                                    "display": "Surgical operation note"
                                 }
                             ],
-                            "text": "Surgical Note"
+                            "text": "Surgical operation note"
                         },
                         "category": [
                             {

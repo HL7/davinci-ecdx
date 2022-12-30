@@ -97,8 +97,8 @@ The following data elements are used to verify patient identity. (How the Provid
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account Number is a Provider assigned identifier
-
+\* <span class="bg-success" markdown="1">Patient Account Number is a Provider assigned identifier
+</span><!-- new-content -->
 
 ~~~
 {% include_relative includelines filename='cdex-task-example22.json' start=7 count=51 linenumber=true %}
