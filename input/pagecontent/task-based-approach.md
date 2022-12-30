@@ -226,10 +226,9 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 1. {{ site.data.base-example-list[0] }}
 1. {{ site.data.base-example-list[10] }}
 1. {{ site.data.base-example-list[11] }}
-1. {{ site.data.base-example-list[4] }}
-1. {{ site.data.base-example-list[15] }}
-2. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
-3. {{ site.data.base-example-list[16] }} 
+2. {{ site.data.base-example-list[15] }}
+3. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
+4. {{ site.data.base-example-list[16] }} 
 
 
 {% include examplebutton_default.html example="task-scenario-3" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
