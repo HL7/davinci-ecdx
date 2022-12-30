@@ -88,7 +88,7 @@ These changes are the result of over 80 trackers listed below. They include the 
       - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example2.html)
       - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example3.html)
       - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
-35. **Submitted**: Change ""possibly"" with ""if necessary"" ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](#)
+35. **Applied**: Clarify when human involvement needed ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](task-based-approach.html#sequence-diagram)
 36. **Submitted**: CDex Attachment Request appears to be missing data ([FHIR-38243](https://jira.hl7.org/browse/FHIR-38243)) See Changes [Here](#)
 37. **Submitted**: Unclear what transaction communicates Payer request ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](#)
 38. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#purpose-of-use-for-the-request) 

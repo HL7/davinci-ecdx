@@ -3,7 +3,7 @@ title Requesting Attachments Using A FHIR Questionnaire
 participant Payer
 participant Provider
 participant DTR
-participant User
+actor Practitioner
 #entryspacing 0.4
 note over Provider: Provider acts as both\n EHR/HIT FHIR Server and DTR Client
 note over DTR: DTR is SMART App or native EHR app
@@ -16,7 +16,7 @@ DTR -> Provider: 5) GET Questionnaire
 Provider --> DTR: Return Questionnaire
 DTR --> DTR: 6) extracts answers\ncreates FHIR QuestionnaireResponse
 note over DTR, Provider: 6) ...Fetching Data to Complete\n QuestionnaireResponse...
-note over DTR,User: 7) Manual Review and Completes form\nif necessary
+note over DTR,Practitioner: 7) Manual Review and Completes form\nif necessary
 DTR -> Provider: 8) POST completed QuestionnaireResponse
 DTR -> Provider:9) Update Task with link to\nQuestionnaireResponse\nand "completed" status
 Provider->Payer: POST $submit-attachment with\nQuestionnaireResponse in payload

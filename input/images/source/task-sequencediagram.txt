@@ -7,6 +7,8 @@ participant Data Consumer
 
 participant Data Source
 
+actor Practitioner
+
 
 note over Data Consumer:1) Data Consumer needs Clinical Information
 
@@ -16,7 +18,7 @@ Data Source-->Data Consumer:3) Return HTTP 200 code to indicate acceptance
 
 note over Data Consumer,Data Source: 4) Data Consumer polls or subscribes to Task to see if data request is completed
 
-note over Data Source:5) Locates requested data\npossibly with human involvement\n to find/aggregate/filter/approve it
+note over Data Source, Practitioner:5) Locates requested data\nif necessary with human involvement\n to find/aggregate/filter/approve it
 
 Data Consumer->Data Source:6) GET updated Task when request is completed
 

@@ -3,7 +3,7 @@ title Requesting Data Using A FHIR Questionnaire
 participant Data Consumer
 participant Data Source
 participant DTR
-participant User
+actor Practitioner
 #entryspacing 0.4
 note over Data Source: Data Source acts as both\n EHR/HIT FHIR Server and DTR Client
 note over DTR: DTR is SMART App or native EHR app
@@ -17,7 +17,7 @@ Data Source --> DTR: Return Questionnaire
 note over Data Consumer, Data Source: 6) ...Polling for Task updates...
 DTR --> DTR: 7) extracts answers\ncreates FHIR QuestionnaireResponse
 note over DTR, Data Source: 7) ...Fetching Data to Complete\n QuestionnaireResponse...
-note over DTR,User: 8) Manual Review and Completes form\nif necessary
+note over DTR,Practitioner: 8) Manual Review and Completes form\nif necessary
 DTR -> Data Source: 9) POST completed QuestionnaireResponse
 DTR -> Data Source:10) Update Task with link to\nQuestionnaireResponse\nand "completed" status
 Data Consumer->Data Source:6)  Poll for Task updates

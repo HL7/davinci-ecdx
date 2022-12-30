@@ -59,9 +59,9 @@ There are over a dozen use cases and corresponding Implementation guides being d
 
 FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
 
-1. **[Direct Query]:** Payer or External Provider System directly queries Provider system for specific data using the standard FHIR RESTful search.
-2. **[Task Based Approach]:** Payer or External Provider System requests the information desired using the FHIR *Task* resource and the Provider system supplies the data possibly with human involvement to find/aggregate/filter/approve it.
-3. **[Solicited and Unsolicited Attachments]** Payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. Provider system uses a "push" based FHIR operation to submit attachments to Payer.
+1. **[Direct Query]:** A Payer or external Provider system directly queries the Provider system for specific data using the standard FHIR RESTful search.
+2. **[Task Based Approach]:** A Payer or external Provider system requests the information desired using the FHIR *Task* resource. The Provider system supplies the data. Human involvement may be needed to find/aggregate/filter/approve it.
+3. **[Solicited and Unsolicited Attachments]** A Payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. The Provider system uses a "push" based FHIR operation to submit attachments to the Payer.
 
 <div markdown="1" class="stu-note">
 
