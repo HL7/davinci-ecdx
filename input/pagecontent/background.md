@@ -81,9 +81,6 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 - A human practitioner is involved in approving/filtering the information provided.
   - A pre-existing agreement could be in place that allows data to be shared *without* human intervention.
 
-\* For most payer use-cases, payers can not use the data if they cannot identify who is responsible for the clinical event (for example observation, diagnosis, order, etc).  Therefore, the payer's health records need to identify the provider who is making the assertion. This information is typically supplied by provider systems.  An *Electronic Health Information Exchange* (HIE) that can validate the authorship of the information would also be an acceptable data source.  However, not all HIEs do this (and not for all records) and they would *not* be acceptable data sources.
-{:.bg-warning}
-
 ##### Steps
 1. The data consumer initiates a request for information.
 1. The data source retrieves the requested data.
