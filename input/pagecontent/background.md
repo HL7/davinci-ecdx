@@ -92,29 +92,42 @@ Figure 3 below illustrates the exchange of clinical data between a Payer (or Pro
 1. The data is sent back to the data consumer.
 
 
+#### Solicited and Unsolicited Attachments Workflows
 
-#### Attachments Workflow
+Attachments for claims or prior authorization are divided into solicited and unsolicited workflows. Both are illustrated below.
 
-
-
-Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited and Unsolicited Attachments* workflow.
-
-{% include img.html img="workflow-attachments.svg" caption="Figure 4" %}
-
-#### Actors and Roles
+##### Actors and Roles
 
 - The Payer system acts in the role of a *data consumer*.
 - The Provider system acts in the role of a *data source*.
-  
 
-#### Steps
+##### Unsolicited Attachments Workflow
+
+Figure 4 below illustrates the exchange of clinical data between a Provider system and a Payer system using the *Unsolicited Attachments* workflow.
+
+{% include img.html img="workflow-unsolicited-attachments.svg" caption="Figure 4" %}
+
+###### Steps
+
+1. The data source submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
+   - attachments are submitted **without an explicit request** as *unsolicited* attachments. 
+2. Payer system accepts attachments.[^1]
+
+##### Solicited Attachments Workflow
+
+Figure 5 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited Attachments* workflow.
+
+{% include img.html img="workflow-solicited-attachments.svg" caption="Figure 5" %}
+
+###### Steps
 
 1. For *solicited* attachments, the data consumer initiates a request for attachments for a claim or prior authorization.
     - This can be a FHIR or non-FHIR-based transaction
 2. The data source submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
-   - In some cases, attachments are submitted **without an explicit request** as *unsolicited* attachments. 
-3. Payer system accepts attachments.
- 
-*Out of Scope*: How Payer systems associates attachments to and processes the claim or prior authorization.
+3. Payer system accepts attachments.[^1]
+
+[^1]: How Payer systems associates attachments to and processes the claim or prior authorization is out of scope for this guide.
+
+---
 
 {% include link-list.md %}

@@ -56,11 +56,11 @@ These changes are the result of over 80 trackers listed below. They include the 
 26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](attachments-conformance.html)
 27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
 28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-infrastructure-elements)
-30. **Resolved-Change Required**: Include Workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](#)
+30. **Applied**: Separate solicited and unsolicited attachments workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](background.html#workflow-overview)
 31. **Applied**: Make LOINC code display and text consistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233)) See Changes [Here](Parameters-cdex-parameters-example1.json.html)
 32. **Applied**: Fix Typo in example ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](Parameters-cdex-parameters-example4.html)
 33. **Applied**: Clarify Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240)) See Changes [Here](solicited-unsolicited-attachments.html)
-34. **Applied**: Expand Attachments and Task based approach to support Questionnaires and DTR ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241)) See Changes:
+34. **Partially Applied**: Expand Attachments and Task based approach to support Questionnaires and DTR ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241)) See Changes:
     - Pages:
       - [Here](task-based-approach.html#requesting-data-using-a-fhir-questionnaire)
       - [Here](requesting-attachments-questionnaire.html)
