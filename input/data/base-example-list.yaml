@@ -3,9 +3,9 @@
 - The POU is to support operations related to coverage
 - The work queue hint for claims processing
 - The reason for the request is a business identifier identifying the claim
-- The Payer POSTS a Task to the Provider endpoint requesting Patient B's Active Conditions.
+- The Payer POSTS a Task to the Provider endpoint requesting Patient B's data.
 - The Payer polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-- The Payer fetches Patient B's Active Conditions referenced by `Task.output` as a *search Bundle*.
+- The Payer fetches the FHIR resources referenced by `Task.output` as a *search Bundle*.
 - The POU is to support coordination of care
 - The work queue hint is care coordination
 - The POU is to support administrative activities for health quality improvement

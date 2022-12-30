@@ -209,7 +209,7 @@ Preconditions and Assumptions:
 7. {{ site.data.base-example-list[6] }}
 8. The Payer fetches the QuestionnaireResponse referenced by Task.output.
 
-{% include examplebutton_default.html example="task-scenario-10" b_title = 'Click Here To See Example Task Based Transaction (FHIR Questionnaire' %}
+{% include examplebutton_default.html example="task-scenario-10" b_title = 'Click Here To See Example Task Based Transaction Using Questionnaire' %}
 
 </div><!-- new-content -->
 
