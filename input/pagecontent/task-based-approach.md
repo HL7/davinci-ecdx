@@ -44,9 +44,9 @@ In most of these situations, there is human intervention (e.g., a provider or de
 
 #### Purpose of Use
 
-The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element that represents the POU for the requested data with a [CDex Purpose of Use Value Set] containing a small number of codes. This element intends to define a potentially new way to exchange data with a dynamically defined POU.
+The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element representing the POU for the requested data with several codes defined in the [CDex Purpose of Use Value Set]. This element defines a potentially new way to exchange data and <span class="bg-success" markdown="1">dynamically provide additional granularity for the POU.</span><!-- new-content -->
 
-If this element is supported by the Data Source, it permits POU codes to be communicated dynamically in the individual Task-based queries which may even differ from the ‘default’ purpose of use for that data-consuming system. It allows the Data Source to make necessary decisions about whether to provide the information at all or whether/how to filter the information. The examples illustrate how this input element is used.
+If the Data Source supports this element, <span class= "bg-success" markdown= "1"> a transaction level POU permits greater discrimination than "Treatment, Payment, or Health Care Operations (TPO)" which is typically used today.</span><!-- new-content --> It may even differ from the default purpose of use for that data-consuming system.  It allows the Data Source to make necessary decisions about whether to provide the information or whether/how to filter the information. The example transactions below illustrate the POU element usage.
 
 #### Work Queues
 
