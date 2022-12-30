@@ -126,8 +126,7 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 2. The data source submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
 3. Payer system accepts attachments.[^1]
 
-[^1]: How Payer systems associates attachments to and processes the claim or prior authorization is out of scope for this guide.
-
+[^1]: The Payer's method for associating attachments to claims or prior authorizations and processing them is out of scope for this guide.
 ---
 
 {% include link-list.md %}
