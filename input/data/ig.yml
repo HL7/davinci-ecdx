@@ -236,12 +236,11 @@ definition:
     description: "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based\
       \ profile to request additional documentation (\"attachments\") for claims or\
       \ prior authorizations. It constrains the Task resource to minimal necessary\
-      \ data elements to request attachments. It complies with the HIPAA Attachment\
-      \ rules for CMS using the request model of LOINC attachment codes. It is an\
-      \ alternative to the X12n 277 and 278 response transactions. The provider typically\
-      \ returns the appropriate CCDA or PDF files. It can also support requests for\
-      \ more detailed missing data and avoid unnecessary documents using Questionnaire,\
-      \ CQL, and QuestionnaireResponse as supported by Da Vinci DTR.\n\nIt constrains\
+      \ data elements needed to request attachments and respond in a way that is compatible\
+      \ with existing X12 277 RFAI and 278 response transactions to allow for association\
+      \ and requests for (typically PDF and CCDA) documents using LOINC as the standard.\
+      \ It also supports requests for more detailed missing data using Questionnaire,\
+      \ CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.\n\nIt constrains\
       \ the following elements to be *mandatory* (min=1):\n\n- A [contained](http://hl7.org/fhir/R4/references.html)\
       \ Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics)\
       \ and communicating additional patient demographic data elements.\n- A [contained](http://hl7.org/fhir/R4/references.html)\

@@ -21,7 +21,7 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
   
 #### Changes:
 
-These changes are the result of over 80 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issue.
+These changes are the result of over 60 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issue.
 
 ##### September 2022 ballot and non-ballot comments and links to the updated content are below:
 
@@ -114,14 +114,11 @@ These changes are the result of over 80 trackers listed below. They include the 
 65. **Applied**: Correct Preconditions and Assumptions ([FHIR-38601](https://jira.hl7.org/browse/FHIR-38601)) See Changes [Here](task-based-approach.html#scenario-2)
 66. **Applied**: Update polling frequency guidance([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602)) See Changes [Here](task-based-approach.html#polling)
 67. **Applied**: Remove trading partner agreement statement ([FHIR-38603](https://jira.hl7.org/browse/FHIR-38603)) See Changes [Here](solicited-unsolicited-attachments.html#unsolicited-attachments)
-68. **Submitted**: used word provider when you meant payer  ([FHIR-38604](https://jira.hl7.org/browse/FHIR-38604)) See Changes [Here](#)
-69. **Resolved-Change Required**: Clarify association comment and assign FMM levels to guide  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605)) See Changes [Here](background.html#steps-2)
-70. **Triaged**: Need a new example for Signed FHIR Resource Attachments ([FHIR-38609](https://jira.hl7.org/browse/FHIR-38609)) See Changes [Here](#)
-71. **Triaged**: remove reference to HIPAA attachments rule  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612)) See Changes [Here](#)
-72. **Waiting for Input**: change SHOULD to SHALL ([FHIR-38613](https://jira.hl7.org/browse/FHIR-38613)) See Changes [Here](#)
-73. **Applied**: Change $submit-attachment's Attachment input parameter to min=1. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632)) See Changes [Here](OperationDefinition-submit-attachment.html)
-74. **Applied**: Change Tracking-id.system to Must Support; and $submit-attachment TrackingId to type Identifier. ([FHIR-39337](https://jira.hl7.org/browse/FHIR-39337)) See Changes [Here](OperationDefinition-submit-attachment.html) and [Here](StructureDefinition-cdex-task-attachment-request.html)
-75. **Applied**: Update NPI codesystem  ([FHIR-39626](https://jira.hl7.org/browse/FHIR-39626)) See Changes [Here](ValueSet-cdex-identifier-types.html)
+68. **Resolved-Change Required**: Clarify association comment and assign FMM levels to guide  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605)) See Changes [Here](background.html#steps-2)
+69. **Resolved-Change Required**: Clarify Profile relationship to X12  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612)) See Changes [Here](requesting-attachments-code.html#cdex-attachment-request-profile)
+70. **Applied**: Change $submit-attachment's Attachment input parameter to min=1. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632)) See Changes [Here](OperationDefinition-submit-attachment.html)
+71. **Applied**: Change Tracking-id.system to Must Support; and $submit-attachment TrackingId to type Identifier. ([FHIR-39337](https://jira.hl7.org/browse/FHIR-39337)) See Changes [Here](OperationDefinition-submit-attachment.html) and [Here](StructureDefinition-cdex-task-attachment-request.html)
+72. **Applied**: Update NPI codesystem  ([FHIR-39626](https://jira.hl7.org/browse/FHIR-39626)) See Changes [Here](ValueSet-cdex-identifier-types.html)
 
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
