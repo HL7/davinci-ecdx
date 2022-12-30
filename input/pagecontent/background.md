@@ -4,7 +4,7 @@ Da Vinci is a private sector initiative that addresses the needs of the Value-Ba
 
 ### What Do Payers Do with Clinical Information?
 
-Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. Payers also want to create a clinical record of their members to be able to reduce redundant care and make better medical treatment and care planning recommendations to providers.
+Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. <span class="bg-success" markdown="1">Payers may also collect this clinical information to assist providers with care planning options</span><!-- new-content -->.
 
 #### Example Scenarios
 
