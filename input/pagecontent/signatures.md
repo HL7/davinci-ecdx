@@ -183,7 +183,7 @@ FHIR search-set bundle signatures occur when performing direct queries where sig
 
 - [Signed Document Bundle Example]
 
-FHIR document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR, or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate.
+FHIR document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required and the returned results are individual FHIR resources (in other words, not CCDA, CCDA on FHIR, or other binary formats referenced by DocumentReference).  In this case, the digital signature represents a practitioner attesting that the information is true and accurate <span class="bg-success" markdown="1">to the best of their knowledge</span><!-- new-content -->.
 
 ---
 
