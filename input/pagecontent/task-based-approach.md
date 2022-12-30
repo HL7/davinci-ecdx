@@ -56,7 +56,7 @@ The [CDex Work Queue Value Set] is a set of work queue tags that the provider ma
 
 #### Task Reason
 
-When it is known,`Task.reasonCode/reasonReference` **SHOULD** reference the object that directly leads to the task - a particular claim for example.
+When it is known,`Task.reasonCode/reasonReference` **SHALL** reference the object that directly leads to the task - a particular claim for example.
 
 ### Sequence Diagram
 
