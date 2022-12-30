@@ -92,7 +92,7 @@ Some data consumers may require that the data they receive are signed. When sign
 - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete examples of how the signature was created.
 
-{% include examplebutton_default.html example="unsolicited-attachment-scenario3.md" b_title = "Click Here To See Example *Signed* FHIR Resource Attachments" %}
+{% include examplebutton_default.html example="unsolicited-attachment-scenario3.md" b_title = "Click Here To See Example Signed FHIR Resource Attachments" %}
 
 
 {% include link-list.md %}

@@ -168,6 +168,6 @@ This example is the same as Scenario 1 above except that it also includes a digi
 
 `GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
 
-{% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example *Signed* Direct Query Response" %}
+{% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example Signed Direct Query Response" %}
 
 {% include link-list.md %}

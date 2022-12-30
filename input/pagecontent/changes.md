@@ -103,7 +103,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 52. **Applied**: Word change *analogs* to *fields* ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
 54. **Applied**: Correct rendering of CCDA ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367)) See Changes [Here](task-based-approach.html#step-3---rendered-ccda-documents)
 55. **Applied**: removed '*' from button bar ([FHIR-38368](https://jira.hl7.org/browse/FHIR-38368)) See Changes [Here](task-based-approach.html#example-of-a-signed-task-based-transaction)
-56. **Triaged**: stronger language needed  ([FHIR-38576](https://jira.hl7.org/browse/FHIR-38576)) See Changes [Here](#)
+56. **Applied**: Change *follows* to *adheres to* ([FHIR-38576](https://jira.hl7.org/browse/FHIR-38576)) See Changes [Here](index.html#about-this-guide)
 57. **Triaged**: revise section 'what Do Payers Do with Clinical Information?' ([FHIR-38578](https://jira.hl7.org/browse/FHIR-38578)) See Changes [Here](#)
 58. **Triaged**: add supplemental guide to example scenarios  ([FHIR-38580](https://jira.hl7.org/browse/FHIR-38580)) See Changes [Here](#)
 59. **Triaged**: CDex use case examples  ([FHIR-38585](https://jira.hl7.org/browse/FHIR-38585)) See Changes [Here](#)
