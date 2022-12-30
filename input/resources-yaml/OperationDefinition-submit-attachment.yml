@@ -31,7 +31,7 @@ code: submit-attachment
 comment: |
  
   The following rules apply when using `$submit-attachment`:
-  * The operation's endpoint **SHALL** only accepts `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
+  * The operation's endpoint **SHALL**only accept `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
   * A ProviderId parameter or OrganizationId parameter or both **SHALL** be present.
   * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.
   * The `Attachment.LineItem` and `Attachment.Code` parameters are associated with the attachments in `Attachment.Content`.   If `Attachment.LineItem` is not present, then the attachment is associated with the entire claim or prior authorization.
