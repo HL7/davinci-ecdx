@@ -107,6 +107,7 @@
 [Sending Attachments]: sending-attachments.html
 [Requesting Attachments Using Attachment Codes]: requesting-attachments-code.html
 [Requesting Attachments Using Questionnaires]: requesting-attachments-questionnaire.html
+[Requesting Data Using A FHIR Questionnaire]: task-based-approach.html#requesting-data-using-a-fhir-questionnaire
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
@@ -134,3 +135,4 @@
 [Questionnaire]: {{site.data.fhir.path}}questionnaire.html
 [SMART's EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
 [Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire
+[Conforming to CDex Attachments]: attachments-conformance.html

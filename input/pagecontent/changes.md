@@ -7,18 +7,15 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
 
 #### What’s new in Version 2.0.0 of CDex:
 
-{% include img-small.html img="todo.png" %}
+1. New [Requesting Attachments Using Questionnaires] functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. This approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provides the ability for signature attestation if required.
+2. New Task-Based transactions functionality for [Requesting Data Using A FHIR Questionnaire]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. The provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
+3. Improved navigation:
+   - Menu Bar drop-downs for all the pages to allow faster navigation to a specific topic
+   - Re-organization of [FHIR Artifacts] by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
+4. Guidance on [Conforming to CDex Attachments] includes interactions for each role and the conformance resource and terminology that makes them unique.
+5. After receiving many comments on CDex POU support, the [CDex Purpose of Use Value Set] now includes a hierarchy to the base "Treatment", "Payment", or "Health Care Operations" (TPO) concepts.
+6. More examples, including examples of failed signature verifications, signed QuestionnaireResponse, and requesting Attachments for prior authorization using Questionnaire.
 
-<!--
-- <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
-    - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
-    - A [Sending Attachments] page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - A [Requesting Attachments] page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
-    - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
--  [Signatures] page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
-- A [Change Log] page to document the changes across the versions of CDex
-- More [examples](artifacts.html#6) and example scenarios -->
-  
 #### Changes:
 
 These changes are the result of over 60 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issue.
