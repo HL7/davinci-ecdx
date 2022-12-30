@@ -20,7 +20,7 @@ When the task is completed, the provider submits the attachments to the payer su
 
 <!-- #### Using Task to Request Attachments -->
 
-The [Task Based Approach section](http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments.  Details for Task-based transactions are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+The [Task Based Approach section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments.  Details for Task-based transactions are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
 </div><!-- new-content -->
 

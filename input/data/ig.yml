@@ -252,7 +252,7 @@ definition:
       \ with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).\n\
+      \ section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
       - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"attachment-request-code\" or \"attachment-request-questionnaire\"\
       \  communicating that the Payer is requesting attachments for a claim or prior\
@@ -283,7 +283,7 @@ definition:
       \ authorization line item numbers associated with the attachment or questionnaire.\n\
       - A \"signature\" Task.input element representing a flag to indicate whether\
       \ the requested data requires a signature. For more information about requiring\
-      \ and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n\
+      \ and requesting signatures, refer to the [Signatures section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).\n\
       - A \"service-date\" Task.input element representing the date of service or\
       \ starting date of the service for the claim or prior authorization. It SHALL\
       \ be present if the attachment is for a claim.\n\nIt defines the following elements\
@@ -292,7 +292,7 @@ definition:
       - A \"POU\" Task.input element representing the purpose of use (POU) for the\
       \ requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
       \ For more information about sending purpose POU codes, refer to the [Purpose\
-      \ of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).\n\
+      \ of Use section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).\n\
       - A \"multiple-submits\" Task.input element representing a flag to indicate\
       \ whether the requested data can be sent in multiple submissions\n- A \"data-value\"\
       \ Task.output element referring to FHIR resource(s) representing the result(s)\
@@ -316,7 +316,7 @@ definition:
       \ a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).\n\
+      \ section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
       - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"data-request-code\", \"data-request-code\", or \"\
       data-request-questionnaire\" communicating that the Data Consumer is requesting\

@@ -247,4 +247,4 @@ Content-Type: application/fhir+json;charset=utf-8
 ~~~
 
 
-####  [Rendered QuestionnaireResponse](http://build.fhir.org/ig/HL7/davinci-ecdx/QuestionnaireResponse-cdex-questionnaireresponse-example1.html)
+####  [Rendered QuestionnaireResponse](http://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example1.html)

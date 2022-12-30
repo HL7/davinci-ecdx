@@ -14,7 +14,7 @@ description: |-
   - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics) and communicating additional patient demographic data elements.
   - A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole) to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.
   - A Task.identifier element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)
-  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://build.fhir.org/ig/HL7/davinci-ecdx/task-based-approach.html#when-the-task-cannot-be-completed).
+  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code of either "attachment-request-code" or "attachment-request-questionnaire"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.
     - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the LOINC attachment code(s) in the "code" input parameter.
@@ -33,13 +33,13 @@ description: |-
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
   - A "code" Task.input element to communicate to the provider what attachments are needed using LOINC attachment codes.*
   - A "code" or "questionnaire" Task.input element extension representing a claim or prior authorization line item numbers associated with the attachment or questionnaire.
-  - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).
   - A "service-date" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
   It defines the following elements to be *optional*:
 
   - A "questionnaire" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*
-  - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://build.fhir.org/ig/HL7/davinci-ecdx/sending-attachments.html#signatures).
+  - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).
   - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
   - A "data-value" Task.output element referring to FHIR resource(s) representing the result(s) of the data request code.
   - A "response" Task.output element which is a local reference to the QuestionnaireResponse resulting from the data request Questionnaire.

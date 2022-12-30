@@ -24,8 +24,3 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile
-
-# Slice is optional
-
-This element does not match any known slice defined in the profile http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.0.0-preview
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|3.0.0
