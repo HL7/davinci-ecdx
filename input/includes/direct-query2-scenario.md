@@ -69,7 +69,7 @@ Content-Type: application/fhir+json;charset=utf-8
         }, {
           "system": "http://example.org/lab-results",
           "code": "HBA1C",
-          "display": "Hglycated hemoglobin (HbA1c)"
+          "display": "Glycated hemoglobin (HbA1c)"
         } ],
         "text": "glycated hemoglobin (HbA1c)"
       },
@@ -120,7 +120,7 @@ Content-Type: application/fhir+json;charset=utf-8
         }, {
           "system": "http://example.org/lab-results",
           "code": "HBA1C",
-          "display": "Hglycated hemoglobin (HbA1c)"
+          "display": "Glycated hemoglobin (HbA1c)"
         } ],
         "text": "glycated hemoglobin (HbA1c)"
       },
@@ -171,7 +171,7 @@ Content-Type: application/fhir+json;charset=utf-8
         }, {
           "system": "http://example.org/lab-results",
           "code": "HBA1C",
-          "display": "Hglycated hemoglobin (HbA1c)"
+          "display": "Glycated hemoglobin (HbA1c)"
         } ],
         "text": "glycated hemoglobin (HbA1c)"
       },
@@ -222,7 +222,7 @@ Content-Type: application/fhir+json;charset=utf-8
         }, {
           "system": "http://example.org/lab-results",
           "code": "HBA1C",
-          "display": "Hglycated hemoglobin (HbA1c)"
+          "display": "Glycated hemoglobin (HbA1c)"
         } ],
         "text": "glycated hemoglobin (HbA1c)"
       },

@@ -58,7 +58,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-infrastructure-elements)
 30. **Resolved-Change Required**: Include Workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](#)
 31. **Applied**: Make LOINC code display and text consistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233)) See Changes [Here](Parameters-cdex-parameters-example1.json.html)
-32. **Submitted**: Typo in example glycated hemoglobin ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](#)
+32. **Applied**: Fix Typo in example ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](Parameters-cdex-parameters-example4.html)
 33. **Applied**: Clarify Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240)) See Changes [Here](solicited-unsolicited-attachments.html)
 34. **Applied**: Expand Attachments and Task based approach to support Questionnaires and DTR ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241)) See Changes:
     - Pages:

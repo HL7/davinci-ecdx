@@ -56,7 +56,7 @@ parameter:
           display: Hemoglobin; glycosylated (A1c)
         - system: http://example.org/lab-results
           code: HBA1C
-          display: Hglycated hemoglobin (HbA1c)
+          display: Glycated hemoglobin (HbA1c)
         text: glycated hemoglobin (HbA1c)
       subject:
         display: Elden718 Halvorson124
@@ -98,7 +98,7 @@ parameter:
           display: Hemoglobin; glycosylated (A1c)
         - system: http://example.org/lab-results
           code: HBA1C
-          display: Hglycated hemoglobin (HbA1c)
+          display: Glycated hemoglobin (HbA1c)
         text: glycated hemoglobin (HbA1c)
       subject:
         display: Elden718 Halvorson124
@@ -140,7 +140,7 @@ parameter:
           display: Hemoglobin; glycosylated (A1c)
         - system: http://example.org/lab-results
           code: HBA1C
-          display: Hglycated hemoglobin (HbA1c)
+          display: Glycated hemoglobin (HbA1c)
         text: glycated hemoglobin (HbA1c)
       subject:
         display: Elden718 Halvorson124
