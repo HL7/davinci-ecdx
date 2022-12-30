@@ -99,7 +99,7 @@ These changes are the result of over 80 trackers listed below. They include the 
 45. **Resolved-Change Required**: FHIR ID Support and Usage ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318)) See Changes [Here](#)
 49. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](sending-attachments.html#sending-attachments)
 50. **Applied**: Add Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](signatures.html#step-by-step-examples)
-51. **Submitted**: Remove words ""transaction layer"" for conciseness ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](#)
+51. **Applied**: Remove words *transaction layer* ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](sending-attachments.html#technical-workflow)
 52. **Submitted**: Word change ""analogs"" to ""fields"" ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](#)
 53. **Submitted**: Confirm parameter naming style ([FHIR-38366](https://jira.hl7.org/browse/FHIR-38366)) See Changes [Here](#)
 54. **Submitted**: Improve rendered document rendering ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367)) See Changes [Here](#)

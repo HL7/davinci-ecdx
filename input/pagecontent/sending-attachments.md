@@ -18,7 +18,7 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
 
 1. Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
 2. Provider invokes [`$submit-attachment`] operation to submit attachments to Payer
-3. Payer responds with an HTTP transaction layer response which either accepts or rejects the transaction.
+3. Payer responds with an HTTP response which either accepts or rejects the transaction.
    - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.  An OperationOutcome example is used in Scenario 1b below.
 4. The Payer associates the attachments to the claim or prior authorization, and processes the claim.
 
