@@ -8,7 +8,7 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/St
 
 # the example demonstrate the legitimate use case for using free text instead of codes for requesting information using a Task-based Query
 
-No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|3.1.0)
+No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|3.1.1)
 
 # The referenced ValueSet is a valid external and not recognized by the Terminology server.
 
