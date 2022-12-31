@@ -86,7 +86,7 @@ These changes are the result of over 60 trackers listed below. They include the 
       - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example3.html)
       - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
 35. **Applied**: Clarify when human involvement needed ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](task-based-approach.html#sequence-diagram)
-36. **Resolved-Change Required**: Unclear what transaction communicates Payer request ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](#)
+36. **Applied**: Add link to PAS Guidance on pended results ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](burden-reduction.html)
 37. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#purpose-of-use-for-the-request) 
 38. **Applied**: Correct operation name ([FHIR-38253](https://jira.hl7.org/browse/FHIR-38253)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
 39. **Applied**: Change *only accepts* to *only accept*([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](OperationDefinition-submit-attachment.html)

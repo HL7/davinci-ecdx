@@ -44,7 +44,7 @@ dependsOn:
 - id: pas
   packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
-  version: 1.1.0
+  version: 1.2.0-ballot
 - id: c4bb
   packageId: hl7.fhir.us.carin-bb
   uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb

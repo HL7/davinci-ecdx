@@ -63,7 +63,6 @@
 [Subscription Capabilities]: {{site.data.fhir.ver.hrex}}/exchanging.html#subscription-capability
 [Task state machine]: {{site.data.fhir.path}}task.html#statemachine
 [Bulk Data Access IG]: http://hl7.org/fhir/uv/bulkdata/index.html
-[Da Vinci - Prior Authorization Support]: http://hl7.org/fhir/us/davinci-pas/usecases.html#submit-additional-information
 [Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021Sep/
@@ -71,8 +70,8 @@
 [Basic Provenance]: {{site.data.fhir.ver.uscore}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
-[Da Vinci - Coverage Requirements Discovery (DTR)]: http://hl7.org/fhir/us/davinci-crd/index.html
-[Da Vinci Prior Authorization Support (PAS)]: http://hl7.org/fhir/us/davinci-pas/index.html
+[Da Vinci - Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}
+[Da Vinci Prior Authorization Support (PAS)]: {{site.data.fhir.ver.pas}}
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
 [Signatures for Task Based Requests]: task-based-approach.html#signatures
@@ -136,3 +135,4 @@
 [SMART's EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
 [Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire
 [Conforming to CDex Attachments]: attachments-conformance.html
+[Submit Additional Information]: {{site.data.fhir.ver.pas}}/usecases.html#submit-additional-information

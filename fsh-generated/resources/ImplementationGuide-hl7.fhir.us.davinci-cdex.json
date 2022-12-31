@@ -67,7 +67,7 @@
       "id": "pas",
       "packageId": "hl7.fhir.us.davinci-pas",
       "uri": "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas",
-      "version": "1.1.0"
+      "version": "1.2.0-ballot"
     },
     {
       "id": "c4bb",
