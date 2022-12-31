@@ -1,6 +1,16 @@
 {
     "resourceType": "ValueSet",
     "id": "cdex-data-request-task-code",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "draft"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+            "valueInteger": 1
+        }
+    ],
     "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-data-request-task-code",
     "name": "CDexDataRequestTaskCode",
     "title": "CDex Data Request Task Code Value Set",

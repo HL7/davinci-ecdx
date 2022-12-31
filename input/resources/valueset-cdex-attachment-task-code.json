@@ -1,6 +1,16 @@
 {
     "resourceType": "ValueSet",
     "id": "cdex-attachment-task-code",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "draft"
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+            "valueInteger": 1
+        }
+    ],
     "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-task-code",
     "name": "CDexAttachmentTaskCode",
     "title": "CDex Attachment Task Code Value Set",

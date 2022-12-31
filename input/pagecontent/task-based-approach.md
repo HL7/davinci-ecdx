@@ -168,12 +168,12 @@ Preconditions and Assumptions are the same as above except the Payer POSTS a Tas
 
 ---
 
-**The following section is DRAFT. It requires further community review and testing.**
-{:.stu-note}
-
 <div class="bg-success" markdown="1">
 
 ### Requesting Data Using A FHIR Questionnaire
+
+**The following section is DRAFT. It requires further community review and testing.**
+{:.stu-note}
 
 {% include img-small.html img="todo.png" %}
 

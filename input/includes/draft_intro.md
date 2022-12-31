@@ -30,5 +30,5 @@
 
 <div markdown="1" class="stu-note">
 
-Using Questionnaires with the Task-based Approach and Attachments transactions is DRAFT content. The appropriate pages and sections are preceded with an STU-Note indicating the draft content and listed item #30 in the [Change Log].  We will publish an STU Update and remove the STU-Notes after appropriate community review and testing.  For more information on what's new in this version of CDex see the [Change Log].
+Using Questionnaires with the Task-based Approach and Attachments transactions is DRAFT content. These pages and sections are listed under item #30 in the [Change Log] and are labeled  as draft content.  We will publish an STU Update and remove the STU-Notes after appropriate community review and testing.  For more information on what's new in this version of CDex see the [Change Log].
 </div>

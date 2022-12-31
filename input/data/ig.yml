@@ -1,5 +1,10 @@
 resourceType: ImplementationGuide
 id: hl7.fhir.us.davinci-cdex
+extension:
+- url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+  valueCode: trial-use
+- url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+  valueInteger: 2
 url: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
 version: 2.0.0-preview
 name: DaVinciCDex
@@ -850,6 +855,9 @@ definition:
       - nameUrl: requesting-attachments-questionnaire.html
         title: Requesting Attachments Using Questionnaires
         generation: markdown
+        extension:
+        - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+          valueCode: draft
       - nameUrl: burden-reduction.html
         title: Using CDex Attachments with DaVinci PAS
         generation: markdown
