@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<ClinicalDocument
+	xmlns="urn:hl7-org:v3">
+	<realmCode code="US" />
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+	<templateId root="1.2.840.114350.1.72.1.51693" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.1" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.1" extension="2015-08-01" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.7" />
+	<templateId root="2.16.840.1.113883.10.20.22.1.7" extension="2015-08-01" />
+	<id assigningAuthorityName="EPC" root="1.2.840.114350.1.13.451.2.7.8.688883.131600207" />
+	<code code="11504-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Provider unspecified Operation Note" />
+	<title>Operative Note</title>
+	<effectiveTime value="20200220012715-0600" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal" />
+	<languageCode code="en-US" />
+	<setId assigningAuthorityName="EPC" extension="6ae263da-53b2-11ea-8099-005056861bc6" root="1.2.840.114350.1.13.451.2.7.1.1" />
+	<versionNumber value="1" />
+	<recordTarget>
+		<patientRole>
+			<id root="1.2.840.114350.1.13.451.2.7.3.688884.100" extension="MAY4682830" />
+			<addr use="HP">
+				<streetAddressLine>1 N Rhode Island Ave</streetAddressLine>
+				<county>CERRO GORD</county>
+				<city>Mason City</city>
+				<state>IA</state>
+				<postalCode>50401-1446</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom use="MC" value="tel:+1-641-666-6666" />
+			<telecom value="mailto:johntest1@test.com" />
+			<patient>
+				<name use="L">
+					<prefix qualifier="TITLE">Mr. </prefix>
+					<given>John</given>
+					<given>TEST</given>
+					<family>TEST</family>
+				</name>
+				<name use="P">
+					<given>John</given>
+					<family>TEST</family>
+				</name>
+				<name use="P">
+					<given>John</given>
+					<given>P.</given>
+					<family>TEST</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Male" />
+				<birthTime value="19530920" />
+				<sdtc:deceasedInd value="false"
+					xmlns:sdtc="urn:hl7-org:sdtc" />
+					<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married" />
+					<religiousAffiliationCode code="1028" codeSystem="2.16.840.1.113883.5.1076" codeSystemName="ReligiousAffiliation" />
+					<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" displayName="White" />
+					<ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" displayName="Not Hispanic or Latino" />
+					<languageCommunication>
+						<languageCode code="eng" />
+						<modeCode code="EWR" codeSystem="2.16.840.1.113883.5.60" displayName="Expressed Written" />
+						<preferenceInd value="true" />
+					</languageCommunication>
+				</patient>
+				<providerOrganization>
+					<id root="1.2.840.114350.1.13.451.2.7.2.688879" extension="37200" />
+					<name>PROVIDER Clinic</name>
+					<telecom nullFlavor="NA" />
+					<addr use="WP">
+						<streetAddressLine>2 1st St SW</streetAddressLine>
+						<county>OLMSTED</county>
+						<city>ROCHESTER</city>
+						<state>MN</state>
+						<postalCode>55905</postalCode>
+						<country>USA</country>
+					</addr>
+				</providerOrganization>
+			</patientRole>
+		</recordTarget>
+		<author>
+			<time value="20200220012715-0600" />
+			<assignedAuthor>
+				<id root="1.2.840.114350.1.1" extension="8.9" />
+				<addr nullFlavor="NA" />
+				<telecom nullFlavor="NA" />
+				<assignedAuthoringDevice>
+					<manufacturerModelName>Epic - Version 8.9</manufacturerModelName>
+					<softwareName>Epic - Version 8.9</softwareName>
+				</assignedAuthoringDevice>
+				<representedOrganization>
+					<id root="1.2.840.114350.1.13.451.2.7.2.688879" extension="37200" />
+					<name>PROVIDER Clinic</name>
+					<telecom nullFlavor="NA" />
+					<addr use="WP">
+						<streetAddressLine>2 1st St SW</streetAddressLine>
+						<county>OLMSTED</county>
+						<city>ROCHESTER</city>
+						<state>MN</state>
+						<postalCode>55905</postalCode>
+						<country>USA</country>
+					</addr>
+				</representedOrganization>
+			</assignedAuthor>
+		</author>
+		<custodian>
+			<assignedCustodian>
+				<representedCustodianOrganization>
+					<id root="1.2.840.114350.1.13.451.2.7.2.688879" extension="37200" />
+					<name>PROVIDER Clinic</name>
+					<telecom nullFlavor="NA" />
+					<addr use="WP">
+						<streetAddressLine>2 1st St SW</streetAddressLine>
+						<county>OLMSTED</county>
+						<city>ROCHESTER</city>
+						<state>MN</state>
+						<postalCode>55905</postalCode>
+						<country>USA</country>
+					</addr>
+				</representedCustodianOrganization>
+			</assignedCustodian>
+		</custodian>
+		<legalAuthenticator>
+			<time value="20200220012715-0600" />
+			<signatureCode code="S" />
+            <!-- SignatureText START -->
+            <sdtc:signatureText mediaType="text/xml" representation="B64">
+                <!-- XAdES WORK (Signed CDA): START -->
+                <digitalSignature>
+            <!-- ...See HL7 Implementation Guide for CDA Release 2: Digital Signatures and Delegation of Rights, Release 1 for details on the XAdES signature... -->
+                </digitalSignature>
+                <!-- XAdES WORK (Signed CDA): END -->
+                </signatureText>
+            <!-- SignatureText END -->
+			<assignedEntity>
+				<id root="2.16.840.1.113883.4.6" extension="1111111111" />
+				<code nullFlavor="UNK" />
+				<addr use="WP">
+					<streetAddressLine>2 1st St SW</streetAddressLine>
+					<county>OLMSTED</county>
+					<city>Rochester</city>
+					<state>MN</state>
+					<postalCode>55905-0001</postalCode>
+					<country>USA</country>
+				</addr>
+				<telecom use="WP" value="tel:+1-507-666-6666" />
+				<assignedPerson>
+					<name use="L">
+						<given>John</given>
+						<given>H</given>
+						<family>TEST</family>
+						<suffix qualifier="AC"> M.D.</suffix>
+					</name>
+				</assignedPerson>
+			</assignedEntity>
+		</legalAuthenticator>
+		<participant typeCode="IND">
+			<time value="20180810" />
+			<associatedEntity classCode="ECON">
+				<id root="1.2.840.114350.1.13.451.2.7.2.827665" extension="11111111" />
+				<code code="SPS" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode" displayName="Spouse">
+					<originalText>Spouse</originalText>
+				</code>
+				<addr use="HP">
+					<streetAddressLine>1 North Island Avenue</streetAddressLine>
+					<city>Mason City</city>
+					<state>IA</state>
+					<postalCode>50401-1446</postalCode>
+					<country>USA</country>
+				</addr>
+				<telecom use="HP" value="tel:+1-641-666-6666" />
+				<telecom use="MC" value="tel:+1-641-666-6666" />
+				<associatedPerson>
+					<name>Carol Meyer</name>
+				</associatedPerson>
+			</associatedEntity>
+		</participant>
+		<documentationOf typeCode="DOC">
+			<serviceEvent classCode="PROC">
+				<code code="77777772" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Procedure" />
+				<effectiveTime>
+					<low nullFlavor="UNK" />
+					<high nullFlavor="UNK" />
+				</effectiveTime>
+				<performer typeCode="PPRF">
+					<assignedEntity>
+						<id root="2.16.840.1.113883.4.6" />
+						<code codeSystem="2.16.840.1.113883.3.88.12.3221.4.2" codeSystemName="NUCC" nullFlavor="NI" />
+						<addr nullFlavor="UNK" />
+						<telecom nullFlavor="UNK" />
+					</assignedEntity>
+				</performer>
+			</serviceEvent>
+		</documentationOf>
+		<component>
+			<structuredBody>
+				<component>
+					<section>
+						<templateId root="2.16.840.1.113883.10.20.22.2.27" />
+						<code code="29554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SURGERY PROCEDURE" />
+						<title>Surgery Details</title>
+						<text>
+							<table>
+								<colgroup>
+									<col width="10%" />
+									<col width="15%" />
+									<col width="15%" />
+									<col width="10%" />
+									<col width="10%" />
+									<col width="15%" />
+									<col width="10%" />
+									<col width="10%" />
+								</colgroup>
+								<thead>
+									<tr>
+										<th>Date/Time</th>
+										<th>Status</th>
+										<th>Location</th>
+										<th>OR</th>
+										<th>Service</th>
+										<th>Patient Class</th>
+										<th>Case Class</th>
+										<th>Case Type</th>
+										<th>Trauma Case?</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td />
+										<td />
+										<td />
+										<td />
+										<td />
+										<td />
+										<td />
+										<td />
+										<td />
+									</tr>
+								</tbody>
+							</table>
+							<br />
+							<list>
+								<caption>Additonal Notes</caption>
+								<item>
+									<caption>TEST, JOHN H - 02/17/2020 11:15 AM CST</caption>
+									<paragraph>
+										<br />
+										<br />PROCEDURE(S)
+										<br />Open takedown of adhesions (1 hour). 
+										<br />Resection approximately 75 cm  of terminal ileum and cecum and portion of ascending colon. 
+										<br />Ileoascending colostomy with double-stapled side-to-side functional end-to-end running of the small bowel.
+										<br />
+										<br />SURGEON(S)
+										<br />Dr. John TEST. 
+										<br />
+										<br />GENERAL SURGERY RESIDENT: Dr. TEST.
+										<br />
+										<br />ANESTHESIA TYPE
+										<br />General.
+										<br />
+										<br />PRE-OPERATIVE DIAGNOSIS
+										<br />Crohn's disease, stricturing of an area and CT enterography evidence of Crohn's disease in the terminal 75 cm of ileum.
+										<br />
+										<br />POST-OPERATIVE DIAGNOSIS
+										<br />Crohn's disease, stricturing of an area and CT enterography evidence of Crohn's disease in the terminal 75 cm of ileum.
+										<br />
+										<br />FINDINGS
+										<br />See below.
+										<br />
+										<br />DESCRIPTION OF PROCEDURE
+										<br />Under general anesthesia in the supine position, patient prepped and draped. A mid-midline incision made large enough for the HandPort to be placed except we ran into many adhesions. We then decided to proceed open. We really did not even begin to do the laparoscopic procedure. Takedown of adhesions took about 45 minutes to 1 hour. The anatomy was oriented correctly. Ureters were not seen. The terminal ileum was caught down into the pelvis. This was all mobilized. A point was chosen on the terminal ileum above the evidence of disease (75 cm) and a point chosen on the ascending colon just above the cecum as the line of distal transection. The intervening mesentery was alternatively clamped, tied, and LigaSured. The specimen was removed, and a double-stapled side-to-side functional end-to-end ileoascending colostomy was then constructed without difficulty. Post stapling, visualization revealed excellent blood supply, no tension, big anastomosis. The mesentery defect was relatively small and closed with running 3-0 chromic. The abdomen was thoroughly irrigated numerous times with normal saline, bleeding controlled with cautery, and the abdomen was again irrigated with normal saline. The small bowel was run back to the ligament of Treitz, and there was no other evidence of Crohn's disease. The abdomen was then closed over Seprafilm using a combination of running double PDS in the midline fascia and interrupted #1 Vicryl in the area of the old mesh. The skin was closed with a running subcuticular Vicryl.
+										<br />
+										<br />SPECIMENS
+										<br />Terminal ileum, cecum, appendix, portion ascending colon
+										<br />
+										<br />DRAINS
+										<br />No drains. 
+										<br />
+										<br />No stomas.
+										<br />
+										<br />ESTIMATED BLOOD LOSS
+										<br />Less than 100 cc.
+										<br />
+										<br />TPR:  2   
+										<br />
+										<br />
+										<br />John H. TEST, M.D.
+										<br />DD:  02/17/2020 11:02:41 CT
+										<br />DT:  02/17/2020 11:28:58 CT
+										<br />Job ID:  871622002/sjp
+										<br />
+										<br />
+									</paragraph>
+								</item>
+							</list>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section nullFlavor="NI">
+						<templateId root="2.16.840.1.113883.10.20.22.2.25" />
+						<templateId root="2.16.840.1.113883.10.20.22.2.25" extension="2014-06-09" />
+						<code code="59774-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Anesthesia Records" />
+						<title>Anesthesia Record</title>
+						<text>
+							<content ID="nof1">Not on file</content>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section nullFlavor="NI">
+						<templateId root="2.16.840.1.113883.10.20.22.2.34" />
+						<templateId root="2.16.840.1.113883.10.20.22.2.34" extension="2015-08-01" />
+						<code code="10219-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Preoperative Diagnosis" />
+						<title>Preoperative Diagnosis</title>
+						<text>
+							<content ID="nof2">Not on file</content>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section nullFlavor="NI">
+						<templateId root="2.16.840.1.113883.10.20.22.2.35" />
+						<code code="10218-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Postoperative Diagnosis" />
+						<title>Postoperative Diagnosis</title>
+						<text>
+							<content ID="nof3">Not on file</content>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section>
+						<templateId root="2.16.840.1.113883.10.20.22.2.37" />
+						<templateId root="2.16.840.1.113883.10.20.22.2.37" extension="2015-08-01" />
+						<code code="55109-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Complications" />
+						<title>Complications</title>
+						<text>
+							<paragraph>Check Surgery Details section.</paragraph>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section>
+						<templateId root="2.16.840.1.113883.10.20.18.2.9" />
+						<code code="59770-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Estimated Blood Loss" />
+						<title>Procedure Estimated Blood Loss</title>
+						<text>
+							<paragraph>Check Surgery Details section.</paragraph>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section>
+						<templateId root="2.16.840.1.113883.10.20.22.2.28" />
+						<templateId root="2.16.840.1.113883.10.20.22.2.28" extension="2015-08-01" />
+						<code code="59776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Findings" />
+						<title>Procedure Findings</title>
+						<text>
+							<paragraph>Check Surgery Details section.</paragraph>
+						</text>
+					</section>
+				</component>
+				<component>
+					<section>
+						<templateId root="2.16.840.1.113883.10.20.22.2.31" />
+						<code code="59773-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Procedure Specimens Taken" />
+						<title>Procedure Specimens Taken</title>
+						<text>
+							<paragraph>Check Surgery Details section.</paragraph>
+						</text>
+					</section>
+				</component>
+			</structuredBody>
+		</component>
+	</ClinicalDocument>

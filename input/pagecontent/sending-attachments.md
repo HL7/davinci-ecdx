@@ -88,11 +88,30 @@ Some data consumers may require that the data they receive are signed. When sign
 
 #### Example: *Signed* FHIR Resource Attachments
 
-- in this example, the Provider submits a patient's active conditions to the Payer to support a <span class="bg-success" markdown="1">claim</span><!-- new-content -->.
+- In this example, the Provider submits a patient's active conditions to the Payer to support a <span class="bg-success" markdown="1">claim</span><!-- new-content -->.
 - Unlike Scenario 1 which uses DocumentReference resource to index the CCDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle and the bundle is digitally signed.
 - See the [Signatures] page for complete examples of how the signature was created.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario3.md" b_title = "Click Here To See Example Signed FHIR Resource Attachments" %}
 
+#### Example: The Signature Cannot Be Verified
+
+This example is the same as the previous example above, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
+
+- In this example, the Provider submits the patient's active conditions to the Payer to support a <span class="bg-success" markdown="1">claim</span><!-- new-content -->.
+- Unlike the previous example, the Payer cannot verify the signature because the certificate is expired.
+- An HTTP `400 Bad Request` and OperationOutcome are returned.
+
+{% include examplebutton_default.html example="unsolicited-attachment-scenario7.md" b_title = "Click Here To See an Example Where a Signature Cannot Be Verified" %}
+
+#### Example: Signature Missing
+
+This example is the same as Scenario 1 above, except a digital signature is required but is absent.  The interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
+
+- The Provider submits CCDA Documents as additional documentation for a claim.
+- The attachment is an *unsigned* CCDA document, and the Payer requires a digital signature in this scenario.
+- An HTTP `400 Bad Request` and OperationOutcome are returned.
+
+{% include examplebutton_default.html example="unsolicited-attachment-scenario4.md" b_title = "Click Here To See an Example Where the Signature is Missing" %}
 
 {% include link-list.md %}

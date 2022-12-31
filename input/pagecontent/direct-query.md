@@ -140,7 +140,7 @@ Some data consumers may require that the data they receive are signed.  When sig
 When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle.  If a read is attempted and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error for any read transactions as shown in the following example:
 
   ~~~
-  HTTP/1.1 400 Not Found
+  HTTP/1.1 400 Bad Request
   [other headers]
   {
     "resourceType": "OperationOutcome",

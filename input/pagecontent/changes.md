@@ -104,7 +104,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 51. **Applied**: Revise section 'what Do Payers Do with Clinical Information?' ([FHIR-38578](https://jira.hl7.org/browse/FHIR-38578)) See Changes [Here](background.html)
 52. **WAITING FOR INPUT**: Clarify when CDex is used instead of other guides ([FHIR-38585](https://jira.hl7.org/browse/FHIR-38585)) See Changes [Here](background.html#where-does-cdex-fit-in-the-da-vinci-project)
 53. **Applied**: Remove the HIE paragraph ([FHIR-38588](https://jira.hl7.org/browse/FHIR-38588)) See Changes [Here](background.html#actors-and-roles)
-54. **Resolved-Change Required**: Create failed signature example transaction ([FHIR-38596](https://jira.hl7.org/browse/FHIR-38596)) See Changes [Here](#)
+54. **Applied**: Create failed signature example transaction ([FHIR-38596](https://jira.hl7.org/browse/FHIR-38596)) See Changes [Here](file:///Users/ehaas/Documents/FHIR/davinci-ecdx/output/sending-attachments.html#signatures)
 55. **Applied**: Clarify benefits of POU element ([FHIR-38598](https://jira.hl7.org/browse/FHIR-38598)) See Changes [Here](#)
 56. **Applied**: change SHOULD to SHALL ([FHIR-38599](https://jira.hl7.org/browse/FHIR-38599)) See Changes [Here](task-based-approach.html#task-reason)
 57. **Applied**: Correct Preconditions and Assumptions ([FHIR-38600](https://jira.hl7.org/browse/FHIR-38600)) See Changes [Here](task-based-approach.html#scenario-2)
