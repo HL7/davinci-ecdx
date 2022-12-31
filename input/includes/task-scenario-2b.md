@@ -69,7 +69,7 @@ GET [base]Task/cdex-task-example8
 ~~~
 
 
-##### Step 3 -  Rendered CCDA Documents
+##### Step 3 -  Rendered Documents
 
 *This is the default view using a HTML5 browser. The content may not render correctly in HTML 4.0 and older browsers. Typically a CCDA stylesheet is used to make this data easier to read and arrange according to provider preferences*
 

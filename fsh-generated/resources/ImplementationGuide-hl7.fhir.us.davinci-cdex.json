@@ -341,7 +341,7 @@
         "reference": {
           "reference": "Parameters/cdex-parameters-example2"
         },
-        "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a prior authorization.",
+        "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim.",
         "name": "CDex Parameters Example 2",
         "exampleBoolean": true,
         "groupingId": "AttachmentsExamples"

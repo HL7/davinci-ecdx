@@ -9,7 +9,7 @@
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a prior authorization."
+                "valueMarkdown": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim."
             }
         ]
     },
@@ -23,7 +23,7 @@
         },
         {
             "name": "AttachTo",
-            "valueCode": "preauthorization"
+            "valueCode": "claim"
         },
         {
             "name": "PayerId",

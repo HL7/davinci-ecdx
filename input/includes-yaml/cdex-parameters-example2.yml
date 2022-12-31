@@ -5,7 +5,7 @@ parameter:
     system: http://example.org/provider
     value: '21234657'
 - name: AttachTo
-  valueCode: preauthorization
+  valueCode: claim
 - name: PayerId
   valueIdentifier:
     system: http://example.org/cdex/payer-ids

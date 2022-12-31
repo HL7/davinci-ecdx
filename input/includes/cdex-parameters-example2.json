@@ -10,7 +10,7 @@
         },
         {
             "name": "AttachTo",
-            "valueCode": "preauthorization"
+            "valueCode": "claim"
         },
         {
             "name": "PayerId",
