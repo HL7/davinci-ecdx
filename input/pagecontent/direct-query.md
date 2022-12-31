@@ -16,21 +16,20 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 
 {% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
 
+<div class="bg-success" markdown="1">
+
 ### Discovery of Patient FHIR IDs
 
-The patient's [FHIR id] is often a prerequisite to performing FHIR RESTful Direct Queries.  Note that using a patient business identifier such as an MRN or Member ID is not widely supported as FHIR references in HIT systems today.  Therefore, a patient lookup to determine the patient's FHIR id on the server is typically required. One option is to use the [Patient Match] operation where it has been implemented. Another option is to find the FHIR id using the FHIR RESTful API. These are the most direct approaches to obtaining the FHIR id:
+In addition to using a patient business identifier such as an MRN or Member ID, the FHIR Patient.id is often a prerequisite to performing FHIR RESTful Direct Queries and other transactions described in this guide. However, there is no requirement that the requester knows the FHIR Patient.id in advance of the exchange. This section describes the recommended methods to determine the FHIR Patient.id on the server. 
 
-1. FHIR RESTful search on the Patient resource using a combination of an identifier known by a Data Consumer. For example, a Payer may use a member_id and patient demographics.
+1. Performing the [Patient Match] operation by providing sufficient demographic information to match a single patient. CDex Data Source servers **SHOULD** support the patient match operation and declare it in their CapabilityStatement.
 
-   `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+1. Search the Patient resource using a combination of identifiers known by the Data Consumer. For example, a Payer may use a member_id and patient demographics.
 
-1. FHIR RESTful search on [Coverage] resource using a combination of the payor's FHIR id and identifier known by the Data Consumer.  For example, a Payer may use a member id or subscriber id. The patient's FHIR id is found in the `beneficiary` element (which references the patient).
+   	`Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
-   `GET /Coverage?payor=[FHIR id]&identifier=[member_id]`
-   or
-   `GET /Coverage?payor=[FHIR id]&subscriber-id=[subscriber_id]`
-
-However, servers may or may not support identifier-based searches or searches based on member_id identifiers by HIT systems. In addition, the search semantics become more complex if effective dates of coverage are included in the search.
+    CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
+</div><!-- new-content -->
 
 ### Direct Query Transaction Scenarios
 
