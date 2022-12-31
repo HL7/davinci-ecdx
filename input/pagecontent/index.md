@@ -55,9 +55,11 @@ This Guide is divided into several pages which are listed at the top of each pag
 - [Task Based Approach]\: Documents how to exchange clinical data using the FHIR Task resource. This approach supports asynchronous workflows where human involvement to find/aggregate/filter/approve requests may be required.
 - [Attachments]\: <span class="bg-warning">This content is DRAFT and is open for review.</span> Documents how to exchange attachments for claims or prior authorization.
     - [Solicited and Unsolicited Attachments]\: Documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
-    - [Sending Attachments]\:This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - [Requesting Attachments]\: This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider.
+    - [Sending Attachments]\:This page documents a FHIR based approach for sending attachments for claims or prior authorization directly to a Payer 
+    - [Requesting Attachments Using Attachment Codes]\: This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider using the LOINC attachment codes request model and is intended to be compatible with the X12n 277 Request for Additional Information (RFAI) and 278 response transactions.
+    - [Requesting Attachments Using Questionnaires]\: This page documents a FHIR based approach for requesting attachments for claims or prior authorization from a Provider using Questionnaire, CQL, and QuestionnaireResponse as supported by [Da Vinci DTR].
     - [Using CDex Attachments with DaVinci PAS]\: This page illustrate where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
+    - [Conforming to CDex Attachments]\: Summary of interactions for each role and the conformance resource and terminology that makes them unique.
 - [Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - [Security and Privacy]\: This page provides general expectations to ensure the security, privacy, and safety of Da Vinci CDex exchanges.
 - [FHIR Artifacts]\: This page list the FHIR Profiles, Operations, Terminology, CapabilityStatements, and example resources used within this guide.
