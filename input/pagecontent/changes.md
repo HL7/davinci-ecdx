@@ -1,4 +1,4 @@
-### Version = 2.0.0-preview (CI-Build)
+### Version = 2.0.0
 - Publication Date: Projected Q1 2023
 - url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
 - Based on FHIR version: 4.0.1

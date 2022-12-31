@@ -303,7 +303,7 @@ menu:
   Downloads: downloads.html
   Change Log: #changes.html
     Change Log: changes.html
-    Version = 2.0.0-preview (CI-Build): changes.html#version--200-preview-ci-build
+    Version = 2.0.0: changes.html#version--200
     Version = 2.0.0-ballot: changes.html#version--200-ballot
     Version = 1.1.0: changes.html#version--110
     Version = 1.1.0-ballot: changes.html#version--110-ballot
