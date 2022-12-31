@@ -10,17 +10,120 @@
 {% endcomment %} -->
 
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li>
-    <a href="index.html">Home</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Home
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="index.html">Introduction</a>
+      </li>
+      <li>
+        <a href="index.html#about-this-guide">About This Guide</a>
+      </li>
+      <li>
+        <a href="index.html#how-to-read-this-guide">How to read this Guide</a>
+      </li>
+    </ul>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">About the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#what-do-payers-do-with-clinical-information">What Do Payers Do with Clinical Information</a>
+      </li>
+      <li>
+        <a href="background.html#provider-to-provider-data-exchange">Provider to Provider Data Exchange</a>
+      </li>
+      <li>
+        <a href="background.html#what-information-is-needed">What Information is Needed</a>
+      </li>
+      <li>
+        <a href="background.html#where-does-cdex-fit-in-the-da-vinci-project">Where Does CDEX Fit in the Da Vinci Project</a>
+      </li>
+      <li>
+        <a href="background.html#workflow-overview">Workflow Overview</a>
+      </li>
+    </ul>
   </li>
-  <li>
-    <a href="direct-query.html">Direct Query</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Direct Query
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="direct-query.html">Introduction</a>
+      </li>
+      <li>
+        <a href="direct-query.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="direct-query.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="direct-query.html#discovery-of-patient-fhir-ids">Discovery of Patient FHIR IDs</a>
+      </li>
+      <li>
+        <a href="direct-query.html#direct-query-transaction-scenarios">Direct Query Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="direct-query.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="direct-query.html#signatures">Signatures</a>
+      </li>
+    </ul>
   </li>
-  <li>
-    <a href="task-based-approach.html">Task Based Approach</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Task Based Approach
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="task-based-approach.html">Introduction</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#benefits">Benefits</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#the-task-resource">The Task Resource</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#sequence-diagram">Sequence Diagram</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#discovery-of-identifiers">Discovery of Identifiers</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#task-based-transaction-scenarios">Task Based Transaction Scenarios</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#requesting-data-using-a-fhir-questionnaire">Requesting Data Using A FHIR Questionnaire</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#polling-vs-subscriptions">Polling vs Subscriptions</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#formal-authorization">Formal Authorization</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#provenance">Provenance</a>
+      </li>
+      <li>
+        <a href="task-based-approach.html#signatures">Signatures</a>
+      </li>
+    </ul>
   </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Attachments
@@ -47,8 +150,30 @@
       </li>
     </ul>
   </li>
-  <li>
-    <a href="signatures.html">Signatures</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Signatures
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="signatures.html">About Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#the-signer">The Signer</a>
+      </li>
+      <li>
+        <a href="signatures.html#what-is-signed">What is Signed</a>
+      </li>
+      <li>
+        <a href="signatures.html#cdex-signature-bundle-profile">CDex Signature Bundle Profile</a>
+      </li>
+      <li>
+        <a href="signatures.html#electronic-signatures">Electronic Signatures</a>
+      </li>
+      <li>
+        <a href="signatures.html#digital-signatures">Digital Signatures</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="security.html">Security and Privacy</a>
@@ -58,6 +183,9 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts Summary</a>
+      </li>
       <li>
         <a href="artifacts.html#1">Attachments Profiles</a>
       </li>
@@ -102,7 +230,35 @@
   <li>
     <a href="downloads.html">Downloads</a>
   </li>
-  <li>
-    <a href="changes.html">Change Log</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Change Log
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="changes.html">Change Log</a>
+      </li>
+      <li>
+        <a href="changes.html#version--200-preview-ci-build">Version = 2.0.0-preview (CI-Build)</a>
+      </li>
+      <li>
+        <a href="changes.html#version--200-ballot">Version = 2.0.0-ballot</a>
+      </li>
+      <li>
+        <a href="changes.html#version--110">Version = 1.1.0</a>
+      </li>
+      <li>
+        <a href="changes.html#version--110-ballot">Version = 1.1.0-ballot</a>
+      </li>
+      <li>
+        <a href="changes.html#version--100">Version = 1.0.0</a>
+      </li>
+      <li>
+        <a href="changes.html#version--020">Version = 0.2.0</a>
+      </li>
+      <li>
+        <a href="changes.html#version--010">Version = 0.1.0</a>
+      </li>
+    </ul>
   </li>
 </ul>

@@ -237,12 +237,39 @@ releaselabel: CI Build
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: index.html
-  Background: background.html
-  # Specification:
-  #     Exchanging Clinical Data: exchanging-clinical-data.html
-  Direct Query: direct-query.html
-  Task Based Approach: task-based-approach.html
+  Home: #index.html
+    Introduction: index.html
+    About This Guide: index.html#about-this-guide
+    How to read this Guide: index.html#how-to-read-this-guide
+  Background: # background.html
+    About the Da Vinci Project: background.html
+    What Do Payers Do with Clinical Information: background.html#what-do-payers-do-with-clinical-information
+    Provider to Provider Data Exchange: background.html#provider-to-provider-data-exchange
+    What Information is Needed: background.html#what-information-is-needed
+    Where Does CDEX Fit in the Da Vinci Project: background.html#where-does-cdex-fit-in-the-da-vinci-project
+    Workflow Overview: background.html#workflow-overview
+  Direct Query: # direct-query.html
+    Introduction: direct-query.html
+    Benefits: direct-query.html#benefits
+    Sequence Diagram: direct-query.html#sequence-diagram
+    Discovery of Patient FHIR IDs: direct-query.html#discovery-of-patient-fhir-ids
+    Direct Query Transaction Scenarios: direct-query.html#direct-query-transaction-scenarios
+    Provenance: direct-query.html#provenance
+    Signatures: direct-query.html#signatures
+  Task Based Approach: #task-based-approach.html
+    Introduction: task-based-approach.html
+    Benefits: task-based-approach.html#benefits
+    The Task Resource: task-based-approach.html#the-task-resource
+    Sequence Diagram: task-based-approach.html#sequence-diagram
+    Discovery of Identifiers: task-based-approach.html#discovery-of-identifiers
+    Fetching the Data: task-based-approach.html#fetching-the-data
+    Task Based Transaction Scenarios: task-based-approach.html#task-based-transaction-scenarios
+    Requesting Data Using A FHIR Questionnaire: task-based-approach.html#requesting-data-using-a-fhir-questionnaire
+    When The Task Cannot Be Completed: task-based-approach.html#when-the-task-cannot-be-completed
+    Polling vs Subscriptions: task-based-approach.html#polling-vs-subscriptions
+    Formal Authorization: task-based-approach.html#formal-authorization
+    Provenance: task-based-approach.html#provenance
+    Signatures: task-based-approach.html#signatures
   Attachments:
     Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
     Sending Attachments: sending-attachments.html
@@ -250,9 +277,16 @@ menu:
     Requesting Attachments Using Questionnaires: requesting-attachments-questionnaire.html
     Using CDex Attachments with DaVinci PAS: burden-reduction.html
     Conforming to CDex Attachments: attachments-conformance.html
-  Signatures: signatures.html
+  Signatures: # signatures.html
+    About Signatures: signatures.html
+    The Signer: signatures.html#the-signer
+    What is Signed: signatures.html#what-is-signed
+    CDex Signature Bundle Profile: signatures.html#cdex-signature-bundle-profile
+    Electronic Signatures: signatures.html#electronic-signatures
+    Digital Signatures: signatures.html#digital-signatures
   Security and Privacy: security.html
   FHIR Artifacts:
+    Artifacts Summary: artifacts.html
     Attachments Profiles: artifacts.html#1
     Attachments Operations: artifacts.html#2
     Attachments Terminology: artifacts.html#3
@@ -267,4 +301,12 @@ menu:
     Common Examples: artifacts.html#12
     CDex Capability Statements: artifacts.html#13
   Downloads: downloads.html
-  Change Log: changes.html
+  Change Log: #changes.html
+    Change Log: changes.html
+    Version = 2.0.0-preview (CI-Build): changes.html#version--200-preview-ci-build
+    Version = 2.0.0-ballot: changes.html#version--200-ballot
+    Version = 1.1.0: changes.html#version--110
+    Version = 1.1.0-ballot: changes.html#version--110-ballot
+    Version = 1.0.0: changes.html#version--100
+    Version = 0.2.0: changes.html#version--020
+    Version = 0.1.0: changes.html#version--010

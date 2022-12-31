@@ -1,4 +1,6 @@
 
+### About Signatures
+
 {% include signature-support.md %}
 
 Data Consumers such as a Payer may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider’s claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions where there is no human intervention, Data Consumers may require signatures from Data Source attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions. 
@@ -21,7 +23,7 @@ System-level and provider signatures represent different levels of attestation:
 {% include signature-disclaimer.md %}
 
 
-### What is Signed?
+### What is Signed
 
 The data returned in CDEX is not limited to FHIR resources, but may also include C-CDA documents, pdfs, text files, and other types of data. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload.  The following table summarizes what artifacts are signed:
 

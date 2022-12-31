@@ -3,6 +3,8 @@
 
 {% include draft_intro.md %}
 
+### Introduction
+
 This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).  This guide documents the **Direct Query**, **Task Based** and **Attachments** transaction approaches for requesting and sending information. Key scenarios this IG can support include:
 
  - Requesting and Sending attachments for claims and prior authorization
@@ -26,7 +28,7 @@ This Implementation Guide is supported by the [Da Vinci] initiative which is a p
 
 Changes to this specification are managed by the sponsoring HL7 [Patient Care] workgroup and are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 
-#### How to read this Guide
+### How to read this Guide
 
 In this guide several terms are used to denote the actors and their roles in CDex transactions:
 

@@ -1,4 +1,6 @@
 
+### Introduction
+
 This guide uses a Task Based Approach to satisfy the Data Consumer's need to request the information it needs when it can not perform a direct query. The decision to use this approach is based on the following factors:
 
 - The Access to the data is restricted and a specific authorization is needed (for example due to patient privacy concerns the data needs to be reviewed and/or filtered )
@@ -65,7 +67,7 @@ The sequence diagram in Figure 6 below summarizes the basic interaction between 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 6" %}
 
 
-### Discovery of Providers, Payer, and Patient IDs
+### Discovery of Identifiers
 
 Task-based queries require communicating either a business identifier (such as a provider NPI, or Member ID) or a [FHIR id] to uniquely identify providers, payers, and patients.  Business identifiers are used in many of the Payer to Provider based transactions today and the CDex Task Data Request Profile provides an explicit requirement to support them.  Currently, there is no standard way to obtain these identifiers and implementers will need to obtain them "out of band".
 

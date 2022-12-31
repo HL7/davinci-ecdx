@@ -2,7 +2,7 @@
 
 Da Vinci is a private sector initiative that addresses the needs of the Value-Based Care Community by leveraging the HL7 FHIR platform.  For more information about the Da Vinci Project, its use cases, members, and updates see the [Da Vinci Overview]
 
-### What Do Payers Do with Clinical Information?
+### What Do Payers Do with Clinical Information
 
 Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness.  Clinical data is used by Payers to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. <span class="bg-success" markdown="1">Payers may also collect this clinical information to assist providers with care planning options</span><!-- new-content -->.
 
@@ -25,7 +25,7 @@ Payers require clinical data from providers who order or provide services. They 
  - Referred-to-provider solicits additional clinical information from referring provider to support performing the requested service.
  - Referring provider needs the results from the referred-to provider.
 
-### What Information is Needed?
+### What Information is Needed
 
 A sampling of the type of information needed by Payers includes:
 
@@ -40,7 +40,7 @@ A sampling of the type of information needed by Payers includes:
 
 For Security and Privacy considerations refer to the [Security and Privacy] page.
 
-### Where Does CDEX Fit in the Da Vinci Project?
+### Where Does CDEX Fit in the Da Vinci Project
 
 There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
 
