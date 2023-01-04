@@ -6,17 +6,25 @@ This page documents a FHIR-based approach for requesting attachments and additio
 
 ### Request Attachments Data Using a FHIR Questionnaire
 
+{% include img-small.html img="todo.png" %}
+
 Payers can use a Questionnaire to ask for specific attachments-related data. The Task communicates the request to complete it using Da Vinci DTR. Figure 1 summarizes this workflow. The [Task Based Approach section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments. The [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide describes the details for Task-based transactions. DTR gathers Questionnaire resources, retrieves FHIR resources from EHRs, runs rules (CQL), and completes a QuestionnaireResponse. See the following sections for launching DTR and the [Da Vinci DTR] Implementation Guide for more information about DTR. 
 
 <!-- Although DTR is also associated with [Da Vinci Burden Reduction Workflow], using DTR with CDex is unrelated to it, and the [Da Vinci Prior Authorization Support (PAS)] and [Da Vinci - Coverage Requirements Discovery (DTR)] Implementation Guides.  -->
 
 {% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 1" %}
 
-#### Sequence Diagram
+#### Using [Da Vinci DTR] to Complete the Questionnaire
 
 The sequence diagram in the Figure below illustrates the FHIR RESTful transactions between the Payer and Provider and DTR application to request, fill, and return a questionnaire.
 
 {% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 2" %}
+
+##### DTR SMART App Launch
+
+<!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
+
+{% include img.html img="dtr-launch.svg" caption="Figure 3" %}
 
 ### CDex Attachment Request Profile
 
@@ -26,13 +34,7 @@ The sequence diagram in the Figure below illustrates the FHIR RESTful transactio
 
 See the [CDex Task Attachment Request Profile] formal definition for further details.
 
-### Using [Da Vinci DTR] to Complete the Questionnaire
 
-{% include img-small.html img="todo.png" %}
-
-<!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
-
-{% include img.html img="dtr-launch.svg" caption="Figure 3" %}
 
 ### Data Elements for Requesting Attachments
 

@@ -36,19 +36,10 @@ Provider DTR Client-->DTR App:Authorization granted
 DTR App->Provider FHIR Server:Access token request
 Provider DTR Client-->DTR App: Access token response\*\*
 note over Provider DTR Client: \*\*launch context in "fhirContext" array\nincludes local reference to the Task
-DTR App->Provider FHIR Server:Request Task Resource
-autonumber off
-Provider FHIR Server-->DTR App:Return Task
-autonumber
-DTR App->DTR App: Obtain Questionnare URL from Task
-DTR App->Provider FHIR Server: Fetch "Questionnaire Package"
-autonumber off
-Provider FHIR Server-->DTR App:Return Questionnaire
-autonumber
-DTR App->DTR App: Complete Questionnare using QuestionnaireResponse\*\*\*
-note over DTR App,Provider FHIR Server: \*\*\*May require fetching resources from Provider FHIR Server\nand review or completion by Provider User
-DTR App->Provider FHIR Server: POST completed "QuestionnaireResponse"
-DTR App->Provider FHIR Server: Update Task: add reference to QuestionnaireResponse and mark as "completed"
+ref over DTR App, Provider FHIR Server: 9 Request Resources (see section 5.4.1 above)
+
 else DTR Denied Access
+autonumber 10
+
 Provider DTR Client-->DTR App:Authorization error
 end

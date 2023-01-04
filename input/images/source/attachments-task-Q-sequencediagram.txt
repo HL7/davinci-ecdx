@@ -7,17 +7,34 @@ actor Practitioner
 #entryspacing 0.4
 note over Provider: Provider acts as both\n EHR/HIT FHIR Server and DTR Client
 note over DTR: DTR is SMART App or native EHR app
-note left of Payer: 1) Prepare Task\nincluding link to Questionnaire
-Payer->Provider: 2) POST CDEX Task\nto complete Questionnaire
-Provider->DTR: 3) Launch DTR
-DTR -> Provider: 4) GET Task
+autonumber
+Payer -> Payer: Prepare Task\nincluding link to Questionnaire
+Payer->Provider: POST CDEX Task\nto complete Questionnaire
+ref over Provider,DTR:3 Launch DTR (see section 5.4.3 below)
+autonumber 4
+DTR -> Provider: GET Task
+autonumber off
 Provider --> DTR: Return Task
-DTR -> Provider: 5) GET Questionnaire
+autonumber 
+DTR -> Provider: GET Questionnaire
+autonumber off
 Provider --> DTR: Return Questionnaire
-DTR --> DTR: 6) extracts answers\ncreates FHIR QuestionnaireResponse
-note over DTR, Provider: 6) ...Fetching Data to Complete\n QuestionnaireResponse...
-note over DTR,Practitioner: 7) Manual Review and Completes form\nif necessary
-DTR -> Provider: 8) POST completed QuestionnaireResponse
-DTR -> Provider:9) Update Task with link to\nQuestionnaireResponse\nand "completed" status
+autonumber 
+DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
+loop
+DTR -> Provider:Fetch Data to Complete\n QuestionnaireResponse
+autonumber off
+Provider --> DTR: Return Data
+autonumber 
+DTR -> DTR: Fills QuestionnaireResponse
+end
+opt
+DTR -> Practitioner: Manual Review and Completes QuuestionnaireResponse
+autonumber off
+Practitioner-->DTR:
+end
+autonumber 
+DTR -> Provider: POST completed QuestionnaireResponse
+DTR -> Provider: Update Task with link to\nQuestionnaireResponse\nand "completed" status
 Provider->Payer: POST $submit-attachment with\nQuestionnaireResponse in payload
 ```
