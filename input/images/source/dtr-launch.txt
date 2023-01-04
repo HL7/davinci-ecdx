@@ -1,0 +1,54 @@
+title Steps for DTR SMART App Launch
+
+participant DTR App
+participant Provider DTR Client
+actor Provider User
+participant Provider FHIR Server
+entryspacing 1.2
+note over Provider DTR Client: HIT with Authorization Server
+
+autonumber
+opt Precondition: Client Registration
+entryspacing 0.5
+DTR App->Provider DTR Client: (may be out of band)
+end 
+
+group EHR Launch
+
+note over Provider DTR Client,Provider User: Receives CDex request\nfor attachments (Task) with\nQuestionnaire input
+Provider User->Provider DTR Client: Provider User\nlaunches App
+Provider DTR Client->DTR App: Launch request
+end
+ 
+ 
+DTR App->Provider FHIR Server:Discovery request
+autonumber off
+Provider FHIR Server-->DTR App: Discovery response
+autonumber 
+DTR App->Provider DTR Client: Authorization request*
+note over DTR App: *Required scopes: "launch", "launch/patient",\n"**launch/task**", "patient/*.rs", "**patient/Task.u",\n"patient/QuestionnaireResponse.cu**"
+#opt
+#Provider User->Provider DTR Client: User input #incorporated\ninto authorization decision
+#end
+
+alt DTR Granted Access
+Provider DTR Client-->DTR App:Authorization granted
+DTR App->Provider FHIR Server:Access token request
+Provider DTR Client-->DTR App: Access token response\*\*
+note over Provider DTR Client: \*\*launch context in "fhirContext" array\nincludes local reference to the Task
+DTR App->Provider FHIR Server:Request Task Resource
+autonumber off
+Provider FHIR Server-->DTR App:Return Task
+autonumber
+DTR App->DTR App: Obtain Questionnare URL from Task
+DTR App->Provider FHIR Server: Fetch "Questionnaire Package"
+autonumber off
+Provider FHIR Server-->DTR App:Return Questionnaire
+autonumber
+DTR App->DTR App: Complete Questionnare using QuestionnaireResponse\*\*\*
+note over DTR App,Provider FHIR Server: \*\*\*May require fetching resources from Provider FHIR Server\nand review or completion by Provider User
+DTR App->Provider FHIR Server: POST completed "QuestionnaireResponse"
+DTR App->Provider FHIR Server: Update Task: add reference to QuestionnaireResponse and mark as "completed"
+else DTR Denied Access
+Provider DTR Client-->DTR App:Authorization error
+end

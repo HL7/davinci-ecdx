@@ -30,7 +30,9 @@ See the [CDex Task Attachment Request Profile] formal definition for further det
 
 {% include img-small.html img="todo.png" %}
 
-{% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %}
+<!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
+
+{% include img.html img="dtr-launch.svg" caption="Figure 3" %}
 
 ### Data Elements for Requesting Attachments
 

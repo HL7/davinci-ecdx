@@ -42,19 +42,20 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 
 ### Where Does CDEX Fit in the Da Vinci Project
 
-There are over a dozen use cases and corresponding Implementation guides being developed by the Da Vinci Project.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides.  There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
+The Da Vinci Project developed over a dozen use cases and corresponding Implementation guides.  Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides. <span class="bg-success" markdown="1">This guide provides a general solution to requesting specific information from a provider.</span><!-- new-content --> There are many areas of functional overlap between this guide and other Da Vinci guides which are summarized in this [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs).  CDex is not intended to supersede these guides which focus on a particular use case and define how to share clinical information.  However, CDex may be used to request clinical data from a provider when:
 
+- <span class="bg-success" markdown="1">An alternative is needed to cover some aspects of an exchange. For example, if the provider’s data release process does not allow the automatic request for information specified in a use
+case specific IG, CDex may provide a process requiring manual review prior to release of information. Caution: This should not be used where there is a requirement for real-time response to facilitate patient care.</span><!-- new-content -->
 - There is a specific exchange that is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS)], the Payer could request additional information for prior authorization using CDex.
 - The other IG has not been or can not be implemented for the use case.  For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of Quality Measures. CDex can be used when:
-  1. The measure is not yet implementable using DEQM
   1. A Provider has not implemented DEQM
-  1. Additional information is required for an audit of the Quality Measure.
+  2. Additional information is required for an audit of the Quality Measure.
+
+<span class="bg-success" markdown="1">The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges.</span><!-- new-content -->
 
 {% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
 
 ### Workflow Overview
-
-
 
 FHIR offers numerous architectural approaches for sharing data between systems. Each approach has pros and cons. The most appropriate approach depends on the circumstances under which data is exchanged.  (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
 
