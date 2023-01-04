@@ -238,6 +238,8 @@ parameters:
   version-comparison:
      - 1.0.0
      - 1.1.0
+  suppressed-ids: '$examples'
+  tabbed-snapshots: 'false'
 copyrightyear: '2022+'
 releaselabel: CI Build
 # releaselabel: STU1.1

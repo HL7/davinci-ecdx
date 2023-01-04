@@ -1,70 +1,55 @@
 {
-    "resourceType": "QuestionnaireResponse",
-    "id": "cdex-questionnaireresponse-example1",
-    "meta": {
-        "profile": [
-            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
+  "resourceType": "QuestionnaireResponse",
+  "id": "cdex-questionnaireresponse-example1",
+  "questionnaire": "http://example.org/cdex-questionnaire-example1",
+  "status": "completed",
+  "subject": {
+    "identifier": {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+            "code": "UMB",
+            "display": "Member Number"
+          }
         ],
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex QuestionnaireResponse Example1"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments data request form request.  It is adapted from the Da Vinci DTR IG."
-            }
-        ]
+        "text": "Member Number"
+      },
+      "system": "http://example.org/cdex/payer/member-ids",
+      "value": "Member123"
     },
-    "questionnaire": "http://example.org/cdex-questionnaire-example1",
-    "status": "completed",
-    "subject": {
-        "identifier": {
-            "use": "usual",
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
-                        "code": "UMB",
-                        "display": "Member Number"
-                    }
-                ],
-                "text": "Member Number"
-            },
-            "system": "http://example.org/cdex/payer/member-ids",
-            "value": "Member123"
-        },
-        "display": "Amy Shaw"
-    },
-    "authored": "2022-06-17",
-    "author": {
-        "identifier": {
-            "system": "http://hl7.org/fhir/sid/us-npi",
-            "value": "9941339100"
-        }
-    },
-    "item": [
+    "display": "Amy Shaw"
+  },
+  "authored": "2022-06-17",
+  "author": {
+    "identifier": {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "9941339100"
+    }
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+      "answer": [
         {
-            "linkId": "1",
-            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-            "answer": [
-                {
-                    "valueString": "Examplitis"
-                }
-            ]
-        },
-        {
-            "linkId": "2",
-            "text": "Order Reason",
-            "answer": [
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "4",
-                        "display": "Replacement"
-                    }
-                }
-            ]
+          "valueString": "Examplitis"
         }
-    ]
+      ]
+    },
+    {
+      "linkId": "2",
+      "text": "Order Reason",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "4",
+            "display": "Replacement"
+          }
+        }
+      ]
+    }
+  ]
 }

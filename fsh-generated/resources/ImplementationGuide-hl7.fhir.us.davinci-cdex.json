@@ -921,6 +921,14 @@
         "value": "1.1.0"
       },
       {
+        "code": "suppressed-ids",
+        "value": "$examples"
+      },
+      {
+        "code": "tabbed-snapshots",
+        "value": "false"
+      },
+      {
         "code": "path-history",
         "value": "http://hl7.org/fhir/us/davinci-cdex/history.html"
       }
