@@ -138,3 +138,4 @@
 [Submit Additional Information]: {{site.data.fhir.ver.pas}}/usecases.html#submit-additional-information
 [SDC Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse.html
 [SDC Adaptive Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse-adapt.html
+[45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)]: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.506

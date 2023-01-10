@@ -46,9 +46,9 @@ In most of these situations, there is human intervention (e.g., a provider or de
 
 #### Purpose of Use
 
-The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element representing the POU for the requested data with several codes defined in the [CDex Purpose of Use Value Set]. This element defines a potentially new way to exchange data and <span class="bg-success" markdown="1">dynamically provide additional granularity for the POU.</span><!-- new-content -->
+The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). <span class="bg-success" markdown="1">The CDex Task Data Request Profile defines an optional element representing a new way to dynamically provide additional granularity for the POU using codes defined in the [CDex Purpose of Use Value Set]. The value set page documents and illustrate the hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts. </span><!-- new-content -->
 
-If the Data Source supports this element, <span class= "bg-success" markdown= "1"> a transaction level POU permits greater discrimination than "Treatment, Payment, or Health Care Operations (TPO)" which is typically used today.</span><!-- new-content --> It may even differ from the default purpose of use for that data-consuming system.  It allows the Data Source to make necessary decisions about whether to provide the information or whether/how to filter the information. The example transactions below illustrate the POU element usage.
+If the Data Source supports this element, <span class= "bg-success" markdown= "1"> a transaction level POU permits greater discrimination than "Treatment, Payment, or Health Care Operations (TPO)" which is typically used today. It may even differ from the default purpose of use for that data-consuming system. </span><!-- new-content --> It allows the Data Source to make necessary decisions about whether to provide the information or whether/how to filter the information. The example transactions below illustrate the POU element usage.
 
 #### Work Queues
 

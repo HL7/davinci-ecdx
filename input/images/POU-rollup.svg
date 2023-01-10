@@ -1,0 +1,244 @@
+<!--
+edit in HackMD and export as SVG from inspector
+
+```graphviz
+digraph Heirarchy {
+
+TREAT,COVERAGE,CLMATTCH,COVAUTH,HQUALIMP,HDM,COC [color=red]
+"payment-noa","operations-noa","care-planning","social-risk"[color=green]
+HPAYMT,HOPERAT[color=blue]
+HPAYMT,HOPERAT,TREAT[fontsize=20]
+Treatment,Payment,"Health Care Operations","45 CFR 164.506 Treatment, Payment, and Health Care Operations" [fontsize=24]
+{Payment "Health Care Operations" Treatment}->"45 CFR 164.506 Treatment, Payment, and Health Care Operations"
+"payment-noa"->Payment
+"operations-noa"->"Health Care Operations"
+COVERAGE->HPAYMT->Payment
+CLMATTCH->HPAYMT
+COVAUTH->HPAYMT
+HQUALIMP->HOPERAT->"Health Care Operations"
+HDM->HOPERAT
+COC->TREAT->Treatment
+"care-planning"->Treatment
+"care-planning"->"Health Care Operations"
+"social-risk"->Treatment
+"social-risk"->"Health Care Operations"
+}
+```
+ -->
+
+<svg width="1014pt" height="301pt" viewBox="0.00 0.00 1014.32 301.34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 297.341)">
+<title>Heirarchy</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-297.341 1010.3222,-297.341 1010.3222,4 -4,4"></polygon>
+<!-- TREAT -->
+<g id="node1" class="node">
+<title>TREAT</title>
+<ellipse fill="none" stroke="#ff0000" cx="56.8726" cy="-198.7135" rx="56.7455" ry="22.7556"></ellipse>
+<text text-anchor="middle" x="56.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">TREAT</text>
+</g>
+<!-- Treatment -->
+<g id="node14" class="node">
+<title>Treatment</title>
+<ellipse fill="none" stroke="#000000" cx="188.8726" cy="-114.0646" rx="81.0983" ry="26.0431"></ellipse>
+<text text-anchor="middle" x="188.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Treatment</text>
+</g>
+<!-- TREAT&#45;&gt;Treatment -->
+<g id="edge14" class="edge">
+<title>TREAT-&gt;Treatment</title>
+<path fill="none" stroke="#000000" d="M87.1561,-179.2934C103.8461,-168.5904 124.8967,-155.091 143.5117,-143.1536"></path>
+<polygon fill="#000000" stroke="#000000" points="145.6173,-145.9613 152.1457,-137.6168 141.8385,-140.0688 145.6173,-145.9613"></polygon>
+</g>
+<!-- COVERAGE -->
+<g id="node2" class="node">
+<title>COVERAGE</title>
+<ellipse fill="none" stroke="#ff0000" cx="648.8726" cy="-275.341" rx="63.7025" ry="18"></ellipse>
+<text text-anchor="middle" x="648.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COVERAGE</text>
+</g>
+<!-- HPAYMT -->
+<g id="node12" class="node">
+<title>HPAYMT</title>
+<ellipse fill="none" stroke="#0000ff" cx="794.8726" cy="-198.7135" rx="71.0266" ry="22.7556"></ellipse>
+<text text-anchor="middle" x="794.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">HPAYMT</text>
+</g>
+<!-- COVERAGE&#45;&gt;HPAYMT -->
+<g id="edge6" class="edge">
+<title>COVERAGE-&gt;HPAYMT</title>
+<path fill="none" stroke="#000000" d="M679.1239,-259.4637C699.2382,-248.9068 726.0381,-234.841 748.7845,-222.9026"></path>
+<polygon fill="#000000" stroke="#000000" points="750.6995,-225.8504 757.9275,-218.104 747.4463,-219.6522 750.6995,-225.8504"></polygon>
+</g>
+<!-- CLMATTCH -->
+<g id="node3" class="node">
+<title>CLMATTCH</title>
+<ellipse fill="none" stroke="#ff0000" cx="794.8726" cy="-275.341" rx="64.2843" ry="18"></ellipse>
+<text text-anchor="middle" x="794.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">CLMATTCH</text>
+</g>
+<!-- CLMATTCH&#45;&gt;HPAYMT -->
+<g id="edge8" class="edge">
+<title>CLMATTCH-&gt;HPAYMT</title>
+<path fill="none" stroke="#000000" d="M794.8726,-257.1813C794.8726,-249.4833 794.8726,-240.2678 794.8726,-231.4544"></path>
+<polygon fill="#000000" stroke="#000000" points="798.3727,-231.4078 794.8726,-221.4078 791.3727,-231.4079 798.3727,-231.4078"></polygon>
+</g>
+<!-- COVAUTH -->
+<g id="node4" class="node">
+<title>COVAUTH</title>
+<ellipse fill="none" stroke="#ff0000" cx="934.8726" cy="-275.341" rx="58.4667" ry="18"></ellipse>
+<text text-anchor="middle" x="934.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COVAUTH</text>
+</g>
+<!-- COVAUTH&#45;&gt;HPAYMT -->
+<g id="edge9" class="edge">
+<title>COVAUTH-&gt;HPAYMT</title>
+<path fill="none" stroke="#000000" d="M906.2037,-259.6493C887.0089,-249.1433 861.3544,-235.1016 839.5102,-223.1454"></path>
+<polygon fill="#000000" stroke="#000000" points="841.1776,-220.0681 830.7251,-218.337 837.8167,-226.2085 841.1776,-220.0681"></polygon>
+</g>
+<!-- HQUALIMP -->
+<g id="node5" class="node">
+<title>HQUALIMP</title>
+<ellipse fill="none" stroke="#ff0000" cx="489.8726" cy="-275.341" rx="61.977" ry="18"></ellipse>
+<text text-anchor="middle" x="489.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">HQUALIMP</text>
+</g>
+<!-- HOPERAT -->
+<g id="node13" class="node">
+<title>HOPERAT</title>
+<ellipse fill="none" stroke="#0000ff" cx="474.8726" cy="-198.7135" rx="76.5264" ry="22.7556"></ellipse>
+<text text-anchor="middle" x="474.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">HOPERAT</text>
+</g>
+<!-- HQUALIMP&#45;&gt;HOPERAT -->
+<g id="edge10" class="edge">
+<title>HQUALIMP-&gt;HOPERAT</title>
+<path fill="none" stroke="#000000" d="M486.3178,-257.1813C484.8109,-249.4833 483.007,-240.2678 481.2817,-231.4544"></path>
+<polygon fill="#000000" stroke="#000000" points="484.671,-230.5492 479.3151,-221.4078 477.8014,-231.894 484.671,-230.5492"></polygon>
+</g>
+<!-- HDM -->
+<g id="node6" class="node">
+<title>HDM</title>
+<ellipse fill="none" stroke="#ff0000" cx="375.8726" cy="-275.341" rx="33.6266" ry="18"></ellipse>
+<text text-anchor="middle" x="375.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">HDM</text>
+</g>
+<!-- HDM&#45;&gt;HOPERAT -->
+<g id="edge12" class="edge">
+<title>HDM-&gt;HOPERAT</title>
+<path fill="none" stroke="#000000" d="M395.4318,-260.2018C407.984,-250.4863 424.6505,-237.5862 439.4756,-226.1113"></path>
+<polygon fill="#000000" stroke="#000000" points="441.7189,-228.801 447.4845,-219.9123 437.4343,-223.2654 441.7189,-228.801"></polygon>
+</g>
+<!-- COC -->
+<g id="node7" class="node">
+<title>COC</title>
+<ellipse fill="none" stroke="#ff0000" cx="56.8726" cy="-275.341" rx="30.777" ry="18"></ellipse>
+<text text-anchor="middle" x="56.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COC</text>
+</g>
+<!-- COC&#45;&gt;TREAT -->
+<g id="edge13" class="edge">
+<title>COC-&gt;TREAT</title>
+<path fill="none" stroke="#000000" d="M56.8726,-257.1813C56.8726,-249.4833 56.8726,-240.2678 56.8726,-231.4544"></path>
+<polygon fill="#000000" stroke="#000000" points="60.3727,-231.4078 56.8726,-221.4078 53.3727,-231.4079 60.3727,-231.4078"></polygon>
+</g>
+<!-- payment&#45;noa -->
+<g id="node8" class="node">
+<title>payment-noa</title>
+<ellipse fill="none" stroke="#00ff00" cx="944.8726" cy="-198.7135" rx="61.3993" ry="18"></ellipse>
+<text text-anchor="middle" x="944.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">payment-noa</text>
+</g>
+<!-- Payment -->
+<g id="node15" class="node">
+<title>Payment</title>
+<ellipse fill="none" stroke="#000000" cx="794.8726" cy="-114.0646" rx="70.905" ry="26.0431"></ellipse>
+<text text-anchor="middle" x="794.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Payment</text>
+</g>
+<!-- payment&#45;noa&#45;&gt;Payment -->
+<g id="edge4" class="edge">
+<title>payment-noa-&gt;Payment</title>
+<path fill="none" stroke="#000000" d="M916.3057,-182.5925C895.4111,-170.8011 866.5894,-154.5363 842.2685,-140.8114"></path>
+<polygon fill="#000000" stroke="#000000" points="843.964,-137.7493 833.5348,-135.8827 840.5236,-143.8456 843.964,-137.7493"></polygon>
+</g>
+<!-- operations&#45;noa -->
+<g id="node9" class="node">
+<title>operations-noa</title>
+<ellipse fill="none" stroke="#00ff00" cx="637.8726" cy="-198.7135" rx="68.3401" ry="18"></ellipse>
+<text text-anchor="middle" x="637.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">operations-noa</text>
+</g>
+<!-- Health Care Operations -->
+<g id="node16" class="node">
+<title>Health Care Operations</title>
+<ellipse fill="none" stroke="#000000" cx="464.8726" cy="-114.0646" rx="171.5452" ry="26.0431"></ellipse>
+<text text-anchor="middle" x="464.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Health Care Operations</text>
+</g>
+<!-- operations&#45;noa&#45;&gt;Health Care Operations -->
+<g id="edge5" class="edge">
+<title>operations-noa-&gt;Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M605.3326,-182.7917C582.7326,-171.7335 551.9502,-156.6717 524.9619,-143.4663"></path>
+<polygon fill="#000000" stroke="#000000" points="526.4928,-140.3189 515.9721,-139.0676 523.4162,-146.6066 526.4928,-140.3189"></polygon>
+</g>
+<!-- care&#45;planning -->
+<g id="node10" class="node">
+<title>care-planning</title>
+<ellipse fill="none" stroke="#00ff00" cx="315.8726" cy="-198.7135" rx="64.2456" ry="18"></ellipse>
+<text text-anchor="middle" x="315.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">care-planning</text>
+</g>
+<!-- care&#45;planning&#45;&gt;Treatment -->
+<g id="edge15" class="edge">
+<title>care-planning-&gt;Treatment</title>
+<path fill="none" stroke="#000000" d="M290.7815,-181.9896C274.2833,-170.9932 252.2444,-156.3036 232.8825,-143.3984"></path>
+<polygon fill="#000000" stroke="#000000" points="234.7516,-140.438 224.4894,-137.8041 230.8692,-146.2627 234.7516,-140.438"></polygon>
+</g>
+<!-- care&#45;planning&#45;&gt;Health Care Operations -->
+<g id="edge16" class="edge">
+<title>care-planning-&gt;Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M344.6013,-182.3924C363.5638,-171.6195 388.9857,-157.177 411.5719,-144.3455"></path>
+<polygon fill="#000000" stroke="#000000" points="413.4288,-147.316 420.3947,-139.3331 409.971,-141.2296 413.4288,-147.316"></polygon>
+</g>
+<!-- social&#45;risk -->
+<g id="node11" class="node">
+<title>social-risk</title>
+<ellipse fill="none" stroke="#00ff00" cx="182.8726" cy="-198.7135" rx="51.0184" ry="18"></ellipse>
+<text text-anchor="middle" x="182.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">social-risk</text>
+</g>
+<!-- social&#45;risk&#45;&gt;Treatment -->
+<g id="edge17" class="edge">
+<title>social-risk-&gt;Treatment</title>
+<path fill="none" stroke="#000000" d="M184.1745,-180.346C184.8001,-171.5206 185.5725,-160.623 186.3091,-150.2314"></path>
+<polygon fill="#000000" stroke="#000000" points="189.811,-150.3265 187.0269,-140.1041 182.8285,-149.8315 189.811,-150.3265"></polygon>
+</g>
+<!-- social&#45;risk&#45;&gt;Health Care Operations -->
+<g id="edge18" class="edge">
+<title>social-risk-&gt;Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M216.9552,-185.2651C225.3755,-182.1077 234.4088,-178.8584 242.8726,-176.0861 283.4527,-162.7944 328.7741,-149.8075 367.8338,-139.1807"></path>
+<polygon fill="#000000" stroke="#000000" points="368.8844,-142.5223 377.6226,-136.531 367.0554,-135.7655 368.8844,-142.5223"></polygon>
+</g>
+<!-- HPAYMT&#45;&gt;Payment -->
+<g id="edge7" class="edge">
+<title>HPAYMT-&gt;Payment</title>
+<path fill="none" stroke="#000000" d="M794.8726,-176.0292C794.8726,-168.0742 794.8726,-158.9298 794.8726,-150.1514"></path>
+<polygon fill="#000000" stroke="#000000" points="798.3727,-150.1076 794.8726,-140.1077 791.3727,-150.1077 798.3727,-150.1076"></polygon>
+</g>
+<!-- HOPERAT&#45;&gt;Health Care Operations -->
+<g id="edge11" class="edge">
+<title>HOPERAT-&gt;Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M472.1928,-176.0292C471.253,-168.0742 470.1727,-158.9298 469.1357,-150.1514"></path>
+<polygon fill="#000000" stroke="#000000" points="472.5983,-149.628 467.9492,-140.1077 465.6466,-150.4493 472.5983,-149.628"></polygon>
+</g>
+<!-- 45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
+<g id="node17" class="node">
+<title>45 CFR 164.506 Treatment, Payment, and Health Care Operations</title>
+<ellipse fill="none" stroke="#000000" cx="464.8726" cy="-26.0215" rx="463.0713" ry="26.0431"></ellipse>
+<text text-anchor="middle" x="464.8726" y="-18.8215" font-family="Times,serif" font-size="24.00" fill="#000000">45 CFR 164.506 Treatment, Payment, and Health Care Operations</text>
+</g>
+<!-- Treatment&#45;&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
+<g id="edge1" class="edge">
+<title>Treatment-&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M246.3953,-95.715C283.4767,-83.8862 332.4746,-68.256 374.6702,-54.7958"></path>
+<polygon fill="#000000" stroke="#000000" points="375.9346,-58.0663 384.3979,-51.6927 373.8072,-51.3974 375.9346,-58.0663"></polygon>
+</g>
+<!-- Payment&#45;&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
+<g id="edge2" class="edge">
+<title>Payment-&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M737.391,-98.7287C691.4014,-86.4588 625.6733,-68.9227 570.2904,-54.1467"></path>
+<polygon fill="#000000" stroke="#000000" points="570.9973,-50.7129 560.433,-51.5168 569.1928,-57.4764 570.9973,-50.7129"></polygon>
+</g>
+<!-- Health Care Operations&#45;&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
+<g id="edge3" class="edge">
+<title>Health Care Operations-&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations</title>
+<path fill="none" stroke="#000000" d="M464.8726,-87.6488C464.8726,-79.6545 464.8726,-70.7328 464.8726,-62.2152"></path>
+<polygon fill="#000000" stroke="#000000" points="468.3727,-62.1153 464.8726,-52.1153 461.3727,-62.1153 468.3727,-62.1153"></polygon>
+</g>
+</g>
+</svg>
