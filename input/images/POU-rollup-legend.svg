@@ -3,34 +3,34 @@ edit in HackMD and export as SVG from inspector
 
 ```graphviz
 digraph Legend{
-"CDex temp CodeSystem Concepts"[color=red]
-"HL7 V3 ACTReason CodeSystem"[color=green]
-"CDex HL7 V3 ACTReason POU Codes (not used in CDex)"[color=blue,fontsize=20]
+"HL7 ACTReason CodeSystem Codes"[style=dotted]
+"CDex temp CodeSystem Codes"[style=dashed]
+"HL7 ACTReason POU Codes (not used in CDex)"[fontsize=20,label = <<u>"HL7 ACTReason POU Codes (not in CDex valueset)"</u>>]
 }
 ```
  -->
 
-<svg width="1323pt" height="53pt" viewBox="0.00 0.00 1323.14 53.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1274pt" height="53pt" viewBox="0.00 0.00 1273.55 53.25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 49.2548)">
 <title>Legend</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-49.2548 1319.1351,-49.2548 1319.1351,4 -4,4"></polygon>
-<!-- CDex temp CodeSystem Concepts -->
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-49.2548 1269.547,-49.2548 1269.547,4 -4,4"></polygon>
+<!-- HL7 ACTReason CodeSystem Codes -->
 <g id="node1" class="node">
-<title>CDex temp CodeSystem Concepts</title>
-<ellipse fill="none" stroke="#ff0000" cx="144.874" cy="-22.6274" rx="144.7482" ry="18"></ellipse>
-<text text-anchor="middle" x="144.874" y="-18.4274" font-family="Times,serif" font-size="14.00" fill="#000000">CDex temp CodeSystem Concepts</text>
+<title>HL7 ACTReason CodeSystem Codes</title>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="156.6739" cy="-22.6274" rx="156.8479" ry="18"></ellipse>
+<text text-anchor="middle" x="156.6739" y="-18.4274" font-family="Times,serif" font-size="14.00" fill="#000000">HL7 ACTReason CodeSystem Codes</text>
 </g>
-<!-- HL7 V3 ACTReason CodeSystem -->
+<!-- CDex temp CodeSystem Codes -->
 <g id="node2" class="node">
-<title>HL7 V3 ACTReason CodeSystem</title>
-<ellipse fill="none" stroke="#00ff00" cx="451.874" cy="-22.6274" rx="144.1686" ry="18"></ellipse>
-<text text-anchor="middle" x="451.874" y="-18.4274" font-family="Times,serif" font-size="14.00" fill="#000000">HL7 V3 ACTReason CodeSystem</text>
+<title>CDex temp CodeSystem Codes</title>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="464.6739" cy="-22.6274" rx="133.1504" ry="18"></ellipse>
+<text text-anchor="middle" x="464.6739" y="-18.4274" font-family="Times,serif" font-size="14.00" fill="#000000">CDex temp CodeSystem Codes</text>
 </g>
-<!-- CDex HL7 V3 ACTReason POU Codes (not used in CDex) -->
+<!-- HL7 ACTReason POU Codes (not used in CDex) -->
 <g id="node3" class="node">
-<title>CDex HL7 V3 ACTReason POU Codes (not used in CDex)</title>
-<ellipse fill="none" stroke="#0000ff" cx="964.874" cy="-22.6274" rx="350.0224" ry="22.7556"></ellipse>
-<text text-anchor="middle" x="964.874" y="-16.6274" font-family="Times,serif" font-size="20.00" fill="#000000">CDex HL7 V3 ACTReason POU Codes (not used in CDex)</text>
+<title>HL7 ACTReason POU Codes (not used in CDex)</title>
+<ellipse fill="none" stroke="#000000" cx="940.6739" cy="-22.6274" rx="324.7463" ry="22.7556"></ellipse>
+<text text-anchor="start" x="718.9539" y="-17.6274" font-family="Times,serif" text-decoration="underline" font-size="20.00" fill="#000000">"HL7 ACTReason POU Codes (not in CDex valueset)"</text>
 </g>
 </g>
 </svg>

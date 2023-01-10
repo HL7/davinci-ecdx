@@ -4,11 +4,12 @@ edit in HackMD and export as SVG from inspector
 ```graphviz
 digraph Heirarchy {
 
-TREAT,COVERAGE,CLMATTCH,COVAUTH,HQUALIMP,HDM,COC [color=red]
-"treatment-noa","payment-noa","operations-noa","care-planning","social-risk"[color=green]
-HPAYMT,HOPERAT[color=blue]
+TREAT,COVERAGE,CLMATTCH,COVAUTH,HQUALIMP,HDM,COC [style=dotted]
+"treatment-noa","payment-noa","operations-noa","care-planning","social-risk"[style=dashed]
 HPAYMT,HOPERAT,TREAT[fontsize=20]
-Treatment,Payment,"Health Care Operations","45 CFR 164.506 Treatment, Payment, and Health Care Operations" [fontsize=24]
+HPAYMT[label=<<u>HPAYMT</u>>]
+HOPERAT[label=<<u>HOPERAT</u>>]
+Treatment,Payment,"Health Care Operations","45 CFR 164.506 Treatment, Payment, and Health Care Operations" [fontsize=24,style=bold]
 {Payment "Health Care Operations" Treatment}->"45 CFR 164.506 Treatment, Payment, and Health Care Operations"
 "treatment-noa"->Treatment
 "payment-noa"->Payment
@@ -34,13 +35,13 @@ COC->TREAT->Treatment
 <!-- TREAT -->
 <g id="node1" class="node">
 <title>TREAT</title>
-<ellipse fill="none" stroke="#ff0000" cx="56.8726" cy="-198.7135" rx="56.7455" ry="22.7556"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="56.8726" cy="-198.7135" rx="56.7455" ry="22.7556"></ellipse>
 <text text-anchor="middle" x="56.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">TREAT</text>
 </g>
 <!-- Treatment -->
 <g id="node15" class="node">
 <title>Treatment</title>
-<ellipse fill="none" stroke="#000000" cx="343.8726" cy="-114.0646" rx="81.0983" ry="26.0431"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-width="2" cx="343.8726" cy="-114.0646" rx="81.0983" ry="26.0431"></ellipse>
 <text text-anchor="middle" x="343.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Treatment</text>
 </g>
 <!-- TREAT&#45;&gt;Treatment -->
@@ -52,14 +53,14 @@ COC->TREAT->Treatment
 <!-- COVERAGE -->
 <g id="node2" class="node">
 <title>COVERAGE</title>
-<ellipse fill="none" stroke="#ff0000" cx="937.8726" cy="-275.341" rx="63.7025" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="937.8726" cy="-275.341" rx="63.7025" ry="18"></ellipse>
 <text text-anchor="middle" x="937.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COVERAGE</text>
 </g>
 <!-- HPAYMT -->
 <g id="node13" class="node">
 <title>HPAYMT</title>
-<ellipse fill="none" stroke="#0000ff" cx="1083.8726" cy="-198.7135" rx="71.0266" ry="22.7556"></ellipse>
-<text text-anchor="middle" x="1083.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">HPAYMT</text>
+<ellipse fill="none" stroke="#000000" cx="1083.8726" cy="-198.7135" rx="71.0266" ry="22.7556"></ellipse>
+<text text-anchor="start" x="1041.6586" y="-193.7135" font-family="Times,serif" text-decoration="underline" font-size="20.00" fill="#000000">HPAYMT</text>
 </g>
 <!-- COVERAGE&#45;&gt;HPAYMT -->
 <g id="edge7" class="edge">
@@ -70,7 +71,7 @@ COC->TREAT->Treatment
 <!-- CLMATTCH -->
 <g id="node3" class="node">
 <title>CLMATTCH</title>
-<ellipse fill="none" stroke="#ff0000" cx="1083.8726" cy="-275.341" rx="64.2843" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="1083.8726" cy="-275.341" rx="64.2843" ry="18"></ellipse>
 <text text-anchor="middle" x="1083.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">CLMATTCH</text>
 </g>
 <!-- CLMATTCH&#45;&gt;HPAYMT -->
@@ -82,7 +83,7 @@ COC->TREAT->Treatment
 <!-- COVAUTH -->
 <g id="node4" class="node">
 <title>COVAUTH</title>
-<ellipse fill="none" stroke="#ff0000" cx="1223.8726" cy="-275.341" rx="58.4667" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="1223.8726" cy="-275.341" rx="58.4667" ry="18"></ellipse>
 <text text-anchor="middle" x="1223.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COVAUTH</text>
 </g>
 <!-- COVAUTH&#45;&gt;HPAYMT -->
@@ -94,14 +95,14 @@ COC->TREAT->Treatment
 <!-- HQUALIMP -->
 <g id="node5" class="node">
 <title>HQUALIMP</title>
-<ellipse fill="none" stroke="#ff0000" cx="785.8726" cy="-275.341" rx="61.977" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="785.8726" cy="-275.341" rx="61.977" ry="18"></ellipse>
 <text text-anchor="middle" x="785.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">HQUALIMP</text>
 </g>
 <!-- HOPERAT -->
 <g id="node14" class="node">
 <title>HOPERAT</title>
-<ellipse fill="none" stroke="#0000ff" cx="777.8726" cy="-198.7135" rx="76.5264" ry="22.7556"></ellipse>
-<text text-anchor="middle" x="777.8726" y="-192.7135" font-family="Times,serif" font-size="20.00" fill="#000000">HOPERAT</text>
+<ellipse fill="none" stroke="#000000" cx="777.8726" cy="-198.7135" rx="76.5264" ry="22.7556"></ellipse>
+<text text-anchor="start" x="731.7696" y="-193.7135" font-family="Times,serif" text-decoration="underline" font-size="20.00" fill="#000000">HOPERAT</text>
 </g>
 <!-- HQUALIMP&#45;&gt;HOPERAT -->
 <g id="edge11" class="edge">
@@ -112,7 +113,7 @@ COC->TREAT->Treatment
 <!-- HDM -->
 <g id="node6" class="node">
 <title>HDM</title>
-<ellipse fill="none" stroke="#ff0000" cx="671.8726" cy="-275.341" rx="33.6266" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="671.8726" cy="-275.341" rx="33.6266" ry="18"></ellipse>
 <text text-anchor="middle" x="671.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">HDM</text>
 </g>
 <!-- HDM&#45;&gt;HOPERAT -->
@@ -124,7 +125,7 @@ COC->TREAT->Treatment
 <!-- COC -->
 <g id="node7" class="node">
 <title>COC</title>
-<ellipse fill="none" stroke="#ff0000" cx="56.8726" cy="-275.341" rx="30.777" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="1,5" cx="56.8726" cy="-275.341" rx="30.777" ry="18"></ellipse>
 <text text-anchor="middle" x="56.8726" y="-271.141" font-family="Times,serif" font-size="14.00" fill="#000000">COC</text>
 </g>
 <!-- COC&#45;&gt;TREAT -->
@@ -136,7 +137,7 @@ COC->TREAT->Treatment
 <!-- treatment&#45;noa -->
 <g id="node8" class="node">
 <title>treatment-noa</title>
-<ellipse fill="none" stroke="#00ff00" cx="196.8726" cy="-198.7135" rx="64.8234" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="196.8726" cy="-198.7135" rx="64.8234" ry="18"></ellipse>
 <text text-anchor="middle" x="196.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">treatment-noa</text>
 </g>
 <!-- treatment&#45;noa&#45;&gt;Treatment -->
@@ -148,13 +149,13 @@ COC->TREAT->Treatment
 <!-- payment&#45;noa -->
 <g id="node9" class="node">
 <title>payment-noa</title>
-<ellipse fill="none" stroke="#00ff00" cx="933.8726" cy="-198.7135" rx="61.3993" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="933.8726" cy="-198.7135" rx="61.3993" ry="18"></ellipse>
 <text text-anchor="middle" x="933.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">payment-noa</text>
 </g>
 <!-- Payment -->
 <g id="node16" class="node">
 <title>Payment</title>
-<ellipse fill="none" stroke="#000000" cx="933.8726" cy="-114.0646" rx="70.905" ry="26.0431"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-width="2" cx="933.8726" cy="-114.0646" rx="70.905" ry="26.0431"></ellipse>
 <text text-anchor="middle" x="933.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Payment</text>
 </g>
 <!-- payment&#45;noa&#45;&gt;Payment -->
@@ -166,13 +167,13 @@ COC->TREAT->Treatment
 <!-- operations&#45;noa -->
 <g id="node10" class="node">
 <title>operations-noa</title>
-<ellipse fill="none" stroke="#00ff00" cx="614.8726" cy="-198.7135" rx="68.3401" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="614.8726" cy="-198.7135" rx="68.3401" ry="18"></ellipse>
 <text text-anchor="middle" x="614.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">operations-noa</text>
 </g>
 <!-- Health Care Operations -->
 <g id="node17" class="node">
 <title>Health Care Operations</title>
-<ellipse fill="none" stroke="#000000" cx="614.8726" cy="-114.0646" rx="171.5452" ry="26.0431"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-width="2" cx="614.8726" cy="-114.0646" rx="171.5452" ry="26.0431"></ellipse>
 <text text-anchor="middle" x="614.8726" y="-106.8646" font-family="Times,serif" font-size="24.00" fill="#000000">Health Care Operations</text>
 </g>
 <!-- operations&#45;noa&#45;&gt;Health Care Operations -->
@@ -184,7 +185,7 @@ COC->TREAT->Treatment
 <!-- care&#45;planning -->
 <g id="node11" class="node">
 <title>care-planning</title>
-<ellipse fill="none" stroke="#00ff00" cx="343.8726" cy="-198.7135" rx="64.2456" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="343.8726" cy="-198.7135" rx="64.2456" ry="18"></ellipse>
 <text text-anchor="middle" x="343.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">care-planning</text>
 </g>
 <!-- care&#45;planning&#45;&gt;Treatment -->
@@ -202,7 +203,7 @@ COC->TREAT->Treatment
 <!-- social&#45;risk -->
 <g id="node12" class="node">
 <title>social-risk</title>
-<ellipse fill="none" stroke="#00ff00" cx="476.8726" cy="-198.7135" rx="51.0184" ry="18"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-dasharray="5,2" cx="476.8726" cy="-198.7135" rx="51.0184" ry="18"></ellipse>
 <text text-anchor="middle" x="476.8726" y="-194.5135" font-family="Times,serif" font-size="14.00" fill="#000000">social-risk</text>
 </g>
 <!-- social&#45;risk&#45;&gt;Treatment -->
@@ -232,7 +233,7 @@ COC->TREAT->Treatment
 <!-- 45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
 <g id="node18" class="node">
 <title>45 CFR 164.506 Treatment, Payment, and Health Care Operations</title>
-<ellipse fill="none" stroke="#000000" cx="614.8726" cy="-26.0215" rx="463.0713" ry="26.0431"></ellipse>
+<ellipse fill="none" stroke="#000000" stroke-width="2" cx="614.8726" cy="-26.0215" rx="463.0713" ry="26.0431"></ellipse>
 <text text-anchor="middle" x="614.8726" y="-18.8215" font-family="Times,serif" font-size="24.00" fill="#000000">45 CFR 164.506 Treatment, Payment, and Health Care Operations</text>
 </g>
 <!-- Treatment&#45;&gt;45 CFR 164.506 Treatment, Payment, and Health Care Operations -->
