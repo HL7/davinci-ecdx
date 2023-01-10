@@ -170,23 +170,25 @@ definition:
     groupingId: CommonTerminology
   - reference:
       reference: OperationDefinition/submit-attachment
-    description: "This [operation](http://hl7.org/fhir/operations.html) is used to\
-      \ submit attachments (additional documentation) for claims or prior authorization.\
-      \ The $submit-attachment operation accepts the clinical/administrative attachments\
-      \ and the necessary information needed to associate them to the claim or prior\
-      \ authorization and returns a transaction layer HTTP response.  The operation\
-      \ may be invoked *before, at the same time as, or after* the claim or pre-authorization\
-      \ has been supplied to the Payer.  This operation can be used by any HTTP endpoint,\
-      \ not just FHIR RESTful servers.\n\nThe input parameters are:\n1. One or more\
-      \ attachments as FHIR Resources\n    - Optionally, one or more unique line item\
-      \ numbers associated with the attachment\n    - Optionally, the code, free text,\
-      \ or search string for information that was requested\n1. Data elements for\
-      \ the association to the claim/prior authorization\n    - A unique identifier\
-      \ that ties the attachment(s) back to the claim or prior authorization. (referred\
-      \ to as the \"re-association tracking control numbers\")*\n    - What are the\
-      \ attachments for:\n      - Claims\n      - Prior Authorizations\n    - Optionally,\
-      \ a unique payer identifier\n    - A unique organization/location identifier\
-      \ (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
+    description: "Providers use this [operation](http://hl7.org/fhir/operations.html)\
+      \ to submit *solicited* and *unsolicited* attachments or additional information\
+      \ for claims or prior authorization. The $submit-attachment operation accepts\
+      \ the clinical/administrative attachments and the necessary information to associate\
+      \ them with the claim or prior authorization and returns an HTTP response. For\
+      \ *unsolicited* attachments, the Provider invokes this operation *before, concurrently,\
+      \ or after*  the claim or pre-authorization transaction. For *solicited* attachments,\
+      \ the Provider invokes it when responding to a Payer request for attachments\
+      \ or additional information. Any HTTP endpoint can use $submit-attachment, not\
+      \ just FHIR RESTful server endpoints.\n\nThe input parameters are:\n1. One or\
+      \ more attachments as FHIR Resources\n    - Optionally, one or more unique line\
+      \ item numbers associated with the attachment\n    - Optionally, the attachment\
+      \ code used to request for the information\n1. Data elements for the association\
+      \ to the claim/prior authorization\n    - A unique identifier that ties the\
+      \ attachment(s) back to the claim or prior authorization. (referred to as the\
+      \ \"re-association tracking control numbers\")*\n    - What are the attachments\
+      \ for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique\
+      \ payer identifier\n    - A unique organization/location identifier (e.g., [Type\
+      \ 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
       \ and/or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
       \    - A unique Patient member identifier\n    - A Date of Service\n    - A\
       \ Flag indicating whether the operation is the last attachment submission for\
@@ -293,7 +295,9 @@ definition:
       \ starting date of the service for the claim or prior authorization. It SHALL\
       \ be present if the attachment is for a claim.\n\nIt defines the following elements\
       \ to be *optional*:\n\n- A \"questionnaire\" Task.input element to communicate\
-      \ to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*\n\
+      \ to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
+      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire)\
+      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*\n\
       - A \"POU\" Task.input element representing the purpose of use (POU) for the\
       \ requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU).\
       \ For more information about sending purpose POU codes, refer to the [Purpose\
@@ -302,9 +306,11 @@ definition:
       \ whether the requested data can be sent in multiple submissions\n- A \"data-value\"\
       \ Task.output element referring to FHIR resource(s) representing the result(s)\
       \ of the data request code.\n- A \"response\" Task.output element which is a\
-      \ local reference to the QuestionnaireResponse resulting from the data request\
-      \ Questionnaire.\n\n\\* Either a \"data-code\" or a \"questionnaire\" Task.input\
-      \ element is required"
+      \ local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html)\
+      \ resulting from the data request Questionnaire. The QuestionnaireResponse conforms\
+      \ to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse)\
+      \ or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\
+      \n\\* Either a \"code\" or a \"questionnaire\" Task.input element is required"
     exampleBoolean: false
     name: CDex Task Attachment Request Profile
     groupingId: AttachmentsProfiles
@@ -359,18 +365,20 @@ definition:
       \ representing a flag to indicate whether the requested data requires a signature\n\
       \  - A \"data\" Task.output element referring to FHIR resource(s) representing\
       \ the result(s) of the data request code.\n\nIt defines the following elements\
-      \ to be *optional*:\n- A Task.code.coding of 'data-request-questionnaire\" communicating\
-      \ to the data source that a data request questionnaire is being submitted.\n\
-      \   - If the code is \"data-request-questionnaire\", the provider system uses\
-      \ [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/)\
-      \ to complete the questionnaire referenced in the \"questionnaire\" input parameter.\n\
-      - A meta.tag element representing work-queue hints.\n- A \"questionnaire\" Task.input\
-      \ element to communicate to the provider a URL of a data request questionnaire\
-      \ ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*\n- A Task.input\
-      \ element representing the purpose of use for the requested data using an extensible\
-      \ [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n\
-      - A \"response\" Task.output element which is a local reference to the QuestionnaireResponse\
-      \ resulting from the data request Questionnaire."
+      \ to be *optional*:\n- A meta.tag element representing work-queue hints.\n-\
+      \ A \"questionnaire\" Task.input element to communicate to the provider a URL\
+      \ of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
+      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire)\
+      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*\n\
+      - A Task.input element representing the purpose of use for the requested data\
+      \ using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n\
+      - A \"response\" Task.output element which is a local reference to the [FHIR\
+      \ QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting\
+      \ from the data request Questionnaire. The QuestionnaireResponse conforms to\
+      \ the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse)\
+      \ or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\
+      \nIt prohibits the following elements (max=0):\n- Task.focus\n\n\\* Either a\
+      \ \"query\", \"code\", or \"questionnaire\" Task.input element is required"
     exampleBoolean: false
     name: CDex Task Data Request Profile
     groupingId: TaskBasedProfiles

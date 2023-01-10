@@ -136,3 +136,5 @@
 [Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire
 [Conforming to CDex Attachments]: attachments-conformance.html
 [Submit Additional Information]: {{site.data.fhir.ver.pas}}/usecases.html#submit-additional-information
+[SDC Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse.html
+[SDC Adaptive Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse-adapt.html

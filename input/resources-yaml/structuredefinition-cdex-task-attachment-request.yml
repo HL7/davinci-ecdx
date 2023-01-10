@@ -38,13 +38,13 @@ description: |-
 
   It defines the following elements to be *optional*:
 
-  - A "questionnaire" Task.input element to communicate to the provider a URL of a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)).*
+  - A "questionnaire" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*
   - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more information about sending purpose POU codes, refer to the [Purpose of Use section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).
   - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
   - A "data-value" Task.output element referring to FHIR resource(s) representing the result(s) of the data request code.
-  - A "response" Task.output element which is a local reference to the QuestionnaireResponse resulting from the data request Questionnaire.
+  - A "response" Task.output element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
 
-  \* Either a "data-code" or a "questionnaire" Task.input element is required
+  \* Either a "code" or a "questionnaire" Task.input element is required
 fhirVersion: 4.0.1
 kind: resource
 abstract: false
@@ -483,7 +483,7 @@ differential:
         - code: CodeableConcept
       mustSupport: true
       
-    - id: 'Task.input:questionnaire' # struct copied from SDC
+    - id: 'Task.input:questionnaire' # struct copied from SDC except using DTR Q/AQ profiles
       extension:
         - url: >-
             http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
@@ -534,6 +534,9 @@ differential:
       max: '1'
       type:
         - code: canonical
+          targetProfile:
+            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire'
+            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt'
       # mustSupport: true
 
     - id: 'Task.input:payer-url'
@@ -729,5 +732,6 @@ differential:
       type:
         - code: Reference
           targetProfile:
-            - 'http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse'
+            - 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse'
+            - 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt'
       # mustSupport: true
