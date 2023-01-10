@@ -1,9 +1,15 @@
 resourceType: ValueSet
 id: cdex-POU
+extension:
+  - url: >-
+      http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: draft
+  - url: 'http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm'
+    valueInteger: 1
 url: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU
 name: CDexPOUCodes
 title: CDex Purpose of Use Value Set
-status: draft
+status: active
 experimental: false
 date: 2022-10-24
 description: The set of purpose of use codes for the requested data (the output of
@@ -24,5 +30,6 @@ compose:
     concept:
     - code: care-planning
     - code: social-risk
-    - code: payment-nos
-    - code: operations-nos
+    - code: payment-noe
+    - code: operations-noe
+    - code: treatment-noe

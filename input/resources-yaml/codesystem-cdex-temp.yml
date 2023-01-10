@@ -1,9 +1,15 @@
 resourceType: CodeSystem
 id: cdex-temp
+extension:
+  - url: >-
+      http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: draft
+  - url: 'http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm'
+    valueInteger: 1
 url: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
 name: CDexTempCodes
 title: CDex Temporary Code System
-status: draft
+status: active
 experimental: false
 date: '2022-12-23'
 description: Codes temporarily defined as part of the CDex implementation guide.  These
@@ -68,14 +74,22 @@ concept:
   definition: Request for data from payers or other providers to assess of social
     risk, establishing coded health concerns/problems, creating patient driven goals,
     managing interventions, and measuring outcomes.
-- code: operations-nos
-  display: Operations Not Otherwise Specified
-  definition: '[Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
-    and isn''t defined further to ascertain a more detailed Purpose of Use concept.'
-- code: payment-nos
-  display: Payment Not Otherwise Specified
-  definition: '[Healthcare Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html)
-    and isn''t defined further to ascertain a more detailed Purpose of Use concept.'
+- code: operations-noe
+  display: Operations Not Otherwise Enumerated
+  definition: >-
+    Existing concepts do not define a more detailed [Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code.
+
+
+- code: payment-noe
+  display: Payment Not Otherwise Enumerated
+  definition: >-
+    [Existing concepts do not define a more detailed [Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code.
+
+- code: treatment-noe
+  display: Treatment Not Otherwise Enumerated
+  definition: >-
+    Existing concepts do not define a more detailed [Treatment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code.
+
 - code: purpose-of-use
   display: Purpose Of Use
   definition: Purpose of use for the requested data.
