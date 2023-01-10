@@ -27,7 +27,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 1. **Applied**: Correct $submit-attachment input parameter Typo. ([FHIR-37956](https://jira.hl7.org/browse/FHIR-37956)) and ([FHIR-38175](https://jira.hl7.org/browse/FHIR-38175)) See Changes [Here](OperationDefinition-submit-attachment.html)
 2. **Applied**: Correct claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060)) See Changes [Here](solicited-unsolicited-attachments.html#solicited-attachments)
 4. **Applied**: Added missing service line item extension to CDex Task Attachment Request Profile ([FHIR-38070](https://jira.hl7.org/browse/FHIR-38070)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html)
-5. **Applied**: Document POU ValueSet Hierarchy to TPO ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142)) See Changes [Here](#)
+5. **Applied**: Document POU ValueSet Hierarchy to TPO ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142)) See Changes [Here](ValueSet-cdex-POU.html)
 6. **Applied**: DS4P should be evaluated before required ([FHIR-38144](https://jira.hl7.org/browse/FHIR-38144)) See Changes [Here](security.html#sensitive-and-confidential-data)
 7. **Applied**: Correct capitalization ([FHIR-38145](https://jira.hl7.org/browse/FHIR-38145)) See Changes [Here](solicited-unsolicited-attachments.html)
 9. **Applied**: Change 277 to: “277 Request for Additional Information (RFAI)” ([FHIR-38152](https://jira.hl7.org/browse/FHIR-38152)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
