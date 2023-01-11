@@ -92,7 +92,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 39. **Applied**: Change *only accepts* to *only accept*([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](OperationDefinition-submit-attachment.html)
 40. **Applied**: Clarify use of cdex-temp code system ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259)) See Changes [Here](ValueSet-cdex-POU.html) and [Here](CodeSystem-cdex-temp.html)
 41. **Applied**: Clarify use of data tagging ([FHIR-38286](https://jira.hl7.org/browse/FHIR-38286)) See Changes [Here](security.html#sensitive-and-confidential-data)
-42. **WAITING FOR INPUT**: Updated X12 element mappings and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments) and Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
+42. **Applied**: Updated X12 element mappings and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments) and Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
 43. **Applied**: Clarify how to find patient FHIR ID ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318)) See Changes [Here](direct-query.html#discovery-of-patient-fhir-ids)
 44. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](sending-attachments.html#sending-attachments)
 45. **Applied**: Add Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](signatures.html#step-by-step-examples)

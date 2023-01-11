@@ -9,8 +9,8 @@
 -->
 
 | Data Element | CDex $submit-attachment Parameter | CDex Request Attachment Task Profile Element |
-|-----|----|---------|
-| Tracking ID (Provider or Payer Assigned) | TrackingId | Task.identifier |
+|---|----|---------|
+| Tracking ID | TrackingId | Task.identifier |
 | Use | AttachTo | Task.reasonCode |
 | Payer URL | (operation endpoint) | "payer-url" Task.input |
 | Organization ID | OrganizationId | <span class="bg-success" markdown="1">PractitionerRole.practitioner.identifier</span><!-- new-content --> |
