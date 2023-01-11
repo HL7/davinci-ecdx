@@ -152,7 +152,15 @@
           "valuePositiveInt": 1
         }
       ],
-      "valueCanonical": "http://example.org/cdex-questionnaire-example1"
+      "valueCanonical": "http://example.org/cdex-questionnaire-example1",
+      "_valueCanonical": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/display",
+            "valueString": "Home Oxygen Therapy Questionnaire"
+          }
+        ]
+      }
     },
     {
       "type": {
