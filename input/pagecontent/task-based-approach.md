@@ -27,22 +27,26 @@ In most of these situations, there is human intervention (e.g., a provider or de
 
 ### The Task Resource
 
-**For CDex Task-based transactions the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data as follows:
+<div class="bg-success" markdown="1">
+**For CDex Task-based transactions, the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled.
 
-1. `Task.input` represents the data request. The data request may be:
-  - [FHIR RESTful Search syntax]
-  - coded
-  - free text
-  - <span class="bg-success" markdown="1">FHIR Questionnaire</span><!-- new-content -->
-1. `Task.output` represents the requested data. This output is a FHIR reference to:
-      - FHIR Search Bundle (e.g., a query response)
-      - FHIR Documents (e.g., CCDA on FHIR)
-      - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
-      - <span class="bg-success" markdown="1">a FHIR QuestionnaireResponse</span><!-- new-content -->
-      - Other Individual FHIR resources (e.g., Condition)
-2. `Task.status` is updated as the task is fulfilled
+#### Task Inputs and Outputs
 
+`Task.input` represents the necessary information from Data Consumer to complete the task, including the specific data they request. The CDex Task Data Request Profile supports four ways to define the requested data.
+  1. leveraging the [FHIR RESTful search syntax]
+  2. using a code
+  3. using free text
+  4. referencing a FHIR Questionnaire
 
+Implementers of this guide [*must support*] search syntax and coded inputs. However, free text and Questionnaire input are optional capabilities.
+   
+`Task.output` represents the requested data that is returned. This output is a FHIR reference to:
+   - FHIR Search Bundle (e.g., a query response)
+   - FHIR Documents (e.g., CCDA on FHIR)
+   - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
+   - <span class="bg-success" markdown="1">a FHIR QuestionnaireResponse</span><!-- new-content -->
+   - Other Individual FHIR resources (e.g., Condition)
+</div><!-- new-content -->
 
 #### Purpose of Use
 
@@ -87,21 +91,21 @@ It is up to the Data Source to set the status of each Task as appropriate. (see 
 
 Ultimately, the Data Source determines how long the Data Consumer has access to the completed Task and the data referenced by it. The business rules between them and other constraints such as those based on privacy law will limit the time the requested data is accessible.
 
-### Task Based Transaction Scenarios
+### Example Transactions Based on Query, Code and Free Text Inputs
 
-Following the guidance in this guide and HRex, getting clinical data from the Data Source is typically a two-to-five step process for the Data Consumer. The following example transactions show 2 scenarios using task-based exchanges to get clinical data from a Data Source(HIT).
+Following the guidance in this guide and HRex, getting clinical data from the Data Source is typically a two-to-five step process for the Data Consumer. The following example transactions show 2 scenarios using task-based exchanges to get clinical data from a Data Source(HIT). <span class="bg-success" markdown="1">The Task examples in scenario 1 use a FHIR RESTful query syntax and a free text input. The scenario 2 example uses a coded input in the Task. The next section documents and provides an example transaction in which the Task input is a Questionnaire.</span><!-- new-content -->
 
 #### Scenario 1
 
 This scenario demonstrates these Task-based Query options:
 
-1. FHIR RESTful query syntax vs free text request
+1. FHIR RESTful query syntax vs free text inputs
 1. Polling
 1. Fetching contained vs external data
 
 Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claims audit.
 
-##### FHIR RESTful Query Syntax Request
+##### FHIR RESTful Query Syntax
 
 Preconditions and Assumptions:
 
@@ -115,7 +119,7 @@ Preconditions and Assumptions:
 
 {% include examplebutton_default.html example="task-scenario-1a" b_title = 'Click Here To See Example Task Based Transaction (RESTful search syntax)' %}
 
-##### Free Text Request
+##### Free Text
 
 This example is the same as above, except *natural language free text* is used as the actual request in Task.
 
@@ -133,15 +137,11 @@ This example repeats the first, except Patient B’s active conditions reference
 
 #### Scenario 2
 
-This scenario demonstrates requesting a non-FHIR document (PDF,CCDA) using a code:
+This scenario demonstrates requesting a non-FHIR document (PDF,CCDA) <span class="bg-success" markdown="1">using a coded input</span><!-- new-content -->:
 
 Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
-
-
 ##### Progress note Exam Notes as PDF
-
-
 
 Payer A Seeks Insured Person/Patient B’s latest Progress notes from Provider C to improve care coordination.
 
@@ -168,31 +168,34 @@ Preconditions and Assumptions are the same as above except the Payer POSTS a Tas
 
 ---
 
-<div class="bg-success" markdown="1">
-
-### Requesting Data Using A FHIR Questionnaire
-
 **The following section is DRAFT. It requires further community review and testing.**
 {:.stu-note}
 
-{% include img-small.html img="todo.png" %}
+<div class="bg-success" markdown="1">
 
+### Using Questionnaire as Task Input
 
-{% include img.html img="taskbased-task-Q-summary.svg" %} 
+The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 7 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR and the sequence diagram in the next section illustrates these transactions in more detail:
 
-#### Sequence Diagram
+{% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 7" %} 
 
-{% include img-small.html img="todo.png" %}
+**Step 1:** The Data Consumer POSTs a Task directly to the Data Source. The Task is a request to complete a questionnaire.
 
+**Step 2:** if the Task.code is "data-request-questionnaire", the Data Source launches DTR and shares the Task as a launch parameter (i.e., DTR has access to read and update the Task, and access to other resources to complete the QuestionnaireResponse in Step 3)
 
-{% include img.html img="taskbased-task-Q-sequencediagram.svg" %}
+**Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then fetches the Questionnaire (and any CQL rules defined within it) and proceeds to complete the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-#### Using Da Vinci DTR to Complete the Questionnaire
+**Step 4:** After completing the QuestionnaireResponse, DTR POSTs it directly to the Data Source's FHIR Server, updates Task.output to reference the QuestionnaireResponse it created, and updates Task.status to "completed".
 
-{% include img-small.html img="todo.png" %}
+**Step 5:** The Data Consumer retrieves the completed Task from the Data Source using either polling or a previously created Subscription.
 
+**Step 6:** The Data Consumer retrieves the QuestionnaireResponse referenced by Task.output.
 
-Refer to the [Using Da Vinci DTR to Complete the Questionnaire] on the Requesting Attachment using Questionnaires page.
+#### Using [Da Vinci DTR] to Complete the Questionnaire
+
+The sequence diagram in Figure 8 below depicts the FHIR RESTful transactions and processes involved between the Data Consumer, Data Source, and DTR application needed to request, fill, and return a questionnaire using CDex Task-based approach. It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the [DTR SMART App Launch] section documents the launch sequence and parameters.
+
+{% include img.html img="taskbased-task-Q-sequencediagram.svg" caption="Figure 8" %}
 
 #### Example of Requesting Data Using A FHIR Questionnaire
 

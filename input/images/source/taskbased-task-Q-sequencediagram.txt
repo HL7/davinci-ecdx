@@ -5,23 +5,48 @@ participant Data Source
 participant DTR
 actor Practitioner
 #entryspacing 0.4
+entryspacing 0.7
 note over Data Source: Data Source acts as both\n EHR/HIT FHIR Server and DTR Client
 note over DTR: DTR is SMART App or native EHR app
-note left of Data Consumer: 1) Prepare Task\nincluding link to Questionnaire
-Data Consumer->Data Source: 2) POST CDEX Task\nto complete Questionnaire
-Data Source->DTR: 3) Launch DTR
-DTR -> Data Source: 4) GET Task
+autonumber
+Data Consumer -> Data Consumer: Prepare Task\nincluding link to Questionnaire
+Data Consumer->Data Source: POST CDEX Task\nto complete Questionnaire
+ref over Data Source,DTR:3 Launch DTR (see section 5.4.1.1.1)
+autonumber 4
+DTR -> Data Source: GET Task
+autonumber off
 Data Source --> DTR: Return Task
-DTR -> Data Source: 5) GET Questionnaire
+autonumber 
+DTR -> Data Source: GET Questionnaire
+autonumber off
 Data Source --> DTR: Return Questionnaire
-note over Data Consumer, Data Source: 6) ...Polling for Task updates...
-DTR --> DTR: 7) extracts answers\ncreates FHIR QuestionnaireResponse
-note over DTR, Data Source: 7) ...Fetching Data to Complete\n QuestionnaireResponse...
-note over DTR,Practitioner: 8) Manual Review and Completes form\nif necessary
-DTR -> Data Source: 9) POST completed QuestionnaireResponse
-DTR -> Data Source:10) Update Task with link to\nQuestionnaireResponse\nand "completed" status
-Data Consumer->Data Source:6)  Poll for Task updates
-Data Source-->Data Consumer: complete!
-Data Consumer->Data Source: 11) Get QuestionnaireResponse
+autonumber 
+DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
+loop
+DTR -> Data Source:Fetch Data to Complete\n QuestionnaireResponse
+autonumber off
+Data Source --> DTR: Return Data
+autonumber 
+DTR -> DTR: Fills QuestionnaireResponse
+end
+opt
+DTR -> Practitioner: Manual Review and \nCompletes QuuestionnaireResponse
+autonumber off
+Practitioner-->DTR:
+end
+autonumber 
+DTR -> Data Source: POST completed QuestionnaireResponse
+DTR -> Data Source: Update Task with link to\nQuestionnaireResponse\nand "completed" status
+loop Task completed
+Data Consumer->Data Source: Polling for Task updates
+break
+autonumber off
+Data Source-->Data Consumer: Return completed Task
+end
+end
+autonumber
+Data Consumer->Data Consumer: Discover \nQuestionnaireResponse \nFHIR ID in Task
+Data Consumer->Data Source: GET QuestionnaireResponse
+autonumber off
 Data Source-->Data Consumer: Return QuestionnaireResponse
 ```

@@ -11,7 +11,7 @@ description: |-
   - A member ID identifier slice
   - A patient's name
 
-  and the following element to be *must support* (min=0):
+  and the following element to be [*must support*] (min=0):
 
   - A patient account number identifier slice  
   - A date of birth

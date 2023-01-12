@@ -5,7 +5,7 @@ name: CDexTaskDataRequest
 title: CDex Task Data Request Profile
 status: active
 description: |-
-  This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned "data request".  Data requests are supplied as codes, free-text,  or FHIR Restful queries.  It can also support requests for more detailed missing data and avoid unnecessary documents using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
+  This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned "data request".  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
 
   It constrains the following elements to be *mandatory* (min=1):
 
@@ -15,12 +15,11 @@ description: |-
     - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.
     - If the code is "data-request-code", the provider system returns data(s) identified by the LOINC code in the "code" input parameter.
     - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the Questionnaire referenced in the "questionnaire" input parameter.
-    - When either code is present, the provider system uses the $submit-data operation to return the information to the endpoint provided in "payer-url" input parameter. 
   - A Task.for element representing the member (i.e.,patient) for whom the data is being requested
   - A Task.requester element communicating who is requesting the data
   - A Task.owner element representing the Provider who is being asked to provide the data
 
-  It constrains following elements to be *must support* (min=0):
+  It constrains following elements to be [*must support*] (min=0):
 
   - A Task.identifier element representing the unique data request identifier
   - A Task.basedOn element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request
@@ -129,7 +128,7 @@ differential:
       path: Task.meta.tag
       sliceName: work-queue
       short: Work Queue Tag
-      definition: Payer provided work queue tags that providers may use in their workflow to process requests.
+      definition: Data Consumer provided work queue tags that providers may use in their workflow to process requests.
       binding:
         strength: required
         valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-work-queue'
@@ -258,8 +257,8 @@ differential:
 
     - id: Task.requester.identifier
       path: Task.requester.identifier
-      short: Payer ID
-      definition: business identifier representing the Payer
+      short: Data Consumer ID
+      definition: business identifier representing the Data Consumer
       # min: 0
       mustSupport: true
 

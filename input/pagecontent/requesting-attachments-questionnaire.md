@@ -6,25 +6,60 @@ This page documents a FHIR-based approach for requesting attachments and additio
 
 ### Request Attachments Data Using a FHIR Questionnaire
 
-{% include img-small.html img="todo.png" %}
+The [Task Based Approach] page documents why a Data Consumer should use Task for requesting attachments. For more background on Task-based transactions, see the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
 
-Payers can use a Questionnaire to ask for specific attachments-related data. The Task communicates the request to complete it using Da Vinci DTR. Figure 1 summarizes this workflow. The [Task Based Approach section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments. The [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide describes the details for Task-based transactions. DTR gathers Questionnaire resources, retrieves FHIR resources from EHRs, runs rules (CQL), and completes a QuestionnaireResponse. See the following sections for launching DTR and the [Da Vinci DTR] Implementation Guide for more information about DTR. 
-
-<!-- Although DTR is also associated with [Da Vinci Burden Reduction Workflow], using DTR with CDex is unrelated to it, and the [Da Vinci Prior Authorization Support (PAS)] and [Da Vinci - Coverage Requirements Discovery (DTR)] Implementation Guides.  -->
+ In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Provider to complete the questionnaire (form). The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Payer provided Questionnaire and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 1 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
 {% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 1" %}
 
+**Step 1:** The Payer POSTs a Task directly to the Provider. The Task is a request to complete a questionnaire.
+
+**Step 2:** if the Task.code is "attachment-request-questionnaire", the Provider launches DTR and shares the Task as a launch parameter (i.e., DTR has access to read and update the Task and access to other resources to complete the QuestionnaireResponse in Step 3)
+
+**Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then fetches the Questionnaire (and any CQL rules defined within it) and proceeds to complete the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
+
+**Step 4:** After completing the QuestionnaireResponse, DTR POSTs it directly to the Provider's FHIR Server, updates Task.output to reference the QuestionnaireResponse it created, and updates Task.status to "completed".
+
+**Step 5:** The Provider "pushes" the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
+
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in the Figure below illustrates the FHIR RESTful transactions between the Payer and Provider and DTR application to request, fill, and return a questionnaire.
+The sequence diagram in the Figure 2 below depicts the the FHIR RESTful transactions  and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return a questionnaire using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
 
 {% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 2" %}
 
 ##### DTR SMART App Launch
 
+The sequence diagram in Figure 3 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.
+
+Preconditions and Assumptions:
+- The DTR Client, and FHIR Server are Provider (Data Source) roles.
+- If the DTR is a native EHR application, the launch is implementation specific, and this diagram does not apply.
+- A User kicks off [Smart Version 2.0.0 EHR launch flow].
+
 <!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
 
 {% include img.html img="dtr-launch.svg" caption="Figure 3" %}
+
+**Step 1 (Optional):** The DTR App registers with DTR Client (may be out of band)
+
+**Step 2,3:** If the Task.code is "attachment-request-questionnaire" (or "data-request-questionnaire" for a Task-based approach), a User initiates [Smart Version 2.0.0 EHR launch flow] to launch DTR (for example, clicks a button to launch DTR) and DTR Client sends a launch request to the DTR App
+
+**Step 4:** DTR App retrieves the `.well-known/smart-configuration` from FHIR Server.
+
+**Step 5:** DTR App request authorization code requesting the following scopes:
+  - "launch"
+  - "launch/patient"
+  - "launch/task"
+  - "patient/*.rs"
+  - "patient/Task.u"
+  - "patient/QuestionnaireResponse.cu"
+  
+**Step 6,7:** Assuming the authorization is granted, The DTR app requests an access token
+
+**Step 8:**  DTR App obtains an access token and the launch contexts in the "fhirContext" array, including a local reference to the Task in step 2.
+
+**Step 9:** The DTR App uses the Task reference obtained in step 8 to fetch it, the Questionnaire, and other resources to fill out a QuestionnaireResponse. See the [previous section](#using-da-vinci-dtr-to-complete-the-questionnaire) (or [this section](task-based-approach.html#using-da-vinci-dtr-to-complete-the-questionnaire) on the Task Based Approach page) for more detailed transactions.
 
 ### CDex Attachment Request Profile
 
@@ -228,7 +263,7 @@ This optional Task.input element represents the request's purpose of use (POU). 
 
 #### Provider Launches DTR
 
-The Payer used a Questionnaire to ask for specific attachments-related data. They indicated it with a Task code "attachment-request-questionnaire" and supplied the URL of the questionnaire (FHIR Questionnaire) as an input parameter. Becasue these conditions are met, the Payer launches [Da Vinci DTR], a SMART on FHIR App or native EHR application. If the Provider launches a DTR within an EHR native application, skip to the step [DTR App Updates Task](#dtr-app-updates-task) below. If the Provider Launches DTR as a SMART on FHIR Application, it follows the [SMART's EHR launch flow] with the Task as the launch content. The next several steps describe the DTR SMART App functionality.
+The Payer used a Questionnaire to ask for specific attachments-related data. They indicated it with a Task code "attachment-request-questionnaire" and supplied the URL of the questionnaire (FHIR Questionnaire) as an input parameter. Becasue these conditions are met, the Payer launches [Da Vinci DTR], a SMART on FHIR App or native EHR application. If the Provider launches a DTR within an EHR native application, skip to the step [DTR App Updates Task](#dtr-app-updates-task) below. If the Provider Launches DTR as a SMART on FHIR Application, it follows the [Smart Version 2.0.0 EHR launch flow] with the Task as the launch content. The next several steps describe the DTR SMART App functionality.
 
 ##### DTR SMART App Fetches Task
 

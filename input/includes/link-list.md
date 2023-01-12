@@ -106,7 +106,7 @@
 [Sending Attachments]: sending-attachments.html
 [Requesting Attachments Using Attachment Codes]: requesting-attachments-code.html
 [Requesting Attachments Using Questionnaires]: requesting-attachments-questionnaire.html
-[Requesting Data Using A FHIR Questionnaire]: task-based-approach.html#requesting-data-using-a-fhir-questionnaire
+[Using Questionnaire as Task Input]: task-based-approach.html#using-questionnaire-as-task-input
 [Using CDex Attachments with DaVinci PAS]: burden-reduction.html
 [CDex Task Attachment Request Profile]: StructureDefinition-cdex-task-attachment-request.html
 [LOINC attachment codes]: https://loinc.org/attachments/
@@ -132,10 +132,12 @@
 [CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html
 [Da Vinci DTR]: {{site.data.fhir.ver.dtr}}
 [Questionnaire]: {{site.data.fhir.path}}questionnaire.html
-[SMART's EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
+[Smart Version 2.0.0 EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
 [Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire
 [Conforming to CDex Attachments]: attachments-conformance.html
 [Submit Additional Information]: {{site.data.fhir.ver.pas}}/usecases.html#submit-additional-information
 [SDC Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse.html
 [SDC Adaptive Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse-adapt.html
 [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)]: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.506
+[*must support*]: {{site.data.fhir.ver.hrex}}/conformance.html
+[DTR SMART App Launch]: requesting-attachments-questionnaire.html#dtr-smart-app-launch

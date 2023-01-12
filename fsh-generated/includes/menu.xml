@@ -103,10 +103,10 @@
         <a href="task-based-approach.html#fetching-the-data">Fetching the Data</a>
       </li>
       <li>
-        <a href="task-based-approach.html#task-based-transaction-scenarios">Task Based Transaction Scenarios</a>
+        <a href="task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs">Task Based Transaction Scenarios</a>
       </li>
       <li>
-        <a href="task-based-approach.html#requesting-data-using-a-fhir-questionnaire">Requesting Data Using A FHIR Questionnaire</a>
+        <a href="task-based-approach.html#using-questionnaire-as-task-input">Using Questionnaire as Task Input</a>
       </li>
       <li>
         <a href="task-based-approach.html#when-the-task-cannot-be-completed">When The Task Cannot Be Completed</a>

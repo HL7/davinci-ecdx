@@ -8,7 +8,7 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
 #### What’s new in Version 2.0.0 of CDex:
 
 1. New [Requesting Attachments Using Questionnaires] functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. This approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provides the ability for signature attestation if required.
-2. New Task-Based transactions functionality for [Requesting Data Using A FHIR Questionnaire]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. The provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
+2. New Task-Based transactions functionality for [Using Questionnaire as Task Input]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. The provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
 3. Improved navigation:
    - Menu Bar drop-downs for all the pages to allow faster navigation to a specific topic
    - Re-organization of [FHIR Artifacts] by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
@@ -59,7 +59,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 33. **Applied**: Clarify Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240)) See Changes [Here](solicited-unsolicited-attachments.html)
 34. **Partially Applied**: Expand Attachments and Task based approach to support Questionnaires and DTR ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241)) See Changes:
     - Pages:
-      - [Here](task-based-approach.html#requesting-data-using-a-fhir-questionnaire)
+      - [Here](task-based-approach.html#using-questionnaire-as-task-input)
       - [Here](requesting-attachments-questionnaire.html)
     - Conformance Artifacts:
       - [Here](StructureDefinition-cdex-task-attachment-request.html)

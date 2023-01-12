@@ -275,8 +275,8 @@ menu:
     Sequence Diagram: task-based-approach.html#sequence-diagram
     Discovery of Identifiers: task-based-approach.html#discovery-of-identifiers
     Fetching the Data: task-based-approach.html#fetching-the-data
-    Task Based Transaction Scenarios: task-based-approach.html#task-based-transaction-scenarios
-    Requesting Data Using A FHIR Questionnaire: task-based-approach.html#requesting-data-using-a-fhir-questionnaire
+    Task Based Transaction Scenarios: task-based-approach.html#example-transactions-based-on-query-code-and-free-text-inputs
+    Using Questionnaire as Task Input: task-based-approach.html#using-questionnaire-as-task-input
     When The Task Cannot Be Completed: task-based-approach.html#when-the-task-cannot-be-completed
     Polling vs Subscriptions: task-based-approach.html#polling-vs-subscriptions
     Formal Authorization: task-based-approach.html#formal-authorization

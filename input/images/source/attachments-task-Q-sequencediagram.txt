@@ -10,7 +10,7 @@ note over DTR: DTR is SMART App or native EHR app
 autonumber
 Payer -> Payer: Prepare Task\nincluding link to Questionnaire
 Payer->Provider: POST CDEX Task\nto complete Questionnaire
-ref over Provider,DTR:3 Launch DTR (see section 5.4.3 below)
+ref over Provider,DTR:3 Launch DTR (see section 5.4.1.1.1 below)
 autonumber 4
 DTR -> Provider: GET Task
 autonumber off
