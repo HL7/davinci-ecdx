@@ -29,7 +29,7 @@ autonumber
 DTR -> DTR: Fills QuestionnaireResponse
 end
 opt
-DTR -> Practitioner: Manual Review and Completes QuuestionnaireResponse
+DTR -> Practitioner: Manual Review and Completes QuestionnaireResponse
 autonumber off
 Practitioner-->DTR:
 end

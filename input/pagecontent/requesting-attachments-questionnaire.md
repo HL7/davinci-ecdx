@@ -1,8 +1,9 @@
 This page is new content for Da Vinci CDex 2.0.0
 {:.new-content}
 
-This page documents a FHIR-based approach for requesting attachments and additional data for claims or prior authorization from a Provider using FHIR [Questionnaire]. This *solicited*  attachments transaction uses the combination of a Task-based [CDex Task Attachment Request Profile] to request attachments and additional data and the [`$submit-attachment`] operation to submit them to the Payer as documented in the [Sending Attachments] page. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using LOINC attachment codes, it supports requests for more detailed missing data and avoids unnecessary documents using Questionnaire. In addition, it leverages [Da Vinci DTR] functionality to fill out the Questionnaire reducing the time involved in reviewing documentation requirements.
+This page documents an *optional* solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR [Questionnaire].\* The Payer uses the Task-based [CDex Task Attachment Request Profile] to request a Provider to complete a questionnaire. The Provider launches [Da Vinci DTR] to complete the questionnaire and, as documented in the [Sending Attachments] page, submits the completed questionnaire to the Payer using the [`$submit-attachment`] operation. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using LOINC attachment codes, it supports using Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages [Da Vinci DTR] functionality to fill out the Questionnaire reducing the time involved in reviewing documentation requirements.
 
+\* {% include see-conf.md %}
 
 ### Request Attachments Data Using a FHIR Questionnaire
 
