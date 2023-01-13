@@ -100,6 +100,7 @@
 <page key="ImplementationGuide-hl7.fhir.us.davinci-cdex" name="CDex ImplementationGuide Resource"/>
 <page key="changes" name="Change Log"/>
 <page key="attachments-conformance" name="Conforming to CDex Attachments"/>
+<page key="task-based-conformance" name="Conforming to CDex Task Based Approach"/>
 <page key="direct-query" name="Direct Query"/>
 <page key="downloads" name="Downloads"/>
 <page deprecated="true" key="examples" name="Examples"/>

@@ -25,7 +25,7 @@ description: |-
   - A Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
   - A Task.input element representing the date of service or starting date of the service for the claim or prior authorization
 
-  and the following elements to be [*must support*] [min=0]:
+  and the following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html)(http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html) [min=0]:
   - A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole) to communicate the Provider ID as *both* a practitioner and organization identifier.
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (e.g., if it is rejected  or failed)

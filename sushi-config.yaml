@@ -184,6 +184,8 @@ pages:
   #   exchanging-clinical-data.md:
   direct-query.md:
   task-based-approach.md:
+    task-based-conformance.md:
+      title: Conforming to CDex Task Based Approach
   attachments.md:
     solicited-unsolicited-attachments.md:
       title: Solicited and Unsolicited Attachments
@@ -282,6 +284,7 @@ menu:
     Formal Authorization: task-based-approach.html#formal-authorization
     Provenance: task-based-approach.html#provenance
     Signatures: task-based-approach.html#signatures
+    Conforming to CDex Task Based Approach: task-based-conformance.html
   Attachments:
     Solicited and Unsolicited Attachments: solicited-unsolicited-attachments.html
     Sending Attachments: sending-attachments.html

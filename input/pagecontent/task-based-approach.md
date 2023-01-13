@@ -28,7 +28,7 @@ In most of these situations, there is human intervention (e.g., a provider or de
 ### The Task Resource
 
 <div class="bg-success" markdown="1">
-**For CDex Task-based transactions, the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled.
+**For CDex Task-based transactions, the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled. For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
 
 #### Task Inputs and Outputs
 

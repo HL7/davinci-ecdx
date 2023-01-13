@@ -7,7 +7,9 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 ### Request Attachments Data Using a FHIR Questionnaire
 
-The [Task Based Approach] page documents why a Data Consumer should use Task for requesting attachments. For more background on Task-based transactions, see the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
+The [Task Based Approach] page documents why a Data Consumer should use Task for requesting attachments. For more background on Task-based transactions, see the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.  **For CDex attachment requests transactions the [CDex Task Attachment Request Profile] SHALL be used by the Payer to solicit information from a Provider.** 
+<!-- {% raw %} {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }} {% endraw %} -->
+For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
 
  In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Provider to complete the questionnaire (form). The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Payer provided Questionnaire and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 1 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
@@ -64,11 +66,7 @@ Preconditions and Assumptions:
 
 ### CDex Attachment Request Profile
 
-**For CDex attachment requests transactions the [CDex Task Attachment Request Profile] SHALL be used by the Payer to solicit information from a Provider.** 
 
-{{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
-
-See the [CDex Task Attachment Request Profile] formal definition for further details.
 
 
 

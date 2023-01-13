@@ -27,7 +27,7 @@ description: |-
   - A Task.reasonReference.reference referencing the Claim or Prior Authorization ID (business Identifier)
   - A "payer-url" Task.input element representing the Payer endpoint URL to communicate to the provider to submit the attachments using the `$submit-attachment` operation
  
-  It constrains following elements to be [*must support*] (min=0):
+  It constrains following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html) (min=0):
 
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)

@@ -19,10 +19,8 @@ Payers can request attachments and additional data for claims and prior authoriz
 #### CDex Attachment Request Profile
 
 **For CDex attachment requests transactions the [CDex Task Attachment Request Profile] SHALL be used by the Payer to solicit information from a Provider.** 
-
-{{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }}
-
-See the [CDex Task Attachment Request Profile] formal definition for further details.
+<!-- {% raw %} {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }} {% endraw %} -->
+For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
 
 </div><!-- new-content -->
 
