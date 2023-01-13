@@ -34,9 +34,9 @@ The CDex Task Attachment Request Profile defines a specific `Task.code` that com
 - attachment codes or 
 - additional data using a FHIR Questionnaire.
 
-Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents this *solicited* attachment transaction. Using a FHIR Questionnaire to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
+Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using a FHIR Questionnaire to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
-Requesting attachments using attachment codes is a HIPAA-based request model using LOINC attachment codes defined by the LOINC Document Ontology. Typically, these concepts represent data in document form (e.g., a PDF or CCDA) The sequence diagram in the Figure 1 below summarizes the basic interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
+Requesting attachments using LOINC attachment codes defined by the LOINC Document Ontology is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 1 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 1" %}
 

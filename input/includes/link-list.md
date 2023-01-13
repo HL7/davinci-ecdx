@@ -141,3 +141,4 @@
 [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)]: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.506
 [*must support*]: {{site.data.fhir.ver.hrex}}/conformance.html
 [DTR SMART App Launch]: requesting-attachments-questionnaire.html#dtr-smart-app-launch
+[Conforming to CDex Task Based Approach]: task-based-conformance.html

@@ -12,7 +12,7 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
 3. Improved navigation:
    - Menu Bar drop-downs for all the pages to allow faster navigation to a specific topic
    - Re-organization of [FHIR Artifacts] by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
-4. Guidance on [Conforming to CDex Attachments] includes interactions for each role and the conformance resource and terminology that makes them unique.
+4. Guidance on [Conforming to CDex Attachments] and [Conforming to CDex Task Based Approach] including interactions for each role and the conformance resource and terminology that makes them unique.
 5. After receiving many comments on CDex POU support, the [CDex Purpose of Use Value Set] now includes a hierarchy to the base "Treatment", "Payment", or "Health Care Operations" (TPO) concepts.
 6. More examples, including examples of failed signature verifications, signed QuestionnaireResponse, and requesting Attachments for prior authorization using Questionnaire.
 
@@ -50,7 +50,7 @@ These changes are the result of over 60 trackers listed below. They include the 
    - [Here](StructureDefinition-cdex-task-attachment-request.html) 
    - [Here](requesting-attachments-code.html#identifying-the-payer-provider-and-patient)
 25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#date-of-service-for-the-claim) 
-26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](attachments-conformance.html)
+26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](attachments-conformance.html) and [Here](task-based-conformance.html)
 27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
 28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-infrastructure-elements)
 30. **Applied**: Separate solicited and unsolicited attachments workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](background.html#workflow-overview)
