@@ -17,9 +17,9 @@ DTR -> Data Source: GET Task
 autonumber off
 Data Source --> DTR: Return Task
 autonumber 
-DTR -> Data Source: GET Questionnaire
+DTR -> Data Consumer: GET Questionnaire
 autonumber off
-Data Source --> DTR: Return Questionnaire
+Data Consumer --> DTR: Return Questionnaire
 autonumber 
 DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
 loop
@@ -30,7 +30,7 @@ autonumber
 DTR -> DTR: Fills QuestionnaireResponse
 end
 opt
-DTR -> Practitioner: Manual Review and \nCompletes QuuestionnaireResponse
+DTR -> Practitioner: Manual Review and Completes\nQuestionnaireResponse
 autonumber off
 Practitioner-->DTR:
 end

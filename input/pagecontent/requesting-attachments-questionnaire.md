@@ -64,12 +64,6 @@ Preconditions and Assumptions:
 
 **Step 9:** The DTR App uses the Task reference obtained in step 8 to fetch it, the Questionnaire, and other resources to fill out a QuestionnaireResponse. See the [previous section](#using-da-vinci-dtr-to-complete-the-questionnaire) (or [this section](task-based-approach.html#using-da-vinci-dtr-to-complete-the-questionnaire) on the Task Based Approach page) for more detailed transactions.
 
-### CDex Attachment Request Profile
-
-
-
-
-
 ### Data Elements for Requesting Attachments
 
 The [Requesting Attachments Using Attachment Codes] page documents the data elements needed to associate an attachment to a claim or prior authorization.  However, there is no "LOINC Attachment Code" Data element when using Questionnaires to collect attachments-related data.

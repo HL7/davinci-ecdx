@@ -16,11 +16,11 @@ DTR -> Provider: GET Task
 autonumber off
 Provider --> DTR: Return Task
 autonumber 
-DTR -> Provider: GET Questionnaire
+DTR -> Payer: GET Questionnaire
 autonumber off
-Provider --> DTR: Return Questionnaire
+Payer --> DTR: Return Questionnaire
 autonumber 
-DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
+DTR -> DTR: Extracts answers and creates\nFHIR QuestionnaireResponse
 loop
 DTR -> Provider:Fetch Data to Complete\n QuestionnaireResponse
 autonumber off
@@ -29,7 +29,7 @@ autonumber
 DTR -> DTR: Fills QuestionnaireResponse
 end
 opt
-DTR -> Practitioner: Manual Review and Completes QuestionnaireResponse
+DTR -> Practitioner: Manual Review and Completes\n QuestionnaireResponse
 autonumber off
 Practitioner-->DTR:
 end
