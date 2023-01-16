@@ -1,0 +1,58 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "cdex-sdc-questionnaireresponse",
+    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
+    "name": "CDEXSDCQuestionnaireResponse",
+    "title": "CDEX SDC QuestionnaireResponse Profile",
+    "status": "active",
+    "date": "2023-01-15",
+    "description": "This extension is derived from the [SDC Questionnaire Response](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) profile and enforces the various elements of signature documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",
+    "fhirVersion": "4.0.1",
+    "kind": "resource",
+    "abstract": false,
+    "type": "QuestionnaireResponse",
+    "baseDefinition": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse",
+    "derivation": "constraint",
+    "differential": {
+        "element": [
+            {
+                "id": "QuestionnaireResponse.extension:signature",
+                "path": "QuestionnaireResponse.extension",
+                "sliceName": "signature"
+            },
+            {
+                "id": "QuestionnaireResponse.extension:signature.value[x]",
+                "path": "QuestionnaireResponse.extension.value[x]",
+                "type": [
+                    {
+                        "code": "Signature",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "QuestionnaireResponse.item",
+                "path": "QuestionnaireResponse.item"
+            },
+            {
+                "id": "QuestionnaireResponse.item.extension:ItemSignature",
+                "path": "QuestionnaireResponse.item.extension",
+                "sliceName": "ItemSignature"
+            },
+            {
+                "id": "QuestionnaireResponse.item.extension:ItemSignature.value[x]",
+                "path": "QuestionnaireResponse.item.extension.value[x]",
+                "type": [
+                    {
+                        "code": "Signature",
+                        "profile": [
+                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

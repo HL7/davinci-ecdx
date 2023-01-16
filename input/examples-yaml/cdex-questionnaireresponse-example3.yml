@@ -3,7 +3,7 @@ id: cdex-questionnaireresponse-example3
 meta:
   profile:
     - >-
-      http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+      http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex QuestionnaireResponse Example3
@@ -21,8 +21,14 @@ extension:
       when: '2022-06-17T22:42:19-07:00'
       who:
         identifier:
+          type:
+            coding:
+              - system: 'http://terminology.hl7.org/CodeSystem/v2-0203'
+                code: NPI
+                display: National Provider Identifier
           system: http://hl7.org/fhir/sid/us-npi
           value: '9941339108'
+        display: 'CDex Example Provider'
       onBehalfOf:
         identifier:
           system: http://hl7.org/fhir/sid/us-npi

@@ -223,20 +223,40 @@ definition:
     name: CDex PractitionerRole Profile
     groupingId: AttachmentsProfiles
   - reference:
+      reference: StructureDefinition/cdex-sdc-questionnaireresponse
+    description: 'This extension is derived from the [SDC Questionnaire Response](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse)
+      profile and enforces the various elements of signature documented in the CDex
+      guide to represent an enveloped signature. It adds the following constraints:
+
+      - The signature extensions use the CDex Signature Profile'
+    exampleBoolean: false
+    name: CDEX SDC QuestionnaireResponse Profile
+    groupingId: SignatureProfiles
+  - reference:
       reference: StructureDefinition/cdex-signature-bundle
-    description: "This Bundle profile enforces the various elements of signature documented\
-      \ in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\
-      \n- A Bundle.signature element representing the enveloped signature\n- A Bundle.signature.type\
-      \ fixed to ASTM Standard, E1762-95(2013) code = \u201C1.2.840.10065.1.12.1.5\u201D\
-      \ (Verification Signature)\n- A Bundle.signature.who for the organization or\
-      \ practitioner who signed the Bundle which is either:\n  1. a reference to US-Core\
-      \ Practitioner, PractitionerRole or Organization or\n  1. an NPI or Tax ID and\
-      \ name of the organization or practitioner\n- A Bundle.signature.data representing\
-      \ base64 encoded JWS-Signature \n\nIn addition, the following *mandatory* (min=1)\
-      \ element is inherited from the base standard:\n- Bundle.signature.when - system\
-      \ timestamp when the signature was created"
+    description: 'This Bundle profile enforces the various elements of signature documented
+      in the CDex guide to represent an enveloped signature. It adds the following
+      *mandatory* (min=1) constraint:
+
+
+      - A Bundle.signature element using the CDex Signature Profile'
     exampleBoolean: false
     name: CDex Signature Bundle Profile
+    groupingId: SignatureProfiles
+  - reference:
+      reference: StructureDefinition/cdex-signature
+    description: "This Signature DataType profile enforces the various elements of\
+      \ signature documented in the CDex guide. It adds the following *mandatory*\
+      \ (min=1) constraints:\n\n- A Signature.type fixed to ASTM Standard, E1762-95(2013)\
+      \ code = \u201C1.2.840.10065.1.12.1.5\u201D (Verification Signature)\n- A Signature.who\
+      \ for the organization or practitioner who signed the Bundle which is either:\n\
+      \  1. a reference to US-Core Practitioner, PractitionerRole or Organization\
+      \ or\n  1. an NPI or Tax ID and name of the organization or practitioner\n-\
+      \ A Signature.data representing base64 encoded JWS-Signature \n\nIn addition,\
+      \ the following *mandatory* (min=1) element is inherited from the base standard:\n\
+      - Signature.when - system timestamp when the signature was created"
+    exampleBoolean: false
+    name: CDex Signature Profile
     groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-task-attachment-request
@@ -535,7 +555,7 @@ definition:
       Da Vinci DTR IG.  The electronic signature is an image file in the QuestionnaireResponse
       signature extension. This example is adapted from the Da Vinci DTR IG.
     name: CDex QuestionnaireResponse Example3
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
     groupingId: SignatureExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example4
@@ -546,7 +566,7 @@ definition:
       in the QuestionnaireResponse signature extension. This example is adapted from
       the Da Vinci DTR IG.
     name: CDex QuestionnaireResponse Example4
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
     groupingId: SignatureExamples
   - reference:
       reference: Bundle/cdex-searchset-digital-sig-example

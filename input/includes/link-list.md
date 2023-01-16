@@ -85,7 +85,7 @@
 [DocumentReference]: {{site.data.fhir.path}}documentreference.html
 [FHIR Signature]:  {{site.data.fhir.path}}datatypes.html#signature
 [`Bundle.signature`]: {{site.data.fhir.path}}bundle-definitions.html#Bundle.signature
-[enveloped  signature]: http://www.w3.org/TR/xmldsig-core/#def-SignatureEnveloped
+[enveloped signature]: http://www.w3.org/TR/xmldsig-core/#def-SignatureEnveloped
 [(Verification Signature)]: {{site.data.fhir.path}}valueset-signature-type.html
 [FHIR Document]: {{site.data.fhir.path}}documents.html
 [RFC 7515]: https://tools.ietf.org/html/rfc7515
@@ -142,3 +142,8 @@
 [*must support*]: {{site.data.fhir.ver.hrex}}/conformance.html
 [DTR SMART App Launch]: requesting-attachments-questionnaire.html#dtr-smart-app-launch
 [Conforming to CDex Task Based Approach]: task-based-conformance.html
+[Signature Extension]: http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature
+[DTR SDC Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-sdc-questionnaire.html
+[signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
+[CDex Signature Profile]: StructureDefinition-cdex-signature.html
+[CDEX SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html

@@ -33,8 +33,10 @@
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example2" key="QuestionnaireResponse-cdex-questionnaireresponse-example2" name="CDex QuestionnaireResponse Example2"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example3" key="QuestionnaireResponse-cdex-questionnaireresponse-example3" name="CDex QuestionnaireResponse Example3"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example4" key="QuestionnaireResponse-cdex-questionnaireresponse-example4" name="CDex QuestionnaireResponse Example4"/>
+<artifact id="StructureDefinition/cdex-sdc-questionnaireresponse" key="StructureDefinition-cdex-sdc-questionnaireresponse" name="CDEX SDC QuestionnaireResponse Profile"/>
 <artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
+<artifact id="StructureDefinition/cdex-signature" key="StructureDefinition-cdex-signature" name="CDex Signature Profile"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
 <artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>

@@ -138,7 +138,9 @@ groups:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
     resources:
+      - StructureDefinition/cdex-signature
       - StructureDefinition/cdex-signature-bundle
+      - StructureDefinition/cdex-sdc-questionnaireresponse
   SignatureTerminology:
     name: Signature Terminology
     description: ValueSets Associated with CDex Signatures
@@ -296,7 +298,7 @@ menu:
     About Signatures: signatures.html
     The Signer: signatures.html#the-signer
     What is Signed: signatures.html#what-is-signed
-    CDex Signature Bundle Profile: signatures.html#cdex-signature-bundle-profile
+    CDex Enveloped Signatures: signatures.html#cdex-enveloped-signatures
     Electronic Signatures: signatures.html#electronic-signatures
     Digital Signatures: signatures.html#digital-signatures
   Security and Privacy: security.html
