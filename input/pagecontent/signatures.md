@@ -32,15 +32,17 @@ The data returned in CDEX is not limited to FHIR resources, but may also include
 |Non-FHIR data formats attached to or referenced by DocumentReference (e.g., CCDA)|Referenced or attached data|
 |FHIR Documents (e.g., CCDA on FHIR, Task-based request\*, Unsolicited Attachment\*)|Document Bundle|
 |FHIR Search Bundle (e.g., a query response)|Search Bundle|
-|FHIR QuestionnaireResponse (e.g., a query response)|QuestionnaireResponse|
+|<span class="bg-success" markdown="1">FHIR QuestionnaireResponse (e.g., a query response)</span><!-- new-content -->|<span class="bg-success" markdown="1">QuestionnaireResponse</span><!-- new-content -->|
 |Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, and/or binary files referenced by DocumentReference)|Combination of Above|
 {:.grid}
 
 \* A *signed [FHIR Document]* is sent for task-based requests and some attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.
 
-The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [Direct Query], [Task Based Approach], [Sending attachments], [Requesting Attachments Using Attachment Codes], and [Requesting Attachments Using Questionnaires].
+The details for how to indicate the signature requirement and how to respond with signed transactions are documented in the corresponding sections on signatures for [Direct Query], [Task Based Approach], [Sending attachments], [Requesting Attachments Using Attachment Codes], and <span class="bg-success" markdown="1">[Requesting Attachments Using Questionnaires]</span><!-- new-content -->.
 
-Requirements for using *FHIR Signatures* to sign a Bundle or QuestionnaireResponse with electronic or digital signatures are documented in the sections below.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
+Requirements for using *FHIR Signatures* to sign a Bundle <span class="bg-success" markdown="1">or QuestionnaireResponse</span><!-- new-content --> with electronic or digital signatures are documented in the sections below.  For guidance on signing other types of documents such as CDA or CCDA on FHIR documents refer to their specifications.
+
+<div class="bg-success" markdown="1">
 
 ### CDex *Enveloped* Signatures
 
@@ -75,6 +77,7 @@ See the [CDex Signature Bundle Profile] formal definition for further details.
 
 See the [CDex SDC QuestionnaireResponse Profile] formal definition for further details.
 
+</div><!-- new-content -->
 
 ### Electronic Signatures
 
@@ -153,8 +156,8 @@ Digital Signatures employ encryption technology and a digital certificate issued
     4. The Validity Dates should be appropriate/long enough as determined by the business partners.
    - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well-documented and standardized canonicalization algorithm, with multiple open-source implementations across several programming languages.
      - The `id`, `meta` and `signature` elements on the root Bundle resource **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
-     - For signatures representing the entire QuestionnaireResponse, the `id`, `meta` and the signature extension on the root QuestionnaireResponse resource **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements.
-     - For signatures representing an item in the QuestionnaireResponse, the `id`, and the signature extension on the item resource **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements.
+     - <span class="bg-success" markdown="1">For signatures representing the entire QuestionnaireResponse, the `id`, `meta` and the signature extension on the root QuestionnaireResponse resource **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements.</span><!-- new-content -->
+     - <span class="bg-success" markdown="1">For signatures representing an item in the QuestionnaireResponse, the `id`, and the signature extension on the item resource **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements.</span><!-- new-content -->
     <!--     1. The canonicalization algorithms defined in the FHIR specification *do not work* for the enveloped signatures that are being used in this guide.  -->
 
 ##### Sender/Signer Steps
@@ -165,37 +168,37 @@ Digital Signatures employ encryption technology and a digital certificate issued
     3.  **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).
 The public key is listed in the first certificate in the `"x5c"` specified by the "Modulus" and "Exponent" parameters of the entry.
 1. Prepare JWS Payload
-    1. Prepare a valid FHIR Bundle or QuestionnaireResponse or QuestionnaireResponse.item
-    2. Canonicalize the Bundle or QuestionnaireResponse or QuestionnaireResponse.item
+    1. Prepare a valid FHIR Bundle or <span class="bg-success" markdown="1">QuestionnaireResponse or QuestionnaireResponse.item</span><!-- new-content -->
+    2. Canonicalize the Bundle <span class="bg-success" markdown="1">or QuestionnaireResponse or QuestionnaireResponse.item</span><!-- new-content -->
     3. base64_url encode the payload
 2. Create the JWS signature using the supported algorithm.
 3. Remove the payload element from the JWS.
 4. base64 encode the JWS
-5. Add the Signature element to the Bundle or the [CDex Questionnaire Signature Extension] to the QuestionnaireResponse or QuestionnaireResponse.item and populate the mandatory Signature datatype elements and actual signature content:
+5. Add the Signature element to the Bundle <span class="bg-success" markdown="1">or the [CDex Questionnaire Signature Extension] to the QuestionnaireResponse or QuestionnaireResponse.item</span><!-- new-content --> and populate the mandatory Signature datatype elements and actual signature content:
    -  `Signature.type`  - Fixed to code =  "1.2.840.10065.1.12.1.5" [(Verification Signature)](http://hl7.org/fhir/valueset-signature-type.html)
    -  `Signature.when`  - System timestamp when signature created
    -  `Signature.who`  -  Reference or identifier of the organization or practitioner who signed it
    -  `Signature.data`  - base64 encoded JWS
 6. Send data to the consumer:
    1. For direct queries, the search set Bundle is returned directly as the payload.
-   2. For Task-based requests and Attachments, the document Bundle or QuestionnaireResponse is used
+   2. For Task-based requests and Attachments, the document Bundle or <span class="bg-success" markdown="1">QuestionnaireResponse</span><!-- new-content --> is used
 
 ##### Receiver/Validation Steps
 
 The following steps outline the process for verifying the Signature.
 
-1. Retrieve and store the Bundle or QuestionnaireResponse:
+1. Retrieve and store the Bundle or <span class="bg-success" markdown="1">QuestionnaireResponse</span><!-- new-content -->:
    1. For direct queries, the search set Bundle is this payload response.
    2. For Task-based requests the completed `Task.output`  is either:
       -  a contained FHIR document and must first be 'decontained'
       -   a reference to a FHIR document and must be fetched from the referenced endpoint.
-   3. For Attachments a FHIR Document Bundle or QuestionnaireResponse is submitted in the operation payload.
-1. Remove the `Bundle.signature` element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item
+   3. For Attachments a FHIR Document Bundle or <span class="bg-success" markdown="1">QuestionnaireResponse</span><!-- new-content --> is submitted in the operation payload.
+1. Remove the `Bundle.signature` element from the Bundle resource <span class="bg-success" markdown="1">or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item.</span><!-- new-content -->
 2. Canonicalize the resource.
 3. Transform the canonicalized json to a base64-url format.
 4. Get the base64 encoded JWS  from the `signature.data`  element
 5. Base64 decode the encoded JWS
-6. Insert the base64 encoded Bundle, QuestionnaireResponse or QuestionnaireResponse.item into the JWS payload element.
+6. Insert the base64 encoded Bundle, <span class="bg-success" markdown="1">QuestionnaireResponse or QuestionnaireResponse.item</span><!-- new-content --> into the JWS payload element.
 7. Obtain the public key from the first certificate in the JWS header `"x5c"` key
     - base64 decode the key value
     - Use the "Subject Public Key Info"

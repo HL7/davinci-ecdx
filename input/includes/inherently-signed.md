@@ -1,1 +1,4 @@
-- The returned information is either already inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or it is transformed into a signed [FHIR Document](http://hl7.org/fhir/documents.html) and `Bundle.signature` used to exchange the signature.
+- The returned information is either:
+   -  inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA) or
+   -  Transformed into a signed [FHIR Document] with the signature in the `Bundle.signature` or
+  -  <span class="bg-success" markdown="1">a signed [QuestionnaireResponse] with the signature in the  [Signature Extension]. </span><!-- new-content -->

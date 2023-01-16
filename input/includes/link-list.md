@@ -147,3 +147,4 @@
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
 [CDEX SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
+[QuestionnaireResponse]:  {{site.data.fhir.path}}QuestionnaireResponse.html
