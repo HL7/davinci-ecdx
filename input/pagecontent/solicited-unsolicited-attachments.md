@@ -25,9 +25,10 @@ For a *solicited* attachment the Provider will submit additional documentation, 
 
 {% include img.html img="solicited-claim-flow.svg" caption="Solicited Attachments for a Claim" %}
 
+---
 
 {% include img.html img="solicited-prior-auth-flow.svg" caption="Solicited Attachments for a Prior Authorization" %}
 
-Attachments may be requested via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform or they may be requested using CDex. See the [Requesting Attachments] page and [Sending Attachments] page for how CDex transactions can be used to support  *solicited* attachment transactions.
+Attachments may be requested via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform or they may be requested using CDex. See the [Requesting Attachments Using Attachments Codes],[Requesting Attachments Using Questionnaires] and [Sending Attachments] pages for how CDex transactions can be used to support  *solicited* attachment transactions.
 
 {% include link-list.md %}

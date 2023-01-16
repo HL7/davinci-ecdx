@@ -46,9 +46,10 @@ Requirements for using *FHIR Signatures* to sign a Bundle <span class="bg-succes
 
 ### CDex *Enveloped* Signatures
 
-Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an [enveloped signature]. For Bundles, the FHIR Bundle is the envelope, and the signature populates the [`Bundle.signature`] element. For QuestionnaireResponse, The envelope can be the resource, individual `QuestionnaireResponse.item` elements, or both, and the signature populates the [CDex Questionnaire Signature Extension]* The enveloped signatures must take care not to include the signature element in the calculation of the digital signature.
+Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an [enveloped signature]. For Bundles, the FHIR Bundle is the envelope, and the signature populates the [`Bundle.signature`] element. For QuestionnaireResponse, The envelope can be the resource, individual `QuestionnaireResponse.item` elements, or both, and the signature populates the [CDex Questionnaire Signature Extension].\* The enveloped signatures must take care not to include the signature element in the calculation of the digital signature.
 
-\* Both [CDex Task Attachment Request Profile] and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR SDC Questionnaire] profile supports many types of signatures, including verification signatures using the FHIR standard [signatureRequired] extension at the QuestionnareiResponse resource or `QuestionnareiResponse.item` level.
+\* When using a FHIR Questionnaire to request data, the [DTR SDC Questionnaire] Profile is used to profile the Questionnaire. Both [CDex Task Attachment Request Profile] and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR SDC Questionnaire] profile supports many types of signatures, including verification signatures using the FHIR standard [signatureRequired] extension at the QuestionnareiResponse resource or `QuestionnareiResponse.item` level.
+{:.bg-warning}
 
 #### CDex Signature Profiles
 
@@ -124,9 +125,9 @@ In this example, a `Bundle.signature` is added to a FHIR Document. The electroni
 
 Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensures the integrity of the data has been attested by the signee. A certificate issued by a CA that the Data Consumer trusts ensure that the Data Consumer can trust that the signature is authentic and non-repudiable.
 
-#### Digital Signature Rules For CDEX FHIR Bundle and QuestionnaireResponse:
+#### Digital Signature Rules For CDEX FHIR Bundle <span class="bg-success" markdown="1">and QuestionnaireResponse</span><!-- new-content -->
 
-1. **SHALL** use the [CDex Signature Bundle Profile] or [CDex SDC Questionnaire Response Profile]
+1. **SHALL** use the [CDex Signature Bundle Profile] or <span class="bg-success" markdown="1">[CDex SDC Questionnaire Response Profile]</span><!-- new-content -->
 2. **SHALL** use JSON Web Signature (JWS)(see [RFC 7515])
    >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
 

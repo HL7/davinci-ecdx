@@ -7,7 +7,8 @@ This guide uses a Task Based Approach to satisfy the Data Consumer's need to req
 - The appropriateness of the request needs to be determined
 - The data needed is described in an unstructured or non-computable form. For example:
   - the payor may not know specific codes or identifiers to make a direct query
-  - there is no way to describe the data in a structured format it is described in free text.
+  - there is no way to describe the data in a structured format and it is described in free text.
+- <span class="bg-success" markdown="1">A [Questionnaire] is used to request the data</span><!-- new-content -->
 - A Direct Query is otherwise not feasible
 
 In most of these situations, there is human intervention (e.g., a provider or designated staff) needed to find the data, aggregate the data, filter the data, and/or approve its release.  In other use cases, mutually agreed upon data sets for specific purposes can already be requested and automatically fulfilled without human intervention.
@@ -21,6 +22,7 @@ In most of these situations, there is human intervention (e.g., a provider or de
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e. there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
+- <span class="bg-success" markdown="1">Provides the ability to represent the needed data using a FHIR [Questionnaire]</span><!-- new-content -->
 - Provides the ability to represent the Purpose of Use in the Task
 - Provides the ability to supply work queue hints to the Task recipient
 - Enables referencing the object that directly leads to the task - a particular claim for example
@@ -36,15 +38,15 @@ In most of these situations, there is human intervention (e.g., a provider or de
   1. leveraging the [FHIR RESTful search syntax]
   2. using a code
   3. using free text
-  4. referencing a FHIR Questionnaire
+  4. referencing a FHIR [Questionnaire]
 
-Implementers of this guide [*must support*] search syntax and coded inputs. However, free text and Questionnaire input are optional capabilities.
+Implementers of this guide [*must support*] search syntax and coded inputs. However, free text and Questionnaire input are optional capabilities. See the [Conforming to CDex Task Based Approach] page for how systems declare what they support for the various actors and roles.
    
 `Task.output` represents the requested data that is returned. This output is a FHIR reference to:
    - FHIR Search Bundle (e.g., a query response)
    - FHIR Documents (e.g., CCDA on FHIR)
    - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
-   - <span class="bg-success" markdown="1">a FHIR QuestionnaireResponse</span><!-- new-content -->
+   - <span class="bg-success" markdown="1">a FHIR [QuestionnaireResponse]</span><!-- new-content -->
    - Other Individual FHIR resources (e.g., Condition)
 </div><!-- new-content -->
 

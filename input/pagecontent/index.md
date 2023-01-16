@@ -13,11 +13,11 @@ This IG provides detailed guidance that helps implementers use FHIR-based intera
  - Exchanging clinical data between referring providers
 
 
-In the context of this guide, "clinical data" means *any* information a provider holds in a patient's health record. The format of the data exchanged is not limited to FHIR resources but includes C-CDA documents, PDFs, text files, and other types of data. There may be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR Bundle (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)), and clinical data such as a specific FHIR resource.
+In the context of this guide, "clinical data" means *any* information a provider holds in a patient's health record. The format of the data exchanged is not limited to FHIR resources but includes C-CDA documents, PDFs, text files, and other types of data.  <span class="bg-success" markdown="1">In addition to requesting FHIR resources, there can</span><!-- new-content --> be requests for payloads of clinical records of care such as CCD Documents, clinical data sets that may be represented in a FHIR Bundle (or [C-CDA on FHIR Documents](http://hl7.org/fhir/us/ccda/)),<span class="bg-success" markdown="1"> or a FHIR Questionnaire.</span><!-- new-content -->
 
 By using the FHIR standard and implementing this guide, payers can be explicit about the data they are requesting as opposed to general requests which often result in providers sending more information than is necessary. The anticipated benefit of using FHIR is a more efficient and effective exchange of health record information in several areas such as claims management, care coordination, risk adjustment, and quality reporting.
 
-This IG provides several *generic* examples to illustrate the different approaches for exchanging clinical data when using the Direct Query and Task-Based approaches. It also documents and provide examples for the specific use case of requesting and sending attachments for claims and prior authorization.  We plan to create a set of [Clinical Data Exchange- Supplemental Guides] which will document and provide examples for other specific use cases.
+This IG provides several *generic* examples to illustrate the different approaches for exchanging clinical data when using the Direct Query and Task-Based approaches. It also documents and provide examples for Requesting and Sending Attachments for claims and prior authorization.  We plan to create a set of [Clinical Data Exchange- Supplemental Guides] which will document and provide examples for other specific use cases.
 {:.bg-info}
 
 ### About This Guide
@@ -45,7 +45,7 @@ Provider
 : The term "Provider" is used to mean the provider system and can be either the Data Source or the Data Consumer.
 
 Attachments
-: The term “Attachments" is limited to a subset of additional information that are documents defined by the [LOINC Document Ontology] or data elements that are presented in document form.
+: <span class="bg-success" markdown="1">Throughout the pages documenting requesting and sending attachments for claims and prior authorization, the terms "attachments", "additional information" and "attachments and additional information" are used.  For this guide, the term “attachments" is not limited to the subset of additional information that are documents defined by the [LOINC Document Ontology] and typically presented in document form. It can also mean a set of additional data elements that can be presented as a [QuestionnaireResponse].</span><!-- new-content --> 
 
 This Guide is divided into several pages which are listed at the top of each page in the menu bar.
 

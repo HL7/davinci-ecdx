@@ -6,12 +6,7 @@ This page is new content for Da Vinci CDex 2.0.0
 
 ### Introduction
 
-CDex CDex Task-based transactions have many optional capabilities.  The tables below show:
-- The CDex Task-based interaction for each role and the conformance resource and terminology that makes it unique to help clarify the different use cases. 
-- The optional and required capabilities for CDex Attachments transactions.
-- The optional and required `$submit-attachment` Parameters
-
-Systems may choose some or all of these capabilities and implement any combination of them. Refer to the CDex [CapabilityStatements] resources for conformance expectations for the various actors and roles. In contrast to the CDex CapabilityStatements, Systems should define what they actually support in their local capability statement by one or more of the following ways:
+CDex CDex Task-based transactions have many optional capabilities. Systems may choose some or all of these capabilities and implement any combination of them. Refer to the CDex [CapabilityStatements] resources for conformance expectations for the various actors and roles. In contrast to the CDex CapabilityStatements, Systems should define what they actually support in their local capability statement by one or more of the following ways:
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Data Request Profile]
 2. Documenting their systems capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.
