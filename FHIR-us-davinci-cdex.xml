@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-cdex/2022Sep" ciUrl="http://build.fhir.org/ig/HL7/davinci-ecdx" defaultVersion="1.1.0" defaultWorkgroup="pc" gitUrl="https://github.com/HL7/davinci-ecdx" url="http://hl7.org/fhir/us/davinci-cdex">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/us/davinci-cdex/2022Sep" ciUrl="http://build.fhir.org/ig/HL7/davinci-ecdx" defaultVersion="2.0.0" defaultWorkgroup="pc" gitUrl="https://github.com/HL7/davinci-ecdx" url="http://hl7.org/fhir/us/davinci-cdex">
 <version code="current" url="http://build.fhir.org/ig/HL7/davinci-ecdx"/>
-<version code="2.0.0-preview" url="http://hl7.org/fhir/us/davinci-cdex/STU2"/>
+<version code="2.0.0" url="http://hl7.org/fhir/us/davinci-cdex/STU2"/>
 <version code="2.0.0-ballot" url="http://hl7.org/fhir/us/davinci-cdex/2022Sep"/>
 <version code="1.1.0" url="http://hl7.org/fhir/us/davinci-cdex/STU1.1"/>
 <version code="1.0.0" url="http://hl7.org/fhir/us/davinci-cdex/STU1"/>
@@ -12,18 +12,20 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Bundle/cdex-document-digital-sig-example" key="Bundle-cdex-document-digital-sig-example" name="CDEX Document with Digital Signature Example"/>
+<artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Document with Electronic Signature Example"/>
+<artifact id="StructureDefinition/cdex-sdc-questionnaireresponse" key="StructureDefinition-cdex-sdc-questionnaireresponse" name="CDEX SDC QuestionnaireResponse Profile"/>
+<artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
 <artifact deprecated="true" id="ValueSet/cdex-attachment-reason" key="ValueSet-cdex-attachment-reason" name="CDex Attachment Reason Value Set"/>
 <artifact id="ValueSet/cdex-attachment-task-code" key="ValueSet-cdex-attachment-task-code" name="CDex Attachment Task Code Value Set"/>
 <artifact id="ValueSet/cdex-claim-use" key="ValueSet-cdex-claim-use" name="CDex Claim Use Value Set"/>
 <artifact id="ValueSet/cdex-data-request-task-code" key="ValueSet-cdex-data-request-task-code" name="CDex Data Request Task Code Value Set"/>
-<artifact id="Bundle/cdex-document-digital-sig-example" key="Bundle-cdex-document-digital-sig-example" name="CDEX Document with Digital Signature Example"/>
-<artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Document with Electronic Signature Example"/>
 <artifact id="ValueSet/cdex-identifier-types" key="ValueSet-cdex-identifier-types" name="CDex Identifier Types Value Set"/>
-<artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example1"/>
 <artifact id="Parameters/cdex-parameters-example2" key="Parameters-cdex-parameters-example2" name="CDex Parameters Example 2"/>
 <artifact id="Parameters/cdex-parameters-example3" key="Parameters-cdex-parameters-example3" name="CDex Parameters Example 3"/>
 <artifact id="Parameters/cdex-parameters-example4" key="Parameters-cdex-parameters-example4" name="CDex Parameters Example 4"/>
 <artifact id="Parameters/cdex-parameters-example5" key="Parameters-cdex-parameters-example5" name="CDex Parameters Example 5"/>
+<artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example1"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
@@ -33,8 +35,6 @@
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example2" key="QuestionnaireResponse-cdex-questionnaireresponse-example2" name="CDex QuestionnaireResponse Example2"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example3" key="QuestionnaireResponse-cdex-questionnaireresponse-example3" name="CDex QuestionnaireResponse Example3"/>
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-example4" key="QuestionnaireResponse-cdex-questionnaireresponse-example4" name="CDex QuestionnaireResponse Example4"/>
-<artifact id="StructureDefinition/cdex-sdc-questionnaireresponse" key="StructureDefinition-cdex-sdc-questionnaireresponse" name="CDEX SDC QuestionnaireResponse Profile"/>
-<artifact id="Bundle/cdex-searchset-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
 <artifact id="StructureDefinition/cdex-signature" key="StructureDefinition-cdex-signature" name="CDex Signature Profile"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
@@ -93,13 +93,13 @@
 <artifact deprecated="true" id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
 <artifact deprecated="true" id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Submit Attachment Operation"/>
-<page key="many" name="(many)"/>
 <page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="attachments" name="Attachments"/>
 <page key="background" name="Background"/>
-<page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
 <page key="ImplementationGuide-hl7.fhir.us.davinci-cdex" name="CDex ImplementationGuide Resource"/>
+<page deprecated="true" key="capabilitystatements" name="Capabilitystatements"/>
 <page key="changes" name="Change Log"/>
 <page key="attachments-conformance" name="Conforming to CDex Attachments"/>
 <page key="task-based-conformance" name="Conforming to CDex Task Based Approach"/>

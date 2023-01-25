@@ -1,8 +1,9 @@
 {
     "package-id": "hl7.fhir.us.davinci-cdex",
-    "version": "2.0.0-preview",
+    "version": "2.0.0",
     "path": "http://hl7.org/fhir/us/davinci-cdex/STU2",
-    "status": "draft",
+    "milestone": true,
+    "status": "trial-use",
     "sequence": "STU2",
     "desc": "This STU2 version of Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the third published version of this guide and is the result of the 2022 Sept HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.  Details of the changes in this version can be seen at http:/hl7.org/fhir/us/davinci-cdex/STU2/changes.html"
 }
