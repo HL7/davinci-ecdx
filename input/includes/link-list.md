@@ -126,7 +126,7 @@
 [CDex Parameters Example2]: Parameters-cdex-parameters-example2.html
 [CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
 [CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
-[Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/STU1/
+[Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/index.html
 [validating profiles and resources]: {{site.data.fhir.path}}validation.html
 [ImplementationGuide]: {{site.data.fhir.path}}implementationguide.html
 [CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html
@@ -148,3 +148,4 @@
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
 [CDEX SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [QuestionnaireResponse]:  {{site.data.fhir.path}}questionnaireresponse.html
+[Topic-Based Subscriptions Framework]: http://hl7.org/fhir/2022Sep/subscriptions.html
