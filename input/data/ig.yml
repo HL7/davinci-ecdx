@@ -112,7 +112,8 @@ definition:
       \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
       \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
       \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
-      \ update notifications\n1. Requesting Attachments"
+      \ update notifications\n3. Requesting Attachments\n   - Requesting Attachments\
+      \ Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
     exampleBoolean: false
     name: Data Consumer Client CapabilityStatement
     groupingId: CapabilityStatements
@@ -140,10 +141,12 @@ definition:
 
       1. Post the `$submit-attachment` operation to a Data Consumer endpoint.
 
-      1. Query for Authorization information represented by a CommunicationRequest
+      2. Launch Da Vinci DTR.
+
+      3. Query for Authorization information represented by a CommunicationRequest
       or ServiceRequest.
 
-      1. Post a subscription notification to a Data Consumer endpoint updating the
+      4. Post a subscription notification to a Data Consumer endpoint updating the
       status of a task.'
     exampleBoolean: false
     name: Data Source Client CapabilityStatement
@@ -156,7 +159,8 @@ definition:
       \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
       \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
       \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
-      \ to a request for Attachments"
+      \ to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments\
+      \ Using Questionnaires"
     exampleBoolean: false
     name: Data Source Server CapabilityStatement
     groupingId: CapabilityStatements

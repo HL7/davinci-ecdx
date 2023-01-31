@@ -161,7 +161,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-consumer-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Requesting and Fetching Clinical Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data using a Task-based query including:\n   -  Polling or Subscribing for Task update notifications\n1. Requesting Attachments",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data from the Data Source  during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Requesting and Fetching Clinical Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data using a Task-based query including:\n   -  Polling or Subscribing for Task update notifications\n3. Requesting Attachments\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments Using Questionnaires",
         "exampleBoolean": false,
         "name": "Data Consumer Client CapabilityStatement",
         "groupingId": "CapabilityStatements"
@@ -179,7 +179,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-client"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange with a Data Consumer. The capabilities include one or more of the following interactions:\n1. Post the `$submit-attachment` operation to a Data Consumer endpoint.\n1. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n1. Post a subscription notification to a Data Consumer endpoint updating the status of a task.",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange with a Data Consumer. The capabilities include one or more of the following interactions:\n1. Post the `$submit-attachment` operation to a Data Consumer endpoint.\n2. Launch Da Vinci DTR.\n3. Query for Authorization information represented by a CommunicationRequest or ServiceRequest.\n4. Post a subscription notification to a Data Consumer endpoint updating the status of a task.",
         "exampleBoolean": false,
         "name": "Data Source Client CapabilityStatement",
         "groupingId": "CapabilityStatements"
@@ -188,7 +188,7 @@
         "reference": {
           "reference": "CapabilityStatement/data-source-server"
         },
-        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to a request for Attachments",
+        "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments Using Questionnaires",
         "exampleBoolean": false,
         "name": "Data Source Server CapabilityStatement",
         "groupingId": "CapabilityStatements"

@@ -3,7 +3,7 @@
   "id": "data-source-server",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h3 class=\"no_toc\" id=\"shall_igs\">SHALL Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core/index.html\">HL7 FHIR® US Core Implementation Guide STU3 Release 3.1.1</a></li> </ul> <h3 class=\"no_toc\" id=\"should_igs\">SHOULD Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/index.html\">Da Vinci Health Record Exchange (HRex) 1.0.0 - STU R1</a></li> </ul> <h3 class=\"no_toc\" id=\"shall_css\">SHALL Implement All Or Parts Of The Following Capability Statements:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-server\">Data Source Server CapabilityStatement</a></li> </ul> <ul> <li><a href=\"http://hl7.org/fhir/us/core/CapabilityStatement-us-core-server.html\">US Core Server CapabilityStatement</a></li> </ul> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Source Server <strong>SHALL</strong>:</p> <ol> <li>Support at least one of the CDex approaches for exchanging clinical information: <ol> <li>Direct Query</li> <li>Task-Based Approach</li> <li>Attachments</li> </ol> </li> <li>Support JSON source formats for all Da Vinci CDex interactions.</li> <li>Follow the guidelines for <a href=\"signatures.html\">Generating and Verifying Signed Resources</a> <em>if signatures are required</em>.</li> <li>Declare a CapabilityStatement identifying the scenarios, transactions, and profiles supported.</li> </ol> <p>The Da Vinci CDex Data Source Server <strong>MAY</strong>:</p> <ol> <li> <p>Support XML source formats for all Da Vinci CDex interactions.</p> <blockquote> <p>Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p> </blockquote> </li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the FHIR <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the <a href=\"security.html\">Security and Privacy</a> section.</li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#bundle\">Bundle</a> </td> <td> <a href=\"StructureDefinition-cdex-signature-bundle.html\">CDex Signature Bundle Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#patient\">Patient</a> </td> <td> <a href=\"StructureDefinition-cdex-patient-demographics.html\">CDex Patient Demographics Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> match </td> </tr> <tr> <td> <a href=\"#practitionerrole\">PractitionerRole</a> </td> <td> <a href=\"StructureDefinition-cdex-practitionerrole.html\">CDex PractitionerRole Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#provenance\">Provenance</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#task\">Task</a> </td> <td> <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a>, <a href=\"StructureDefinition-cdex-task-attachment-request.html\">CDex Task Attachment Request Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"bundle\">Bundle</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to fetch Clinical Information from data source. <strong>SHALL</strong> support CDex Signature Bundle Profile for signed Bundles.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-signature-bundle.html\">CDex Signature Bundle Profile</a> </li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Bundle resource using: <code class=\"highlighter-rouge\">GET [base]/Bundle/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"patient\">Patient</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to supply patient demographic data when requesting attachments.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"StructureDefinition-cdex-patient-demographics.html\">CDex Patient Demographics Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Operation Summary:</p> <ul> <li><strong>SHOULD</strong> support the <a href=\"http://hl7.org/fhir/OperationDefinition/Patient-match\">$match</a> operation <p>Used for discovery of the FHIR Patient.id by CDex Data Consumers</p> </li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>MAY</strong> be capable of returning a Patient resource using: <code class=\"highlighter-rouge\">GET [base]/Patient/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"practitionerrole\">PractitionerRole</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to supply patient demographic data when requesting attachments.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"StructureDefinition-cdex-practitionerrole.html\">CDex PractitionerRole Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>MAY</strong> be capable of returning a PractitionerRole resource using: <code class=\"highlighter-rouge\">GET [base]/PractitionerRole/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"provenance\">Provenance</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to fetch provenance along with clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Provenance resource using: <code class=\"highlighter-rouge\">GET [base]/Provenance/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source for Task-based requests.</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"task\">Task</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><ol> <li>If Da Vinci CDex Data Source Server supports Task-based query, they <strong>SHALL</strong> support the <em>CDex Task Data Request Profile</em>.</li> <li>If Da Vinci CDex Data Source Server supports requesting attachments, they <strong>SHALL</strong> support the: <ul> <li><em>CDex Task Attachment Request Profile</em></li> <li><em>CDex Patient Demographic Profile</em></li> <li><em>CDex PractitionerRequest Profile</em></li> </ul> </li> </ol> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a>, </li> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-task-attachment-request.html\">CDex Task Attachment Request Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Task resource using: <code class=\"highlighter-rouge\">GET [base]/Task/[id]</code> </li> </ul> <hr /> </div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"> <h3 class=\"no_toc\" id=\"shall_igs\">SHALL Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/core/index.html\">HL7 FHIR® US Core Implementation Guide STU3 Release 3.1.1</a></li> </ul> <h3 class=\"no_toc\" id=\"should_igs\">SHOULD Support the Following Implementation Guides:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-hrex/STU1/index.html\">Da Vinci Health Record Exchange (HRex) 1.0.0 - STU R1</a></li> </ul> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-dtr/2022May/index.html\">Documentation Templates and Rules 1.1.0-ballot</a></li> </ul> <h3 class=\"no_toc\" id=\"shall_css\">SHALL Implement All Or Parts Of The Following Capability Statements:</h3> <ul> <li><a href=\"http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-server\">Data Source Server CapabilityStatement</a></li> </ul> <ul> <li><a href=\"http://hl7.org/fhir/us/core/CapabilityStatement-us-core-server.html\">US Core Server CapabilityStatement</a></li> </ul> <h3 id=\"behavior\">FHIR RESTful Capabilities</h3> <p>The Da Vinci CDex Data Source Server <strong>SHALL</strong>:</p> <ol> <li> <p>Support at least one of the CDex approaches for exchanging clinical information:</p> <ol> <li>Direct Query</li> <li>Task-Based Approach</li> <li>Attachments</li> </ol> </li> <li> <p>Support JSON source formats for all Da Vinci CDex interactions.</p> </li> <li> <p>Follow the guidelines for <a href=\"signatures.html\">Generating and Verifying Signed Resources</a> <em>if signatures are required</em>.</p> </li> <li> <p>Declare a CapabilityStatement identifying the scenarios, transactions, and profiles supported.</p> <ul> <li>Follow the guidelines for <a href=\"task-based-conformance.html\">Conforming to CDex Task Based Approach</a> if supporting this exchange.</li> <li>Follow the guidelines for <a href=\"attachments-conformance.html\">Conforming to CDex Attachments</a> if supporting this exchange. The Da Vinci CDex Data Source Server <strong>MAY</strong>:</li> </ul> </li> <li> <p>Support XML source formats for all Da Vinci CDex interactions.</p> <blockquote> <p>Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.</p> </blockquote> </li> </ol> <p id=\"security\"><strong>Security:</strong></p> <ol> <li>For general security consideration refer to the FHIR <a href=\"http://build.fhir.org/secpriv-module.html\">Security and Privacy Considerations</a>.</li> <li>For security considerations specific to this guide refer to the <a href=\"security.html\">Security and Privacy</a> section.</li> </ol> <p><strong>Summary of System Wide Interactions</strong></p> <ul> <li><strong>MAY</strong> support the <code>transaction</code> interaction.</li> <li><strong>MAY</strong> support the <code>batch</code> interaction.</li> <li><strong>MAY</strong> support the <code>search-system</code> interaction.</li> <li><strong>MAY</strong> support the <code>history-system</code> interaction.</li> </ul> <h3 class=\"no_toc\" id=\"resource-details\">RESTful Capabilities by Resource/Profile:</h3> <h4>Summary</h4> <table class=\"grid\"> <thead> <tr> <th>Resource Type</th> <th>Supported Profiles</th> <th>Supported Searches</th> <th>Supported <code>_includes</code></th> <th>Supported <code>_revincludes</code></th> <th>Supported Operations</th> </tr> </thead> <tbody> <tr> <td> <a href=\"#bundle\">Bundle</a> </td> <td> <a href=\"StructureDefinition-cdex-signature-bundle.html\">CDex Signature Bundle Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#patient\">Patient</a> </td> <td> <a href=\"StructureDefinition-cdex-patient-demographics.html\">CDex Patient Demographics Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> match </td> </tr> <tr> <td> <a href=\"#practitionerrole\">PractitionerRole</a> </td> <td> <a href=\"StructureDefinition-cdex-practitionerrole.html\">CDex PractitionerRole Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#provenance\">Provenance</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#questionnaireresponse\">QuestionnaireResponse</a> </td> <td> <a href=\"StructureDefinition-cdex-sdc-questionnaireresponse.html\">CDex SDC QuestionnaireResponse Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#subscription\">Subscription</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> <tr> <td> <a href=\"#task\">Task</a> </td> <td> <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a>, <a href=\"StructureDefinition-cdex-task-attachment-request.html\">CDex Task Attachment Request Profile</a> </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr> </tbody> </table> <h4 class=\"no_toc\" id=\"bundle\">Bundle</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type for responding to Clinical data requests. <strong>SHALL</strong> support CDex Signature Bundle Profile for signed Bundles.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-signature-bundle.html\">CDex Signature Bundle Profile</a> </li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Bundle resource using: <code class=\"highlighter-rouge\">GET [base]/Bundle/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"patient\">Patient</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to supply patient demographic data when requesting attachments.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"StructureDefinition-cdex-patient-demographics.html\">CDex Patient Demographics Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Operation Summary:</p> <ul> <li><strong>SHOULD</strong> support the <a href=\"http://hl7.org/fhir/OperationDefinition/Patient-match\">$match</a> operation <p>Used for discovery of the FHIR Patient.id by CDex Data Consumers</p> </li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>MAY</strong> be capable of returning a Patient resource using: <code class=\"highlighter-rouge\">GET [base]/Patient/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"practitionerrole\">PractitionerRole</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to supply patient demographic data when requesting attachments.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHALL</strong> support: <a href=\"StructureDefinition-cdex-practitionerrole.html\">CDex PractitionerRole Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>MAY</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>MAY</strong> be capable of returning a PractitionerRole resource using: <code class=\"highlighter-rouge\">GET [base]/PractitionerRole/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"provenance\">Provenance</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to fetch provenance along with clinical information</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Provenance resource using: <code class=\"highlighter-rouge\">GET [base]/Provenance/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"questionnaireresponse\">QuestionnaireResponse</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type complete questionnaires from data source. <strong>SHALL</strong> support CDex SDC QuestionnaireResponse Profile for signed QuestionnaireResponse.</p> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-sdc-questionnaireresponse.html\">CDex SDC QuestionnaireResponse Profile</a> </li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>.</li><li><strong>MAY</strong> support <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a QuestionnaireResponse resource using: <code class=\"highlighter-rouge\">GET [base]/QuestionnaireResponse/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"subscription\">Subscription</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><p>Required resource type to subscribe to data source for Task-based requests.</p> </blockquote> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Subscription resource using: <code class=\"highlighter-rouge\">GET [base]/Subscription/[id]</code> </li> </ul> <hr /> <h4 class=\"no_toc\" id=\"task\">Task</h4> <p>Conformance Expectation: <strong>SHOULD</strong></p> <p>Resource Specific Documentation:</p> <blockquote><ol> <li>If Da Vinci CDex Data Source Server supports Task-based query, they <strong>SHALL</strong> support the <em>CDex Task Data Request Profile</em>.</li> <li>If Da Vinci CDex Data Source Server supports requesting attachments, they <strong>SHALL</strong> support the: <ul> <li><em>CDex Task Attachment Request Profile</em></li> <li><em>CDex Patient Demographic Profile</em></li> <li><em>CDex PractitionerRequest Profile</em></li> </ul> </li> </ol> </blockquote> <p>Supported Profiles:</p> <ul> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-task-data-request.html\">CDex Task Data Request Profile</a>, </li> <li><strong>SHOULD</strong> support: <a href=\"StructureDefinition-cdex-task-attachment-request.html\">CDex Task Attachment Request Profile</a> </li> </ul> <p>Reference Policy</p> <ul> <li><strong>SHALL</strong> support <a href=\"http://hl7.org/fhir/valueset-reference-handling-policy.html#expansion\">logical</a></li> </ul> <p>Profile Interaction Summary:</p> <ul> <li><strong>SHOULD</strong> support <code>create</code>, <code>search-type</code>, <code>read</code>, <code>vread</code>, <code>update</code>.</li><li><strong>MAY</strong> support <code>patch</code>, <code>delete</code>, <code>history-instance</code>, <code>history-type</code>.</li> </ul> <p>Fetch and Search Criteria:</p> <ul> <li> A Server <strong>SHOULD</strong> be capable of returning a Task resource using: <code class=\"highlighter-rouge\">GET [base]/Task/[id]</code> </li> </ul> <hr /> </div>"
   },
   "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-server",
   "version": "2.0.0",
@@ -11,7 +11,7 @@
   "title": "Data Source Server CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2022-12-31T13:30:32.407854-08:00",
+  "date": "2023-01-31T15:06:48.054203-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -23,7 +23,7 @@
       ]
     }
   ],
-  "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to a request for Attachments",
+  "description": "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments Using Questionnaires",
   "jurisdiction": [
     {
       "coding": [
@@ -82,7 +82,8 @@
   ],
   "implementationGuide": [
     "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|3.1.1",
-    "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|1.0.0"
+    "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|1.0.0",
+    "http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr|1.1.0-ballot"
   ],
   "_implementationGuide": [
     {
@@ -100,12 +101,20 @@
           "valueCode": "SHOULD"
         }
       ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
+        }
+      ]
     }
   ],
   "rest": [
     {
       "mode": "server",
-      "documentation": "The  Da Vinci CDex Data Source Server **SHALL**:\n\n1. Support at least one of the CDex approaches for exchanging clinical information:\n     1. Direct Query\n     1. Task-Based Approach\n     1. Attachments \n1. Support JSON source formats for all Da Vinci CDex interactions.\n1. Follow the guidelines for [Generating and Verifying Signed Resources](signatures.html) *if signatures are required*.\n1. Declare a CapabilityStatement identifying the scenarios, transactions, and profiles supported.\n\nThe  Da Vinci CDex Data Source Server **MAY**:\n\n1. Support XML source formats for all Da Vinci CDex interactions.\n   \n   > Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.",
+      "documentation": "The  Da Vinci CDex Data Source Server **SHALL**:\n\n1. Support at least one of the CDex approaches for exchanging clinical information:\n     1. Direct Query\n     1. Task-Based Approach\n     1. Attachments \n1. Support JSON source formats for all Da Vinci CDex interactions.\n1. Follow the guidelines for [Generating and Verifying Signed Resources](signatures.html) *if signatures are required*.\n1. Declare a CapabilityStatement identifying the scenarios, transactions, and profiles supported.\n    - Follow the guidelines for [Conforming to CDex Task Based Approach](task-based-conformance.html) if supporting this exchange.\n    - Follow the guidelines for [Conforming to CDex Attachments](attachments-conformance.html) if supporting this exchange.\nThe  Da Vinci CDex Data Source Server **MAY**:\n\n1. Support XML source formats for all Da Vinci CDex interactions.\n   \n   > Implementers that choose to support XML need to be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.",
       "security": {
         "description": "1. For general security consideration refer to the FHIR [Security and Privacy Considerations](http://build.fhir.org/secpriv-module.html). \n1. For security considerations specific to this guide refer to the [Security and Privacy](security.html) section."
       },
@@ -131,7 +140,7 @@
               ]
             }
           ],
-          "documentation": "Required resource type to fetch Clinical Information from data source. **SHALL** support CDex Signature Bundle Profile for signed Bundles.\n",
+          "documentation": "Required resource type for responding to Clinical data requests. **SHALL** support CDex Signature Bundle Profile for signed Bundles.\n",
           "interaction": [
             {
               "extension": [
@@ -482,6 +491,112 @@
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
                   "valueCode": "MAY"
+                }
+              ],
+              "code": "create"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "search-type"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "read"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ],
+              "code": "vread"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "update"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "patch"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "delete"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-instance"
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "MAY"
+                }
+              ],
+              "code": "history-type"
+            }
+          ]
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+              "valueCode": "SHOULD"
+            }
+          ],
+          "type": "QuestionnaireResponse",
+          "supportedProfile": [
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+          ],
+          "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
+                }
+              ]
+            }
+          ],
+          "documentation": "Required resource type complete questionnaires from data source. **SHALL** support CDex SDC QuestionnaireResponse Profile for signed QuestionnaireResponse.",
+          "interaction": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHOULD"
                 }
               ],
               "code": "create"
