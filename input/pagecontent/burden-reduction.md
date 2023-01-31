@@ -6,6 +6,6 @@ In [Da Vinci Prior Authorization Support (PAS)], the expectation is that a final
 
 {% include img.html img="pas-pended-flow.svg" caption="CDex in DaVinci PAS 'Pended' Workflow" %}
 
-<span class="bg-success" markdown="1">\* For details on how the pended transaction is managed, see the [Submit Additional Information] section in the PAS Implementation Guide.</span><!-- new-content -->
+\* For details on how the pended transaction is managed, see the [Submit Additional Information] section in the PAS Implementation Guide. 
 
 {% include link-list.md %}

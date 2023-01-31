@@ -14,14 +14,14 @@
 | Use | AttachTo | Task.reasonCode |
 | Payer ID | PayerId | Task.requester.identifier |
 | Payer URL | (operation endpoint) | "payer-url" Task.input |
-| Organization ID | OrganizationId | <span class="bg-success" markdown="1">PractitionerRole.practitioner.identifier</span><!-- new-content --> |
-| Provider ID | ProviderId | <span class="bg-success" markdown="1">PractitionerRole.organization.identifier</span><!-- new-content --> |
+| Organization ID | OrganizationId | PractitionerRole.practitioner.identifier |
+| Provider ID | ProviderId | PractitionerRole.organization.identifier |
 | Line Item(s) | Attachment.LineItem | “code” Task.input.extension |
 | LOINC Attachment Code | Attachment.Code | “code” Task.input |
 | Date of Service | ServiceDate | “service-date” Task.input |
 | Member ID | MemberId | Patient.identifier |
-| <span class="bg-success" markdown="1">Questionnaire</span><!-- new-content --> | - | <span class="bg-success" markdown="1">“questionnaire” Task.input </span><!-- new-content --> |
-| <span class="bg-success" markdown="1">QuestionnaireResponse</span><!-- new-content --> | <span class="bg-success" markdown="1">Attachment.Content</span><!-- new-content --> | - |
+| Questionnaire | - | “questionnaire” Task.input  |
+| QuestionnaireResponse | Attachment.Content | - |
 {:.grid}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.

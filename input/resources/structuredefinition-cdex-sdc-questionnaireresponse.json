@@ -3,7 +3,7 @@
     "id": "cdex-sdc-questionnaireresponse",
     "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
     "name": "CDEXSDCQuestionnaireResponse",
-    "title": "CDEX SDC QuestionnaireResponse Profile",
+    "title": "CDex SDC QuestionnaireResponse Profile",
     "status": "active",
     "date": "2023-01-15",
     "description": "This extension is derived from the [SDC Questionnaire Response](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) profile and enforces the various elements of signature documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",

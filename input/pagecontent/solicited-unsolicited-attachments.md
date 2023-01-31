@@ -1,5 +1,5 @@
 
-Currently claims <span class="bg-success" markdown="1">and prior authorization</span><!-- new-content --> requests can come through [X12 transactions] or portal submissions. Payers may need additional information from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical or policy benefits. In this guide, the term "attachments" includes a subset of additional information defined by the [LOINC Document Ontology] and data elements presented in document form. Attachments for claims or prior authorization can be divided into *solicited* and *unsolicited* workflows. The sections below document the differences and similarities between these workflows and define the CDex transactions <span class="bg-success" markdown="1">that implementers can use for both solicited and unsolicited prior authorization and claims attachments. See the [Conforming to CDex Attachments] for guidance on how systems define their support for each.</span><!-- new-content -->
+Currently claims and prior authorization requests can come through [X12 transactions] or portal submissions. Payers may need additional information from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical or policy benefits. In this guide, the term "attachments" includes a subset of additional information defined by the [LOINC Document Ontology] and data elements presented in document form. Attachments for claims or prior authorization can be divided into *solicited* and *unsolicited* workflows. The sections below document the differences and similarities between these workflows and define the CDex transactions that implementers can use for both solicited and unsolicited prior authorization and claims attachments. See the [Conforming to CDex Attachments] for guidance on how systems define their support for each. 
 
 ### *Unsolicited* Attachments
 
@@ -7,7 +7,7 @@ For an *unsolicited* attachment, the Provider will submit additional documentati
 
 #### Example Scenarios
 
-1.  A set of pre-defined rules, made by the <span class="bg-success" markdown="1">Payer or state mandates</span><!-- new-content -->, necessitates that the Provider submit additional information without a specific request.
+1.  A set of pre-defined rules, made by the Payer or state mandates , necessitates that the Provider submit additional information without a specific request.
 2.  A Provider believes the Payer will need additional information to process a claim.
 3.  A Provider is under review and must provide additional documentation for all claims.
 

@@ -16,7 +16,7 @@ The sequence diagram in Figure 5 below outlines a successful interaction between
 
 {% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
 
-<div class="bg-success" markdown="1">
+
 
 ### Discovery of Patient FHIR IDs
 
@@ -29,7 +29,7 @@ In addition to using a patient business identifier such as an MRN or Member ID, 
    	`Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
     CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
-</div><!-- new-content -->
+
 
 ### Direct Query Transaction Scenarios
 
@@ -156,7 +156,7 @@ When signatures are required, the Data Consumer must use a [FHIR RESTful search]
   }
   ~~~
 
-</div>
+</div><!-- bg-warning -->
 
 #### Example of *Signed* Direct Query Response
 

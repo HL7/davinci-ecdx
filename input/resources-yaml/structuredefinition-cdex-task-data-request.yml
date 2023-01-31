@@ -9,7 +9,7 @@ description: |-
 
   It constrains the following elements to be *mandatory* (min=1):
 
-  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).
+  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code of either "data-request-code", "data-request-code", or "data-request-questionnaire" communicating that the Data Consumer is requesting data using a code(or free text), a FHIR RESTful query, or a data request questionnaire.
     - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.

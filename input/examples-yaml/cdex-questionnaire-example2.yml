@@ -6,7 +6,7 @@ meta:
       http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
   extension:
     - url: http://hl7.org/fhir/StructureDefinition/instance-name
-      valueString: CDex Questionnaire Example1
+      valueString: CDex Questionnaire Example2
     - url: http://hl7.org/fhir/StructureDefinition/instance-description
       valueMarkdown: >-
         This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG.

@@ -1,6 +1,6 @@
 
 
-This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, <span class="bg-success" markdown="1">the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request.</span><!-- new-content -->
+This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request. 
 
 {% include see-conf.md %}
 
@@ -27,15 +27,15 @@ As shown below in figure 7, the attachments are “pushed” using the [`$submit
 
 ### Data Elements for Sending Attachments
 
-When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. <span class="bg-success" markdown="1">They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 elements in the following table. {% include X12_IP.md %} </span><!-- new-content -->
+When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 elements in the following table. {% include X12_IP.md %}  
 
 {% include attachments_to_275.md %}
 
-For *solicited* attachments, the Payer sends the same data elements in the request for attachments. See the [Requesting Attachments] page for a detailed discussion on how these data elements are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response to the Payer.
+For *solicited* attachments, the Payer sends the same data elements in the request for attachments. See the [Requesting Attachments Using Attachment Codes] and [Requesting Attachments Using Questionnaires] pages for a detailed discussion on how these data elements are used in the CDex Attachment Request Profile to request attachments and in the [`$submit-attachment`] response to the Payer.
 
 ### Examples
 
-In the following examples, a Provider creates a claim and sends *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]. For *solicited attachments* examples, see the [Requesting Attachments] page.
+In the following examples, a Provider creates a claim and sends *unsolicited attachments* using the FHIR operation, [`$submit-attachment`]. For *solicited attachments* examples, see the [Requesting Attachments Using Attachment Codes] and [Requesting Attachments Using Questionnaires] pages.
 
 `POST [base]/$submit-attachment`
 
@@ -87,7 +87,7 @@ Some data consumers may require that the data they receive are signed. When sign
 
 {% include data-source-sig-rules.md %}
 
-- In this example, the Provider submits a patient's active conditions to the Payer to support a <span class="bg-success" markdown="1">claim</span><!-- new-content -->.
+- In this example, the Provider submits a patient's active conditions to the Payer to support a claim .
 - Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle, and the Bundle is digitally signed.
 - See the [Signatures] page for a detailed explanation of how the signature was created and verified.
 
@@ -97,7 +97,7 @@ Some data consumers may require that the data they receive are signed. When sign
 
 This example is the same as the previous example above, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
 
-- In this example, the Provider submits the patient's active conditions to the Payer to support a <span class="bg-success" markdown="1">claim</span><!-- new-content -->.
+- In this example, the Provider submits the patient's active conditions to the Payer to support a claim .
 - Unlike the previous example, the Payer cannot verify the signature because the certificate is expired.
 - An HTTP `400 Bad Request` and OperationOutcome are returned.
 

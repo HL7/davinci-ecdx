@@ -8,18 +8,18 @@
 *****************************************************************************************************
 -->
 
-| Data Element | CDex $submit-attachment Parameter | <span class="bg-success" markdown="1">X12n 275-v6020</span><!-- new-content --> | Submit Attachments Comments |
+| Data Element | CDex $submit-attachment Parameter | X12n 275-v6020 | Submit Attachments Comments |
 |---|----|--------------|-------------------|
-| Tracking ID | TrackingId | <span class="bg-success" markdown="1">Loop: 2000A Segment: TRN02</span><!-- new-content --> | <span class="bg-success" markdown="1">For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number.</span><!-- new-content --> |
-| Use | AttachTo | <span class="bg-success" markdown="1">Claim</span><!-- new-content --> | Choice of "claim" or "preauthorization" |
-| Payer ID | PayerId | <span class="bg-success" markdown="1">Loop: 1000A Segment: NM109</span><!-- new-content --> | Payer ID |
-| Payer URL | (operation endpoint) | <span class="bg-success" markdown="1">-</span><!-- new-content --> | Payer endpoint where the attachments are submitted using the $submit-attachment operation |
-| Organization ID | OrganizationId | <span class="bg-success" markdown="1">Loop: 1000B Segment: NM109 Notes: NM108="46"</span><!-- new-content --> | Organization of provider who submitted claim/prior authorization |
-| Provider ID | ProviderId | <span class="bg-success" markdown="1">Loop: 1000C Segment: NM109 Notes: NM108="XX"</span><!-- new-content --> | Provider who submitted claim/prior authorization |
-| Line Item(s) | Attachment.LineItem | <span class="bg-success" markdown="1">Loop: 2000A Segment: STC10 Notes: Used to convey status of the entire claim or a specific service line</span><!-- new-content --> | Claim/prior authorization line item numbers |
-| LOINC Attachment Code | Attachment.Code | <span class="bg-success" markdown="1">Loop: 2000A Segment: STC01-01</span><!-- new-content --> | LOINC attachment codes |
-| Date of Service | ServiceDate | <span class="bg-success" markdown="1">Loop: 2100A Segment: DTP03</span><!-- new-content --> | Date of service for claim/prior authorization |
-| Member ID | MemberId | <span class="bg-success" markdown="1">Loop: 1000D Segment: NM109 Notes: NM108="MI"</span><!-- new-content --> | Payer assigned patient identifier |
+| Tracking ID | TrackingId | Loop: 2000A Segment: TRN02 | For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number. |
+| Use | AttachTo | Claim | Choice of "claim" or "preauthorization" |
+| Payer ID | PayerId | Loop: 1000A Segment: NM109 | Payer ID |
+| Payer URL | (operation endpoint) | - | Payer endpoint where the attachments are submitted using the $submit-attachment operation |
+| Organization ID | OrganizationId | Loop: 1000B Segment: NM109 Notes: NM108="46" | Organization of provider who submitted claim/prior authorization |
+| Provider ID | ProviderId | Loop: 1000C Segment: NM109 Notes: NM108="XX" | Provider who submitted claim/prior authorization |
+| Line Item(s) | Attachment.LineItem | Loop: 2000A Segment: STC10 Notes: Used to convey status of the entire claim or a specific service line | Claim/prior authorization line item numbers |
+| LOINC Attachment Code | Attachment.Code | Loop: 2000A Segment: STC01-01 | LOINC attachment codes |
+| Date of Service | ServiceDate | Loop: 2100A Segment: DTP03 | Date of service for claim/prior authorization |
+| Member ID | MemberId | Loop: 1000D Segment: NM109 Notes: NM108="MI" | Payer assigned patient identifier |
 {:.grid}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.

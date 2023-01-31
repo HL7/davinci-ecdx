@@ -230,7 +230,7 @@ definition:
 
       - The signature extensions use the CDex Signature Profile'
     exampleBoolean: false
-    name: CDEX SDC QuestionnaireResponse Profile
+    name: CDex SDC QuestionnaireResponse Profile
     groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-signature-bundle
@@ -279,7 +279,7 @@ definition:
       \ with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
+      \ section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
       - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"attachment-request-code\" or \"attachment-request-questionnaire\"\
       \  communicating that the Payer is requesting attachments for a claim or prior\
@@ -350,7 +350,7 @@ definition:
       \ Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section(http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
+      \ section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
       - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"data-request-code\", \"data-request-code\", or \"\
       data-request-questionnaire\" communicating that the Data Consumer is requesting\
@@ -525,7 +525,7 @@ definition:
       Based and Attachments transactions. It indicates that a verification signature
       is needed when completing the QuestionnaireResponse.  It is adapted from the
       Da Vinci DTR IG.
-    name: CDex Questionnaire Example1
+    name: CDex Questionnaire Example2
     exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
     groupingId: SignatureExamples
   - reference:

@@ -1,8 +1,7 @@
 {% capture X %}<span style="color:red; font-size:1.5em">&#10008;</span>{% endcapture %}
 {% capture OK %}<span style="color:green; font-size:1.5em">&#10004;</span>{% endcapture %}
 
-This page is new content for Da Vinci CDex 2.0.0
-{:.new-content}
+
 
 ### Introduction
 

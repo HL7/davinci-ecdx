@@ -3,7 +3,7 @@ id: cdex-sdc-questionnaireresponse
 
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse'
 name: CDEXSDCQuestionnaireResponse
-title: CDEX SDC QuestionnaireResponse Profile
+title: CDex SDC QuestionnaireResponse Profile
 status: active
 date: '2023-01-15'
 

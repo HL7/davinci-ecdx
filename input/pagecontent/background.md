@@ -4,7 +4,7 @@ Da Vinci is a private sector initiative that addresses the needs of the Value-Ba
 
 ### What Do Payers Do with Clinical Information
 
-Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness. In addition, payers use clinical data to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. <span class="bg-success" markdown="1">Payers may also collect this clinical information to assist providers with care planning options</span><!-- new-content -->.
+Payers require clinical data from providers who order or provide services. They use this data to document prior authorization, process and audit claims, and confirm medical necessity and appropriateness. In addition, payers use clinical data to create risk profiles for members for value-based care contracts and population health adjustments. Quality reporting requirements and quality care scoring all require clinical data for evaluating clinical performance and outcomes. Payers may also collect this clinical information to assist providers with care planning options .
 
 #### Example Scenarios
 
@@ -41,15 +41,15 @@ For Security and Privacy considerations refer to the [Security and Privacy] page
 
 ### Where Does CDEX Fit in the Da Vinci Project
 
-The Da Vinci Project developed over a dozen use cases and implementation guides. Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides. <span class= "bg-success" markdown= "1">This guide provides a general solution to requesting specific information from a provider.</span><!-- new-content --> This [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs) summarizes the many areas of functional overlap between this guide and other Da Vinci guides. CDex is not intended to supersede these guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
+The Da Vinci Project developed over a dozen use cases and implementation guides. Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides. This guide provides a general solution to requesting specific information from a provider. This [table](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs) summarizes the many areas of functional overlap between this guide and other Da Vinci guides. CDex is not intended to supersede these guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
 
-- <span class= "bg-success" markdown= "1">An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care.</span><!-- new-content -->
+- An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care. 
 - There is a specific exchange that is not already addressed by one of the other IGs  For example, in [Da Vinci Prior Authorization Support (PAS)], the Payer could request additional information for prior authorization using CDex.
 - The other IG has yet to be or can not be implemented for the use case. For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of quality measures. Implementers can use CDex when:
   1. A Provider has not yet implemented DEQM
   2. An audit of a quality measure requires additional information.
 
-<span class= "bg-success" markdown= "1">The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges.</span><!-- new-content -->
+ The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges. 
 
 {% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
 ### Workflow Overview
@@ -63,7 +63,7 @@ FHIR offers numerous architectural approaches for sharing data between systems. 
 <div markdown="1" class="stu-note">
 
 Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, they ask for detailed clinical information about their members. Implementers may consider using the [Bulk Data Access IG] and the [FHIR Asynchronous Request Patterns]  for these requests. However, there needs to be more implementation experience with this use case to provide specific guidance in this guide.
-</div>
+</div><!-- stu-note -->
 
 #### Direct Query and Task-Based Workflows
 
@@ -121,6 +121,6 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 
 ---
 
-[^1]: <span class="bg-success" markdown="1">The Payer's method for associating attachments to claims or prior authorizations and processing them is out of scope for this guide.</span><!-- new-content -->
+[^1]: The Payer's method for associating attachments to claims or prior authorizations and processing them is out of scope for this guide. 
 
 {% include link-list.md %}

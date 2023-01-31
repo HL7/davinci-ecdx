@@ -146,10 +146,11 @@
 [DTR SDC Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-sdc-questionnaire.html
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
-[CDEX SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
+[CDex SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [QuestionnaireResponse]:  {{site.data.fhir.path}}questionnaireresponse.html
 [Topic-Based Subscriptions Framework]: http://hl7.org/fhir/2022Sep/subscriptions.html
 [C-CDA on FHIR Documents]: http://www.hl7.org/fhir/us/ccda/index.html
 [FHIR Conformance]: {{site.data.fhir.path}}conformance-rules.html#conflang
 [Must Support]: {{site.data.fhir.path}}profiling.html#mustsupport
 [modifier elements]: {{site.data.fhir.path}}conformance-rules.html#isModifier
+[CDex PractitionerRole Profile]: StructureDefinition-cdex-practitionerrole.html
