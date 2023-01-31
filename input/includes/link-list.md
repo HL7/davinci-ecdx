@@ -149,3 +149,7 @@
 [CDEX SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [QuestionnaireResponse]:  {{site.data.fhir.path}}questionnaireresponse.html
 [Topic-Based Subscriptions Framework]: http://hl7.org/fhir/2022Sep/subscriptions.html
+[C-CDA on FHIR Documents]: http://www.hl7.org/fhir/us/ccda/index.html
+[FHIR Conformance]: {{site.data.fhir.path}}conformance-rules.html#conflang
+[Must Support]: {{site.data.fhir.path}}profiling.html#mustsupport
+[modifier elements]: {{site.data.fhir.path}}conformance-rules.html#isModifier

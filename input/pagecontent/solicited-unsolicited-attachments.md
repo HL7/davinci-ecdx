@@ -1,27 +1,25 @@
 
-Currently claims <span class="bg-success" markdown="1">and prior authorization</span><!-- new-content --> requests can come through [X12 transactions] or portal submissions. Payers may need additional information from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical benefits or by policy benefits. In this guide, the use of the term "attachments" includes a subset of additional information which are defined by the [LOINC Document Ontology] and data elements presented in document form.  Attachments for claims or prior authorization can be divided into *solicited* and *unsolicited* workflows. The sections below document the differences and similarities between these workflows and the CDex transactions <span class="bg-success" markdown="1">that can be used for both solicited and unsolicited prior authorization and claims attachments. See the [Conforming to CDex Attachments] for guidance on how systems define their support for each.</span><!-- new-content -->
+Currently claims <span class="bg-success" markdown="1">and prior authorization</span><!-- new-content --> requests can come through [X12 transactions] or portal submissions. Payers may need additional information from a Provider to determine if the service being billed (claim) or requested (prior authorization) is supported by medical or policy benefits. In this guide, the term "attachments" includes a subset of additional information defined by the [LOINC Document Ontology] and data elements presented in document form. Attachments for claims or prior authorization can be divided into *solicited* and *unsolicited* workflows. The sections below document the differences and similarities between these workflows and define the CDex transactions <span class="bg-success" markdown="1">that implementers can use for both solicited and unsolicited prior authorization and claims attachments. See the [Conforming to CDex Attachments] for guidance on how systems define their support for each.</span><!-- new-content -->
 
 ### *Unsolicited* Attachments
 
-For an *unsolicited* attachment the Provider will submit additional documentation to support a claim or prior authorization based on Payer predefined rules without any type of request.  The attachments may be submitted *before, at the same time as, or after* the claim or prior authorization has been supplied to the Payer. Following submission, the attachment is then associated with the claim or prior authorization. 
+For an *unsolicited* attachment, the Provider will submit additional documentation to support a claim or prior authorization based on Payer's predefined rules without any request. The Provider may submit the attachments *before, at the same time as, or after* the claim or prior authorization. After submission, the Payer associates the attachment with the claim or prior authorization.  
 
 #### Example Scenarios
 
-1.  A set of pre-defined rules, made by the <span class="bg-success" markdown="1">Payer or state mandates</span><!-- new-content -->, necessitates that
-additional information is provided without a specific request.
+1.  A set of pre-defined rules, made by the <span class="bg-success" markdown="1">Payer or state mandates</span><!-- new-content -->, necessitates that the Provider submit additional information without a specific request.
 2.  A Provider believes the Payer will need additional information to process a claim.
-3.  A Provider is under review and required to provide additional documentation for all claims.
+3.  A Provider is under review and must provide additional documentation for all claims.
 
-The flow diagram for this transaction is shown in the figure below:
+The flow diagram below shows this transaction:
 
 {% include img.html img="unsolicited-flow.svg" caption="Unsolicited Attachments Flow Diagram" %}
 
-See the [Sending Attachments] page for how CDex transactions can be used to support  *unsolicited* attachment transactions.
+See the [Sending Attachments] page for how Providers can use CDex to support  *unsolicited* attachment transactions.
 
 ### *Solicited* Attachments
 
-For a *solicited* attachment the Provider will submit additional documentation, to support a claim or prior authorization, *in response to* a Payer's request for additional documentation.  The submitted attachments are then associated with the claim or prior authorization. The flow diagram for this transaction is shown in the figures below:
-
+For a *solicited* attachment, the Provider will submit additional documentation to support a claim or prior authorization, *in response to* a Payer's request for additional documentation. The submitted attachments are then associated with the claim or prior authorization. The flow diagrams below show this transaction:
 
 {% include img.html img="solicited-claim-flow.svg" caption="Solicited Attachments for a Claim" %}
 
@@ -29,6 +27,6 @@ For a *solicited* attachment the Provider will submit additional documentation, 
 
 {% include img.html img="solicited-prior-auth-flow.svg" caption="Solicited Attachments for a Prior Authorization" %}
 
-Attachments may be requested via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform or they may be requested using CDex. See the [Requesting Attachments Using Attachments Codes],[Requesting Attachments Using Questionnaires] and [Sending Attachments] pages for how CDex transactions can be used to support  *solicited* attachment transactions.
+A Payer may request attachments via a non-CDex-FHIR-based request (such as an X12 transaction, fax, portal, or other platforms) or CDex. See the [Requesting Attachments Using Attachment Codes], [Requesting Attachments Using Questionnaires], and [Sending Attachments] pages for how Payers and Providers can use CDex to support  *solicited* attachment transactions.
 
 {% include link-list.md %}

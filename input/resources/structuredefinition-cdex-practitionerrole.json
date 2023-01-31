@@ -7,7 +7,7 @@
     "status": "active",
     "experimental": false,
     "date": "2022-11-09",
-    "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both. It constrains the following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html) (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier: \n- An organization.identifier:\n\nAt least a practitioner identifier or organization identifier SHALL be present.",
+    "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both. It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier: \n- An organization.identifier:\n\nAt least a practitioner identifier or organization identifier SHALL be present.",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,

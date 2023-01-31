@@ -1,7 +1,7 @@
 <!-- ValueSet-cdex-POU-intro.md -->
 <!-- ValueSet-cdex-POU.html#cdex-purpose-of-use-value-set-hierarchy -->
 
-This Value Set is draft content. The process for submitting the CDex Temporary Code System POU Codes for inclusion into HL7 Terminology (THO) ACTReason CodeSystem is underway. A final value set will be published as part of an STU update.
+This Value Set is draft content. The process for submitting the CDex Temporary Code System POU Codes for inclusion into HL7 Terminology (THO) ACTReason CodeSystem is underway. In addition, the editors will publish a final CDex POU value set as part of an STU update.
 {:.stu-note}
 
 ### CDex Purpose of Use Value Set Hierarchy
@@ -35,12 +35,12 @@ The current state of healthcare data exchange is typically limited to a single, 
 
 ### Using Not OtherWise Enumerated Codes
 
-Implicit in using the *Not OtherWise Enumerated Codes*:
+The *Not OtherWise Enumerated Codes*:
  - treatment-noa
  - payment-noa
  - operations-noa
-  
-is that an existing concepts do not define the detailed POU and the implementer must supply an additional, alternate code. The resource fragment below shows their use:
+
+do not define the detailed POU, and the implementer must supply an additional, alternate code. The resource fragment below shows their use:
 
 {% include noe-fragment.md %}
 

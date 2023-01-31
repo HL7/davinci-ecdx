@@ -44,8 +44,8 @@ Implementers of this guide [*must support*] search syntax and coded inputs. Howe
    
 `Task.output` represents the requested data that is returned. This output is a FHIR reference to:
    - FHIR Search Bundle (e.g., a query response)
-   - FHIR Documents (e.g., CCDA on FHIR)
-   - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a CCDA document)
+   - FHIR Documents (e.g., C-CDA on FHIR)
+   - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a C-CDA document)
    - <span class="bg-success" markdown="1">a FHIR [QuestionnaireResponse]</span><!-- new-content -->
    - Other Individual FHIR resources (e.g., Condition)
 </div><!-- new-content -->
@@ -262,6 +262,7 @@ Subscriptions allow a data source to notify interested data consumers when a spe
 </div>
 
 This project recognizes the many shortcomings in the current FHIR approach to subscriptions and the significant changes to a [Topic-Based Subscriptions Framework] in FHIR R5 and the publication of the [Subscription R5 Backport Implementation Guide] for FHIR 4 and FHIR 4B.  Due to these changes in FHIR subscriptions, the discovery process for subscription support is out of scope for this guide version.  The Data Consumer may discover it out-of-band or simply through trial and error. The Da Vinci CDex project team plans to update this guide to support the updated subscription framework in a future version.
+{:.stu-note}
 
 #### Example Task Based Transaction using Subscription
 
@@ -330,16 +331,16 @@ Some data consumers may require that the data they receive are signed. When sign
 
 {% include signature-disclaimer.md %}
 
-#### The Data Consumer/Requester Requirements
+#### The Data Consumer Requirements
 
-- The Data Consumer/Requester *pre-negotiates* with the organization representing the Data Source/Responder if:
-  1. electronic or digital *provider* signatures are required for *all* Task-based query response data or
-  2. electronic or digital *system-level* signatures are required for *all* or *some* Task-based query response data instead of or in addition to provider signatures (for example, for automated workflows) or
-  3. electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature).
-- The Data Consumer/Requester follows the documentation on the [Signatures] page for validating signatures.
-   - If the signatures fail verification, the Data Consumer/Requester notifies the Data Source that the signature is invalid or absent. Currently, there is no standard way to communicate this, and it needs to be done “out of band”.
+- The Data Consumer *pre-negotiates* with the organization representing the Data Source/Responder if:
+  1. electronic or digital *provider* signatures are required for *all* Task-based query response data
+  2. or electronic or digital *system-level* signatures are required for *all* or *some* Task-based query response data instead of or in addition to provider signatures (for example, for automated workflows)
+  3. or electronic or digital *provider* signatures are required *only* for requests that communicate the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-data-request-definitions.html#Task.input:signature).
+- The Data Consumer follows the documentation on the [Signatures] page for validating signatures.
+   - If the signatures fail verification, the Data Consumer notifies the Data Source that the signature is invalid or absent. Currently, there is no standard way to communicate this, and it needs to be done “out of band”.
 
-#### Data Source/Responder Requirements
+#### Data Source Requirements
 {% include data-source-sig-rules.md %}
 
 #### Example of a *Signed* Task Based Transaction

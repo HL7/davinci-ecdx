@@ -116,7 +116,7 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 
 1. For *solicited* attachments, the data consumer initiates a request for attachments for a claim or prior authorization.
     - This can be a FHIR or non-FHIR-based transaction
-2. The data source submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
+2. The data source submits the attachments and metadata (for example, member id and claim id) for the association to the claim or prior authorization.
 3. Payer system accepts attachments.[^1]
 
 ---

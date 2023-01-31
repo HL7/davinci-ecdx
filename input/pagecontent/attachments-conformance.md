@@ -11,12 +11,12 @@ CDex attachments are intended to be compatible with the X12n transactions and de
 - The optional and required capabilities for CDex Attachments transactions.
 - The optional and required `$submit-attachment` Parameters
 
-Note that systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. In contrast to the CDex CapabilityStatements, they should define what they support in their local capability statement by one or more of the following ways:
+Note that systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they should define what they actually support in their local capability statement by one or more of the following ways:
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Attachment Request Profile]
-2. Documenting their systems capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.
+2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.
 3. (Preferred) Formal OperationDefinition derived from [`$submit-attachment`]
-4. Documenting their systems capabilities for submitting attachments in `CapabilityStatement.rest.documentation`
+4. Document their systems' capabilities for submitting attachments in `CapabilityStatement.rest.documentation`
 
 ### Provider Conformance
 
@@ -38,7 +38,7 @@ Submit Attachment Operation|{{OK}}|{{OK}}|{{OK}}|{{OK}}
 
 ### Payer Conformance
 
-#### Payer in Role of Data Consumer Server
+#### Payer Data Consumer Server Role
 
 Data Consumer Client|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
 |:---:|:---:|:---:|:---:|:---:|
@@ -46,7 +46,7 @@ Submit Attachment Operation|{{OK}}|{{OK}}|{{OK}}|{{OK}}
   AttachTo parameter Terminology|`claim`|`claim`|`preauthorization`|`preauthorization`
 {:.grid}
 
-#### Payer in Role of Data Consumer Client
+#### Payer Data Consumer Client Role
 
 Data Consumer Server|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
 |:---:|:---:|:---:|:---:|:---:|
@@ -54,12 +54,12 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
    Task.reasonCode Terminology|-|`claim`|-|`preauthorization`
 {:.grid}
 
-{{OK}}: Conformance resource used in transaction  
-{{X}}: Conformance resource not used in transaction
+{{OK}}: Conformance resource used in the transaction  
+{{X}}: Conformance resource not used in the transaction
 
 ### Capabilities for Requesting Attachments
 
-|Capability|Required|Optional|
+|Capability|Must Support*|Optional|
 |:---:|:---:|:---:|
 |Requesting Attachments Using Attachment Codes|{{OK}}||
 |Requesting Attachments Using Questionnaire||{{OK}}|
@@ -67,6 +67,12 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |Representing The Purpose Of Use (POU) For The Requested Data||{{OK}}|
 |Ability to submit attachments data in multiple submissions||{{OK}}|
 {:.grid}
+
+\* See the next section
+
+### CDex Must Support Definition
+
+{% include must-support.md %}
 
 ### $submit-attachment Parameters for Sending Attachments
 

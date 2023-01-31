@@ -19,7 +19,7 @@ description: |-
   - A Task.requester element communicating who is requesting the data
   - A Task.owner element representing the Provider who is being asked to provide the data
 
-  It constrains following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html) (min=0):
+  It constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
 
   - A Task.identifier element representing the unique data request identifier
   - A Task.basedOn element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request

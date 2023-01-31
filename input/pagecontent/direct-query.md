@@ -131,7 +131,7 @@ Some data consumers may require that the data they receive are signed.  When sig
 
 - If signatures are required, the Data Source/Responder returns a *signed FHIR search set Bundle* using the `Bundle.signature` element for the signature signed by the organization responding to the query.
 - The Data Source/Responder follows the documentation on the [Signatures] page for producing signatures.
-- As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. Therefore, if the Consumer/Requester incorrectly assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g., CCDA, PDF, Image, CDA on FHIR ), they can re-request it using a Task-based request and specify that it be signed (see [Signatures for Task Based Requests]).
+- As discussed in the [What is Signed] section, a signed search bundle could have entries within it that are individually signed as well. Therefore, if the Data Consumer incorrectly assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g., CCDA, PDF, Image, CDA on FHIR ), they can re-request it using a Task-based request and specify that it be signed (see [Signatures for Task Based Requests]).
 
 <div markdown="1" class="bg-warning" id="read-warning">
 

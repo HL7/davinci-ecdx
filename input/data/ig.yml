@@ -204,7 +204,7 @@ definition:
       \ for a clinical data request (for example, to verify patient identity for HIPAA\
       \ compliance regulations).  It constrains the following elements to be *mandatory*\
       \ (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier\
-      \ slice\n- A patient's name\n\nand the following element to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html)\
+      \ slice\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
       \ (min=0):\n\n- A patient account number identifier slice  \n- A date of birth"
     exampleBoolean: false
     name: CDex Patient Demographics Profile
@@ -215,7 +215,7 @@ definition:
       \ within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`\
       \ to communicate the provider ID as either a unique organization/location identifier\
       \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\
-      \ It constrains the following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html)\
+      \ It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
       \ (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier:\
       \ \n- An organization.identifier:\n\nAt least a practitioner identifier or organization\
       \ identifier SHALL be present."
@@ -301,7 +301,7 @@ definition:
       \ or Prior Authorization ID (business Identifier)\n- A \"payer-url\" Task.input\
       \ element representing the Payer endpoint URL to communicate to the provider\
       \ to submit the attachments using the `$submit-attachment` operation\n\nIt constrains\
-      \ following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html)\
+      \ following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
       \ (min=0):\n\n- A Task.Restriction.period element representing the due date\
       \ for submitting the attachments\n- A Task.statusReason.text to communicate\
       \ the reason for the status (for example, if the Task is rejected or failed)\n\
@@ -365,7 +365,7 @@ definition:
       - A Task.for element representing the member (i.e.,patient) for whom the data\
       \ is being requested\n- A Task.requester element communicating who is requesting\
       \ the data\n- A Task.owner element representing the Provider who is being asked\
-      \ to provide the data\n\nIt constrains following elements to be [*must support*](http://hl7.org/fhir/us/davinci-hrex/STU1/conformance.html)\
+      \ to provide the data\n\nIt constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition)\
       \ (min=0):\n\n- A Task.identifier element representing the unique data request\
       \ identifier\n- A Task.basedOn element to communicate the order (ServiceRequest,\
       \ CommunicationRequest, etc.) that authorizes the data request\n- A Task.statusReason.text\
