@@ -12,6 +12,7 @@
 |--------|-------|---------|
 | Tracking ID | TrackingId | Task.identifier |
 | Use | AttachTo | Task.reasonCode |
+| Payer ID | PayerId | Task.requester.identifier |
 | Payer URL | (operation endpoint) | "payer-url" Task.input |
 | Organization ID | OrganizationId | <span class="bg-success" markdown="1">PractitionerRole.practitioner.identifier</span><!-- new-content --> |
 | Provider ID | ProviderId | <span class="bg-success" markdown="1">PractitionerRole.organization.identifier</span><!-- new-content --> |

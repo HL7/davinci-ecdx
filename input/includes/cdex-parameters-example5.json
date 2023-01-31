@@ -10,7 +10,7 @@
         },
         {
             "name": "AttachTo",
-            "valueCode": "claim"
+            "valueCode": "preauthorization"
         },
         {
             "name": "PayerId",
@@ -39,10 +39,6 @@
                 "system": "http://example.org/cdex/payer/member-ids",
                 "value": "Member123"
             }
-        },
-        {
-            "name": "ServiceDate",
-            "valueDate": "2022-12-15"
         },
         {
             "name": "Attachment",

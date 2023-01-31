@@ -17,7 +17,7 @@ parameter:
             value: trackingid1012
     - 
         name: AttachTo
-        valueCode: claim
+        valueCode: preauthorization
     - 
         name: PayerId
         valueIdentifier:
@@ -38,9 +38,9 @@ parameter:
         valueIdentifier:
             system: 'http://example.org/cdex/payer/member-ids'
             value: 'Member123'
-    - 
-        name: ServiceDate
-        valueDate: '2022-12-15'
+    # - 
+    #     name: ServiceDate
+    #     valueDate: '2022-12-15'
     - 
         name: Attachment
         part:

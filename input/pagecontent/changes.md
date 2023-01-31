@@ -1,24 +1,24 @@
 ### Version = 2.0.0
-- Publication Date: Projected Q1 2023
-- url: <http://hl7.org/fhir/us/davinci-cdex/STU2>
+- Publication Date: 2023-01-30
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2>
 - Based on FHIR version: 4.0.1
 
-This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the third published version of this guide and is the result of the 2022 September HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
+This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the third published version of this guide and is the result of the 2022 September HL7 balloting process. The resulting resolution of the community comments and edits to this guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
 
-#### What’s new in Version 2.0.0 of CDex:
+#### What's new in Version 2.0.0 of CDex:
 
-1. New [Requesting Attachments Using Questionnaires] functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. This approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provides the ability for signature attestation if required.
-2. New Task-Based transactions functionality for [Using Questionnaire as Task Input]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. The provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
+1. New [Requesting Attachments Using Questionnaires] functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. In addition, this approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provide the ability for signature attestation if required.
+2. New Task-Based transactions functionality for [Using Questionnaire as Task Input]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. As a result, the provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
 3. Improved navigation:
    - Menu Bar drop-downs for all the pages to allow faster navigation to a specific topic
    - Re-organization of [FHIR Artifacts] by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
-4. Guidance on [Conforming to CDex Attachments] and [Conforming to CDex Task Based Approach] including interactions for each role and the conformance resource and terminology that makes them unique.
+4. [Conforming to CDex Attachments] and [Conforming to CDex Task Based Approach], including interactions for each role and the conformance resource and terminology that makes them unique.
 5. After receiving many comments on CDex POU support, the [CDex Purpose of Use Value Set] now includes a hierarchy to the base "Treatment", "Payment", or "Health Care Operations" (TPO) concepts.
 6. More examples, including examples of failed signature verifications, signed QuestionnaireResponse, and requesting Attachments for prior authorization using Questionnaire.
 
 #### Changes:
 
-These changes are the result of over 60 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issue.
+These changes are the result of over 60 trackers listed below. They include the 2022 September HL7 balloting process and non-ballot issues.
 
 ##### September 2022 ballot and non-ballot comments and links to the updated content are below:
 
@@ -52,7 +52,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#date-of-service-for-the-claim) 
 26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](attachments-conformance.html) and [Here](task-based-conformance.html)
 27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-infrastructure-elements)
+28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-status-intent-and-code-elements)
 30. **Applied**: Separate solicited and unsolicited attachments workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](background.html#workflow-overview)
 31. **Applied**: Make LOINC code display and text consistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233)) See Changes [Here](Parameters-cdex-parameters-example1.json.html)
 32. **Applied**: Fix Typo in example ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](Parameters-cdex-parameters-example4.html)
@@ -119,7 +119,7 @@ These changes are the result of over 60 trackers listed below. They include the 
 
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
-- url: <http://hl7.org/fhir/us/davinci-cdex/2022Sep>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/2022Sep>
 - Based on FHIR version: 4.0.1
 
 #### Changes:
@@ -127,7 +127,7 @@ Da Vinci CDEX 2022 September Ballot. This ballot is restricted to the *Draft* co
 
 ### Version = 1.1.0
 - Publication Date: 2022-08-01
-- url: <http://hl7.org/fhir/us/davinci-cdex/STU1.1>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU1.1>
 - Based on FHIR version: 4.0.1
 
 This STU1.1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the second published version of this guide and is the result of the 2022 May HL7 balloting process. The resulting resolution of the community comments and edits to the guide has been agreed to and voted on by the members of the sponsoring HL7 International Patient Care and Payer/Provider Information Exchange Work Groups.
@@ -264,7 +264,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 
 ### Version = 1.1.0-ballot
 - Publication Date: 2022-03-25
-- url: <http://hl7.org/fhir/us/davinci-cdex/2022May>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/2022May>
 - Based on FHIR version : 4.0.1
 
 
@@ -275,7 +275,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 
 ### Version = 1.0.0
 - Publication Date: 2022-03-25
-- url: <http://hl7.org/fhir/us/davinci-cdex/STU1>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU1>
 - Based on FHIR version : 4.0.1
 
 
@@ -388,7 +388,7 @@ January 2021 Ballot comments and links to the updated content are below::
 
 ### Version = 0.2.0
 - Publication Date: 2020-10-23
-- url: <http://hl7.org/fhir/us/davinci-cdex/2021Jan>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/2021Jan>
 - Based on FHIR version : 4.0.1
 
 
@@ -399,7 +399,7 @@ January 2021 Ballot comments and links to the updated content are below::
 
 ### Version = 0.1.0
 - Publication Date: 2019-06-18
-- url: <http://hl7.org/fhir/us/davinci-cdex/2019Jun>
+- URL: <http://hl7.org/fhir/us/davinci-cdex/2019Jun>
 - Based on FHIR version : 4.0.0
 
 

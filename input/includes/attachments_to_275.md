@@ -12,6 +12,7 @@
 |---|----|--------------|-------------------|
 | Tracking ID | TrackingId | <span class="bg-success" markdown="1">Loop: 2000A Segment: TRN02</span><!-- new-content --> | <span class="bg-success" markdown="1">For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number.</span><!-- new-content --> |
 | Use | AttachTo | <span class="bg-success" markdown="1">Claim</span><!-- new-content --> | Choice of "claim" or "preauthorization" |
+| Payer ID | PayerId | <span class="bg-success" markdown="1">Loop: 1000A Segment: NM109</span><!-- new-content --> | Payer ID |
 | Payer URL | (operation endpoint) | <span class="bg-success" markdown="1">-</span><!-- new-content --> | Payer endpoint where the attachments are submitted using the $submit-attachment operation |
 | Organization ID | OrganizationId | <span class="bg-success" markdown="1">Loop: 1000B Segment: NM109 Notes: NM108="46"</span><!-- new-content --> | Organization of provider who submitted claim/prior authorization |
 | Provider ID | ProviderId | <span class="bg-success" markdown="1">Loop: 1000C Segment: NM109 Notes: NM108="XX"</span><!-- new-content --> | Provider who submitted claim/prior authorization |
