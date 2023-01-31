@@ -1,71 +1,56 @@
 {
-    "resourceType": "Questionnaire",
-    "id": "cdex-questionnaire-example1",
-    "meta": {
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire"
-        ],
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Questionnaire Example1"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG."
-            }
-        ]
+  "resourceType": "Questionnaire",
+  "id": "cdex-questionnaire-example1",
+  "name": "HomeOxygenTherapyQuestionnaire",
+  "title": "Home Oxygen Therapy Questionnaire",
+  "url": "http://example.org/cdex-questionnaire-example1",
+  "status": "draft",
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2022-01-17",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+      "type": "text",
+      "required": true
     },
-    "name": "HomeOxygenTherapyQuestionnaire",
-    "title": "Home Oxygen Therapy Questionnaire",
-    "url": "http://example.org/cdex-questionnaire-example1",
-    "status": "draft",
-    "subjectType": [
-        "Patient"
-    ],
-    "date": "2022-01-17",
-    "item": [
+    {
+      "linkId": "2",
+      "text": "Order Reason",
+      "type": "choice",
+      "required": true,
+      "answerOption": [
         {
-            "linkId": "1",
-            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-            "type": "text",
-            "required": true
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "1",
+            "display": "Initial or original order for certification"
+          }
         },
         {
-            "linkId": "2",
-            "text": "Order Reason",
-            "type": "choice",
-            "required": true,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "1",
-                        "display": "Initial or original order for certification"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "2",
-                        "display": "Change in status"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "3",
-                        "display": "Revision or change in equipment"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "4",
-                        "display": "Replacement"
-                    }
-                }
-            ]
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "2",
+            "display": "Change in status"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "3",
+            "display": "Revision or change in equipment"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "4",
+            "display": "Replacement"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }
