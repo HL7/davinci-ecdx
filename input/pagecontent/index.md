@@ -25,7 +25,7 @@ The [Da Vinci] initiative supports this implementation guide. Da Vinci is a priv
 
  The sponsoring HL7 [Patient Care] workgroup manages changes to this specification. Changes are incorporated as part of the standard HL7 balloting process. You can suggest changes to this specification by creating a *change request tracker* by clicking on the [Propose a Change] link at the bottom of any page.
 
-### How to read this Guide
+### How To Read This Guide
 
 This guide uses the following terms to document the CDex transactions:
 
@@ -65,13 +65,52 @@ This guide is divided into several pages listed at the top of each page in the m
 
 ---
 
+### Credits
+
 *This Implementation Guide was made possible by the contributions of the [Da Vinci] Project member organizations and project management staff, the [Patient Care] Work Group, and the [Payer/Provider Information Exchange] Work Group.*
 
-*Authors:*
+*Author:*
 
 - *Eric Haas, Health eData Inc*
-- *Lloyd Mckenzie, Gevity Consulting*
+
+*CDex Core Team:*
+
+- *Lloyd Mckenzie, Accenture/Dogwood Health Consulting*
 - *Robert Dieterle, EnableCare*
+- *Christol Green, Elevance Health*
+- *Durwin Day, - Health Care Service Corporation*
+
+*Project Management and Coordination:*
+- *Viet Nguyen, Stratametrics, LLC*
+- *Vanessa Candelora, Point of Care Partners*
+- *Crystal Kallem, Point of Care Partners*
+- *Yan Heras, Optimum eHealth LLC*
+
+*Reference Implementation and TestScripts:*
+- *Karell Ruiz, HealthLX*
+- *Joel Walker, HealthLX*
+- *Carie Hammond, Aegis*
+
+*Special thanks go to the numerous individual who have participated on conference calls, ballots, and reviews of this IG:*
+
+- *Celine Lefebvre, AMA*
+- *Andrea Preisler, AHA*
+- *Isaac Vetter, Epic*
+- *Brett Stringham, Optum*
+- *Chris Johnson, Blue Cross and Blue Shield of Alabama*
+- *Diederik Muylwyk, Smile CDR*
+- *Nick Radov, Optum*
+- *Linda Michaelson, Optum*
+- *Peter Gunter, VA*
+- *Scott Fradkin, Flexion*
+- *Andrew Barbieri, Epic*
+- *Hans Buitendijk, Oracle*
+- *Kyle Johnsen, Epic*
+- *Liora Alschuler, Lantana*
+- *Mitra Rocca, FDA*
+- *Rob McClure, MD Partners, Inc.*
+- *Ron G. Parker, Canada Health Infoway*
+- *Spencer Utley, Epic*
 
 ---
 
