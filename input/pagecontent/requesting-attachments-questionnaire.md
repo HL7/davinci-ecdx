@@ -10,9 +10,9 @@ The [Task Based Approach] page documents why a Data Consumer should use Task for
 <!-- {% raw %} {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }} {% endraw %} -->
 For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
 
- In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Provider to complete the questionnaire (form). The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Payer provided Questionnaire and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 1 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
+ In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Provider to complete the questionnaire (form). The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Payer provided Questionnaire and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
-{% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 1" %}
+{% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 17" %}
 
 **Step 1:** The Payer POSTs a Task directly to the Provider. The Task is a request to complete a questionnaire.
 
@@ -26,22 +26,22 @@ For a detailed description of all the mandatory, [*must support*], and optional 
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in the Figure 2 below depicts the the FHIR RESTful transactions  and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return a questionnaire using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
+The sequence diagram in the Figure 18 below depicts the the FHIR RESTful transactions  and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return a questionnaire using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
 
-{% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 2" %}
+{% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 18" %}
 
 ##### DTR SMART App Launch
 
-The sequence diagram in Figure 3 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.
+The sequence diagram in Figure 19 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.
 
 Preconditions and Assumptions:
 - The DTR Client, and FHIR Server are Provider (Data Source) roles.
 - If the DTR is a native EHR application, the launch is implementation specific, and this diagram does not apply.
 - A User kicks off [Smart Version 2.0.0 EHR launch flow].
 
-<!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 3: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
+<!-- {% raw %} {% include img.html img="SMART App Launch for DTR from CDEX.png" caption="Figure 19: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
 
-{% include img.html img="dtr-launch.svg" caption="Figure 3" %}
+{% include img.html img="dtr-launch.svg" caption="Figure 19" %}
 
 **Step 1 (Optional):** The DTR App registers with DTR Client (may be out of band)
 
@@ -79,10 +79,10 @@ In the following sections, A detailed look at an example *Solicited* attachment 
 - The Provider uses the $submit-attachment operation to communicate the completed QuestionnaireResponse to the Payer.
 </div><!-- bg-info -->
 
-In this scenario, a Provider creates a prior authorization and sends it to the Payer. The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR, which completes a QuestionnaireResponse. The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram in figure 3 below illustrates the scenario.
+In this scenario, a Provider creates a prior authorization and sends it to the Payer. The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR, which completes a QuestionnaireResponse. The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram in figure 20 below illustrates the scenario.
 
 
-{% include img.html img="cdex-request-questionnaire-priorauth-flow.svg" caption="Figure 3: CDex Request Attachment for Prior-Auth Using Questionnaires" %}
+{% include img.html img="cdex-request-questionnaire-priorauth-flow.svg" caption="Figure 20: CDex Request Attachment for Prior-Auth Using Questionnaires" %}
 
 In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following details about what information is necessary to complete the adjudication of the claim:
 
@@ -156,7 +156,7 @@ These required Task infrastructure elements:
 - Task.status
 - Task.intent
 
-convey what the task status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task at is moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".
+convey the task status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".
 
 ~~~
 {% include_relative includelines filename='cdex-task-example22.json' start=96 count=2 linenumber=true %}

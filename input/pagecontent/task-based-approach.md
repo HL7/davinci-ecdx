@@ -68,9 +68,9 @@ When it is known, `Task.reasonCode` or `Task.reasonReference` **SHALL** referenc
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 6 below summarizes the fundamental interaction between the Data Consumer and Data Source to query and retrieve the requested data using the Task-based transaction.   The following sections discuss the options and variations associated with Task-based Exchange API.
+The sequence diagram in Figure 7 below summarizes the fundamental interaction between the Data Consumer and Data Source to query and retrieve the requested data using the Task-based transaction.   The following sections discuss the options and variations associated with Task-based Exchange API.
 
-{% include img.html img="task-sequencediagram.svg" caption="Figure 6" %}
+{% include img.html img="task-sequencediagram.svg" caption="Figure 7" %}
 
 
 ### Discovery of Identifiers
@@ -177,9 +177,9 @@ Preconditions and Assumptions are the same as in the previous example, except th
 
 ### Using Questionnaire as Task Input
 
-The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 7 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
+The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 8 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
 
-{% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 7" %} 
+{% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 8" %} 
 
 **Step 1:** The Data Consumer POSTs a Task directly to the Data Source. The Task is a request to complete a questionnaire.
 
@@ -195,9 +195,9 @@ The [CDex Task Data Request Profile] supports requests for more detailed data us
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in Figure 8 below depicts the FHIR RESTful transactions and processes involved between the Data Consumer, Data Source, and DTR application needed to request, fill, and return a questionnaire using CDex Task-based approach. It references a "DTR Launch". If DTR is a native EHR application, the launch is implementation specific. If it is a SMART on FHIR Application, the [DTR SMART App Launch] section documents the launch sequence and parameters.
+The sequence diagram in Figure 9 below depicts the FHIR RESTful transactions and processes involved between the Data Consumer, Data Source, and DTR application needed to request, fill, and return a questionnaire using CDex Task-based approach. It references a "DTR Launch". If DTR is a native EHR application, the launch is implementation specific. If it is a SMART on FHIR Application, the [DTR SMART App Launch] section documents the launch sequence and parameters.
 
-{% include img.html img="taskbased-task-Q-sequencediagram.svg" caption="Figure 8" %}
+{% include img.html img="taskbased-task-Q-sequencediagram.svg" caption="Figure 9" %}
 
 #### Example of Requesting Data Using A FHIR Questionnaire
 

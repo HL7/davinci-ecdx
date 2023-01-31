@@ -12,10 +12,10 @@ See the [`$submit-attachment`] operation definition for further details.
 
 ### Technical Workflow
 
-As shown below in figure 7, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
+As shown below in Figure 13, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 
-{% include img.html img="attachments-sequencediagram.svg" caption="Figure 7" %}
+{% include img.html img="attachments-sequencediagram.svg" caption="Figure 13" %}
 
 
 1. Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization

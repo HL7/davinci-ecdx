@@ -12,9 +12,9 @@ For Direct Query, the Data Consumer directly queries the Data Source for specifi
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 5 below outlines a successful interaction between the Data Consumer and Data Source to query and retrieve the requested data using a direct query:
+The sequence diagram in Figure 6 below outlines a successful interaction between the Data Consumer and Data Source to query and retrieve the requested data using a direct query:
 
-{% include img.html img="search-sequencediagram.svg" caption="Figure 5" %}
+{% include img.html img="search-sequencediagram.svg" caption="Figure 6" %}
 
 
 
