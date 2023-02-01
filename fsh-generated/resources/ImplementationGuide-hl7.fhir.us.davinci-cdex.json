@@ -851,11 +851,11 @@
     "parameter": [
       {
         "code": "copyrightyear",
-        "value": "2022+"
+        "value": "2023+"
       },
       {
         "code": "releaselabel",
-        "value": "CI Build"
+        "value": "STU2"
       },
       {
         "code": "path-resource",

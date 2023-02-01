@@ -244,9 +244,9 @@ parameters:
      - 1.1.0
   suppressed-ids: '$examples'
   tabbed-snapshots: 'true'
-copyrightyear: '2022+'
-releaselabel: CI Build
-# releaselabel: STU1.1
+copyrightyear: '2023+'
+#releaselabel: CI Build
+releaselabel: STU2
 # releaselabel: Ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
