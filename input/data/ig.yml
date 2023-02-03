@@ -974,8 +974,6 @@ definition:
     value: 1.0.0
   - code: version-comparison
     value: 1.1.0
-  - code: suppressed-ids
-    value: $examples
   - code: tabbed-snapshots
     value: 'true'
   - code: path-history

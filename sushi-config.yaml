@@ -242,7 +242,7 @@ parameters:
   version-comparison:
      - 1.0.0
      - 1.1.0
-  suppressed-ids: '$examples'
+  # suppressed-ids: '$examples'
   tabbed-snapshots: 'true'
 copyrightyear: '2023+'
 #releaselabel: CI Build

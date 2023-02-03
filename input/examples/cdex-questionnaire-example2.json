@@ -1,6 +1,11 @@
 {
   "resourceType": "Questionnaire",
   "id": "cdex-questionnaire-example2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire"
+    ]
+  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",

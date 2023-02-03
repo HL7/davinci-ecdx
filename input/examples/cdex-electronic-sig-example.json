@@ -1,6 +1,12 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-electronic-sig-example",
+  "meta": {
+    "lastUpdated": "2021-10-25T20:16:29-07:00",
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+    ]
+  },
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"

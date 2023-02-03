@@ -1,5 +1,10 @@
 {
   "id": "cdex-document-digital-sig-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+    ]
+  },
   "entry": [
     {
       "fullUrl": "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",

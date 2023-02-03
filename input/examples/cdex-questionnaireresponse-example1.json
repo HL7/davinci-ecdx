@@ -1,6 +1,11 @@
 {
   "resourceType": "QuestionnaireResponse",
   "id": "cdex-questionnaireresponse-example1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse"
+    ]
+  },
   "questionnaire": "http://example.org/cdex-questionnaire-example1",
   "status": "completed",
   "subject": {

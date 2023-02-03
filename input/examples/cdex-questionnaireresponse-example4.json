@@ -52,6 +52,11 @@
     }
   },
   "id": "cdex-questionnaireresponse-example4",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+    ]
+  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature",

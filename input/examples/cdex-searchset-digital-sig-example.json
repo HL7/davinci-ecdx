@@ -1,6 +1,11 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-searchset-digital-sig-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+    ]
+  },
   "type": "searchset",
   "total": 1,
   "link": [
