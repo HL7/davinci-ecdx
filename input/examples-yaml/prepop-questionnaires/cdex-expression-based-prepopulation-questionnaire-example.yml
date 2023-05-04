@@ -1,0 +1,133 @@
+resourceType: Questionnaire
+id: cdex-expression-based-prepopulation-questionnaire-example
+meta:
+  profile:
+    - >-
+      http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
+
+# ==== launchContext Extension ====
+
+extension:
+  - extension:
+      - url: name
+        valueCoding:
+          system: 'http://hl7.org/fhir/uv/sdc/CodeSystem/launchContext'
+          code: patient
+      - url: type
+        valueCode: Patient
+    url: >-
+      http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
+  - extension:
+      - url: name
+        valueCoding:
+          system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+          code: task
+      - url: type
+        valueCode: Task
+    url: >-
+      http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext
+
+# ===================================
+
+url: 'http://example.org/cdex-questionnaire-example1'
+version: 2.0.0
+name: CDEXExpressionBasedPrepopulationQuestionnaireExample
+title: Cdex Expression Based Prepopulation Questionnaire Example
+status: draft
+subjectType:
+  - Patient
+date: '2023-05-03'
+item:
+  - linkId: '1'
+
+# ==== itemContext Extension ====
+    extension:
+      - url: >-
+          http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext
+        valueExpression:
+          name: conditions
+          language: application/x-fhir-query
+          expression: >-
+            GET Condition?patient={{%patient.id}}&clinical-status=active,recurrance,remission
+# ================================
+
+# ==== variable Extension =======
+      - url: >-
+          http://hl7.org/fhir/StructureDefinition/variable
+        valueExpression:
+          name: condition_list
+          language: text/fhirpath
+          expression: >-
+            '13645005,19829001,233604007,195967001,84114007,73430006,190905008,316358009'
+# ================================
+
+# ==== variable initalExpression Extension  =======
+      - url: >-
+          http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
+        valueExpression:
+          language: text/fhirpath
+          expression: >-
+            %conditions.entry.resource.code.coding.where(code in %condition_list.split(',')).text
+
+# ================================
+
+    text: >-
+      Relevant Patient Diagnoses (conditions that might be expected to improve
+      with oxygen therapy)
+    type: text
+    required: true
+
+
+  - linkId: '2'
+
+# ==== itemContext Extension ====
+    extension:
+      - url: >-
+          http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext
+        valueExpression:
+          name: orders
+          language: application/x-fhir-query
+          expression: >-
+            GET ServiceRequest?patient={{%patient.id}}&status="completed"&date={{%task.input.where(type.coding.code='service-date').valueDate}}
+# ================================
+
+# ==== variable Extension =======
+      - url: >-
+          http://hl7.org/fhir/StructureDefinition/variable
+        valueExpression:
+          name: reason_list
+          language: text/fhirpath
+          expression: >-
+            '1,2,3,4'
+# ================================
+
+# ==== variable initalExpression Extension  =======
+      - url: >-
+          http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression
+        valueExpression:
+          language: text/fhirpath
+          expression: >-
+            %orders.entry.resource.reasonCode.where(coding.code in %reason_list.split(',')).coding.code
+
+# ================================
+
+    text: Order Reason
+    type: choice
+    required: true
+    answerOption:
+      - valueCoding:
+          system: 'http://example.org'
+          code: '1'
+          display: Initial or original order for certification
+      - valueCoding:
+          system: 'http://example.org'
+          code: '2'
+          display: Change in status
+      - valueCoding:
+          system: 'http://example.org'
+          code: '3'
+          display: Revision or change in equipment
+      - valueCoding:
+          system: 'http://example.org'
+          code: '4'
+          display: Replacement

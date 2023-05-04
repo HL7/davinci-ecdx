@@ -1,3 +1,5 @@
+#text for https://sequencediagram.org/
+
 title Steps for DTR SMART App Launch
 
 participant DTR App
@@ -33,7 +35,7 @@ note over DTR App: *Required scopes: "launch", "launch/patient",\n"**launch/task
 
 alt DTR Granted Access
 DTR Client-->DTR App:Authorization granted
-DTR App->FHIR Server:Access token request
+DTR App->DTR Client:Access token request
 DTR Client-->DTR App: Access token response\*\*
 note over DTR Client: \*\*launch context in "fhirContext" array\nincludes local reference to the Task
 ref over DTR App, FHIR Server: 9 Request Resources (see sections 4.8.1 and 5.4.1.1)

@@ -6,7 +6,7 @@ extension:
 - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
   valueInteger: 2
 url: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
-version: 2.0.0
+version: 2.1.0-preview
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active
@@ -929,7 +929,7 @@ definition:
   - code: copyrightyear
     value: 2023+
   - code: releaselabel
-    value: STU2
+    value: CI Build
   - code: path-resource
     value: input/resources
   - code: path-resource
@@ -956,15 +956,7 @@ definition:
     value: 'false'
   - code: usage-stats-opt-out
     value: 'true'
-  - code: excludexml
-    value: 'false'
-  - code: excludejsn
-    value: 'false'
   - code: excludettl
-    value: 'true'
-  - code: excludemap
-    value: 'true'
-  - code: excludeexample
     value: 'true'
   - code: generate
     value: xml

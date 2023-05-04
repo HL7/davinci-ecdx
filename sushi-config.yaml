@@ -26,7 +26,7 @@ description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
 date: '2023-01-31'
-version: 2.0.0
+version: 2.1.0-preview
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core:
@@ -231,11 +231,11 @@ parameters:
   apply-version: 'true'
   show-inherited-invariants: 'false'
   usage-stats-opt-out: 'true'
-  excludexml: 'false'
-  excludejsn: 'false'
+  # excludexml: 'false'
+  # excludejson: 'false'
   excludettl: 'true'
-  excludemap: 'true'
-  excludeexample: 'true'
+  # excludemap: 'true'
+  # excludeexample: 'true'
   generate:
     - xml
     - json
@@ -245,8 +245,8 @@ parameters:
   # suppressed-ids: '$examples'
   tabbed-snapshots: 'true'
 copyrightyear: '2023+'
-#releaselabel: CI Build
-releaselabel: STU2
+releaselabel: CI Build
+# releaselabel: STU2
 # releaselabel: Ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
