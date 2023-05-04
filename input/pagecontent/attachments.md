@@ -3,7 +3,9 @@
 
 - [Solicited and Unsolicited Attachments]
 - [Sending Attachments]
-- [Requesting Attachments]
+- [Requesting Attachments Using Attachments Codes]
+- [Requesting Attachments Using Questionnaires]
 - [Using CDex Attachments with DaVinci PAS]
+- [Conforming to CDex Attachments]
 
 {% include link-list.md %}
