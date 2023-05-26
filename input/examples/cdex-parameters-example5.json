@@ -1,6 +1,11 @@
 {
   "resourceType": "Parameters",
   "id": "cdex-parameters-example5",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment"
+    ]
+  },
   "parameter": [
     {
       "name": "TrackingId",

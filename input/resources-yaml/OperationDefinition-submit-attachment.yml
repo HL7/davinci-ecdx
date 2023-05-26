@@ -52,6 +52,7 @@ resource:
 system: true
 type: false
 instance: false
+inputProfile: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
 parameter:
   - name: TrackingId
     use: in

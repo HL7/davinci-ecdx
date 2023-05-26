@@ -8,7 +8,8 @@ meta:
         -
             url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
             valueMarkdown: '**Completed QuestionnaireResponse Attachment Example:** Parameters Resource example showing how it is used to submit a solicited attachment using the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse completed using DTR in response to a Questionnaire sent in the Attachments request.'
-
+    profile:
+        - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
 parameter:
     - 
         name: TrackingId
@@ -40,7 +41,7 @@ parameter:
             value: 'Member123'
     # - 
     #     name: ServiceDate
-    #     valueDate: '2022-12-15'
+    #     valueDateTime: '2022-12-15'
     - 
         name: Attachment
         part:

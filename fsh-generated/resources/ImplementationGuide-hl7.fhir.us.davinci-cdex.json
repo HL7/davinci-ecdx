@@ -213,6 +213,15 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/cdex-parameters-submit-attachment"
+        },
+        "description": "The Parameters profile for Da Vinci [Submit Attachment Operation](http://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)",
+        "exampleBoolean": false,
+        "name": "CDex Parameters Submit Attachment Profile",
+        "groupingId": "AttachmentsProfiles"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/cdex-patient-demographics"
         },
         "description": "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier slice\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
@@ -352,7 +361,7 @@
         },
         "description": "**CCDA Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a CCDA attachment and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example1",
-        "exampleBoolean": true,
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
       {
@@ -361,7 +370,7 @@
         },
         "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim.",
         "name": "CDex Parameters Example 2",
-        "exampleBoolean": true,
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
       {
@@ -370,7 +379,7 @@
         },
         "description": "**PDF Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a PDF attachment and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example 3",
-        "exampleBoolean": true,
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
       {
@@ -379,7 +388,7 @@
         },
         "description": "**Laboratory Results Attachment Example:** Parameters Resource example showing how it is used to submit multiple attachments using the `$submit-attachment` operation. It contains 3 Hemoglobin A1c results as attachments and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example 4",
-        "exampleBoolean": true,
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
       {
@@ -388,7 +397,7 @@
         },
         "description": "**Completed QuestionnaireResponse Attachment Example:** Parameters Resource example showing how it is used to submit a solicited attachment using the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse completed using DTR in response to a Questionnaire sent in the Attachments request.",
         "name": "CDex Parameters Example 5",
-        "exampleBoolean": true,
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
       {

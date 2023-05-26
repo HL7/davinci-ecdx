@@ -201,6 +201,12 @@ definition:
     name: Submit Attachment Operation
     groupingId: AttachmentsOperations
   - reference:
+      reference: StructureDefinition/cdex-parameters-submit-attachment
+    description: The Parameters profile for Da Vinci [Submit Attachment Operation](http://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)
+    exampleBoolean: false
+    name: CDex Parameters Submit Attachment Profile
+    groupingId: AttachmentsProfiles
+  - reference:
       reference: StructureDefinition/cdex-patient-demographics
     description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
       \ within the CDex Task Attachment Request Profile or CDex Task Data Request\
@@ -478,7 +484,7 @@ definition:
       It contains a CCDA attachment and the necessary information needed to associate
       them to the claim.'
     name: CDex Parameters Example1
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example2
@@ -487,7 +493,7 @@ definition:
       operation. It contains a Signed FHIR Document attachment and the necessary information
       needed to associate it to a claim.'
     name: CDex Parameters Example 2
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example3
@@ -496,7 +502,7 @@ definition:
       It contains a PDF attachment and the necessary information needed to associate
       them to the claim.'
     name: CDex Parameters Example 3
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example4
@@ -505,7 +511,7 @@ definition:
       operation. It contains 3 Hemoglobin A1c results as attachments and the necessary
       information needed to associate them to the claim.'
     name: CDex Parameters Example 4
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
       reference: Parameters/cdex-parameters-example5
@@ -514,7 +520,7 @@ definition:
       the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse
       completed using DTR in response to a Questionnaire sent in the Attachments request.'
     name: CDex Parameters Example 5
-    exampleBoolean: true
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
       reference: Questionnaire/cdex-questionnaire-example1

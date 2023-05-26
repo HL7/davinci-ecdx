@@ -133,7 +133,7 @@ differential:
 
     - id: Task.contained
       path: Task.contained
-      min: 1
+      min: 2
       slicing:
         discriminator:
           - type: type

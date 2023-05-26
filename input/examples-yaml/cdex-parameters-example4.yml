@@ -8,7 +8,8 @@ meta:
         -
             url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
             valueMarkdown: '**Laboratory Results Attachment Example:** Parameters Resource example showing how it is used to submit multiple attachments using the `$submit-attachment` operation. It contains 3 Hemoglobin A1c results as attachments and the necessary information needed to associate them to the claim.'
-
+    profile:
+        - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
 parameter:
     - 
         name: TrackingId
@@ -40,7 +41,7 @@ parameter:
             value: Member123
     - 
         name: ServiceDate
-        valueDate: '2022-06-16'
+        valueDateTime: '2022-06-16'
     - 
         name: Attachment
         part:

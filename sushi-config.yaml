@@ -68,6 +68,7 @@ groups:
       - StructureDefinition/cdex-task-attachment-request
       - StructureDefinition/cdex-practitionerrole
       - StructureDefinition/cdex-patient-demographics
+      - StructureDefinition/cdex-parameters-submit-attachment
   AttachmentsOperations:
     name: Attachments Operations
     description: Operations Associated with CDex Attachments Transactions
