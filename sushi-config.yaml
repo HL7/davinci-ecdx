@@ -245,7 +245,7 @@ parameters:
      - 1.1.0
   # suppressed-ids: '$examples'
   tabbed-snapshots: 'true'
-copyrightyear: '2023+'
+copyrightyear: '2024+'
 releaselabel: CI Build
 # releaselabel: STU2
 # releaselabel: Ballot

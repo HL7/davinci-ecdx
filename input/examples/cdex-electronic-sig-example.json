@@ -4,7 +4,7 @@
   "meta": {
     "lastUpdated": "2021-10-25T20:16:29-07:00",
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-preview"
     ]
   },
   "identifier": {

@@ -1,0 +1,12 @@
+resourceType: Bundle
+id: task-scenario3-batch.yml
+type: batch
+entry:
+    - 
+        request:
+            method: GET
+            url: DocumentReference/cdex-example-doc1
+    - 
+        request:
+            method: GET
+            url: DocumentReference/cdex-example-doc2
