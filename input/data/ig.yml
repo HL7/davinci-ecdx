@@ -5,20 +5,22 @@ extension:
   valueCode: trial-use
 - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
   valueInteger: 2
+- url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+  valueCode: claims
 url: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
 version: 2.1.0-preview
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active
-date: '2023-01-31'
-publisher: HL7 International - Patient Care Work Group
+date: '2024-04-19'
+publisher: HL7 International / Payer/Provider Information Exchange Work Group
 contact:
-- name: HL7 International - Patient Care Work Group
+- name: HL7 International / Payer/Provider Information Exchange Work Group
   telecom:
   - system: url
-    value: http://www.hl7.org/Special/committees/patientcare
+    value: http://www.hl7.org/Special/committees/claims
   - system: email
-    value: patientcare@lists.HL7.org
+    value: pie@lists.hl7.org
 description: This IG provides detailed guidance that helps implementers use FHIR-based
   interactions to support specific exchanges of clinical data between providers and
   payers (or other providers).
@@ -33,10 +35,14 @@ license: CC0-1.0
 fhirVersion:
 - 4.0.1
 dependsOn:
-- id: uscore
-  packageId: hl7.fhir.us.core
+- id: uscore3
+  packageId: hl7.fhir.us.core.3.1.1
   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
   version: 3.1.1
+- id: uscore6
+  packageId: hl7.fhir.us.core
+  uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  version: 6.1.0
 - id: hrex
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
@@ -44,7 +50,7 @@ dependsOn:
 - id: pas
   packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
-  version: 1.2.0-ballot
+  version: 2.0.1
 - id: c4bb
   packageId: hl7.fhir.us.carin-bb
   uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb
@@ -52,12 +58,29 @@ dependsOn:
 - id: dtr
   packageId: hl7.fhir.us.davinci-dtr
   uri: http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr
-  version: 1.1.0-ballot
+  version: 2.0.1
 - id: sdc
   packageId: hl7.fhir.uv.sdc
   uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
   version: 3.0.0
+- packageId: hl7.fhir.uv.extensions
+  version: 5.1.0-cibuild
+  uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
+  id: hl7_fhir_uv_extensions
 definition:
+  extension:
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#2.0.0
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#2.0.0-ballot
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#1.1.0
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#1.0.0
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#0.2.0
+  - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+    valueCode: hl7.fhir.us.davinci-cdex#0.1.0
   grouping:
   - id: AttachmentsProfiles
     name: Attachments Profiles
@@ -115,9 +138,9 @@ definition:
       \ It also supports requests for more detailed missing data using Questionnaire,\
       \ CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.\n\nIt constrains\
       \ the following elements to be *mandatory* (min=1):\n\n- A [contained](http://hl7.org/fhir/R4/references.html)\
-      \ Patient Resource defined by the [CDex Patient Demographics Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics)\
+      \ Patient Resource defined by the [CDex Patient Demographics Profile](StructureDefinition-cdex-patient-demographics.html)\
       \ and communicating additional patient demographic data elements.\n- A [contained](http://hl7.org/fhir/R4/references.html)\
-      \ PractitionerRole Resource defined by the [CDex PractitionerRole Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole)\
+      \ PractitionerRole Resource defined by the [CDex PractitionerRole Profile](StructureDefinition-cdex-practitionerrole.html)\
       \ to communicate the provider ID as either a unique organization/location identifier\
       \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\n\
       - A Task.identifier element representing the payers tracking identifier (referred\
@@ -125,15 +148,15 @@ definition:
       \ with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
-      - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
+      \ section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A\
+      \ Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"attachment-request-code\" or \"attachment-request-questionnaire\"\
       \  communicating that the Payer is requesting attachments for a claim or prior\
       \ authorization using a code or data request questionnaire.\n  - If the code\
       \ is \"attachment-request-code\", the provider system returns attachment(s)\
       \ identified by the LOINC attachment code(s) in the \"code\" input parameter.\n\
       \  - If the code is \"attachment-request-questionnaire\", the provider system\
-      \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/)\
+      \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
       \ to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
       \  - When either code is present, the provider system uses the $submit-attachment\
       \ operation to return the information to the endpoint provided in \"payer-url\"\
@@ -157,20 +180,19 @@ definition:
       \ item numbers associated with the attachment or questionnaire.\n- A \"signature\"\
       \ Task.input element representing a flag to indicate whether the requested data\
       \ requires a signature. For more information about requiring and requesting\
-      \ signatures, refer to the [Signatures section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).\n\
+      \ signatures, refer to the [Signatures section](sending-attachments.html#signatures).\n\
       - A \"service-date\" Task.input element representing the date of service or\
       \ starting date of the service for the claim or prior authorization. It SHALL\
       \ be present if the attachment is for a claim.\n\nIt defines the following elements\
       \ to be *optional*:\n\n- A \"questionnaire\" Task.input element to communicate\
       \ to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
-      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire)\
-      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*\n\
+      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
+      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\
       \ Questionnaire\n- A \"POU\" Task.input element representing the purpose of\
       \ use (POU) for the requested data using an extensible [CDex Purpose of Use\
-      \ Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU). For more\
-      \ information about sending purpose POU codes, refer to the [Purpose of Use\
-      \ section](http://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures).\n\
+      \ Value Set](ValueSet-cdex-POU.html). For more information about sending purpose\
+      \ POU codes, refer to the [Purpose of Use section](sending-attachments.html#signatures).\n\
       - A \"multiple-submits\" Task.input element representing a flag to indicate\
       \ whether the requested data can be sent in multiple submissions\n- A \"data-value\"\
       \ Task.output element referring to FHIR resource(s) representing the result(s)\
@@ -211,7 +233,7 @@ definition:
     groupingId: AttachmentsProfiles
   - reference:
       reference: StructureDefinition/cdex-parameters-submit-attachment
-    description: The Parameters profile for Da Vinci [Submit Attachment Operation](http://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)
+    description: The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
     exampleBoolean: false
     name: CDex Parameters Submit Attachment Profile
     groupingId: AttachmentsProfiles
@@ -382,8 +404,8 @@ definition:
       \ Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
-      \ section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).\n\
-      - A Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
+      \ section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A\
+      \ Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
       - A Task.code of either \"data-request-code\", \"data-request-code\", or \"\
       data-request-questionnaire\" communicating that the Data Consumer is requesting\
       \ data using a code(or free text), a FHIR RESTful query, or a data request questionnaire.\n\
@@ -392,8 +414,8 @@ definition:
       \ - If the code is \"data-request-code\", the provider system returns data(s)\
       \ identified by the LOINC code in the \"code\" input parameter.\n  - If the\
       \ code is \"data-request-questionnaire\", the provider system uses [Documentation\
-      \ Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to\
-      \ complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
+      \ Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
+      \ to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
       - A Task.for element representing the member (i.e.,patient) for whom the data\
       \ is being requested\n- A Task.requester element communicating who is requesting\
       \ the data\n- A Task.owner element representing the Provider who is being asked\
@@ -421,11 +443,11 @@ definition:
       \ be *optional*:\n- A meta.tag element representing work-queue hints.\n- A \"\
       questionnaire\" Task.input element to communicate to the provider a URL of a\
       \ data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
-      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire)\
-      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*\n\
+      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
+      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\
       \ Questionnaire\n- A Task.input element representing the purpose of use for\
-      \ the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)\n\
+      \ the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)\n\
       - A \"response\" Task.output element which is a local reference to the [FHIR\
       \ QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting\
       \ from the data request Questionnaire. The QuestionnaireResponse conforms to\
@@ -737,7 +759,7 @@ definition:
       is needed when completing the QuestionnaireResponse.  It is adapted from the
       Da Vinci DTR IG.
     name: CDex Questionnaire Example2
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
     groupingId: SignatureExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example3
@@ -782,7 +804,7 @@ definition:
     description: This example is a simple data request Questionnaire used in the Task
       Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
     name: CDex Questionnaire Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
     groupingId: CommonExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
@@ -948,6 +970,8 @@ definition:
     value: fsh-generated/includes
   - code: path-expansion-params
     value: ../../input/_resources/exp-params.json
+  - code: path-liquid
+    value: liquid
   - code: active-tables
     value: 'false'
   - code: apply-contact
@@ -972,7 +996,11 @@ definition:
     value: 1.0.0
   - code: version-comparison
     value: 1.1.0
+  - code: version-comparison
+    value: 2.0.0
   - code: tabbed-snapshots
     value: 'true'
+  - code: auto-oid-root
+    value: 2.16.840.1.113883.4.642.40.21
   - code: path-history
     value: http://hl7.org/fhir/us/davinci-cdex/history.html

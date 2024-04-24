@@ -17,14 +17,14 @@
 [SMART App Launch]: http://www.hl7.org/fhir/smart-app-launch/
 [Terminology]: terminology.html "Terminology Page"
 [FHIR security guidance]:{{site.data.fhir.path}}security.html
-[US Core Condition Profile]: {{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-condition.html
-[US Core Encounter Profile]: {{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-encounter.html
-[US Core Location Profile]: {{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-location.html
-[US Core Patient Profile]: {{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-patient.html
+[US Core Condition Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition.html
+[US Core Encounter Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-encounter.html
+[US Core Location Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html
+[US Core Patient Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html
 [OperationOutcome]: {{site.data.fhir.path}}operationoutcome.html
-[US Core Provenance Profile]: {{site.data.fhir.ver.uscore}}/StructureDefinition-us-core-provenance.html
+[US Core Provenance Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html
 [Da Vinci]: http://www.hl7.org/about/davinci/index.cfm?ref=common
-[US Core]: {{site.data.fhir.ver.uscore}}/index.html
+[US Core]: {{site.data.fhir.ver.uscore6}}/index.html
 [Example Scenarios]: example-scenarios.html
 [Exchanging Clinical Data]: exchanging-clinical-data.html
 [Direct Query]: direct-query.html
@@ -67,7 +67,7 @@
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021Sep/
 [FHIR id]: {{site.data.fhir.path}}references.html
-[Basic Provenance]: {{site.data.fhir.ver.uscore}}/basic-provenance.html
+[Basic Provenance]: {{site.data.fhir.uscore6}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
 [Da Vinci - Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}
@@ -143,7 +143,7 @@
 [DTR SMART App Launch]: requesting-attachments-questionnaire.html#dtr-smart-app-launch
 [Conforming to CDex Task Based Approach]: task-based-conformance.html
 [Signature Extension]: http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature
-[DTR SDC Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-sdc-questionnaire.html
+[DTR SDC Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-std-questionnaire.html
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
 [CDex SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html

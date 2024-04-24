@@ -10,7 +10,7 @@ status: active
 date: '2023-05-25'
 
 description: >-
-  The Parameters profile for Da Vinci [Submit Attachment Operation](http://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)
+  The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
 
 kind: resource
 abstract: false

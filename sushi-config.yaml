@@ -9,15 +9,33 @@ extension:
     valueCode: trial-use
   - url: 'http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm'
     valueInteger: 2
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: claims
+
+definition:
+  extension:
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
+      valueCode: hl7.fhir.us.davinci-cdex#2.0.0 
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
+      valueCode: hl7.fhir.us.davinci-cdex#2.0.0-ballot
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+      valueCode: hl7.fhir.us.davinci-cdex#1.1.0
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+      valueCode: hl7.fhir.us.davinci-cdex#1.0.0
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+      valueCode: hl7.fhir.us.davinci-cdex#0.2.0
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
+      valueCode: hl7.fhir.us.davinci-cdex#0.1.0
+
 canonical: http://hl7.org/fhir/us/davinci-cdex
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active
 
 publisher:
-  name: HL7 International - Patient Care Work Group
-  url: 'http://www.hl7.org/Special/committees/patientcare'
-  email: patientcare@lists.HL7.org
+  name: HL7 International / Payer/Provider Information Exchange Work Group
+  url: 'http://www.hl7.org/Special/committees/claims'
+  email: pie@lists.hl7.org
 
 jurisdiction: 'urn:iso:std:iso:3166#US'
 copyright: >-
@@ -25,21 +43,25 @@ copyright: >-
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: '2023-01-31'
+date: '2024-04-19'
 version: 2.1.0-preview
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core:
-    uri: 'http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core'
+  hl7.fhir.us.core.3.1.1:
     version: 3.1.1
-    id: uscore
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore3
+  hl7.fhir.us.core:
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore6
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
     version: 1.0.0
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
-    version: 1.2.0-ballot
+    version: 2.0.1
     id: pas
   hl7.fhir.us.carin-bb:
     uri: 'http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb'
@@ -47,12 +69,14 @@ dependencies:
     id: c4bb
   hl7.fhir.us.davinci-dtr:
     uri: 'http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr'
-    version: 1.1.0-ballot
+    version: 2.0.1
     id: dtr
   hl7.fhir.uv.sdc:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
     version: 3.0.0
     id: sdc
+  hl7.fhir.uv.extensions: 5.1.0-cibuild #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
+
 
 # Groups can control certain aspects of the IG generation.  The IG
 # documentation recommends that authors use the default groups that
@@ -225,6 +249,8 @@ parameters:
     - input/intro-notes
     - fsh-generated/includes
   path-expansion-params: '../../input/_resources/exp-params.json'  # for using US ed of SNOMED
+  path-liquid: # list of relative paths that contains liquid templates for generating narrative
+    - liquid
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
@@ -243,8 +269,10 @@ parameters:
   version-comparison:
      - 1.0.0
      - 1.1.0
+     - 2.0.0
   # suppressed-ids: '$examples'
   tabbed-snapshots: 'true'
+  auto-oid-root: 2.16.840.1.113883.4.642.40.21
 copyrightyear: '2024+'
 releaselabel: CI Build
 # releaselabel: STU2

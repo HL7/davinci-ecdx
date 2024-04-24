@@ -7,7 +7,7 @@
     "title": "CDex Parameters Submit Attachment Profile",
     "status": "active",
     "date": "2023-05-25",
-    "description": "The Parameters profile for Da Vinci [Submit Attachment Operation](http://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)",
+    "description": "The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)",
     "kind": "resource",
     "abstract": false,
     "type": "Parameters",

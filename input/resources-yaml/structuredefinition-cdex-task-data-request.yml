@@ -9,12 +9,12 @@ description: |-
 
   It constrains the following elements to be *mandatory* (min=1):
 
-  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#when-the-task-cannot-be-completed).
+  - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code of either "data-request-code", "data-request-code", or "data-request-questionnaire" communicating that the Data Consumer is requesting data using a code(or free text), a FHIR RESTful query, or a data request questionnaire.
     - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.
     - If the code is "data-request-code", the provider system returns data(s) identified by the LOINC code in the "code" input parameter.
-    - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2022May/) to complete the Questionnaire referenced in the "questionnaire" input parameter.
+    - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html) to complete the Questionnaire referenced in the "questionnaire" input parameter.
   - A Task.for element representing the member (i.e.,patient) for whom the data is being requested
   - A Task.requester element communicating who is requesting the data
   - A Task.owner element representing the Provider who is being asked to provide the data
@@ -38,9 +38,9 @@ description: |-
 
   It defines the following elements to be *optional*:
   - A meta.tag element representing work-queue hints.
-  - A "questionnaire" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt).*
+  - A "questionnaire" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
-  - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU)
+  - A Task.input element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)
   - A "response" Task.output element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
 
   It prohibits the following elements (max=0):
@@ -423,8 +423,8 @@ differential:
       type:
         - code: canonical
           targetProfile:
-            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire'
-            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire-adapt'
+            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire'
+            - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt'
       # mustSupport: true
 
     - id: 'Task.input:questionnaire.value[x].extension:questionnaireDisplay'

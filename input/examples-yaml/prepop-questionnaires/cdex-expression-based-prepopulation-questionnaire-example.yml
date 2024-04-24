@@ -3,7 +3,7 @@ id: cdex-expression-based-prepopulation-questionnaire-example
 meta:
   profile:
     - >-
-      http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-sdc-questionnaire
+      http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
 
 # ==== launchContext Extension ====
 
