@@ -88,6 +88,8 @@ parameter:
                         text: glycated hemoglobin (HbA1c)
                     subject:
                         display: Elden718 Halvorson124
+                    performer:
+                        - display: Dr. John Doe
                     effectiveDateTime: '2022-06-16T10:21:08-07:00'
                     valueQuantity:
                         value: 7.2
@@ -140,6 +142,8 @@ parameter:
                         text: glycated hemoglobin (HbA1c)
                     subject:
                         display: Elden718 Halvorson124
+                    performer:
+                        - display: Dr. John Doe
                     effectiveDateTime: '2022-05-16T10:21:08-07:00'
                     valueQuantity:
                         value: 7
@@ -192,6 +196,8 @@ parameter:
                         text: glycated hemoglobin (HbA1c)
                     subject:
                         display: Elden718 Halvorson124
+                    performer:
+                        - display: Dr. John Doe
                     effectiveDateTime: '2022-04-16T10:21:08-07:00'
                     valueQuantity:
                         value: 7

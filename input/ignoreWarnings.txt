@@ -1,15 +1,18 @@
 == Suppressed Messages ==
 
 # CDex needs a contained patient for 3 specific demographic elements- US Core variance approved: http://jira.hl7.org/browse/FHIR-37738
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile
+
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
+== input/resources/structuredefinition-cdex-practitionerrole.json ==
+
 
 # CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 reference. A Jira ticket has been lodged for Task to allow for >1 task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-39618
 
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 # the example demonstrate the legitimate use case for using free text instead of codes for requesting information using a Task-based Query
 
-No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|3.1.1)
+No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|6.1.0)
 
 # The referenced ValueSet is not published as a package file (to the best of my knowledge). It is available from LOINC's FHIR terminology server (service base https://fhir.loinc.org). Supporting value sets provided on a tx server, and not distributed in a package is on the publisher todo list. See this Chat: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/LOINC.20valuesets.20out.20of.20the.20box.3F
 
@@ -25,6 +28,42 @@ Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot b
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile
 
-# Thes example demonstrates DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it.
+# === Thes example demonstrates DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. ===
 
 Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+
+# === These examples use example.org code system to show how translations ( i.e. local codes) could be used in addition to standard code systems. ===
+
+A definition for CodeSystem 'http://example.org/lab-results' could not be found, so the code cannot be validated
+
+# === These examples use example.org code system to show fictitious condition to demonstrate the structure and transaction and not the content ===
+
+A definition for CodeSystem 'http://example.org/terminology' could not be found, so the code cannot be validated
+
+# === This example uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content ===
+
+The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
+
+# === these CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  ===
+
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type|1.0.0
+Reference to draft CodeSystem http://hl7.org/fhir/narrative-status|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/organization-type|2.0.0
+Reference to draft CodeSystem urn:iso:std:iso:11073:10101|2023-04-26
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/coverage-class|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
+Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
+Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/claim-use|4.0.1
+Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
+
+# === this CodeSystems is intended to be temporary and based on user experience and testing will migrate these codes to HTO or another standard code system  ===
+
+Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp|2.1.0-preview
+
+# ==== The Da Vinci Team is aware of this and will budget accordingly in a future publication cycle ===
+
+Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+

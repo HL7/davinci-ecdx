@@ -29,9 +29,9 @@ subject:
         type:
             coding:
                 - 
-                    code: UMB
+                    code: MB
                     display: Member Number
-                    system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+                    system: http://terminology.hl7.org/CodeSystem/v2-0203
             text: Member Number
         use: usual
         value: Member123

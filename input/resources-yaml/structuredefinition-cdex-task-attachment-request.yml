@@ -458,14 +458,14 @@ differential:
 
     - id: 'Task.input:code.extension.url'
       path: Task.input.extension.url
-      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber'
       mustSupport: true
 
     - id: 'Task.input:code.extension.value[x]'
       path: Task.input.extension.value[x]
       min: 1
       type:
-        - code: positiveInt
+        - code: integer
       mustSupport: true
  
 
@@ -473,7 +473,7 @@ differential:
       path: Task.input.type
       patternCodeableConcept:
         coding:
-          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+          - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
             code: data-code
       mustSupport: true
 
@@ -507,14 +507,14 @@ differential:
 
     - id: 'Task.input:questionnaire.extension.url'
       path: Task.input.extension.url
-      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber'
+      fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber'
       mustSupport: true
 
     - id: 'Task.input:questionnaire.extension.value[x]'
       path: Task.input.extension.value[x]
       min: 1
       type:
-        - code: positiveInt
+        - code: integer
       mustSupport: true
 
     - id: 'Task.input:questionnaire.type'
@@ -708,7 +708,7 @@ differential:
       path: Task.output.type
       patternCodeableConcept:
         coding:
-          - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
+          - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
             code: data-value
       # mustSupport: true
     - id: 'Task.output:data.value[x]'

@@ -4,7 +4,7 @@ url: "http://hl7.org/fhir/us/davinci-cdex/OperationDefinition/submit-attachment"
 version: 4.0.1
 name: SubmitAttachment
 title: Submit Attachment Operation
-status: draft
+status: active
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-

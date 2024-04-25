@@ -50,18 +50,18 @@ differential:
       max: '1'
       mustSupport: true     
 
-    - id: 'Patient.identifier:umb'
+    - id: 'Patient.identifier:mb'
       path: Patient.identifier
-      sliceName: umb
+      sliceName: mb
       short: Unique Member Identifier
       definition: The unique member identifier for this patient.
       min: 1      
       max: '1'
-      patternIdentifier:
+      patternIdentifier:   # need identifier type for slicing
         type:
           coding:
-            - system: 'http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp'
-              code: UMB
+            - system: 'http://terminology.hl7.org/CodeSystem/v2-0203'
+              code: MB
       mustSupport: true
 
     - id: 'Patient.identifier:pac'  

@@ -20,8 +20,8 @@ contained:
   - use: usual
     type:
       coding:
-      - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-        code: UMB
+      - system: http://terminology.hl7.org/CodeSystem/v2-0203
+        code: MB
         display: Member Number
       text: Member Number
     system: http://example.org/cdex/payer/member-ids
@@ -98,8 +98,8 @@ input:
     - system: http://hl7.org/fhir/uv/sdc/CodeSystem/temp
       code: questionnaire
   extension:
-  - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber
-    valuePositiveInt: 1
+  - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber
+    valueInteger: 1
   valueCanonical: http://example.org/cdex-questionnaire-example1
   _valueCanonical:
     extension:

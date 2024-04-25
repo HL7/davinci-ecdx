@@ -427,7 +427,7 @@
             {
                 "id": "Task.input:code.extension.url",
                 "path": "Task.input.extension.url",
-                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
                 "mustSupport": true
             },
             {
@@ -436,7 +436,7 @@
                 "min": 1,
                 "type": [
                     {
-                        "code": "positiveInt"
+                        "code": "integer"
                     }
                 ],
                 "mustSupport": true
@@ -492,7 +492,7 @@
             {
                 "id": "Task.input:questionnaire.extension.url",
                 "path": "Task.input.extension.url",
-                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceLineNumber",
+                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
                 "mustSupport": true
             },
             {
@@ -501,7 +501,7 @@
                 "min": 1,
                 "type": [
                     {
-                        "code": "positiveInt"
+                        "code": "integer"
                     }
                 ],
                 "mustSupport": true

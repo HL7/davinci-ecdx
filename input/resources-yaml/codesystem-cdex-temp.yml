@@ -9,7 +9,7 @@ extension:
 url: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
 name: CDexTempCodes
 title: CDex Temporary Code System
-status: active
+status: draft
 experimental: false
 date: '2022-12-23'
 description: Codes temporarily defined as part of the CDex implementation guide.  These

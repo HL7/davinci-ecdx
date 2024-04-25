@@ -69,8 +69,8 @@ parameter:
                       use: usual
                       type:
                         coding:
-                        - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-                          code: UMB
+                        - system: http://terminology.hl7.org/CodeSystem/v2-0203
+                          code: MB
                           display: Member Number
                         text: Member Number
                       system: http://example.org/cdex/payer/member-ids

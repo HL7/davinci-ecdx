@@ -8,7 +8,7 @@ status: active
 date: '2023-01-15'
 
 description: >-
-  This extension is derived from the [SDC Questionnaire Response](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) profile and enforces the various elements of signature documented in the CDex guide to represent an enveloped signature. It adds the following constraints:
+  This extension is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of signature documented in the CDex guide to represent an enveloped signature. It adds the following constraints:
 
   - The signature extensions use the CDex Signature Profile
 
@@ -18,7 +18,7 @@ fhirVersion: 4.0.1
 kind: resource
 abstract: false
 type: QuestionnaireResponse
-baseDefinition: 'http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse'
+baseDefinition: 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse'
 derivation: constraint
 
 differential:
