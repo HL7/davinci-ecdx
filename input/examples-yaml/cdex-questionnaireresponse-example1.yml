@@ -3,7 +3,7 @@ id: cdex-questionnaireresponse-example1
 meta:
   profile:
     - >-
-      http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+      http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex QuestionnaireResponse Example1

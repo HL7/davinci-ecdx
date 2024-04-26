@@ -813,7 +813,7 @@ definition:
       a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It
       is adapted from the Da Vinci DTR IG.
     name: CDex QuestionnaireResponse Example1
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
     groupingId: CommonExamples
   - reference:
       reference: QuestionnaireResponse/cdex-questionnaireresponse-example2

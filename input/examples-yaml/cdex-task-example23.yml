@@ -5,9 +5,9 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 23
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Request Additional Data using an Adaptive Questionnaire:**  Prior Authorization
-      Attachment Request with a POU of "coverage authorization" sent by payer to a
-      provider requesting an adaptive questionnaire be completed.'
+    valueMarkdown: '**Request Additional Data using an Adaptive Questionnaire:**  Prior
+      Authorization Attachment Request with a POU of "coverage authorization" sent
+      by payer to a provider requesting an adaptive questionnaire be completed.'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 contained:

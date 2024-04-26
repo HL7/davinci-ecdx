@@ -5,7 +5,9 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDEX SearchSet Bundle with Digital Signature Example
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Digital signature example showing how it is used to sign a search set Bundle.  The CDEX use case would be a response to a Direct Query where a digital signature was required.
+    valueMarkdown: Digital signature example showing how it is used to sign a search
+      set Bundle.  The CDEX use case would be a response to a Direct Query where a
+      digital signature was required.
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
 type: searchset
@@ -23,7 +25,7 @@ entry:
       lastUpdated: '2020-04-28T20:28:00.008+00:00'
       source: '#cabiJIK51sD2iz4N'
       profile:
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
     clinicalStatus:
       coding:
       - system: http://terminology.hl7.org/CodeSystem/condition-clinical
@@ -34,9 +36,10 @@ entry:
         code: confirmed
     category:
     - coding:
-      - system: http://terminology.hl7.org/CodeSystem/condition-category
-        code: encounter-diagnosis
-        display: Encounter Diagnosis
+        - system: 'http://terminology.hl7.org/CodeSystem/condition-category'
+          code: problem-list-item
+          display: Problem List Item
+      text: Problem List Item
     code:
       coding:
       - system: http://example.org/terminology

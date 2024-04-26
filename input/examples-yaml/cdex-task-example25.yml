@@ -91,7 +91,7 @@ reasonReference:
     system: http://example.org/cdex/payer/claim-ids
     value: Preauth123
 restriction:
-  period: 
+  period:
     end: '2022-06-21'
 input:
 - type:

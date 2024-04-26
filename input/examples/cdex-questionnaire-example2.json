@@ -1,85 +1,75 @@
 {
-    "resourceType": "Questionnaire",
-    "id": "cdex-questionnaire-example2",
-    "meta": {
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"
-        ],
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Questionnaire Example2"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG."
-            }
+  "resourceType": "Questionnaire",
+  "id": "cdex-questionnaire-example2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "urn:iso-astm:E1762-95:2013",
+            "code": "1.2.840.10065.1.12.1.5",
+            "display": "Verification Signature"
+          }
         ]
+      }
+    }
+  ],
+  "name": "HomeOxygenTherapyQuestionnaire",
+  "title": "Home Oxygen Therapy Questionnaire",
+  "url": "http://example.org/cdex-questionnaire-example2",
+  "status": "draft",
+  "subjectType": [
+    "Patient"
+  ],
+  "date": "2022-01-17",
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+      "type": "text",
+      "required": true
     },
-    "extension": [
+    {
+      "linkId": "2",
+      "text": "Order Reason",
+      "type": "choice",
+      "required": true,
+      "answerOption": [
         {
-            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",
-            "valueCodeableConcept": {
-                "coding": [
-                    {
-                        "system": "urn:iso-astm:E1762-95:2013",
-                        "code": "1.2.840.10065.1.12.1.5",
-                        "display": "Verification Signature"
-                    }
-                ]
-            }
-        }
-    ],
-    "name": "HomeOxygenTherapyQuestionnaire",
-    "title": "Home Oxygen Therapy Questionnaire",
-    "url": "http://example.org/cdex-questionnaire-example2",
-    "status": "draft",
-    "subjectType": [
-        "Patient"
-    ],
-    "date": "2022-01-17",
-    "item": [
-        {
-            "linkId": "1",
-            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-            "type": "text",
-            "required": true
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "1",
+            "display": "Initial or original order for certification"
+          }
         },
         {
-            "linkId": "2",
-            "text": "Order Reason",
-            "type": "choice",
-            "required": true,
-            "answerOption": [
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "1",
-                        "display": "Initial or original order for certification"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "2",
-                        "display": "Change in status"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "3",
-                        "display": "Revision or change in equipment"
-                    }
-                },
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "4",
-                        "display": "Replacement"
-                    }
-                }
-            ]
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "2",
+            "display": "Change in status"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "3",
+            "display": "Revision or change in equipment"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "4",
+            "display": "Replacement"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

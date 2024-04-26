@@ -5,9 +5,10 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Task Example 28
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: '**Request Additional Data Requiring a Verification Signature Using a Questionnaire:** Prior Authorization
-      Attachment Request with a POU of "coverage authorization" and Signature required sent by payer to a
-      provider requesting a data request questionnaire be completed and signed.'
+    valueMarkdown: '**Request Additional Data Requiring a Verification Signature Using
+      a Questionnaire:** Prior Authorization Attachment Request with a POU of "coverage
+      authorization" and Signature required sent by payer to a provider requesting
+      a data request questionnaire be completed and signed.'
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 contained:
