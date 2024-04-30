@@ -1,6 +1,7 @@
 resourceType: StructureDefinition
 id: cdex-sdc-questionnaireresponse
 
+
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse'
 name: CDEXSDCQuestionnaireResponse
 title: CDex SDC QuestionnaireResponse Profile

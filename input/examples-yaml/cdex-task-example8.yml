@@ -29,11 +29,12 @@ contained:
       resourceType: DocumentReference
       meta:
         profile:
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
       id: cdex-documentreference-example1
       status: current
       subject:
-          reference: http://example.org/fhir/Patient/cdex-example-patient
+        reference: http://example.org/fhir/Patient/cdex-example-patient
       type:
         coding:
         - system: http://loinc.org

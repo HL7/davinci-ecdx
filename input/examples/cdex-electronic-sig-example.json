@@ -75,7 +75,7 @@
         "meta": {
           "lastUpdated": "2013-05-05T16:13:03Z",
           "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
           ]
         },
         "identifier": [
@@ -126,6 +126,7 @@
         ],
         "meta": {
           "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
           ]
         }
@@ -180,6 +181,7 @@
         },
         "meta": {
           "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
           ]
         }
@@ -229,6 +231,7 @@
         },
         "meta": {
           "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
             "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
           ]
         }
@@ -239,6 +242,12 @@
       "resource": {
         "resourceType": "Organization",
         "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1234567893"
+          }
+        ],
         "active": true,
         "name": "CDEX Example Organization",
         "telecom": [
@@ -264,7 +273,7 @@
         ],
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
           ]
         }
       }

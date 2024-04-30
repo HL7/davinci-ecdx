@@ -25,6 +25,7 @@ entry:
       lastUpdated: '2020-04-28T20:28:00.008+00:00'
       source: '#cabiJIK51sD2iz4N'
       profile:
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
     clinicalStatus:
       coding:
@@ -36,9 +37,9 @@ entry:
         code: confirmed
     category:
     - coding:
-        - system: 'http://terminology.hl7.org/CodeSystem/condition-category'
-          code: problem-list-item
-          display: Problem List Item
+      - system: http://terminology.hl7.org/CodeSystem/condition-category
+        code: problem-list-item
+        display: Problem List Item
       text: Problem List Item
     code:
       coding:

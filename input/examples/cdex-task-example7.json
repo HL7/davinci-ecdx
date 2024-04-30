@@ -31,6 +31,9 @@
             "resourceType": "DocumentReference",
             "id": "cdex-example-doc1",
             "status": "current",
+            "subject": {
+              "reference": "http://example.org/fhir/Patient/cdex-example-patient"
+            },
             "type": {
               "coding": [
                 {
@@ -62,7 +65,13 @@
                   "title": "sample1.pdf"
                 }
               }
-            ]
+            ],
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
+              ]
+            }
           },
           "search": {
             "mode": "match"
@@ -74,6 +83,9 @@
             "resourceType": "DocumentReference",
             "id": "cdex-example-doc2",
             "status": "current",
+            "subject": {
+              "reference": "http://example.org/fhir/Patient/cdex-example-patient"
+            },
             "type": {
               "coding": [
                 {
@@ -105,7 +117,13 @@
                   "title": "sample2.pdf"
                 }
               }
-            ]
+            ],
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
+              ]
+            }
           },
           "search": {
             "mode": "match"
