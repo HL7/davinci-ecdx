@@ -1,0 +1,25 @@
+{
+    "channel": {
+        "endpoint": "http://example.org/FHIR/Payer/cdex-task-watch",
+        "payload": "application/fhir+json",
+        "type": "rest-hook"
+    },
+    "criteria": "Task?_id=cdex-example1-query-completed",
+    "end": "2021-11-10T00:00:00Z",
+    "id": "inline-task-scenario1-subscription-requested",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Inline Subscription Task Scenario1 Subscription Requested"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Subscription example used to create inline scenarios for this guide"
+            }
+        ]
+    },
+    "reason": "Monitor submitted Task",
+    "resourceType": "Subscription",
+    "status": "requested"
+}

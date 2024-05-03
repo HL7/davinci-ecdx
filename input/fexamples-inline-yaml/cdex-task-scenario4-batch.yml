@@ -1,0 +1,16 @@
+entry:
+- request:
+    method: GET
+    url: DocumentReference/cdex-example-doc1
+- request:
+    method: GET
+    url: DocumentReference/cdex-example-doc2
+id: inline-task-scenario4-batch
+meta:
+  extension:
+  - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    valueString: Inline Bundle Task Scenario4 Batch
+  - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    valueMarkdown: Bundle example used to create inline scenarios for this guide
+resourceType: Bundle
+type: batch

@@ -1,0 +1,85 @@
+{
+    "date": "2022-01-17",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "code": "1.2.840.10065.1.12.1.5",
+                        "display": "Verification Signature",
+                        "system": "urn:iso-astm:E1762-95:2013"
+                    }
+                ]
+            }
+        }
+    ],
+    "id": "inline-example2",
+    "item": [
+        {
+            "linkId": "1",
+            "required": true,
+            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+            "type": "text"
+        },
+        {
+            "answerOption": [
+                {
+                    "valueCoding": {
+                        "code": "1",
+                        "display": "Initial or original order for certification",
+                        "system": "http://example.org"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "code": "2",
+                        "display": "Change in status",
+                        "system": "http://example.org"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "code": "3",
+                        "display": "Revision or change in equipment",
+                        "system": "http://example.org"
+                    }
+                },
+                {
+                    "valueCoding": {
+                        "code": "4",
+                        "display": "Replacement",
+                        "system": "http://example.org"
+                    }
+                }
+            ],
+            "linkId": "2",
+            "required": true,
+            "text": "Order Reason",
+            "type": "choice"
+        }
+    ],
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Inline Questionnaire Example2"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Questionnaire example used to create inline scenarios for this guide"
+            }
+        ],
+        "profile": [
+            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"
+        ]
+    },
+    "name": "HomeOxygenTherapyQuestionnaire",
+    "resourceType": "Questionnaire",
+    "status": "draft",
+    "subjectType": [
+        "Patient"
+    ],
+    "title": "Home Oxygen Therapy Questionnaire",
+    "url": "http://example.org/cdex-questionnaire-inline-example2"
+}

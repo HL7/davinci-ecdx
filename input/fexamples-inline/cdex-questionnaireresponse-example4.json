@@ -1,0 +1,108 @@
+{
+    "author": {
+        "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9941339100"
+        }
+    },
+    "authored": "2022-06-17",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature",
+            "valueSignature": {
+                "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWVEVmpJanBiSWsxSlNVVXpla05EUVRCbFowRjNTVUpCWjBsS1FVOUxSbGwyVFhkU0szbFJUVUV3UjBOVGNVZFRTV0l6UkZGRlFrTjNWVUZOU1VkT1RWRnpkME5SV1VSV1VWRkhSWGRLVmxWNlJWUk5Ra1ZIUVRGVlJVTkJkMHRSTWtaellWZGFkbU50TlhCWlZFVlRUVUpCUjBFeFZVVkNkM2RLVlRKR01XTXlSbk5oV0ZKMlRWSlZkMFYzV1VSV1VWRkxSRUY0U1ZwWFJuTmtSMmhzVWtkR01GbFVSWGhHZWtGV1FtZE9Wa0pCVFUxRWExWjVZVmROWjFOSFJtaGplWGRuVWtaYVRrMVRWWGRKZDFsS1MyOWFTV2gyWTA1QlVXdENSbWhhYkdGSFJtaGpNRUp2V2xkR2MyUkhhR3hhUjBZd1dWUkZkV0l6U201TlFqUllSRlJKZUUxVVFYbE9la1V6VGtSSmQwNUdiMWhFVkVsNVRWUkJlVTFxUlROT1JFbDNUa1p2ZDJkWk1IaERla0ZLUW1kT1ZrSkJXVlJCYkZaVVRWSk5kMFZSV1VSV1VWRkpSRUZ3UkZsWGVIQmFiVGw1WW0xc2FFMVNTWGRGUVZsRVZsRlJTRVJCYkZSWldGWjZXVmQ0Y0dSSE9IaEdWRUZVUW1kT1ZrSkJiMDFFUldoc1dWZDRNR0ZIVmtWWldGSm9UVlJGV0UxQ1ZVZEJNVlZGUVhkM1QxSllTbkJaZVVKSldWZEdla3hEUWtWV2F6QjRTbFJCYWtKbmEzRm9hMmxIT1hjd1FrTlJSVmRHYlZadldWZEdlbEZIYUd4WlYzZ3dZVWRXYTFsWVVtaE5VelYyWTIxamQyZG5SMmxOUVRCSFExTnhSMU5KWWpORVVVVkNRVkZWUVVFMFNVSnFkMEYzWjJkSFMwRnZTVUpuVVVSd1MyTlRhMjlCVFRaelZ6SXhLM1pYVkdWSlZrOUhlREV3VFZkaGMxRjVOMVpJYVdRMmVubHhXRUZDVFN0NmJtWkNibGhsYm5sVk1Hb3hSbFIyVUcxU1prOUViMDlFV0ZaMVVGVjNSRzl0YUVOSWFDdGlZMnhYT1V0Tk1tODFOak5qZUZKTFJYWkNibUZJY25OcWR6VjVUbTE0VHpWWmFrVlNZbWgwU0dSUlpYRnJkR1IzTTFaWlJWSlNPVWh2ZUV4UE0wWnJjM3BTTWpreVNGUkNOSGhYTTNsWGJGWXpaMVJyVFZGdmVsQlRZMHBMU0ROaVJ6aFFjWEUyUVZsUVNqZERORmxDU1d4VlUyUkNUVlpzTTNGdVpVVm1aemRtZFhocFJtWlliMlprVkZadE4zSk5hV2xITjFnNWVqUXpVR1pwYkhGaFpXbHpabTEwVW5oQmJGSjNSVTVZY2tnelQzWlBSRkI1VERCeVZHNUhPRU56WWtGWVdWWkpUVzFrWkVobE5GcEdPWEJzYURrMWMybzBjRTFVYUV4MFkwcFlMMjg1V0VoTWFtZzNSVzFhZVdkS1NGZEZVWEUwVUhkR2QxcGtiV0pqWm1oRGJVOXlPRGhJT0VKaVZYSjFMemRXTm5waWMwY3hUakZEVjJ4dVpHeGlWbnB1VENzelNVMVBjamhyV0dGSVkyRnVjV1pqYTJkR1ZqUkZjbTVtYWtaS2NURlBTV0ZCYlhOTmFqZzFlRTFyYW5sWVRIbGpURXd2ZFRWdU1tODJRbWM1TXk5VlVtWnhkVTl2VTBsSFQwTlNNalZFWVZwNmNIY3lhek56TjI5Rk9XUk5kMFZYV0hSbVdHZFpkR2d5WW14cWVUVjBSa2d3UjJwd1QydDRNRGRxTjFwVU5VaHVlRzVzYzBOQmQwVkJRV0ZPUVUxRU5IZEVRVmxFVmxJd1ZFSkJWWGRCZDBWQ0wzcEJURUpuVGxaSVVUaEZRa0ZOUTBKbFFYZEpVVmxFVmxJd1VrSkNiM2RIU1VsWFpETmtNMHh0YUd4WlYzZ3dZVWRXYTFsWVVtaGhWelZxVEcxT2RtSlVRVTVDWjJ0eGFHdHBSemwzTUVKQlVYTkdRVUZQUTBGWlJVRkRkVTFWVG5FNVlYa3JLMlUxV1VNM1VVWlBPVFJ5Wm5wNFIxRnVSak5IYTJ4YVRrRlliVWx5TjFCV1IyUnBSMWt5UjFSNEx6bFNkRWhEZDFSTGVtdE1LM2wyUzI5cVpWbzVaRlpMT0hkeVIxWnBVbXRQTDJwVmVWb3JTMk5YVW05clZXcHpOVGx1WTBwSFVrMVRVMUo0ZEdWRFVYVnFkRFJvWmpJckwzRldLMll5YzAxUmRFVnlkMUJGTXpCMlluRlNXVlZPVGs1Q1ZrVlJjR0ZSZUM5aFkwcEVWWFk1ZGpkemFraHBTa1J4V0hkUkszSjZhamsxYVVoQlNXRmxSVWh4Umk5TmN6SXljREppWlZwMWNYWkpVVXRsVFd3cmMzWldjVWgwYVhWNlYyNUdORlUyVmtsdGNHdHlOR0pJYkRkbFoxWTVTRFpzTmxReVUwMXJhalp4UkZVMVpUbE9aekJhYkV4VWRHOXpjMmhDVEcxdmNFWTNaVGRJZVhKVVJVRnRaazlRUzFGbE1FVm5PVVV5ZFhKNmVIRkNkVWMxTkdzMU1FY3lTakJHYVZCelVVcEJhRVpwVGtkM1UyYzBVek5JZVZaRVJ6ZDFaVXRrTUV3NU0zZExUMDVQV1VkMlRVdHBla05JUWl0d1MzWkZUVXB2V2poNU9YVnBRaXRJUmxoamNEbFNZVXB4U2prM1NIQmFWRVYySzJ4cFEzQXlVRk5ZZW1OTE1ISXlOVk5qZVdwR05tUk1iM1ZMTWxOQ016QjRRWFpLT0hSRk5UZzBLMnB4VVRaRFIyVmpWVGxZYW5ac1FXcDFTbVJEY2tSbFZsQnphbXR1TjA5UVdFY3JPRmhhVlRkNmNVaGFUbTFZV0RGWldUUklOWEpuUlVvME9HeHlWWEpRTTBrNFVpSmRmUS4uR0RQUk1vRk5WTTVyU0x1MVdpRnA4WTloM1RfZTkzMTRRYzBVMDlXRllKTjhSYm0xeThIQTA1Y0pIdXdKSFdHY1lsaTBRY1BXWkN5QUhFMlJUdTlNdDNsbm0yVk1NRWZGT3d5eEJoLWtPbG9jdkhCQXoxU3BDZ240ZHppNGZ5bTJoUkpNZW9NdkwzWVBJZTFTN2xERDY1ZVI3Z2ctdmYwd2ZIMklYVVBDTElkdkxGOURqdGNOaWcyb3l4Y2s1N1JFem1vOGEwZjhEUURMbEpjREV6bkZoVklyd1FGMm90azd1ZF9udlF0bXBaRzR4eWllVnVWX2VwZG9ocjJ6UWMzYzdaV1AtMHlvelF2YktkZmRWSHFGSFF0d3BfRVlISDVuVnk5TnlTSHpPeEl5MlpmbWFSbjZIU2dPdG8zclI3Z3NZR2t3NDJPT0xTdDc1TXJES1gydFdCSnQ1WTBZQVh1RFhac0Nzamk3Nm9lV3hjOUROYmxQRTNSQ1VOal9UTXNtNlFhTXhYRUNGdkdZWHpQX2tRQmdEZVpvVEduQ0h1R3BQTGtTZmdKal9sT2VJQmF0Q2lRNko1OUZQX0NuaGprMUh1T3NXc0xtaUs1bFVNQ0dRT19DaXNoRDJDZ1MyalVZcUpVZEFjMXkxSmFFLUp5OUJLUFZGQ2hDMTUtdUlFVUw=",
+                "onBehalfOf": {
+                    "identifier": {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "1184932014"
+                    }
+                },
+                "type": [
+                    {
+                        "code": "1.2.840.10065.1.12.1.5",
+                        "display": "Verification Signature",
+                        "system": "urn:iso-astm:E1762-95:2013"
+                    }
+                ],
+                "when": "2022-06-17T22:42:19-07:00",
+                "who": {
+                    "display": "Dr. John Doe",
+                    "identifier": {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "type": {
+                            "coding": [
+                                {
+                                    "code": "NPI",
+                                    "display": "National Provider Identifier",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                                }
+                            ]
+                        },
+                        "value": "9941339108"
+                    }
+                }
+            }
+        }
+    ],
+    "id": "inline-example4",
+    "item": [
+        {
+            "answer": [
+                {
+                    "valueString": "Examplitis"
+                }
+            ],
+            "linkId": "1",
+            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)"
+        },
+        {
+            "answer": [
+                {
+                    "valueCoding": {
+                        "code": "4",
+                        "display": "Replacement",
+                        "system": "http://example.org"
+                    }
+                }
+            ],
+            "linkId": "2",
+            "text": "Order Reason"
+        }
+    ],
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Inline QuestionnaireResponse Example4"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "QuestionnaireResponse example used to create inline scenarios for this guide"
+            }
+        ],
+        "profile": [
+            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+        ]
+    },
+    "questionnaire": "http://example.org/cdex-questionnaire-inline-example2|2.1.0-preview",
+    "resourceType": "QuestionnaireResponse",
+    "status": "completed",
+    "subject": {
+        "display": "Amy Shaw",
+        "identifier": {
+            "system": "http://example.org/cdex/payer/member-ids",
+            "type": {
+                "coding": [
+                    {
+                        "code": "MB",
+                        "display": "Member Number",
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                    }
+                ],
+                "text": "Member Number"
+            },
+            "use": "usual",
+            "value": "Member123"
+        }
+    }
+}

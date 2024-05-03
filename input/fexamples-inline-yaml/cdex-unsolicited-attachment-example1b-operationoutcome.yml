@@ -1,0 +1,20 @@
+id: inline-example1b-operationoutcome
+issue:
+- code: informational
+  details:
+    text: The attachments can not be associated with a current claim or prior authorization
+      and are being held for association with a future claim or prior authorization.
+  severity: information
+meta:
+  extension:
+  - url: http://hl7.org/fhir/StructureDefinition/instance-name
+    valueString: Inline OperationOutcome Example1b Operationoutcome
+  - url: http://hl7.org/fhir/StructureDefinition/instance-description
+    valueMarkdown: OperationOutcome example used to create inline scenarios for this
+      guide
+resourceType: OperationOutcome
+text:
+  div: "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>The attachments can\
+    \ not be associated with a current claim or prior authorization and are being\
+    \ held for association with a future claim or prior authorization.</p>\n    </div>"
+  status: generated

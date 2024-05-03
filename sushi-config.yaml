@@ -85,6 +85,16 @@ dependencies:
 # create IG.definition.grouping entries and associate the individual
 # resource entries with the corresponding groupIds.
 groups:
+
+  CapabilityStatements:
+    name: CDex Capability Statements
+    description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+    resources:
+      - CapabilityStatement/data-consumer-client
+      - CapabilityStatement/data-consumer-server
+      - CapabilityStatement/data-source-client
+      - CapabilityStatement/data-source-server
+
   AttachmentsProfiles:
     name: Attachments Profiles
     description: Profiles Associated with CDex Attachments Transactions
@@ -194,14 +204,102 @@ groups:
       - Questionnaire/cdex-questionnaire-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example2
-  CapabilityStatements:
-    name: CDex Capability Statements
-    description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+  InlineExamples:
+    name: Inline Examples 
+    description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can check them for conformance to the guides profile definitions.  Since they illustrate to  particular "over-the-wire" transaction, most lack a rendered narrative and many lack an id.
     resources:
-      - CapabilityStatement/data-consumer-client
-      - CapabilityStatement/data-consumer-server
-      - CapabilityStatement/data-source-client
-      - CapabilityStatement/data-source-server
+      - QuestionnaireResponse/inline-example1
+      - Task/inline-example7-currentid
+      - QuestionnaireResponse/inline-example3
+      - Task/inline-example19-currentid
+      - Parameters/inline-example4
+      - Task/inline-example20-currentid
+      - Parameters/inline-example5
+      - Task/inline-example3-currentid
+      - QuestionnaireResponse/inline-example2
+      - Task/inline-example24-currentid
+      - Task/inline-example4-currentid
+      - Parameters/inline-example1
+      - Task/inline-example23-currentid
+      - Task/inline-example26-updateid
+      - Task/inline-example30-currentid
+      - Task/inline-example27-currentid
+      - Condition/inline-example-858
+      - Parameters/inline-example2
+      - Parameters/inline-example3
+      - QuestionnaireResponse/inline-example4
+      - Bundle/inline-example-858
+      - Location/hl7east-inline
+      - Task/inline-example23
+      - Task/inline-example7
+      - Task/inline-example6
+      - Task/inline-example22
+      - Task/inline-example14-currentid
+      - Task/inline-example20
+      - Task/inline-example4
+      - Subscription/inline-task-scenario1-subscription-requested
+      - Task/inline-example10-currentid
+      - Task/inline-example5
+      - Task/inline-example29-currentid
+      - Task/inline-example21
+      - Bundle/inline-document-digital-sig-example
+      - Task/inline-example9-currentid
+      - Task/inline-example25
+      - Task/inline-example31
+      - Task/inline-example19
+      - Task/inline-example17-currentid
+      - Task/inline-example1
+      - Task/inline-example13-currentid
+      - Task/inline-example18
+      - Task/inline-example30
+      - Task/inline-example24
+      - Task/inline-example26
+      - Task/inline-example2
+      - Bundle/inline-electronic-sig-example
+      - Task/inline-example3
+      - Task/inline-example27
+      - Task/inline-example16
+      - Subscription/inline-task-scenario1-subscription-active
+      - Provenance/inline-example-858
+      - Task/inline-example12-currentid
+      - Task/inline-example16-currentid
+      - Task/inline-example8-currentid
+      - Task/inline-example17
+      - Task/inline-example29
+      - Task/inline-example15
+      - Bundle/inline-task-scenario4-batch
+      - Task/inline-example14
+      - Task/inline-example28
+      - Bundle/inline-example-858p
+      - Task/inline-example1-query-request
+      - Task/inline-example10
+      - Task/inline-example8
+      - OperationOutcome/inline-example1b-operationoutcome
+      - Task/inline-example9
+      - Task/inline-example11
+      - Task/inline-example28-currentid
+      - Task/inline-example13
+      - Task/inline-example11-currentid
+      - Task/inline-example12
+      - Task/inline-example15-currentid
+      - Task/inline-example26-currentid
+      - Task/inline-example31-currentid
+      - Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
+      - Task/inline-example1-currentid
+      - Task/inline-example22-currentid
+      - Questionnaire/inline-example2
+      - Task/inline-example5-currentid
+      - CommunicationRequest/inline-example1-authorization
+      - Bundle/inline-searchset-digital-sig-example
+      - Questionnaire/inline-example1
+      - Task/inline-example22-updateid
+      - Task/inline-example25-currentid
+      - Task/inline-example2-currentid
+      - Task/inline-example21-currentid
+      - Task/inline-example18-currentid
+      - Bundle/inline-task-scenario3-batch
+      - Task/inline-example6-currentid
+      - Parameters/inline-submit-attachment-example
 
 pages:
   index.md:
@@ -244,6 +342,8 @@ parameters:
   path-resource:
     - input/resources
     - fsh-generated/resources
+    - input/examples
+    - input/fexamples-inline
   path-pages:
     - input/pagecontent
     - input/intro-notes
@@ -257,7 +357,7 @@ parameters:
   apply-publisher: 'true'
   apply-version: 'true'
   show-inherited-invariants: 'false'
-  usage-stats-opt-out: 'true'
+  usage-stats-opt-out: 'false'
   # excludexml: 'false'
   # excludejson: 'false'
   excludettl: 'true'
@@ -270,7 +370,104 @@ parameters:
      - 1.0.0
      - 1.1.0
      - 2.0.0
-  # suppressed-ids: '$examples'
+  bundle-references-resolve: false
+  no-narrative:
+      - QuestionnaireResponse/inline-example1
+      - Task/inline-example7-currentid
+      - QuestionnaireResponse/inline-example3
+      - Task/inline-example19-currentid
+      - Parameters/inline-example4
+      - Task/inline-example20-currentid
+      - Parameters/inline-example5
+      - Task/inline-example3-currentid
+      - QuestionnaireResponse/inline-example2
+      - Task/inline-example24-currentid
+      - Task/inline-example4-currentid
+      - Parameters/inline-example1
+      - Task/inline-example23-currentid
+      - Task/inline-example26-updateid
+      - Task/inline-example30-currentid
+      - Task/inline-example27-currentid
+      - Condition/inline-example-858
+      - Parameters/inline-example2
+      - Parameters/inline-example3
+      - QuestionnaireResponse/inline-example4
+      - Bundle/inline-example-858
+      - Location/hl7east-inline
+      - Task/inline-example23
+      - Task/inline-example7
+      - Task/inline-example6
+      - Task/inline-example22
+      - Task/inline-example14-currentid
+      - Task/inline-example20
+      - Task/inline-example4
+      - Subscription/inline-task-scenario1-subscription-requested
+      - Task/inline-example10-currentid
+      - Task/inline-example5
+      - Task/inline-example29-currentid
+      - Task/inline-example21
+      - Bundle/inline-document-digital-sig-example
+      - Task/inline-example9-currentid
+      - Task/inline-example25
+      - Task/inline-example31
+      - Task/inline-example19
+      - Task/inline-example17-currentid
+      - Task/inline-example1
+      - Task/inline-example13-currentid
+      - Task/inline-example18
+      - Task/inline-example30
+      - Task/inline-example24
+      - Task/inline-example26
+      - Task/inline-example2
+      - Bundle/inline-electronic-sig-example
+      - Task/inline-example3
+      - Task/inline-example27
+      - Task/inline-example16
+      - Subscription/inline-task-scenario1-subscription-active
+      - Provenance/inline-example-858
+      - Task/inline-example12-currentid
+      - Task/inline-example16-currentid
+      - Task/inline-example8-currentid
+      - Task/inline-example17
+      - Task/inline-example29
+      - Task/inline-example15
+      - Bundle/inline-task-scenario4-batch
+      - Task/inline-example14
+      - Task/inline-example28
+      - Bundle/inline-example-858p
+      - Task/inline-example1-query-request
+      - Task/inline-example10
+      - Task/inline-example8
+      - OperationOutcome/inline-example1b-operationoutcome
+      - Task/inline-example9
+      - Task/inline-example11
+      - Task/inline-example28-currentid
+      - Task/inline-example13
+      - Task/inline-example11-currentid
+      - Task/inline-example12
+      - Task/inline-example15-currentid
+      - Task/inline-example26-currentid
+      - Task/inline-example31-currentid
+      - Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
+      - Task/inline-example1-currentid
+      - Task/inline-example22-currentid
+      # - Questionnaire/inline-example2
+      - Task/inline-example5-currentid
+      - CommunicationRequest/inline-example1-authorization
+      - Bundle/inline-searchset-digital-sig-example
+      # - Questionnaire/inline-example1
+      - Task/inline-example22-updateid
+      - Task/inline-example25-currentid
+      - Task/inline-example2-currentid
+      - Task/inline-example21-currentid
+      - Task/inline-example18-currentid
+      - Bundle/inline-task-scenario3-batch
+      - Task/inline-example6-currentid
+      - Parameters/inline-submit-attachment-example
+
+
+  suppressed-ids: Bundle/inline-document-digital-sig-example, Bundle/inline-electronic-sig-example, Parameters/inline-example1, Parameters/inline-example2, Parameters/inline-example3, Parameters/inline-example4, Parameters/inline-example5, Questionnaire/inline-example1, Questionnaire/inline-example2, QuestionnaireResponse/inline-example1, QuestionnaireResponse/inline-example2, QuestionnaireResponse/inline-example3, QuestionnaireResponse/inline-example4, Bundle/inline-searchset-digital-sig-example, Task/inline-example1, Task/inline-example10, Task/inline-example11, Task/inline-example12, Task/inline-example13, Task/inline-example14, Task/inline-example15, Task/inline-example16, Task/inline-example17, Task/inline-example18, Task/inline-example19, Task/inline-example2, Task/inline-example20, Task/inline-example21, Task/inline-example22, Task/inline-example23, Task/inline-example24, Task/inline-example25, Task/inline-example26, Task/inline-example27, Task/inline-example28, Task/inline-example29, Task/inline-example3, Task/inline-example30, Task/inline-example31, Task/inline-example4, Task/inline-example5, Task/inline-example6, Task/inline-example7, Task/inline-example8, Task/inline-example9, OperationOutcome/inline-example1b-operationoutcome, Provenance/inline-858, Task/inline-example1-query-request, Task/inline-scenario1-subscription-requested
+
   tabbed-snapshots: 'true'
   auto-oid-root: 2.16.840.1.113883.4.642.40.21
 copyrightyear: '2024+'
@@ -334,19 +531,20 @@ menu:
   Security and Privacy: security.html
   FHIR Artifacts:
     Artifacts Summary: artifacts.html
-    Attachments Profiles: artifacts.html#1
-    Attachments Operations: artifacts.html#2
-    Attachments Terminology: artifacts.html#3
-    Attachments Examples: artifacts.html#4
-    Task Based Approach Profiles: artifacts.html#5
+    CDex Capability Statements: artifacts.html#1
+    Attachments Profiles: artifacts.html#2
+    Attachments Operations: artifacts.html#3
+    Attachments Terminology: artifacts.html#4
+    Attachments Examples: artifacts.html#5
+    Task Based Approach Profiles: artifacts.html#6
     Task Based Approach Terminology: artifacts.html#6
-    Task Based Approach Examples: artifacts.html#7
-    Signature Profiles: artifacts.html#8
-    Signature Terminology: artifacts.html#9
-    Signature Examples: artifacts.html#10
-    Common Terminology: artifacts.html#11
-    Common Examples: artifacts.html#12
-    CDex Capability Statements: artifacts.html#13
+    Task Based Approach Examples: artifacts.html#8
+    Signature Profiles: artifacts.html#9
+    Signature Terminology: artifacts.html#10
+    Signature Examples: artifacts.html#11
+    Common Terminology: artifacts.html#12
+    Common Examples: artifacts.html#13
+
   Downloads: downloads.html
   Change Log: #changes.html
     Change Log: changes.html

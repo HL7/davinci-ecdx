@@ -81,6 +81,98 @@
 <artifact id="CapabilityStatement/data-source-server" key="CapabilityStatement-data-source-server" name="Data Source Server CapabilityStatement"/>
 <artifact deprecated="true" id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
 <artifact deprecated="true" id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
+<artifact id="Location/hl7east-inline" key="Location-hl7east-inline" name="Hl7east Inline Location"/>
+<artifact id="Bundle/inline-document-digital-sig-example" key="Bundle-inline-document-digital-sig-example" name="Inline Bundle Document Digital Sig Example"/>
+<artifact id="Bundle/inline-electronic-sig-example" key="Bundle-inline-electronic-sig-example" name="Inline Bundle Electronic Sig Example"/>
+<artifact id="Bundle/inline-example-858" key="Bundle-inline-example-858" name="Inline Bundle Example 858"/>
+<artifact id="Bundle/inline-example-858p" key="Bundle-inline-example-858p" name="Inline Bundle Example 858p"/>
+<artifact id="Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb" key="Bundle-inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb" name="Inline Bundle Example D88e2910 3c95 469d B1f4 Ab5553b471fb"/>
+<artifact id="Bundle/inline-searchset-digital-sig-example" key="Bundle-inline-searchset-digital-sig-example" name="Inline Bundle Searchset Digital Sig Example"/>
+<artifact id="Bundle/inline-task-scenario3-batch" key="Bundle-inline-task-scenario3-batch" name="Inline Bundle Task Scenario3 Batch"/>
+<artifact id="Bundle/inline-task-scenario4-batch" key="Bundle-inline-task-scenario4-batch" name="Inline Bundle Task Scenario4 Batch"/>
+<artifact id="CommunicationRequest/inline-example1-authorization" key="CommunicationRequest-inline-example1-authorization" name="Inline CommunicationRequest Example1 Authorization"/>
+<artifact id="Condition/inline-example-858" key="Condition-inline-example-858" name="Inline Condition Example 858"/>
+<artifact id="OperationOutcome/inline-example1b-operationoutcome" key="OperationOutcome-inline-example1b-operationoutcome" name="Inline OperationOutcome Example1b Operationoutcome"/>
+<artifact id="Parameters/inline-example1" key="Parameters-inline-example1" name="Inline Parameters Example1"/>
+<artifact id="Parameters/inline-example2" key="Parameters-inline-example2" name="Inline Parameters Example2"/>
+<artifact id="Parameters/inline-example3" key="Parameters-inline-example3" name="Inline Parameters Example3"/>
+<artifact id="Parameters/inline-example4" key="Parameters-inline-example4" name="Inline Parameters Example4"/>
+<artifact id="Parameters/inline-example5" key="Parameters-inline-example5" name="Inline Parameters Example5"/>
+<artifact id="Parameters/inline-submit-attachment-example" key="Parameters-inline-submit-attachment-example" name="Inline Parameters Submit Attachment Example"/>
+<artifact id="Provenance/inline-example-858" key="Provenance-inline-example-858" name="Inline Provenance Example 858"/>
+<artifact id="Questionnaire/inline-example1" key="Questionnaire-inline-example1" name="Inline Questionnaire Example1"/>
+<artifact id="Questionnaire/inline-example2" key="Questionnaire-inline-example2" name="Inline Questionnaire Example2"/>
+<artifact id="QuestionnaireResponse/inline-example1" key="QuestionnaireResponse-inline-example1" name="Inline QuestionnaireResponse Example1"/>
+<artifact id="QuestionnaireResponse/inline-example2" key="QuestionnaireResponse-inline-example2" name="Inline QuestionnaireResponse Example2"/>
+<artifact id="QuestionnaireResponse/inline-example3" key="QuestionnaireResponse-inline-example3" name="Inline QuestionnaireResponse Example3"/>
+<artifact id="QuestionnaireResponse/inline-example4" key="QuestionnaireResponse-inline-example4" name="Inline QuestionnaireResponse Example4"/>
+<artifact id="Subscription/inline-task-scenario1-subscription-active" key="Subscription-inline-task-scenario1-subscription-active" name="Inline Subscription Task Scenario1 Subscription Active"/>
+<artifact id="Subscription/inline-task-scenario1-subscription-requested" key="Subscription-inline-task-scenario1-subscription-requested" name="Inline Subscription Task Scenario1 Subscription Requested"/>
+<artifact id="Task/inline-example1" key="Task-inline-example1" name="Inline Task Example1"/>
+<artifact id="Task/inline-example1-currentid" key="Task-inline-example1-currentid" name="Inline Task Example1 Currentid"/>
+<artifact id="Task/inline-example1-query-request" key="Task-inline-example1-query-request" name="Inline Task Example1 Query Request"/>
+<artifact id="Task/inline-example10" key="Task-inline-example10" name="Inline Task Example10"/>
+<artifact id="Task/inline-example10-currentid" key="Task-inline-example10-currentid" name="Inline Task Example10 Currentid"/>
+<artifact id="Task/inline-example11" key="Task-inline-example11" name="Inline Task Example11"/>
+<artifact id="Task/inline-example11-currentid" key="Task-inline-example11-currentid" name="Inline Task Example11 Currentid"/>
+<artifact id="Task/inline-example12" key="Task-inline-example12" name="Inline Task Example12"/>
+<artifact id="Task/inline-example12-currentid" key="Task-inline-example12-currentid" name="Inline Task Example12 Currentid"/>
+<artifact id="Task/inline-example13" key="Task-inline-example13" name="Inline Task Example13"/>
+<artifact id="Task/inline-example13-currentid" key="Task-inline-example13-currentid" name="Inline Task Example13 Currentid"/>
+<artifact id="Task/inline-example14" key="Task-inline-example14" name="Inline Task Example14"/>
+<artifact id="Task/inline-example14-currentid" key="Task-inline-example14-currentid" name="Inline Task Example14 Currentid"/>
+<artifact id="Task/inline-example15" key="Task-inline-example15" name="Inline Task Example15"/>
+<artifact id="Task/inline-example15-currentid" key="Task-inline-example15-currentid" name="Inline Task Example15 Currentid"/>
+<artifact id="Task/inline-example16" key="Task-inline-example16" name="Inline Task Example16"/>
+<artifact id="Task/inline-example16-currentid" key="Task-inline-example16-currentid" name="Inline Task Example16 Currentid"/>
+<artifact id="Task/inline-example17" key="Task-inline-example17" name="Inline Task Example17"/>
+<artifact id="Task/inline-example17-currentid" key="Task-inline-example17-currentid" name="Inline Task Example17 Currentid"/>
+<artifact id="Task/inline-example18" key="Task-inline-example18" name="Inline Task Example18"/>
+<artifact id="Task/inline-example18-currentid" key="Task-inline-example18-currentid" name="Inline Task Example18 Currentid"/>
+<artifact id="Task/inline-example19" key="Task-inline-example19" name="Inline Task Example19"/>
+<artifact id="Task/inline-example19-currentid" key="Task-inline-example19-currentid" name="Inline Task Example19 Currentid"/>
+<artifact id="Task/inline-example2" key="Task-inline-example2" name="Inline Task Example2"/>
+<artifact id="Task/inline-example2-currentid" key="Task-inline-example2-currentid" name="Inline Task Example2 Currentid"/>
+<artifact id="Task/inline-example20" key="Task-inline-example20" name="Inline Task Example20"/>
+<artifact id="Task/inline-example20-currentid" key="Task-inline-example20-currentid" name="Inline Task Example20 Currentid"/>
+<artifact id="Task/inline-example21" key="Task-inline-example21" name="Inline Task Example21"/>
+<artifact id="Task/inline-example21-currentid" key="Task-inline-example21-currentid" name="Inline Task Example21 Currentid"/>
+<artifact id="Task/inline-example22" key="Task-inline-example22" name="Inline Task Example22"/>
+<artifact id="Task/inline-example22-currentid" key="Task-inline-example22-currentid" name="Inline Task Example22 Currentid"/>
+<artifact id="Task/inline-example22-updateid" key="Task-inline-example22-updateid" name="Inline Task Example22 Updateid"/>
+<artifact id="Task/inline-example23" key="Task-inline-example23" name="Inline Task Example23"/>
+<artifact id="Task/inline-example23-currentid" key="Task-inline-example23-currentid" name="Inline Task Example23 Currentid"/>
+<artifact id="Task/inline-example24" key="Task-inline-example24" name="Inline Task Example24"/>
+<artifact id="Task/inline-example24-currentid" key="Task-inline-example24-currentid" name="Inline Task Example24 Currentid"/>
+<artifact id="Task/inline-example25" key="Task-inline-example25" name="Inline Task Example25"/>
+<artifact id="Task/inline-example25-currentid" key="Task-inline-example25-currentid" name="Inline Task Example25 Currentid"/>
+<artifact id="Task/inline-example26" key="Task-inline-example26" name="Inline Task Example26"/>
+<artifact id="Task/inline-example26-currentid" key="Task-inline-example26-currentid" name="Inline Task Example26 Currentid"/>
+<artifact id="Task/inline-example26-updateid" key="Task-inline-example26-updateid" name="Inline Task Example26 Updateid"/>
+<artifact id="Task/inline-example27" key="Task-inline-example27" name="Inline Task Example27"/>
+<artifact id="Task/inline-example27-currentid" key="Task-inline-example27-currentid" name="Inline Task Example27 Currentid"/>
+<artifact id="Task/inline-example28" key="Task-inline-example28" name="Inline Task Example28"/>
+<artifact id="Task/inline-example28-currentid" key="Task-inline-example28-currentid" name="Inline Task Example28 Currentid"/>
+<artifact id="Task/inline-example29" key="Task-inline-example29" name="Inline Task Example29"/>
+<artifact id="Task/inline-example29-currentid" key="Task-inline-example29-currentid" name="Inline Task Example29 Currentid"/>
+<artifact id="Task/inline-example3" key="Task-inline-example3" name="Inline Task Example3"/>
+<artifact id="Task/inline-example3-currentid" key="Task-inline-example3-currentid" name="Inline Task Example3 Currentid"/>
+<artifact id="Task/inline-example30" key="Task-inline-example30" name="Inline Task Example30"/>
+<artifact id="Task/inline-example30-currentid" key="Task-inline-example30-currentid" name="Inline Task Example30 Currentid"/>
+<artifact id="Task/inline-example31" key="Task-inline-example31" name="Inline Task Example31"/>
+<artifact id="Task/inline-example31-currentid" key="Task-inline-example31-currentid" name="Inline Task Example31 Currentid"/>
+<artifact id="Task/inline-example4" key="Task-inline-example4" name="Inline Task Example4"/>
+<artifact id="Task/inline-example4-currentid" key="Task-inline-example4-currentid" name="Inline Task Example4 Currentid"/>
+<artifact id="Task/inline-example5" key="Task-inline-example5" name="Inline Task Example5"/>
+<artifact id="Task/inline-example5-currentid" key="Task-inline-example5-currentid" name="Inline Task Example5 Currentid"/>
+<artifact id="Task/inline-example6" key="Task-inline-example6" name="Inline Task Example6"/>
+<artifact id="Task/inline-example6-currentid" key="Task-inline-example6-currentid" name="Inline Task Example6 Currentid"/>
+<artifact id="Task/inline-example7" key="Task-inline-example7" name="Inline Task Example7"/>
+<artifact id="Task/inline-example7-currentid" key="Task-inline-example7-currentid" name="Inline Task Example7 Currentid"/>
+<artifact id="Task/inline-example8" key="Task-inline-example8" name="Inline Task Example8"/>
+<artifact id="Task/inline-example8-currentid" key="Task-inline-example8-currentid" name="Inline Task Example8 Currentid"/>
+<artifact id="Task/inline-example9" key="Task-inline-example9" name="Inline Task Example9"/>
+<artifact id="Task/inline-example9-currentid" key="Task-inline-example9-currentid" name="Inline Task Example9 Currentid"/>
 <artifact deprecated="true" id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
 <artifact deprecated="true" id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
 <artifact deprecated="true" id="Task/cdex-example1-query-completed-contained" key="Task-cdex-example1-query-completed-contained" name="Scenario 1 Contained Example"/>

@@ -82,6 +82,12 @@ definition:
   - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
     valueCode: hl7.fhir.us.davinci-cdex#0.1.0
   grouping:
+  - id: CapabilityStatements
+    name: CDex Capability Statements
+    description: The following artifacts define the specific capabilities that different
+      types of systems are expected to have in order to comply with this implementation
+      guide. Systems conforming to this implementation guide are expected to declare
+      conformance to one or more of the following capability statements.
   - id: AttachmentsProfiles
     name: Attachments Profiles
     description: Profiles Associated with CDex Attachments Transactions
@@ -120,13 +126,74 @@ definition:
   - id: CommonExamples
     name: Common Examples
     description: Examples used in both CDex Attachments and Task Based Approach Transactions
-  - id: CapabilityStatements
-    name: CDex Capability Statements
-    description: The following artifacts define the specific capabilities that different
-      types of systems are expected to have in order to comply with this implementation
-      guide. Systems conforming to this implementation guide are expected to declare
-      conformance to one or more of the following capability statements.
+  - id: InlineExamples
+    name: Inline Examples
+    description: These examples are used in the inline example scenarios throughout
+      the guide. They are listed here so the implementation guide's publication tooling
+      can check them for conformance to the guides profile definitions.  Since they
+      illustrate to  particular "over-the-wire" transaction, most lack a rendered
+      narrative and many lack an id.
   resource:
+  - reference:
+      reference: CapabilityStatement/data-consumer-client
+    description: "This CapabilityStatement describes the expected capabilities of\
+      \ a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data\
+      \ from the Data Source  during clinical data exchange. The capabilities include\
+      \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
+      \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
+      \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
+      \ update notifications\n3. Requesting Attachments\n   - Requesting Attachments\
+      \ Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
+    exampleBoolean: false
+    name: Data Consumer Client CapabilityStatement
+    groupingId: CapabilityStatements
+  - reference:
+      reference: CapabilityStatement/data-consumer-server
+    description: 'This CapabilityStatement describes the expected capabilities of
+      a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or
+      one of its proxies during clinical data exchange.   The capabilities include
+      one or more of the following interactions:
+
+
+      1. Responding to a query for authorization information represented by a CommunicationRequest
+      or ServiceRequest
+
+      1. Responding to  the `$submit-attachment` operation.'
+    exampleBoolean: false
+    name: Data Consumer Server CapabilityStatement
+    groupingId: CapabilityStatements
+  - reference:
+      reference: CapabilityStatement/data-source-client
+    description: 'This CapabilityStatement describes the expected capabilities of
+      a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange
+      with a Data Consumer. The capabilities include one or more of the following
+      interactions:
+
+      1. Post the `$submit-attachment` operation to a Data Consumer endpoint.
+
+      2. Launch Da Vinci DTR.
+
+      3. Query for Authorization information represented by a CommunicationRequest
+      or ServiceRequest.
+
+      4. Post a subscription notification to a Data Consumer endpoint updating the
+      status of a task.'
+    exampleBoolean: false
+    name: Data Source Client CapabilityStatement
+    groupingId: CapabilityStatements
+  - reference:
+      reference: CapabilityStatement/data-source-server
+    description: "This CapabilityStatement describes the expected capabilities of\
+      \ a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer\
+      \ during clinical data exchange. The capabilities include one or more of the\
+      \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
+      \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
+      \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
+      \ to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments\
+      \ Using Questionnaires"
+    exampleBoolean: false
+    name: Data Source Server CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
       reference: StructureDefinition/cdex-task-attachment-request
     description: "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based\
@@ -827,65 +894,563 @@ definition:
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
     groupingId: CommonExamples
   - reference:
-      reference: CapabilityStatement/data-consumer-client
-    description: "This CapabilityStatement describes the expected capabilities of\
-      \ a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data\
-      \ from the Data Source  during clinical data exchange. The capabilities include\
-      \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
-      \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
-      \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
-      \ update notifications\n3. Requesting Attachments\n   - Requesting Attachments\
-      \ Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
+      reference: QuestionnaireResponse/inline-example1
+    description: QuestionnaireResponse example used to create inline scenarios for
+      this guide
     exampleBoolean: false
-    name: Data Consumer Client CapabilityStatement
-    groupingId: CapabilityStatements
+    name: Inline QuestionnaireResponse Example1
+    groupingId: InlineExamples
   - reference:
-      reference: CapabilityStatement/data-consumer-server
-    description: 'This CapabilityStatement describes the expected capabilities of
-      a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or
-      one of its proxies during clinical data exchange.   The capabilities include
-      one or more of the following interactions:
-
-
-      1. Responding to a query for authorization information represented by a CommunicationRequest
-      or ServiceRequest
-
-      1. Responding to  the `$submit-attachment` operation.'
+      reference: Task/inline-example7-currentid
+    description: Task example used to create inline scenarios for this guide
     exampleBoolean: false
-    name: Data Consumer Server CapabilityStatement
-    groupingId: CapabilityStatements
+    name: Inline Task Example7 Currentid
+    groupingId: InlineExamples
   - reference:
-      reference: CapabilityStatement/data-source-client
-    description: 'This CapabilityStatement describes the expected capabilities of
-      a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange
-      with a Data Consumer. The capabilities include one or more of the following
-      interactions:
-
-      1. Post the `$submit-attachment` operation to a Data Consumer endpoint.
-
-      2. Launch Da Vinci DTR.
-
-      3. Query for Authorization information represented by a CommunicationRequest
-      or ServiceRequest.
-
-      4. Post a subscription notification to a Data Consumer endpoint updating the
-      status of a task.'
+      reference: QuestionnaireResponse/inline-example3
+    description: QuestionnaireResponse example used to create inline scenarios for
+      this guide
     exampleBoolean: false
-    name: Data Source Client CapabilityStatement
-    groupingId: CapabilityStatements
+    name: Inline QuestionnaireResponse Example3
+    groupingId: InlineExamples
   - reference:
-      reference: CapabilityStatement/data-source-server
-    description: "This CapabilityStatement describes the expected capabilities of\
-      \ a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer\
-      \ during clinical data exchange. The capabilities include one or more of the\
-      \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
-      \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
-      \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
-      \ to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments\
-      \ Using Questionnaires"
+      reference: Task/inline-example19-currentid
+    description: Task example used to create inline scenarios for this guide
     exampleBoolean: false
-    name: Data Source Server CapabilityStatement
-    groupingId: CapabilityStatements
+    name: Inline Task Example19 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-example4
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Example4
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example20-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example20 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-example5
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Example5
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example3-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example3 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: QuestionnaireResponse/inline-example2
+    description: QuestionnaireResponse example used to create inline scenarios for
+      this guide
+    exampleBoolean: false
+    name: Inline QuestionnaireResponse Example2
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example24-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example24 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example4-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example4 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-example1
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Example1
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example23-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example23 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example26-updateid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example26 Updateid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example30-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example30 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example27-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example27 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Condition/inline-example-858
+    description: Condition example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Condition Example 858
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-example2
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Example2
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-example3
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Example3
+    groupingId: InlineExamples
+  - reference:
+      reference: QuestionnaireResponse/inline-example4
+    description: QuestionnaireResponse example used to create inline scenarios for
+      this guide
+    exampleBoolean: false
+    name: Inline QuestionnaireResponse Example4
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-example-858
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Example 858
+    groupingId: InlineExamples
+  - reference:
+      reference: Location/hl7east-inline
+    description: Location example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Hl7east Inline Location
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example23
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example23
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example7
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example7
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example6
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example6
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example22
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example22
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example14-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example14 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example20
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example20
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example4
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example4
+    groupingId: InlineExamples
+  - reference:
+      reference: Subscription/inline-task-scenario1-subscription-requested
+    description: Subscription example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Subscription Task Scenario1 Subscription Requested
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example10-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example10 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example5
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example5
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example29-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example29 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example21
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example21
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-document-digital-sig-example
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Document Digital Sig Example
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example9-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example9 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example25
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example25
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example31
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example31
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example19
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example19
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example17-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example17 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example1
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example1
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example13-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example13 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example18
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example18
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example30
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example30
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example24
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example24
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example26
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example26
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example2
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example2
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-electronic-sig-example
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Electronic Sig Example
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example3
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example3
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example27
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example27
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example16
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example16
+    groupingId: InlineExamples
+  - reference:
+      reference: Subscription/inline-task-scenario1-subscription-active
+    description: Subscription example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Subscription Task Scenario1 Subscription Active
+    groupingId: InlineExamples
+  - reference:
+      reference: Provenance/inline-example-858
+    description: Provenance example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Provenance Example 858
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example12-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example12 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example16-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example16 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example8-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example8 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example17
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example17
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example29
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example29
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example15
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example15
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-task-scenario4-batch
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Task Scenario4 Batch
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example14
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example14
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example28
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example28
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-example-858p
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Example 858p
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example1-query-request
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example1 Query Request
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example10
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example10
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example8
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example8
+    groupingId: InlineExamples
+  - reference:
+      reference: OperationOutcome/inline-example1b-operationoutcome
+    description: OperationOutcome example used to create inline scenarios for this
+      guide
+    exampleBoolean: false
+    name: Inline OperationOutcome Example1b Operationoutcome
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example9
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example9
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example11
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example11
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example28-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example28 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example13
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example13
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example11-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example11 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example12
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example12
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example15-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example15 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example26-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example26 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example31-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example31 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Example D88e2910 3c95 469d B1f4 Ab5553b471fb
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example1-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example1 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example22-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example22 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Questionnaire/inline-example2
+    description: Questionnaire example used to create inline scenarios for this guide
+    name: Inline Questionnaire Example2
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example5-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example5 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: CommunicationRequest/inline-example1-authorization
+    description: CommunicationRequest example used to create inline scenarios for
+      this guide
+    exampleBoolean: false
+    name: Inline CommunicationRequest Example1 Authorization
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-searchset-digital-sig-example
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Searchset Digital Sig Example
+    groupingId: InlineExamples
+  - reference:
+      reference: Questionnaire/inline-example1
+    description: Questionnaire example used to create inline scenarios for this guide
+    name: Inline Questionnaire Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example22-updateid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example22 Updateid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example25-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example25 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example2-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example2 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example21-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example21 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example18-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example18 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Bundle/inline-task-scenario3-batch
+    description: Bundle example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Bundle Task Scenario3 Batch
+    groupingId: InlineExamples
+  - reference:
+      reference: Task/inline-example6-currentid
+    description: Task example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Task Example6 Currentid
+    groupingId: InlineExamples
+  - reference:
+      reference: Parameters/inline-submit-attachment-example
+    description: Parameters example used to create inline scenarios for this guide
+    exampleBoolean: false
+    name: Inline Parameters Submit Attachment Example
+    groupingId: InlineExamples
   page:
     nameUrl: toc.html
     title: Table of Contents
@@ -963,6 +1528,10 @@ definition:
     value: input/resources
   - code: path-resource
     value: fsh-generated/resources
+  - code: path-resource
+    value: input/examples
+  - code: path-resource
+    value: input/fexamples-inline
   - code: path-pages
     value: input/pagecontent
   - code: path-pages
@@ -986,7 +1555,7 @@ definition:
   - code: show-inherited-invariants
     value: 'false'
   - code: usage-stats-opt-out
-    value: 'true'
+    value: 'false'
   - code: excludettl
     value: 'true'
   - code: generate
@@ -999,6 +1568,204 @@ definition:
     value: 1.1.0
   - code: version-comparison
     value: 2.0.0
+  - code: bundle-references-resolve
+    value: 'false'
+  - code: no-narrative
+    value: QuestionnaireResponse/inline-example1
+  - code: no-narrative
+    value: Task/inline-example7-currentid
+  - code: no-narrative
+    value: QuestionnaireResponse/inline-example3
+  - code: no-narrative
+    value: Task/inline-example19-currentid
+  - code: no-narrative
+    value: Parameters/inline-example4
+  - code: no-narrative
+    value: Task/inline-example20-currentid
+  - code: no-narrative
+    value: Parameters/inline-example5
+  - code: no-narrative
+    value: Task/inline-example3-currentid
+  - code: no-narrative
+    value: QuestionnaireResponse/inline-example2
+  - code: no-narrative
+    value: Task/inline-example24-currentid
+  - code: no-narrative
+    value: Task/inline-example4-currentid
+  - code: no-narrative
+    value: Parameters/inline-example1
+  - code: no-narrative
+    value: Task/inline-example23-currentid
+  - code: no-narrative
+    value: Task/inline-example26-updateid
+  - code: no-narrative
+    value: Task/inline-example30-currentid
+  - code: no-narrative
+    value: Task/inline-example27-currentid
+  - code: no-narrative
+    value: Condition/inline-example-858
+  - code: no-narrative
+    value: Parameters/inline-example2
+  - code: no-narrative
+    value: Parameters/inline-example3
+  - code: no-narrative
+    value: QuestionnaireResponse/inline-example4
+  - code: no-narrative
+    value: Bundle/inline-example-858
+  - code: no-narrative
+    value: Location/hl7east-inline
+  - code: no-narrative
+    value: Task/inline-example23
+  - code: no-narrative
+    value: Task/inline-example7
+  - code: no-narrative
+    value: Task/inline-example6
+  - code: no-narrative
+    value: Task/inline-example22
+  - code: no-narrative
+    value: Task/inline-example14-currentid
+  - code: no-narrative
+    value: Task/inline-example20
+  - code: no-narrative
+    value: Task/inline-example4
+  - code: no-narrative
+    value: Subscription/inline-task-scenario1-subscription-requested
+  - code: no-narrative
+    value: Task/inline-example10-currentid
+  - code: no-narrative
+    value: Task/inline-example5
+  - code: no-narrative
+    value: Task/inline-example29-currentid
+  - code: no-narrative
+    value: Task/inline-example21
+  - code: no-narrative
+    value: Bundle/inline-document-digital-sig-example
+  - code: no-narrative
+    value: Task/inline-example9-currentid
+  - code: no-narrative
+    value: Task/inline-example25
+  - code: no-narrative
+    value: Task/inline-example31
+  - code: no-narrative
+    value: Task/inline-example19
+  - code: no-narrative
+    value: Task/inline-example17-currentid
+  - code: no-narrative
+    value: Task/inline-example1
+  - code: no-narrative
+    value: Task/inline-example13-currentid
+  - code: no-narrative
+    value: Task/inline-example18
+  - code: no-narrative
+    value: Task/inline-example30
+  - code: no-narrative
+    value: Task/inline-example24
+  - code: no-narrative
+    value: Task/inline-example26
+  - code: no-narrative
+    value: Task/inline-example2
+  - code: no-narrative
+    value: Bundle/inline-electronic-sig-example
+  - code: no-narrative
+    value: Task/inline-example3
+  - code: no-narrative
+    value: Task/inline-example27
+  - code: no-narrative
+    value: Task/inline-example16
+  - code: no-narrative
+    value: Subscription/inline-task-scenario1-subscription-active
+  - code: no-narrative
+    value: Provenance/inline-example-858
+  - code: no-narrative
+    value: Task/inline-example12-currentid
+  - code: no-narrative
+    value: Task/inline-example16-currentid
+  - code: no-narrative
+    value: Task/inline-example8-currentid
+  - code: no-narrative
+    value: Task/inline-example17
+  - code: no-narrative
+    value: Task/inline-example29
+  - code: no-narrative
+    value: Task/inline-example15
+  - code: no-narrative
+    value: Bundle/inline-task-scenario4-batch
+  - code: no-narrative
+    value: Task/inline-example14
+  - code: no-narrative
+    value: Task/inline-example28
+  - code: no-narrative
+    value: Bundle/inline-example-858p
+  - code: no-narrative
+    value: Task/inline-example1-query-request
+  - code: no-narrative
+    value: Task/inline-example10
+  - code: no-narrative
+    value: Task/inline-example8
+  - code: no-narrative
+    value: OperationOutcome/inline-example1b-operationoutcome
+  - code: no-narrative
+    value: Task/inline-example9
+  - code: no-narrative
+    value: Task/inline-example11
+  - code: no-narrative
+    value: Task/inline-example28-currentid
+  - code: no-narrative
+    value: Task/inline-example13
+  - code: no-narrative
+    value: Task/inline-example11-currentid
+  - code: no-narrative
+    value: Task/inline-example12
+  - code: no-narrative
+    value: Task/inline-example15-currentid
+  - code: no-narrative
+    value: Task/inline-example26-currentid
+  - code: no-narrative
+    value: Task/inline-example31-currentid
+  - code: no-narrative
+    value: Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
+  - code: no-narrative
+    value: Task/inline-example1-currentid
+  - code: no-narrative
+    value: Task/inline-example22-currentid
+  - code: no-narrative
+    value: Task/inline-example5-currentid
+  - code: no-narrative
+    value: CommunicationRequest/inline-example1-authorization
+  - code: no-narrative
+    value: Bundle/inline-searchset-digital-sig-example
+  - code: no-narrative
+    value: Task/inline-example22-updateid
+  - code: no-narrative
+    value: Task/inline-example25-currentid
+  - code: no-narrative
+    value: Task/inline-example2-currentid
+  - code: no-narrative
+    value: Task/inline-example21-currentid
+  - code: no-narrative
+    value: Task/inline-example18-currentid
+  - code: no-narrative
+    value: Bundle/inline-task-scenario3-batch
+  - code: no-narrative
+    value: Task/inline-example6-currentid
+  - code: no-narrative
+    value: Parameters/inline-submit-attachment-example
+  - code: suppressed-ids
+    value: Bundle/inline-document-digital-sig-example, Bundle/inline-electronic-sig-example,
+      Parameters/inline-example1, Parameters/inline-example2, Parameters/inline-example3,
+      Parameters/inline-example4, Parameters/inline-example5, Questionnaire/inline-example1,
+      Questionnaire/inline-example2, QuestionnaireResponse/inline-example1, QuestionnaireResponse/inline-example2,
+      QuestionnaireResponse/inline-example3, QuestionnaireResponse/inline-example4,
+      Bundle/inline-searchset-digital-sig-example, Task/inline-example1, Task/inline-example10,
+      Task/inline-example11, Task/inline-example12, Task/inline-example13, Task/inline-example14,
+      Task/inline-example15, Task/inline-example16, Task/inline-example17, Task/inline-example18,
+      Task/inline-example19, Task/inline-example2, Task/inline-example20, Task/inline-example21,
+      Task/inline-example22, Task/inline-example23, Task/inline-example24, Task/inline-example25,
+      Task/inline-example26, Task/inline-example27, Task/inline-example28, Task/inline-example29,
+      Task/inline-example3, Task/inline-example30, Task/inline-example31, Task/inline-example4,
+      Task/inline-example5, Task/inline-example6, Task/inline-example7, Task/inline-example8,
+      Task/inline-example9, OperationOutcome/inline-example1b-operationoutcome, Provenance/inline-858,
+      Task/inline-example1-query-request, Task/inline-scenario1-subscription-requested
   - code: tabbed-snapshots
     value: 'true'
   - code: auto-oid-root

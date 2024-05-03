@@ -1,130 +1,140 @@
 {
-  "resourceType": "QuestionnaireResponse",
-  "id": "cdex-questionnaireresponse-example2",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
-    ]
-  },
-  "contained": [
-    {
-      "resourceType": "Questionnaire",
-      "id": "cdex-adaptive-questionnaire-example1",
-      "meta": {
+    "resourceType": "QuestionnaireResponse",
+    "id": "cdex-questionnaireresponse-example2",
+    "meta": {
         "profile": [
-          "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt"
+            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
+        ],
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "CDex QuestionnaireResponse Example2"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data. The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse contains the generated Questionnaire instance.  This example is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/)."
+            }
         ]
-      },
-      "extension": [
+    },
+    "contained": [
         {
-          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive",
-          "valueBoolean": true
+            "resourceType": "Questionnaire",
+            "id": "cdex-adaptive-questionnaire-example1",
+            "meta": {
+                "profile": [
+                    "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt"
+                ]
+            },
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive",
+                    "valueBoolean": true
+                }
+            ],
+            "name": "HomeOxygenTherapyAdaptiveSDCQuestionnaire",
+            "title": "Adaptive Home Oxygen Therapy Order Template (SDC)",
+            "derivedFrom": [
+                "http://example.org/base_adaptive_questionnaire"
+            ],
+            "status": "draft",
+            "subjectType": [
+                "Patient"
+            ],
+            "date": "2022-06-17",
+            "item": [
+                {
+                    "linkId": "1",
+                    "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+                    "type": "text",
+                    "required": true
+                },
+                {
+                    "linkId": "2",
+                    "text": "Order Reason",
+                    "type": "choice",
+                    "required": true,
+                    "answerOption": [
+                        {
+                            "valueCoding": {
+                                "system": "http://example.org",
+                                "code": "1",
+                                "display": "Initial or original order for certification"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://example.org",
+                                "code": "2",
+                                "display": "Change in status"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://example.org",
+                                "code": "3",
+                                "display": "Revision or change in equipment"
+                            }
+                        },
+                        {
+                            "valueCoding": {
+                                "system": "http://example.org",
+                                "code": "4",
+                                "display": "Replacement"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "name": "HomeOxygenTherapyAdaptiveSDCQuestionnaire",
-      "title": "Adaptive Home Oxygen Therapy Order Template (SDC)",
-      "derivedFrom": [
-        "http://example.org/base_adaptive_questionnaire"
-      ],
-      "status": "draft",
-      "subjectType": [
-        "Patient"
-      ],
-      "date": "2022-06-17",
-      "item": [
+    ],
+    "questionnaire": "#cdex-adaptive-questionnaire-example1",
+    "status": "completed",
+    "subject": {
+        "identifier": {
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MB",
+                        "display": "Member Number"
+                    }
+                ],
+                "text": "Member Number"
+            },
+            "system": "http://example.org/cdex/payer/member-ids",
+            "value": "Member123"
+        },
+        "display": "Amy Shaw"
+    },
+    "authored": "2022-06-17",
+    "author": {
+        "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9941339100"
+        }
+    },
+    "item": [
         {
-          "linkId": "1",
-          "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-          "type": "text",
-          "required": true
+            "linkId": "1",
+            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+            "answer": [
+                {
+                    "valueString": "Patient Diagnosis"
+                }
+            ]
         },
         {
-          "linkId": "2",
-          "text": "Order Reason",
-          "type": "choice",
-          "required": true,
-          "answerOption": [
-            {
-              "valueCoding": {
-                "system": "http://example.org",
-                "code": "1",
-                "display": "Initial or original order for certification"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://example.org",
-                "code": "2",
-                "display": "Change in status"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://example.org",
-                "code": "3",
-                "display": "Revision or change in equipment"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://example.org",
-                "code": "4",
-                "display": "Replacement"
-              }
-            }
-          ]
+            "linkId": "2",
+            "text": "Order Reason",
+            "answer": [
+                {
+                    "valueCoding": {
+                        "system": "http://example.org",
+                        "code": "4",
+                        "display": "Replacement"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "questionnaire": "#cdex-adaptive-questionnaire-example1",
-  "status": "completed",
-  "subject": {
-    "identifier": {
-      "type": {
-        "coding": [
-          {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-            "code": "MB",
-            "display": "Member Number"
-          }
-        ],
-        "text": "Member Number"
-      },
-      "system": "http://example.org/cdex/payer/member-ids",
-      "value": "Member123"
-    },
-    "display": "Amy Shaw"
-  },
-  "authored": "2022-06-17",
-  "author": {
-    "identifier": {
-      "system": "http://hl7.org/fhir/sid/us-npi",
-      "value": "9941339100"
-    }
-  },
-  "item": [
-    {
-      "linkId": "1",
-      "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-      "answer": [
-        {
-          "valueString": "Patient Diagnosis"
-        }
-      ]
-    },
-    {
-      "linkId": "2",
-      "text": "Order Reason",
-      "answer": [
-        {
-          "valueCoding": {
-            "system": "http://example.org",
-            "code": "4",
-            "display": "Replacement"
-          }
-        }
-      ]
-    }
-  ]
+    ]
 }

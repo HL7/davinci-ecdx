@@ -77,6 +77,12 @@
                     "resource": {
                         "resourceType": "DocumentReference",
                         "status": "current",
+                        "meta": {
+                            "profile": [
+                                "foo",
+                                "bar"
+                            ]
+                        },
                         "type": {
                             "coding": [
                                 {
