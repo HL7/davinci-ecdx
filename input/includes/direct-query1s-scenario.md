@@ -25,5 +25,5 @@ Content-Type: application/fhir+json;charset=utf-8
 **Response Body**
 
 ~~~
-{% include cdex-example1s-query-request.json %}
+{% include_relative Bundle-cdex-searchbundle-digital-sig-example.json %}
 ~~~

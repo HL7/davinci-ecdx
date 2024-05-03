@@ -109,6 +109,10 @@ definition:
   - id: TaskBasedExamples
     name: Task Based Approach Examples
     description: Examples Associated with CDex Task Based Approach Transactions
+  - id: DirectQueryExamples
+    name: Direct Query Examples
+    description: Examples Associated with CDex Direct Query (FHIR RESTful search)
+      Approach Transactions
   - id: SignatureProfiles
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
@@ -126,74 +130,241 @@ definition:
   - id: CommonExamples
     name: Common Examples
     description: Examples used in both CDex Attachments and Task Based Approach Transactions
-  - id: InlineExamples
-    name: Inline Examples
-    description: These examples are used in the inline example scenarios throughout
-      the guide. They are listed here so the implementation guide's publication tooling
-      can check them for conformance to the guides profile definitions.  Since they
-      illustrate to  particular "over-the-wire" transaction, most lack a rendered
-      narrative and many lack an id.
   resource:
   - reference:
-      reference: CapabilityStatement/data-consumer-client
-    description: "This CapabilityStatement describes the expected capabilities of\
-      \ a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data\
-      \ from the Data Source  during clinical data exchange. The capabilities include\
-      \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
-      \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
-      \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
-      \ update notifications\n3. Requesting Attachments\n   - Requesting Attachments\
-      \ Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
+      reference: ValueSet/cdex-attachment-task-code
+    description: Codes used to identify the type of attachment request and control
+      the payer system's behavior.
     exampleBoolean: false
-    name: Data Consumer Client CapabilityStatement
-    groupingId: CapabilityStatements
+    name: CDex Attachment Task Code Value Set
+    groupingId: AttachmentsTerminology
   - reference:
-      reference: CapabilityStatement/data-consumer-server
-    description: 'This CapabilityStatement describes the expected capabilities of
-      a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or
-      one of its proxies during clinical data exchange.   The capabilities include
-      one or more of the following interactions:
-
-
-      1. Responding to a query for authorization information represented by a CommunicationRequest
-      or ServiceRequest
-
-      1. Responding to  the `$submit-attachment` operation.'
+      reference: ValueSet/cdex-claim-use
+    description: The purpose of a Claim resource and the reason for attachments. It
+      includes the codes "preauthorization" and "claim".
     exampleBoolean: false
-    name: Data Consumer Server CapabilityStatement
-    groupingId: CapabilityStatements
+    name: CDex Claim Use Value Set
+    groupingId: AttachmentsTerminology
   - reference:
-      reference: CapabilityStatement/data-source-client
-    description: 'This CapabilityStatement describes the expected capabilities of
-      a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange
-      with a Data Consumer. The capabilities include one or more of the following
-      interactions:
-
-      1. Post the `$submit-attachment` operation to a Data Consumer endpoint.
-
-      2. Launch Da Vinci DTR.
-
-      3. Query for Authorization information represented by a CommunicationRequest
-      or ServiceRequest.
-
-      4. Post a subscription notification to a Data Consumer endpoint updating the
-      status of a task.'
+      reference: ValueSet/cdex-data-request-task-code
+    description: Codes used to identify the type of data request and control the payer
+      system's behavior.
     exampleBoolean: false
-    name: Data Source Client CapabilityStatement
-    groupingId: CapabilityStatements
+    name: CDex Data Request Task Code Value Set
+    groupingId: TaskBasedTerminology
   - reference:
-      reference: CapabilityStatement/data-source-server
-    description: "This CapabilityStatement describes the expected capabilities of\
-      \ a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer\
-      \ during clinical data exchange. The capabilities include one or more of the\
-      \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
-      \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
-      \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
-      \ to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments\
-      \ Using Questionnaires"
+      reference: Bundle/cdex-document-digital-sig-example
+    description: Digital signature example showing how it is used to sign a FHIR Document.  The
+      CDEX use case would be the target resource in response to a Task-based request
+      where a digital signature was required.  If no signature was required, the response
+      would typically be in the form of an individual resource.
+    name: CDEX Document with Digital Signature Example
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
+  - reference:
+      reference: Bundle/cdex-electronic-sig-example
+    description: Electronic signature example showing how an image file can be used
+      to sign a document Bundle.  The CDEX use case would be the target resource in
+      response to a Task-based request where an electronic signature was required.  If
+      no signature was required, the response would typically be in the form of an
+      individual resource.
+    name: CDEX Document with Electronic Signature Example
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
+  - reference:
+      reference: ValueSet/cdex-identifier-types
+    description: Identifiers type for providers and organizations limited to NPI or
+      US Tax id.
     exampleBoolean: false
-    name: Data Source Server CapabilityStatement
-    groupingId: CapabilityStatements
+    name: CDex Identifier Types Value Set
+    groupingId: SignatureTerminology
+  - reference:
+      reference: Parameters/cdex-parameters-example2
+    description: '**Signed FHIR Document Attachment Example:** Parameters Resource
+      example showing how it is used to submit attachments using the `$submit-attachment`
+      operation. It contains a Signed FHIR Document attachment and the necessary information
+      needed to associate it to a claim.'
+    name: CDex Parameters Example 2
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Parameters/cdex-parameters-example3
+    description: '**PDF Attachment Example:** Parameters Resource example showing
+      how it is used to submit attachments using the `$submit-attachment` operation.
+      It contains a PDF attachment and the necessary information needed to associate
+      them to the claim.'
+    name: CDex Parameters Example 3
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Parameters/cdex-parameters-example4
+    description: '**Laboratory Results Attachment Example:** Parameters Resource example
+      showing how it is used to submit multiple attachments using the `$submit-attachment`
+      operation. It contains 3 Hemoglobin A1c results as attachments and the necessary
+      information needed to associate them to the claim.'
+    name: CDex Parameters Example 4
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Parameters/cdex-parameters-example5
+    description: '**Completed QuestionnaireResponse Attachment Example:** Parameters
+      Resource example showing how it is used to submit a solicited attachment using
+      the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse
+      completed using DTR in response to a Questionnaire sent in the Attachments request.'
+    name: CDex Parameters Example 5
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Parameters/cdex-parameters-example1
+    description: '**CCDA Attachment Example:** Parameters Resource example showing
+      how it is used to submit attachments using the `$submit-attachment` operation.
+      It contains a CCDA attachment and the necessary information needed to associate
+      them to the claim.'
+    name: CDex Parameters Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: StructureDefinition/cdex-parameters-submit-attachment
+    description: The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
+    exampleBoolean: false
+    name: CDex Parameters Submit Attachment Profile
+    groupingId: AttachmentsProfiles
+  - reference:
+      reference: StructureDefinition/cdex-patient-demographics
+    description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
+      \ within the CDex Task Attachment Request Profile or CDex Task Data Request\
+      \ Profile.  It is referenced when additional patient demographic data is communicated\
+      \ for a clinical data request (for example, to verify patient identity for HIPAA\
+      \ compliance regulations).  It constrains the following elements to be *mandatory*\
+      \ (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier\
+      \ slice\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
+      \ (min=0):\n\n- A patient account number identifier slice  \n- A date of birth"
+    exampleBoolean: false
+    name: CDex Patient Demographics Profile
+    groupingId: AttachmentsProfiles
+  - reference:
+      reference: StructureDefinition/cdex-practitionerrole
+    description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
+      \ within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`\
+      \ to communicate the provider ID as either a unique organization/location identifier\
+      \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\
+      \ It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
+      \ (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier:\
+      \ \n- An organization.identifier:\n\nAt least a practitioner identifier or organization\
+      \ identifier SHALL be present."
+    exampleBoolean: false
+    name: CDex PractitionerRole Profile
+    groupingId: AttachmentsProfiles
+  - reference:
+      reference: ValueSet/cdex-POU
+    description: The set of purpose of use codes for the requested data (the output
+      of the task). This code set is composed of [FHIR core Purpose of Use security
+      labels](http://hl7.org/fhir/security-labels.html#core) and additional codes
+      defined by this Guide.
+    exampleBoolean: false
+    name: CDex Purpose of Use Value Set
+    groupingId: CommonTerminology
+  - reference:
+      reference: Questionnaire/cdex-questionnaire-example1
+    description: This example is a simple data request Questionnaire used in the Task
+      Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
+    name: CDex Questionnaire Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
+    groupingId: CommonExamples
+  - reference:
+      reference: Questionnaire/cdex-questionnaire-example2
+    description: This example is a simple data request Questionnaire used in the Task
+      Based and Attachments transactions. It indicates that a verification signature
+      is needed when completing the QuestionnaireResponse.  It is adapted from the
+      Da Vinci DTR IG.
+    name: CDex Questionnaire Example2
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
+    groupingId: SignatureExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It
+      is adapted from the Da Vinci DTR IG.
+    name: CDex QuestionnaireResponse Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
+    groupingId: CommonExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.
+      The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse
+      contains the generated Questionnaire instance.  This example is adapted from
+      the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR
+      see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).
+    name: CDex QuestionnaireResponse Example2
+    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
+    groupingId: CommonExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example3
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data
+      when an electronic verification signature is required. It is adapted from the
+      Da Vinci DTR IG.  The electronic signature is an image file in the QuestionnaireResponse
+      signature extension. This example is adapted from the Da Vinci DTR IG.
+    name: CDex QuestionnaireResponse Example3
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
+    groupingId: SignatureExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example4
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data
+      and an electronic *digital* Verification signature is required. It is adapted
+      from the Da Vinci DTR IG. The digital signature is a JSON [FHIR Signature](http://hl7.org/fhir/R4/signatures.html)
+      in the QuestionnaireResponse signature extension. This example is adapted from
+      the Da Vinci DTR IG.
+    name: CDex QuestionnaireResponse Example4
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
+    groupingId: SignatureExamples
+  - reference:
+      reference: StructureDefinition/cdex-sdc-questionnaireresponse
+    description: 'This extension is derived from the [US Core QuestionnaireResponse
+      Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
+      profile and enforces the various elements of signature documented in the CDex
+      guide to represent an enveloped signature. It adds the following constraints:
+
+      - The signature extensions use the CDex Signature Profile'
+    exampleBoolean: false
+    name: CDex SDC QuestionnaireResponse Profile
+    groupingId: SignatureProfiles
+  - reference:
+      reference: Bundle/cdex-searchbundle-digital-sig-example
+    description: Digital signature example showing how it is used to sign a [search
+      set Bundle](direct-query.html#signatures).  The CDEX use case would be a response
+      to a Direct Query where a digital signature was required.
+    name: CDEX SearchSet Bundle with Digital Signature Example
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
+    groupingId: SignatureExamples
+  - reference:
+      reference: StructureDefinition/cdex-signature-bundle
+    description: 'This Bundle profile enforces the various elements of signature documented
+      in the CDex guide to represent an enveloped signature. It adds the following
+      *mandatory* (min=1) constraint:
+
+
+      - A Bundle.signature element using the CDex Signature Profile'
+    exampleBoolean: false
+    name: CDex Signature Bundle Profile
+    groupingId: SignatureProfiles
+  - reference:
+      reference: StructureDefinition/cdex-signature
+    description: "This Signature DataType profile enforces the various elements of\
+      \ signature documented in the CDex guide. It adds the following *mandatory*\
+      \ (min=1) constraints:\n\n- A Signature.type fixed to ASTM Standard, E1762-95(2013)\
+      \ code = \u201C1.2.840.10065.1.12.1.5\u201D (Verification Signature)\n- A Signature.who\
+      \ for the organization or practitioner who signed the Bundle which is either:\n\
+      \  1. a reference to US-Core Practitioner, PractitionerRole or Organization\
+      \ or\n  1. an NPI or Tax ID and name of the organization or practitioner\n-\
+      \ A Signature.data representing base64 encoded JWS-Signature \n\nIn addition,\
+      \ the following *mandatory* (min=1) element is inherited from the base standard:\n\
+      - Signature.when - system timestamp when the signature was created"
+    exampleBoolean: false
+    name: CDex Signature Profile
+    groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-task-attachment-request
     description: "Payers use the [Task](http://hl7.org/StructureDefinition/Task) based\
@@ -273,192 +444,6 @@ definition:
     name: CDex Task Attachment Request Profile
     groupingId: AttachmentsProfiles
   - reference:
-      reference: StructureDefinition/cdex-practitionerrole
-    description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
-      \ within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner`\
-      \ to communicate the provider ID as either a unique organization/location identifier\
-      \ (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\
-      \ It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
-      \ (min=0).:\n\n- A default resource ID of \"practitionerrole\"\n- A practitioner.identifier:\
-      \ \n- An organization.identifier:\n\nAt least a practitioner identifier or organization\
-      \ identifier SHALL be present."
-    exampleBoolean: false
-    name: CDex PractitionerRole Profile
-    groupingId: AttachmentsProfiles
-  - reference:
-      reference: StructureDefinition/cdex-patient-demographics
-    description: "This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html)\
-      \ within the CDex Task Attachment Request Profile or CDex Task Data Request\
-      \ Profile.  It is referenced when additional patient demographic data is communicated\
-      \ for a clinical data request (for example, to verify patient identity for HIPAA\
-      \ compliance regulations).  It constrains the following elements to be *mandatory*\
-      \ (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier\
-      \ slice\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
-      \ (min=0):\n\n- A patient account number identifier slice  \n- A date of birth"
-    exampleBoolean: false
-    name: CDex Patient Demographics Profile
-    groupingId: AttachmentsProfiles
-  - reference:
-      reference: StructureDefinition/cdex-parameters-submit-attachment
-    description: The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
-    exampleBoolean: false
-    name: CDex Parameters Submit Attachment Profile
-    groupingId: AttachmentsProfiles
-  - reference:
-      reference: OperationDefinition/submit-attachment
-    description: "Providers use this [operation](http://hl7.org/fhir/operations.html)\
-      \ to submit *solicited* and *unsolicited* attachments or additional information\
-      \ for claims or prior authorization. The $submit-attachment operation accepts\
-      \ the clinical/administrative attachments and the necessary information to associate\
-      \ them with the claim or prior authorization and returns an HTTP response. For\
-      \ *unsolicited* attachments, the Provider invokes this operation *before, concurrently,\
-      \ or after*  the claim or pre-authorization transaction. For *solicited* attachments,\
-      \ the Provider invokes it when responding to a Payer request for attachments\
-      \ or additional information. Any HTTP endpoint can use $submit-attachment, not\
-      \ just FHIR RESTful server endpoints.\n\nThe input parameters are:\n1. One or\
-      \ more attachments as FHIR Resources\n    - Optionally, one or more unique line\
-      \ item numbers associated with the attachment\n    - Optionally, the attachment\
-      \ code used to request for the information\n1. Data elements for the association\
-      \ to the claim/prior authorization\n    - A unique identifier that ties the\
-      \ attachment(s) back to the claim or prior authorization. (referred to as the\
-      \ \"re-association tracking control numbers\")*\n    - What are the attachments\
-      \ for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique\
-      \ payer identifier\n    - A unique organization/location identifier (e.g., [Type\
-      \ 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
-      \ and/or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
-      \    - A unique Patient member identifier\n    - A Date of Service\n    - A\
-      \ Flag indicating whether the operation is the last attachment submission for\
-      \ the claim or prior authorization.\n\nThere are no output parameters."
-    exampleBoolean: false
-    name: Submit Attachment Operation
-    groupingId: AttachmentsOperations
-  - reference:
-      reference: ValueSet/cdex-attachment-task-code
-    description: Codes used to identify the type of attachment request and control
-      the payer system's behavior.
-    exampleBoolean: false
-    name: CDex Attachment Task Code Value Set
-    groupingId: AttachmentsTerminology
-  - reference:
-      reference: ValueSet/cdex-claim-use
-    description: The purpose of a Claim resource and the reason for attachments. It
-      includes the codes "preauthorization" and "claim".
-    exampleBoolean: false
-    name: CDex Claim Use Value Set
-    groupingId: AttachmentsTerminology
-  - reference:
-      reference: Task/cdex-task-example19
-    description: '**Claim Attachment Request Example:**   Claim Attachment Request
-      sent by payer to a provider requesting a signed Progress note (H&P) note'
-    name: CDex Task Example 19
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example20
-    description: '**Prior-Auth Attachment Request Example:**   Prior Authorization
-      Attachment Request with a POU of "coverage authorization" sent by payer to a
-      provider requesting a signed History and physical (H&P) note.'
-    name: CDex Task Example 20
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example22
-    description: '**Request Additional Data using a Questionnaire:**   Prior Authorization
-      Attachment Request with a POU of "coverage authorization" sent by payer to a
-      provider requesting a data request questionnaire be completed.'
-    name: CDex Task Example 22
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example23
-    description: '**Request Additional Data using an Adaptive Questionnaire:**  Prior
-      Authorization Attachment Request with a POU of "coverage authorization" sent
-      by payer to a provider requesting an adaptive questionnaire be completed.'
-    name: CDex Task Example 23
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example24
-    description: '**Completed Request for Additional Data using a Questionnaire:**   Completed
-      Task for CDex Task Example 22. This example has a status of "completed" and
-      a "lastModified" date of 6/17/2022. The "reasonCode" is "request additional
-      data" and the "output" is a QuestionnaireResponse.'
-    name: CDex Task Example 24
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example25
-    description: '**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed
-      Task for CDex Task Example 23. This example has a status of "completed" and
-      a "lastModified" date of 6/17/2022. The "reasonCode" is "request additional
-      data" and the "output" is a QuestionnaireResponse.'
-    name: CDex Task Example 25
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example28
-    description: '**Request Additional Data Requiring a Verification Signature Using
-      a Questionnaire:** Prior Authorization Attachment Request with a POU of "coverage
-      authorization" and Signature required sent by payer to a provider requesting
-      a data request questionnaire be completed and signed.'
-    name: CDex Task Example 28
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Task/cdex-task-example29
-    description: '**Completed Request for Additional Data Requiring a Verification
-      Signature Using a Questionnaire:**  Completed Prior Authorization Attachment
-      Request (CDex Task Example 28) with a status of "completed" and output referencing
-      the digitally signed QuestionnaireResponse.'
-    name: CDex Task Example 29
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example1
-    description: '**CCDA Attachment Example:** Parameters Resource example showing
-      how it is used to submit attachments using the `$submit-attachment` operation.
-      It contains a CCDA attachment and the necessary information needed to associate
-      them to the claim.'
-    name: CDex Parameters Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example2
-    description: '**Signed FHIR Document Attachment Example:** Parameters Resource
-      example showing how it is used to submit attachments using the `$submit-attachment`
-      operation. It contains a Signed FHIR Document attachment and the necessary information
-      needed to associate it to a claim.'
-    name: CDex Parameters Example 2
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example3
-    description: '**PDF Attachment Example:** Parameters Resource example showing
-      how it is used to submit attachments using the `$submit-attachment` operation.
-      It contains a PDF attachment and the necessary information needed to associate
-      them to the claim.'
-    name: CDex Parameters Example 3
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example4
-    description: '**Laboratory Results Attachment Example:** Parameters Resource example
-      showing how it is used to submit multiple attachments using the `$submit-attachment`
-      operation. It contains 3 Hemoglobin A1c results as attachments and the necessary
-      information needed to associate them to the claim.'
-    name: CDex Parameters Example 4
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example5
-    description: '**Completed QuestionnaireResponse Attachment Example:** Parameters
-      Resource example showing how it is used to submit a solicited attachment using
-      the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse
-      completed using DTR in response to a Questionnaire sent in the Attachments request.'
-    name: CDex Parameters Example 5
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
       reference: StructureDefinition/cdex-task-data-request
     description: "This Task profile is used to solicit information from a system.\
       \ The Data Consumer uses it when direct query transactions are not an option,\
@@ -526,100 +511,12 @@ definition:
     name: CDex Task Data Request Profile
     groupingId: TaskBasedProfiles
   - reference:
-      reference: ValueSet/cdex-work-queue
-    description: The set work queue tags that the provider may use in their workflow
-      to process requests. This code set is composed of codes defined by this Guide.
-    exampleBoolean: false
-    name: CDex Work Queue Value Set
-    groupingId: TaskBasedTerminology
-  - reference:
-      reference: ValueSet/cdex-data-request-task-code
-    description: Codes used to identify the type of data request and control the payer
-      system's behavior.
-    exampleBoolean: false
-    name: CDex Data Request Task Code Value Set
-    groupingId: TaskBasedTerminology
-  - reference:
       reference: Task/cdex-task-example1
     description: '**Query String Request for Condition:** Task to seek a patient''s
       active conditions using the CDex Profile query input. This example illustrates
       the use of business identifiers (instead of pointing to a FHIR resource) to
       references the various actors.'
     name: CDex Task Example 1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example2
-    description: '**Completed Query String Request for Condition:**   Completed Task
-      to seek a patient active conditions using the CDex Profile query input. This
-      example illustrates the use of business identifiers (instead of pointing to
-      a FHIR resource) to references the various actors.'
-    name: CDex Task Example 2
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example3
-    description: '**Completed Query String Request for Condition with Contained Output:**   Completed
-      Task to seek a patient active conditions using the CDex Profile query input
-      and using a contained resource for the output data. This example illustrates
-      the use of business identifiers (instead of pointing to a FHIR resource) to
-      references the various actors.'
-    name: CDex Task Example 3
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example4
-    description: '**Free Text Request for Condition:**   Task to seek a patient active
-      conditions using free text in the CDex Profile code input. This example illustrates
-      the use of business identifiers (instead of pointing to a FHIR resource) to
-      references the various actors.'
-    name: CDex Task Example 4
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example5
-    description: '**Completed Free Text Request for Condition:**   Completed Task
-      to seek a patient active conditions using free text for the input in the CDex
-      Profile code input. This example illustrates the use of business identifiers
-      (instead of pointing to a FHIR resource) to references the various actors.'
-    name: CDex Task Example 5
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example6
-    description: '**Coded Request for Progress note:**   Task to seek a patient''s
-      latest Progress notes using the CDex Profile code input. This example illustrates
-      the use of FHIR resource references to the various actors.'
-    name: CDex Task Example 6
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example7
-    description: '**Completed Coded Request for Progress note - PDF:**   Completed
-      Task to seek a patient''''''''s latest Progress notes using the CDex Profile
-      code input. This example illustrates the use of FHIR resource references to
-      the various actors. The output data is a contained DocumentReference with an
-      inline base64 encoded PDF document.'
-    name: CDex Task Example 7
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example8
-    description: '**Completed Coded RequestOperative note -CCDA:**   Completed Task
-      to seek a patient''s Operative notes using the CDex Profile code input. This
-      example illustrates the use of FHIR resource references to the various actors.
-      The output data is a contained DocumentReference with an inline base64 encoded
-      CCDA document.'
-    name: CDex Task Example 8
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
-    groupingId: TaskBasedExamples
-  - reference:
-      reference: Task/cdex-task-example9
-    description: '**Failed Coded Request for A1C Results:**  Task to seek a patient''s
-      HbA1c test results using the CDex Profile query input with a failed status.
-      This example illustrates the use of FHIR resource references to the various
-      actors.'
-    name: CDex Task Example 9
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:
@@ -708,6 +605,30 @@ definition:
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:
+      reference: Task/cdex-task-example19
+    description: '**Claim Attachment Request Example:**   Claim Attachment Request
+      sent by payer to a provider requesting a signed Progress note (H&P) note'
+    name: CDex Task Example 19
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example2
+    description: '**Completed Query String Request for Condition:**   Completed Task
+      to seek a patient active conditions using the CDex Profile query input. This
+      example illustrates the use of business identifiers (instead of pointing to
+      a FHIR resource) to references the various actors.'
+    name: CDex Task Example 2
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example20
+    description: '**Prior-Auth Attachment Request Example:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting a signed History and physical (H&P) note.'
+    name: CDex Task Example 20
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
       reference: Task/cdex-task-example21
     description: '**Coded Request for Surgical Operation Note:**   Task to seek a
       patient''s latest operative notes using the CDex Profile code input. This example
@@ -715,6 +636,40 @@ definition:
     name: CDex Task Example 21
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example22
+    description: '**Request Additional Data using a Questionnaire:**   Prior Authorization
+      Attachment Request with a POU of "coverage authorization" sent by payer to a
+      provider requesting a data request questionnaire be completed.'
+    name: CDex Task Example 22
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example23
+    description: '**Request Additional Data using an Adaptive Questionnaire:**  Prior
+      Authorization Attachment Request with a POU of "coverage authorization" sent
+      by payer to a provider requesting an adaptive questionnaire be completed.'
+    name: CDex Task Example 23
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example24
+    description: '**Completed Request for Additional Data using a Questionnaire:**   Completed
+      Task for CDex Task Example 22. This example has a status of "completed" and
+      a "lastModified" date of 6/17/2022. The "reasonCode" is "request additional
+      data" and the "output" is a QuestionnaireResponse.'
+    name: CDex Task Example 24
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example25
+    description: '**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed
+      Task for CDex Task Example 23. This example has a status of "completed" and
+      a "lastModified" date of 6/17/2022. The "reasonCode" is "request additional
+      data" and the "output" is a QuestionnaireResponse.'
+    name: CDex Task Example 25
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
   - reference:
       reference: Task/cdex-task-example26
     description: '**Data Request Using a Questionnaire:** Task to seek reason for
@@ -730,6 +685,34 @@ definition:
       date of 6/19/2022. The "output" is a QuestionnaireResponse.Task to seek reason
       for home oxygen therapy.'
     name: CDex Task Example 27
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
+  - reference:
+      reference: Task/cdex-task-example28
+    description: '**Request Additional Data Requiring a Verification Signature Using
+      a Questionnaire:** Prior Authorization Attachment Request with a POU of "coverage
+      authorization" and Signature required sent by payer to a provider requesting
+      a data request questionnaire be completed and signed.'
+    name: CDex Task Example 28
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example29
+    description: '**Completed Request for Additional Data Requiring a Verification
+      Signature Using a Questionnaire:**  Completed Prior Authorization Attachment
+      Request (CDex Task Example 28) with a status of "completed" and output referencing
+      the digitally signed QuestionnaireResponse.'
+    name: CDex Task Example 29
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
+    groupingId: AttachmentsExamples
+  - reference:
+      reference: Task/cdex-task-example3
+    description: '**Completed Query String Request for Condition with Contained Output:**   Completed
+      Task to seek a patient active conditions using the CDex Profile query input
+      and using a contained resource for the output data. This example illustrates
+      the use of business identifiers (instead of pointing to a FHIR resource) to
+      references the various actors.'
+    name: CDex Task Example 3
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:
@@ -750,115 +733,60 @@ definition:
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
     groupingId: TaskBasedExamples
   - reference:
-      reference: StructureDefinition/cdex-signature
-    description: "This Signature DataType profile enforces the various elements of\
-      \ signature documented in the CDex guide. It adds the following *mandatory*\
-      \ (min=1) constraints:\n\n- A Signature.type fixed to ASTM Standard, E1762-95(2013)\
-      \ code = \u201C1.2.840.10065.1.12.1.5\u201D (Verification Signature)\n- A Signature.who\
-      \ for the organization or practitioner who signed the Bundle which is either:\n\
-      \  1. a reference to US-Core Practitioner, PractitionerRole or Organization\
-      \ or\n  1. an NPI or Tax ID and name of the organization or practitioner\n-\
-      \ A Signature.data representing base64 encoded JWS-Signature \n\nIn addition,\
-      \ the following *mandatory* (min=1) element is inherited from the base standard:\n\
-      - Signature.when - system timestamp when the signature was created"
-    exampleBoolean: false
-    name: CDex Signature Profile
-    groupingId: SignatureProfiles
+      reference: Task/cdex-task-example4
+    description: '**Free Text Request for Condition:**   Task to seek a patient active
+      conditions using free text in the CDex Profile code input. This example illustrates
+      the use of business identifiers (instead of pointing to a FHIR resource) to
+      references the various actors.'
+    name: CDex Task Example 4
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
-      reference: StructureDefinition/cdex-signature-bundle
-    description: 'This Bundle profile enforces the various elements of signature documented
-      in the CDex guide to represent an enveloped signature. It adds the following
-      *mandatory* (min=1) constraint:
-
-
-      - A Bundle.signature element using the CDex Signature Profile'
-    exampleBoolean: false
-    name: CDex Signature Bundle Profile
-    groupingId: SignatureProfiles
+      reference: Task/cdex-task-example5
+    description: '**Completed Free Text Request for Condition:**   Completed Task
+      to seek a patient active conditions using free text for the input in the CDex
+      Profile code input. This example illustrates the use of business identifiers
+      (instead of pointing to a FHIR resource) to references the various actors.'
+    name: CDex Task Example 5
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
-      reference: StructureDefinition/cdex-sdc-questionnaireresponse
-    description: 'This extension is derived from the [US Core QuestionnaireResponse
-      Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
-      profile and enforces the various elements of signature documented in the CDex
-      guide to represent an enveloped signature. It adds the following constraints:
-
-      - The signature extensions use the CDex Signature Profile'
-    exampleBoolean: false
-    name: CDex SDC QuestionnaireResponse Profile
-    groupingId: SignatureProfiles
+      reference: Task/cdex-task-example6
+    description: '**Coded Request for Progress note:**   Task to seek a patient''s
+      latest Progress notes using the CDex Profile code input. This example illustrates
+      the use of FHIR resource references to the various actors.'
+    name: CDex Task Example 6
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
-      reference: ValueSet/cdex-identifier-types
-    description: Identifiers type for providers and organizations limited to NPI or
-      US Tax id.
-    exampleBoolean: false
-    name: CDex Identifier Types Value Set
-    groupingId: SignatureTerminology
+      reference: Task/cdex-task-example7
+    description: '**Completed Coded Request for Progress note - PDF:**   Completed
+      Task to seek a patient''''''''s latest Progress notes using the CDex Profile
+      code input. This example illustrates the use of FHIR resource references to
+      the various actors. The output data is a contained DocumentReference with an
+      inline base64 encoded PDF document.'
+    name: CDex Task Example 7
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
-      reference: Bundle/cdex-searchset-digital-sig-example
-    description: Digital signature example showing how it is used to sign a search
-      set Bundle.  The CDEX use case would be a response to a Direct Query where a
-      digital signature was required.
-    name: CDEX SearchSet Bundle with Digital Signature Example
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
-    groupingId: SignatureExamples
+      reference: Task/cdex-task-example8
+    description: '**Completed Coded RequestOperative note -CCDA:**   Completed Task
+      to seek a patient''s Operative notes using the CDex Profile code input. This
+      example illustrates the use of FHIR resource references to the various actors.
+      The output data is a contained DocumentReference with an inline base64 encoded
+      CCDA document.'
+    name: CDex Task Example 8
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
-      reference: Bundle/cdex-document-digital-sig-example
-    description: Digital signature example showing how it is used to sign a FHIR Document.  The
-      CDEX use case would be the target resource in response to a Task-based request
-      where a digital signature was required.  If no signature was required, the response
-      would typically be in the form of an individual resource.
-    name: CDEX Document with Digital Signature Example
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
-    groupingId: SignatureExamples
-  - reference:
-      reference: Bundle/cdex-electronic-sig-example
-    description: Electronic signature example showing how an image file can be used
-      to sign a document Bundle.  The CDEX use case would be the target resource in
-      response to a Task-based request where an electronic signature was required.  If
-      no signature was required, the response would typically be in the form of an
-      individual resource.
-    name: CDEX Document with Electronic Signature Example
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
-    groupingId: SignatureExamples
-  - reference:
-      reference: Questionnaire/cdex-questionnaire-example2
-    description: This example is a simple data request Questionnaire used in the Task
-      Based and Attachments transactions. It indicates that a verification signature
-      is needed when completing the QuestionnaireResponse.  It is adapted from the
-      Da Vinci DTR IG.
-    name: CDex Questionnaire Example2
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
-    groupingId: SignatureExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example3
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data
-      when an electronic verification signature is required. It is adapted from the
-      Da Vinci DTR IG.  The electronic signature is an image file in the QuestionnaireResponse
-      signature extension. This example is adapted from the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example3
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
-    groupingId: SignatureExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example4
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data
-      and an electronic *digital* Verification signature is required. It is adapted
-      from the Da Vinci DTR IG. The digital signature is a JSON [FHIR Signature](http://hl7.org/fhir/R4/signatures.html)
-      in the QuestionnaireResponse signature extension. This example is adapted from
-      the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example4
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
-    groupingId: SignatureExamples
-  - reference:
-      reference: ValueSet/cdex-POU
-    description: The set of purpose of use codes for the requested data (the output
-      of the task). This code set is composed of [FHIR core Purpose of Use security
-      labels](http://hl7.org/fhir/security-labels.html#core) and additional codes
-      defined by this Guide.
-    exampleBoolean: false
-    name: CDex Purpose of Use Value Set
-    groupingId: CommonTerminology
+      reference: Task/cdex-task-example9
+    description: '**Failed Coded Request for A1C Results:**  Task to seek a patient''s
+      HbA1c test results using the CDex Profile query input with a failed status.
+      This example illustrates the use of FHIR resource references to the various
+      actors.'
+    name: CDex Task Example 9
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
+    groupingId: TaskBasedExamples
   - reference:
       reference: CodeSystem/cdex-temp
     description: Codes temporarily defined as part of the CDex implementation guide.  These
@@ -868,589 +796,147 @@ definition:
     name: CDex Temporary Code System
     groupingId: CommonTerminology
   - reference:
-      reference: Questionnaire/cdex-questionnaire-example1
-    description: This example is a simple data request Questionnaire used in the Task
-      Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
-    name: CDex Questionnaire Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
-    groupingId: CommonExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It
-      is adapted from the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
-    groupingId: CommonExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.
-      The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse
-      contains the generated Questionnaire instance.  This example is adapted from
-      the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR
-      see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).
-    name: CDex QuestionnaireResponse Example2
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
-    groupingId: CommonExamples
-  - reference:
-      reference: QuestionnaireResponse/inline-example1
-    description: QuestionnaireResponse example used to create inline scenarios for
-      this guide
+      reference: ValueSet/cdex-work-queue
+    description: The set work queue tags that the provider may use in their workflow
+      to process requests. This code set is composed of codes defined by this Guide.
     exampleBoolean: false
-    name: Inline QuestionnaireResponse Example1
-    groupingId: InlineExamples
+    name: CDex Work Queue Value Set
+    groupingId: TaskBasedTerminology
   - reference:
-      reference: Task/inline-example7-currentid
-    description: Task example used to create inline scenarios for this guide
+      reference: CapabilityStatement/data-consumer-client
+    description: "This CapabilityStatement describes the expected capabilities of\
+      \ a Da Vinci CDex Data Consumer  in *Client* mode when requesting clinical data\
+      \ from the Data Source  during clinical data exchange. The capabilities include\
+      \ one or more of the following interactions:\n\n1. Requesting and Fetching Clinical\
+      \ Data using a FHIR RESTful query\n2. Requesting and Fetching Clinical Data\
+      \ using a Task-based query including:\n   -  Polling or Subscribing for Task\
+      \ update notifications\n3. Requesting Attachments\n   - Requesting Attachments\
+      \ Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
     exampleBoolean: false
-    name: Inline Task Example7 Currentid
-    groupingId: InlineExamples
+    name: Data Consumer Client CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
-      reference: QuestionnaireResponse/inline-example3
-    description: QuestionnaireResponse example used to create inline scenarios for
-      this guide
+      reference: CapabilityStatement/data-consumer-server
+    description: 'This CapabilityStatement describes the expected capabilities of
+      a Da Vinci CDex Data Consumer  in *Server* mode when responding to a  Data Source   or
+      one of its proxies during clinical data exchange.   The capabilities include
+      one or more of the following interactions:
+
+
+      1. Responding to a query for authorization information represented by a CommunicationRequest
+      or ServiceRequest
+
+      1. Responding to  the `$submit-attachment` operation.'
     exampleBoolean: false
-    name: Inline QuestionnaireResponse Example3
-    groupingId: InlineExamples
+    name: Data Consumer Server CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
-      reference: Task/inline-example19-currentid
-    description: Task example used to create inline scenarios for this guide
+      reference: CapabilityStatement/data-source-client
+    description: 'This CapabilityStatement describes the expected capabilities of
+      a Da Vinci CDex Data Source  in *Client* mode during clinical data exchange
+      with a Data Consumer. The capabilities include one or more of the following
+      interactions:
+
+      1. Post the `$submit-attachment` operation to a Data Consumer endpoint.
+
+      2. Launch Da Vinci DTR.
+
+      3. Query for Authorization information represented by a CommunicationRequest
+      or ServiceRequest.
+
+      4. Post a subscription notification to a Data Consumer endpoint updating the
+      status of a task.'
     exampleBoolean: false
-    name: Inline Task Example19 Currentid
-    groupingId: InlineExamples
+    name: Data Source Client CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
-      reference: Parameters/inline-example4
-    description: Parameters example used to create inline scenarios for this guide
+      reference: CapabilityStatement/data-source-server
+    description: "This CapabilityStatement describes the expected capabilities of\
+      \ a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer\
+      \ during clinical data exchange. The capabilities include one or more of the\
+      \ following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical\
+      \ Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n\
+      \   -  Polling or Subscription requests for Task update notifications\n1. Responding\
+      \ to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments\
+      \ Using Questionnaires"
     exampleBoolean: false
-    name: Inline Parameters Example4
-    groupingId: InlineExamples
+    name: Data Source Server CapabilityStatement
+    groupingId: CapabilityStatements
   - reference:
-      reference: Task/inline-example20-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example20 Currentid
-    groupingId: InlineExamples
+      reference: Bundle/cdex-searchbundle-scenario1-example
+    description: Bundle example used in direct query [scenario 1](direct-query.html#scenario-1).
+      Payer Seeks Insured Person/Patient Active Conditions from Provider to support
+      a claims audit.
+    name: Direct Query for Patient's Active Conditions
+    exampleBoolean: true
+    groupingId: DirectQueryExamples
   - reference:
-      reference: Parameters/inline-example5
-    description: Parameters example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Parameters Example5
-    groupingId: InlineExamples
+      reference: Bundle/cdex-searchbundle-scenario2-example
+    description: Bundle example used in direct query [scenario 2](direct-query.html#scenario-2).
+      Payer Seeks Insured Person/Patient HbA1c Test Results from Provider for quality
+      reporting requirements and quality care scoring.
+    name: Direct Query for Patient's HbA1c Test Results
+    exampleBoolean: true
+    groupingId: DirectQueryExamples
   - reference:
-      reference: Task/inline-example3-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example3 Currentid
-    groupingId: InlineExamples
+      reference: Bundle/cdex-searchbundle-scenario3-example
+    description: Bundle example used in direct query [scenario 3](direct-query.html#scenario-3).
+      Payer Seeks Insured Person/Patient Progress Notes from Provider to support a
+      claim submission.
+    name: Direct Query for Patient's Progress Notes
+    exampleBoolean: true
+    groupingId: DirectQueryExamples
   - reference:
-      reference: QuestionnaireResponse/inline-example2
-    description: QuestionnaireResponse example used to create inline scenarios for
-      this guide
-    exampleBoolean: false
-    name: Inline QuestionnaireResponse Example2
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example24-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example24 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example4-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example4 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Parameters/inline-example1
-    description: Parameters example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Parameters Example1
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example23-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example23 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example26-updateid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example26 Updateid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example30-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example30 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example27-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example27 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Condition/inline-example-858
-    description: Condition example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Condition Example 858
-    groupingId: InlineExamples
-  - reference:
-      reference: Parameters/inline-example2
-    description: Parameters example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Parameters Example2
-    groupingId: InlineExamples
-  - reference:
-      reference: Parameters/inline-example3
-    description: Parameters example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Parameters Example3
-    groupingId: InlineExamples
-  - reference:
-      reference: QuestionnaireResponse/inline-example4
-    description: QuestionnaireResponse example used to create inline scenarios for
-      this guide
-    exampleBoolean: false
-    name: Inline QuestionnaireResponse Example4
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-example-858
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Example 858
-    groupingId: InlineExamples
-  - reference:
-      reference: Location/hl7east-inline
-    description: Location example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Hl7east Inline Location
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example23
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example23
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example7
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example7
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example6
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example6
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example22
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example22
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example14-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example14 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example20
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example20
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example4
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example4
-    groupingId: InlineExamples
-  - reference:
-      reference: Subscription/inline-task-scenario1-subscription-requested
-    description: Subscription example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Subscription Task Scenario1 Subscription Requested
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example10-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example10 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example5
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example5
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example29-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example29 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example21
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example21
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-document-digital-sig-example
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Document Digital Sig Example
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example9-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example9 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example25
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example25
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example31
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example31
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example19
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example19
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example17-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example17 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example1
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example1
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example13-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example13 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example18
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example18
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example30
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example30
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example24
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example24
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example26
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example26
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example2
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example2
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-electronic-sig-example
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Electronic Sig Example
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example3
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example3
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example27
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example27
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example16
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example16
-    groupingId: InlineExamples
-  - reference:
-      reference: Subscription/inline-task-scenario1-subscription-active
-    description: Subscription example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Subscription Task Scenario1 Subscription Active
-    groupingId: InlineExamples
-  - reference:
-      reference: Provenance/inline-example-858
-    description: Provenance example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Provenance Example 858
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example12-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example12 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example16-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example16 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example8-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example8 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example17
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example17
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example29
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example29
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example15
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example15
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-task-scenario4-batch
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Task Scenario4 Batch
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example14
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example14
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example28
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example28
-    groupingId: InlineExamples
+      reference: Bundle/cdex-searchbundle-provenance-example
+    description: Bundle example used in the [direct query scenario](direct-query.html#provenance)
+      that includes the corresponding Provenance records. Payer Seeks Insured Person/Patient
+      Active Conditions from Provider to support a claims audit.
+    name: Direct Query Response Including Provenance
+    exampleBoolean: true
+    groupingId: DirectQueryExamples
   - reference:
       reference: Bundle/inline-example-858p
     description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
     name: Inline Bundle Example 858p
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example1-query-request
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example1 Query Request
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example10
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example10
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example8
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example8
-    groupingId: InlineExamples
-  - reference:
-      reference: OperationOutcome/inline-example1b-operationoutcome
-    description: OperationOutcome example used to create inline scenarios for this
-      guide
-    exampleBoolean: false
-    name: Inline OperationOutcome Example1b Operationoutcome
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example9
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example9
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example11
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example11
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example28-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example28 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example13
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example13
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example11-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example11 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example12
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example12
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example15-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example15 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example26-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example26 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example31-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example31 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Example D88e2910 3c95 469d B1f4 Ab5553b471fb
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example1-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example1 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example22-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example22 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Questionnaire/inline-example2
-    description: Questionnaire example used to create inline scenarios for this guide
-    name: Inline Questionnaire Example2
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example5-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example5 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: CommunicationRequest/inline-example1-authorization
-    description: CommunicationRequest example used to create inline scenarios for
-      this guide
-    exampleBoolean: false
-    name: Inline CommunicationRequest Example1 Authorization
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-searchset-digital-sig-example
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Searchset Digital Sig Example
-    groupingId: InlineExamples
+    exampleBoolean: true
   - reference:
       reference: Questionnaire/inline-example1
     description: Questionnaire example used to create inline scenarios for this guide
     name: Inline Questionnaire Example1
     exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
-    groupingId: InlineExamples
   - reference:
-      reference: Task/inline-example22-updateid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example22 Updateid
-    groupingId: InlineExamples
+      reference: Questionnaire/inline-example2
+    description: Questionnaire example used to create inline scenarios for this guide
+    name: Inline Questionnaire Example2
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
   - reference:
-      reference: Task/inline-example25-currentid
-    description: Task example used to create inline scenarios for this guide
+      reference: OperationDefinition/submit-attachment
+    description: "Providers use this [operation](http://hl7.org/fhir/operations.html)\
+      \ to submit *solicited* and *unsolicited* attachments or additional information\
+      \ for claims or prior authorization. The $submit-attachment operation accepts\
+      \ the clinical/administrative attachments and the necessary information to associate\
+      \ them with the claim or prior authorization and returns an HTTP response. For\
+      \ *unsolicited* attachments, the Provider invokes this operation *before, concurrently,\
+      \ or after*  the claim or pre-authorization transaction. For *solicited* attachments,\
+      \ the Provider invokes it when responding to a Payer request for attachments\
+      \ or additional information. Any HTTP endpoint can use $submit-attachment, not\
+      \ just FHIR RESTful server endpoints.\n\nThe input parameters are:\n1. One or\
+      \ more attachments as FHIR Resources\n    - Optionally, one or more unique line\
+      \ item numbers associated with the attachment\n    - Optionally, the attachment\
+      \ code used to request for the information\n1. Data elements for the association\
+      \ to the claim/prior authorization\n    - A unique identifier that ties the\
+      \ attachment(s) back to the claim or prior authorization. (referred to as the\
+      \ \"re-association tracking control numbers\")*\n    - What are the attachments\
+      \ for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique\
+      \ payer identifier\n    - A unique organization/location identifier (e.g., [Type\
+      \ 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
+      \ and/or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
+      \    - A unique Patient member identifier\n    - A Date of Service\n    - A\
+      \ Flag indicating whether the operation is the last attachment submission for\
+      \ the claim or prior authorization.\n\nThere are no output parameters."
     exampleBoolean: false
-    name: Inline Task Example25 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example2-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example2 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example21-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example21 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example18-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example18 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Bundle/inline-task-scenario3-batch
-    description: Bundle example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Bundle Task Scenario3 Batch
-    groupingId: InlineExamples
-  - reference:
-      reference: Task/inline-example6-currentid
-    description: Task example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Task Example6 Currentid
-    groupingId: InlineExamples
-  - reference:
-      reference: Parameters/inline-submit-attachment-example
-    description: Parameters example used to create inline scenarios for this guide
-    exampleBoolean: false
-    name: Inline Parameters Submit Attachment Example
-    groupingId: InlineExamples
+    name: Submit Attachment Operation
+    groupingId: AttachmentsOperations
   page:
     nameUrl: toc.html
     title: Table of Contents
@@ -1530,8 +1016,6 @@ definition:
     value: fsh-generated/resources
   - code: path-resource
     value: input/examples
-  - code: path-resource
-    value: input/fexamples-inline
   - code: path-pages
     value: input/pagecontent
   - code: path-pages
@@ -1555,7 +1039,7 @@ definition:
   - code: show-inherited-invariants
     value: 'false'
   - code: usage-stats-opt-out
-    value: 'false'
+    value: 'true'
   - code: excludettl
     value: 'true'
   - code: generate
@@ -1570,186 +1054,6 @@ definition:
     value: 2.0.0
   - code: bundle-references-resolve
     value: 'false'
-  - code: no-narrative
-    value: QuestionnaireResponse/inline-example1
-  - code: no-narrative
-    value: Task/inline-example7-currentid
-  - code: no-narrative
-    value: QuestionnaireResponse/inline-example3
-  - code: no-narrative
-    value: Task/inline-example19-currentid
-  - code: no-narrative
-    value: Parameters/inline-example4
-  - code: no-narrative
-    value: Task/inline-example20-currentid
-  - code: no-narrative
-    value: Parameters/inline-example5
-  - code: no-narrative
-    value: Task/inline-example3-currentid
-  - code: no-narrative
-    value: QuestionnaireResponse/inline-example2
-  - code: no-narrative
-    value: Task/inline-example24-currentid
-  - code: no-narrative
-    value: Task/inline-example4-currentid
-  - code: no-narrative
-    value: Parameters/inline-example1
-  - code: no-narrative
-    value: Task/inline-example23-currentid
-  - code: no-narrative
-    value: Task/inline-example26-updateid
-  - code: no-narrative
-    value: Task/inline-example30-currentid
-  - code: no-narrative
-    value: Task/inline-example27-currentid
-  - code: no-narrative
-    value: Condition/inline-example-858
-  - code: no-narrative
-    value: Parameters/inline-example2
-  - code: no-narrative
-    value: Parameters/inline-example3
-  - code: no-narrative
-    value: QuestionnaireResponse/inline-example4
-  - code: no-narrative
-    value: Bundle/inline-example-858
-  - code: no-narrative
-    value: Location/hl7east-inline
-  - code: no-narrative
-    value: Task/inline-example23
-  - code: no-narrative
-    value: Task/inline-example7
-  - code: no-narrative
-    value: Task/inline-example6
-  - code: no-narrative
-    value: Task/inline-example22
-  - code: no-narrative
-    value: Task/inline-example14-currentid
-  - code: no-narrative
-    value: Task/inline-example20
-  - code: no-narrative
-    value: Task/inline-example4
-  - code: no-narrative
-    value: Subscription/inline-task-scenario1-subscription-requested
-  - code: no-narrative
-    value: Task/inline-example10-currentid
-  - code: no-narrative
-    value: Task/inline-example5
-  - code: no-narrative
-    value: Task/inline-example29-currentid
-  - code: no-narrative
-    value: Task/inline-example21
-  - code: no-narrative
-    value: Bundle/inline-document-digital-sig-example
-  - code: no-narrative
-    value: Task/inline-example9-currentid
-  - code: no-narrative
-    value: Task/inline-example25
-  - code: no-narrative
-    value: Task/inline-example31
-  - code: no-narrative
-    value: Task/inline-example19
-  - code: no-narrative
-    value: Task/inline-example17-currentid
-  - code: no-narrative
-    value: Task/inline-example1
-  - code: no-narrative
-    value: Task/inline-example13-currentid
-  - code: no-narrative
-    value: Task/inline-example18
-  - code: no-narrative
-    value: Task/inline-example30
-  - code: no-narrative
-    value: Task/inline-example24
-  - code: no-narrative
-    value: Task/inline-example26
-  - code: no-narrative
-    value: Task/inline-example2
-  - code: no-narrative
-    value: Bundle/inline-electronic-sig-example
-  - code: no-narrative
-    value: Task/inline-example3
-  - code: no-narrative
-    value: Task/inline-example27
-  - code: no-narrative
-    value: Task/inline-example16
-  - code: no-narrative
-    value: Subscription/inline-task-scenario1-subscription-active
-  - code: no-narrative
-    value: Provenance/inline-example-858
-  - code: no-narrative
-    value: Task/inline-example12-currentid
-  - code: no-narrative
-    value: Task/inline-example16-currentid
-  - code: no-narrative
-    value: Task/inline-example8-currentid
-  - code: no-narrative
-    value: Task/inline-example17
-  - code: no-narrative
-    value: Task/inline-example29
-  - code: no-narrative
-    value: Task/inline-example15
-  - code: no-narrative
-    value: Bundle/inline-task-scenario4-batch
-  - code: no-narrative
-    value: Task/inline-example14
-  - code: no-narrative
-    value: Task/inline-example28
-  - code: no-narrative
-    value: Bundle/inline-example-858p
-  - code: no-narrative
-    value: Task/inline-example1-query-request
-  - code: no-narrative
-    value: Task/inline-example10
-  - code: no-narrative
-    value: Task/inline-example8
-  - code: no-narrative
-    value: OperationOutcome/inline-example1b-operationoutcome
-  - code: no-narrative
-    value: Task/inline-example9
-  - code: no-narrative
-    value: Task/inline-example11
-  - code: no-narrative
-    value: Task/inline-example28-currentid
-  - code: no-narrative
-    value: Task/inline-example13
-  - code: no-narrative
-    value: Task/inline-example11-currentid
-  - code: no-narrative
-    value: Task/inline-example12
-  - code: no-narrative
-    value: Task/inline-example15-currentid
-  - code: no-narrative
-    value: Task/inline-example26-currentid
-  - code: no-narrative
-    value: Task/inline-example31-currentid
-  - code: no-narrative
-    value: Bundle/inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb
-  - code: no-narrative
-    value: Task/inline-example1-currentid
-  - code: no-narrative
-    value: Task/inline-example22-currentid
-  - code: no-narrative
-    value: Task/inline-example5-currentid
-  - code: no-narrative
-    value: CommunicationRequest/inline-example1-authorization
-  - code: no-narrative
-    value: Bundle/inline-searchset-digital-sig-example
-  - code: no-narrative
-    value: Task/inline-example22-updateid
-  - code: no-narrative
-    value: Task/inline-example25-currentid
-  - code: no-narrative
-    value: Task/inline-example2-currentid
-  - code: no-narrative
-    value: Task/inline-example21-currentid
-  - code: no-narrative
-    value: Task/inline-example18-currentid
-  - code: no-narrative
-    value: Bundle/inline-task-scenario3-batch
-  - code: no-narrative
-    value: Task/inline-example6-currentid
-  - code: no-narrative
-    value: Parameters/inline-submit-attachment-example
   - code: suppressed-ids
     value: Bundle/inline-document-digital-sig-example, Bundle/inline-electronic-sig-example,
       Parameters/inline-example1, Parameters/inline-example2, Parameters/inline-example3,

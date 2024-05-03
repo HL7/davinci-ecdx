@@ -39,7 +39,8 @@
                 "meta": {
                     "lastUpdated": "2020-04-28T20:28:00.008+00:00",
                     "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
                     ],
                     "source": "#cabiJIK51sD2iz4N",
                     "versionId": "10"
@@ -64,7 +65,7 @@
             }
         }
     ],
-    "id": "inline-example-d88e2910-3c95-469d-b1f4-ab5553b471fb",
+    "id": "cdex-searchbundle-digital-sig-example",
     "link": [
         {
             "relation": "self",
@@ -75,11 +76,11 @@
         "extension": [
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Inline Bundle Example D88e2910 3c95 469d B1f4 Ab5553b471fb"
+                "valueString": "CDEX SearchSet Bundle with Digital Signature Example"
             },
             {
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Bundle example used to create inline scenarios for this guide"
+                "valueMarkdown": "Digital signature example showing how it is used to sign a [search set Bundle](direct-query.html#signatures).  The CDEX use case would be a response to a Direct Query where a digital signature was required."
             }
         ],
         "profile": [
@@ -98,7 +99,7 @@
         ],
         "when": "2020-10-23T04:54:56.048+00:00",
         "who": {
-            "reference": "Organization/123"
+            "reference": "Organization/min"
         }
     },
     "total": 1,
