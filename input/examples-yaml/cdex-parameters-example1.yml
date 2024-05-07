@@ -3,7 +3,7 @@ id: cdex-parameters-example1
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: CDex Parameters Example1
+    valueString: CDex Parameters Example 1
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: '**CCDA Attachment Example:** Parameters Resource example showing
       how it is used to submit attachments using the `$submit-attachment` operation.

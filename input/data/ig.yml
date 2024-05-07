@@ -179,6 +179,15 @@ definition:
     name: CDex Identifier Types Value Set
     groupingId: SignatureTerminology
   - reference:
+      reference: Parameters/cdex-parameters-example1
+    description: '**CCDA Attachment Example:** Parameters Resource example showing
+      how it is used to submit attachments using the `$submit-attachment` operation.
+      It contains a CCDA attachment and the necessary information needed to associate
+      them to the claim.'
+    name: CDex Parameters Example 1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
+    groupingId: AttachmentsExamples
+  - reference:
       reference: Parameters/cdex-parameters-example2
     description: '**Signed FHIR Document Attachment Example:** Parameters Resource
       example showing how it is used to submit attachments using the `$submit-attachment`
@@ -212,15 +221,6 @@ definition:
       the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse
       completed using DTR in response to a Questionnaire sent in the Attachments request.'
     name: CDex Parameters Example 5
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
-    groupingId: AttachmentsExamples
-  - reference:
-      reference: Parameters/cdex-parameters-example1
-    description: '**CCDA Attachment Example:** Parameters Resource example showing
-      how it is used to submit attachments using the `$submit-attachment` operation.
-      It contains a CCDA attachment and the necessary information needed to associate
-      them to the claim.'
-    name: CDex Parameters Example1
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment
     groupingId: AttachmentsExamples
   - reference:
@@ -1054,22 +1054,18 @@ definition:
     value: 2.0.0
   - code: bundle-references-resolve
     value: 'false'
+  - code: no-narrative
+    value: Parameters/cdex-parameters-example4
+  - code: no-narrative
+    value: Parameters/cdex-parameters-example5
+  - code: no-narrative
+    value: Parameters/cdex-parameters-example1
+  - code: no-narrative
+    value: Parameters/cdex-parameters-example2
+  - code: no-narrative
+    value: Parameters/cdex-parameters-example3
   - code: suppressed-ids
-    value: Bundle/inline-document-digital-sig-example, Bundle/inline-electronic-sig-example,
-      Parameters/inline-example1, Parameters/inline-example2, Parameters/inline-example3,
-      Parameters/inline-example4, Parameters/inline-example5, Questionnaire/inline-example1,
-      Questionnaire/inline-example2, QuestionnaireResponse/inline-example1, QuestionnaireResponse/inline-example2,
-      QuestionnaireResponse/inline-example3, QuestionnaireResponse/inline-example4,
-      Bundle/inline-searchset-digital-sig-example, Task/inline-example1, Task/inline-example10,
-      Task/inline-example11, Task/inline-example12, Task/inline-example13, Task/inline-example14,
-      Task/inline-example15, Task/inline-example16, Task/inline-example17, Task/inline-example18,
-      Task/inline-example19, Task/inline-example2, Task/inline-example20, Task/inline-example21,
-      Task/inline-example22, Task/inline-example23, Task/inline-example24, Task/inline-example25,
-      Task/inline-example26, Task/inline-example27, Task/inline-example28, Task/inline-example29,
-      Task/inline-example3, Task/inline-example30, Task/inline-example31, Task/inline-example4,
-      Task/inline-example5, Task/inline-example6, Task/inline-example7, Task/inline-example8,
-      Task/inline-example9, OperationOutcome/inline-example1b-operationoutcome, Provenance/inline-858,
-      Task/inline-example1-query-request, Task/inline-scenario1-subscription-requested
+    value: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5
   - code: tabbed-snapshots
     value: 'true'
   - code: auto-oid-root

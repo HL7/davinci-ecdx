@@ -17,7 +17,7 @@ Content-Type: application/fhir+json
 **Request Body**
 
 ~~~
-{% include cdex-parameters-example4.json %}
+{% include_relative Parameters-cdex-parameters-example4.json %}
 ~~~
 
 **Response Headers**

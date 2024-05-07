@@ -226,7 +226,7 @@ POST [base]/$submit-attachment
 
 ~~~
 
-{% include cdex-parameters-example5.json %}
+{% include_relative Parameters-cdex-parameters-example5.json %}
 
 ~~~
 

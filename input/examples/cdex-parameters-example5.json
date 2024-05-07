@@ -1,127 +1,112 @@
 {
-    "resourceType": "Parameters",
-    "id": "cdex-parameters-example5",
-    "meta": {
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Parameters Example 5"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "**Completed QuestionnaireResponse Attachment Example:** Parameters Resource example showing how it is used to submit a solicited attachment using the `$submit-attachment` operation. The attachment parameter payload is a QuestionnaireResponse completed using DTR in response to a Questionnaire sent in the Attachments request."
-            }
-        ],
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment"
-        ]
+  "resourceType": "Parameters",
+  "id": "cdex-parameters-example5",
+  "parameter": [
+    {
+      "name": "TrackingId",
+      "valueIdentifier": {
+        "system": "http://example.org/payer",
+        "value": "trackingid1012"
+      }
     },
-    "parameter": [
+    {
+      "name": "AttachTo",
+      "valueCode": "preauthorization"
+    },
+    {
+      "name": "PayerId",
+      "valueIdentifier": {
+        "system": "http://example.org/cdex/payer/payer-ids",
+        "value": "payer123"
+      }
+    },
+    {
+      "name": "OrganizationId",
+      "valueIdentifier": {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "1234567893"
+      }
+    },
+    {
+      "name": "ProviderId",
+      "valueIdentifier": {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "9941339100"
+      }
+    },
+    {
+      "name": "MemberId",
+      "valueIdentifier": {
+        "system": "http://example.org/cdex/payer/member-ids",
+        "value": "Member123"
+      }
+    },
+    {
+      "name": "Attachment",
+      "part": [
         {
-            "name": "TrackingId",
-            "valueIdentifier": {
-                "system": "http://example.org/payer",
-                "value": "trackingid1012"
-            }
+          "name": "LineItem",
+          "valueString": "1"
         },
         {
-            "name": "AttachTo",
-            "valueCode": "preauthorization"
-        },
-        {
-            "name": "PayerId",
-            "valueIdentifier": {
-                "system": "http://example.org/cdex/payer/payer-ids",
-                "value": "payer123"
-            }
-        },
-        {
-            "name": "OrganizationId",
-            "valueIdentifier": {
-                "system": "http://hl7.org/fhir/sid/us-npi",
-                "value": "1234567893"
-            }
-        },
-        {
-            "name": "ProviderId",
-            "valueIdentifier": {
-                "system": "http://hl7.org/fhir/sid/us-npi",
-                "value": "9941339100"
-            }
-        },
-        {
-            "name": "MemberId",
-            "valueIdentifier": {
+          "name": "Content",
+          "resource": {
+            "resourceType": "QuestionnaireResponse",
+            "id": "cdex-questionnaireresponse-example1",
+            "questionnaire": "http://example.org/cdex-questionnaire-example1",
+            "status": "completed",
+            "subject": {
+              "identifier": {
+                "use": "usual",
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "MB",
+                      "display": "Member Number"
+                    }
+                  ],
+                  "text": "Member Number"
+                },
                 "system": "http://example.org/cdex/payer/member-ids",
                 "value": "Member123"
-            }
-        },
-        {
-            "name": "Attachment",
-            "part": [
-                {
-                    "name": "LineItem",
-                    "valueString": "1"
-                },
-                {
-                    "name": "Content",
-                    "resource": {
-                        "resourceType": "QuestionnaireResponse",
-                        "id": "cdex-questionnaireresponse-example1",
-                        "questionnaire": "http://example.org/cdex-questionnaire-example1",
-                        "status": "completed",
-                        "subject": {
-                            "identifier": {
-                                "use": "usual",
-                                "type": {
-                                    "coding": [
-                                        {
-                                            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                                            "code": "MB",
-                                            "display": "Member Number"
-                                        }
-                                    ],
-                                    "text": "Member Number"
-                                },
-                                "system": "http://example.org/cdex/payer/member-ids",
-                                "value": "Member123"
-                            },
-                            "display": "Amy Shaw"
-                        },
-                        "authored": "2022-06-17",
-                        "author": {
-                            "identifier": {
-                                "system": "http://hl7.org/fhir/sid/us-npi",
-                                "value": "9941339100"
-                            }
-                        },
-                        "item": [
-                            {
-                                "linkId": "1",
-                                "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-                                "answer": [
-                                    {
-                                        "valueString": "Examplitis"
-                                    }
-                                ]
-                            },
-                            {
-                                "linkId": "2",
-                                "text": "Order Reason",
-                                "answer": [
-                                    {
-                                        "valueCoding": {
-                                            "system": "http://example.org",
-                                            "code": "4",
-                                            "display": "Replacement"
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
+              },
+              "display": "Amy Shaw"
+            },
+            "authored": "2022-06-17",
+            "author": {
+              "identifier": {
+                "system": "http://hl7.org/fhir/sid/us-npi",
+                "value": "9941339100"
+              }
+            },
+            "item": [
+              {
+                "linkId": "1",
+                "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+                "answer": [
+                  {
+                    "valueString": "Examplitis"
+                  }
+                ]
+              },
+              {
+                "linkId": "2",
+                "text": "Order Reason",
+                "answer": [
+                  {
+                    "valueCoding": {
+                      "system": "http://example.org",
+                      "code": "4",
+                      "display": "Replacement"
                     }
-                }
+                  }
+                ]
+              }
             ]
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

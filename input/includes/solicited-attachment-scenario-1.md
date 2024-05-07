@@ -69,7 +69,7 @@ POST [base]/$submit-attachment
 
 ~~~
 
-{% include cdex-parameters-example3.json %}
+{% include_relative Parameters-cdex-parameters-example3.json %}
 
 ~~~
 

@@ -21,11 +21,11 @@
 <artifact id="ValueSet/cdex-claim-use" key="ValueSet-cdex-claim-use" name="CDex Claim Use Value Set"/>
 <artifact id="ValueSet/cdex-data-request-task-code" key="ValueSet-cdex-data-request-task-code" name="CDex Data Request Task Code Value Set"/>
 <artifact id="ValueSet/cdex-identifier-types" key="ValueSet-cdex-identifier-types" name="CDex Identifier Types Value Set"/>
+<artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example 1"/>
 <artifact id="Parameters/cdex-parameters-example2" key="Parameters-cdex-parameters-example2" name="CDex Parameters Example 2"/>
 <artifact id="Parameters/cdex-parameters-example3" key="Parameters-cdex-parameters-example3" name="CDex Parameters Example 3"/>
 <artifact id="Parameters/cdex-parameters-example4" key="Parameters-cdex-parameters-example4" name="CDex Parameters Example 4"/>
 <artifact id="Parameters/cdex-parameters-example5" key="Parameters-cdex-parameters-example5" name="CDex Parameters Example 5"/>
-<artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example1"/>
 <artifact id="StructureDefinition/cdex-parameters-submit-attachment" key="StructureDefinition-cdex-parameters-submit-attachment" name="CDex Parameters Submit Attachment Profile"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
