@@ -54,13 +54,7 @@
                   "title": "sample1.pdf"
                 }
               }
-            ],
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            }
+            ]
           },
           "search": {
             "mode": "match"
@@ -106,13 +100,7 @@
                   "title": "sample2.pdf"
                 }
               }
-            ],
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            }
+            ]
           },
           "search": {
             "mode": "match"

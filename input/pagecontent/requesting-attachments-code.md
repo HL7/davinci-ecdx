@@ -250,7 +250,7 @@ POST [base]/$submit-attachment
 The attachments and metadata needed to associate the attachment to the claim or prior authorization are in the $submit-attachments payload, a [Parameters] resource.
 
 ~~~
-{% include_relative includelines filename='cdex-parameters-example3.json' start=0 count=3 linenumber=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=0 count=3 linenumber=true rel=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
@@ -263,7 +263,7 @@ The TrackingId parameter represents the identifier that ties the attachments to 
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='cdex-parameters-example3.json' start=3 count=11 linenumber=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=3 count=11 linenumber=true rel=true %}
 ~~~   
 
 ##### Identifying the Payer, Provider, Organization, and Patient
@@ -279,7 +279,7 @@ As documented above, The Payer uses business identifiers to identify itself, the
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='cdex-parameters-example3.json' start=14 count=28 linenumber=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=14 count=28 linenumber=true rel=true %}
 ~~~ 
 
 
@@ -293,7 +293,7 @@ The service date parameter is taken from the “service-date” Task.input eleme
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='cdex-parameters-example3.json' start=42 count=4 linenumber=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=42 count=4 linenumber=true rel=true %}
 ~~~ 
 
 
@@ -309,7 +309,7 @@ The Requested Attachments, the corresponding coded requests, and line item numbe
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='cdex-parameters-example3.json' start=46 count=65 linenumber=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=46 count=65 linenumber=true rel=true %}
 ~~~
 
 

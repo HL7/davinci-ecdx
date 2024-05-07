@@ -70,11 +70,6 @@
           "resource": {
             "resourceType": "Bundle",
             "id": "cdex-document-digital-sig-example",
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-preview"
-              ]
-            },
             "identifier": {
               "system": "urn:ietf:rfc:3986",
               "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
@@ -145,10 +140,7 @@
                   "resourceType": "Practitioner",
                   "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
                   "meta": {
-                    "lastUpdated": "2013-05-05T16:13:03Z",
-                    "profile": [
-                      "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
-                    ]
+                    "lastUpdated": "2013-05-05T16:13:03Z"
                   },
                   "text": {
                     "status": "generated",
@@ -175,12 +167,6 @@
                 "resource": {
                   "resourceType": "Patient",
                   "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
-                  "meta": {
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-                    ]
-                  },
                   "text": {
                     "status": "generated",
                     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><p><b>Generated Narrative: Patient</b><a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Patient &quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-patient.html\">US Core Patient Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: Member Number/Member123</p><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Patient</p><p><b>gender</b>: male</p></div>"
@@ -217,12 +203,6 @@
                 "resource": {
                   "resourceType": "Condition",
                   "id": "014a68ec-d691-49e0-b980-91b0d924e570",
-                  "meta": {
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-                    ]
-                  },
                   "text": {
                     "status": "generated",
                     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"> </a><p><b>Generated Narrative: Condition</b><a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"> </a><a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;014a68ec-d691-49e0-b980-91b0d924e570&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-condition-problems-health-concerns.html\">US Core Condition Problems and Health Concerns Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: <code>urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1</code>/1</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Type 2 Diabetes Mellitus <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#44054006)</span></p><p><b>subject</b>: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece</p><p><b>onset</b>: 2006</p><p><b>asserter</b>: See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc</p></div>"
@@ -276,12 +256,6 @@
                 "resource": {
                   "resourceType": "Encounter",
                   "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
-                  "meta": {
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-                    ]
-                  },
                   "text": {
                     "status": "generated",
                     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><p><b>Generated Narrative: Encounter</b><a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter &quot;5ce5c83a-000f-47d2-941c-039358cc9112&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-encounter.html\">US Core Encounter Profile (version 6.1.0)</a></p></div><p><b>status</b>: finished</p><p><b>class</b>: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')</p><p><b>type</b>: Unknown (qualifier value) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#261665006)</span></p><p><b>subject</b>: See on this page: urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient</p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Individual</b></td></tr><tr><td style=\"display: none\">*</td><td>See on this page: urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock</td></tr></table><p><b>period</b>: 2021-10-25 20:10:29-0700 --&gt; 2021-10-25 20:16:29-0700</p><p><b>serviceProvider</b>: See on this page: urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization</p></div>"
@@ -336,11 +310,6 @@
                       "value": "1234567893"
                     }
                   ],
-                  "meta": {
-                    "profile": [
-                      "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
-                    ]
-                  },
                   "text": {
                     "status": "generated",
                     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><p><b>Generated Narrative: Organization</b><a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;e37f004b-dc10-422b-b833-cdaa10a055a3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-organization.html\">US Core Organization Profile (version 6.1.0)</a></p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\"mailto:customer-service@example.org\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>"

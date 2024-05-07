@@ -70,10 +70,7 @@
         "resourceType": "Practitioner",
         "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
         "meta": {
-          "lastUpdated": "2013-05-05T16:13:03Z",
-          "profile": [
-            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
-          ]
+          "lastUpdated": "2013-05-05T16:13:03Z"
         },
         "identifier": [
           {
@@ -120,13 +117,7 @@
               "CDEX Example"
             ]
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-          ]
-        }
+        ]
       }
     },
     {
@@ -175,12 +166,6 @@
         "onsetDateTime": "2006",
         "asserter": {
           "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
-        },
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-          ]
         }
       }
     },
@@ -225,12 +210,6 @@
         "serviceProvider": {
           "reference": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
           "display": "CDEX Example Organization"
-        },
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-          ]
         }
       }
     },
@@ -267,12 +246,7 @@
             "postalCode": "01002",
             "country": "USA"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
-          ]
-        }
+        ]
       }
     }
   ],

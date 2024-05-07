@@ -38,9 +38,6 @@
         "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
         "meta": {
           "lastUpdated": "2020-04-28T20:28:00.008+00:00",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
-          ],
           "source": "#cabiJIK51sD2iz4N",
           "versionId": "10"
         },

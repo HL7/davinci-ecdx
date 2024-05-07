@@ -5,11 +5,6 @@
     {
       "resourceType": "Questionnaire",
       "id": "cdex-adaptive-questionnaire-example1",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-adapt"
-        ]
-      },
       "extension": [
         {
           "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-questionnaireAdaptive",

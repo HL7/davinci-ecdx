@@ -5,11 +5,6 @@
     {
       "resourceType": "Patient",
       "id": "patient",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-        ]
-      },
       "identifier": [
         {
           "use": "usual",
@@ -55,11 +50,6 @@
     {
       "resourceType": "PractitionerRole",
       "id": "practitionerrole",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
-        ]
-      },
       "practitioner": {
         "identifier": {
           "system": "http://hl7.org/fhir/sid/us-npi",

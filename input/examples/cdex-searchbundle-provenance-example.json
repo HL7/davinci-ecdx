@@ -21,11 +21,7 @@
         "meta": {
           "versionId": "10",
           "lastUpdated": "2020-04-28T20:28:00.008+00:00",
-          "source": "#cabiJIK51sD2iz4N",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
-          ]
+          "source": "#cabiJIK51sD2iz4N"
         },
         "clinicalStatus": {
           "coding": [
@@ -81,12 +77,6 @@
       "fullUrl": "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf",
       "resource": {
         "resourceType": "Provenance",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|6.1.0"
-          ]
-        },
         "id": "b2ce4584-b213-411b-bdc9-d515dc92eadf",
         "target": [
           {
