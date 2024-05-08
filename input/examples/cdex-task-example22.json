@@ -80,7 +80,7 @@
       "value": "trackingid1012"
     }
   ],
-  "status": "pending",
+  "status": "in-progress",
   "intent": "order",
   "code": {
     "coding": [

@@ -286,7 +286,7 @@ GET http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 **Response Body**
 
 ~~~
-{% include_relative includelines filename='cdex-questionnaire-example1.json' linenumber=true %}
+{% include_relative includelines filename='Questionnaire-cdex-questionnaire-example1.json' linenumber=true rel=true %}
 ~~~
 
 ##### DTR App Fills QuestionnaireResponse
@@ -323,7 +323,7 @@ PUT [base]/Task/cdex-task-example-22
 **Request Body**
 
 ~~~
-{% include_relative includelines filename='cdex-task-example24-updateid.json' start="0,96,189" count="3,1,15" linenumber=true %}
+{% include_relative includelines filename='cdex-task-inline-example22-updated.json' start="0,96,189" count="3,1,15" linenumber=true %}
 ~~~
 
 

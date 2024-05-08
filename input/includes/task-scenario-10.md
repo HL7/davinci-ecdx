@@ -180,7 +180,7 @@ PUT [base]/Task/cdex-task-example-26
 {
   "resourceType": "Task",
   "id": "cdex-task-example26",
-  "status": "pending",
+  "status": "in-progress",
   "intent": "order",
   "code": {
     "coding": [

@@ -199,6 +199,13 @@ definition:
     name: CDex Identifier Types Value Set
     groupingId: SignatureTerminology
   - reference:
+      reference: OperationOutcome/cdex-operationoutcome-inline-example1
+    description: OperationOutcome example used to create inline scenarios for this
+      guide
+    name: CDex Inline OperationOutcome Example 1
+    exampleBoolean: true
+    groupingId: InlineExamples
+  - reference:
       reference: Task/cdex-task-inline-example1
     description: Task example used to create inline scenarios for example tasked-based
       transactions based in scenarios [1a](task-based-approach.html#fhir-restful-query-syntax),
@@ -1233,7 +1240,7 @@ definition:
   - code: no-narrative
     value: QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
   - code: suppressed-ids
-    value: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22
+    value: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
   - code: tabbed-snapshots
     value: 'true'
   - code: auto-oid-root

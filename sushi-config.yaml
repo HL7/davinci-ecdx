@@ -235,6 +235,7 @@ groups:
       - Provenance/cdex-provenance-inline-example-858
       - CommunicationRequest/cdex-task-inline-communicationrequest-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
+      - OperationOutcome/cdex-operationoutcome-inline-example1
 
 pages:
   index.md:
@@ -328,8 +329,7 @@ parameters:
     - Subscription/cdex-task-inline-scenario1-subscription-active
     - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
 
-
-  suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22
+  suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
   
   tabbed-snapshots: 'true'
   auto-oid-root: 2.16.840.1.113883.4.642.40.21
@@ -408,6 +408,7 @@ menu:
     Signature Examples: artifacts.html#12
     Common Terminology: artifacts.html#13
     Common Examples: artifacts.html#14
+    Inline Examples: artifacts.html#15
 
   Downloads: downloads.html
   Change Log: #changes.html

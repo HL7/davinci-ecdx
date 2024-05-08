@@ -32,7 +32,7 @@ Content-Type: application/fhir+json;charset=utf-8
 **Response Body**
 
 ~~~
-{% include cdex-unsolicited-attachment-example1b-operationoutcome.json %}
+{% include_relative OperationOutcome-cdex-operationoutcome-inline-example1.json %}
 ~~~
 
 ##### Rendered Documents

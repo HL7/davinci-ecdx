@@ -13,7 +13,7 @@ meta:
   tag:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
     code: claims-processing
-status: pending
+status: in-progress
 intent: order
 code:
   coding:

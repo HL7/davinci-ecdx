@@ -23,6 +23,7 @@
 <artifact id="Condition/cdex-condition-inline-example-858" key="Condition-cdex-condition-inline-example-858" name="CDex Condition Inline Example 858"/>
 <artifact id="ValueSet/cdex-data-request-task-code" key="ValueSet-cdex-data-request-task-code" name="CDex Data Request Task Code Value Set"/>
 <artifact id="ValueSet/cdex-identifier-types" key="ValueSet-cdex-identifier-types" name="CDex Identifier Types Value Set"/>
+<artifact id="OperationOutcome/cdex-operationoutcome-inline-example1" key="OperationOutcome-cdex-operationoutcome-inline-example1" name="CDex Inline OperationOutcome Example 1"/>
 <artifact id="Task/cdex-task-inline-example1" key="Task-cdex-task-inline-example1" name="CDex Inline Task Example 1"/>
 <artifact id="Task/cdex-task-inline-example10" key="Task-cdex-task-inline-example10" name="CDex Inline Task Example 10"/>
 <artifact id="Task/cdex-task-inline-example11" key="Task-cdex-task-inline-example11" name="CDex Inline Task Example 11"/>
