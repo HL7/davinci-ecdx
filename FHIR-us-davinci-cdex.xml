@@ -35,7 +35,6 @@
 <artifact id="Task/cdex-task-inline-example22" key="Task-cdex-task-inline-example22" name="CDex Inline Task Example 22"/>
 <artifact id="Task/cdex-task-inline-example26" key="Task-cdex-task-inline-example26" name="CDex Inline Task Example 26"/>
 <artifact id="Task/cdex-task-inline-example4" key="Task-cdex-task-inline-example4" name="CDex Inline Task Example 4"/>
-<artifact id="Task/cdex-task-inline-example26-updated" key="Task-cdex-task-inline-example26-updated" name="CDex Inline Task Example26 Updated"/>
 <artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example 1"/>
 <artifact id="Parameters/cdex-parameters-example2" key="Parameters-cdex-parameters-example2" name="CDex Parameters Example 2"/>
 <artifact id="Parameters/cdex-parameters-example3" key="Parameters-cdex-parameters-example3" name="CDex Parameters Example 3"/>
@@ -104,8 +103,6 @@
 <artifact deprecated="true" id="Task/cdex-example1s-query-withsig-completed" key="Task-cdex-example1s-query-withsig-completed" name="Example of Completed Task Request for Signed Data"/>
 <artifact deprecated="true" id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
 <artifact id="CommunicationRequest/cdex-task-inline-communicationrequest-example1" key="CommunicationRequest-cdex-task-inline-communicationrequest-example1" name="Inline CDex Task Inline Communicationrequest Example 1"/>
-<artifact id="Questionnaire/inline-example1" key="Questionnaire-inline-example1" name="Inline Questionnaire Example1"/>
-<artifact id="Questionnaire/inline-example2" key="Questionnaire-inline-example2" name="Inline Questionnaire Example2"/>
 <artifact id="Subscription/cdex-task-inline-scenario1-subscription-active" key="Subscription-cdex-task-inline-scenario1-subscription-active" name="Inline Subscription Task Scenario1 Subscription Active"/>
 <artifact id="Subscription/cdex-task-inline-scenario1-subscription-requested" key="Subscription-cdex-task-inline-scenario1-subscription-requested" name="Inline Subscription Task Scenario1 Subscription Requested"/>
 <artifact deprecated="true" id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
