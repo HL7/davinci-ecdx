@@ -75,4 +75,4 @@ output:
     - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
       code: data-value
   valueReference:
-    reference: http://example.org/fhir/Bundle/858
+    reference: http://example.org/fhir/Bundle/cdex-searchbundle-scenario1-example

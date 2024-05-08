@@ -10,7 +10,7 @@ Note: Formal authorization is optional and typically in provider to provider tra
 
 ~~~
 
-{% include cdex-example1-authorization.json %}
+{% include_relative CommunicationRequest-cdex-task-inline-communicationrequest-example1.json %}
 
 ~~~
 
@@ -35,7 +35,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example11.json %}
+{% include_relative Task-cdex-task-inline-example11.json %}
 
 ~~~
 
@@ -63,7 +63,7 @@ Location: http://example.org/FHIR/Task/cdex-task-example2/_history/1
 
 ~~~
 
-POST [base]CommunicationRequest/cdex-example1-authorization
+GET [base]CommunicationRequest/cdex-task-inline-communicationrequest-example1
 
 ~~~
 
@@ -79,7 +79,7 @@ POST [base]CommunicationRequest/cdex-example1-authorization
 
 ~~~
 
-{% include cdex-example1-authorization.json %}
+{% include_relative CommunicationRequest-cdex-task-inline-communicationrequest-example1.json %}
 
 ~~~
 
@@ -135,7 +135,7 @@ POST [base]Condition/858
 
 ~~~
 
-{% include condition-858.json %}
+{% include_relative Condition-cdex-condition-inline-example-858.json %}
 
 ~~~
 

@@ -20,7 +20,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example1.json %}
+{% include_relative Task-cdex-task-inline-example1.json %}
 
 ~~~
 
@@ -61,7 +61,7 @@ Post [base]/Subscription
 
 ~~~
 
-{% include task-scenario1-subscription-requested.json %}
+{% include_relative Subscription-cdex-task-inline-scenario1-subscription-requested.json %}
 
 ~~~
 
@@ -84,7 +84,7 @@ Location: http://example.org/FHIR/Subscription/cdex-example1-query-subscription/
 
 ~~~
 
-{% include task-scenario1-subscription-active.json %}
+{% include_relative Subscription-cdex-task-inline-scenario1-subscription-active.json %}
 
 ~~~
 
@@ -137,14 +137,14 @@ GET [base]Task/cdex-task-example2
 ~~~
 
 
-###### Step 5 - Fetch Active Conditions
+###### Step 5 - Fetch Bundle
 
 
 **Request**
 
 ~~~
 
-GET [base]Condition/858
+GET [base]Bundle/cdex-searchbundle-scenario1-example
 
 ~~~
 
@@ -160,39 +160,6 @@ GET [base]Condition/858
 
 ~~~
 
-{% include condition-858.json %}
+{% include_relative Bundle-cdex-searchbundle-scenario1-example.json %}
 
 ~~~
-
-
-###### Step 6 - Delete subscription
-
-
-**Request**
-
-~~~
-
-DELETE [base]Subscription/task-scenario1-subscription-active
-
-~~~
-
-
-{% include request-headers.md %}
-
-
-**Response Headers**
-
-
-~~~
-
-HTTP/1.1 204 No Content
-
-Connection: keep-alive
-
-Content-Type: text/plain; charset=ISO-8859-1
-
-...(other headers)
-
-~~~
-
-

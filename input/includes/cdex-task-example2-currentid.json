@@ -101,9 +101,7 @@
                     }
                 ]
             },
-            "valueReference": {
-                "reference": "http://example.org/fhir/Bundle/858"
-            }
+            "valueReference": "http://example.org/fhir/Bundle/cdex-searchbundle-scenario1-example"
         }
     ]
 }

@@ -18,9 +18,7 @@ POST [base]/Task
 
 
 ~~~
-
-{% include cdex-task-example4.json %}
-
+{% include_relative Task-cdex-task-inline-example4.json %}
 ~~~
 
 
@@ -62,9 +60,7 @@ GET Task/cdex-task-example5
 
 
 ~~~
-
 {% include_relative Task-cdex-task-example5.json %}
-
 ~~~
 
 
@@ -90,9 +86,7 @@ GET [base]Condition/858
 
 
 ~~~
-
-{% include condition-858.json %}
-
+{% include_relative Condition-cdex-condition-inline-example-858.json %}
 ~~~
 
 

@@ -20,7 +20,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example13.json %}
+{% include_relative Task-cdex-task-inline-example13.json %}
 
 ~~~
 
@@ -95,7 +95,7 @@ GET [base]Condition/858
 
 ~~~
 
-{% include condition-858.json %}
+{% include_relative Condition-cdex-condition-inline-example-858.json %}
 
 ~~~
 
@@ -120,7 +120,7 @@ GET [base]Provenance/858
 
 ~~~
 
-{% include provenance-858.json %}
+{% include_relative Provenance-cdex-provenance-inline-example-858.json %}
 
 ~~~
 

@@ -1,7 +1,7 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example26",
-  "status": "requested",
+  "status": "pending",
   "intent": "order",
   "code": {
     "coding": [

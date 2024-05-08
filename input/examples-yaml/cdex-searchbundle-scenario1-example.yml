@@ -6,7 +6,7 @@ meta:
     - url: http://hl7.org/fhir/StructureDefinition/instance-name
       valueString: Direct Query for Patient's Active Conditions
     - url: http://hl7.org/fhir/StructureDefinition/instance-description
-      valueMarkdown: Bundle example used in direct query [scenario 1](direct-query.html#scenario-1). Payer Seeks Insured Person/Patient Active Conditions from Provider to support a claims audit.
+      valueMarkdown: Bundle example used in direct query transactions [scenario 1](direct-query.html#scenario-1) and in task based transactions - for example, [scenario 1a](task-based-approach.html#scenario-1).
 type: searchset
 total: 1
 link:

@@ -1,0 +1,13 @@
+{
+  "channel": {
+    "endpoint": "http://example.org/FHIR/Payer/cdex-task-watch",
+    "payload": "application/fhir+json",
+    "type": "rest-hook"
+  },
+  "criteria": "Task?_id=cdex-example1-query-completed",
+  "end": "2021-11-10T00:00:00Z",
+  "id": "cdex-task-inline-scenario1-subscription-requested",
+  "reason": "Monitor submitted Task",
+  "resourceType": "Subscription",
+  "status": "requested"
+}

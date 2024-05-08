@@ -21,7 +21,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example26.json %}
+{% include_relative Task-cdex-task-inline-example26.json %}
 
 ~~~
 
@@ -76,11 +76,11 @@ Location: http://example.org/FHIR/Task/cdex-task-example26/_history/1
 
 ~~~
 
-{% include cdex-task-example26-currentid.json %}
+{% include_relative Task-cdex-task-example26.json %}
 
 ~~~
 
-#### Step 4 - DTR App Inspects Task for Questionnaire URL and fetches the "Questionnaire Package"
+#### Step 4 - DTR App Inspects Task for Questionnaire Canonical URL and Fetches the Questionnaire
 
 
 **Request**
@@ -93,12 +93,11 @@ GET http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 
 **Response Headers**
 
-
 ~~~
 
 HTTP/1.1 200 OK
 
-Server: CDEX Example Provider Server
+Server: CDEX Example Questionnaire Endpoint
 
 Location: http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 
@@ -111,12 +110,10 @@ Location: http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 
 ~~~
 
-{% include cdex-questionnaire-example1.json %}
+{% include_relative Questionnaire-cdex-questionnaire-example1.json %}
 
 ~~~
 
-
-{% include request-headers.md %}
 
 #### Step 5 - DTR App Fills QuestionnaireResponse
 
@@ -129,8 +126,7 @@ Location: http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
 
 ~~~
 
-POST [base]/Task
-
+POST [base]/QuestionnaireResponse
 ~~~
 
 
@@ -142,7 +138,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-questionnaireresponse-example1.json %}
+{% include_relative QuestionnaireResponse-cdex-questionnaireresponse-inline-example1.json %}
 
 ~~~
 
@@ -156,13 +152,13 @@ HTTP/1.1 200 OK
 
 Server: CDEX Example Provider Server
 
-Location: http://example.org/FHIR/Task/cdex-questionnaireresponse-example1/_history/1
+Location: http://example.org/FHIR/QuestionnaireResponse/cdex-questionnaireresponse-inline-example1/_history/1
 
 ...(other headers)
 
 ~~~
 
-#### Step 7 -  The DTR SMART App or EHR native application Updates Task.output to Reference QuestionnaireResponse and Task.status Updated to "completed"
+#### Step 7 -  The DTR SMART App or EHR native application Updates Task.output to Reference QuestionnaireResponse
 
 **Request**
 
@@ -181,7 +177,113 @@ PUT [base]/Task/cdex-task-example-26
 
 ~~~
 
-{% include cdex-task-example27-updateid.json %}
+{
+  "resourceType": "Task",
+  "id": "cdex-task-example26",
+  "status": "pending",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code": "data-request-questionnaire"
+      }
+    ]
+  },
+  "for": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MB",
+            "display": "Member Number"
+          }
+        ],
+        "text": "Member Number"
+      },
+      "system": "http://example.org/cdex/payer/member-ids",
+      "value": "Member123"
+    }
+  },
+  "authoredOn": "2022-06-17T16:16:06+00:00",
+  "lastModified": "2022-06-19T12:00:00+00:00",
+  "requester": {
+    "identifier": {
+      "system": "http://example.org/cdex/payer/payer-ids",
+      "value": "Payer123"
+    }
+  },
+  "owner": {
+    "identifier": {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "9941339108"
+    }
+  },
+  "reasonReference": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "FILL",
+            "display": "Filler Identifier"
+          }
+        ],
+        "text": "Payer Claim ID"
+      },
+      "system": "http://example.org/cdex/payer/claim-ids",
+      "value": "Claim123"
+    }
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire"
+          }
+        ]
+      },
+      "valueCanonical": "http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+            "code": "purpose-of-use"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+            "code": "COVERAGE"
+          }
+        ]
+      }
+    }
+  ],
+  "output": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire-response"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
+      }
+    }
+  ]
+}
+
 
 ~~~
 
@@ -201,8 +303,9 @@ Location: http://example.org/FHIR/Task/cdex-task-example26/_history/2
 
 ~~~
 
+#### Step 8 - EHR Updates Task Status To "completed" When Questionnaire Response Status Is "completed" (Not Shown).
 
-###### Step 2 - Poll Task
+#### Step 9 - Data Consumer Polls Task
 
 
 **Polling Request**
@@ -225,12 +328,117 @@ GET Task/cdex-task-example2
 
 ~~~
 
-{% include cdex-task-example27-updateid.json %}
+{
+  "resourceType": "Task",
+  "id": "cdex-task-example26",
+  "status": "completed",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "code": "data-request-questionnaire"
+      }
+    ]
+  },
+  "for": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MB",
+            "display": "Member Number"
+          }
+        ],
+        "text": "Member Number"
+      },
+      "system": "http://example.org/cdex/payer/member-ids",
+      "value": "Member123"
+    }
+  },
+  "authoredOn": "2022-06-17T16:16:06+00:00",
+  "lastModified": "2022-06-19T12:00:00+00:00",
+  "requester": {
+    "identifier": {
+      "system": "http://example.org/cdex/payer/payer-ids",
+      "value": "Payer123"
+    }
+  },
+  "owner": {
+    "identifier": {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "9941339108"
+    }
+  },
+  "reasonReference": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "FILL",
+            "display": "Filler Identifier"
+          }
+        ],
+        "text": "Payer Claim ID"
+      },
+      "system": "http://example.org/cdex/payer/claim-ids",
+      "value": "Claim123"
+    }
+  },
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire"
+          }
+        ]
+      },
+      "valueCanonical": "http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+            "code": "purpose-of-use"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+            "code": "COVERAGE"
+          }
+        ]
+      }
+    }
+  ],
+  "output": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp",
+            "code": "questionnaire-response"
+          }
+        ]
+      },
+      "valueReference": {
+        "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
+      }
+    }
+  ]
+}
 
 ~~~
 
 
-###### Step 3 - Fetch QuestionnaireResponse
+#### Step 10 - Fetch QuestionnaireResponse
 
 
 **Request**
@@ -252,7 +460,7 @@ GET [base]QuestinnaireResponse/cdex-questionnaireresponse-example1
 
 ~~~
 
-{% include cdex-questionnaireresponse-example1.json %}
+{% include_relative QuestionnaireResponse-cdex-questionnaireresponse-example1.json %}
 
 ~~~
 

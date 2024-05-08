@@ -19,7 +19,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example1.json %}
+{% include_relative Task-cdex-task-inline-example1.json %}
 
 ~~~
 
@@ -75,7 +75,7 @@ GET Task/cdex-task-example2
 
 ~~~
 
-GET [base]Bundle/858
+GET [base]Bundle/cdex-searchbundle-scenario1-example
 
 ~~~
 
@@ -91,7 +91,7 @@ GET [base]Bundle/858
 
 ~~~
 
-{% include bundle-858.json %}
+{% include_relative Bundle-cdex-searchbundle-scenario1-example.json %}
 
 ~~~
 

@@ -80,5 +80,5 @@ POST [base]Condition/858
 **Response Body**
 
 ~~~
-{% include condition-858.json %}
+{% include_relative Condition-cdex-condition-inline-example-858.json %}
 ~~~

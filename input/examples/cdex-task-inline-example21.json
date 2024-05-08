@@ -1,0 +1,64 @@
+{
+  "authoredOn": "2020-10-27T11:05:34-07:00",
+  "code": {
+    "coding": [
+      {
+        "code": "data-request-code",
+        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+      }
+    ]
+  },
+  "for": {
+    "reference": "http://example.org/fhir/Patient/cdex-example-patient"
+  },
+  "id": "cdex-task-inline-example21",
+  "input": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "data-code",
+            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "11504-8",
+            "system": "http://loinc.org"
+          }
+        ],
+        "text": "Surgical operation note"
+      }
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "purpose-of-use",
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "COC",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
+          }
+        ]
+      }
+    }
+  ],
+  "intent": "order",
+  "lastModified": "2020-10-27T11:05:34-07:00",
+  "owner": {
+    "reference": "http://example.org/fhir/Organization/cdex-example-provider"
+  },
+  "requester": {
+    "reference": "http://example.org/fhir/Organization/cdex-example-payer"
+  },
+  "resourceType": "Task",
+  "status": "requested"
+}

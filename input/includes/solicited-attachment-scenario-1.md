@@ -21,13 +21,11 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example19.json %}
+{% include_relative Task-cdex-task-inline-example19.json %}
 
 ~~~
 
-
 **Response Headers**
-
 
 ~~~
 

@@ -177,6 +177,7 @@ groups:
         - Bundle/cdex-searchbundle-provenance-example
         - Bundle/cdex-searchbundle-scenario3-example
         - Bundle/cdex-searchbundle-scenario2-example
+        - Bundle/cdex-bundle-inline-example-858p
   SignatureProfiles:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
@@ -212,103 +213,28 @@ groups:
       - Questionnaire/cdex-questionnaire-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example2
-  # InlineExamples:
-  #   name: Inline Examples 
-  #   description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can check them for conformance to the guides profile definitions.  Since they illustrate to  particular "over-the-wire" transaction, most lack a rendered narrative and many lack an id.
-  #   resources:
-  #   - Parameters/inline-example4
-  #   - Parameters/inline-example5
-  #   - Parameters/inline-example1
-  #   - Parameters/inline-example2
-  #   - Parameters/inline-example3
-  #     - QuestionnaireResponse/inline-example1
-  #     - Task/inline-example7-currentid
-  #     - QuestionnaireResponse/inline-example3
-  #     - Task/inline-example19-currentid
-  #     - Parameters/inline-example4
-  #     - Task/inline-example20-currentid
-  #     - Parameters/inline-example5
-  #     - Task/inline-example3-currentid
-  #     - QuestionnaireResponse/inline-example2
-  #     - Task/inline-example24-currentid
-  #     - Task/inline-example4-currentid
-  #     - Parameters/inline-example1
-  #     - Task/inline-example23-currentid
-  #     - Task/inline-example26-updateid
-  #     - Task/inline-example30-currentid
-  #     - Task/inline-example27-currentid
-  #     - Condition/inline-example-858
-  #     - Parameters/inline-example2
-  #     - Parameters/inline-example3
-  #     - QuestionnaireResponse/inline-example4
-  #     - Location/hl7east-inline
-  #     - Task/inline-example23
-  #     - Task/inline-example7
-  #     - Task/inline-example6
-  #     - Task/inline-example22
-  #     - Task/inline-example14-currentid
-  #     - Task/inline-example20
-  #     - Task/inline-example4
-  #     - Subscription/inline-task-scenario1-subscription-requested
-  #     - Task/inline-example10-currentid
-  #     - Task/inline-example5
-  #     - Task/inline-example29-currentid
-  #     - Task/inline-example21
-  #     - Bundle/inline-document-digital-sig-example
-  #     - Task/inline-example9-currentid
-  #     - Task/inline-example25
-  #     - Task/inline-example31
-  #     - Task/inline-example19
-  #     - Task/inline-example17-currentid
-  #     - Task/inline-example1
-  #     - Task/inline-example13-currentid
-  #     - Task/inline-example18
-  #     - Task/inline-example30
-  #     - Task/inline-example24
-  #     - Task/inline-example26
-  #     - Task/inline-example2
-  #     - Bundle/inline-electronic-sig-example
-  #     - Task/inline-example3
-  #     - Task/inline-example27
-  #     - Task/inline-example16
-  #     - Subscription/inline-task-scenario1-subscription-active
-  #     - Provenance/inline-example-858
-  #     - Task/inline-example12-currentid
-  #     - Task/inline-example16-currentid
-  #     - Task/inline-example8-currentid
-  #     - Task/inline-example17
-  #     - Task/inline-example29
-  #     - Task/inline-example15
-  #     - Bundle/inline-task-scenario4-batch
-  #     - Task/inline-example14
-  #     - Task/inline-example28
-  #     - Task/inline-example1-query-request
-  #     - Task/inline-example10
-  #     - Task/inline-example8
-  #     - OperationOutcome/inline-example1b-operationoutcome
-  #     - Task/inline-example9
-  #     - Task/inline-example11
-  #     - Task/inline-example28-currentid
-  #     - Task/inline-example13
-  #     - Task/inline-example11-currentid
-  #     - Task/inline-example12
-  #     - Task/inline-example15-currentid
-  #     - Task/inline-example26-currentid
-  #     - Task/inline-example31-currentid
-  #     - Task/inline-example1-currentid
-  #     - Task/inline-example22-currentid
-  #     - Questionnaire/inline-example2
-  #     - Task/inline-example5-currentid
-  #     - CommunicationRequest/inline-example1-authorization
-  #     - Questionnaire/inline-example1
-  #     - Task/inline-example22-updateid
-  #     - Task/inline-example25-currentid
-  #     - Task/inline-example2-currentid
-  #     - Task/inline-example21-currentid
-  #     - Task/inline-example18-currentid
-  #     - Bundle/inline-task-scenario3-batch
-  #     - Task/inline-example6-currentid
-  #     - Parameters/inline-submit-attachment-example
+  InlineExamples:
+    name: Inline Examples 
+    description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can check them for conformance to the guides profile definitions.  Since they illustrate to  particular "over-the-wire" transaction, most lack a rendered narrative and many lack an id.
+    resources:
+      - Task/cdex-task-inline-example1
+      - Task/cdex-task-inline-example4
+      - Task/cdex-task-inline-example6
+      - Task/cdex-task-inline-example21
+      - Task/cdex-task-inline-example10
+      - Task/cdex-task-inline-example11
+      - Task/cdex-task-inline-example13
+      - Task/cdex-task-inline-example15
+      - Task/cdex-task-inline-example17
+      - Task/cdex-task-inline-example19
+      - Task/cdex-task-inline-example22 # updated version of 26 are inline in scenario 10 and not validated
+      - Task/cdex-task-inline-example26  # updated version of 26 are inline in scenario 10 and not validated
+      - Subscription/cdex-task-inline-scenario1-subscription-requested
+      - Subscription/cdex-task-inline-scenario1-subscription-active
+      - Condition/cdex-condition-inline-example-858
+      - Provenance/cdex-provenance-inline-example-858
+      - CommunicationRequest/cdex-task-inline-communicationrequest-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
 
 pages:
   index.md:
@@ -386,105 +312,25 @@ parameters:
     - Parameters/cdex-parameters-example1
     - Parameters/cdex-parameters-example2
     - Parameters/cdex-parameters-example3
-
-  #     - QuestionnaireResponse/inline-example1
-  #     - Task/inline-example7-currentid
-  #     - QuestionnaireResponse/inline-example3
-  #     - Task/inline-example19-currentid
-  #     - Parameters/inline-example4
-  #     - Task/inline-example20-currentid
-  #     - Parameters/inline-example5
-  #     - Task/inline-example3-currentid
-  #     - QuestionnaireResponse/inline-example2
-  #     - Task/inline-example24-currentid
-  #     - Task/inline-example4-currentid
-  #     - Parameters/inline-example1
-  #     - Task/inline-example23-currentid
-  #     - Task/inline-example26-updateid
-  #     - Task/inline-example30-currentid
-  #     - Task/inline-example27-currentid
-  #     - Condition/inline-example-858
-  #     - Parameters/inline-example2
-  #     - Parameters/inline-example3
-  #     - QuestionnaireResponse/inline-example4
-  #     - Bundle/cdex-searchbundle-scenario1-example
-  #     - Location/hl7east-inline
-  #     - Task/inline-example23
-  #     - Task/inline-example7
-  #     - Task/inline-example6
-  #     - Task/inline-example22
-  #     - Task/inline-example14-currentid
-  #     - Task/inline-example20
-  #     - Task/inline-example4
-  #     - Subscription/inline-task-scenario1-subscription-requested
-  #     - Task/inline-example10-currentid
-  #     - Task/inline-example5
-  #     - Task/inline-example29-currentid
-  #     - Task/inline-example21
-  #     - Bundle/inline-document-digital-sig-example
-  #     - Task/inline-example9-currentid
-  #     - Task/inline-example25
-  #     - Task/inline-example31
-  #     - Task/inline-example19
-  #     - Task/inline-example17-currentid
-  #     - Task/inline-example1
-  #     - Task/inline-example13-currentid
-  #     - Task/inline-example18
-  #     - Task/inline-example30
-  #     - Task/inline-example24
-  #     - Task/inline-example26
-  #     - Task/inline-example2
-  #     - Bundle/inline-electronic-sig-example
-  #     - Task/inline-example3
-  #     - Task/inline-example27
-  #     - Task/inline-example16
-  #     - Subscription/inline-task-scenario1-subscription-active
-  #     - Provenance/inline-example-858
-  #     - Task/inline-example12-currentid
-  #     - Task/inline-example16-currentid
-  #     - Task/inline-example8-currentid
-  #     - Task/inline-example17
-  #     - Task/inline-example29
-  #     - Task/inline-example15
-  #     - Bundle/inline-task-scenario4-batch
-  #     - Task/inline-example14
-  #     - Task/inline-example28
-  #     - Bundle/inline-example-858p
-  #     - Task/inline-example1-query-request
-  #     - Task/inline-example10
-  #     - Task/inline-example8
-  #     - OperationOutcome/inline-example1b-operationoutcome
-  #     - Task/inline-example9
-  #     - Task/inline-example11
-  #     - Task/inline-example28-currentid
-  #     - Task/inline-example13
-  #     - Task/inline-example11-currentid
-  #     - Task/inline-example12
-  #     - Task/inline-example15-currentid
-  #     - Task/inline-example26-currentid
-  #     - Task/inline-example31-currentid
-  #     - Bundle/inline-example-cdex-searchbundle-scenario1-example
-  #     - Task/inline-example1-currentid
-  #     - Task/inline-example22-currentid
-  #     # - Questionnaire/inline-example2
-  #     - Task/inline-example5-currentid
-  #     - CommunicationRequest/inline-example1-authorization
-  #     - Bundle/inline-searchset-digital-sig-example
-  #     # - Questionnaire/inline-example1
-  #     - Task/inline-example22-updateid
-  #     - Task/inline-example25-currentid
-  #     - Task/inline-example2-currentid
-  #     - Task/inline-example21-currentid
-  #     - Task/inline-example18-currentid
-  #     - Bundle/inline-task-scenario3-batch
-  #     - Task/inline-example6-currentid
-  #     - Parameters/inline-submit-attachment-example
+    - Task/cdex-task-inline-example1
+    - Task/cdex-task-inline-example4
+    - Task/cdex-task-inline-example6
+    - Task/cdex-task-inline-example21
+    - Task/cdex-task-inline-example22
+    - Task/cdex-task-inline-example26
+    - Task/cdex-task-inline-example10
+    - Task/cdex-task-inline-example11
+    - Task/cdex-task-inline-example13
+    - Task/cdex-task-inline-example15
+    - Task/cdex-task-inline-example17
+    - Task/cdex-task-inline-example19
+    - Subscription/cdex-task-inline-scenario1-subscription-requested
+    - Subscription/cdex-task-inline-scenario1-subscription-active
+    - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
 
 
-  suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5
+  suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22
   
-  # Bundle/inline-document-digital-sig-example, Bundle/inline-electronic-sig-example, Parameters/inline-example1, Parameters/inline-example2, Parameters/inline-example3, Parameters/inline-example4, Parameters/inline-example5, Questionnaire/inline-example1, Questionnaire/inline-example2, QuestionnaireResponse/inline-example1, QuestionnaireResponse/inline-example2, QuestionnaireResponse/inline-example3, QuestionnaireResponse/inline-example4, Bundle/inline-searchset-digital-sig-example, Task/inline-example1, Task/inline-example10, Task/inline-example11, Task/inline-example12, Task/inline-example13, Task/inline-example14, Task/inline-example15, Task/inline-example16, Task/inline-example17, Task/inline-example18, Task/inline-example19, Task/inline-example2, Task/inline-example20, Task/inline-example21, Task/inline-example22, Task/inline-example23, Task/inline-example24, Task/inline-example25, Task/inline-example26, Task/inline-example27, Task/inline-example28, Task/inline-example29, Task/inline-example3, Task/inline-example30, Task/inline-example31, Task/inline-example4, Task/inline-example5, Task/inline-example6, Task/inline-example7, Task/inline-example8, Task/inline-example9, OperationOutcome/inline-example1b-operationoutcome, Provenance/inline-858, Task/inline-example1-query-request, Task/inline-scenario1-subscription-requested
-
   tabbed-snapshots: 'true'
   auto-oid-root: 2.16.840.1.113883.4.642.40.21
 copyrightyear: '2024+'

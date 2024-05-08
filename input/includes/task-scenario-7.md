@@ -20,7 +20,7 @@ POST [base]/Task
 
 ~~~
 
-{% include cdex-task-example17.json %}
+{% include_relative Task-cdex-task-inline-example17.json %}
 
 ~~~
 
