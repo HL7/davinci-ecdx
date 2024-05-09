@@ -65,8 +65,8 @@ input:
     valueInteger: 1
   type:
     coding:
-    - code: questionnaire
-      system: http://hl7.org/fhir/uv/sdc/CodeSystem/temp
+    - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
+      code: questionnaires-needed
   valueCanonical: http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview
 - type:
     coding:
@@ -89,7 +89,8 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Inline Task Example 22
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Task example used to create inline [requesting attachments using questionnaire transaction](requesting-attachments-questionnaire.html#complete-solicited-attachment-transaction)
+    valueMarkdown: Task example used to create inline [requesting attachments using
+      questionnaire transaction](requesting-attachments-questionnaire.html#complete-solicited-attachment-transaction)
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 owner:

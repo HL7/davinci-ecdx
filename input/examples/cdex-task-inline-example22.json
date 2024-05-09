@@ -103,8 +103,8 @@
       "type": {
         "coding": [
           {
-            "code": "questionnaire",
-            "system": "http://hl7.org/fhir/uv/sdc/CodeSystem/temp"
+            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+            "code": "questionnaires-needed"
           }
         ]
       },

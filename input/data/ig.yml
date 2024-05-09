@@ -225,37 +225,37 @@ definition:
       \  communicating that the Payer is requesting attachments for a claim or prior\
       \ authorization using a code or data request questionnaire.\n  - If the code\
       \ is \"attachment-request-code\", the provider system returns attachment(s)\
-      \ identified by the LOINC attachment code(s) in the \"code\" input parameter.\n\
-      \  - If the code is \"attachment-request-questionnaire\", the provider system\
-      \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
-      \ to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
-      \  - When either code is present, the provider system uses the $submit-attachment\
-      \ operation to return the information to the endpoint provided in \"PayerUrl\"\
-      \ input parameter.    \n- A Task.requester.identifier element representing the\
-      \ Payer ID\n- A Task.owner.reference element fixed to \"\\#practionerrole\"\
-      \ -  a reference the contained PractitionerRole Resource that represents the\
-      \ Provider ID.\n- A Task.for.reference element fixed to \"\\#patient\" - a reference\
-      \ the contained Patient Resource that represents basic Patient demographic data.\n\
-      - A Task.reasonCode to communicate whether the attachments are for a Claim or\
-      \ Prior Authorization\n- A Task.reasonReference.reference referencing the Claim\
-      \ or Prior Authorization ID (business Identifier)\n- A \"PayerUrl\" Task.input\
-      \ element representing the Payer endpoint URL to communicate to the provider\
-      \ to submit the attachments using the `$submit-attachment` operation\n\nIt constrains\
-      \ following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
+      \ identified by the LOINC attachment code(s) in the \"attachmentsNeeded\" input\
+      \ parameter.\n  - If the code is \"attachment-request-questionnaire\", the provider\
+      \ system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
+      \ to complete the Questionnaire referenced in the \"questionnaireNeeded\" input\
+      \ parameter.\n  - When either code is present, the provider system uses the\
+      \ $submit-attachment operation to return the information to the endpoint provided\
+      \ in \"PayerUrl\" input parameter.    \n- A Task.requester.identifier element\
+      \ representing the Payer ID\n- A Task.owner.reference element fixed to \"\\\
+      #practionerrole\" -  a reference the contained PractitionerRole Resource that\
+      \ represents the Provider ID.\n- A Task.for.reference element fixed to \"\\\
+      #patient\" - a reference the contained Patient Resource that represents basic\
+      \ Patient demographic data.\n- A Task.reasonCode to communicate whether the\
+      \ attachments are for a Claim or Prior Authorization\n- A Task.reasonReference.reference\
+      \ referencing the Claim or Prior Authorization ID (business Identifier)\n- A\
+      \ \"PayerUrl\" Task.input element representing the Payer endpoint URL to communicate\
+      \ to the provider to submit the attachments using the `$submit-attachment` operation\n\
+      \nIt constrains following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition)\
       \ (min=0):\n\n- A Task.Restriction.period element representing the due date\
       \ for submitting the attachments\n- A Task.statusReason.text to communicate\
       \ the reason for the status (for example, if the Task is rejected or failed)\n\
-      - A \"code\" Task.input element to communicate to the provider what attachments\
-      \ are needed using LOINC attachment codes.*\n- A \"code\" or \"questionnaire\"\
-      \ Task.input element extension representing a claim or prior authorization line\
-      \ item numbers associated with the attachment or questionnaire.\n- A \"signature\"\
-      \ Task.input element representing a flag to indicate whether the requested data\
-      \ requires a signature. For more information about requiring and requesting\
-      \ signatures, refer to the [Signatures section](sending-attachments.html#signatures).\n\
+      - A \"attachmentsNeeded\" Task.input element to communicate to the provider\
+      \ what attachments are needed using LOINC attachment codes.*\n- A \"attachmentsNeeded\"\
+      \ or \"questionnaireNeeded\" Task.input element extension representing a claim\
+      \ or prior authorization line item numbers associated with the attachment or\
+      \ questionnaire.\n- A \"signature\" Task.input element representing a flag to\
+      \ indicate whether the requested data requires a signature. For more information\
+      \ about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).\n\
       - A \"service-date\" Task.input element representing the date of service or\
       \ starting date of the service for the claim or prior authorization. It SHALL\
       \ be present if the attachment is for a claim.\n\nIt defines the following elements\
-      \ to be *optional*:\n\n- A \"questionnaire\" Task.input element to communicate\
+      \ to be *optional*:\n\n- A \"questionnaireNeeded\" Task.input element to communicate\
       \ to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
       \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
       \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
@@ -272,7 +272,8 @@ definition:
       \ resulting from the data request Questionnaire. The QuestionnaireResponse conforms\
       \ to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse)\
       \ or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\
-      \n\\* Either a \"code\" or a \"questionnaire\" Task.input element is required"
+      \n\\* Either a \"attachmentsNeeded\" or a \"questionnaireNeeded\" Task.input\
+      \ element is required"
     exampleBoolean: false
     name: CDex Task Attachment Request Profile
     groupingId: AttachmentsProfiles

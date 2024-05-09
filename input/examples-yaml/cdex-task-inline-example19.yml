@@ -56,8 +56,8 @@ input:
     valueInteger: 1
   type:
     coding:
-    - code: data-code
-      system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
+    - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
+      code: attachments-needed
   valueCodeableConcept:
     coding:
     - code: 11506-3

@@ -67,8 +67,8 @@ owner:
 input:
 - type:
     coding:
-    - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-      code: data-code
+    - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
+      code: attachments-needed
   valueCodeableConcept:
     coding:
     - system: http://loinc.org

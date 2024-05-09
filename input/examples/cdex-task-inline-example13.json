@@ -30,8 +30,8 @@
       "type": {
         "coding": [
           {
-            "code": "data-code",
-            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp"
+            "system": "http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp",
+            "code": "data-code"
           }
         ]
       },
