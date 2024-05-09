@@ -416,12 +416,6 @@
             },
             {
                 "id": "Task.input:questionnaire",
-                "extension": [
-                    {
-                        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                        "valueCode": "draft"
-                    }
-                ],
                 "path": "Task.input",
                 "sliceName": "questionnaire",
                 "short": "Data Request questionnaire",
@@ -602,12 +596,6 @@
             },
             {
                 "id": "Task.output:response",
-                "extension": [
-                    {
-                        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                        "valueCode": "draft"
-                    }
-                ],
                 "path": "Task.output",
                 "sliceName": "response",
                 "definition": "Indicates the questionnaire response resulting from the request.",

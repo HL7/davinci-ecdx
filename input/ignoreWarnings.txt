@@ -49,9 +49,10 @@ A definition for CodeSystem 'http://example.org/lab-results' could not be found,
 A definition for CodeSystem 'http://example.org/terminology' could not be found, so the code cannot be validated
 
 
-# ===  === This example uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content === ===
+# ===  === These examples uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content === ===
 
 The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
+The questionnaire 'http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview' could not be resolved, so no validation can be performed against the base questionnaire
 
 
 # ===  === these CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===

@@ -5,7 +5,7 @@ id: cdex-task-attachment-request
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request'
 name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
-status: draft
+status: active
 description: |-
   Payers use the [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation ("attachments") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC as the standard. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.
   
@@ -485,10 +485,6 @@ differential:
       mustSupport: true
       
     - id: 'Task.input:questionnaire' # struct copied from SDC except using DTR Q/AQ profiles
-      extension:
-        - url: >-
-            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: draft
       path: Task.input
       sliceName: questionnaire
       short: Data Request questionnaire
@@ -633,9 +629,6 @@ differential:
       mustSupport: true
 
     - id: 'Task.input:POU'
-      # extension:
-      #   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      #     valueCode: draft   
       path: Task.input
       sliceName: POU
       short: Purpose of use code'
@@ -718,10 +711,7 @@ differential:
         - code: Reference
       # mustSupport: true
     - id: 'Task.output:response'
-      extension:
-        - url: >-
-            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: draft
+
       path: Task.output
       sliceName: response
       definition: Indicates the questionnaire response resulting from the request.

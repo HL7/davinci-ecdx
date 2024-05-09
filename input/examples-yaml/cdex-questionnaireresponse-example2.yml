@@ -26,7 +26,7 @@ contained:
     title: Adaptive Home Oxygen Therapy Order Template (SDC)
     derivedFrom:
       - 'http://example.org/base_adaptive_questionnaire'
-    status: draft
+    status: active
     subjectType:
       - Patient
     date: '2022-06-17'

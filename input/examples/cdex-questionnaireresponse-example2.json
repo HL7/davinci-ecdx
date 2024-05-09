@@ -16,7 +16,7 @@
       "derivedFrom": [
         "http://example.org/base_adaptive_questionnaire"
       ],
-      "status": "draft",
+      "status": "active",
       "subjectType": [
         "Patient"
       ],

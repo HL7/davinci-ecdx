@@ -5,7 +5,7 @@ id: cdex-task-attachment-request
 url: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request'
 name: CDexTaskAttachmentRequest
 title: CDex Task Attachment Request Profile
-status: draft
+status: active
 description: |-
   This [Task](http://hl7.org/StructureDefinition/Task) based profile is used by Payers to request additional documentation for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and is compliant with HIPAA Attachment rules for CMS and an alternative to the X12n 277 and 278 response transactions.
   

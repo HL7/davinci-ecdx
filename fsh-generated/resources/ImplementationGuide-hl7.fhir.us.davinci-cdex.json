@@ -71,7 +71,7 @@
       "id": "hrex",
       "packageId": "hl7.fhir.us.davinci-hrex",
       "uri": "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
-      "version": "1.0.0"
+      "version": "current"
     },
     {
       "id": "pas",
@@ -1066,13 +1066,7 @@
             {
               "nameUrl": "requesting-attachments-questionnaire.html",
               "title": "Requesting Attachments Using Questionnaires",
-              "generation": "markdown",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                  "valueCode": "draft"
-                }
-              ]
+              "generation": "markdown"
             },
             {
               "nameUrl": "burden-reduction.html",

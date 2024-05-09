@@ -33,7 +33,7 @@ url: 'http://example.org/cdex-questionnaire-example1'
 version: 2.0.0
 name: CDEXExpressionBasedPrepopulationQuestionnaireExample
 title: CDex Expression Based Prepopulation Questionnaire Example
-status: draft
+status: active
 subjectType:
   - Patient
 date: '2023-05-03'

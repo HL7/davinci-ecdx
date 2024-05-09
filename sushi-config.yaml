@@ -57,7 +57,7 @@ dependencies:
     id: uscore6
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: 1.0.0
+    version: current
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
@@ -255,10 +255,6 @@ pages:
       title: Requesting Attachments Using Attachments Codes
     requesting-attachments-questionnaire.md:
       title: Requesting Attachments Using Questionnaires
-      extension:
-        - url: >-
-            http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: draft
     burden-reduction.md:
       title: Using CDex Attachments with DaVinci PAS
     attachments-conformance.md:
@@ -411,12 +407,5 @@ menu:
     Inline Examples: artifacts.html#15
 
   Downloads: downloads.html
-  Change Log: #changes.html
-    Change Log: changes.html
-    Version = 2.0.0: changes.html#version--200
-    Version = 2.0.0-ballot: changes.html#version--200-ballot
-    Version = 1.1.0: changes.html#version--110
-    Version = 1.1.0-ballot: changes.html#version--110-ballot
-    Version = 1.0.0: changes.html#version--100
-    Version = 0.2.0: changes.html#version--020
-    Version = 0.1.0: changes.html#version--010
+  Change Log: changes.html
+

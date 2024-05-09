@@ -4,7 +4,7 @@
     "extension": [
         {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "draft"
+            "valueCode": "trial-use"
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
@@ -14,7 +14,7 @@
     "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-data-request-task-code",
     "name": "CDexDataRequestTaskCode",
     "title": "CDex Data Request Task Code Value Set",
-    "status": "draft",
+    "status": "active",
     "experimental": false,
     "date": "2022-12-23",
     "description": "Codes used to identify the type of data request and control the payer system's behavior.",

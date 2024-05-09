@@ -1,3 +1,40 @@
+### Version = 2.1.0
+- Publication Date: TBD
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1>
+- Based on FHIR version: 4.0.1
+
+This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The resulting resolution of the community comments and edits to this guide has been agreed to and voted on by the members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group.
+
+#### What's new in Version 2.0.0 of CDex:
+
+{% include img-small.html img="todo.png" %}
+
+#### Changes:
+
+These changes are the result of trackers listed below.
+
+**Status: Summary (Jira Issue) Link to Change**
+
+2. **Resolved - change required:** (Correction) small typo [FHIR-38255](https://jira.hl7.org/browse/FHIR-38255) [See Changes Here](#.html)
+3. **Resolved - change required:** (Correction) Word change ""analogs"" to ""fields"" [FHIR-38330](https://jira.hl7.org/browse/FHIR-38330) [See Changes Here](#.html)
+4. **Resolved - change required:** (Clarification) does Da Vinci plan to standardize a way to communicate failed signatures?  [FHIR-38596](https://jira.hl7.org/browse/FHIR-38596) [See Changes Here](#.html)
+5. **Resolved - change required:** (Correction) used word provider when you meant payer  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](#.html)
+6. **Resolved - change required:** (Enhancement) CDex Purpose of use value set is not consistent with requirements for 45 CFR 164.506 [FHIR-39339](https://jira.hl7.org/browse/FHIR-39339) [See Changes Here](#.html)
+7. **Resolved - change required:** (Enhancement) add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](#.html)
+8. **Resolved - change required:** (Correction) meta.tag.system cardinality should be 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](#.html)
+9.  **Triaged:** (Clarification) Clarify that PAS is a special case where the PROVIDER create the Task [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](#.html)
+10. **Triaged:** (Enhancement)  include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) [See Changes Here](#.html)
+11. **Triaged:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](#.html)
+12. **Triaged:** (Clarification) Change the Task.code Value Set to align with PAS [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](#.html)
+13. **Triaged:** (Clarification) Change Task.input payer-url to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](#.html)
+14. **Triaged:** (Clarification) Change Task.input code slice to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](#.html)
+15. **Triaged:** (Clarification) Change Task.input questionnaire slice to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](#.html)
+16. **Triaged:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](#.html)
+17. **Triaged:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](#.html)
+18. **Resolved - change required:** (Correction) remove self referencing instantiates in CapabilityStatements [FHIR-45322](https://jira.hl7.org/browse/FHIR-45322) [See Changes Here](#.html)
+19. **Pre-Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
+20. **Triaged:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
+
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
 - URL: <http://hl7.org/fhir/us/davinci-cdex/STU2>

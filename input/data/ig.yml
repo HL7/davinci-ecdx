@@ -46,7 +46,7 @@ dependsOn:
 - id: hrex
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
-  version: 1.0.0
+  version: current
 - id: pas
   packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
@@ -1104,9 +1104,6 @@ definition:
       - nameUrl: requesting-attachments-questionnaire.html
         title: Requesting Attachments Using Questionnaires
         generation: markdown
-        extension:
-        - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-          valueCode: draft
       - nameUrl: burden-reduction.html
         title: Using CDex Attachments with DaVinci PAS
         generation: markdown

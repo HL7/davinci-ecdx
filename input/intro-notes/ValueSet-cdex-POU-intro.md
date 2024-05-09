@@ -1,7 +1,7 @@
 <!-- ValueSet-cdex-POU-intro.md -->
 <!-- ValueSet-cdex-POU.html#cdex-purpose-of-use-value-set-hierarchy -->
 
-This Value Set is draft content. The process for submitting the CDex Temporary Code System POU Codes for inclusion into HL7 Terminology (THO) ACTReason CodeSystem is underway. In addition, the editors will publish a final CDex POU value set as part of an STU update.
+The process for submitting the CDex Temporary Code System POU Codes for inclusion into HL7 Terminology (THO) ACTReason CodeSystem is underway. In addition, the editors will publish a final CDex POU value set as part of an STU update.
 {:.stu-note}
 
 ### CDex Purpose of Use Value Set Hierarchy

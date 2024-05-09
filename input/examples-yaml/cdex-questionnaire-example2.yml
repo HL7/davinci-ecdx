@@ -20,7 +20,7 @@ extension:
 name: HomeOxygenTherapyQuestionnaire
 title: Home Oxygen Therapy Questionnaire
 url: 'http://example.org/cdex-questionnaire-example2'
-status: draft
+status: active
 subjectType:
   - Patient
 date: '2022-01-17'

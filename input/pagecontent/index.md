@@ -1,4 +1,3 @@
-{% include draft_intro.md %}
 
 ### Introduction
 
@@ -54,7 +53,7 @@ This guide is divided into several pages listed at the top of each page in the m
     - [Solicited and Unsolicited Attachments]\: Documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions for each.
     - [Sending Attachments]\: This page documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
     - [Requesting Attachments Using Attachment Codes]\: This page documents a FHIR-based approach for requesting attachments that is compatible with the X12n 277 Request for Additional Information (RFAI) and 278 response transactions.
-    - [Requesting Attachments Using Questionnaires]\: <span class= "bg-warning">This page is DRAFT</span> This page documents an *optional* CDex Attachments transaction for requesting additional data for claims or prior authorization from a Provider using Questionnaire, CQL, and QuestionnaireResponse as supported by [Da Vinci DTR]. 
+    - [Requesting Attachments Using Questionnaires]\: This page documents an *optional* CDex Attachments transaction for requesting additional data for claims or prior authorization from a Provider using Questionnaire, CQL, and QuestionnaireResponse as supported by [Da Vinci DTR]. 
     - [Using CDex Attachments with DaVinci PAS]\: This page illustrates where the Provider could use CDEX to submit attachments in the PAS workflow.
     - [Conforming to CDex Attachments]\: Summary of interactions for each role and the conformance resource and terminology that makes them unique. 
 - [Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.

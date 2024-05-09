@@ -4,7 +4,7 @@
     "extension": [
         {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "draft"
+            "valueCode": "trial-use"
         },
         {
             "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
