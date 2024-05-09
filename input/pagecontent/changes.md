@@ -10,30 +10,31 @@ This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Gui
 {% include img-small.html img="todo.png" %}
 
 #### Changes:
-
+å
 These changes are the result of trackers listed below.
 
 **Status: Summary (Jira Issue) Link to Change**
 
-2. **Resolved - change required:** (Correction) small typo [FHIR-38255](https://jira.hl7.org/browse/FHIR-38255) [See Changes Here](#.html)
-3. **Resolved - change required:** (Correction) Word change ""analogs"" to ""fields"" [FHIR-38330](https://jira.hl7.org/browse/FHIR-38330) [See Changes Here](#.html)
-4. **Resolved - change required:** (Clarification) does Da Vinci plan to standardize a way to communicate failed signatures?  [FHIR-38596](https://jira.hl7.org/browse/FHIR-38596) [See Changes Here](#.html)
-5. **Resolved - change required:** (Correction) used word provider when you meant payer  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](#.html)
-6. **Resolved - change required:** (Enhancement) CDex Purpose of use value set is not consistent with requirements for 45 CFR 164.506 [FHIR-39339](https://jira.hl7.org/browse/FHIR-39339) [See Changes Here](#.html)
-7. **Resolved - change required:** (Enhancement) add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](#.html)
-8. **Resolved - change required:** (Correction) meta.tag.system cardinality should be 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](#.html)
-9.  **Triaged:** (Clarification) Clarify that PAS is a special case where the PROVIDER create the Task [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](#.html)
-10. **Triaged:** (Enhancement)  include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) [See Changes Here](#.html)
-11. **Triaged:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](#.html)
-12. **Triaged:** (Clarification) Change the Task.code Value Set to align with PAS [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](#.html)
-13. **Triaged:** (Clarification) Change Task.input payer-url to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](#.html)
-14. **Triaged:** (Clarification) Change Task.input code slice to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](#.html)
-15. **Triaged:** (Clarification) Change Task.input questionnaire slice to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](#.html)
-16. **Triaged:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](#.html)
-17. **Triaged:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](#.html)
-18. **Resolved - change required:** (Correction) remove self referencing instantiates in CapabilityStatements [FHIR-45322](https://jira.hl7.org/browse/FHIR-45322) [See Changes Here](#.html)
-19. **Pre-Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
-20. **Triaged:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
+
+1. **Applied:** (Correction) Update diagram to "Provider submitted requested attachments to the *Payer*"  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](solicited-unsolicited-attachments.html#solicited-attachments)
+3. **Applied:** (Enhancement) Add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](StructureDefinition-cdex-parameters-submit-attachment.html)
+4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
+5.  **Triaged:** (Clarification) Clarify that PAS is a special case where the PROVIDER create the Task [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](#.html)
+6.  **Triaged:** (Enhancement)  include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) [See Changes Here](#.html)
+7.  **Triaged:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](#.html)
+8.  **Pre-Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
+9.  **Pre-Applied:** (Clarification) Change Task.input payer-url to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html)
+10. **Triaged:** (Clarification) Change Task.input code slice to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](#.html)
+11. **Triaged:** (Clarification) Change Task.input questionnaire slice to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](#.html)
+12. **Triaged:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](#.html)
+13. **Triaged:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](#.html)
+14. **Applied:** (Correction) Remove self referencing instantiates in CapabilityStatements [FHIR-45322](https://jira.hl7.org/browse/FHIR-45322) See Changes:
+   - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
+   - [Data Consumer Server CapabilityStatement](CapabilityStatement-data-consumer-server.html)
+   - [Data Source Client CapabilityStatement](CapabilityStatement-data-source-client.html)
+   - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
+15. **Pre-Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
+16. **Triaged:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
@@ -44,13 +45,13 @@ This STU2 version of The Da Vinci Clinical Data Exchange (CDex) Implementation G
 
 #### What's new in Version 2.0.0 of CDex:
 
-1. New [Requesting Attachments Using Questionnaires] functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. In addition, this approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provide the ability for signature attestation if required.
-2. New Task-Based transactions functionality for [Using Questionnaire as Task Input]. In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. As a result, the provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
+1. New [Requesting Attachments Using Questionnaires](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-questionnaire.html) functionality. In prior versions, CDex supported requested attachments using the request model of LOINC attachment codes, and the provider typically submitted CCDA or PDF documents in response. In this version, CDex aligns with DTR functionality and provide the ability to request attachment using Questionnaire, CQL, and QuestionnaireResponse as supported by DTR when there is no transition into/out of X12 transactions in the interactions. In addition, this approach will enable specific requests for missing data and avoid unnecessary document formats, yet still provide the ability for signature attestation if required.
+2. New Task-Based transactions functionality for [Using Questionnaire as Task Input](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#using-questionnaire-as-task-input). In prior versions, CDex Task Based Approach supported requests using the request model of FHIR RESTful query syntax, codes, and free-text. As a result, the provider typically returned references to FHIR Bundles. Similar to the Attachments updates, this added functionality leverages DTR and enables specific requests for missing data, avoiding unnecessary use of Bundles.
 3. Improved navigation:
    - Menu Bar drop-downs for all the pages to allow faster navigation to a specific topic
-   - Re-organization of [FHIR Artifacts] by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
-4. [Conforming to CDex Attachments] and [Conforming to CDex Task Based Approach], including interactions for each role and the conformance resource and terminology that makes them unique.
-5. After receiving many comments on CDex POU support, the [CDex Purpose of Use Value Set] now includes a hierarchy to the base "Treatment", "Payment", or "Health Care Operations" (TPO) concepts.
+   - Re-organization of [FHIR Artifacts](https://hl7.org/fhir/us/davinci-cdex/STU2/artifacts.html) by transaction type. This version has several FHIR artifacts and dozens of examples grouped by Attachments, Task-Based Approach, and Signatures.
+4. [Conforming to CDex Attachments](https://hl7.org/fhir/us/davinci-cdex/STU2/attachments-conformance.html) and [Conforming to CDex Task Based Approach](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-conformance.html), including interactions for each role and the conformance resource and terminology that makes them unique.
+5. After receiving many comments on CDex POU support, the [CDex Purpose of Use Value Set](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-POU.html) now includes a hierarchy to the base "Treatment", "Payment", or "Health Care Operations" (TPO) concepts.
 6. More examples, including examples of failed signature verifications, signed QuestionnaireResponse, and requesting Attachments for prior authorization using Questionnaire.
 
 #### Changes:
@@ -61,98 +62,98 @@ These changes are the result of over 60 trackers listed below. They include the 
 
 **Status: Summary (Jira Issue) Link to Change**
 
-1. **Applied**: Correct $submit-attachment input parameter Typo. ([FHIR-37956](https://jira.hl7.org/browse/FHIR-37956)) and ([FHIR-38175](https://jira.hl7.org/browse/FHIR-38175)) See Changes [Here](OperationDefinition-submit-attachment.html)
-2. **Applied**: Correct claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060)) See Changes [Here](solicited-unsolicited-attachments.html#solicited-attachments)
-4. **Applied**: Added missing service line item extension to CDex Task Attachment Request Profile ([FHIR-38070](https://jira.hl7.org/browse/FHIR-38070)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html)
-5. **Applied**: Document POU ValueSet Hierarchy to TPO ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142)) See Changes [Here](ValueSet-cdex-POU.html)
-6. **Applied**: DS4P should be evaluated before required ([FHIR-38144](https://jira.hl7.org/browse/FHIR-38144)) See Changes [Here](security.html#sensitive-and-confidential-data)
-7. **Applied**: Correct capitalization ([FHIR-38145](https://jira.hl7.org/browse/FHIR-38145)) See Changes [Here](solicited-unsolicited-attachments.html)
-9. **Applied**: Change 277 to: “277 Request for Additional Information (RFAI)” ([FHIR-38152](https://jira.hl7.org/browse/FHIR-38152)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-10. **Applied**: Update sentence ([FHIR-38153](https://jira.hl7.org/browse/FHIR-38153)) See Changes [Here](requesting-attachments-code.html)
-11. **Applied**: Correct Typo ([FHIR-38154](https://jira.hl7.org/browse/FHIR-38154)) See Changes [Here](requesting-attachments-code.html#requesting-attachments-using-fhir)
-12. **Applied**: Modify sentence ([FHIR-38155](https://jira.hl7.org/browse/FHIR-38155)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-13. **Applied**: Change X12n 277 *message* to X12n 277 *RFAI transaction*. ([FHIR-38156](https://jira.hl7.org/browse/FHIR-38156)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-14. **Applied**: Update Data Elements table ([FHIR-38172](https://jira.hl7.org/browse/FHIR-38172)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments) and [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-15. **Applied**: Update Data Elements table ([FHIR-38174](https://jira.hl7.org/browse/FHIR-38174)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-17. **Applied**:Change X12n 275 *message* to X12n 275 *transaction* ([FHIR-38177](https://jira.hl7.org/browse/FHIR-38177)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-18. **Applied**:Change *all* documents to *submitted* documents ([FHIR-38178](https://jira.hl7.org/browse/FHIR-38178)) See Changes [Here](requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
-19. **Applied**: Remove HIPAA compliance language ([FHIR-38179](https://jira.hl7.org/browse/FHIR-38179)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
-20. **Applied**: Change *Claim* to *claim or prior authorization* ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184)) See Changes [Here](requesting-attachments-code.html#verifying-patient-identity)
-21. **Applied**: Normalize term “prior authorization” ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](requesting-attachments-code.html)
-22. **Applied**: Update Grammar ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](requesting-attachments-code.html#supply-the-requested-attachments-for-each-line-item-and-code)
-23. **Applied**: Clarify that signature support is not required ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](signatures.html) and [Here](sending-attachments.html#signatures)
+1. **Applied**: Correct $submit-attachment input parameter Typo. ([FHIR-37956](https://jira.hl7.org/browse/FHIR-37956)) and ([FHIR-38175](https://jira.hl7.org/browse/FHIR-38175)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html)
+2. **Applied**: Correct claim flow diagram typo ([FHIR-38060](https://jira.hl7.org/browse/FHIR-38060)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/solicited-unsolicited-attachments.html#solicited-attachments)
+4. **Applied**: Added missing service line item extension to CDex Task Attachment Request Profile ([FHIR-38070](https://jira.hl7.org/browse/FHIR-38070)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html)
+5. **Applied**: Document POU ValueSet Hierarchy to TPO ([FHIR-38142](https://jira.hl7.org/browse/FHIR-38142)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-POU.html)
+6. **Applied**: DS4P should be evaluated before required ([FHIR-38144](https://jira.hl7.org/browse/FHIR-38144)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/security.html#sensitive-and-confidential-data)
+7. **Applied**: Correct capitalization ([FHIR-38145](https://jira.hl7.org/browse/FHIR-38145)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/solicited-unsolicited-attachments.html)
+9. **Applied**: Change 277 to: “277 Request for Additional Information (RFAI)” ([FHIR-38152](https://jira.hl7.org/browse/FHIR-38152)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
+10. **Applied**: Update sentence ([FHIR-38153](https://jira.hl7.org/browse/FHIR-38153)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html)
+11. **Applied**: Correct Typo ([FHIR-38154](https://jira.hl7.org/browse/FHIR-38154)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#requesting-attachments-using-fhir)
+12. **Applied**: Modify sentence ([FHIR-38155](https://jira.hl7.org/browse/FHIR-38155)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
+13. **Applied**: Change X12n 277 *message* to X12n 277 *RFAI transaction*. ([FHIR-38156](https://jira.hl7.org/browse/FHIR-38156)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
+14. **Applied**: Update Data Elements table ([FHIR-38172](https://jira.hl7.org/browse/FHIR-38172)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+15. **Applied**: Update Data Elements table ([FHIR-38174](https://jira.hl7.org/browse/FHIR-38174)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+17. **Applied**:Change X12n 275 *message* to X12n 275 *transaction* ([FHIR-38177](https://jira.hl7.org/browse/FHIR-38177)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
+18. **Applied**:Change *all* documents to *submitted* documents ([FHIR-38178](https://jira.hl7.org/browse/FHIR-38178)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#step-by-step-solicited-attachment-transaction)
+19. **Applied**: Remove HIPAA compliance language ([FHIR-38179](https://jira.hl7.org/browse/FHIR-38179)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#verifying-patient-identity)
+20. **Applied**: Change *Claim* to *claim or prior authorization* ([FHIR-38184](https://jira.hl7.org/browse/FHIR-38184)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#verifying-patient-identity)
+21. **Applied**: Normalize term “prior authorization” ([FHIR-38186](https://jira.hl7.org/browse/FHIR-38186)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html)
+22. **Applied**: Update Grammar ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#supply-the-requested-attachments-for-each-line-item-and-code)
+23. **Applied**: Clarify that signature support is not required ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/signatures.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures)
 24. **Applied**: Clarify in operation that either an OrganizationId or ProviderId is required. Allow for both Ids to be sent in request.([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189)) See Changes:[
-   - [Here](OperationDefinition-submit-attachment.html) 
-   - [Here](StructureDefinition-cdex-practitionerrole.html)
-   - [Here](StructureDefinition-cdex-task-attachment-request.html) 
-   - [Here](requesting-attachments-code.html#identifying-the-payer-provider-and-patient)
-25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#date-of-service-for-the-claim) 
-26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](attachments-conformance.html) and [Here](task-based-conformance.html)
-27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](requesting-attachments-code.html#task-status-intent-and-code-elements)
-30. **Applied**: Separate solicited and unsolicited attachments workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](background.html#workflow-overview)
-31. **Applied**: Make LOINC code display and text consistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233)) See Changes [Here](Parameters-cdex-parameters-example1.json.html)
-32. **Applied**: Fix Typo in example ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](Parameters-cdex-parameters-example4.html)
-33. **Applied**: Clarify Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240)) See Changes [Here](solicited-unsolicited-attachments.html)
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html) 
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-practitionerrole.html)
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) 
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#identifying-the-payer-provider-and-patient)
+25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#date-of-service-for-the-claim) 
+26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/attachments-conformance.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-conformance.html)
+27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#task-status-intent-and-code-elements)
+30. **Applied**: Separate solicited and unsolicited attachments workflows ([FHIR-38210](https://jira.hl7.org/browse/FHIR-38210)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/background.html#workflow-overview)
+31. **Applied**: Make LOINC code display and text consistent ([FHIR-38233](https://jira.hl7.org/browse/FHIR-38233)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Parameters-cdex-parameters-example1.json.html)
+32. **Applied**: Fix Typo in example ([FHIR-38236](https://jira.hl7.org/browse/FHIR-38236))w See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Parameters-cdex-parameters-example4.html)
+33. **Applied**: Clarify Attachment Scope ([FHIR-38240](https://jira.hl7.org/browse/FHIR-38240)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/solicited-unsolicited-attachments.html)
 34. **Applied**: Expand Attachments and Task based approach to support Questionnaires and DTR ([FHIR-38241](https://jira.hl7.org/browse/FHIR-38241)) See Changes:
     - Pages:
-      - [Here](task-based-approach.html#using-questionnaire-as-task-input)
-      - [Here](requesting-attachments-questionnaire.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#using-questionnaire-as-task-input)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-questionnaire.html)
     - Conformance Artifacts:
-      - [Here](StructureDefinition-cdex-task-attachment-request.html)
-      - [Here](ValueSet-cdex-attachment-task-code.html)
-      - [Here](StructureDefinition-cdex-task-data-request.html)
-      - [Here](ValueSet-cdex-data-request-task-code.html)
-      - [Here](CodeSystem-cdex-temp.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-attachment-task-code.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-data-request.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-data-request-task-code.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/CodeSystem-cdex-temp.html)
     - Examples:
-      - [Here](Task-cdex-task-example22.html)
-      - [Here](Task-cdex-task-example23.html)
-      - [Here](Task-cdex-task-example24.html)
-      - [Here](Task-cdex-task-example25.html)
-      - [Here](Task-cdex-task-example26.html)
-      - [Here](Task-cdex-task-example27.html)
-      - [Here](Task-cdex-task-example28.html)
-      - [Here](Task-cdex-task-example29.html)
-      - [Here](Task-cdex-task-example30.html)
-      - [Here](Task-cdex-task-example31.html)
-      - [Here](Parameters-cdex-parameters-example5.html)
-      - [Here](Questionnaire-cdex-questionnaire-example1.html)
-      - [Here](Questionnaire-cdex-questionnaire-example2.html)
-      - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example1.html)
-      - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example2.html)
-      - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example3.html)
-      - [Here](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
-35. **Applied**: Clarify when human involvement needed ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](task-based-approach.html#sequence-diagram)
-36. **Applied**: Add link to PAS Guidance on pended results ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](burden-reduction.html)
-37. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](requesting-attachments-code.html#purpose-of-use-for-the-request) 
-38. **Applied**: Correct operation name ([FHIR-38253](https://jira.hl7.org/browse/FHIR-38253)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-39. **Applied**: Change *only accepts* to *only accept*([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](OperationDefinition-submit-attachment.html)
-40. **Applied**: Clarify use of cdex-temp code system ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259)) See Changes [Here](ValueSet-cdex-POU.html) and [Here](CodeSystem-cdex-temp.html)
-41. **Applied**: Clarify use of data tagging ([FHIR-38286](https://jira.hl7.org/browse/FHIR-38286)) See Changes [Here](security.html#sensitive-and-confidential-data)
-42. **Applied**: Updated X12 element mappings and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](requesting-attachments-code.html#data-elements-for-requesting-attachments) and Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
-43. **Applied**: Clarify how to find patient FHIR ID ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318)) See Changes [Here](direct-query.html#discovery-of-patient-fhir-ids)
-44. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](sending-attachments.html#sending-attachments)
-45. **Applied**: Add Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](signatures.html#step-by-step-examples)
-46. **Applied**: Remove words *transaction layer* ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](sending-attachments.html#technical-workflow)
-47. **Applied**: Word change *analogs* to *fields* ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](sending-attachments.html#data-elements-for-sending-attachments)
-48. **Applied**: Correct rendering of CCDA ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367)) See Changes [Here](task-based-approach.html#surgical-notes-as-ccda-documents)
-49. **Applied**: removed '*' from button bar ([FHIR-38368](https://jira.hl7.org/browse/FHIR-38368)) See Changes [Here](task-based-approach.html#example-of-a-signed-task-based-transaction)
-50. **Applied**: Change *follows* to *adheres to* ([FHIR-38576](https://jira.hl7.org/browse/FHIR-38576)) See Changes [Here](index.html#about-this-guide)
-51. **Applied**: Revise section 'what Do Payers Do with Clinical Information?' ([FHIR-38578](https://jira.hl7.org/browse/FHIR-38578)) See Changes [Here](background.html)
-52. **Applied**: Clarify when CDex is used instead of other guides ([FHIR-38585](https://jira.hl7.org/browse/FHIR-38585)) See Changes [Here](background.html#where-does-cdex-fit-in-the-da-vinci-project)
-53. **Applied**: Remove the HIE paragraph ([FHIR-38588](https://jira.hl7.org/browse/FHIR-38588)) See Changes [Here](background.html#actors-and-roles)
-54. **Applied**: Create failed signature example transaction ([FHIR-38596](https://jira.hl7.org/browse/FHIR-38596)) See Changes [Here](sending-attachments.html#signatures)
-55. **Applied**: Clarify benefits of POU element ([FHIR-38598](https://jira.hl7.org/browse/FHIR-38598)) See Changes [Here](#)
-56. **Applied**: change SHOULD to SHALL ([FHIR-38599](https://jira.hl7.org/browse/FHIR-38599)) See Changes [Here](task-based-approach.html#task-reason)
-57. **Applied**: Correct Preconditions and Assumptions ([FHIR-38600](https://jira.hl7.org/browse/FHIR-38600)) See Changes [Here](task-based-approach.html#scenario-2)
-58. **Applied**: Correct Preconditions and Assumptions ([FHIR-38601](https://jira.hl7.org/browse/FHIR-38601)) See Changes [Here](task-based-approach.html#scenario-2)
-59. **Applied**: Update polling frequency guidance([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602)) See Changes [Here](task-based-approach.html#polling)
-60. **Applied**: Remove trading partner agreement statement ([FHIR-38603](https://jira.hl7.org/browse/FHIR-38603)) See Changes [Here](solicited-unsolicited-attachments.html#unsolicited-attachments)
-61. **Applied**: Clarify association comment and assign FMM levels to guide  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605)) See Changes [Here](background.html#steps-2)
-62. **Applied**: Clarify Profile relationship to X12  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612)) See Changes [Here](requesting-attachments-code.html#cdex-attachment-request-profile)
-63. **Applied**: Change $submit-attachment's Attachment input parameter to min=1. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632)) See Changes [Here](OperationDefinition-submit-attachment.html)
-64. **Applied**: Change Tracking-id.system to Must Support; and $submit-attachment TrackingId to type Identifier. ([FHIR-39337](https://jira.hl7.org/browse/FHIR-39337)) See Changes [Here](OperationDefinition-submit-attachment.html) and [Here](StructureDefinition-cdex-task-attachment-request.html)
-65. **Applied**: Update NPI codesystem  ([FHIR-39626](https://jira.hl7.org/browse/FHIR-39626)) See Changes [Here](ValueSet-cdex-identifier-types.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example22.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example23.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example24.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example25.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example26.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example27.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example28.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example29.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example30.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Task-cdex-task-example31.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Parameters-cdex-parameters-example5.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Questionnaire-cdex-questionnaire-example1.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/Questionnaire-cdex-questionnaire-example2.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example1.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example2.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example3.html)
+      - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
+35. **Applied**: Clarify when human involvement needed ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#sequence-diagram)
+36. **Applied**: Add link to PAS Guidance on pended results ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/burden-reduction.html)
+37. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#purpose-of-use-for-the-request) 
+38. **Applied**: Correct operation name ([FHIR-38253](https://jira.hl7.org/browse/FHIR-38253)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+39. **Applied**: Change *only accepts* to *only accept*([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html)
+40. **Applied**: Clarify use of cdex-temp code system ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-POU.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/CodeSystem-cdex-temp.html)
+41. **Applied**: Clarify use of data tagging ([FHIR-38286](https://jira.hl7.org/browse/FHIR-38286)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/security.html#sensitive-and-confidential-data)
+42. **Applied**: Updated X12 element mappings and X12 required citations ([FHIR-38287](https://jira.hl7.org/browse/FHIR-38287)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments) and Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#data-elements-for-sending-attachments)
+43. **Applied**: Clarify how to find patient FHIR ID ([FHIR-38318](https://jira.hl7.org/browse/FHIR-38318)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/direct-query.html#discovery-of-patient-fhir-ids)
+44. **Applied**: Clarify X12 Compatibility ([FHIR-38326](https://jira.hl7.org/browse/FHIR-38326)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#sending-attachments)
+45. **Applied**: Add Qualifier to Signed Document Bundle ([FHIR-38327](https://jira.hl7.org/browse/FHIR-38327)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/signatures.html#step-by-step-examples)
+46. **Applied**: Remove words *transaction layer* ([FHIR-38328](https://jira.hl7.org/browse/FHIR-38328)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#technical-workflow)
+47. **Applied**: Word change *analogs* to *fields* ([FHIR-38330](https://jira.hl7.org/browse/FHIR-38330)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#data-elements-for-sending-attachments)
+48. **Applied**: Correct rendering of CCDA ([FHIR-38367](https://jira.hl7.org/browse/FHIR-38367)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#surgical-notes-as-ccda-documents)
+49. **Applied**: removed '*' from button bar ([FHIR-38368](https://jira.hl7.org/browse/FHIR-38368)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#example-of-a-signed-task-based-transaction)
+50. **Applied**: Change *follows* to *adheres to* ([FHIR-38576](https://jira.hl7.org/browse/FHIR-38576)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/index.html#about-this-guide)
+51. **Applied**: Revise section 'what Do Payers Do with Clinical Information?' ([FHIR-38578](https://jira.hl7.org/browse/FHIR-38578)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/background.html)
+52. **Applied**: Clarify when CDex is used instead of other guides ([FHIR-38585](https://jira.hl7.org/browse/FHIR-38585)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/background.html#where-does-cdex-fit-in-the-da-vinci-project)
+53. **Applied**: Remove the HIE paragraph ([FHIR-38588](https://jira.hl7.org/browse/FHIR-38588)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/background.html#actors-and-roles)
+54. **Applied**: Create failed signature example transaction ([FHIR-38596](https://jira.hl7.org/browse/FHIR-38596)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures)
+55. **Applied**: Clarify benefits of POU element ([FHIR-38598](https://jira.hl7.org/browse/FHIR-38598)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/#)
+56. **Applied**: change SHOULD to SHALL ([FHIR-38599](https://jira.hl7.org/browse/FHIR-38599)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#task-reason)
+57. **Applied**: Correct Preconditions and Assumptions ([FHIR-38600](https://jira.hl7.org/browse/FHIR-38600)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#scenario-2)
+58. **Applied**: Correct Preconditions and Assumptions ([FHIR-38601](https://jira.hl7.org/browse/FHIR-38601)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#scenario-2)
+59. **Applied**: Update polling frequency guidance([FHIR-38602](https://jira.hl7.org/browse/FHIR-38602)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#polling)
+60. **Applied**: Remove trading partner agreement statement ([FHIR-38603](https://jira.hl7.org/browse/FHIR-38603)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/solicited-unsolicited-attachments.html#unsolicited-attachments)
+61. **Applied**: Clarify association comment and assign FMM levels to guide  ([FHIR-38605](https://jira.hl7.org/browse/FHIR-38605)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/background.html#steps-2)
+62. **Applied**: Clarify Profile relationship to X12  ([FHIR-38612](https://jira.hl7.org/browse/FHIR-38612)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#cdex-attachment-request-profile)
+63. **Applied**: Change $submit-attachment's Attachment input parameter to min=1. ([FHIR-38632](https://jira.hl7.org/browse/FHIR-38632)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html)
+64. **Applied**: Change Tracking-id.system to Must Support; and $submit-attachment TrackingId to type Identifier. ([FHIR-39337](https://jira.hl7.org/browse/FHIR-39337)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html)
+65. **Applied**: Update NPI codesystem  ([FHIR-39626](https://jira.hl7.org/browse/FHIR-39626)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-identifier-types.html)
 
 ### Version = 2.0.0-ballot
 - Publication Date: 2022-08-01
@@ -171,14 +172,14 @@ This STU1.1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation
 
 #### What’s new in Version 1.1.0 of CDex:
 
-- <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments] section  documenting how to exchange attachments for claims or prior authorization.
-    - A [Solicited and Unsolicited Attachments] page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
-    - A [Sending Attachments] page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - A [Requesting Attachments] page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
-    - A [Using CDex Attachments with DaVinci PAS] page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
--  [Signatures] page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
-- A [Change Log] page to document the changes across the versions of CDex
-- More [examples](artifacts.html#6) and example scenarios
+- <span class="bg-warning">This content is DRAFT and is open for review.</span> An [Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/attachments.html) section  documenting how to exchange attachments for claims or prior authorization.
+    - A [Solicited and Unsolicited Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/solicited-unsolicited-attachments.html) page documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions that can be used for each.
+    - A [Sending Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/sending-attachments.html) page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
+    - A [Requesting Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/requesting-attachments.html) page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
+    - A [Using CDex Attachments with DaVinci PAS](https://hl7.org/fhir/us/davinci-cdex/STU1.1/requesting-attachments.html) page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
+-  [Signatures](https://hl7.org/fhir/us/davinci-cdex/STU1.1/signatures.html) page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
+- A [Change Log](https://hl7.org/fhir/us/davinci-cdex/STU1.1/changes.html) page to document the changes across the versions of CDex
+- More [examples](https://hl7.org/fhir/us/davinci-cdex/STU1.1/artifacts.html#6) and example scenarios
   
 #### Changes:
 

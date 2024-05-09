@@ -242,35 +242,7 @@
   <li>
     <a href="downloads.html">Downloads</a>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Change Log
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="changes.html">Change Log</a>
-      </li>
-      <li>
-        <a href="changes.html#version--200">Version = 2.0.0</a>
-      </li>
-      <li>
-        <a href="changes.html#version--200-ballot">Version = 2.0.0-ballot</a>
-      </li>
-      <li>
-        <a href="changes.html#version--110">Version = 1.1.0</a>
-      </li>
-      <li>
-        <a href="changes.html#version--110-ballot">Version = 1.1.0-ballot</a>
-      </li>
-      <li>
-        <a href="changes.html#version--100">Version = 1.0.0</a>
-      </li>
-      <li>
-        <a href="changes.html#version--020">Version = 0.2.0</a>
-      </li>
-      <li>
-        <a href="changes.html#version--010">Version = 0.1.0</a>
-      </li>
-    </ul>
+  <li>
+    <a href="changes.html">Change Log</a>
   </li>
 </ul>

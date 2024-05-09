@@ -119,6 +119,7 @@ differential:
 
     - id: 'Task.meta.tag.system'
       path: 'Task.meta.tag.system'
+      min: 1
 
     - id: 'Task.meta.tag.code'
       path: 'Task.meta.tag.code'

@@ -137,11 +137,6 @@
             "definition": "Date of service or starting date of the service for the claim or prior authorization."
         },
         {
-            "code": "attachment-request-code",
-            "display": "Coded Attachment Request",
-            "definition": "A Task by a Payer requesting attachments for a Provider claim or prior-authorization using LOINC attachment codes."
-        },
-        {
             "code": "data-request-code",
             "display": "Data Request Code",
             "definition": "A Task requesting data using a code."
@@ -155,11 +150,6 @@
             "code": "data-request-questionnaire",
             "display": "Data Request Questionnaire",
             "definition": "A Task requesting data using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html))."
-        },
-        {
-            "code": "attachment-request-questionnaire",
-            "display": "Attachment Request Questionnaire",
-            "definition": "A Task by a Payer requesting attachments or additional data for a Provider claim or prior-authorization using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html))."
         }
     ]
 }

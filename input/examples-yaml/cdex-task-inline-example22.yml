@@ -2,7 +2,7 @@ authoredOn: '2022-06-17T16:16:06Z'
 code:
   coding:
   - code: attachment-request-questionnaire
-    system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+    system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
   text: Attachment Request Questionnaire
 contained:
 - birthDate: '1987-02-20'

@@ -68,7 +68,7 @@ Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/claim-use|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
-
+Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.0.1
 
 # ===  === this CodeSystems is intended to be temporary and based on user experience and testing will migrate these codes to HTO or another standard code system  === ===
 

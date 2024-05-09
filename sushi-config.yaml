@@ -112,7 +112,6 @@ groups:
     name: Attachments Terminology
     description: ValueSets Associated with CDex Attachments Transactions
     resources:
-      - ValueSet/cdex-attachment-task-code
       - ValueSet/cdex-claim-use
   AttachmentsExamples:
     name: Attachments Examples 

@@ -337,13 +337,6 @@ definition:
     name: Submit Attachment Operation
     groupingId: AttachmentsOperations
   - reference:
-      reference: ValueSet/cdex-attachment-task-code
-    description: Codes used to identify the type of attachment request and control
-      the payer system's behavior.
-    exampleBoolean: false
-    name: CDex Attachment Task Code Value Set
-    groupingId: AttachmentsTerminology
-  - reference:
       reference: ValueSet/cdex-claim-use
     description: The purpose of a Claim resource and the reason for attachments. It
       includes the codes "preauthorization" and "claim".

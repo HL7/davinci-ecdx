@@ -85,7 +85,7 @@
   "code": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+        "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
         "code": "attachment-request-questionnaire"
       }
     ],

@@ -4,7 +4,7 @@
     "coding": [
       {
         "code": "attachment-request-questionnaire",
-        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp"
+        "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes"
       }
     ],
     "text": "Attachment Request Questionnaire"

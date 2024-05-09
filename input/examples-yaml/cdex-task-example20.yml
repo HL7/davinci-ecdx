@@ -66,7 +66,7 @@ status: requested
 intent: order
 code:
   coding:
-  - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+  - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
     code: attachment-request-code
   text: Coded Attachment Request
 for:
