@@ -72,7 +72,7 @@ input:
 - type:
     coding:
     - code: payer-url
-      system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
   valueUrl: http://example.org/cdex/payer/$submit-attachment
 - type:
     coding:

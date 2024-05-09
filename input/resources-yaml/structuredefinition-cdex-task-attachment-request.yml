@@ -563,7 +563,7 @@ differential:
       patternCodeableConcept:
         coding:
           - system: 'http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes'
-            code: PayerUrl
+            code: payer-url
       mustSupport: true
 
     - id: 'Task.input:PayerUrl.value[x]'

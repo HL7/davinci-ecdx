@@ -124,7 +124,7 @@ input:
         type:
             coding:
                 - 
-                    system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
+                    system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
                     code: payer-url
         valueUrl: 'http://example.org/cdex/payer/$submit-attachment'
     - 

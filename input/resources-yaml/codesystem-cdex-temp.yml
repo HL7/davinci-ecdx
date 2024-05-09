@@ -106,10 +106,10 @@ concept:
   definition: Flag to indicate whether the requested data can be submitted in multiple
     transactions.  If true the data can be submitted in separate transactions.  if
     false *all* the data should be submitted in a single transaction.
-- code: payer-url
-  display: Payer URL
-  definition: $submit-attachment operation endpoint where the requested data can be
-    submitted
+# - code: payer-url
+#   display: Payer URL
+#   definition: $submit-attachment operation endpoint where the requested data can be
+#     submitted
 - code: service-date
   display: Service Date
   definition: Date of service or starting date of the service for the claim or prior

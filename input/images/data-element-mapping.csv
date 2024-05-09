@@ -16,9 +16,3 @@
 15,Date of Birth,-,Loop: 2010C Segment: DMG02 Notes: DMG01 = date format code,-,-,Patient.birthDate,Patient demographic information for patient matching,Patient demographic information for patient matching,ClaimResponse.patient: Patient.birthDate,"ClaimResponse = Bundle.entry[0].resource, Patient = Bundle.entry[n].resource referenced by ClaimResponse.patient"
 16,Questionnaire,,,,,“questionnaire” Task.input,,,,
 17,QuestionnaireResponse,,,,Attachment.Content,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
