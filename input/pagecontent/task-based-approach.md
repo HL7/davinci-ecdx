@@ -182,11 +182,11 @@ The [CDex Task Data Request Profile] supports requests for more detailed data us
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then fetches the Questionnaire (and any CQL rules defined within it) and proceeds to complete the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** After completing the QuestionnaireResponse, DTR POSTs it directly to the Data Source's FHIR Server, updates Task.output to reference the QuestionnaireResponse it created, and updates Task.status to "completed".
+**Step 4:** <span class="bg-success" markdown="1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->
 
-**Step 5:** The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.
+**Step 5:** <span class="bg-success" markdown="1">The Data Source's updates the Task to "completed" when the QuestionnaireResponse is completed. The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.</span><!-- new-content -->
 
-**Step 6:** The Data Consumer retrieves the QuestionnaireResponse referenced by Task.output.
+**Step 6:** The Data Consumer retrieves the QuestionnaireResponse referenced by `Task.output`.
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
@@ -207,7 +207,7 @@ Preconditions and Assumptions:
 5. The Payer POSTS a Task to the Provider endpoint requesting the Provider to complete the referenced Questionnaire.
 6. The Provider uses a  DTR SMART App or EHR native application to complete the Questionnaire.
 7. {{ site.data.base-example-list[6] }}
-8. The Payer fetches the QuestionnaireResponse referenced by Task.output.
+8. The Payer fetches the QuestionnaireResponse referenced by `Task.output`.
 
 {% include examplebutton_default.html example="task-scenario-10" b_title = 'Click Here To See Example Task Based Transaction Using Questionnaire' %}
 

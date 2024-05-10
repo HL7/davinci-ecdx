@@ -1,3 +1,4 @@
+#text for https://sequencediagram.org/
 ```sequence
 title Requesting Attachments Using A FHIR Questionnaire
 participant Payer
@@ -21,6 +22,11 @@ autonumber off
 Payer --> DTR: Return Questionnaire
 autonumber 
 DTR -> DTR: Extracts answers and creates\nFHIR QuestionnaireResponse
+opt Create in-progress QuestionnaireResponse
+autonumber 
+DTR -> Provider: Create in-progress QuestionnaireResponse
+DTR -> Provider: Update Task with link to\nQuestionnaireResponse
+end
 loop
 DTR -> Provider:Fetch Data to Complete\n QuestionnaireResponse
 autonumber off
@@ -34,7 +40,10 @@ autonumber off
 Practitioner-->DTR:
 end
 autonumber 
-DTR -> Provider: POST completed QuestionnaireResponse
-DTR -> Provider: Update Task with link to\nQuestionnaireResponse\nand "completed" status
+DTR -> Provider: Create or Update completed QuestionnaireResponse
+opt Create completed QuestionnaireResponse
+DTR -> Provider: Update Task with link to\nQuestionnaireResponse
+end
 Provider->Payer: POST $submit-attachment with\nQuestionnaireResponse in payload
+Provider -> Provider: Updates Task to "completed"
 ```

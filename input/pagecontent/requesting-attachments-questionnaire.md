@@ -20,9 +20,12 @@ For a detailed description of all the mandatory, [*must support*], and optional 
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then fetches the Questionnaire (and any CQL rules defined within it) and proceeds to complete the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** After completing the QuestionnaireResponse, DTR POSTs it directly to the Provider's FHIR Server, updates Task.output to reference the QuestionnaireResponse it created, and updates Task.status to "completed".
+**Step 4:** <span class="bg-success" markdown="1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->.
 
-**Step 5:** The Provider "pushes" the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
+**Step 5:**  <span class="bg-success" markdown="1">When the QuestionnaireResponse is completed, the Provider "pushes"</span><!-- new-content --> the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
+
+<span class="bg-success" markdown="1">**Step 6:** The Provider updates the Task to "completed" when complete - e.g., when the data has been submitted or the information gathered.</span><!-- new-content -->
+
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 

@@ -1,3 +1,4 @@
+#text for https://sequencediagram.org/
 ```sequence
 title Requesting Data Using A FHIR Questionnaire
 participant Data Consumer
@@ -22,6 +23,11 @@ autonumber off
 Data Consumer --> DTR: Return Questionnaire
 autonumber 
 DTR -> DTR: Extracts answers\ncreates FHIR QuestionnaireResponse
+opt Create in-progress QuestionnaireResponse
+autonumber 
+DTR -> Data Source: Create QuestionnaireResponse
+DTR -> Data Source: Update Task with link to\nQuestionnaireResponse
+end
 loop
 DTR -> Data Source:Fetch Data to Complete\n QuestionnaireResponse
 autonumber off
@@ -35,8 +41,11 @@ autonumber off
 Practitioner-->DTR:
 end
 autonumber 
-DTR -> Data Source: POST completed QuestionnaireResponse
-DTR -> Data Source: Update Task with link to\nQuestionnaireResponse\nand "completed" status
+DTR -> Data Source: Create or Update completed QuestionnaireResponse
+opt Create completed QuestionnaireResponse
+DTR -> Data Source: Update Task with link to\nQuestionnaireResponse
+end
+Data Source -> Data Source: Updates Task to "completed"
 loop Task completed
 Data Consumer->Data Source: Polling for Task updates
 break
@@ -48,5 +57,4 @@ autonumber
 Data Consumer->Data Consumer: Discover \nQuestionnaireResponse \nFHIR ID in Task
 Data Consumer->Data Source: GET QuestionnaireResponse
 autonumber off
-Data Source-->Data Consumer: Return QuestionnaireResponse
 ```
