@@ -35,6 +35,8 @@
 <artifact id="Task/cdex-task-inline-example22" key="Task-cdex-task-inline-example22" name="CDex Inline Task Example 22"/>
 <artifact id="Task/cdex-task-inline-example26" key="Task-cdex-task-inline-example26" name="CDex Inline Task Example 26"/>
 <artifact id="Task/cdex-task-inline-example4" key="Task-cdex-task-inline-example4" name="CDex Inline Task Example 4"/>
+<artifact id="ValueSet/cdex-loinc-attachment-codes" key="ValueSet-cdex-loinc-attachment-codes" name="CDex LOINC Attachment Codes Value Set"/>
+<artifact id="ValueSet/cdex-pwk01-attachment-report-type-code" key="ValueSet-cdex-pwk01-attachment-report-type-code" name="CDex PWK01 Attachment Report Type Code Value Set"/>
 <artifact id="Parameters/cdex-parameters-example1" key="Parameters-cdex-parameters-example1" name="CDex Parameters Example 1"/>
 <artifact id="Parameters/cdex-parameters-example2" key="Parameters-cdex-parameters-example2" name="CDex Parameters Example 2"/>
 <artifact id="Parameters/cdex-parameters-example3" key="Parameters-cdex-parameters-example3" name="CDex Parameters Example 3"/>

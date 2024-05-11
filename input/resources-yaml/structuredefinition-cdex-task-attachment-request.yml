@@ -442,9 +442,38 @@ differential:
       # min: 1
       # max: '*'
       binding:
+
+  # ====== New R5 additional Binding Element Here ====
+        extension:
+        - url: http://hl7.org/fhir/tools/StructureDefinition/additional-binding
+          extension:
+          - url: purpose
+            valueCode: extensible
+          - url: valueSet
+            valueCanonical: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code
+          - url: documentation
+            valueMarkdown: In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions.
+          - url: usage
+            valueUsageContext:
+                code:
+                  system: 'http://terminology.hl7.org/ValueSet/usage-context-type'
+                  code: workflow
+                valueCodeableConcept:
+                  coding:
+                    - system: http://hl7.org/fhir/claim-use
+                      code: preauthorization
+                      display: Preauthorization
+                  text: A payer request for additional information from the provider to support a prior authorization request
+          - url: any
+            valueBoolean: true
+
+
+  # ====== New R5 additional Binding Element Here ====
+
+
         strength: extensible
-        # valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment' 
-        valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes' 
+        # valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
       condition:
         - cdex-4
         - cdex-6

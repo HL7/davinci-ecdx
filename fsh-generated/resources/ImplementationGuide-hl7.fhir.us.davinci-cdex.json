@@ -301,6 +301,24 @@
       },
       {
         "reference": {
+          "reference": "ValueSet/cdex-loinc-attachment-codes"
+        },
+        "description": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at <https://loinc.org/attachments/>.",
+        "exampleBoolean": false,
+        "name": "CDex LOINC Attachment Codes Value Set",
+        "groupingId": "AttachmentsTerminology"
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cdex-pwk01-attachment-report-type-code"
+        },
+        "description": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12 IP restrictions.",
+        "exampleBoolean": false,
+        "name": "CDex PWK01 Attachment Report Type Code Value Set",
+        "groupingId": "AttachmentsTerminology"
+      },
+      {
+        "reference": {
           "reference": "Task/cdex-task-example19"
         },
         "description": "**Claim Attachment Request Example:**   Claim Attachment Request sent by payer to a provider requesting a signed Progress note (H&P) note",

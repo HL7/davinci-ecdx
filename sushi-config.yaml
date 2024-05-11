@@ -113,6 +113,8 @@ groups:
     description: ValueSets Associated with CDex Attachments Transactions
     resources:
       - ValueSet/cdex-claim-use
+      - ValueSet/cdex-loinc-attachment-codes
+      - ValueSet/cdex-pwk01-attachment-report-type-code
   AttachmentsExamples:
     name: Attachments Examples 
     description: Examples Associated with CDex Attachments Transactions

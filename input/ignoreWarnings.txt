@@ -94,3 +94,6 @@ None of the codings provided are in the value set 'Document Type Value Set' (htt
 
 None of the codings provided are in the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|6.1.0), and a coding from this value set is required) (codes = http://loinc.org#34117-2)
 
+# === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
+
+Unable to provide support for code system https://codesystem.x12.org/005010/755

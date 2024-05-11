@@ -409,8 +409,50 @@
                 "definition": "A code indicating the type of data/document to be returned",
                 "comment": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.",
                 "binding": {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding",
+                            "extension": [
+                                {
+                                    "url": "purpose",
+                                    "valueCode": "extensible"
+                                },
+                                {
+                                    "url": "valueSet",
+                                    "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code"
+                                },
+                                {
+                                    "url": "documentation",
+                                    "valueMarkdown": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions."
+                                },
+                                {
+                                    "url": "usage",
+                                    "valueUsageContext": {
+                                        "code": {
+                                            "system": "http://terminology.hl7.org/ValueSet/usage-context-type",
+                                            "code": "workflow"
+                                        },
+                                        "valueCodeableConcept": {
+                                            "coding": [
+                                                {
+                                                    "system": "http://hl7.org/fhir/claim-use",
+                                                    "code": "preauthorization",
+                                                    "display": "Preauthorization"
+                                                }
+                                            ],
+                                            "text": "A payer request for additional information from the provider to support a prior authorization request"
+                                        }
+                                    }
+                                },
+                                {
+                                    "url": "any",
+                                    "valueBoolean": true
+                                }
+                            ]
+                        }
+                    ],
                     "strength": "extensible",
-                    "valueSet": "http://loinc.org/vs/valid-hl7-attachment-requests"
+                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes"
                 },
                 "condition": [
                     "cdex-4",
