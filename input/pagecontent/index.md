@@ -41,7 +41,7 @@ Provider
 : "Provider" refers to the provider system and can be either the Data Source or the Data Consumer.
 
 Attachments
-: This guide uses the terms "attachments", "additional information", and "attachments and additional information" to mean additional information needed for claims and prior authorization. Attachments are limited to the documents defined by the [LOINC Document Ontology] in the context of requesting and sending attachments using attachment codes. When requesting and sending attachments using [Questionnaire],  attachments mean any additional information. 
+: This guide uses the terms "attachments", "additional information", and "attachments and additional information" to mean additional information needed for claims and prior authorization. Attachments are limited to the documents defined by the [LOINC Document Ontology] <span class="bg-success" markdown="1">and [X12]</span><!-- new-content --> in the context of requesting and sending attachments using attachment codes. When requesting and sending attachments using [Questionnaire],  attachments mean any additional information. 
 
 This guide is divided into several pages listed at the top of each page in the menu bar.
 

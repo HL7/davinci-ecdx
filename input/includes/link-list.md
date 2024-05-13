@@ -75,6 +75,7 @@
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
 [Signatures for Task Based Requests]: task-based-approach.html#signatures
+[X12]: https://x12.org/
 [X12 transactions]: https://x12.org/
 [X12 Transaction Sets]: https://x12.org/products/transaction-sets
 [HEDIS]: https://en.wikipedia.org/wiki/Healthcare_Effectiveness_Data_and_Information_Set

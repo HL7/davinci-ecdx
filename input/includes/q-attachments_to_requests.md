@@ -9,7 +9,7 @@
   -->
 
 | Data Element | CDex $submit-attachment Parameter | CDex Request Attachment Task Profile Element |
-|---|----|-----|
+|-------|----|-----|
 | Tracking ID | TrackingId | Task.identifier |
 | Use | AttachTo | Task.reasonCode |
 | Payer ID | PayerId | Task.requester.identifier |
@@ -17,7 +17,7 @@
 | Organization ID | OrganizationId | PractitionerRole.practitioner.identifier |
 | Provider ID | ProviderId | PractitionerRole.organization.identifier |
 | Line Item(s) | Attachment.LineItem | “attachmentsNeeded” Task.input.extension |
-| LOINC Attachment Code | Attachment.Code | “attachmentsNeeded” Task.input |
+| <span class="bg-success" markdown="1">Attachment Code<!-- new-content --> | Attachment.Code | “attachmentsNeeded” Task.input |
 | Date of Service | ServiceDate | “service-date” Task.input |
 | Member ID | MemberId | Patient.identifier |
 | Questionnaire | - | “questionnaireNeeded” Task.input |

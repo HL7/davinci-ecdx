@@ -96,4 +96,4 @@ None of the codings provided are in the value set 'US Core DocumentReference Typ
 
 # === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
 
-Unable to provide support for code system https://codesystem.x12.org/005010/755
+WARNING: ValueSet.where(id = 'cdex-pwk01-attachment-report-type-code'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/005010/755

@@ -34,7 +34,7 @@ The CDex Task Attachment Request Profile defines a specific `Task.code` that com
 
 Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using a FHIR Questionnaire to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
-Requesting attachments using LOINC attachment codes defined by the LOINC Document Ontology is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
+Requesting attachments using attachment codes defined by the LOINC Document Ontology <span class="bg-success" markdown="1">or, for prior authorization, [X12] PWK01 Report Type Codes</span><!-- new-content --> is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 15" %}
 
@@ -57,7 +57,7 @@ In this scenario, a Provider creates a claim and sends it to the Payer. The Paye
 
  In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following information to complete the adjudication of the claim:
 
-- LOINC attachment code(s) for the requested documents
+- <span class="bg-success" markdown="1">The attachment code(s) for the requested documents.  These codes are [LOINC attachment codes] or, for prior authorization, [X12] PWK01 Report Type Codes</span><!-- new-content --> 
 - What line numbers on the claim the requested attachment(s) are for
 
 After receiving the attachment request, the Provider collects the documentation and returns them using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters: 
@@ -129,7 +129,7 @@ These required Task infrastructure elements:
 
 convey what the task is about, its status, and the intent of the request.  The Task.status value of "request" is typical when POSTing the Task-based attachment request. Note that the status will change as the Task moves through [different states](http://hl7.org/fhir/task.html#statemachine) in the workflow. Task.intent is fixed to "order".
 
-The Task.code communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is “attachment-request-code”, as it is in this scenario, the provider system returns attachment(s) identified by the LOINC attachment code(s) in the “code” input parameter. If the code is “attachment-request-questionnaire”, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the “questionnaire” input parameter. When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in “payer-url” input parameter.
+The Task.code communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is “attachment-request-code”, as it is in this scenario, the provider system returns attachment(s) identified by the attachment code(s) the “code” input parameter,  If the code is “attachment-request-questionnaire”, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the “questionnaire” input parameter. When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in “payer-url” input parameter.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=52 count=9 linenumber=true rel=true %}
@@ -180,7 +180,7 @@ The Payer communicates the due date for submitting the attachment in the `Task.r
 
 ##### Communicating What Attachments are Needed
 
-The Payer supplies the [LOINC attachment codes] to communicate what attachments are needed. They may also provide the *line item numbers* to match the attachment to a line item in the claim or prior authorization. This information is represented in the `Task.input` "code" parameter. For example, the code snippet below shows a single request for line item 1 using a LOINC attachment code. The Provider returns back the codes and line items to the Payer when submitting the attachments.
+The Payer supplies the attachment codes to communicate what attachments are needed. They may also provide the *line item numbers* to match the attachment to a line item in the claim or prior authorization. This information is represented in the `Task.input` "code" parameter. For example, the code snippet below shows a single request for line item 1 using a LOINC attachment code <span class="bg-success" markdown="1">(for prior authorization, [X12] PWK01 Report Type Codes may also be used)</span><!-- new-content -->. The Provider returns back the codes and line items to the Payer when submitting the attachments.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=94 count=20 linenumber=true rel=true %}
@@ -297,12 +297,12 @@ The service date parameter is taken from the “service-date” Task.input eleme
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
-The Requested Attachments, the corresponding coded requests, and line item numbers are communicated as Attachment parameter parts. The attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The [LOINC attachment codes] represented in the Task.input "code" slice, define the document(s) that are to be returned via submit_attachment. Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
+The Requested Attachments, the corresponding coded requests, and line item numbers are communicated as Attachment parameter parts. The attachment is communicated as a FHIR resource in the Attachment.content parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The Attachment code(s) in the Task.input "code" slice, define the document(s) that are to be returned via submit_attachment.  Line item numbers associated with a requested item are communicated in the Attachment.LineItem parameter part.
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |line item(s)|“code”Task.input.extension|Attachment.LineItem|
-|LOINC Attachment Code|“code”Task.input|Attachment.Code|
+|Attachment Code|“code”Task.input|Attachment.Code|
 |Attachments|-|Attachment.content
 {:.grid}
 

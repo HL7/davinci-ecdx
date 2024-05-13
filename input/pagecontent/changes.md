@@ -19,7 +19,12 @@ These changes are the result of trackers listed below.
 3. **Applied:** (Enhancement) Add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](StructureDefinition-cdex-parameters-submit-attachment.html)
 4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 5.  **Triaged:** (Clarification) Clarify that PAS is a special case where the PROVIDER create the Task [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](#.html)
-6.  **Pre-Applied:** (Enhancement)  include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) [See Changes Here](#.html)
+6.  **Pre-Applied:** (Enhancement) Include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) See Changes:
+   - [CDex LOINC Attachment Codes Value Set](ValueSet-cdex-loinc-attachment-codes.html)
+   - [CDex PWK01 Attachment Report Type Code Value Set](ValueSet-cdex-pwk01-attachment-report-type-code.html)
+   - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
+   - [CDex Parameters Submit Attachment Profile](StructureDefinition-cdex-parameters-submit-attachment.html)
+   - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html)
 7.  **Pre-Applied:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/requesting-attachments-code.html#data-elements-for-requesting-attachments)
 8.  **Pre-Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
 9.  **Pre-Applied:** (Clarification) Change Task.input "payer-url" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
@@ -33,7 +38,7 @@ These changes are the result of trackers listed below.
    - [Data Source Client CapabilityStatement](CapabilityStatement-data-source-client.html)
    - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
 15. **Pre-Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
-16. **Triaged:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
+16. **Pre-Applied:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

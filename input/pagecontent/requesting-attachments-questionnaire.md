@@ -1,6 +1,6 @@
 
 
-This page documents an *optional* solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR [Questionnaire].\* The Payer uses the Task-based [CDex Task Attachment Request Profile] to request a Provider to complete a questionnaire. The Provider launches [Da Vinci DTR] to complete the questionnaire and, as documented in the [Sending Attachments] page, submits the completed questionnaire to the Payer using the [`$submit-attachment`] operation. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using LOINC attachment codes, it supports using Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages [Da Vinci DTR] functionality to fill out the Questionnaire reducing the time involved in reviewing documentation requirements.
+This page documents an *optional* solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR [Questionnaire].\* The Payer uses the Task-based [CDex Task Attachment Request Profile] to request a Provider to complete a questionnaire. The Provider launches [Da Vinci DTR] to complete the questionnaire and, as documented in the [Sending Attachments] page, submits the completed questionnaire to the Payer using the [`$submit-attachment`] operation. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using attachment codes, it supports using Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages [Da Vinci DTR] functionality to fill out the Questionnaire reducing the time involved in reviewing documentation requirements.
 
 \* {% include see-conf.md %}
 
@@ -68,7 +68,7 @@ Preconditions and Assumptions:
 
 ### Data Elements for Requesting Attachments
 
-The [Requesting Attachments Using Attachment Codes] page documents the data elements needed to associate an attachment to a claim or prior authorization.  However, there is no "LOINC Attachment Code" Data element when using Questionnaires to collect attachments-related data.
+The [Requesting Attachments Using Attachment Codes] page documents the data elements needed to associate an attachment to a claim or prior authorization.  However, there is no "Attachment Code" Data element when using Questionnaires to collect attachments-related data.
 
 ### *Step-by-Step* Solicited Attachment Transaction
 
@@ -165,7 +165,7 @@ convey the task status, and the intent of the request.  The Task.status value of
 
 ##### Task *code* Element
 
-The Task.code communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is “attachment-request-code”, the provider system returns attachment(s) identified by the LOINC attachment code(s) in the “code” input parameter. If the code is “attachment-request-questionnaire”, as it is in this scenario, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the “questionnaire” input parameter. When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in “payer-url” input parameter.
+The Task.code communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is “attachment-request-code”, the provider system returns attachment(s) identified by the attachment code(s) in the “code” input parameter. If the code is “attachment-request-questionnaire”, as it is in this scenario, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the “questionnaire” input parameter. When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in “payer-url” input parameter.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=67 count=7 linenumber=true rel=true %}

@@ -205,8 +205,8 @@ definition:
       \ prior authorizations. It constrains the Task resource to minimal necessary\
       \ data elements needed to request attachments and respond in a way that is compatible\
       \ with existing X12 277 RFAI and 278 response transactions to allow for association\
-      \ and requests for (typically PDF and CCDA) documents using LOINC as the standard.\
-      \ It also supports requests for more detailed missing data using Questionnaire,\
+      \ and requests for (typically PDF and CCDA) documents using LOINC and X12 standard\
+      \ codes. It also supports requests for more detailed missing data using Questionnaire,\
       \ CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.\n\nIt constrains\
       \ the following elements to be *mandatory* (min=1):\n\n- A [contained](http://hl7.org/fhir/R4/references.html)\
       \ Patient Resource defined by the [CDex Patient Demographics Profile](StructureDefinition-cdex-patient-demographics.html)\
@@ -225,9 +225,9 @@ definition:
       \  communicating that the Payer is requesting attachments for a claim or prior\
       \ authorization using a code or data request questionnaire.\n  - If the code\
       \ is \"attachment-request-code\", the provider system returns attachment(s)\
-      \ identified by the LOINC attachment code(s) in the \"attachmentsNeeded\" input\
-      \ parameter.\n  - If the code is \"attachment-request-questionnaire\", the provider\
-      \ system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
+      \ identified by the attachment code(s) in the \"attachmentsNeeded\" input parameter.\n\
+      \  - If the code is \"attachment-request-questionnaire\", the provider system\
+      \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
       \ to complete the Questionnaire referenced in the \"questionnaireNeeded\" input\
       \ parameter.\n  - When either code is present, the provider system uses the\
       \ $submit-attachment operation to return the information to the endpoint provided\
@@ -246,17 +246,18 @@ definition:
       \ for submitting the attachments\n- A Task.statusReason.text to communicate\
       \ the reason for the status (for example, if the Task is rejected or failed)\n\
       - A \"attachmentsNeeded\" Task.input element to communicate to the provider\
-      \ what attachments are needed using LOINC attachment codes.*\n- A \"attachmentsNeeded\"\
-      \ or \"questionnaireNeeded\" Task.input element extension representing a claim\
-      \ or prior authorization line item numbers associated with the attachment or\
-      \ questionnaire.\n- A \"signature\" Task.input element representing a flag to\
-      \ indicate whether the requested data requires a signature. For more information\
-      \ about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).\n\
-      - A \"service-date\" Task.input element representing the date of service or\
-      \ starting date of the service for the claim or prior authorization. It SHALL\
-      \ be present if the attachment is for a claim.\n\nIt defines the following elements\
-      \ to be *optional*:\n\n- A \"questionnaireNeeded\" Task.input element to communicate\
-      \ to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
+      \ what attachments are needed using LOINC or X12 attachment codes.*\n- A \"\
+      attachmentsNeeded\" or \"questionnaireNeeded\" Task.input element extension\
+      \ representing a claim or prior authorization line item numbers associated with\
+      \ the attachment or questionnaire.\n- A \"signature\" Task.input element representing\
+      \ a flag to indicate whether the requested data requires a signature. For more\
+      \ information about requiring and requesting signatures, refer to the [Signatures\
+      \ section](sending-attachments.html#signatures).\n- A \"service-date\" Task.input\
+      \ element representing the date of service or starting date of the service for\
+      \ the claim or prior authorization. It SHALL be present if the attachment is\
+      \ for a claim.\n\nIt defines the following elements to be *optional*:\n\n- A\
+      \ \"questionnaireNeeded\" Task.input element to communicate to the provider\
+      \ a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
       \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
       \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\
@@ -359,7 +360,7 @@ definition:
     description: In addition to using LOINC attachment codes, a payer may request
       for additional information from the provider to support a prior authorization
       request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01
-      codes will not be published in this guide due to X12 IP restrictions.
+      codes will not be published in due to X12 IP restrictions.
     exampleBoolean: false
     name: CDex PWK01 Attachment Report Type Code Value Set
     groupingId: AttachmentsTerminology
