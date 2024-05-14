@@ -15,6 +15,7 @@
     "name": "CDexPWK01AttachmentReportTypeCodeValueSet",
     "title": "CDex PWK01 Attachment Report Type Code Value Set",
     "status": "active",
+    "experimental": false,
     "date": "2024-05-10",
     "description": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in due to X12 IP restrictions.",
     "copyright": "All X12 work products are copyrighted. Any use of any X12 work product must be compliant with US Copyright laws and X12 Intellectual Property policies.\r\n\r\nPlease see [https://x12.org/products/licensing-program](https://x12.org/products/licensing-program)",

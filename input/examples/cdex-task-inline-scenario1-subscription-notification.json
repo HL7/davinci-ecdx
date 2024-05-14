@@ -13,12 +13,12 @@
           {
             "name": "subscription",
             "valueReference": {
-              "reference": "https://cdex.ri.argo.run/fhir/provider/Subscription/cdex-task-inline-scenario1-subscription-active"
+              "reference": "https://example.org/fhir/Subscription/cdex-task-inline-scenario1-subscription-active"
             }
           },
           {
             "name": "topic",
-            "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"
+            "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates"
           },
           {
             "name": "status",
@@ -52,6 +52,13 @@
             ]
           }
         ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://example.org/fhir/Subscription/admission/$status"
+      },
+      "response": {
+        "status": "200"
       }
     }
   ]

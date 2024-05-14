@@ -271,11 +271,13 @@ Data Consumers can add FHIR search-style filters to narrow the subscription topi
 
 The canonical URL for the topic of CDEX task updates is below. The Data Consumer **SHALL** use it to subscribe, and the Data Source **SHALL** support it.
 
+`http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates` 
+
 <div class="bg-info" markdown="1">
 \**Subscriptions need not be created by the Data Consumer. It's also possible that The Data Source could establish subscriptions automatically or out-of-band. However, these implementation details are out of scope for this guide.
 </div><!-- bg-info -->
 
-`http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex` 
+
 
 #### Example Task Based Transaction using Subscription
 

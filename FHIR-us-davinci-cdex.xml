@@ -106,6 +106,7 @@
 <artifact deprecated="true" id="Task/cdex-example1s-query-requested-withsig" key="Task-cdex-example1s-query-requested-withsig" name="Example of Task Request for Signed Data"/>
 <artifact id="CommunicationRequest/cdex-task-inline-communicationrequest-example1" key="CommunicationRequest-cdex-task-inline-communicationrequest-example1" name="Inline CDex Task Inline Communicationrequest Example 1"/>
 <artifact id="Subscription/cdex-task-inline-scenario1-subscription-active" key="Subscription-cdex-task-inline-scenario1-subscription-active" name="Inline Subscription Task Scenario1 Subscription Active"/>
+<artifact id="Bundle/cdex-task-inline-scenario1-subscription-notification" key="Bundle-cdex-task-inline-scenario1-subscription-notification" name="Inline Subscription Task Scenario1 Subscription Notification"/>
 <artifact id="Subscription/cdex-task-inline-scenario1-subscription-requested" key="Subscription-cdex-task-inline-scenario1-subscription-requested" name="Inline Subscription Task Scenario1 Subscription Requested"/>
 <artifact deprecated="true" id="Task/cdex-example1-query-completed" key="Task-cdex-example1-query-completed" name="Scenario 1 Completed Example"/>
 <artifact deprecated="true" id="Task/cdex-example1-free-text-completed" key="Task-cdex-example1-free-text-completed" name="Scenario 1 Completed Free Text Example"/>
@@ -121,7 +122,6 @@
 <artifact deprecated="true" id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
 <artifact deprecated="true" id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Submit Attachment Operation"/>
-<artifact id="Bundle/cdex-task-inline-scenario1-subscription-notification" key="Bundle-cdex-task-inline-scenario1-subscription-notification" name="cdex-task-inline-scenario1-subscription-notification"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

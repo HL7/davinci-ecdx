@@ -38,7 +38,12 @@ These changes are the result of trackers listed below.
    - [Data Source Client CapabilityStatement](CapabilityStatement-data-source-client.html)
    - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
 15. **Pre-Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
-16. **Pre-Applied:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) [See Changes Here](#.html)
+16. **Pre-Applied:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) See Changes:
+   - [Polling vs Subscriptions](task-based-approach.html#polling-vs-subscriptions)
+   - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
+   - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
+   - [Inline Subscription Task Scenario1 Subscription Notification](Bundle-cdex-task-inline-scenario1-subscription-notification.html)
+19. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

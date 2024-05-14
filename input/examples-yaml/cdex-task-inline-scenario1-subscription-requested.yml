@@ -2,7 +2,7 @@ resourceType: Subscription
 id: cdex-task-inline-scenario1-subscription-requested
 status: requested
 reason: R4 Example Topic-Based Subscription for CD Task based Queries
-criteria: 'http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex'
+criteria: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates'
 _criteria:
     extension:
         - 
