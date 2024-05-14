@@ -121,6 +121,7 @@
 <artifact deprecated="true" id="Task/cdex-example3-query-completed" key="Task-cdex-example3-query-completed" name="Scenario 4 Completed Task Example"/>
 <artifact deprecated="true" id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Submit Attachment Operation"/>
+<artifact id="Bundle/cdex-task-inline-scenario1-subscription-notification" key="Bundle-cdex-task-inline-scenario1-subscription-notification" name="cdex-task-inline-scenario1-subscription-notification"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

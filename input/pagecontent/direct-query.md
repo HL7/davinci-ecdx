@@ -1,6 +1,6 @@
 ### Introduction
 
-For Direct Query, the Data Consumer directly queries the Data Source for specific data using the standard FHIR RESTful search. The base FHIR specification and the Da Vinci HRex Implementation Guide document this interaction. Refer to the [US Core] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
+For Direct Query, the Data Consumer directly queries the Data Source for specific data using the standard FHIR RESTful search. The base FHIR specification and the Da Vinci HRex Implementation Guide document this interaction. Refer to the [US Core 3.1.1] or [US Core 6.1.0] Implementation guide for accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)].
 
 ### Benefits
 

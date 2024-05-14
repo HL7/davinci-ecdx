@@ -24,7 +24,9 @@
 [OperationOutcome]: {{site.data.fhir.path}}operationoutcome.html
 [US Core Provenance Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html
 [Da Vinci]: http://www.hl7.org/about/davinci/index.cfm?ref=common
-[US Core]: {{site.data.fhir.ver.uscore6}}/index.html
+[US Core 6.1.0]: {{site.data.fhir.ver.uscore6}}/index.html
+[US Core 3.1.1]: {{site.data.fhir.ver.uscore3}}/index.html
+
 [Example Scenarios]: example-scenarios.html
 [Exchanging Clinical Data]: exchanging-clinical-data.html
 [Direct Query]: direct-query.html
@@ -38,6 +40,8 @@
 [Payer/Provider Information Exchange]: http://www.hl7.org/Special/Committees/claims/index.cfm
 [Propose a Change]: https://jira.hl7.org/issues
 [ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi
+[ONC United States Core Data for Interoperability V1 (USCDI V1)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi#uscdi-v1
+[ONC United States Core Data for Interoperability V3 (USCDI V3)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi#uscdi-v3
 [FHIR Asynchronous Request Patterns]: {{site.data.fhir.path}}async.html
 [Task]: {{site.data.fhir.path}}task.html
 [CommunicationRequest]: {{site.data.fhir.path}}communicationrequest.html
@@ -56,11 +60,11 @@
 [Security and Privacy]: security.html
 [Approaches to Exchanging FHIR Data]: {{site.data.fhir.ver.hrex}}/exchanging.html
 [Requesting Exchange using Task]: {{site.data.fhir.ver.hrex}}/exchanging-request.html#task
-[Exchanging with polling]: {{site.data.fhir.ver.hrex}}/exchanging-polling.html
-[Exchanging with FHIR Subscription]: {{site.data.fhir.ver.hrex}}/exchanging-subscription.html
+[Exchanging with polling]: https://hl7.fhir.org/exchanging-polling.html
+[Exchanging with FHIR Subscription]: https://hl7.fhir.org/exchanging-subscription.html
 [Background on FHIR]: {{site.data.fhir.ver.hrex}}/fhir.html
 [Conformance Expectations]: {{site.data.fhir.ver.hrex}}/conformance.html
-[Subscription Capabilities]: {{site.data.fhir.ver.hrex}}/exchanging.html#subscription-capability
+[Subscription Capabilities]: https://hl7.fhir.org/exchanging.html
 [Task state machine]: {{site.data.fhir.path}}task.html#statemachine
 [Bulk Data Access IG]: http://hl7.org/fhir/uv/bulkdata/index.html
 [Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
@@ -128,6 +132,8 @@
 [CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
 [CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
 [Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/index.html
+[Backported R5 FilterBy Criteria]: https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-filter-criteria.html
+[Conformance in FHIR R4]: https://hl7.org/fhir/uv/subscriptions-backport/conformance.html#conformance-in-fhir-r4
 [validating profiles and resources]: {{site.data.fhir.path}}validation.html
 [ImplementationGuide]: {{site.data.fhir.path}}implementationguide.html
 [CDex ImplementationGuide Resource]: ImplementationGuide-hl7.fhir.us.davinci-cdex.html

@@ -309,7 +309,7 @@
                                 },
                                 {
                                     "url": "documentation",
-                                    "valueMarkdown": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions."
+                                    "valueMarkdown": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using  PWK01 Attachment Report Type Code  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions."
                                 },
                                 {
                                     "url": "usage",

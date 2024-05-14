@@ -1,0 +1,58 @@
+{
+  "resourceType": "Bundle",
+  "id": "cdex-task-inline-scenario1-subscription-notification",
+  "type": "history",
+  "timestamp": "2024-01-18T01:19:38.9929956+00:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:206a4372-a348-41d1-a82e-fc9ebe8825af",
+      "resource": {
+        "resourceType": "Parameters",
+        "id": "206a4372-a348-41d1-a82e-fc9ebe8825af",
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "https://cdex.ri.argo.run/fhir/provider/Subscription/cdex-task-inline-scenario1-subscription-active"
+            }
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex"
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "17"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "17"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2024-01-18T01:19:38.837885+00:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "https://cdex.ri.argo.run/fhir/provider/Task/cdex-task-example2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

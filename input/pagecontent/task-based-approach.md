@@ -237,7 +237,7 @@ In this scenario, Payer A Seeks Insured Person/Patient B’s glycated hemoglobin
 
 ### Polling vs Subscriptions
 
-Task-based exchanges can take one of two forms - *subscription* or *polling* as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] sections of the Da Vinci HRex Implementation Guide.  The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
+Task-based exchanges can take one of two forms—subscription or polling, as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] <span class="bg-success" markdown="1">sections of the FHIR R5 core specification (this content was previously part of the Da Vinci HRex Implementation Guide)</span><!-- new-content -->. The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
 
 #### Polling
 
@@ -245,31 +245,49 @@ Polling is a mechanism for conveying new data to a Data Consumer as (or shortly 
 
 Data consumers can poll for a single Task or across several Tasks.  The frequency needs to be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it needs to be infrequent enough that the data source's resources are not over-taxed by the repeated query.  Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and after that no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
 
+<div class="bg-success" markdown="1">
+
 #### Subscription
 
-Subscriptions allow a data source to notify interested data consumers when a specific event occurs. For example, in the Da Vinci CDex use case, the Data Consumer is the subscriber, and the Data Source is the publisher.  The Data Consumer subscribes to a Task queue and filters on the Task resource id.  The Data Source publishes notifications when there are changes to the Task instance.  Typically, the notification *does not* expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
+Subscription is a mechanism designed to allow clients to request notifications when an event occurs or data changes. It is an active notification system; a FHIR server actively sends notifications as changes occur. In the Da Vinci CDex use case, the Data Consumer subscribes to the Data Source's Server [base]/Subscription endpoint for notifications when any Task that they created is updated.
 
-<div markdown="1" class="bg-info">
+When using subscriptions in CDex, implementers SHALL use the R4 Subscriptions referenced in the [Subscription R5 Backport Implementation Guide] and follow its [Conformance in FHIR R4](https://hl7.org/fhir/uv/subscriptions-backport/conformance.html#conformance-in-fhir-r4) expectations. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex.
 
-- The publisher can not guarantee who has access to the nominated subscription endpoint.  By omitting the payload, the client is forced to authenticate before accessing the data, which mitigates privacy and security risks for the publisher.
+In addition to the conformance expectations defined in the R5 Backport Implementation Guide, CDex servers that support subscriptions:
 
-- Subscriptions need not be created independently for each Task - a Data Consumer could subscribe to all Tasks where they are the requester.  It's also possible that the publisher could establish subscriptions automatically or out-of-band.  However, these implementation details are out of scope for this guide.
+- **SHALL** support discovery of the CDex Subscription topic: 
+- **SHOULD** support rest-hook
+- **SHALL** support `id-only` payload type
+
+##### Paylaod Types
+
+There are three options available when specifying the contents of a notification: "empty", "id-only", and "full-resource". Because the Data Source can not guarantee who has access to the nominated subscription endpoint, the notification typically use "id-only" to return the Task resource id. By omitting the payload, the Data Consumer is forced to authenticate before accessing the data using a FHIR RESTful read or search which mitigates privacy and security risks for the Data Source.
+
+##### Subscription filters
+
+Data Consumers can add FHIR search-style filters to narrow the subscription topic stream. See the [Backported R5 FilterBy Criteria]for details.
+
+##### Canonical URL
+
+The canonical URL for the topic of CDEX task updates is below. The Data Consumer **SHALL** use it to subscribe, and the Data Source **SHALL** support it.
+
+<div class="bg-info" markdown="1">
+\**Subscriptions need not be created by the Data Consumer. It's also possible that The Data Source could establish subscriptions automatically or out-of-band. However, these implementation details are out of scope for this guide.
 </div><!-- bg-info -->
 
-This project recognizes the many shortcomings in the current FHIR approach to subscriptions and the significant changes to a [Topic-Based Subscriptions Framework] in FHIR R5 and the publication of the [Subscription R5 Backport Implementation Guide] for FHIR 4 and FHIR 4B.  Due to these changes in FHIR subscriptions, the discovery process for subscription support is out of scope for this guide version.  The Data Consumer may discover it out-of-band or simply through trial and error. The Da Vinci CDex project team plans to update this guide to support the updated subscription framework in a future version.
-{:.stu-note}
+`http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex` 
 
 #### Example Task Based Transaction using Subscription
 
 The following example repeats Scenario 1 above using Subscription instead of Polling. However, instead of the Payer polling the Task resource until the `Task.status` indicates it is completed, rejected, or failed:
 
-1. The Payer *subscribes* to the Task resource to get notifications when it is updated. `Task.status` indicates it is completed or rejected.
-1. The Payer fetches the Task resource when notified of an update.
-1. When the `Task.status` indicates it is completed, the Payer fetches Patient B's active Conditions referenced by `Task.output` as *external* resources. (This step is skipped if the status is "rejected".)
-1. Subscription is canceled.
+1. The Payer *subscribes* to the Task resource to get notifications when `Task.status` is updated to "completed" or "rejected".
+2. The Payer fetches the Task resource when notified of an update.
+3. When the `Task.status` indicates it is "completed", the Payer fetches Patient B's active Conditions referenced by `Task.output` as *external* resources. (This step is skipped if the status is "rejected".)
 
 {% include examplebutton_default.html example="task-scenario-4" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
+</div><!-- new-content -->
 ---
 
 ### Formal Authorization

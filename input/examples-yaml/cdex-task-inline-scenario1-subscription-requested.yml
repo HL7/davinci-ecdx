@@ -1,16 +1,27 @@
-channel:
-  endpoint: http://example.org/FHIR/Payer/cdex-task-watch
-  payload: application/fhir+json
-  type: rest-hook
-criteria: Task?_id=cdex-example1-query-completed
-end: '2021-11-10T00:00:00Z'
+resourceType: Subscription
 id: cdex-task-inline-scenario1-subscription-requested
+status: requested
+reason: R4 Example Topic-Based Subscription for CD Task based Queries
+criteria: 'http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex'
+_criteria:
+    extension:
+        - 
+            url: 'http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria'
+            valueString: Task?status=completed,rejected
+channel:
+    type: rest-hook
+    endpoint: http://example.org/FHIR/Payer/cdex-task-watch
+    payload: application/fhir+json
+    _payload:
+        extension:
+            - 
+                url: 'http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content'
+                valueCode: id-only
+    header:
+        - 'X-API-Key: PMAK-659f4269552c3d3718de46b4-e4c47845a85497830d5bf434dc8fbcf030'
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Inline Subscription Task Scenario1 Subscription Requested
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: Subscription example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)
-reason: Monitor submitted Task
-resourceType: Subscription
-status: requested
