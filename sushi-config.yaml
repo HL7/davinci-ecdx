@@ -76,7 +76,9 @@ dependencies:
     version: 3.0.0
     id: sdc
   hl7.fhir.uv.extensions: 5.1.0-cibuild #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
-
+  hl7.fhir.uv.subscriptions-backport.r4:
+    version: 1.1.x
+    uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport 
 
 # Groups can control certain aspects of the IG generation.  The IG
 # documentation recommends that authors use the default groups that
@@ -143,6 +145,12 @@ groups:
     resources:
       - ValueSet/cdex-work-queue
       - ValueSet/cdex-data-request-task-code
+
+  TaskBasedSubscriptionTopic:
+    name: Task Based Subscription Topic
+    description: Basic resource representing the subscription for Task updates
+    resources:
+      - SubscriptionTopic/cdex-task-update
   TaskBasedExamples:
     name: Task Based Approach Examples
     description: Examples Associated with CDex Task Based Approach Transactions

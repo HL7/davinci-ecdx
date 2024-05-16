@@ -1,0 +1,16 @@
+resourceType: SubscriptionTopic
+id: cdex-task-update
+meta:
+    versionId: '1'
+url: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update'
+name: CDexTaskUpdate
+title: CDex Task Update
+description: "Canonical instance for the resource SubscriptionTopic. It describes the\n  topic for the Subscription. \n\n  In the Da Vinci CDex use case, this topic **SHALL** be used when the Data Consumer subscribes to the Data Source's Server [base]/Subscription endpoint for notifications when the `Task.status` element Task that they created is updated. For examples the status changed from \"in-progress\" to \"completed\".\n\n  Note that:\n\n  - the trigger for this topic **SHALL** be the resourceTrigger (so the\n  eventTrigger **SHALL** NOT be used)\n\n  - the resourceTrigger.resource element **SHALL** be the CDex Task Data Request Profile\n\n  - this topic only covers the changes in status of the submitted  CDex Task Data Request Profile.\n"
+status: active
+resourceTrigger:
+    - 
+        description: A CDex Task Data Request Profile is updated
+        resource: 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request'
+        supportedInteraction:
+            - update
+        fhirPathCriteria: '%current.status != %previous.status'

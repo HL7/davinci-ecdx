@@ -65,7 +65,6 @@ meta:
     valueString: CDex Bundle Inline Example 858p
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: Bundle example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)
-  profile:
 resourceType: Bundle
 total: 1
 type: searchset

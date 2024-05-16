@@ -2,12 +2,7 @@ resourceType: Subscription
 id: cdex-task-inline-scenario1-subscription-requested
 status: requested
 reason: R4 Example Topic-Based Subscription for CD Task based Queries
-criteria: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates'
-_criteria:
-    extension:
-        - 
-            url: 'http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria'
-            valueString: Task?status=completed,rejected
+criteria: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update'
 channel:
     type: rest-hook
     endpoint: http://example.org/FHIR/Payer/cdex-task-watch
@@ -17,8 +12,6 @@ channel:
             - 
                 url: 'http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content'
                 valueCode: id-only
-    header:
-        - 'X-API-Key: PMAK-659f4269552c3d3718de46b4-e4c47845a85497830d5bf434dc8fbcf030'
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name

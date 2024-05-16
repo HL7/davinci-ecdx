@@ -67,6 +67,10 @@ dependsOn:
   version: 5.1.0-cibuild
   uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
   id: hl7_fhir_uv_extensions
+- packageId: hl7.fhir.uv.subscriptions-backport.r4
+  uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
+  version: 1.1.x
+  id: hl7_fhir_uv_subscriptions_backport_r4
 definition:
   extension:
   - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
@@ -106,6 +110,9 @@ definition:
   - id: TaskBasedTerminology
     name: Task Based Approach Terminology
     description: ValueSets Associated with CDex Task Based Approach Transactions
+  - id: TaskBasedSubscriptionTopic
+    name: Task Based Subscription Topic
+    description: Basic resource representing the subscription for Task updates
   - id: TaskBasedExamples
     name: Task Based Approach Examples
     description: Examples Associated with CDex Task Based Approach Transactions
@@ -557,6 +564,21 @@ definition:
     exampleBoolean: false
     name: CDex Data Request Task Code Value Set
     groupingId: TaskBasedTerminology
+  - reference:
+      reference: SubscriptionTopic/cdex-task-update
+    description: "Canonical instance for the resource SubscriptionTopic. It describes\
+      \ the\n  topic for the Subscription. \n\n  In the Da Vinci CDex use case, this\
+      \ topic **SHALL** be used when the Data Consumer subscribes to the Data Source's\
+      \ Server [base]/Subscription endpoint for notifications when the `Task.status`\
+      \ element Task that they created is updated. For examples the status changed\
+      \ from \"in-progress\" to \"completed\".\n\n  Note that:\n\n  - the trigger\
+      \ for this topic **SHALL** be the resourceTrigger (so the\n  eventTrigger **SHALL**\
+      \ NOT be used)\n\n  - the resourceTrigger.resource element **SHALL** be the\
+      \ CDex Task Data Request Profile\n\n  - this topic only covers the changes in\
+      \ status of the submitted  CDex Task Data Request Profile.\n"
+    exampleBoolean: false
+    name: CDex Task Update
+    groupingId: TaskBasedSubscriptionTopic
   - reference:
       reference: Task/cdex-task-example1
     description: '**Query String Request for Condition:** Task to seek a patient''s

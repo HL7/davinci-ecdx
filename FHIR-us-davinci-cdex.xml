@@ -92,6 +92,7 @@
 <artifact id="Task/cdex-task-example8" key="Task-cdex-task-example8" name="CDex Task Example 8"/>
 <artifact id="Task/cdex-task-example9" key="Task-cdex-task-example9" name="CDex Task Example 9"/>
 <artifact id="Task/cdex-task-inline-example6" key="Task-cdex-task-inline-example6" name="CDex Task Inline Example 6"/>
+<artifact id="SubscriptionTopic/cdex-task-update" key="SubscriptionTopic-cdex-task-update" name="CDex Task Update"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
 <artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>

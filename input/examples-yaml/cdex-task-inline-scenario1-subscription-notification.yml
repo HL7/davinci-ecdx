@@ -15,7 +15,7 @@ entry:
                         reference: 'https://example.org/fhir/Subscription/cdex-task-inline-scenario1-subscription-active'
                 - 
                     name: topic
-                    valueCanonical: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates'
+                    valueCanonical: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update'
                 - 
                     name: status
                     valueCode: active
