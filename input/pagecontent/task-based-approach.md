@@ -251,33 +251,61 @@ Data consumers can poll for a single Task or across several Tasks.  The frequenc
 
 Subscription is a mechanism designed to allow clients to request notifications when an event occurs or data changes. It is an active notification system; a FHIR server actively sends notifications as changes occur. In the Da Vinci CDex use case, the Data Consumer subscribes to the Data Source's Server [base]/Subscription endpoint for notifications when any Task that they created is updated.
 
-When using subscriptions in CDex, implementers SHALL use the R4 Subscriptions referenced in the [Subscription R5 Backport Implementation Guide] and follow its [Conformance in FHIR R4](https://hl7.org/fhir/uv/subscriptions-backport/conformance.html#conformance-in-fhir-r4) expectations. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex.
+When using subscriptions in CDex, implementers **SHALL** use topic-based subscription as defined in the [Subscription R5 Backport Implementation Guide] and follow its [Conformance in FHIR R4] expectations. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex. In addition to the conformance expectations defined in the R5 Backport Implementation Guide, additional CDex conformance expectation are listed below.
 
-In addition to the conformance expectations defined in the R5 Backport Implementation Guide, CDex servers that support subscriptions:
+##### CDex Task Update Subscription Topic 
 
-- **SHALL** support discovery of the CDex Subscription topic: 
-- **SHOULD** support rest-hook
-- **SHALL** support `id-only` payload type
+This [CDex Task Update] Subscription Topic is formally defined in this guide as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
 
-##### Paylaod Types
+Note that supporting SubscriptionTopic nor the equivalent Basic resource versions described in the R5 Backport Implementation Guides is NOT required by this guide to support subscriptions.
+{:.bg-warning}
 
-There are three options available when specifying the contents of a notification: "empty", "id-only", and "full-resource". Because the Data Source can not guarantee who has access to the nominated subscription endpoint, the notification typically use "id-only" to return the Task resource id. By omitting the payload, the Data Consumer is forced to authenticate before accessing the data using a FHIR RESTful read or search which mitigates privacy and security risks for the Data Source.
+{{site.data.resources['SubscriptionTopic/cdex-task-update']['description']}}
 
-##### Subscription filters
+- The Data Source **SHALL** support the CDex Task Update Subscription Topic and **MAY** support other subscription topics.
+- The Data Consumer **SHALL** use the canonical URL in `Subscription.criteria` element to subscribe to the Data Source's Server [base]/Subscription endpoint
 
-Data Consumers can add FHIR search-style filters to narrow the subscription topic stream. See the [Backported R5 FilterBy Criteria]for details.
+##### Discovery
 
-##### Canonical URL
+In order to allow for discovery of supported subscription topics, the R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension. This extension allows server implementers to advertise the canonical URLs of topics available to clients and allows clients to see the list of supported topics on a server.
 
-The canonical URL for the topic of CDEX task updates is below. The Data Consumer **SHALL** use it to subscribe, and the Data Source **SHALL** support it.
+- The Data Source **SHALL** support discovery of the CDex Task Update Subscription Topic canonical URL
+- The Data Source **SHOULD** support discovery using the CapabilityStatement SubscriptionTopic Canonical extension and **MAY** support discovery by some other method.
 
-`http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/CDexTaskUpdates` 
+The example CapabilityStatement snippet shows a Data Source advertising the CDex Task Update Subscription Topic canonical URL with the CapabilityStatement SubscriptionTopic Canonical extension:
+
+
+{% include examplebutton_default.html example="advertise-topic.md" b_title = 'Click Here To See CapabilityStatement Advertising the CDex Task Update Subscription Topic' %}
+
+
+##### Subscription Resource
+
+The [Subscription] resource is used to request notifications for a specific client about a specific topic. The Subscription resource SHALL be compliant with the [R4/B Topic-Based Subscription Profile]
 
 <div class="bg-info" markdown="1">
 \**Subscriptions need not be created by the Data Consumer. It's also possible that The Data Source could establish subscriptions automatically or out-of-band. However, these implementation details are out of scope for this guide.
 </div><!-- bg-info -->
 
+###### Channel Types
 
+The subscription requires information about where to send notifications, such as the type of channel to send notifications and url that describes the actual endpoint.
+
+###### Payload Types
+
+There are three options available when specifying the contents of a notification: "empty", "id-only", and "full-resource". Because the Data Source can not guarantee who has access to the nominated subscription endpoint, the notification typically use "id-only" to return the Task resource id. By omitting the payload, the Data Consumer is forced to authenticate before accessing the data using a FHIR RESTful read or search which mitigates privacy and security risks for the Data Source.
+
+- The Data Consumer **SHALL** use the canonical URL in `Subscription.criteria` element to subscribe to the Data Source's Server [base]/Subscription endpoint'
+- The Data Source **SHOULD** support the "rest-hook" channel and **MAY** support other channel types.
+- The Data Source **SHALL** support ""id-only" payload type and **MAY** support other payload types.
+
+
+###### Subscription Notifications
+
+For active CDex Task Based Subscription Topic subscriptions, when a CDex Task Data Request Profile is updated, the Data Source **SHALL** trigger a Subscription Notifications to the endpoint supplied by the Data Consumer.  This notification is a Bundle resource, and **SHALL** be compliant with the [R4 Topic-Based Subscription Notification Bundle].  The first entry contains the subscription's status information, represented by a Parameters resource. For "id-only" payload type, Task IDs are listed in the “focus” part parameter.
+
+<!-- ##### Subscription filters
+
+Data Consumers can add FHIR search-style filters to narrow the subscription topic stream. See the [Backported R5 FilterBy Criteria]for details. -->
 
 #### Example Task Based Transaction using Subscription
 

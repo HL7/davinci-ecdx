@@ -42,8 +42,11 @@ These changes are the result of trackers listed below.
    - [Polling vs Subscriptions](task-based-approach.html#polling-vs-subscriptions)
    - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
    - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
+   - [Inline Subscription Task Scenario1 Subscription Requested](Subscription-cdex-task-inline-scenario1-subscription-requested.html)
+   - [Inline Subscription Task Scenario1 Subscription Active](Subscription-cdex-task-inline-scenario1-subscription-accepted.html)
    - [Inline Subscription Task Scenario1 Subscription Notification](Bundle-cdex-task-inline-scenario1-subscription-notification.html)
-19. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
+   - [Subscription Topic CDex Task Update](SubscriptionTopic-cdex-task-update.html)
+17. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

@@ -131,7 +131,7 @@
 [CDex Parameters Example2]: Parameters-cdex-parameters-example2.html
 [CDex Parameters Example3]: Parameters-cdex-parameters-example3.html
 [CDex Parameters Example4]: Parameters-cdex-parameters-example4.html
-[Subscription R5 Backport Implementation Guide]: http://hl7.org/fhir/uv/subscriptions-backport/index.html
+[Subscription R5 Backport Implementation Guide]: {{site.data.fhir.ver.backport}}
 [Backported R5 FilterBy Criteria]: https://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition-backport-filter-criteria.html
 [Conformance in FHIR R4]: https://hl7.org/fhir/uv/subscriptions-backport/conformance.html#conformance-in-fhir-r4
 [validating profiles and resources]: {{site.data.fhir.path}}validation.html
@@ -161,3 +161,9 @@
 [Must Support]: {{site.data.fhir.path}}profiling.html#mustsupport
 [modifier elements]: {{site.data.fhir.path}}conformance-rules.html#isModifier
 [CDex PractitionerRole Profile]: StructureDefinition-cdex-practitionerrole.html
+[CDexTaskUpdate]: SubscriptionTopic-cdex-task-update.html
+[SubscriptionTopic]: https://hl7.org/fhir/R4B/subscriptiontopic.html
+[CapabilityStatement SubscriptionTopic Canonical]: {{site.data.fhir.ver.backport}}StructureDefinition-capabilitystatement-subscriptiontopic-canonical.html
+[Conformance in FHIR R4]: {{site.data.fhir.ver.backport}}conformance.html#conformance-in-fhir-r4
+[R4/B Topic-Based Subscription Profile]: {{site.data.fhir.ver.backport}}StructureDefinition-backport-subscription.html
+[R4 Topic-Based Subscription Notification Bundle]: {{site.data.fhir.ver.backport}}StructureDefinition-backport-subscription-notification-r4.html

@@ -77,8 +77,9 @@ dependencies:
     id: sdc
   hl7.fhir.uv.extensions: 5.1.0-cibuild #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
   hl7.fhir.uv.subscriptions-backport.r4:
-    version: 1.1.x
+    version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport 
+    id: backport
 
 # Groups can control certain aspects of the IG generation.  The IG
 # documentation recommends that authors use the default groups that
@@ -246,6 +247,7 @@ groups:
       - CommunicationRequest/cdex-task-inline-communicationrequest-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
       - OperationOutcome/cdex-operationoutcome-inline-example1
+      - CapabilityStatement/cdex-inline-r4-capabilitystatement-example
 
 pages:
   index.md:
@@ -407,15 +409,16 @@ menu:
     Attachments Terminology: artifacts.html#4
     Attachments Examples: artifacts.html#5
     Task Based Approach Profiles: artifacts.html#6
-    Task Based Approach Terminology: artifacts.html#6
-    Task Based Approach Examples: artifacts.html#8
-    Direct Query Examples: artifacts.html#9
-    Signature Profiles: artifacts.html#10
-    Signature Terminology: artifacts.html#11
-    Signature Examples: artifacts.html#12
-    Common Terminology: artifacts.html#13
-    Common Examples: artifacts.html#14
-    Inline Examples: artifacts.html#15
+    Task Based Approach Terminology: artifacts.html#7
+    Task Based Approach Susbscription Topic: artifacts.html#8
+    Task Based Approach Examples: artifacts.html#9
+    Direct Query Examples: artifacts.html#10
+    Signature Profiles: artifacts.html#11
+    Signature Terminology: artifacts.html#12
+    Signature Examples: artifacts.html#13
+    Common Terminology: artifacts.html#14
+    Common Examples: artifacts.html#15
+    Inline Examples: artifacts.html#16
 
   Downloads: downloads.html
   Change Log: changes.html
