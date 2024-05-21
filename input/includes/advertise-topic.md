@@ -1,5 +1,5 @@
 
-This example CapabilityStatement fragment shows a Data Source advertising the CDex Task Update Subscription Topic canonical URL with the CapabilityStatement SubscriptionTopic Canonical extension. (The complete example can be seen [here](CapabilityStatement-cdex-capabilitystatement-inline-example.html).)
+This example CapabilityStatement fragment shows a Data Source advertising the CDex Task Update Subscription Topic canonical URL with the CapabilityStatement SubscriptionTopic Canonical extension. It is used on the `CapabilityStatement.rest.resource` element for the Subscription type. (The complete example can be seen [here](CapabilityStatement-cdex-capabilitystatement-inline-example.html).)
 
 
 

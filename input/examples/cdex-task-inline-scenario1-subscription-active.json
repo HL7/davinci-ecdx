@@ -10,6 +10,9 @@
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
                 "valueMarkdown": "Subscription example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"
             }
+        ],
+        "profile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"
         ]
     },
     "resourceType": "Subscription",

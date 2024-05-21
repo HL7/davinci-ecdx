@@ -8,6 +8,11 @@
             "fullUrl": "urn:uuid:206a4372-a348-41d1-a82e-fc9ebe8825af",
             "resource": {
                 "resourceType": "Parameters",
+                "meta": {
+                    "profile": [
+                        "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
+                    ]
+                },
                 "id": "206a4372-a348-41d1-a82e-fc9ebe8825af",
                 "parameter": [
                     {
@@ -72,6 +77,9 @@
                 "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
                 "valueMarkdown": "Notification Bundle example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"
             }
+        ],
+        "profile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4"
         ]
     }
 }

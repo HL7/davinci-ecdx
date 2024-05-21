@@ -25,9 +25,6 @@
     "format": [
         "json"
     ],
-    "implementationGuide": [
-        "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport"
-    ],
     "rest": [
         {
             "mode": "server",
@@ -52,35 +49,12 @@
                         },
                         {
                             "code": "update"
-                        },
-                        {
-                            "code": "delete"
-                        }
-                    ],
-                    "searchParam": [
-                        {
-                            "name": "url",
-                            "definition": "http://hl7.org/fhir/SearchParameter/Subscription-url",
-                            "type": "uri"
-                        },
-                        {
-                            "name": "status",
-                            "definition": "http://hl7.org/fhir/SearchParameter/Subscription-status",
-                            "type": "token"
                         }
                     ],
                     "operation": [
                         {
                             "name": "status",
                             "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status"
-                        },
-                        {
-                            "name": "events",
-                            "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events"
-                        },
-                        {
-                            "name": "get-ws-binding-token",
-                            "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token"
                         }
                     ]
                 },

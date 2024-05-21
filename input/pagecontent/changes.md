@@ -43,9 +43,10 @@ These changes are the result of trackers listed below.
    - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
    - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
    - [Inline Subscription Task Scenario1 Subscription Requested](Subscription-cdex-task-inline-scenario1-subscription-requested.html)
-   - [Inline Subscription Task Scenario1 Subscription Active](Subscription-cdex-task-inline-scenario1-subscription-accepted.html)
+   - [Inline Subscription Task Scenario1 Subscription Active](Subscription-cdex-task-inline-scenario1-subscription-active.html)
    - [Inline Subscription Task Scenario1 Subscription Notification](Bundle-cdex-task-inline-scenario1-subscription-notification.html)
    - [Subscription Topic CDex Task Update](SubscriptionTopic-cdex-task-update.html)
+   - [CDex Capabilitystatement Inline Example](CapabilityStatement-cdex-capabilitystatement-inline-example.html)
 17. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
 
 ### Version = 2.0.0

@@ -6,7 +6,6 @@ meta:
     valueString: CDex Capabilitystatement Inline Example
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: Capabilitystatement example used to create inline example to demonstrate using the CapabilityStatement SubscriptionTopic Canonical] extension to advertise the canonical URLs of topics available to clients
-
 url: >-
   http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/cdex-capabilitystatement-inline-example
 status: active
@@ -21,9 +20,9 @@ instantiates:
 fhirVersion: 4.0.1
 format:
   - json
-implementationGuide:
-  - >-
-    http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
+# implementationGuide:
+#   - >-
+#     http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
 rest:
   - mode: server
     resource:
@@ -39,24 +38,24 @@ rest:
           - code: read
           - code: create
           - code: update
-          - code: delete
-        searchParam:
-          - name: url
-            definition: 'http://hl7.org/fhir/SearchParameter/Subscription-url'
-            type: uri
-          - name: status
-            definition: 'http://hl7.org/fhir/SearchParameter/Subscription-status'
-            type: token
+        #   - code: delete
+        # searchParam:
+        #   - name: url
+        #     definition: 'http://hl7.org/fhir/SearchParameter/Subscription-url'
+        #     type: uri
+        #   - name: status
+        #     definition: 'http://hl7.org/fhir/SearchParameter/Subscription-status'
+        #     type: token
         operation:
           - name: status
             definition: >-
               http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status
-          - name: events
-            definition: >-
-              http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events
-          - name: get-ws-binding-token
-            definition: >-
-              http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token
+      #     - name: events
+      #       definition: >-
+      #         http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-events
+      #     - name: get-ws-binding-token
+      #       definition: >-
+      #         http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-get-ws-binding-token
       - type: Patient
         interaction:
           - code: read
