@@ -58,7 +58,7 @@ dependsOn:
 - id: dtr
   packageId: hl7.fhir.us.davinci-dtr
   uri: http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr
-  version: 2.0.1
+  version: current
 - id: sdc
   packageId: hl7.fhir.uv.sdc
   uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
