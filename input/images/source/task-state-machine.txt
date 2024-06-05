@@ -1,0 +1,35 @@
+digraph cdex_task_state_machine {
+  label="CDex Task State Diagram";
+  // use https://www.devtoolsdaily.com/graphviz/ to generate and download svg image
+  
+  // Define special nodes representing the start and end points with a point shape
+  node [shape=point]; START, END;
+  
+  // Set default node properties for task states: font is Courier and shape is box
+  node [fontname=Courier, shape=box];
+
+  // Define nodes with their respective labels
+  A [label="Requested"];
+  B [label="Accepted"];  
+  C [label="Rejected"];
+  D [label="In Progress"];
+  E [label="Failed"]; 
+  F [label="Completed"];
+  G [label="On Hold"];
+
+  // Set nodes B and C to be on the same rank (horizontal alignment)
+  {rank=same; B, C};
+  // Set nodes E and F to be on the same rank (horizontal alignment)
+  {rank=same; E, F};
+  // Set nodes D and G to be on the same rank (horizontal alignment)
+  {rank=same; D, G};
+
+  // Define transitions between states
+  START -> A;         // Start to Requested
+  A -> {B, C};        // Requested to Accepted or Rejected
+  B -> D;             // Accepted to In Progress
+  D -> G;             // In Progress to On Hold
+  G -> D;             // On Hold to In Progress
+  D -> {E, F};        // In Progress to Failed or Completed
+  {F, E, C} -> END;   // Completed, Failed, or Rejected to End
+}

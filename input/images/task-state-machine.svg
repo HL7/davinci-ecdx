@@ -1,0 +1,125 @@
+<svg width="260pt" height="364pt" viewBox="0.00 0.00 259.81 364.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 360)">
+<title>cdex_task_state_machine</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-360 255.81,-360 255.81,4 -4,4"></polygon>
+<text text-anchor="middle" x="125.91" y="-8.2" font-family="Times,serif" font-size="14.00">CDex Task State Diagram</text>
+<!-- START -->
+<g id="node1" class="node">
+<title>START</title>
+<ellipse fill="black" stroke="black" cx="141.21" cy="-354.2" rx="1.8" ry="1.8"></ellipse>
+</g>
+<!-- A -->
+<g id="node3" class="node">
+<title>A</title>
+<polygon fill="none" stroke="black" points="187.01,-316.4 95.4,-316.4 95.4,-280.4 187.01,-280.4 187.01,-316.4"></polygon>
+<text text-anchor="middle" x="141.21" y="-294.2" font-family="Courier,monospace" font-size="14.00">Requested</text>
+</g>
+<!-- START&#45;&gt;A -->
+<g id="edge1" class="edge">
+<title>START-&gt;A</title>
+<path fill="none" stroke="black" d="M141.21,-352.27C141.21,-349.17 141.21,-338.84 141.21,-328.12"></path>
+<polygon fill="black" stroke="black" points="144.71,-328.17 141.21,-318.17 137.71,-328.17 144.71,-328.17"></polygon>
+</g>
+<!-- END -->
+<g id="node2" class="node">
+<title>END</title>
+<ellipse fill="black" stroke="black" cx="151.21" cy="-26.6" rx="1.8" ry="1.8"></ellipse>
+</g>
+<!-- B -->
+<g id="node4" class="node">
+<title>B</title>
+<polygon fill="none" stroke="black" points="132.81,-244.4 49.6,-244.4 49.6,-208.4 132.81,-208.4 132.81,-244.4"></polygon>
+<text text-anchor="middle" x="91.21" y="-222.2" font-family="Courier,monospace" font-size="14.00">Accepted</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M128.85,-280.1C123.16,-272.13 116.28,-262.5 109.97,-253.66"></path>
+<polygon fill="black" stroke="black" points="112.97,-251.84 104.3,-245.74 107.27,-255.91 112.97,-251.84"></polygon>
+</g>
+<!-- C -->
+<g id="node5" class="node">
+<title>C</title>
+<polygon fill="none" stroke="black" points="251.81,-244.4 168.6,-244.4 168.6,-208.4 251.81,-208.4 251.81,-244.4"></polygon>
+<text text-anchor="middle" x="210.21" y="-222.2" font-family="Courier,monospace" font-size="14.00">Rejected</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>A-&gt;C</title>
+<path fill="none" stroke="black" d="M158.26,-280.1C166.45,-271.79 176.42,-261.68 185.43,-252.54"></path>
+<polygon fill="black" stroke="black" points="187.76,-255.16 192.29,-245.58 182.77,-250.25 187.76,-255.16"></polygon>
+</g>
+<!-- D -->
+<g id="node6" class="node">
+<title>D</title>
+<polygon fill="none" stroke="black" points="108.42,-172.4 0,-172.4 0,-136.4 108.42,-136.4 108.42,-172.4"></polygon>
+<text text-anchor="middle" x="54.21" y="-150.2" font-family="Courier,monospace" font-size="14.00">In Progress</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge4" class="edge">
+<title>B-&gt;D</title>
+<path fill="none" stroke="black" d="M82.06,-208.1C77.98,-200.38 73.08,-191.11 68.54,-182.51"></path>
+<polygon fill="black" stroke="black" points="71.72,-181.05 63.96,-173.84 65.53,-184.32 71.72,-181.05"></polygon>
+</g>
+<!-- C&#45;&gt;END -->
+<g id="edge9" class="edge">
+<title>C-&gt;END</title>
+<path fill="none" stroke="black" d="M214.79,-208.02C221.98,-176.88 232.53,-110.55 206.21,-64.4 196.68,-47.69 176.09,-37.1 162.98,-31.77"></path>
+<polygon fill="black" stroke="black" points="164.59,-28.63 154,-28.52 162.21,-35.21 164.59,-28.63"></polygon>
+</g>
+<!-- E -->
+<g id="node7" class="node">
+<title>E</title>
+<polygon fill="none" stroke="black" points="87.41,-100.4 21,-100.4 21,-64.4 87.41,-64.4 87.41,-100.4"></polygon>
+<text text-anchor="middle" x="54.21" y="-78.2" font-family="Courier,monospace" font-size="14.00">Failed</text>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge7" class="edge">
+<title>D-&gt;E</title>
+<path fill="none" stroke="black" d="M54.21,-136.1C54.21,-128.81 54.21,-120.13 54.21,-111.94"></path>
+<polygon fill="black" stroke="black" points="57.71,-112.02 54.21,-102.02 50.71,-112.02 57.71,-112.02"></polygon>
+</g>
+<!-- F -->
+<g id="node8" class="node">
+<title>F</title>
+<polygon fill="none" stroke="black" points="197.01,-100.4 105.4,-100.4 105.4,-64.4 197.01,-64.4 197.01,-100.4"></polygon>
+<text text-anchor="middle" x="151.21" y="-78.2" font-family="Courier,monospace" font-size="14.00">Completed</text>
+</g>
+<!-- D&#45;&gt;F -->
+<g id="edge8" class="edge">
+<title>D-&gt;F</title>
+<path fill="none" stroke="black" d="M78.19,-136.1C90.19,-127.43 104.92,-116.8 118,-107.36"></path>
+<polygon fill="black" stroke="black" points="119.88,-110.32 125.94,-101.63 115.79,-104.65 119.88,-110.32"></polygon>
+</g>
+<!-- G -->
+<g id="node9" class="node">
+<title>G</title>
+<polygon fill="none" stroke="black" points="201.61,-172.4 126.8,-172.4 126.8,-136.4 201.61,-136.4 201.61,-172.4"></polygon>
+<text text-anchor="middle" x="164.21" y="-150.2" font-family="Courier,monospace" font-size="14.00">On Hold</text>
+</g>
+<!-- D&#45;&gt;G -->
+<g id="edge5" class="edge">
+<title>D-&gt;G</title>
+<path fill="none" stroke="black" d="M108.78,-140.9C110.9,-140.89 113.03,-140.95 115.16,-141.06"></path>
+<polygon fill="black" stroke="black" points="114.72,-144.53 125.03,-142.08 115.44,-137.57 114.72,-144.53"></polygon>
+</g>
+<!-- E&#45;&gt;END -->
+<g id="edge10" class="edge">
+<title>E-&gt;END</title>
+<path fill="none" stroke="black" d="M85.7,-63.93C104.42,-53.55 127.02,-41.02 140.18,-33.71"></path>
+<polygon fill="black" stroke="black" points="141.56,-36.95 148.61,-29.04 138.17,-30.83 141.56,-36.95"></polygon>
+</g>
+<!-- F&#45;&gt;END -->
+<g id="edge11" class="edge">
+<title>F-&gt;END</title>
+<path fill="none" stroke="black" d="M151.21,-64.08C151.21,-56.27 151.21,-47.21 151.21,-40.08"></path>
+<polygon fill="black" stroke="black" points="154.71,-40.27 151.21,-30.27 147.71,-40.27 154.71,-40.27"></polygon>
+</g>
+<!-- G&#45;&gt;D -->
+<g id="edge6" class="edge">
+<title>G-&gt;D</title>
+<path fill="none" stroke="black" d="M126.53,-166.56C124.41,-166.89 122.28,-167.16 120.15,-167.37"></path>
+<polygon fill="black" stroke="black" points="120.11,-163.86 110.29,-167.83 120.44,-170.86 120.11,-163.86"></polygon>
+</g>
+</g>
+</svg>

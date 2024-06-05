@@ -48,6 +48,7 @@ These changes are the result of trackers listed below.
    - [Subscription Topic CDex Task Update](SubscriptionTopic-cdex-task-update.html)
    - [CDex Capabilitystatement Inline Example](CapabilityStatement-cdex-capabilitystatement-inline-example.html)
 17. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
+18. **Pre-Applied:**(Enhancement) Add Task State diagram to specification [FHIR-46004](https://jira.hl7.org/browse/FHIR-46004) See Changes [Here](file:///Users/ehaas/Documents/FHIR/davinci-ecdx/output/task-based-approach.html#task-state-machine):
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

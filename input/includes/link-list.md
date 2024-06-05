@@ -165,3 +165,4 @@
 [Conformance in FHIR R4]: {{site.data.fhir.ver.backport}}/conformance.html#conformance-in-fhir-r4
 [R4/B Topic-Based Subscription Profile]: {{site.data.fhir.ver.backport}}/StructureDefinition-backport-subscription.html
 [R4 Topic-Based Subscription Notification Bundle]: {{site.data.fhir.ver.backport}}/StructureDefinition-backport-subscription-notification-r4.html
+[HRex Task Status ValueSet]: {{site.data.fhir.ver.hrex}}/ValueSet-hrex-task-status.html

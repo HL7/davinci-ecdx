@@ -82,10 +82,19 @@ The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Que
 The Da Vinci project Team anticipates that efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long-term solution to the issue of FHIR id discovery.
 {:.stu-note}
 
+<div class="bg-success" markdown="1">
+
+### Task State Machine
+
+Figure 8 below illustrates a  "typical" state machine for Task. The Data Consumer creates the Task with a status of "requested".  The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g. back to "in-progress" from "failed" or "completed").
+
+{% include img.html img="task-state-machine.svg" caption="Figure 8" %} 
 
 ### Fetching the Data
 
-It is up to the Data Source to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is complete, its outputs are referenced by the `Task.output` element, and the `Task.status` is updated to "completed".    The Task can refer to external resources, or it can refer to a search set Bundle [contained] within the Task resource itself, either of which the Data Consumer can subsequently fetch. As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read].  Note that a contained Bundle does not have an independent existence. But by using a contained Bundle, the Data Source can provide information to Data Consumers who can not perform a direct query.  For example, the Data Consumer can only access the patient's data via FHIR RESTful reads or searches if authorized.  Since the Data Source controls the release of information contained in the Bundle, patient privacy and security is maintained
+</div><!-- new-content -->
+
+When the task is complete, its outputs are referenced by the `Task.output` element, and the `Task.status` is updated to "completed".  The Task can refer to external resources, or it can refer to a search set Bundle [contained] within the Task resource itself, either of which the Data Consumer can subsequently fetch. As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read].  Note that a contained Bundle does not have an independent existence. But by using a contained Bundle, the Data Source can provide information to Data Consumers who can not perform a direct query.  For example, the Data Consumer can only access the patient's data via FHIR RESTful reads or searches if authorized.  Since the Data Source controls the release of information contained in the Bundle, patient privacy and security is maintained
 
 
 
