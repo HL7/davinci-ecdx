@@ -1,6 +1,6 @@
 #text for https://sequencediagram.org/
 ```sequence
-title Requesting Attachments Using A FHIR Questionnaire
+title Requesting Attachments Using FHIR Questionnaire
 participant Payer
 participant Provider
 participant DTR
@@ -9,13 +9,14 @@ actor Practitioner
 note over Provider: Provider acts as both\n EHR/HIT FHIR Server and DTR Client
 note over DTR: DTR is SMART App or native EHR app
 autonumber
-Payer -> Payer: Prepare Task\nincluding link to Questionnaire
-Payer->Provider: POST CDEX Task\nto complete Questionnaire
+Payer -> Payer: Prepare Task\nincluding link to Questionnaire(s)
+Payer->Provider: POST CDEX Task\nto complete Questionnaire(s)
 ref over Provider,DTR:3 Launch DTR (see section 5.4.1.1.1 below)
 autonumber 4
 DTR -> Provider: GET Task
 autonumber off
 Provider --> DTR: Return Task
+loop for each Questionnaire
 autonumber 
 DTR -> Payer: GET Questionnaire
 autonumber off
@@ -43,6 +44,7 @@ autonumber
 DTR -> Provider: Create or Update completed QuestionnaireResponse
 opt Create completed QuestionnaireResponse
 DTR -> Provider: Update Task with link to\nQuestionnaireResponse
+end
 end
 Provider->Payer: POST $submit-attachment with\nQuestionnaireResponse in payload
 Provider -> Provider: Updates Task to "completed"

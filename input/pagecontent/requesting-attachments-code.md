@@ -8,31 +8,21 @@ In the current state of healthcare data exchange, the Payer requests additional 
 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption="Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
+<div class="bg-success" markdown="1">
 
 
 ### Requesting Attachments Using FHIR
  
-Payers can request attachments and additional data for claims and prior authorizations as a FHIR transaction. Similar to the CDex [Task Based Approach], [Task] can be used to represent both the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Provider updates the Task’s status as the task is fulfilled. When the status is "completed", the Provider submits the *solicited* attachments to the payer-supplied endpoint using the [`$submit-attachment`] operation, which is documented on the [Sending Attachments] page.
-
-#### CDex Attachment Request Profile
-
-**For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile] to solicit information from a Provider.** 
-<!-- {% raw %} {{ site.data.resources.['StructureDefinition/cdex-task-attachment-request']['description'] }} {% endraw %} -->
-For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
-
-
-
-
+{% include task-based-sections-to-review.md %}
 
 ### Requesting Attachments Using Attachment Codes
 
-The [Task Based Approach section](http://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#task-based-approach) documents the reasons for using Task for requesting attachments. In addition, details for Task-based transactions are described in the [Requesting Exchange using Task] section of the Da Vinci HRex Implementation Guide.
-
+</div><!-- new-content -->
 The CDex Task Attachment Request Profile defines a specific `Task.code` that communicates that the Payer is requesting attachments for a claim or prior authorization using:
 - attachment codes or 
-- additional data using a FHIR Questionnaire.
+- additional data <span class="bg-success" markdown="1">using FHIR Questionnaires.</span><!-- new-content -->
 
-Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using a FHIR Questionnaire to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
+Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. <span class="bg-success" markdown="1">Using FHIR Questionnaires</span><!-- new-content --> to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
 Requesting attachments using attachment codes defined by the LOINC Document Ontology <span class="bg-success" markdown="1">or, for prior authorization, [X12] PWK01 Report Type Codes</span><!-- new-content --> is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 

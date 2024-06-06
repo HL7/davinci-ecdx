@@ -86,7 +86,7 @@ The Da Vinci project Team anticipates that efforts such as [FHIR at Scale Taskfo
 
 ### Task State Machine
 
-Figure 8 below illustrates a  "typical" state machine for Task. The Data Consumer creates the Task with a status of "requested".  The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g. back to "in-progress" from "failed" or "completed").
+Figure 8 below illustrates a "typical" state machine for CDex Task. The Data Consumer creates the Task with a status of "requested". The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.
 
 {% include img.html img="task-state-machine.svg" caption="Figure 8" %} 
 

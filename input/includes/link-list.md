@@ -67,14 +67,14 @@
 [Subscription Capabilities]: https://hl7.fhir.org/exchanging.html
 [Task state machine]: {{site.data.fhir.path}}task.html#statemachine
 [Bulk Data Access IG]: http://hl7.org/fhir/uv/bulkdata/index.html
-[Clinical Data Exchange- Supplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
+[Clinical Data ExchangeSupplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: http://hl7.org/fhir/uv/security-label-ds4p/2021Sep/
 [FHIR id]: {{site.data.fhir.path}}references.html
 [Basic Provenance]: {{site.data.fhir.uscore6}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
-[Da Vinci - Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}
+[Da Vinci Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}
 [Da Vinci Prior Authorization Support (PAS)]: {{site.data.fhir.ver.pas}}
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
@@ -166,3 +166,11 @@
 [R4/B Topic-Based Subscription Profile]: {{site.data.fhir.ver.backport}}/StructureDefinition-backport-subscription.html
 [R4 Topic-Based Subscription Notification Bundle]: {{site.data.fhir.ver.backport}}/StructureDefinition-backport-subscription-notification-r4.html
 [HRex Task Status ValueSet]: {{site.data.fhir.ver.hrex}}/ValueSet-hrex-task-status.html
+[`Task.businessStatus`]: {{site.data.fhir.path}}task-definitions.html#Task.businessStatus
+[Benefits]: task-based-approach.html#benefits
+[Task Inputs and Outputs]: task-based-approach.html#task-inputs-and-outputs
+[Purpose of Use]: task-based-approach.html#purpose-of-use
+[Task Reason]: task-based-approach.html#task-reason
+[Discovery of Identifiers]: task-based-approach.html#discovery-of-identifiers
+[Task State Machine]: task-based-approach.html#task-state-machine
+

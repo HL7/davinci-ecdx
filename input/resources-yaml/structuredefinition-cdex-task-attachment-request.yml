@@ -17,8 +17,8 @@ description: |-
   - A Task.status with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code of either "attachment-request-code" or "attachment-request-questionnaire"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.
-    - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "attachmentsNeeded" input parameter.
-    - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html) to complete the Questionnaire referenced in the "questionnaireNeeded" input parameter.
+    - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "AttachmentsNeeded" input parameter.
+    - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html) to complete the Questionnaire(s) referenced in the "QuestionnairesNeeded" input parameter.
     - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in "PayerUrl" input parameter.    
   - A Task.requester.identifier element representing the Payer ID
   - A Task.owner.reference element fixed to "\#practionerrole" -  a reference the contained PractitionerRole Resource that represents the Provider ID.
@@ -31,21 +31,21 @@ description: |-
 
   - A Task.Restriction.period element representing the due date for submitting the attachments
   - A Task.statusReason.text to communicate the reason for the status (for example, if the Task is rejected or failed)
-  - A "attachmentsNeeded" Task.input element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*
-  - A "attachmentsNeeded" or "questionnaireNeeded" Task.input element extension representing a claim or prior authorization line item numbers associated with the attachment or questionnaire.
+  - A "AttachmentsNeeded" Task.input element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*
+  - A "AttachmentsNeeded" or "QuestionnairesNeeded" Task.input element extension representing a claim or prior authorization line item numbers associated with the attachment or questionnaire.
   - A "signature" Task.input element representing a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).
   - A "service-date" Task.input element representing the date of service or starting date of the service for the claim or prior authorization. It SHALL be present if the attachment is for a claim.
 
   It defines the following elements to be *optional*:
 
-  - A "questionnaireNeeded" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
+  - A "QuestionnairesNeeded" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
   - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html). For more information about sending purpose POU codes, refer to the [Purpose of Use section](sending-attachments.html#signatures).
   - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions
-  - A "data-value" Task.output element referring to FHIR resource(s) representing the result(s) of the data request code.
-  - A "response" Task.output element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
+  - A "AttachmentsNeeded" Task.output element referring to FHIR resource(s) representing the result(s) of the data request code.
+  - A "QuestionnairesNeeded" Task.output element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
 
-  \* Either a "attachmentsNeeded" or a "questionnaireNeeded" Task.input element is required
+  \* Either a "AttachmentsNeeded" or a "QuestionnairesNeeded" Task.input element is required
 fhirVersion: 4.0.1
 kind: resource
 abstract: false
@@ -67,24 +67,24 @@ differential:
             Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()
         - key: cdex-4
           severity: error
-          human: If code = "attachment-request-code", must have one or more "attachmentsNeeded" inputs.
+          human: If code = "attachment-request-code", must have one or more "AttachmentsNeeded" inputs.
           expression: >-
             Task.code.coding.code.where($this='attachment-request-code').exists() implies Task.input.type.coding.code.where($this='attachments-needed').exists()
         - key: cdex-5
           severity: error
-          human: If code = "attachment-request-questionnaire", must have one "questionnaireNeeded" input.
+          human: If code = "attachment-request-questionnaire", must have one or more "QuestionnairesNeeded" inputs.
           expression: >-
             Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaires-needed').exists()
         - key: cdex-6
           severity: error
-          human: Must only have "attachmentsNeeded" inputs or one "questionnaireNeeded" input not both.
+          human: Must have only "AttachmentsNeeded" or "QuestionnairesNeeded" inputs not both.
           expression: >-
             Task.input.type.coding.code.where($this='attachments-needed').exists() implies Task.input.type.coding.code.where($this='questionnaires-needed').empty()
         - key: cdex-10
           severity: warning
-          human: If code = "attachment-request-questionnaire" and status = "completed", should have one "questionnaire-response" output referencing the QuestionnaireResponse.
+          human: If code = "attachment-request-questionnaire" and status = "completed", should have one or more "questionnaires-needed" outputs referencing the QuestionnaireResponse.
           expression: >-
-            (Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaire-response').exists()
+            (Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaires-needed').exists()
         - key: tdr-2
           severity: error
           human: >-
@@ -433,9 +433,9 @@ differential:
       min: 2
       mustSupport: true
 
-    - id: 'Task.input:attachmentsNeeded'
+    - id: 'Task.input:AttachmentsNeeded'
       path: Task.input
-      sliceName: attachmentsNeeded
+      sliceName: AttachmentsNeeded
       short: Attachment Code
       definition: A code indicating the type of data/document to be returned
       comment: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.  For prior authorization, [X12](https://x12.org/) PWK01 Report Type Codes may also be used.
@@ -480,17 +480,17 @@ differential:
       mustSupport: true
 
 
-    - id: 'Task.input:attachmentsNeeded.extension'
+    - id: 'Task.input:AttachmentsNeeded.extension'
       path: Task.input.extension
       min: 0
       mustSupport: true
 
-    - id: 'Task.input:attachmentsNeeded.extension.url'
+    - id: 'Task.input:AttachmentsNeeded.extension.url'
       path: Task.input.extension.url
       fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber'
       mustSupport: true
 
-    - id: 'Task.input:attachmentsNeeded.extension.value[x]'
+    - id: 'Task.input:AttachmentsNeeded.extension.value[x]'
       path: Task.input.extension.value[x]
       min: 1
       type:
@@ -498,7 +498,7 @@ differential:
       mustSupport: true
  
 
-    - id: 'Task.input:attachmentsNeeded.type'
+    - id: 'Task.input:AttachmentsNeeded.type'
       path: Task.input.type
       patternCodeableConcept:
         coding:
@@ -506,43 +506,43 @@ differential:
             code: attachments-needed
       mustSupport: true
 
-    - id: 'Task.input:attachmentsNeeded.value[x]'
+    - id: 'Task.input:AttachmentsNeeded.value[x]'
       path: 'Task.input.value[x]'
       short: Attachment code value
       type:
         - code: CodeableConcept
       mustSupport: true
       
-    - id: 'Task.input:questionnaireNeeded' # struct copied from SDC except using DTR Q/AQ profiles
+    - id: 'Task.input:QuestionnairesNeeded' # struct copied from SDC except using DTR Q/AQ profiles
       path: Task.input
-      sliceName: questionnaireNeeded
+      sliceName: QuestionnairesNeeded
       short: Data Request questionnaire
       definition: Indicates the questionnaire to be completed.
-      max: '1'
+      # max: '1'
       condition:
         - cdex-5
         - cdex-6
       # mustSupport: true
 
 
-    - id: 'Task.input:questionnaireNeeded.extension'
+    - id: 'Task.input:QuestionnairesNeeded.extension'
       path: Task.input.extension
       min: 0
       mustSupport: true
 
-    - id: 'Task.input:questionnaireNeeded.extension.url'
+    - id: 'Task.input:QuestionnairesNeeded.extension.url'
       path: Task.input.extension.url
       fixedUri: 'http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber'
       mustSupport: true
 
-    - id: 'Task.input:questionnaireNeeded.extension.value[x]'
+    - id: 'Task.input:QuestionnairesNeeded.extension.value[x]'
       path: Task.input.extension.value[x]
       min: 1
       type:
         - code: integer
       mustSupport: true
 
-    - id: 'Task.input:questionnaireNeeded.type'
+    - id: 'Task.input:QuestionnairesNeeded.type'
       path: Task.input.type
       min: 1
       max: '1'
@@ -553,7 +553,7 @@ differential:
           - system: 'http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes'
             code: questionnaires-needed
       # mustSupport: true
-    - id: 'Task.input:questionnaireNeeded.value[x]'
+    - id: 'Task.input:QuestionnairesNeeded.value[x]'
       path: 'Task.input.value[x]'
       short: URL
       min: 1
@@ -565,7 +565,7 @@ differential:
             - 'http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt'
       # mustSupport: true
 
-    - id: 'Task.input:questionnaireNeeded.value[x].extension:questionnaireDisplay'
+    - id: 'Task.input:QuestionnairesNeeded.value[x].extension:questionnaireDisplay'
       path: Task.input.value[x].extension
       sliceName: questionnaireDisplay
       comment: >-
@@ -716,48 +716,48 @@ differential:
             path: type
         rules: open
       # mustSupport: true
-    - id: 'Task.output:data'
+    - id: 'Task.output:AttachmentsNeeded'
       path: Task.output
-      sliceName: data
-      short: Requested data
+      sliceName: AttachmentsNeeded
+      short: Requested attachments
       definition: >-
-        FHIR resource(s) representing the result(s) of the data request.
+        FHIR resource(s) representing the result(s) of the attachments request.
       comment: >-
-        Note that all returned data SHOULD comply with appropriate US-Core
+        Note that all returned attachments SHOULD comply with appropriate US-Core
         and/or Da Vinci profiles. The "questionnaire-response" output type is for a QuestionnaireResponse resulting from the request.
       # mustSupport: true
-    - id: 'Task.output:data.type'
+    - id: 'Task.output:AttachmentsNeeded.type'
       path: Task.output.type
       patternCodeableConcept:
         coding:
-          - system: http://hl7.org/fhir/us/davinci-hrex/CodeSystem/hrex-temp
-            code: data-value
+          - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
+            code: attachments-needed
       # mustSupport: true
-    - id: 'Task.output:data.value[x]'
+    - id: 'Task.output:AttachmentsNeeded.value[x]'
       path: 'Task.output.value[x]'
-      short: data reference
+      short: AttachmentsNeeded reference
       type:
         - code: Reference
       # mustSupport: true
-    - id: 'Task.output:response'
+    - id: 'Task.output:QuestionnairesNeeded'
 
       path: Task.output
-      sliceName: response
-      definition: Indicates the questionnaire response resulting from the request.
+      sliceName: QuestionnairesNeeded
+      definition: Indicates the questionnaire QuestionnairesNeeded resulting from the request.
       max: '1'
       condition:
         - cdex-10
       # mustSupport: true
-    - id: 'Task.output:response.type'
+    - id: 'Task.output:QuestionnairesNeeded.type'
       path: Task.output.type
       type:
         - code: CodeableConcept
       patternCodeableConcept:
         coding:
-          - system: 'http://hl7.org/fhir/uv/sdc/CodeSystem/temp'
-            code: questionnaire-response
+          - system: 'http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes'
+            code: questionnaires-needed
       # mustSupport: true
-    - id: 'Task.output:response.value[x]'
+    - id: 'Task.output:QuestionnairesNeeded.value[x]'
       path: 'Task.output.value[x]'
       short: Reference to the QuestionnaireResponse
       min: 1

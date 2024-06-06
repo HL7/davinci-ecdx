@@ -27,9 +27,9 @@ These changes are the result of trackers listed below.
    - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html)
 7.  **Pre-Applied:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/requesting-attachments-code.html#data-elements-for-requesting-attachments)
 8.  **Pre-Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-9.  **Pre-Applied:** (Clarification) Change Task.input "payer-url" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-10. **Pre-Applied:** (Clarification) Change Task.input "code" to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-11. **Pre-Applied:** (Clarification) Change Task.input "questionnaire" slice to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example22.html)
+9.  **Pre-Applied:** (Clarification) Change Task.input "payer-url" to "PayerURL" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
+10. **Pre-Applied:** (Clarification) Change Task.input "code" to "AttachmentsNeeded" to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
+11. **Pre-Applied:** (Clarification) Change Task.input "questionnaire" slice to "QuestionnairesNeeded" to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example22.html)
 12. **Pre-Applied:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
 13. **Pre-Applied:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](requesting-attachments-questionnaire.html)
 14. **Applied:** (Correction) Remove self referencing instantiates in CapabilityStatements [FHIR-45322](https://jira.hl7.org/browse/FHIR-45322) See Changes:
@@ -48,7 +48,11 @@ These changes are the result of trackers listed below.
    - [Subscription Topic CDex Task Update](SubscriptionTopic-cdex-task-update.html)
    - [CDex Capabilitystatement Inline Example](CapabilityStatement-cdex-capabilitystatement-inline-example.html)
 17. **Triaged:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884)
-18. **Pre-Applied:**(Enhancement) Add Task State diagram to specification [FHIR-46004](https://jira.hl7.org/browse/FHIR-46004) See Changes [Here](file:///Users/ehaas/Documents/FHIR/davinci-ecdx/output/task-based-approach.html#task-state-machine):
+18. **Pre-Applied:**(Enhancement) Add Task State diagram to specification [FHIR-46004](https://jira.hl7.org/browse/FHIR-46004) See Changes:
+   - [Task State Machine](task-based-approach.html#task-state-machine)
+   - [Requesting Attachments Using Attachment Codes](requesting-attachments-code.html#requesting-attachments-using-fhir)
+   - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#requesting-attachments-using-fhir)
+19. **Pre-Applied:**(Enhancement) Change Task.input:QuestionnairesNeeded max from 1 to * [FHIR-46093](https://jira.hl7.org/browse/FHIR-46093) See Changes [Here](StructureDefinition-cdex-task-attachment-request-definitions.html) and [Here](requesting-attachments-questionnaire.html)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
