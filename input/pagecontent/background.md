@@ -54,7 +54,7 @@ The Da Vinci Project developed over a dozen use cases and implementation guides.
 {% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
 ### Workflow Overview
 
-FHIR offers numerous architectural approaches for sharing data between systems. Each has pros and cons, and the most appropriate one depends on the circumstances under which systems exchange data. (Review the [Approaches to Exchanging FHIR Data] in the Da Vinci HRex Implementation Guide for more guidance and background.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
+FHIR offers numerous architectural approaches for sharing data between systems. Each has pros and cons, and the most appropriate one depends on the circumstances under which systems exchange data. (Review the [Architectural Approach](#architectural-approach) section below for more detail.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
 
 1. **[Direct Query]:** A Payer or external Provider system directly queries the Provider system for specific data using the standard FHIR RESTful search.
 2. **[Task Based Approach]:** A Payer or external Provider system requests the information desired using the FHIR *Task* resource. The Provider system supplies the data. Human involvement may be needed to find/aggregate/filter/approve it.
@@ -124,3 +124,69 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 [^1]: The Payer's method for associating attachments to claims or prior authorizations and processing them is out of scope for this guide. 
 
 {% include link-list.md %}
+
+<div class="bg-success" markdown="1">
+
+### Architectural Approach
+
+All Da Vinci IGs that define [CapababilityStatements]({{site.data.fhir.path}}capabilitystatement.html) setting expectations for support for certain FHIR interactions, operations, or other exchange mechanisms include this section explaining the IG's choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page documented in the FHIR version R5 specification.
+
+#### Direct Query
+
+Direct Query is the the standard FHIR RESTful search and is the simplest, most adopted and reusable approach for clinical data exchange between a Data Consumer and Data Source.
+
+##### Decision Tree
+
+- Consumer initiates? - **Yes** - CDex Data Consumer systems initiate the transaction when it needs clinical information from the CDex Data Source
+- Direct Connection? - **Yes** - it was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system.
+- Human intervention? - **No** - there was no expectation that a human would need to be involved by the CDex Data Source to return the information.
+- Is data pre-existing? - **Yes** -  In general it was presumed the CDex Data Source has data about a patient/member.
+- return FHIR resources? - **Yes** - it was presumed that CDex Data Source would return FHIR resources.
+- Ad-hoc query? - **Yes** - it was presumed that CDex Data Consumer would create Ad-hoc RESTful  queries to get the data from the CDex Data Source.
+-  Synchronous? - **Yes** - it was presumed that the RESTful queries are *synchronous*
+
+#### Task-Based Workflow
+
+Although not as widely adopted as the FHIR RESTful approach, the Task-Based approach is highly reusable clinical data exchange between a Data Consumer and Data Source. See the [Task Based Approach] page for its benefits over Direct Query and when to use it.
+
+##### Decision Tree
+
+- Consumer initiates? - **Yes** - CDex Data Consumer systems initiate the transaction when it needs clinical information from the CDex Data Source.
+- Direct Connection? - **Yes** - it was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system to create Tasks and fetch resources.
+- Human intervention? - **Yes** - there was a expectation that a human may need to be involved by the CDex Data Source to return the information. 
+- Is data pre-existing? - **Yes** -  In general it was presumed the CDex Data Source has data about a patient/member.
+- return FHIR resources? - **Yes** - it was presumed that CDex Data Source would return FHIR resources.
+- Ad-hoc query? - **Yes** - it was presumed that CDex Data Consumer would create Ad-hoc data request using `Task.input` to get the data from the CDex Data Source.
+- Synchronous? - **No** - it was presumed that the Task based queries are *asynchronous*
+- Subscription capability? - **Maybe** - it was presumed that the CDex Data Consumer would either use *polling* or *Subscription with query* to receive a notification when the Task is completed.
+
+#### Solicited and Unsolicited Attachments Workflow
+
+##### Sending Attachments Using a FHIR Process Operation
+
+The CDex Data Suorce  (i.e., the Provider)uses the [`$submit-attachment`] operation to *push* clinical data to the CDex Data Consumer (i.e., the Payer) in both solicited and solicited attachment transaction. This transaction is specialized to the CDex Attachments use case and not reusable for other clinical data exchanges.
+
+###### Decision Tree
+
+- Push? - **Yes** - it was presumed that the CDex Data Source would *push* the clinical data to the CDex Data Consumer.
+- Configured by consumer? - **No** - it was presumed that the CDex Data Consumer would share all the clinical data for all transactions.
+- Direct Connection? - **Yes** - it was presumed that CDex Data Source systems could connect directly with the CDex Data Consumer system.
+- Data source directs consumer persistence? - **No** - it was presumed that the CDex Data Consumer has no awareness of the existing data and would share all the clinical data for all transactions.
+- Is message-like? - **No** - it was presumed that there is no need for explicit support for routing and Operations are a lighter-weight solution.
+
+##### Requesting Attachment using Task
+
+Requesting Attachment using Task is a specialization of the [Task-Based Workflow](#task-based-workflow) transaction. In contrast to the Task-Based Workflow it is not reusable for other clinical data exchanges. Additionally, the CDex Data Source (i.e., the Provider) *pushes* the data to the Payer-supplied endpoint using the [`$submit-attachment`] operation  documented in the [Sending Attachments Using a FHIR Process Operation](#sending-attachments-using-a-fhir-process-operation) section above.
+
+###### Decision Tree
+
+- Consumer initiates? - **Yes** - CDex Data Consumer systems initiate the transaction when it needs clinical information from the CDex Data Source.
+- Direct Connection? - **Yes** - it was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system to create Tasks and fetch resources.
+- Human intervention? - **Yes** - there was a expectation that a human may need to be involved by the CDex Data Source to return the information. 
+- Is data pre-existing? - **Yes** -  In general it was presumed the CDex Data Source has data about a patient/member.
+- return FHIR resources? - **Yes** - it was presumed that CDex Data Source would return FHIR resources.
+- Ad-hoc query? - **Yes** - it was presumed that CDex Data Consumer would create Ad-hoc data requests using `Task.input` to get the data from the CDex Data Source.
+- Synchronous? - **No** - it was presumed that the Task based queries are *asynchronous*
+- Push? - **Yes** - it was presumed that the CDex Data Source would *push* the clinical data to the CDex Data Consumer when the Task is complete. See the decision tree in the [Sending Attachments Using a FHIR Process Operation](#sending-attachments-using-a-fhir-process-operation) section above.
+
+</div><!-- new-content -->

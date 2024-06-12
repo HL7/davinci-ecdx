@@ -58,7 +58,6 @@
 [HRex Security and Privacy]: {{site.data.fhir.ver.hrex}}/security.html
 [Signatures]: signatures.html
 [Security and Privacy]: security.html
-[Approaches to Exchanging FHIR Data]: {{site.data.fhir.ver.hrex}}/exchanging.html
 [Requesting Exchange using Task]: {{site.data.fhir.ver.hrex}}/exchanging-request.html#task
 [Exchanging with polling]: https://hl7.fhir.org/exchanging-polling.html
 [Exchanging with FHIR Subscription]: https://hl7.fhir.org/exchanging-subscription.html
@@ -173,4 +172,5 @@
 [Task Reason]: task-based-approach.html#task-reason
 [Discovery of Identifiers]: task-based-approach.html#discovery-of-identifiers
 [Task State Machine]: task-based-approach.html#task-state-machine
+[Approaches to Exchanging FHIR Data]: https://hl7.org/fhir/R5/exchanging.html
 
