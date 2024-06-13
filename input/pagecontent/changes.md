@@ -18,7 +18,7 @@ These changes are the result of trackers listed below.
 1. **Applied:** (Correction) Update diagram to "Provider submitted requested attachments to the *Payer*"  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](solicited-unsolicited-attachments.html#solicited-attachments)
 3. **Applied:** (Enhancement) Add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](StructureDefinition-cdex-parameters-submit-attachment.html)
 4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
-5.  **Triaged:** (Clarification) Clarify that PAS is a special case where the PROVIDER create the Task [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](#.html)
+5.  **Applied:** (Clarification) Clarify when to use CDex vs PAS for attachments [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](burden-reduction.html)
 6.  **Applied:** (Enhancement) Include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) See Changes:
    - [CDex LOINC Attachment Codes Value Set](ValueSet-cdex-loinc-attachment-codes.html)
    - [CDex PWK01 Attachment Report Type Code Value Set](ValueSet-cdex-pwk01-attachment-report-type-code.html)

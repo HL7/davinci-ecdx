@@ -1,0 +1,29 @@
+digraph pas_cdex_decision_tree {
+  label="PAS CDex Decision Tree";
+  // use https://www.devtoolsdaily.com/graphviz/ to generate and download svg image
+  
+  // Define special nodes representing the start and end points with a point shape
+
+  
+  // Set default node properties for task states: font is Courier and shape is box
+  node [fontname=Courier];
+
+    st [label="Start"]
+    e [label="End"]
+
+
+    pas [label="Using PAS for Prior Auth Request?"]
+    use_pas [label="Use PAS for Requesting Attachments"]
+    use_cdex [label="Use CDex for Requesting Attachments"]
+    more [label="Subsequent
+request(s) for additional information?"]
+
+
+    st -> pas
+    pas -> use_pas [label="1. Yes"]
+    pas -> use_cdex [label=" 2. No, some other channel"]
+    use_pas -> more
+    more -> use_cdex [label="3. Yes"]
+    more -> e [label="No"]
+    use_cdex -> e
+}

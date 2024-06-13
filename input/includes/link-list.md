@@ -138,7 +138,7 @@
 [Smart Version 2.0.0 EHR launch flow]: https://hl7.org/fhir/smart-app-launch/app-launch.html#launch-app-ehr-launch
 [Using Da Vinci DTR to Complete the Questionnaire]: requesting-attachments-questionnaire.html#using-da-vinci-dtr-to-complete-the-questionnaire
 [Conforming to CDex Attachments]: attachments-conformance.html
-[Submit Additional Information]: {{site.data.fhir.ver.pas}}/usecases.html#submit-additional-information
+[Request for Additional Information]: {{site.data.fhir.ver.pas}}/additionalinfo.html
 [SDC Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse.html
 [SDC Adaptive Questionnaire Response Profile]:{{site.data.fhir.ver.sdc}}StructureDefinition-sdc-questionnaireresponse-adapt.html
 [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)]: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164/subpart-E/section-164.506
@@ -173,4 +173,6 @@
 [Discovery of Identifiers]: task-based-approach.html#discovery-of-identifiers
 [Task State Machine]: task-based-approach.html#task-state-machine
 [Approaches to Exchanging FHIR Data]: https://hl7.org/fhir/R5/exchanging.html
+[PAS Claim Response Bundle]: {{site.data.fhir.ver.pas}}/StructureDefinition-profile-pas-response-bundle.html
+[PAS Task]:  {{site.data.fhir.ver.pas}}/StructureDefinition-profile-task.html
 
