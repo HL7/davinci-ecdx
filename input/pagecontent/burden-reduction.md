@@ -30,7 +30,7 @@ The decision tree in Figure 1 below summarizes when to Use PAS or CDex for reque
 
 1. Use PAS, When implementing Da Vinci Burden reduction for prior authorization and the prior authorization request is ‘pended' and additional information is requested from the provider with a X12 278 Response or [PAS Response Bundle].
 1. Use CDex, When the Provider uses some other channel to request a prior authorization (e.g., fax, portal, phone).
-2. Use CDex, If the Payer needs subsequent requests for additional information after using PAS for the initial request.
+2. Use CDex, If the Payer makes subsequent requests for additional information after using PAS for the initial request.
 
 {% include link-list.md %}
 
