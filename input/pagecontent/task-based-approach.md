@@ -79,9 +79,6 @@ Task-based queries require communicating a business identifier (such as a provid
 
 The patient's [FHIR id] is a prerequisite to performing  FHIR RESTful Direct Queries. See [this section](direct-query.html#discovery-of-patient-fhir-ids) for discovering the patient's FHIR id.
 
-The Da Vinci project Team anticipates that efforts such as [FHIR at Scale Taskforce (FAST)] will provide a long-term solution to the issue of FHIR id discovery.
-{:.stu-note}
-
 <div class="bg-success" markdown="1">
 
 ### Task State Machine

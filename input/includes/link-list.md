@@ -83,7 +83,7 @@
 [X12 Transaction Sets]: https://x12.org/products/transaction-sets
 [HEDIS]: https://en.wikipedia.org/wiki/Healthcare_Effectiveness_Data_and_Information_Set
 [Specification]: specification.html
-[Patient Match]: {{site.data.fhir.path}}patient-operation-match.html
+[`$match`]: {{site.data.fhir.path}}patient-operation-match.html
 [Coverage]: {{site.data.fhir.path}}coverage.html
 [FHIR RESTful Search syntax]: {{site.data.fhir.path}}search.html#Introduction
 [DocumentReference]: {{site.data.fhir.path}}documentreference.html
@@ -175,4 +175,6 @@
 [Approaches to Exchanging FHIR Data]: https://hl7.org/fhir/R5/exchanging.html
 [PAS Claim Response Bundle]: {{site.data.fhir.ver.pas}}/StructureDefinition-profile-pas-response-bundle.html
 [PAS Task]:  {{site.data.fhir.ver.pas}}/StructureDefinition-profile-task.html
-
+[Patient Matching]: https://hl7.org/fhir/us/identity-matching/patient-matching.html
+[Guidance on Identity Assurance]: https://hl7.org/fhir/us/identity-matching/guidance-on-identity-assurance.html
+[Interoperable Digital Identity and Patient Matching]: https://hl7.org/fhir/us/identity-matching/index.html

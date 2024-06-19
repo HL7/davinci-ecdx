@@ -17,19 +17,32 @@ The sequence diagram in Figure 6 below outlines a successful interaction between
 {% include img.html img="search-sequencediagram.svg" caption="Figure 6" %}
 
 
+<div class="bg-success" markdown="1">
 
 ### Discovery of Patient FHIR IDs
 
-In addition to using a patient business identifier such as an MRN or Member ID, the FHIR Patient.id is often a prerequisite to performing FHIR RESTful Direct Queries and other transactions described in this guide. However, there is no requirement that the requester knows the FHIR Patient.id in advance of the exchange. This section describes the recommended methods to determine the FHIR Patient.id on the server. 
+In addition to using a patient business identifier such as an MRN or Member ID, the FHIR Patient.id is often a prerequisite to performing FHIR RESTful Direct Queries and other transactions described in this guide. However, there is no requirement that the requester knows the FHIR Patient.id in advance of the exchange. With sufficient demographic information and/or identifiers, any of the following FHIR transaction can be used discover the FHIR Patient.id:
 
-1. Performing the [Patient Match] operation by providing sufficient demographic information to match a single patient. CDex Data Source servers **SHOULD** support the patient match operation and declare it in their CapabilityStatement.
+1. Call the patient [`$match`] operation to ask an MPI to match a patient.
+   - CDex Data Source servers **SHOULD** support the patient match operation and declare it in their CapabilityStatement.
 
-1. Search the Patient resource using a combination of identifiers known by the Data Consumer. For example, a Payer may use a member_id and patient demographics.
+2. Search the Patient using a Direct Query.
+   - For example:
+   
+   	  `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
-   	`Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+   - CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
+    
+3. Use the [Task Based Approach] to request the Patient resource.
 
-    CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
+<div class="bg-info" markdown="1">
+The [Interoperable Digital Identity and Patient Matching] guide extends the patient [`$match`] operation for cross-organizational use by highlighting best practices in using matching attributes and their verification prior to responding to a patient match request or interpreting match results. It also serves as a set of best practices for patient matching in similar FHIR transactions like Direct Query or Task based approach. Implementers are encouraged to review the following sections:
 
+- [Patient Matching]
+- [Guidance on Identity Assurance]
+</div><!-- new-content -->
+
+</div><!-- new-content -->
 
 ### Direct Query Transaction Scenarios
 

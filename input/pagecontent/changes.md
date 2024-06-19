@@ -53,6 +53,8 @@ These changes are the result of trackers listed below.
    - [Requesting Attachments Using Attachment Codes](requesting-attachments-code.html#requesting-attachments-using-fhir)
    - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#requesting-attachments-using-fhir)
 19. **Applied:**(Enhancement) Change Task.input:QuestionnairesNeeded max from 1 to * [FHIR-46093](https://jira.hl7.org/browse/FHIR-46093) See Changes [Here](StructureDefinition-cdex-task-attachment-request-definitions.html#diff_Task.input:QuestionnairesNeeded) and [Here](requesting-attachments-questionnaire.html)
+17. **Applied:**(Enhancement) Add Task Based approach as option for discovery of a member’s FHIR_ID [FHIR-45982](https://jira.hl7.org/browse/FHIR-45982) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids)
+18. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids) and [Here](task-based-approach.html#discovery-of-identifiers)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
