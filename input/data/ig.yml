@@ -234,7 +234,7 @@ definition:
       \ is \"attachment-request-code\", the provider system returns attachment(s)\
       \ identified by the attachment code(s) in the \"AttachmentsNeeded\" input parameter.\n\
       \  - If the code is \"attachment-request-questionnaire\", the provider system\
-      \ uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
+      \ uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html)\
       \ to complete the Questionnaire(s) referenced in the \"QuestionnairesNeeded\"\
       \ input parameter.\n  - When either code is present, the provider system uses\
       \ the $submit-attachment operation to return the information to the endpoint\
@@ -506,7 +506,7 @@ definition:
       \ - If the code is \"data-request-code\", the provider system returns data(s)\
       \ identified by the LOINC code in the \"code\" input parameter.\n  - If the\
       \ code is \"data-request-questionnaire\", the provider system uses [Documentation\
-      \ Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html)\
+      \ Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html)\
       \ to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
       - A Task.for element representing the member (i.e.,patient) for whom the data\
       \ is being requested\n- A Task.requester element communicating who is requesting\

@@ -5,9 +5,15 @@
 
 This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The resulting resolution of the community comments and edits to this guide has been agreed to and voted on by the members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group.
 
-#### What's new in Version 2.0.0 of CDex:
+#### What's new in Version 2.1.0 of CDex:
 
-{% include img-small.html img="todo.png" %}
+1. Added Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/).
+2. Updated guidance on [Using CDex Attachments with DaVinci PAS](burden-reduction.html#using-cdex-attachments-with-davinci-pas) page to align with Da Vinci PAS v 2.0.1 Guide's, [Request for Additional Information](https://hl7.org/fhir/us/davinci-pas/STU2/additionalinfo.html) page.
+3. Added a section on how to use [topic-based subscriptions](task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
+4. Updated guidance on [discovery of patient ids](direct-query.html#discovery-of-patient-fhir-ids) based on FAST's[Interoperable Digital Identity and Patient Matching](https://hl7.org/fhir/us/identity-matching/index.html) implementation guide.
+5. Advanced all the version 2.0.0 DRAFT content about using Questionnaires with the Task-based Approach and Attachments to *Trial Use*.
+6. Added a [design section](background.html#architectural-approach) to the background page explaining the IG’s choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page.
+7. Added a [Task state diagram](task-based-approach.html#task-state-machine) for the CDex Task profiles.
 
 #### Changes:
 
@@ -55,6 +61,7 @@ These changes are the result of trackers listed below.
 19. **Applied:**(Enhancement) Change Task.input:QuestionnairesNeeded max from 1 to * [FHIR-46093](https://jira.hl7.org/browse/FHIR-46093) See Changes [Here](StructureDefinition-cdex-task-attachment-request-definitions.html#diff_Task.input:QuestionnairesNeeded) and [Here](requesting-attachments-questionnaire.html)
 17. **Applied:**(Enhancement) Add Task Based approach as option for discovery of a member’s FHIR_ID [FHIR-45982](https://jira.hl7.org/browse/FHIR-45982) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids)
 18. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids) and [Here](task-based-approach.html#discovery-of-identifiers)
+19. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](index.html)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

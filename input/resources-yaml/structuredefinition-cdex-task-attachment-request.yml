@@ -18,7 +18,7 @@ description: |-
   - A Task.intent fixed to "order" (this element is a mandatory Task element)
   - A Task.code of either "attachment-request-code" or "attachment-request-questionnaire"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.
     - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "AttachmentsNeeded" input parameter.
-    - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/STU2/index.html) to complete the Questionnaire(s) referenced in the "QuestionnairesNeeded" input parameter.
+    - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html) to complete the Questionnaire(s) referenced in the "QuestionnairesNeeded" input parameter.
     - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in "PayerUrl" input parameter.    
   - A Task.requester.identifier element representing the Payer ID
   - A Task.owner.reference element fixed to "\#practionerrole" -  a reference the contained PractitionerRole Resource that represents the Provider ID.

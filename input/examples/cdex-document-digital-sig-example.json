@@ -1,308 +1,298 @@
 {
-    "id": "cdex-document-digital-sig-example",
-    "meta": {
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDEX Document with Digital Signature Example"
+  "id": "cdex-document-digital-sig-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-preview"
+    ]
+  },
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+      "resource": {
+        "attester": [
+          {
+            "mode": "legal",
+            "party": {
+              "display": "Example Practitioner",
+              "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
             },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
-            }
+            "time": "2021-10-25T20:16:29-07:00"
+          }
         ],
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
-        ]
-    },
-    "entry": [
-        {
-            "fullUrl": "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
-            "resource": {
-                "attester": [
-                    {
-                        "mode": "legal",
-                        "party": {
-                            "display": "Example Practitioner",
-                            "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
-                        },
-                        "time": "2021-10-25T20:16:29-07:00"
-                    }
-                ],
-                "author": [
-                    {
-                        "display": "Example Practitioner",
-                        "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
-                    }
-                ],
-                "date": "2021-10-25T20:16:29-07:00",
-                "encounter": {
-                    "display": "Example Encounter",
-                    "reference": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"
-                },
-                "id": "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
-                "resourceType": "Composition",
-                "section": [
-                    {
-                        "entry": [
-                            {
-                                "reference": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
-                            }
-                        ],
-                        "title": "Active Condition 1"
-                    }
-                ],
-                "status": "final",
-                "subject": {
-                    "display": "Example Patient",
-                    "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
-                },
-                "title": "Active Conditions",
-                "type": {
-                    "coding": [
-                        {
-                            "code": "11503-0",
-                            "system": "http://loinc.org"
-                        }
-                    ],
-                    "text": "Medical records"
-                }
-            }
+        "author": [
+          {
+            "display": "Example Practitioner",
+            "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+          }
+        ],
+        "date": "2021-10-25T20:16:29-07:00",
+        "encounter": {
+          "display": "Example Encounter",
+          "reference": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"
         },
-        {
-            "fullUrl": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-            "resource": {
-                "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-                "identifier": [
-                    {
-                        "system": "http://hl7.org/fhir/sid/us-npi",
-                        "value": "9941339100"
-                    }
-                ],
-                "meta": {
-                    "lastUpdated": "2013-05-05T16:13:03Z",
-                    "profile": [
-                        "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
-                    ]
-                },
-                "name": [
-                    {
-                        "family": "Hancock",
-                        "given": [
-                            "John"
-                        ]
-                    }
-                ],
-                "resourceType": "Practitioner"
-            }
+        "id": "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
+        "resourceType": "Composition",
+        "section": [
+          {
+            "entry": [
+              {
+                "reference": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
+              }
+            ],
+            "title": "Active Condition 1"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "display": "Example Patient",
+          "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
         },
-        {
-            "fullUrl": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
-            "resource": {
-                "active": true,
-                "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
-                "identifier": [
-                    {
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                                    "code": "MB"
-                                }
-                            ]
-                        },
-                        "system": "http://example.org/cdex/payer/member-ids",
-                        "value": "Member123"
-                    }
-                ],
-                "gender": "male",
-                "name": [
-                    {
-                        "family": "Patient",
-                        "given": [
-                            "CDEX Example"
-                        ],
-                        "text": "CDEX Example Patient"
-                    }
-                ],
-                "resourceType": "Patient",
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-                    ]
-                }
+        "title": "Active Conditions",
+        "type": {
+          "coding": [
+            {
+              "code": "11503-0",
+              "system": "http://loinc.org"
             }
-        },
-        {
-            "fullUrl": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
-            "resource": {
-                "asserter": {
-                    "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
-                },
-                "category": [
-                    {
-                        "coding": [
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                                "code": "problem-list-item",
-                                "display": "Problem List Item"
-                            }
-                        ],
-                        "text": "Problem List Item"
-                    }
-                ],
-                "clinicalStatus": {
-                    "coding": [
-                        {
-                            "code": "active",
-                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
-                        }
-                    ]
-                },
-                "code": {
-                    "coding": [
-                        {
-                            "code": "44054006",
-                            "display": "Type 2 Diabetes Mellitus",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ]
-                },
-                "id": "014a68ec-d691-49e0-b980-91b0d924e570",
-                "identifier": [
-                    {
-                        "system": "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
-                        "value": "1"
-                    }
-                ],
-                "onsetDateTime": "2006",
-                "resourceType": "Condition",
-                "subject": {
-                    "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
-                },
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-                    ]
-                }
-            }
-        },
-        {
-            "fullUrl": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
-            "resource": {
-                "class": {
-                    "code": "EMER",
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
-                },
-                "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
-                "participant": [
-                    {
-                        "individual": {
-                            "display": "John Hancock",
-                            "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
-                        }
-                    }
-                ],
-                "period": {
-                    "end": "2021-10-25T20:16:29-07:00",
-                    "start": "2021-10-25T20:10:29-07:00"
-                },
-                "resourceType": "Encounter",
-                "serviceProvider": {
-                    "display": "CDEX Example Organization",
-                    "reference": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"
-                },
-                "status": "finished",
-                "subject": {
-                    "display": "CDEX Example Patient",
-                    "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "code": "261665006",
-                                "display": "Unknown (qualifier value)",
-                                "system": "http://snomed.info/sct"
-                            }
-                        ],
-                        "text": "Unknown (qualifier value)"
-                    }
-                ],
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-                    ]
-                }
-            }
-        },
-        {
-            "fullUrl": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
-            "resource": {
-                "active": true,
-                "address": [
-                    {
-                        "city": "Boston",
-                        "country": "USA",
-                        "line": [
-                            "1 CDEX Lane"
-                        ],
-                        "postalCode": "01002",
-                        "state": "MA"
-                    }
-                ],
-                "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
-                "identifier": [
-                    {
-                        "system": "http://hl7.org/fhir/sid/us-npi",
-                        "value": "1234567893"
-                    }
-                ],
-                "name": "CDEX Example Organization",
-                "resourceType": "Organization",
-                "telecom": [
-                    {
-                        "system": "phone",
-                        "value": "(+1) 555-555-5555"
-                    },
-                    {
-                        "system": "email",
-                        "value": "customer-service@example.org"
-                    }
-                ],
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
-                    ]
-                }
-            }
+          ],
+          "text": "Medical records"
         }
-    ],
-    "identifier": {
-        "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+      }
     },
-    "resourceType": "Bundle",
-    "timestamp": "2021-10-25T20:16:29-07:00",
-    "type": "document",
-    "signature": {
-        "type": [
-            {
-                "system": "urn:iso-astm:E1762-95:2013",
-                "code": "1.2.840.10065.1.12.1.5",
-                "display": "Verification Signature"
-            }
+    {
+      "fullUrl": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+      "resource": {
+        "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9941339100"
+          }
         ],
-        "when": "2021-10-05T22:42:19-07:00",
-        "who": {
-            "reference": "https://example.org/Practitioner/123"
+        "meta": {
+          "lastUpdated": "2013-05-05T16:13:03Z",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
+          ]
         },
-        "onBehalfOf": {
-            "reference": "https://example.org/Organization/123"
+        "name": [
+          {
+            "family": "Hancock",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "resourceType": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+      "resource": {
+        "active": true,
+        "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MB"
+                }
+              ]
+            },
+            "system": "http://example.org/cdex/payer/member-ids",
+            "value": "Member123"
+          }
+        ],
+        "gender": "male",
+        "name": [
+          {
+            "family": "Patient",
+            "given": [
+              "CDEX Example"
+            ],
+            "text": "CDEX Example Patient"
+          }
+        ],
+        "resourceType": "Patient",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
+      "resource": {
+        "asserter": {
+          "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
         },
-        "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLm41QzBndGRrUkY5TGpDSHAyT1ZCUEl6UDI5N05oYUZyekNZUXA0QWRERWkya25aN2wtNHViRW5wbzgzZ1o5OGFOTGM5ZncwY1Y5Sm9yLUVYcUx2em44MjVjeUFvbnlKU0tteFhWcEt6SU9wV25kNUJjV3lpSUpjOXRoV2NoVkUxUHpMMUhzNjVjaTIzeWZXNlpvbjVzX3htVlN1NkZmT2N1UzNlWnlMOEFQVW9RMDAxdlB4QmR4bkRLNDg2ZFR0dGhHMExjdUl5V1c5Y0NZOTZabDRGWUJ4eDIwdjl6RkVQOW14UXE3Y2V4bGQyY210bmRhYTlxaHVUcVdoTjJsTUlCZTgybm1XZU9CSVlLVUdKaHVxd3VMQjNwSXBITWFFMy1PR1VTQldTQ3N5ZU10aXg4VUpqaG5MSS1ZelhpOTNmQnFxVk9SQkl1ZF9UeHRCS3ZISkQ4dEdvemNlb0JhVGw0MTdUOFpKLXlQejQ2azEyeWctQktNZFZ0RnZnTl90clNyMk0wVE5OZkZOVGlXNHlpQzRKa1k1Um93UjVYSEFqbFZsQlNSYnc4MXJxUDlMbmdvZGd0bWhaaFJDc2xyWVFNbkxwQktCYmtMUDNYX1NTT0F5a3d4TUxHMnRrZGUybjRRWFpqVVRlNHhTX0FRMzgwUHFuLWZTb1U1NDFRSVZV"
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "44054006",
+              "display": "Type 2 Diabetes Mellitus",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "id": "014a68ec-d691-49e0-b980-91b0d924e570",
+        "identifier": [
+          {
+            "system": "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
+            "value": "1"
+          }
+        ],
+        "onsetDateTime": "2006",
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
+      "resource": {
+        "class": {
+          "code": "EMER",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+        },
+        "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
+        "participant": [
+          {
+            "individual": {
+              "display": "John Hancock",
+              "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+            }
+          }
+        ],
+        "period": {
+          "end": "2021-10-25T20:16:29-07:00",
+          "start": "2021-10-25T20:10:29-07:00"
+        },
+        "resourceType": "Encounter",
+        "serviceProvider": {
+          "display": "CDEX Example Organization",
+          "reference": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"
+        },
+        "status": "finished",
+        "subject": {
+          "display": "CDEX Example Patient",
+          "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "261665006",
+                "display": "Unknown (qualifier value)",
+                "system": "http://snomed.info/sct"
+              }
+            ],
+            "text": "Unknown (qualifier value)"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
+      "resource": {
+        "active": true,
+        "address": [
+          {
+            "city": "Boston",
+            "country": "USA",
+            "line": [
+              "1 CDEX Lane"
+            ],
+            "postalCode": "01002",
+            "state": "MA"
+          }
+        ],
+        "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1234567893"
+          }
+        ],
+        "name": "CDEX Example Organization",
+        "resourceType": "Organization",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(+1) 555-555-5555"
+          },
+          {
+            "system": "email",
+            "value": "customer-service@example.org"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
+          ]
+        }
+      }
     }
+  ],
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+  },
+  "resourceType": "Bundle",
+  "timestamp": "2021-10-25T20:16:29-07:00",
+  "type": "document",
+  "signature": {
+    "type": [
+      {
+        "system": "urn:iso-astm:E1762-95:2013",
+        "code": "1.2.840.10065.1.12.1.5",
+        "display": "Verification Signature"
+      }
+    ],
+    "when": "2021-10-05T22:42:19-07:00",
+    "who": {
+      "reference": "https://example.org/Practitioner/123"
+    },
+    "onBehalfOf": {
+      "reference": "https://example.org/Organization/123"
+    },
+    "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLm41QzBndGRrUkY5TGpDSHAyT1ZCUEl6UDI5N05oYUZyekNZUXA0QWRERWkya25aN2wtNHViRW5wbzgzZ1o5OGFOTGM5ZncwY1Y5Sm9yLUVYcUx2em44MjVjeUFvbnlKU0tteFhWcEt6SU9wV25kNUJjV3lpSUpjOXRoV2NoVkUxUHpMMUhzNjVjaTIzeWZXNlpvbjVzX3htVlN1NkZmT2N1UzNlWnlMOEFQVW9RMDAxdlB4QmR4bkRLNDg2ZFR0dGhHMExjdUl5V1c5Y0NZOTZabDRGWUJ4eDIwdjl6RkVQOW14UXE3Y2V4bGQyY210bmRhYTlxaHVUcVdoTjJsTUlCZTgybm1XZU9CSVlLVUdKaHVxd3VMQjNwSXBITWFFMy1PR1VTQldTQ3N5ZU10aXg4VUpqaG5MSS1ZelhpOTNmQnFxVk9SQkl1ZF9UeHRCS3ZISkQ4dEdvemNlb0JhVGw0MTdUOFpKLXlQejQ2azEyeWctQktNZFZ0RnZnTl90clNyMk0wVE5OZkZOVGlXNHlpQzRKa1k1Um93UjVYSEFqbFZsQlNSYnc4MXJxUDlMbmdvZGd0bWhaaFJDc2xyWVFNbkxwQktCYmtMUDNYX1NTT0F5a3d4TUxHMnRrZGUybjRRWFpqVVRlNHhTX0FRMzgwUHFuLWZTb1U1NDFRSVZV"
+  }
 }

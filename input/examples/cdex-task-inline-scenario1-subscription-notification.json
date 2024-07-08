@@ -1,85 +1,75 @@
 {
-    "resourceType": "Bundle",
-    "id": "cdex-task-inline-scenario1-subscription-notification",
-    "type": "history",
-    "timestamp": "2024-01-18T01:19:38.9929956+00:00",
-    "entry": [
-        {
-            "fullUrl": "urn:uuid:206a4372-a348-41d1-a82e-fc9ebe8825af",
-            "resource": {
-                "resourceType": "Parameters",
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
-                    ]
-                },
-                "id": "206a4372-a348-41d1-a82e-fc9ebe8825af",
-                "parameter": [
-                    {
-                        "name": "subscription",
-                        "valueReference": {
-                            "reference": "https://example.org/fhir/Subscription/cdex-task-inline-scenario1-subscription-active"
-                        }
-                    },
-                    {
-                        "name": "topic",
-                        "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update"
-                    },
-                    {
-                        "name": "status",
-                        "valueCode": "active"
-                    },
-                    {
-                        "name": "type",
-                        "valueCode": "event-notification"
-                    },
-                    {
-                        "name": "events-since-subscription-start",
-                        "valueString": "17"
-                    },
-                    {
-                        "name": "notification-event",
-                        "part": [
-                            {
-                                "name": "event-number",
-                                "valueString": "17"
-                            },
-                            {
-                                "name": "timestamp",
-                                "valueInstant": "2024-01-18T01:19:38.837885+00:00"
-                            },
-                            {
-                                "name": "focus",
-                                "valueReference": {
-                                    "reference": "https://cdex.ri.argo.run/fhir/provider/Task/cdex-task-example2"
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "request": {
-                "method": "GET",
-                "url": "https://example.org/fhir/Subscription/admission/$status"
-            },
-            "response": {
-                "status": "200"
+  "resourceType": "Bundle",
+  "id": "cdex-task-inline-scenario1-subscription-notification",
+  "type": "history",
+  "timestamp": "2024-01-18T01:19:38.9929956+00:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:206a4372-a348-41d1-a82e-fc9ebe8825af",
+      "resource": {
+        "resourceType": "Parameters",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
+          ]
+        },
+        "id": "206a4372-a348-41d1-a82e-fc9ebe8825af",
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "https://example.org/fhir/Subscription/cdex-task-inline-scenario1-subscription-active"
             }
-        }
-    ],
-    "meta": {
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Inline Subscription Task Scenario1 Subscription Notification"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Notification Bundle example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"
-            }
-        ],
-        "profile": [
-            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4"
+          },
+          {
+            "name": "topic",
+            "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update"
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "events-since-subscription-start",
+            "valueString": "17"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "17"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2024-01-18T01:19:38.837885+00:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "https://cdex.ri.argo.run/fhir/provider/Task/cdex-task-example2"
+                }
+              }
+            ]
+          }
         ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "https://example.org/fhir/Subscription/admission/$status"
+      },
+      "response": {
+        "status": "200"
+      }
     }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4"
+    ]
+  }
 }
