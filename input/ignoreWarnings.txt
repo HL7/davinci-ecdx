@@ -54,9 +54,9 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 
 A definition for CodeSystem 'http://example.org/fhir/communication-category' could not be found, so the code cannot be validated
 
-# ====FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error which is has been corrected in the FHIR R5. ===
+# ====FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error which is has been corrected in the FHIR R5. The guide is referencing the "HL7 ValueSet of Format Codes for use with Document Sharing" that is used in R5 ===
 
-The code provided (urn:oid:1.3.6.1.4.1.19376.1.2.3#urn:hl7-org:sdwg:ccda-structuredBody:2.1) is not in the value set in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set
+INFORMATION: Bundle/cdex-searchbundle-scenario3-example: Bundle.entry[0].resource/*DocumentReference/cdex-HP-example1*/.content[0].format: The Coding provided (http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes#urn:hl7-org:sdwg:ccda-structuredBody:2.1) was not found in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = The provided code 'http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes#urn:hl7-org:sdwg:ccda-structuredBody:2.1: 'ccda-structuredBody:2.1'' was not found in the value set 'http://hl7.org/fhir/ValueSet/formatcodes|4.0.1')
 
 # === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
 

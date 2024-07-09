@@ -89,7 +89,7 @@
       "id": "dtr",
       "packageId": "hl7.fhir.us.davinci-dtr",
       "uri": "http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr",
-      "version": "current"
+      "version": "2.0.1"
     },
     {
       "id": "sdc",
@@ -98,10 +98,10 @@
       "version": "3.0.0"
     },
     {
-      "packageId": "hl7.fhir.uv.extensions",
-      "version": "5.1.0-cibuild",
+      "packageId": "hl7.fhir.uv.extensions.r4",
+      "version": "5.1.0",
       "uri": "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-      "id": "hl7_fhir_uv_extensions"
+      "id": "hl7_fhir_uv_extensions_r4"
     },
     {
       "id": "backport",

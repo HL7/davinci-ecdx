@@ -69,13 +69,13 @@ dependencies:
     id: c4bb
   hl7.fhir.us.davinci-dtr:
     uri: 'http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr'
-    version: current
+    version: 2.0.1
     id: dtr
   hl7.fhir.uv.sdc:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
     version: 3.0.0
     id: sdc
-  hl7.fhir.uv.extensions: 5.1.0-cibuild #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
+  hl7.fhir.uv.extensions.r4: 5.1.0 #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport 
@@ -341,7 +341,7 @@ parameters:
   suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
   
   tabbed-snapshots: 'true'
-  auto-oid-root: 2.16.840.1.113883.4.642.40.21
+  auto-oid-root: '2.16.840.1.113883.4.642.40.21'
 copyrightyear: '2024+'
 releaselabel: CI Build
 # releaselabel: STU2
