@@ -4,5 +4,5 @@ This example CapabilityStatement fragment shows a Data Source advertising the CD
 
 
 ~~~
-{% include_relative includelines filename='CapabilityStatement-cdex-capabilitystatement-inline-example.json' start="0,46,135" count="2,10,3" linenumber=true rel=true %}
+{% include_relative includelines filename='CapabilityStatement-cdex-capabilitystatement-inline-example.json' start="0,36,135" count="2,21,2" linenumber=true rel=true %}
 ~~~

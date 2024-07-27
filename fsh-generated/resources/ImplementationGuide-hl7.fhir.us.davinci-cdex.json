@@ -174,11 +174,6 @@
         "description": "ValueSets Associated with CDex Task Based Approach Transactions"
       },
       {
-        "id": "TaskBasedSubscriptionTopic",
-        "name": "Task Based Subscription Topic",
-        "description": "Basic resource representing the subscription for Task updates"
-      },
-      {
         "id": "TaskBasedExamples",
         "name": "Task Based Approach Examples",
         "description": "Examples Associated with CDex Task Based Approach Transactions"
@@ -471,15 +466,6 @@
         "exampleBoolean": false,
         "name": "CDex Data Request Task Code Value Set",
         "groupingId": "TaskBasedTerminology"
-      },
-      {
-        "reference": {
-          "reference": "SubscriptionTopic/cdex-task-update"
-        },
-        "description": "The CDex Task Update Subscription Topic describes the topic for notifications when a submitted CDex Task Data Request Profile `Task.status` element is updated. For examples the status changed from “in-progress” to \"completed\". The canonical URL for this topic is\n\n`http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update`\n\nNote that:\n\n- this topic only covers the changes in status of the submitted CDex Task Data Request Profile.\n- the trigger for this topic **SHALL** be the resourceTrigger\n- the resourceTrigger.resource element **SHALL** be the CDex Task Data Request Profile",
-        "exampleBoolean": false,
-        "name": "CDex Task Update",
-        "groupingId": "TaskBasedSubscriptionTopic"
       },
       {
         "reference": {

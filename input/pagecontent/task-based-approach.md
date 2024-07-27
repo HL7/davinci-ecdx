@@ -249,30 +249,36 @@ Task-based exchanges can take one of two forms—subscription or polling, as des
 
 Polling is a mechanism for conveying new data to a Data Consumer as (or shortly after) the data is created or updated without requiring the Data Source to be aware of the specific needs of the Data Consumer. The Data Consumer repeatedly queries the Data Source to see if there is new data. For example, in the Da Vinci CDex use case, the Data Consumer would poll the Data Source by fetching the Task resource to see if it has been updated. Polling is the *default option* if the Data Source does not support subscribing to the Task as described below.
 
-Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the data source's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
+Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the   Data Source 's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
 
 <div class="bg-success" markdown="1">
 
 #### Subscription
 
-Subscription is a mechanism designed to allow clients to request notifications when an event occurs or data changes. It is an active notification system; a FHIR server actively sends notifications as changes occur. In the Da Vinci CDex use case, the Data Consumer subscribes to the Data Source's Server [base]/Subscription endpoint for notifications when any Task that they created is updated.
+<!-- Subscription is a mechanism designed to allow clients to request notifications when an event occurs or data changes. It is an active notification system; a FHIR server actively sends notifications as changes occur. In the Da Vinci CDex use case, the Data Consumer subscribes to the Data Source's Server [base]/Subscription endpoint for notifications when any Task that they created is updated.
 
-When using subscriptions in CDex, implementers **SHALL** use topic-based subscriptions as defined in the [Subscription R5 Backport Implementation Guide]. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex. Systems must follow the [Conformance in FHIR R4] requirements specified in the R5 Backport Implementation Guide and the CDex-specific conformance requirements listed below.
+When using subscriptions in CDex, implementers **SHALL** use topic-based subscriptions as defined in the [Subscription R5 Backport Implementation Guide]. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex. Systems must follow the Conformance in FHIR R4 requirements specified in the [R5 Backport Implementation Guide] and the CDex-specific conformance requirements listed below. -->
+
+In the subscription mechanism, instead of the Data Consumer regularly querying the Data Source to see if there are changes to existing Tasks, the Data Consumer creates a Subscription instance on the Data Source server*.  The Subscription indicates that the Data Consumer wants to be notified about changes to Tasks and it provides filters that describe what subset of Tasks it is interested in. The Data Source will then push notifications when there are new or updated Tasks and the Data Source can then query for the specific Tasks that have changed.
+
+Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the Subscription [Subscription R5 Backport Implementation Guide]. This implementation guide allows pre-adoption of the FHIR R5 topic-based subscription approach in R4 implementations and is the subscription approach that most U.S. EHR vendors have agreed to support.
+
+<div class="bg-info" markdown="1">
+*Subscriptions need not be created dynamically by the Data Consumer. It's also possible for the Data Source to configure subscriptions for clients, in other words, created subscriptions administratively. However, these implementation details are out of scope for this guide.
+</div><!-- bg-info -->
 
 ##### CDex Task Update Subscription Topic 
 
-This guide formally defines the [CDex Task Update] Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
+The [Da Vinci Health Record Exchange (HRex)] guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
 
-Note that supporting SubscriptionTopic nor the equivalent Basic resource versions described in the R5 Backport Implementation Guides is NOT required by this guide to support subscriptions.
+- The Data Source **SHALL** support the HRex Task Subscription Topic and **MAY** support other subscription topics.
+
+Note that supporting the FHIR SubscriptionTopic resource nor the equivalent Basic resource versions described in the R5 Backport Implementation Guides is NOT required by this guide to support subscriptions.
 {:.bg-warning}
-
-{{site.data.resources['SubscriptionTopic/cdex-task-update']['description']}}
-
-- The Data Source **SHALL** support the CDex Task Update Subscription Topic and **MAY** support other subscription topics.
 
 ##### Discovery
 
-The R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension to allow for the discovery of supported subscription topics. This extension allows server implementers to advertise the canonical URLs of topics available to clients and allows clients to see the list of supported topics on a server.
+The R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension to allow for CDex Data Consumers to discover CDex Data Sources' supported subscription topics. This extension allows server implementers to advertise the canonical URLs of topics available to clients and allows clients to see the list of supported topics on a server. If Data Sources support subscriptions:
 
 - The Data Source **SHALL** support discovery of the CDex Task Update Subscription Topic canonical URL
 - The Data Source **SHOULD** support discovery using the CapabilityStatement SubscriptionTopic Canonical extension and **MAY** support discovery by some other method.
@@ -281,14 +287,14 @@ The example CapabilityStatement snippet shows a Data Source advertising the CDex
 
 {% include examplebutton_default.html example="advertise-topic.md" b_title = 'Click Here To See CapabilityStatement Advertising the CDex Task Update Subscription Topic' %}
 
-
+<!-- 
 ##### Subscription Resource
 
-Data Consumers use the Subscription resource to request notifications for   CDex Task updates ( and other topics the Data Source supports). The Subscription resource SHALL conform to the [R4/B Topic-Based Subscription Profile].
+To dynamically request notifications for CDex Task updates (and other topics the Data Source supports), Data Consumers RESTfully POST a Subscription resource with the Data Source. The Subscription resource **SHALL** conform to the [R4/B Topic-Based Subscription Profile].
 
 <div class="bg-info" markdown="1">
-\**Subscriptions need not be created by the Data Consumer. It's also possible that The Data Source could establish subscriptions automatically or out-of-band. However, these implementation details are out of scope for this guide.
-</div><!-- bg-info -->
+Subscriptions need not be created dynamically by the Data Consumer. It's also possible for the Data Source to configure subscriptions for clients, in other words, created subscriptions administratively. However, these implementation details are out of scope for this guide.
+</div> 
 
 ###### Channel Types
 
@@ -306,11 +312,13 @@ When specifying the contents of a notification, there are three options availabl
 
 For active CDex Task Update subscriptions, when a CDex Task Data Request Profile is updated, the Data Source **SHALL** trigger a Subscription Notification to the endpoint supplied by the Data Consumer. This notification is a Bundle resource and **SHALL** conform to the [R4 Topic-Based Subscription Notification Bundle]. The first entry contains the subscription's status information, represented by a Parameters resource. For the "id-only" payload type, Task IDs are listed in the "focus" part parameter.
 
+-->
+
 #### Example Task Based Transaction using Subscription
 
 The following example repeats Scenario 1 above using Subscription instead of Polling. However, instead of the Payer polling the Task resource until the `Task.status` indicates it is completed, rejected, or failed:
 
-1. The Payer *subscribes* to the CDex Task Update topic to get notifications when the'Task.status` is updated.
+1. The Payer *subscribes* to the HRex Task Subscription Topic to get notifications when the Task is updated.
 2. The Payer fetches the Task resource when notified of an update.
 3. When the `Task.status` is "completed", the Payer fetches Patient B's active Conditions referenced by `Task.output` as *external* resources. (This step is skipped if the status is "rejected".)
 
@@ -338,7 +346,7 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 1. {{ site.data.base-example-list[18] }}
 1. {{ site.data.base-example-list[12] }}
 2. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
-   - Note that in this example, the Referred-To-Provider (data consumer) is both the requester and the recipient of the data.  The requester could also be a third party.
+   - Note that in this example, the Referred-To-Provider (  Data Consumer  ) is both the requester and the recipient of the data.  The requester could also be a third party.
 3. 1. The  Referred-To-Provider POSTS a Task to the Referring Provider endpoint requesting Patient B's Active Conditions,, the CommunicationRequest is referenced in `Task.basedOn`.  For the actual request, the FHIR RESTful query syntax is used.
 4. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
 5. The Referred-To-Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
@@ -366,7 +374,7 @@ The following examples repeat the first two examples in Scenario 1 above but req
 
 {% include signature-support.md %}
 
-Some data consumers may require that the data they receive are signed. When signatures are required on the returned results, the following general rules apply:
+Some   Data Consumer  s may require that the data they receive are signed. When signatures are required on the returned results, the following general rules apply:
 
 {% include human-signature.md %}
 {% include system-signature.md %}

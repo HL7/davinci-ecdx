@@ -147,11 +147,14 @@ groups:
       - ValueSet/cdex-work-queue
       - ValueSet/cdex-data-request-task-code
 
-  TaskBasedSubscriptionTopic:
-    name: Task Based Subscription Topic
-    description: Basic resource representing the subscription for Task updates
-    resources:
-      - SubscriptionTopic/cdex-task-update
+
+  # TaskBasedSubscriptionTopic:
+  #   name: Task Based Subscription Topic
+  #   description: Basic resource representing the subscription for Task updates
+  #   resources:
+  #     - SubscriptionTopic/cdex-task-update
+
+
   TaskBasedExamples:
     name: Task Based Approach Examples
     description: Examples Associated with CDex Task Based Approach Transactions
@@ -412,15 +415,14 @@ menu:
     Attachments Examples: artifacts.html#5
     Task Based Approach Profiles: artifacts.html#6
     Task Based Approach Terminology: artifacts.html#7
-    Task Based Approach Susbscription Topic: artifacts.html#8
-    Task Based Approach Examples: artifacts.html#9
-    Direct Query Examples: artifacts.html#10
-    Signature Profiles: artifacts.html#11
-    Signature Terminology: artifacts.html#12
-    Signature Examples: artifacts.html#13
-    Common Terminology: artifacts.html#14
-    Common Examples: artifacts.html#15
-    Inline Examples: artifacts.html#16
+    Task Based Approach Examples: artifacts.html#8
+    Direct Query Examples: artifacts.html#9
+    Signature Profiles: artifacts.html#10
+    Signature Terminology: artifacts.html#11
+    Signature Examples: artifacts.html#12
+    Common Terminology: artifacts.html#13
+    Common Examples: artifacts.html#14
+    Inline Examples: artifacts.html#15
   Support:
    Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex

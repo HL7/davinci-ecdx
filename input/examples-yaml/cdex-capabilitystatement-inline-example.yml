@@ -29,7 +29,7 @@ rest:
       - extension:
           - url: >-
               http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical
-            valueCanonical: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update'
+            valueCanonical: 'http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task'
         type: Subscription
         supportedProfile:
           - >-

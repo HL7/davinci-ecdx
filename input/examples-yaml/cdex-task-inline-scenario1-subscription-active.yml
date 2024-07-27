@@ -11,7 +11,7 @@ meta:
 resourceType: Subscription
 status: active
 reason: R4 Example Topic-Based Subscription for CD Task based Queries
-criteria: 'http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update'
+criteria: 'http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task'
 channel:
     type: rest-hook
     endpoint: http://example.org/FHIR/Payer/cdex-task-watch

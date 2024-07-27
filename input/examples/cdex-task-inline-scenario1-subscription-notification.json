@@ -23,7 +23,7 @@
           },
           {
             "name": "topic",
-            "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update"
+            "valueCanonical": "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task"
           },
           {
             "name": "status",

@@ -1,7 +1,7 @@
 
 ###### Step 1 - Subscribe to Task
 
-The Payer subscribes to the Provider's Subscription endpoint to receive "id-only" notifications when submitted Tasks are updated. The subscription resource uses the canonical URL `http://hl7.org/fhir/us/davinci-cdex/SubscriptionTopic/cdex-task-update`. The Provider accepts the Subscription and returns it in the response body with an "active" status. 
+The Payer subscribes to the Provider's Subscription endpoint to receive "id-only" notifications when submitted Tasks are updated. The subscription resource uses the canonical URL `http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task`. The Provider accepts the Subscription and returns it in the response body with an "active" status. 
 
 This operation is done once. To unsubscribe, the Payer deletes the Subscription from the server or nominates a fixed end date, and the server automatically deletes it at the specified time.
 
