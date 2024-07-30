@@ -8,7 +8,7 @@ extension:
 - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
   valueCode: claims
 url: http://hl7.org/fhir/us/davinci-cdex/ImplementationGuide/hl7.fhir.us.davinci-cdex
-version: 2.1.0-preview
+version: 2.1.0-snapshot
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active

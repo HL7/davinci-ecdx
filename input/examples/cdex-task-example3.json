@@ -84,7 +84,7 @@
     "lastUpdated": "2020-10-26T04:04:52.000+00:00",
     "source": "#tgH2FoPFuCq0yjw5",
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-preview"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-snapshot"
     ],
     "tag": [
       {

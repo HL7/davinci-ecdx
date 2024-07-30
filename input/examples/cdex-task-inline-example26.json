@@ -60,7 +60,7 @@
   "lastModified": "2022-06-17T16:16:06Z",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-preview"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-snapshot"
     ]
   },
   "owner": {

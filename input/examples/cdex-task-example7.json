@@ -3,7 +3,7 @@
   "id": "cdex-task-example7",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-preview"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-snapshot"
     ],
     "tag": [
       {

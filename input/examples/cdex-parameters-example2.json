@@ -3,7 +3,7 @@
   "id": "cdex-parameters-example2",
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0-preview"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0-snapshot"
     ]
   },
   "parameter": [

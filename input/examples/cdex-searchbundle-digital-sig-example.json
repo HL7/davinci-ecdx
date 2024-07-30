@@ -74,7 +74,7 @@
   ],
   "meta": {
     "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-preview"
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-snapshot"
     ]
   },
   "resourceType": "Bundle",

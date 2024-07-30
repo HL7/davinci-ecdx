@@ -1,7 +1,7 @@
 {
     "package-id": "hl7.fhir.us.davinci-cdex",
-    "version": "2.1.0-preview",
-    "path": "http://hl7.org/fhir/us/davinci-cdex/STU2.1-preview",
+    "version": "2.1.0-snapshot",
+    "path": "http://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot",
     "mode": "working",
     "status" : "update",
     "sequence": "STU2",

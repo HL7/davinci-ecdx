@@ -259,17 +259,13 @@ Data consumers can poll for a single Task or across several Tasks. The frequency
 
 When using subscriptions in CDex, implementers **SHALL** use topic-based subscriptions as defined in the [Subscription R5 Backport Implementation Guide]. This topic-based subscription model supersedes the query-defined subscription model defined in FHIR R4 and supported in earlier versions of CDex. Systems must follow the Conformance in FHIR R4 requirements specified in the [R5 Backport Implementation Guide] and the CDex-specific conformance requirements listed below. -->
 
-In the subscription mechanism, instead of the Data Consumer regularly querying the Data Source to see if there are changes to existing Tasks, the Data Consumer creates a Subscription instance on the Data Source server*.  The Subscription indicates that the Data Consumer wants to be notified about changes to Tasks and it provides filters that describe what subset of Tasks it is interested in. The Data Source will then push notifications when there are new or updated Tasks and the Data Source can then query for the specific Tasks that have changed.
+In the subscription mechanism, instead of the Data Consumer regularly querying the Data Source to see if there are changes to existing Tasks, the Data Consumer creates a Subscription instance on the Data Source server. (It's also possible for the Data Source to configure subscriptions for clients, in other words, created subscriptions administratively. However, these implementation details are out of scope for this guide.) The Subscription indicates that the Data Consumer wants to be notified about changes to Tasks and it provides filters that describe what subset of Tasks it is interested in. The Data Source will then push notifications when there are new or updated Tasks and the Data Source can then query for the specific Tasks that have changed.
 
-Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the Subscription [Subscription R5 Backport Implementation Guide]. This implementation guide allows pre-adoption of the FHIR R5 topic-based subscription approach in R4 implementations and is the subscription approach that most U.S. EHR vendors have agreed to support.
+Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the [Subscription R5 Backport Implementation Guide] and the The Da Vinci Health Record Exchange (HRex) [Subscription requirements](https://build.fhir.org/ig/HL7/davinci-ehrx/task.html#subscription) for subscribing to Task updates.  These implementation guides "pre-adopt" the FHIR R5 topic-based subscription approach in R4 implementations since most U.S. EHR vendors have agreed to support it.
 
-<div class="bg-info" markdown="1">
-*Subscriptions need not be created dynamically by the Data Consumer. It's also possible for the Data Source to configure subscriptions for clients, in other words, created subscriptions administratively. However, these implementation details are out of scope for this guide.
-</div><!-- bg-info -->
+##### HRex Task Subscription Topic 
 
-##### CDex Task Update Subscription Topic 
-
-The [Da Vinci Health Record Exchange (HRex)] guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
+The Da Vinci Health Record Exchange (HRex) guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
 
 - The Data Source **SHALL** support the HRex Task Subscription Topic and **MAY** support other subscription topics.
 
@@ -278,7 +274,7 @@ Note that supporting the FHIR SubscriptionTopic resource nor the equivalent Basi
 
 ##### Discovery
 
-The R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension to allow for CDex Data Consumers to discover CDex Data Sources' supported subscription topics. This extension allows server implementers to advertise the canonical URLs of topics available to clients and allows clients to see the list of supported topics on a server. If Data Sources support subscriptions:
+The R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension to allow for CDex Data Consumers to discover CDex Data Sources' supported subscription topics. This extension allows server implementers to advertise the canonical URLs of topics available to clients and allows clients to see the list of supported topics on a server. If  a Data Source supports subscriptions:
 
 - The Data Source **SHALL** support discovery of the CDex Task Update Subscription Topic canonical URL
 - The Data Source **SHOULD** support discovery using the CapabilityStatement SubscriptionTopic Canonical extension and **MAY** support discovery by some other method.
