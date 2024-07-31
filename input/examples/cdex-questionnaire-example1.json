@@ -1,11 +1,6 @@
 {
   "resourceType": "Questionnaire",
   "id": "cdex-questionnaire-example1",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"
-    ]
-  },
   "name": "HomeOxygenTherapyQuestionnaire",
   "title": "Home Oxygen Therapy Questionnaire",
   "url": "http://example.org/cdex-questionnaire-example1",

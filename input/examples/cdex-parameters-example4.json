@@ -1,11 +1,6 @@
 {
   "resourceType": "Parameters",
   "id": "cdex-parameters-example4",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0-snapshot"
-    ]
-  },
   "parameter": [
     {
       "name": "TrackingId",
@@ -122,12 +117,6 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
-            },
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-              ]
             }
           }
         }
@@ -205,12 +194,6 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
-            },
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-              ]
             }
           }
         }
@@ -288,12 +271,6 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
-            },
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-              ]
             }
           }
         }

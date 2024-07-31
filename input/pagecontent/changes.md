@@ -62,11 +62,13 @@ These changes are the result of the trackers listed below.
 21. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids) and [Here](task-based-approach.html#discovery-of-identifiers)
 22. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](index.html)
 23. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 [FHIR-46507](https://jira.hl7.org/browse/FHIR-46507)
-24. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](downloads.html#example-flow-charts)
+24. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](downloads.html#example-flow-chart-diagrams)
 25. **Applied**: (Correction) Copy editing changes prior to comment period to ensure accuracy, clarity, and readability. [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) For example, See Changes: 
  - [How To Read This Guide](index.html#how-to-read-this-guide)
  - [Sensitive and Confidential Data](security.html#sensitive-and-confidential-data)
-
+26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
+27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
+ 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
 - URL: <http://hl7.org/fhir/us/davinci-cdex/STU2>

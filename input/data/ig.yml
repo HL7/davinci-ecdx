@@ -495,18 +495,18 @@ definition:
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
       \ section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A\
       \ Task.intent fixed to \"order\" (this element is a mandatory Task element)\n\
-      - A Task.code of either \"data-request-code\", \"data-request-code\", or \"\
-      data-request-questionnaire\" communicating that the Data Consumer is requesting\
-      \ data using a code(or free text), a FHIR RESTful query, or a data request questionnaire.\n\
-      \  - If the code is \"data-request-query\", the provider system returns data(s)\
-      \ identified by the FHIR RESTful query in the \"query\" input parameter.\n \
-      \ - If the code is \"data-request-code\", the provider system returns data(s)\
-      \ identified by the LOINC code in the \"code\" input parameter.\n  - If the\
-      \ code is \"data-request-questionnaire\", the provider system uses [Documentation\
-      \ Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html)\
+      - A Task.code of \"data-request-query\", \"data-request-code\", or \"data-request-questionnaire\"\
+      \ communicating that the Data Consumer is requesting data using a FHIR RESTful\
+      \ query, a code (or free text), or a data request questionnaire.\n  - If the\
+      \ code is \"data-request-query\", the provider system returns data(s) identified\
+      \ by the FHIR RESTful query in the \"query\" input parameter.\n  - If the code\
+      \ is \"data-request-code\", the provider system returns data(s) identified by\
+      \ the LOINC code in the \"code\" input parameter.\n  - If the code is \"data-request-questionnaire\"\
+      , the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html)\
       \ to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n\
       - A Task.for element representing the member (i.e.,patient) for whom the data\
-      \ is being requested\n- A Task.requester element communicating who is requesting\
+      \ is being requested\n- A Task.authoredOn to communicate the date and time this\
+      \ task was created\n- A Task.requester element communicating who is requesting\
       \ the data\n- A Task.owner element representing the Provider who is being asked\
       \ to provide the data\n\nIt constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition)\
       \ (min=0):\n\n- A Task.identifier element representing the unique data request\
@@ -526,12 +526,11 @@ definition:
       \ provider what information is needed using a LOINC code.*\n  - For the \"code\"\
       \ Task.input element, an extensible LOINC\xAE Document types value set to communicate\
       \ the specific information being requested\n- A Task.input element representing\
-      \ a flag to indicate whether the requested data requires a signature\n  - A\
-      \ \"data\" Task.output element referring to FHIR resource(s) representing the\
-      \ result(s) of the data request code.\n\nIt defines the following elements to\
-      \ be *optional*:\n- A meta.tag element representing work-queue hints.\n- A \"\
-      questionnaire\" Task.input element to communicate to the provider a URL of a\
-      \ data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
+      \ a flag to indicate whether the requested data requires a signature\n- A \"\
+      data\" Task.output element referring to FHIR resource(s) representing the result(s)\
+      \ of the data request.\n\nIt defines the following elements to be *optional*:\n\
+      - A meta.tag element representing work-queue hints.\n- A \"questionnaire\" Task.input\
+      \ element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
       \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
       \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\

@@ -6,7 +6,7 @@ This page documents a FHIR-based approach for requesting attachments for claims 
 
 In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities. The Provider can submit these *solicited* attachments using Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
 
-{% include img.html img=" request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
+{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
 <div class="bg-success" markdown="1">
 
@@ -43,7 +43,7 @@ In the following sections, A detailed look at an example *Solicited* attachment 
 
 In this scenario, a Provider creates a claim and sends it to the Payer. The Payer reviews the claim and responds with a request for supporting documentation/attachments using the  CDex Attachment Request Profile. The flow diagram for this transaction is shown in Figure 16 below:
 
-{% include img.html img=" cdex-request-attach-claim-flow.svg" caption=" Figure 16: CDex Request Attachments for Claims Using Attachments Codes" %}
+{% include img.html img="cdex-request-attach-claim-flow.svg" caption=" Figure 16: CDex Request Attachments for Claims Using Attachments Codes" %}
 
  In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following information to complete the adjudication of the claim:
 
@@ -178,7 +178,7 @@ The Payer supplies the attachment codes to communicate what attachments are need
 
 ##### Communicating the Signature Requirements
 
-This Task.input "signature-flag" may indicate that the Provider must sign the attachments. For more information about using signatures in CDex, see the [Signatures] and [Sending Attachments] pages.
+This `Task.input` "signature-flag" may indicate that the Provider must sign the attachments. For more information about using signatures in CDex, see the [Signatures] and [Sending Attachments] pages.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=114 count=9 linenumber=true rel=true %}
@@ -200,7 +200,7 @@ The Payer supplies the URL endpoint as a Task input parameter. The Provider Syst
 
 ##### Date of Service for the claim
 
-This Task.input element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for prior authorization.  
+This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for prior authorization.  
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=132 count=9 linenumber=true rel=true %}
@@ -209,7 +209,7 @@ This Task.input element represents the service date or the service's starting da
 
 ##### Purpose of Use for the Request
 
-This optional Task.input element represents the request's purpose of use (POU). In this example, it is to support a request for a claim, "CLMATTCH". When requesting attachments for prior authorization, it would be "COVAUTH".
+This optional `Task.input` element represents the request's purpose of use (POU). In this example, it is to support a request for a claim, "CLMATTCH". When requesting attachments for prior authorization, it would be "COVAUTH".
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=141 count=21 linenumber=true rel=true %}
@@ -235,14 +235,14 @@ POST [base]/$submit-attachment
 
 ##### The Submit Attachment Operation Payload
 
-The attachments and metadata needed to associate the attachment to the claim or prior authorization are in the $submit-attachments payload, a [Parameters] resource.
+The attachments and metadata needed to associate the attachment to the claim or prior authorization are in the [`$submit-attachment`] payload, a [Parameters] resource.
 
 ~~~
 {% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=0 count=3 linenumber=true rel=true %}
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The TrackingId parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
+The "TrackingId" parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
@@ -273,7 +273,7 @@ As documented above, The Payer uses business identifiers to identify itself, the
 
 ##### The Service Date
 
-The service date parameter is taken from the "service-date" Task.input element in the CDex Attachment request.
+The service date parameter is taken from the "service-date" `Task.input` element in the CDex Attachment request.
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
@@ -287,7 +287,7 @@ The service date parameter is taken from the "service-date" Task.input element i
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
-The requested attachments, the corresponding coded requests, and line item numbers are communicated as "Attachment" parameter parts. The attachment is communicated as a FHIR resource in the `Attachment.Content` parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The attachment code(s) in the `Task.input` "code" slice defined the document(s) that are to be returned via submit_attachment and are communicated in the `Attachment.Code`. Line item numbers associated with a requested item are sent in the `Attachment.LineItem` parameter part.
+The requested attachments, the corresponding coded requests, and line item numbers are communicated as "Attachment" parameter parts. The attachment is communicated as a FHIR resource in the `Attachment.Content` parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The attachment code(s) in the `Task.input` "code" slice defines the document(s) that are to be returned via submit_attachment and are communicated in the `Attachment.Code`. Line item numbers associated with a requested item are sent in the `Attachment.LineItem` parameter part.
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|

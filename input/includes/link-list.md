@@ -11,6 +11,7 @@
 [Framework]: guidance.html  "General Framework Page"
 [Home]: index.html "Home Page"
 [Operation]: {{site.data.fhir.path}}operations.html
+[OperationDefinition]: {{site.data.fhir.path}}operationdefinition.html
 [Operations]: operations.html "Operations Page"
 [Profiles]: profiles.html "Profiles and Extensions Page"
 [Profiling]: {{site.data.fhir.path}}profiling.html

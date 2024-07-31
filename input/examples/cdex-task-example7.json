@@ -1,17 +1,6 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example7",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-snapshot"
-    ],
-    "tag": [
-      {
-        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-        "code": "care-coordination"
-      }
-    ]
-  },
   "contained": [
     {
       "resourceType": "Bundle",
@@ -65,13 +54,7 @@
                   "title": "sample1.pdf"
                 }
               }
-            ],
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            }
+            ]
           },
           "search": {
             "mode": "match"
@@ -117,13 +100,7 @@
                   "title": "sample2.pdf"
                 }
               }
-            ],
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            }
+            ]
           },
           "search": {
             "mode": "match"

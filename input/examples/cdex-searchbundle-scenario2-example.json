@@ -21,11 +21,7 @@
         "meta": {
           "versionId": "1",
           "lastUpdated": "2020-10-23T18:18:25.154+00:00",
-          "source": "#ObC36PK40pQM6y5M",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-          ]
+          "source": "#ObC36PK40pQM6y5M"
         },
         "status": "final",
         "category": [
@@ -90,11 +86,7 @@
         "meta": {
           "versionId": "1",
           "lastUpdated": "2020-10-23T18:17:49.885+00:00",
-          "source": "#n7aoEe76sAQUBlns",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-          ]
+          "source": "#n7aoEe76sAQUBlns"
         },
         "status": "final",
         "category": [
@@ -159,11 +151,7 @@
         "meta": {
           "versionId": "1",
           "lastUpdated": "2020-10-23T18:16:54.549+00:00",
-          "source": "#fuIEQP7SJ9NfAlPN",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-          ]
+          "source": "#fuIEQP7SJ9NfAlPN"
         },
         "status": "final",
         "category": [
@@ -228,11 +216,7 @@
         "meta": {
           "versionId": "1",
           "lastUpdated": "2020-10-23T18:16:17.687+00:00",
-          "source": "#X2hXINwPYymTmEJc",
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
-          ]
+          "source": "#X2hXINwPYymTmEJc"
         },
         "status": "final",
         "category": [

@@ -1,20 +1,10 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example24",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request|2.1.0-snapshot"
-    ]
-  },
   "contained": [
     {
       "resourceType": "Patient",
       "id": "patient",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-        ]
-      },
       "identifier": [
         {
           "use": "usual",
@@ -60,11 +50,6 @@
     {
       "resourceType": "PractitionerRole",
       "id": "practitionerrole",
-      "meta": {
-        "profile": [
-          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
-        ]
-      },
       "practitioner": {
         "identifier": {
           "system": "http://hl7.org/fhir/sid/us-npi",

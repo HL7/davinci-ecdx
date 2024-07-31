@@ -19,12 +19,6 @@
     }
   ],
   "id": "cdex-provenance-inline-example-858",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|3.1.1",
-      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|6.1.0"
-    ]
-  },
   "recorded": "2021-12-01T22:34:05-08:00",
   "resourceType": "Provenance",
   "target": [

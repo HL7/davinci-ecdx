@@ -1,11 +1,6 @@
 {
   "resourceType": "Parameters",
   "id": "cdex-parameters-example1",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment|2.1.0-snapshot"
-    ]
-  },
   "parameter": [
     {
       "name": "TrackingId",
@@ -121,13 +116,7 @@
                   "hash": "026d568297832e6e083e96549041a72aa383bb23"
                 }
               }
-            ],
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            }
+            ]
           }
         }
       ]

@@ -1,10 +1,5 @@
 {
   "id": "cdex-task-inline-scenario1-subscription-active",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"
-    ]
-  },
   "resourceType": "Subscription",
   "status": "active",
   "reason": "R4 Example Topic-Based Subscription for CD Task based Queries",

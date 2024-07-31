@@ -1,10 +1,5 @@
 {
   "id": "cdex-document-digital-sig-example",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-snapshot"
-    ]
-  },
   "entry": [
     {
       "fullUrl": "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
@@ -70,10 +65,7 @@
           }
         ],
         "meta": {
-          "lastUpdated": "2013-05-05T16:13:03Z",
-          "profile": [
-            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner"
-          ]
+          "lastUpdated": "2013-05-05T16:13:03Z"
         },
         "name": [
           {
@@ -115,13 +107,7 @@
             "text": "CDEX Example Patient"
           }
         ],
-        "resourceType": "Patient",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-          ]
-        }
+        "resourceType": "Patient"
       }
     },
     {
@@ -170,12 +156,6 @@
         "resourceType": "Condition",
         "subject": {
           "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
-        },
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-          ]
         }
       }
     },
@@ -220,13 +200,7 @@
             ],
             "text": "Unknown (qualifier value)"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-          ]
-        }
+        ]
       }
     },
     {
@@ -262,12 +236,7 @@
             "system": "email",
             "value": "customer-service@example.org"
           }
-        ],
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
-          ]
-        }
+        ]
       }
     }
   ],

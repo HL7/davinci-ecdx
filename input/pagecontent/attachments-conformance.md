@@ -14,7 +14,7 @@ Systems may choose some or all of these capabilities and implement any combinati
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Attachment Request Profile]
 2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.
-3. (Preferred) Formal OperationDefinition derived from [`$submit-attachment`]
+3. (Preferred) Formal [OperationDefinition] derived from [`$submit-attachment`]
 4. Document their systems' capabilities for submitting attachments in `CapabilityStatement.rest.documentation`
 
 ### Provider Conformance

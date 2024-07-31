@@ -1,17 +1,6 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example8",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request|2.1.0-snapshot"
-    ],
-    "tag": [
-      {
-        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-        "code": "care-coordination"
-      }
-    ]
-  },
   "contained": [
     {
       "resourceType": "Bundle",
@@ -29,12 +18,6 @@
           "fullUrl": "https://example.org/fhir/cdex-documentreference-example1",
           "resource": {
             "resourceType": "DocumentReference",
-            "meta": {
-              "profile": [
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
-                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-              ]
-            },
             "id": "cdex-documentreference-example1",
             "status": "current",
             "subject": {
