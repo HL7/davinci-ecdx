@@ -34,8 +34,10 @@ Schematrons are also available for download:
 
 These example flow chart diagrams were created to assist the TestScript and Reference Implementation development team and are provided here to assist developers in implementing CDEX transactions. They are examples only, and actual workflows may differ from them. 
 
+<div class="bg-success" markdown="1">
  - [Example Flow Chart Diagrams (compressed folder)](flowcharts.zip)
  - [Text based source](techflow_examples.md){:.download="true"}: These textual representations of the diagrams  ( the text between the \'\'\') can be viewed and edited  using *flowchart.js*. flowchart.js is a flowchart DSL and SVG renderer that runs in the browser and terminal. For more information, see <https://flowchart.js.org/>. Alternatively, this text can be viewed directly at <https://hackmd.io/>.
+</div><!-- new-content -->
 
 ### Implementation Guide Details
 

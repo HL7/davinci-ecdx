@@ -61,6 +61,11 @@ These changes are the result of the trackers listed below.
 20. **Applied:**(Enhancement) Add Task Based approach as an option for the discovery of a member’s FHIR_ID [FHIR-45982](https://jira.hl7.org/browse/FHIR-45982) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids)
 21. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids) and [Here](task-based-approach.html#discovery-of-identifiers)
 22. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](index.html)
+23. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 [FHIR-46507](https://jira.hl7.org/browse/FHIR-46507)
+24. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](downloads.html#example-flow-charts)
+25. **Applied**: (Correction) Copy editing changes prior to comment period to ensure accuracy, clarity, and readability. [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) For example, See Changes: 
+ - [How To Read This Guide](index.html#how-to-read-this-guide)
+ - [Sensitive and Confidential Data](security.html#sensitive-and-confidential-data)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
@@ -446,7 +451,7 @@ January 2021 Ballot comments and links to the updated content are below::
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/background.html#attachments-workflow)
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/attachments.html)
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/OperationDefinition-submit-attachment.html)
-1. **Applied**: Add figure to clarify relationship between cdex and hrex([FHIR-34559](https://jira.hl7.org/browse/FHIR-34559) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html#about-this-guide)
+73. **Applied**: Add figure to clarify relationship between cdex and hrex([FHIR-34559](https://jira.hl7.org/browse/FHIR-34559) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html#about-this-guide)
 
 ---
 
