@@ -12,15 +12,15 @@ See the [`$submit-attachment`] operation definition for further details.
 
 ### Technical Workflow
 
-As shown below in Figure 13, the attachments are “pushed” using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
+As shown below in Figure 13, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 
 {% include img.html img="attachments-sequencediagram.svg" caption="Figure 13" %}
 
 
-1. Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
-2. Provider invokes [`$submit-attachment`] operation to submit attachments to Payer
-3. Payer responds with an HTTP response that accepts or rejects the transaction.
+1. The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
+2. The Provider invokes [`$submit-attachment`] operation to submit attachments to the Payer
+3. The Payer responds with an HTTP response that accepts or rejects the transaction.
    - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.
 4. The Payer associates the attachments to the claim or prior authorization and processes the claim.
 
@@ -41,23 +41,23 @@ In the following examples, a Provider creates a claim and sends *unsolicited att
 
 ##### Scenario 1a: CCDA Document Attachments
 
-- Based on a set of pre-defined rules the Payer sets, the Provider submits C-CDA Documents as additional documentation for a claim.
+- Based on the Payer's pre-defined rules, the Provider submits C-CDA Documents as additional documentation for a claim.
   - Typically, when the attachments are C-CDA documents, as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
 - The Provider knows the Payer's endpoint for sending attachments. Note that the Provider can POST the [`$submit-attachment`] operation to endpoints that are not FHIR RESTful servers.
 - An unsolicited workflow implies that the *Provider* assigns the claim and line item identifiers upon claim generation.
-- Payer associates attachments to the claim.
+- The Payer associates attachments to the claim.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
-#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to Claim
+#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to claim
 
-This scenario is the same as Scenario 1a above, except that the attachments are submitted *prior* to the claim. The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
+This scenario is the same as Scenario 1a above, except the attachments are submitted *prior* to the claim. The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
 ##### Scenario 2: Laboratory Results Attachments
 
- This scenario is the same as Scenario 1a, except the Provider submits laboratory results supporting a claim. There are multiple attachments, each populated with a FHIR Observation resource. If a signature were required, The Provider system would convert it to a signed FHIR document like the example in the Signatures section.
+ This scenario is the same as Scenario 1a, except the Provider submits laboratory results supporting a claim. There are multiple attachments, each populated with a FHIR Observation resource. If a signature were required, the provider system would convert it to a signed FHIR document, as shown in the example in the signatures section.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario2.md" b_title = "Click Here To See Example Laboratory Results Attachments" %}
 
@@ -67,7 +67,7 @@ This scenario is the same as Scenario 1a above, except that the attachments are 
 
 {% include signature-support.md %}
 
-Some data consumers may require that the data they receive are signed. When signatures are required, the following general rules apply:
+Some data consumers may require that the data they receive be signed. When signatures are required, the following general rules apply:
 
 {% include human-signature.md %}
 {% include inherently-signed.md %}
@@ -79,25 +79,25 @@ Some data consumers may require that the data they receive are signed. When sign
 - For *Unsolicited* Attachments, the Payer *pre-negotiates* with the Provider whether electronic or digital signatures are required. If signatures are required, *all* attachments will be signed by the provider submitting them.
 - For *Solicited* Attachments, the Payer *pre-negotiates* with the Provider whether electronic or digital signatures are required for:
   1. *all* attachments
-  2. or *only* for attachments where the attachment request communicates the signature requirement using the `Task.input` [signature flag](StructureDefinition-cdex-task-attachment-request-definitions.html#Task.input:signature) input parameter.
-- The Payer/Requester follows the documentation on the [Signatures] page for validating signatures.
-  - If the signatures fail verification when processing the '$submit-attachments' operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
+  2. or *only* for attachments where the attachment request communicates the signature requirement using the `Task.input` "signature" input parameter.
+- The Payer/Requester follows the documentation on the [Signatures] page to validate signatures.
+  - If the signatures fail verification when processing the [`$submit-attachment`] operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
 
 #### Provider Requirements
 
 {% include data-source-sig-rules.md %}
 
-- In this example, the Provider submits a patient's active conditions to the Payer to support a claim .
-- Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a FHIR Document bundle, and the Bundle is digitally signed.
+- In this example, the Provider submits a patient's active conditions to the Payer to support a claim.
+Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a digitally signed FHIR Document bundle.
 - See the [Signatures] page for a detailed explanation of how the signature was created and verified.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario3.md" b_title = "Click Here To See Example Signed FHIR Resource Attachments" %}
 
 #### Example: The Signature Cannot Be Verified
 
-This example is the same as the previous example above, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
+This example is the same as the previous one, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
 
-- In this example, the Provider submits the patient's active conditions to the Payer to support a claim .
+- In this example, the Provider submits the patient's active conditions to the Payer to support a claim.
 - Unlike the previous example, the Payer cannot verify the signature because the certificate is expired.
 - An HTTP `400 Bad Request` and OperationOutcome are returned.
 
