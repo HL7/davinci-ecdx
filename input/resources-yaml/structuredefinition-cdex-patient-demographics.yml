@@ -5,16 +5,16 @@ name: CDexPatientDemographics
 title: CDex Patient Demographics Profile
 status: active
 description: |-
-  This Profile is defined to be [contained](http://hl7.org/fhir/R4/references.html) within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (for example, to verify patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):
+ This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (such as verifying patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):
  
-  - A default resource ID of "patient"
-  - A member ID identifier slice
-  - A patient's name
+ - A default resource ID of "patient"
+ - A member ID identifier [slice](https://hl7.org/fhir/R4/profiling.html#slicing)
+ - A patient's name
 
-  and the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):
+ and the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):
 
-  - A patient account number identifier slice  
-  - A date of birth
+ - A patient account number identifier slice  
+ - A date of birth
 
 fhirVersion: 4.0.1
 kind: resource

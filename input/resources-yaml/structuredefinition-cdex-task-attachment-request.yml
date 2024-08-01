@@ -38,7 +38,7 @@ description: |-
 
   It defines the following elements to be *optional*:
 
-  - A "QuestionnairesNeeded" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
+  - A "QuestionnairesNeeded" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
   - A "POU" Task.input element representing the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html). For more information about sending purpose POU codes, refer to the [Purpose of Use section](sending-attachments.html#signatures).
   - A "multiple-submits" Task.input element representing a flag to indicate whether the requested data can be sent in multiple submissions

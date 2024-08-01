@@ -6,7 +6,7 @@
     "title": "CDex Signature Profile",
     "status": "active",
     "date": "2023-01-15",
-    "description": "This Signature DataType profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A Signature.type fixed to ASTM Standard, E1762-95(2013) code = \u201c1.2.840.10065.1.12.1.5\u201d (Verification Signature)\n- A Signature.who for the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, PractitionerRole or Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n- A Signature.data representing base64 encoded JWS-Signature \n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- Signature.when - system timestamp when the signature was created",
+    "description": "This Signature DataType profile enforces the various elements of signature documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A Signature.type fixed to ASTM Standard, E1762-95(2013) code = \u201c1.2.840.10065.1.12.1.5\u201d (Verification Signature)\n- A Signature.who for the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, PractitionerRole or Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n- A Signature.data representing the base64 encoded Signature (JWS, image, etc)\n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- Signature.when - system timestamp when the signature was created",
     "fhirVersion": "4.0.1",
     "kind": "complex-type",
     "abstract": false,
@@ -150,7 +150,7 @@
             {
                 "id": "Signature.data",
                 "path": "Signature.data",
-                "short": "base64 encoded JWS-Signature",
+                "short": "base64 encoded signature (JWS, image, etc)",
                 "min": 1,
                 "mustSupport": true
             }

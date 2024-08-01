@@ -12,7 +12,7 @@ description: |-
   - A Signature.who for the organization or practitioner who signed the Bundle which is either:
     1. a reference to US-Core Practitioner, PractitionerRole or Organization or
     1. an NPI or Tax ID and name of the organization or practitioner
-  - A Signature.data representing base64 encoded JWS-Signature 
+  - A Signature.data representing the base64 encoded Signature (JWS, image, etc)
   
   In addition, the following *mandatory* (min=1) element is inherited from the base standard:
   - Signature.when - system timestamp when the signature was created
@@ -138,6 +138,7 @@ differential:
 
     - id: 'Signature.data'
       path: 'Signature.data'
-      short: base64 encoded JWS-Signature
+      # short: base64 encoded JWS-Signature 
+      short: base64 encoded signature (JWS, image, etc)
       min: 1
       mustSupport: true

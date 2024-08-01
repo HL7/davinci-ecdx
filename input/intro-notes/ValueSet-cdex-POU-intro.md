@@ -6,7 +6,7 @@ The process for submitting the CDex Temporary Code System POU Codes for inclusio
 
 ### CDex Purpose of Use Value Set Hierarchy
 
-The current state of healthcare data exchange is typically limited to a single, well-known and pre-established purpose-of-use (POU). The CDex Purpose of Use Value Set defines POU with a greater level of discrimination at the transaction level. These codes form a hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts. The table and figure below illustrate this hierarchy:
+The current state of healthcare data exchange is typically limited to a single, well-known, and pre-established purpose-of-use (POU). The CDex Purpose of Use Value Set defines POU with a greater level of discrimination at the transaction level. These codes form a hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts. The table and figure below illustrate this hierarchy:
 
 |TPO|HL7 ACTReason POU TPO Codes|CDEX POU Codes|
 |---|---|---|

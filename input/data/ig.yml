@@ -262,8 +262,8 @@ definition:
       \ for a claim.\n\nIt defines the following elements to be *optional*:\n\n- A\
       \ \"QuestionnairesNeeded\" Task.input element to communicate to the provider\
       \ a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
-      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
-      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
+      \ that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
+      \ or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\
       \ Questionnaire\n- A \"POU\" Task.input element representing the purpose of\
       \ use (POU) for the requested data using an extensible [CDex Purpose of Use\
@@ -319,7 +319,7 @@ definition:
     description: "Providers use this [operation](http://hl7.org/fhir/operations.html)\
       \ to submit *solicited* and *unsolicited* attachments or additional information\
       \ for claims or prior authorization. The $submit-attachment operation accepts\
-      \ the clinical/administrative attachments and the necessary information to associate\
+      \ the clinical/administrative attachments and the information required to associate\
       \ them with the claim or prior authorization and returns an HTTP response. For\
       \ *unsolicited* attachments, the Provider invokes this operation *before, concurrently,\
       \ or after*  the claim or pre-authorization transaction. For *solicited* attachments,\
@@ -328,14 +328,14 @@ definition:
       \ just FHIR RESTful server endpoints.\n\nThe input parameters are:\n1. One or\
       \ more attachments as FHIR Resources\n    - Optionally, one or more unique line\
       \ item numbers associated with the attachment\n    - Optionally, the attachment\
-      \ code used to request for the information\n1. Data elements for the association\
+      \ code used to request the information\n1. Data elements for the association\
       \ to the claim/prior authorization\n    - A unique identifier that ties the\
       \ attachment(s) back to the claim or prior authorization. (referred to as the\
       \ \"re-association tracking control numbers\")*\n    - What are the attachments\
       \ for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique\
       \ payer identifier\n    - A unique organization/location identifier (e.g., [Type\
       \ 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
-      \ and/or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
+      \ or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
       \    - A unique Patient member identifier\n    - A Date of Service\n    - A\
       \ Flag indicating whether the operation is the last attachment submission for\
       \ the claim or prior authorization.\n\nThere are no output parameters."
@@ -531,8 +531,8 @@ definition:
       \ of the data request.\n\nIt defines the following elements to be *optional*:\n\
       - A meta.tag element representing work-queue hints.\n- A \"questionnaire\" Task.input\
       \ element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html)\
-      \ that conforms to the [DTR SDC Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
-      \ or the [DTR SDC Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
+      \ that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire)\
+      \ or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n\
       \  - A questionnaireDisplay extension to communicate the display name of the\
       \ Questionnaire\n- A Task.input element representing the purpose of use for\
       \ the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)\n\
@@ -817,9 +817,10 @@ definition:
       \ for the organization or practitioner who signed the Bundle which is either:\n\
       \  1. a reference to US-Core Practitioner, PractitionerRole or Organization\
       \ or\n  1. an NPI or Tax ID and name of the organization or practitioner\n-\
-      \ A Signature.data representing base64 encoded JWS-Signature \n\nIn addition,\
-      \ the following *mandatory* (min=1) element is inherited from the base standard:\n\
-      - Signature.when - system timestamp when the signature was created"
+      \ A Signature.data representing the base64 encoded Signature (JWS, image, etc)\n\
+      \nIn addition, the following *mandatory* (min=1) element is inherited from the\
+      \ base standard:\n- Signature.when - system timestamp when the signature was\
+      \ created"
     exampleBoolean: false
     name: CDex Signature Profile
     groupingId: SignatureProfiles
@@ -836,7 +837,7 @@ definition:
     groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-sdc-questionnaireresponse
-    description: 'This extension is derived from the [US Core QuestionnaireResponse
+    description: 'This profile is derived from the [US Core QuestionnaireResponse
       Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
       profile and enforces the various elements of signature documented in the CDex
       guide to represent an enveloped signature. It adds the following constraints:

@@ -25,7 +25,7 @@ Usage:
   - start: integer (only 1) or common separated string (> 1) of first line numbers to include, starting at 0, default = 0
   - count: integer (only 1) or common separated string (> 1) of number of lines to include, default = all lines
   - linenumber: optional boolean to display line number (default is false) !think about right justifying the line numbers
-  - rel: optional boolean to use relative path (default is false) - use this if you are including a file in the same folder as the includelines file
+  - rel: optional boolean to use relative path (default is false) - true if you are including an example file or false if you are including a files from the includes folder
 
 The start and count item are aggregated into a (start, count) tuple and therefore need to be the same size.  If there are more than one start and count items, ellipses ("...") will be inserted between the line fragments. 
 The helper file checks if the line overlap.  If they do it will print a warning message instead of your intended output.
