@@ -1057,83 +1057,131 @@
         {
           "nameUrl": "background.html",
           "title": "Background",
-          "generation": "markdown"
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
         },
         {
           "nameUrl": "direct-query.html",
           "title": "Direct Query",
-          "generation": "markdown"
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
         },
         {
           "nameUrl": "task-based-approach.html",
           "title": "Task Based Approach",
           "generation": "markdown",
-          "page": [
+          "extension": [
             {
-              "nameUrl": "task-based-conformance.html",
-              "title": "Conforming to CDex Task Based Approach",
-              "generation": "markdown"
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "task-based-conformance.html",
+          "title": "Conforming to CDex Task Based Approach",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
             }
           ]
         },
         {
           "nameUrl": "attachments.html",
           "title": "Attachments",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "solicited-unsolicited-attachments.html",
+          "title": "Solicited and Unsolicited Attachments",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "sending-attachments.html",
+          "title": "Sending Attachments",
           "generation": "markdown",
-          "page": [
+          "extension": [
             {
-              "nameUrl": "solicited-unsolicited-attachments.html",
-              "title": "Solicited and Unsolicited Attachments",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "sending-attachments.html",
-              "title": "Sending Attachments",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "requesting-attachments-code.html",
-              "title": "Requesting Attachments Using Attachments Codes",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "requesting-attachments-questionnaire.html",
-              "title": "Requesting Attachments Using Questionnaires",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "burden-reduction.html",
-              "title": "Using CDex Attachments with DaVinci PAS",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "attachments-conformance.html",
-              "title": "Conforming to CDex Attachments",
-              "generation": "markdown"
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
             }
           ]
+        },
+        {
+          "nameUrl": "requesting-attachments-code.html",
+          "title": "Requesting Attachments Using Attachments Codes",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "requesting-attachments-questionnaire.html",
+          "title": "Requesting Attachments Using Questionnaires",
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
+        },
+        {
+          "nameUrl": "burden-reduction.html",
+          "title": "Using CDex Attachments with DaVinci PAS",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "attachments-conformance.html",
+          "title": "Conforming to CDex Attachments",
+          "generation": "markdown"
         },
         {
           "nameUrl": "signatures.html",
           "title": "Signatures",
           "generation": "markdown",
-          "page": [
+          "extension": [
             {
-              "nameUrl": "signed-searchset-bundle-example.html",
-              "title": "Signed Searchset Bundle Example",
-              "generation": "markdown"
-            },
-            {
-              "nameUrl": "signed-document-bundle-example.html",
-              "title": "Signed Document Bundle Example",
-              "generation": "markdown"
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
             }
           ]
         },
         {
+          "nameUrl": "signed-searchset-bundle-example.html",
+          "title": "Signed Searchset Bundle Example",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "signed-document-bundle-example.html",
+          "title": "Signed Document Bundle Example",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "security.html",
           "title": "Security and Privacy",
-          "generation": "markdown"
+          "generation": "markdown",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+              "valueCode": "trial-use"
+            }
+          ]
         },
         {
           "nameUrl": "downloads.html",
