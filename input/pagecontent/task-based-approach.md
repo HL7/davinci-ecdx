@@ -186,9 +186,9 @@ The [CDex Task Data Request Profile] supports requests for more detailed data us
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** <span class= "bg-success" markdown= "1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->
+**Step 4:** <span class= "bg-success" markdown="1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->
 
-**Step 5:** <span class= "bg-success" markdown= "1">The Data Source updates the Task to "completed" when the QuestionnaireResponse is completed. The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.</span><!-- new-content -->
+**Step 5:** <span class= "bg-success" markdown="1">The Data Source updates the Task to "completed" when the QuestionnaireResponse is completed. The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.</span><!-- new-content -->
 
 **Step 6:** The Data Consumer retrieves the QuestionnaireResponse referenced by `Task.output`.
 
@@ -241,7 +241,7 @@ In this scenario, Payer A Seeks Insured Person/Patient B's glycated hemoglobin (
 
 ### Polling vs Subscriptions
 
-Task-based exchanges can take one of two forms - subscription or polling, as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] <span class= "bg-success" markdown= "1">sections of the FHIR R5 core specification</span><!-- new-content -->. The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
+Task-based exchanges can take one of two forms - subscription or polling, as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] <span class= "bg-success" markdown="1">sections of the FHIR R5 core specification</span><!-- new-content -->. The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
 
 #### Polling
 

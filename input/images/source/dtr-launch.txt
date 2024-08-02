@@ -38,7 +38,7 @@ DTR Client-->DTR App:Authorization granted
 DTR App->DTR Client:Access token request
 DTR Client-->DTR App: Access token response\*\*
 note over DTR Client: \*\*launch context in "fhirContext" array\nincludes local reference to the Task
-ref over DTR App, FHIR Server: 9 Request Resources (see sections 4.8.1 and 5.4.1.1)
+ref over DTR App, FHIR Server: 9 Request Resources (see previous section)
 
 else DTR Denied Access
 autonumber 10

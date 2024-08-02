@@ -66,7 +66,6 @@
 [Background on FHIR]: {{site.data.fhir.ver.hrex}}/fhir.html
 [Conformance Expectations]: {{site.data.fhir.ver.hrex}}/conformance.html
 [Subscription Capabilities]: https://hl7.fhir.org/exchanging.html
-[Task state machine]: {{site.data.fhir.path}}task.html#statemachine
 [Bulk Data Access IG]: http://hl7.org/fhir/uv/bulkdata/index.html
 [Clinical Data ExchangeSupplemental Guides]: https://confluence.hl7.org/display/DVP/Clinical+Data+Exchange-+Supplemental+Guide?src=contextnavpagetreemode
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
@@ -180,4 +179,4 @@
 [Patient Matching]: https://hl7.org/fhir/us/identity-matching/patient-matching.html
 [Guidance on Identity Assurance]: https://hl7.org/fhir/us/identity-matching/guidance-on-identity-assurance.html
 [Interoperable Digital Identity and Patient Matching]: https://hl7.org/fhir/us/identity-matching/index.html
-
+[CQL](https://cql.hl7.org/)
