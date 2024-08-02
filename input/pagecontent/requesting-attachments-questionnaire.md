@@ -313,7 +313,7 @@ POST [base]/$QuestionnaireResponse
 **Request Body**
 
 ~~~
-{% include_relative includelines filename='QuestionnaireResponse-cdex-questionnaireresponse-example1.json' linenumber=true rel=true %}
+{% include_relative includelines filename='QuestionnaireResponse-cdex-questionnaireresponse-inline-example1.json' linenumber=true rel=true %}
 ~~~
 
 ##### DTR App Updates Task
