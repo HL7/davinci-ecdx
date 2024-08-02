@@ -7,7 +7,7 @@
     "status": "active",
     "experimental": false,
     "date": "2022-10-24",
-    "description": "Identifiers type for providers and organizations limited to NPI or US Tax id.",
+    "description": "Identifier types for providers and organizations. It includes the codes \u201cTAX\u201d and \u201cNPI\u201d.",
     "compose": {
         "include": [
             {

@@ -228,7 +228,7 @@ groups:
       - QuestionnaireResponse/cdex-questionnaireresponse-example2
   InlineExamples:
     name: Inline Examples 
-    description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can check them for conformance to the guides profile definitions.  Since they illustrate to  particular "over-the-wire" transaction, most lack a rendered narrative and many lack an id.
+    description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can validate them against the CDex profile definitions.  Since they are used to illustrate "over-the-wire" transactions, the rendered narrative and id elements are often absent.
     resources:
       - Task/cdex-task-inline-example1
       - Task/cdex-task-inline-example4

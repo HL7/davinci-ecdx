@@ -17,7 +17,7 @@
     "status": "active",
     "experimental": false,
     "date": "2022-12-23",
-    "description": "Codes used to identify the type of data request and control the payer system's behavior.",
+    "description": "Codes used to identify the type of data request. It includes the codes \u201cdata-request-query\u201d, \u201cdata-request-code\u201d, and \u201cdata-request-questionnaire\u201d.",
     "compose": {
         "include": [
             {

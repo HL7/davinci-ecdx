@@ -6,7 +6,7 @@
     "title": "CDex SDC QuestionnaireResponse Profile",
     "status": "active",
     "date": "2023-01-15",
-    "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of signature documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",
+    "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,

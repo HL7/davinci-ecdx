@@ -174,7 +174,7 @@ The following steps outline the process for verifying the Signature.
 1. Retrieve and store the Bundle or QuestionnaireResponse :
    1. The search set Bundle is the response for a direct query.
    2. For Task-based requests, the completed `Task.output` is either:
-      -  a contained FHIR Document that must be extracted from the containing Task.
+      -  a contained FHIR Document that must be extracted from the containing Task resource.
       -  a reference to a FHIR Document that must be fetched from the referenced endpoint.
    3. A FHIR Document Bundle or QuestionnaireResponse is submitted as part of the operation payload for Attachments.
 2. Remove the `id`, `meta` and `Bundle.signature` element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item. 

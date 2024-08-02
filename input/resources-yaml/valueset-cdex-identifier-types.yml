@@ -6,8 +6,7 @@ title: CDex Identifier Types Value Set
 status: active
 experimental: false
 date: 2022-10-24
-description: Identifiers type for providers and organizations limited to NPI or US
-  Tax id.
+description: Identifier types for providers and organizations. It includes the codes “TAX” and “NPI”.
 compose:
   include:
   - system: http://terminology.hl7.org/CodeSystem/v2-0203

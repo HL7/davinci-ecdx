@@ -15,7 +15,7 @@ description: |-
       - Optionally, one or more unique line item numbers associated with the attachment
       - Optionally, the attachment code used to request the information
   1. Data elements for the association to the claim/prior authorization
-      - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")*
+      - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")
       - What are the attachments for:
         - Claims
         - Prior Authorizations

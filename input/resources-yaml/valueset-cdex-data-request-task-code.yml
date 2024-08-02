@@ -12,7 +12,7 @@ title: CDex Data Request Task Code Value Set
 status: active
 experimental: false
 date: '2022-12-23'
-description: Codes used to identify the type of data request and control the payer system's behavior.
+description: Codes used to identify the type of data request. It includes the codes “data-request-query”, “data-request-code”, and “data-request-questionnaire”.
 compose:
   include:
   - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
