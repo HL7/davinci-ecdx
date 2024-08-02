@@ -19,7 +19,7 @@ input:
     coding:
     - code: questionnaire
       system: http://hl7.org/fhir/uv/sdc/CodeSystem/temp
-  valueCanonical: http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview
+  valueCanonical: http://example.org/cdex-questionnaire-example1
 - type:
     coding:
     - code: purpose-of-use

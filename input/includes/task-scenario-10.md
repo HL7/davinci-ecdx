@@ -246,7 +246,7 @@ PUT [base]/Task/cdex-task-example-26
           }
         ]
       },
-      "valueCanonical": "http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview"
+      "questionnaire" : "http://example.org/cdex-questionnaire-example1"
     },
     {
       "type": {
@@ -397,7 +397,7 @@ GET Task/cdex-task-example2
           }
         ]
       },
-      "valueCanonical": "http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview"
+      "questionnaire" : "http://example.org/cdex-questionnaire-example1"
     },
     {
       "type": {

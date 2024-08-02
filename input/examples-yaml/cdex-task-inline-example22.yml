@@ -67,7 +67,7 @@ input:
     coding:
     - system: http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes
       code: questionnaires-needed
-  valueCanonical: http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview
+  valueCanonical: http://example.org/cdex-questionnaire-example1
 - type:
     coding:
     - code: payer-url

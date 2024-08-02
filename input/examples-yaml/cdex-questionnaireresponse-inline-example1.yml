@@ -25,7 +25,7 @@ meta:
     valueMarkdown: QuestionnaireResponse example example used to create inline task based scenarios [using questionnaire as task input](task-based-approach.html#using-questionnaire-as-task-input)
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
-questionnaire: http://example.org/cdex-questionnaire-inline-example1|2.1.0-preview
+questionnaire: http://example.org/cdex-questionnaire-example1
 resourceType: QuestionnaireResponse
 status: completed
 subject:
