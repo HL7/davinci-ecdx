@@ -1177,6 +1177,9 @@ definition:
     - nameUrl: attachments-conformance.html
       title: Conforming to CDex Attachments
       generation: markdown
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
     - nameUrl: signatures.html
       title: Signatures
       generation: markdown

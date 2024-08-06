@@ -306,9 +306,9 @@ pages:
     #   valueCode: trial-use
     title: Using CDex Attachments with DaVinci PAS
   attachments-conformance.md:
-    # extension:
-    # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    extension:
+    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      valueCode: trial-use
     title: Conforming to CDex Attachments
   signatures.md:
     extension:

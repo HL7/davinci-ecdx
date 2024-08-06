@@ -68,6 +68,7 @@ These changes are the result of the trackers listed below.
  - [Sensitive and Confidential Data](security.html#sensitive-and-confidential-data)
 26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
+28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](security.html)
  
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
