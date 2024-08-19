@@ -33,7 +33,7 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in Figure 18 below depicts the the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return <span class= "bg-success" markdown="1">one or more questionnaires</span><!-- new-content --> using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
+The sequence diagram in Figure 18 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return <span class= "bg-success" markdown="1">one or more questionnaires</span><!-- new-content --> using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
 
 {% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 18" %}
 

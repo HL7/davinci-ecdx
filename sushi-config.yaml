@@ -43,7 +43,7 @@ copyright: >-
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: '2024-04-19'
+date: '2024-08-19'
 version: 2.1.0-snapshot
 fhirVersion: 4.0.1
 dependencies:
@@ -57,7 +57,7 @@ dependencies:
     id: uscore6
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: current
+    version: 1.1.0-ballot
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'

@@ -12,7 +12,7 @@ version: 2.1.0-snapshot
 name: DaVinciCDex
 title: Da Vinci Clinical Data Exchange (CDex)
 status: active
-date: '2024-04-19'
+date: '2024-08-19'
 publisher: HL7 International / Payer/Provider Information Exchange Work Group
 contact:
 - name: HL7 International / Payer/Provider Information Exchange Work Group
@@ -46,7 +46,7 @@ dependsOn:
 - id: hrex
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
-  version: current
+  version: 1.1.0-ballot
 - id: pas
   packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
