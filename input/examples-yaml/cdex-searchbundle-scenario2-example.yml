@@ -51,7 +51,7 @@ entry:
                         display: Glycated hemoglobin (HbA1c)
                 text: glycated hemoglobin (HbA1c)
             subject:
-                reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
+                reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                 display: Elden718 Halvorson124
             performer:
             - reference: Practitioner/min
@@ -101,7 +101,7 @@ entry:
                         display: Glycated hemoglobin (HbA1c)
                 text: glycated hemoglobin (HbA1c)
             subject:
-                reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
+                reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                 display: Elden718 Halvorson124
             performer:
             - reference: Practitioner/min
@@ -151,7 +151,7 @@ entry:
                         display: Glycated hemoglobin (HbA1c)
                 text: glycated hemoglobin (HbA1c)
             subject:
-                reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
+                reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                 display: Elden718 Halvorson124
             performer:
             - reference: Practitioner/min
@@ -201,7 +201,7 @@ entry:
                         display: Glycated hemoglobin (HbA1c)
                 text: glycated hemoglobin (HbA1c)
             subject:
-                reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
+                reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
                 display: Elden718 Halvorson124
             performer:
             - reference: Practitioner/min

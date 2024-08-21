@@ -821,13 +821,6 @@ definition:
     exampleBoolean: true
     groupingId: DirectQueryExamples
   - reference:
-      reference: Bundle/cdex-bundle-inline-example-858p
-    description: Bundle example used to create inline [requests for provenance using
-      task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)
-    name: CDex Bundle Inline Example 858p
-    exampleBoolean: true
-    groupingId: DirectQueryExamples
-  - reference:
       reference: StructureDefinition/cdex-signature
     description: "This Signature DataType profile enforces the various elements of\
       \ [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented\
@@ -1080,6 +1073,13 @@ definition:
     exampleCanonical: http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4
     groupingId: InlineExamples
   - reference:
+      reference: Bundle/cdex-bundle-inline-example-858p
+    description: Bundle example used to create inline [requests for provenance using
+      task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)
+    name: CDex Bundle Inline Example 858p
+    exampleBoolean: true
+    groupingId: InlineExamples
+  - reference:
       reference: Condition/cdex-condition-inline-example-858
     description: Condition example used to create inline scenarios for this guide
     name: CDex Condition Inline Example 858
@@ -1302,6 +1302,8 @@ definition:
     value: QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
   - code: no-narrative
     value: Bundle/cdex-task-inline-scenario1-subscription-notification
+  - code: no-narrative
+    value: Bundle/cdex-bundle-inline-example-858p
   - code: suppressed-ids
     value: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
   - code: tabbed-snapshots

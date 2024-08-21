@@ -33,7 +33,7 @@
           "text": "Hammer Toe"
         },
         "encounter": {
-          "reference": "Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
+          "reference": "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
         },
         "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
         "meta": {
@@ -45,7 +45,7 @@
         "recordedDate": "2018-10-21T21:22:15-07:00",
         "resourceType": "Condition",
         "subject": {
-          "reference": "Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+          "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
         },
         "verificationStatus": {
           "coding": [

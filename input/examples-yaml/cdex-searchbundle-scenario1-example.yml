@@ -50,9 +50,9 @@ entry:
                   system: http://snomed.info/sct
                 text: Hammer Toe
             subject:
-                reference: Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
+                reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
             encounter:
-                reference: Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82
+                reference: http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82
             onsetDateTime: '2018-10-21T21:22:15-07:00'
             recordedDate: '2018-10-21T21:22:15-07:00'
         search:

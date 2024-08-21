@@ -190,7 +190,7 @@ groups:
         - Bundle/cdex-searchbundle-provenance-example
         - Bundle/cdex-searchbundle-scenario3-example
         - Bundle/cdex-searchbundle-scenario2-example
-        - Bundle/cdex-bundle-inline-example-858p
+
   SignatureProfiles:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
@@ -245,6 +245,7 @@ groups:
       - Subscription/cdex-task-inline-scenario1-subscription-requested
       - Subscription/cdex-task-inline-scenario1-subscription-active
       - Bundle/cdex-task-inline-scenario1-subscription-notification
+      - Bundle/cdex-bundle-inline-example-858p
       - Condition/cdex-condition-inline-example-858
       - Provenance/cdex-provenance-inline-example-858
       - CommunicationRequest/cdex-task-inline-communicationrequest-example1
@@ -391,6 +392,7 @@ parameters:
     - Subscription/cdex-task-inline-scenario1-subscription-active
     - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
     - Bundle/cdex-task-inline-scenario1-subscription-notification
+    - Bundle/cdex-bundle-inline-example-858p
 
   suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
   

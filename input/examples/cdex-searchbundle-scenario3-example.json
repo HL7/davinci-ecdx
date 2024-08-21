@@ -53,13 +53,13 @@
           }
         ],
         "subject": {
-          "reference": "Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b",
+          "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b",
           "display": "Elden718 Halvorson124"
         },
         "date": "2020-10-23T10:21:08-07:00",
         "author": [
           {
-            "reference": "Practitioner/0000016f-57cb-cdac-0000-00000000014a",
+            "reference": "http://example.org/cdex/provider/fhir/Practitioner/0000016f-57cb-cdac-0000-00000000014a",
             "display": "Janeth814 Jakubowski832, MD"
           }
         ],
