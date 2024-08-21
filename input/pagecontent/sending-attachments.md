@@ -10,6 +10,10 @@ This guide defines [`$submit-attachment`], a simple RESTful interaction for exch
 
 See the [`$submit-attachment`] operation definition for further details.
 
+<div class="stu-note " markdown="1">
+Based upon additional testing, we intend to to upgrade the Endpoint Discovery Strategy guidance (**SHOULD**) to  a requirement (**SHALL**) in the next version of CDex
+</div><!-- stu-note -->
+
 ### Technical Workflow
 
 As shown below in Figure 13, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
