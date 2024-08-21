@@ -333,16 +333,20 @@ definition:
       \ or after*  the claim or pre-authorization transaction. For *solicited* attachments,\
       \ the Provider invokes it when responding to a Payer request for attachments\
       \ or additional information. Any HTTP endpoint can use $submit-attachment, not\
-      \ just FHIR RESTful server endpoints.\n\nThe input parameters are:\n1. One or\
-      \ more attachments as FHIR Resources\n    - Optionally, one or more unique line\
-      \ item numbers associated with the attachment\n    - Optionally, the attachment\
-      \ code used to request the information\n1. Data elements for the association\
-      \ to the claim/prior authorization\n    - A unique identifier that ties the\
-      \ attachment(s) back to the claim or prior authorization. (referred to as the\
-      \ \"re-association tracking control numbers\")\n    - What are the attachments\
-      \ for:\n      - Claims\n      - Prior Authorizations\n    - Optionally, a unique\
-      \ payer identifier\n    - A unique organization/location identifier (e.g., [Type\
-      \ 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
+      \ just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments\
+      \ **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/2024Sep/endpoint-discovery.html)\
+      \ defined in the Da Vinci HRex specification to allow discovery of the endpoint\
+      \ for this operation. For *Solicited Attachments*, the $submit-attachment endpoint\
+      \ is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)\n\
+      \nThe input parameters are:\n1. One or more attachments as FHIR Resources\n\
+      \    - Optionally, one or more unique line item numbers associated with the\
+      \ attachment\n    - Optionally, the attachment code used to request the information\n\
+      1. Data elements for the association to the claim/prior authorization\n    -\
+      \ A unique identifier that ties the attachment(s) back to the claim or prior\
+      \ authorization. (referred to as the \"re-association tracking control numbers\"\
+      )\n    - What are the attachments for:\n      - Claims\n      - Prior Authorizations\n\
+      \    - Optionally, a unique payer identifier\n    - A unique organization/location\
+      \ identifier (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\
       \ or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))\n\
       \    - A unique Patient member identifier\n    - A Date of Service\n    - A\
       \ Flag indicating whether the operation is the last attachment submission for\

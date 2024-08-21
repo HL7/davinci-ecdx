@@ -69,6 +69,7 @@ These changes are the result of the trackers listed below.
 26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](security.html)
+29.  **Pre-Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](sending-attachments.html#submit-attachment-operation)
  
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
