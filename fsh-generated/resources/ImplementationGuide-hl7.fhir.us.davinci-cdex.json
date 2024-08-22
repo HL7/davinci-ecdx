@@ -1061,7 +1061,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1072,7 +1072,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1083,7 +1083,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1094,7 +1094,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1115,7 +1115,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1126,7 +1126,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1137,7 +1137,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1153,7 +1153,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1164,7 +1164,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },
@@ -1185,7 +1185,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "trial-use"
+              "valueCode": "Trial-Use"
             }
           ]
         },

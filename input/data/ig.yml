@@ -1132,25 +1132,25 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: direct-query.html
       title: Direct Query
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: task-based-approach.html
       title: Task Based Approach
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: task-based-conformance.html
       title: Conforming to CDex Task Based Approach
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: attachments.html
       title: Attachments
       generation: markdown
@@ -1162,19 +1162,19 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: requesting-attachments-code.html
       title: Requesting Attachments Using Attachments Codes
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: requesting-attachments-questionnaire.html
       title: Requesting Attachments Using Questionnaires
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: burden-reduction.html
       title: Using CDex Attachments with DaVinci PAS
       generation: markdown
@@ -1183,13 +1183,13 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: signatures.html
       title: Signatures
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: signed-searchset-bundle-example.html
       title: Signed Searchset Bundle Example
       generation: markdown
@@ -1201,7 +1201,7 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: trial-use
+        valueCode: Trial-Use
     - nameUrl: downloads.html
       title: Downloads
       generation: markdown

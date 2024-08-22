@@ -257,84 +257,84 @@ pages:
   index.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
     title: Home
   background.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
   # specification.md:
   #   exchanging-clinical-data.md:
   direct-query.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
   task-based-approach.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
   task-based-conformance.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
     title: Conforming to CDex Task Based Approach
   attachments.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
   solicited-unsolicited-attachments.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
     title: Solicited and Unsolicited Attachments
   sending-attachments.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
   requesting-attachments-code.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
     title: Requesting Attachments Using Attachments Codes
   requesting-attachments-questionnaire.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
     title: Requesting Attachments Using Questionnaires
   burden-reduction.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
     title: Using CDex Attachments with DaVinci PAS
   attachments-conformance.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
     title: Conforming to CDex Attachments
   signatures.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
   signed-searchset-bundle-example.md:
   signed-document-bundle-example.md:
   security.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
+      valueCode: Trial-Use
     title: Security and Privacy
   downloads.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
   ImplementationGuide-hl7.fhir.us.davinci-cdex.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
     title: CDex ImplementationGuide Resource
   changes.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
+    #   valueCode: Trial-Use
     title: Change Log
 
 parameters:
