@@ -1,15 +1,18 @@
+{% assign ig-resource1 = 'ImplementationGuide-' | append: site.data.ig.id %}  
+{% assign ig-resource2 = 'ImplementationGuide/' | append: site.data.ig.id %}
+
 
 |||
 |---|---|
 |*Official URL*: {{ site.data.ig.url }}|*Version*: {{ site.data.ig.version }}|
 |*NPM package name*: {{ site.data.ig.packageId }}|*ComputableName*: {{ site.data.ig.name }}|
-|*Copyright/Legal*: Used by permission of HL7 International, all rights reserved Creative Commons License|
+|*Copyright/Legal*: Used by permission of HL7 International, all rights reserved Creative Commons License|Standards status: {{ site.data.resources[ig-resource2].status.standards-status }}<br />Maturity Level: {{ site.data.resources[ig-resource2].status.fmm }}
 {:.grid}
 
 {{ site.data.ig.description }}
 
-- [XML](ImplementationGuide-{{site.data.ig.id}}.xml)
-- [JSON](ImplementationGuide-{{site.data.ig.id}}.json)
+- [XML]({{ig-resource1}}.xml)
+- [JSON]({{ig-resource1}}.json)
 
 ### Cross Version Analysis
 

@@ -184,6 +184,16 @@
         "description": "Examples Associated with CDex Direct Query (FHIR RESTful search) Approach Transactions"
       },
       {
+        "id": "QuestionnaireProfiles",
+        "name": "Questionnaire Profiles",
+        "description": "Questionnaire profiles used in both CDex Attachments and Task Based Approach Transactions"
+      },
+      {
+        "id": "QuestionnaireExamples",
+        "name": "Questionnaire Examples",
+        "description": "Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions"
+      },
+      {
         "id": "SignatureProfiles",
         "name": "Signature Profiles",
         "description": "Profiles Associated with CDex Signatures"
@@ -202,11 +212,6 @@
         "id": "CommonTerminology",
         "name": "Common Terminology",
         "description": "ValueSets and CodeSystems used in both CDex Attachments and Task Based Approach Transactions"
-      },
-      {
-        "id": "CommonExamples",
-        "name": "Common Examples",
-        "description": "Examples used in both CDex Attachments and Task Based Approach Transactions"
       },
       {
         "id": "InlineExamples",
@@ -444,7 +449,7 @@
         "reference": {
           "reference": "StructureDefinition/cdex-task-data-request"
         },
-        "description": "This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned \"data request\".  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.\n\nIt constrains the following elements to be *mandatory* (min=1):\n\n- A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A `Task.intent` fixed to \"order\" (this element is a mandatory Task element)\n- A `Task.code` of \"data-request-query\", \"data-request-code\", or \"data-request-questionnaire\" communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.\n  - If the code is \"data-request-query\", the provider system returns data(s) identified by the FHIR RESTful query in the \"query\" input parameter.\n  - If the code is \"data-request-code\", the provider system returns data(s) identified by the LOINC code in the \"code\" input parameter.\n  - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html) to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n- A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested\n- A `Task.authoredOn` to communicate the date and time this task was created\n- A `Task.requester` element communicating who is requesting the data\n- A `Task.owner` element representing the Provider who is being asked to provide the data\n\nIt constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):\n\n- A `Task.identifier` element representing the unique data request identifier\n- A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request\n- A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)\n- A `Task.businessStatus.text` element representing the progress in retrieving the data (for example, \"waiting on internal review\").\n- A `Task.for.reference.identifier` element representing a patient business identifier like a Member ID\n- A `Task.requester.reference.identifier` element representing the Data Consumer business identifier\n- A `Task.owner.reference.identifier` element representing the Provider business identifier\n- A `Task.reasonCode.text` to communicate why the data is being requested\n- A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier\n- A \"query\" `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.*\n- A \"code\" `Task.input` element to communicate to the provider what information is needed using a LOINC code.*\n  - For the \"code\" `Task.input` element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A `Task.input` element representing a flag to indicate whether the requested data requires a signature\n- A \"data\" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.\n\nIt defines the following elements to be *optional*:\n- A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.\n- A \"questionnaire\" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n  - A questionnaireDisplay extension to communicate the display name of the Questionnaire\n- A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)\n- A \"response\" `Task.output` element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\nIt prohibits the following elements (max=0):\n- `Task.focus`\n\n\\* Either a \"query\", \"code\", or \"questionnaire\" `Task.input` element is required",
+        "description": "This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned \"data request\".  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.\n\nIt constrains the following elements to be *mandatory* (min=1):\n\n- A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/2024Sep/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A `Task.intent` fixed to \"order\" (this element is a mandatory Task element)\n- A `Task.code` of \"data-request-query\", \"data-request-code\", or \"data-request-questionnaire\" communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.\n  - If the code is \"data-request-query\", the provider system returns data(s) identified by the FHIR RESTful query in the \"query\" input parameter.\n  - If the code is \"data-request-code\", the provider system returns data(s) identified by the LOINC code in the \"code\" input parameter.\n  - If the code is \"data-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html) to complete the Questionnaire referenced in the \"questionnaire\" input parameter.\n- A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested\n- A `Task.authoredOn` to communicate the date and time this task was created\n- A `Task.requester` element communicating who is requesting the data\n- A `Task.owner` element representing the Provider who is being asked to provide the data\n\nIt constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):\n\n- A `Task.identifier` element representing the unique data request identifier\n- A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request\n- A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)\n- A `Task.businessStatus.text` element representing the progress in retrieving the data (for example, \"waiting on internal review\").\n- A `Task.for.reference.identifier` element representing a patient business identifier like a Member ID\n- A `Task.requester.reference.identifier` element representing the Data Consumer business identifier\n- A `Task.owner.reference.identifier` element representing the Provider business identifier\n- A `Task.reasonCode.text` to communicate why the data is being requested\n- A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier\n- A \"query\" `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.*\n- A \"code\" `Task.input` element to communicate to the provider what information is needed using a LOINC code.*\n  - For the \"code\" `Task.input` element, an extensible LOINC® Document types value set to communicate the specific information being requested\n- A `Task.input` element representing a flag to indicate whether the requested data requires a signature\n- A \"data\" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.\n\nIt defines the following elements to be *optional*:\n- A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.\n- A \"questionnaire\" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n  - A questionnaireDisplay extension to communicate the display name of the Questionnaire\n- A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)\n- A \"response\" `Task.output` element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\nIt prohibits the following elements (max=0):\n- `Task.focus`\n\n\\* Either a \"query\", \"code\", or \"questionnaire\" `Task.input` element is required",
         "exampleBoolean": false,
         "name": "CDex Task Data Request Profile",
         "groupingId": "TaskBasedProfiles"
@@ -712,6 +717,42 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/cdex-sdc-questionnaireresponse"
+        },
+        "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",
+        "exampleBoolean": false,
+        "name": "CDex SDC QuestionnaireResponse Profile",
+        "groupingId": "QuestionnaireProfiles"
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/cdex-questionnaire-example1"
+        },
+        "description": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.",
+        "name": "CDex Questionnaire Example1",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire",
+        "groupingId": "QuestionnaireExamples"
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
+        },
+        "description": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It is adapted from the Da Vinci DTR IG.",
+        "name": "CDex QuestionnaireResponse Example1",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0-snapshot",
+        "groupingId": "QuestionnaireExamples"
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example2"
+        },
+        "description": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data. The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse contains the generated Questionnaire instance.  This example is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).",
+        "name": "CDex QuestionnaireResponse Example2",
+        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt",
+        "groupingId": "QuestionnaireExamples"
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/cdex-signature"
         },
         "description": "This Signature DataType profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\n- A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)\n- A `Signature.who` for the organization or practitioner who signed the Bundle which is either:\n  1. a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n- A `Signature.data` representing the base64 encoded Signature (JWS, image, etc)\n\nIn addition, the following *mandatory* (min=1) element is inherited from the base standard:\n- `Signature.when` - a system timestamp when the signature was created",
@@ -726,15 +767,6 @@
         "description": "This Bundle profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)",
         "exampleBoolean": false,
         "name": "CDex Signature Bundle Profile",
-        "groupingId": "SignatureProfiles"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/cdex-sdc-questionnaireresponse"
-        },
-        "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:\n- The signature extensions use the CDex Signature Profile",
-        "exampleBoolean": false,
-        "name": "CDex SDC QuestionnaireResponse Profile",
         "groupingId": "SignatureProfiles"
       },
       {
@@ -817,33 +849,6 @@
         "exampleBoolean": false,
         "name": "CDex Temporary Code System",
         "groupingId": "CommonTerminology"
-      },
-      {
-        "reference": {
-          "reference": "Questionnaire/cdex-questionnaire-example1"
-        },
-        "description": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.",
-        "name": "CDex Questionnaire Example1",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire",
-        "groupingId": "CommonExamples"
-      },
-      {
-        "reference": {
-          "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example1"
-        },
-        "description": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It is adapted from the Da Vinci DTR IG.",
-        "name": "CDex QuestionnaireResponse Example1",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse|2.1.0-snapshot",
-        "groupingId": "CommonExamples"
-      },
-      {
-        "reference": {
-          "reference": "QuestionnaireResponse/cdex-questionnaireresponse-example2"
-        },
-        "description": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data. The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse contains the generated Questionnaire instance.  This example is adapted from the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).",
-        "name": "CDex QuestionnaireResponse Example2",
-        "exampleCanonical": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt",
-        "groupingId": "CommonExamples"
       },
       {
         "reference": {
@@ -1061,7 +1066,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1072,7 +1077,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1083,7 +1088,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1094,7 +1099,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1115,7 +1120,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1126,7 +1131,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1137,7 +1142,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1153,7 +1158,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1164,7 +1169,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },
@@ -1185,7 +1190,7 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-              "valueCode": "Trial-Use"
+              "valueCode": "trial-use"
             }
           ]
         },

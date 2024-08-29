@@ -9,7 +9,7 @@
 [FHIR Data Segmentation for Privacy project]: https://www.hl7.org/special/Committees/projman/searchableProjectIndex.cfm?action=edit&ProjectNumber=1549
 [FHIR RESTful operation]: {{site.data.fhir.path}}operations.html
 [Framework]: guidance.html  "General Framework Page"
-[Home]: index.html "Home Page"
+[IG Home]: index.html "Home Page"
 [Operation]: {{site.data.fhir.path}}operations.html
 [OperationDefinition]: {{site.data.fhir.path}}operationdefinition.html
 [Operations]: operations.html "Operations Page"

@@ -53,7 +53,7 @@ Attachments
 
 This guide is divided into several pages listed at the top of each page in the menu bar.
 
-- [Home]\: The home page introduces the Da Vinci Clinical Data Exchange Project and Implementation Guide.
+- [IG Home]\: The home page introduces the Da Vinci Clinical Data Exchange Project and Implementation Guide.
 - [Background]\: <span class="bg-success" markdown="1">This page provides background for the Da Vinci Clinical Data Exchange Project and summarizes its scope.</span><!-- new-content -->
 - [Direct Query]\: Documents how to exchange clinical data using the standard FHIR RESTful search.
 - [Task Based Approach]\: Documents exchanging clinical data using the FHIR Task resource. This approach supports asynchronous workflows and may require human involvement.

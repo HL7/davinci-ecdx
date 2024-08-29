@@ -117,6 +117,14 @@ definition:
     name: Direct Query Examples
     description: Examples Associated with CDex Direct Query (FHIR RESTful search)
       Approach Transactions
+  - id: QuestionnaireProfiles
+    name: Questionnaire Profiles
+    description: Questionnaire profiles used in both CDex Attachments and Task Based
+      Approach Transactions
+  - id: QuestionnaireExamples
+    name: Questionnaire Examples
+    description: Questionnaire examples used in both CDex Attachments and Task Based
+      Approach Transactions
   - id: SignatureProfiles
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
@@ -131,9 +139,6 @@ definition:
     name: Common Terminology
     description: ValueSets and CodeSystems used in both CDex Attachments and Task
       Based Approach Transactions
-  - id: CommonExamples
-    name: Common Examples
-    description: Examples used in both CDex Attachments and Task Based Approach Transactions
   - id: InlineExamples
     name: Inline Examples
     description: These examples are used in the inline example scenarios throughout
@@ -506,7 +511,7 @@ definition:
       \ for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse\
       \ as supported by Da Vinci DTR.\n\nIt constrains the following elements to be\
       \ *mandatory* (min=1):\n\n- A `Task.status` with a required binding to HRex\
-      \ [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1/ValueSet-hrex-task-status.html)\
+      \ [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/2024Sep/ValueSet-hrex-task-status.html)\
       \ (this element is a mandatory Task element). For guidance when the provider\
       \ is not able to complete the Task, refer to the [When The Task Cannot Be Completed\
       \ section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A\
@@ -821,6 +826,44 @@ definition:
     exampleBoolean: true
     groupingId: DirectQueryExamples
   - reference:
+      reference: StructureDefinition/cdex-sdc-questionnaireresponse
+    description: 'This profile is derived from the [US Core QuestionnaireResponse
+      Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
+      profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html)
+      documented in the CDex guide to represent an enveloped signature. It adds the
+      following constraints:
+
+      - The signature extensions use the CDex Signature Profile'
+    exampleBoolean: false
+    name: CDex SDC QuestionnaireResponse Profile
+    groupingId: QuestionnaireProfiles
+  - reference:
+      reference: Questionnaire/cdex-questionnaire-example1
+    description: This example is a simple data request Questionnaire used in the Task
+      Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
+    name: CDex Questionnaire Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
+    groupingId: QuestionnaireExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It
+      is adapted from the Da Vinci DTR IG.
+    name: CDex QuestionnaireResponse Example1
+    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
+    groupingId: QuestionnaireExamples
+  - reference:
+      reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
+    description: This Questionnaire Response example demonstrates the response to
+      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.
+      The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse
+      contains the generated Questionnaire instance.  This example is adapted from
+      the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR
+      see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).
+    name: CDex QuestionnaireResponse Example2
+    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
+    groupingId: QuestionnaireExamples
+  - reference:
       reference: StructureDefinition/cdex-signature
     description: "This Signature DataType profile enforces the various elements of\
       \ [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented\
@@ -847,18 +890,6 @@ definition:
       - A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)'
     exampleBoolean: false
     name: CDex Signature Bundle Profile
-    groupingId: SignatureProfiles
-  - reference:
-      reference: StructureDefinition/cdex-sdc-questionnaireresponse
-    description: 'This profile is derived from the [US Core QuestionnaireResponse
-      Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
-      profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html)
-      documented in the CDex guide to represent an enveloped signature. It adds the
-      following constraints:
-
-      - The signature extensions use the CDex Signature Profile'
-    exampleBoolean: false
-    name: CDex SDC QuestionnaireResponse Profile
     groupingId: SignatureProfiles
   - reference:
       reference: ValueSet/cdex-identifier-types
@@ -940,32 +971,6 @@ definition:
     exampleBoolean: false
     name: CDex Temporary Code System
     groupingId: CommonTerminology
-  - reference:
-      reference: Questionnaire/cdex-questionnaire-example1
-    description: This example is a simple data request Questionnaire used in the Task
-      Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
-    name: CDex Questionnaire Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire
-    groupingId: CommonExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example1
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It
-      is adapted from the Da Vinci DTR IG.
-    name: CDex QuestionnaireResponse Example1
-    exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse
-    groupingId: CommonExamples
-  - reference:
-      reference: QuestionnaireResponse/cdex-questionnaireresponse-example2
-    description: This Questionnaire Response example demonstrates the response to
-      a CDEX Data Query or Attachments that uses a Questionnaire to request the data.
-      The Questionnaire is an adaptive questionnaire and the resulting QuestionnaireResponse
-      contains the generated Questionnaire instance.  This example is adapted from
-      the Da Vinci DTR IG. For more information about adaptive questionnaires in FHIR
-      see the [SDC Implementation Guide](http://hl7.org/fhir/uv/sdc/).
-    name: CDex QuestionnaireResponse Example2
-    exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
-    groupingId: CommonExamples
   - reference:
       reference: Task/cdex-task-inline-example1
     description: Task example used to create inline scenarios for example tasked-based
@@ -1132,25 +1137,25 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: direct-query.html
       title: Direct Query
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: task-based-approach.html
       title: Task Based Approach
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: task-based-conformance.html
       title: Conforming to CDex Task Based Approach
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: attachments.html
       title: Attachments
       generation: markdown
@@ -1162,19 +1167,19 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: requesting-attachments-code.html
       title: Requesting Attachments Using Attachments Codes
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: requesting-attachments-questionnaire.html
       title: Requesting Attachments Using Questionnaires
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: burden-reduction.html
       title: Using CDex Attachments with DaVinci PAS
       generation: markdown
@@ -1183,13 +1188,13 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: signatures.html
       title: Signatures
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: signed-searchset-bundle-example.html
       title: Signed Searchset Bundle Example
       generation: markdown
@@ -1201,7 +1206,7 @@ definition:
       generation: markdown
       extension:
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: Trial-Use
+        valueCode: trial-use
     - nameUrl: downloads.html
       title: Downloads
       generation: markdown

@@ -191,13 +191,26 @@ groups:
         - Bundle/cdex-searchbundle-scenario3-example
         - Bundle/cdex-searchbundle-scenario2-example
 
+  QuestionnaireProfiles:
+    name: Questionnaire Profiles
+    description: Questionnaire profiles used in both CDex Attachments and Task Based Approach Transactions
+    resources:
+      - StructureDefinition/cdex-sdc-questionnaireresponse  
+  QuestionnaireExamples:
+    name: Questionnaire Examples
+    description: Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions
+    resources:
+      - Questionnaire/cdex-questionnaire-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example1
+      - QuestionnaireResponse/cdex-questionnaireresponse-example2
+
   SignatureProfiles:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
     resources:
       - StructureDefinition/cdex-signature
       - StructureDefinition/cdex-signature-bundle
-      - StructureDefinition/cdex-sdc-questionnaireresponse
+      # - StructureDefinition/cdex-sdc-questionnaireresponse
   SignatureTerminology:
     name: Signature Terminology
     description: ValueSets Associated with CDex Signatures
@@ -219,13 +232,6 @@ groups:
     resources:
       - ValueSet/cdex-POU
       - CodeSystem/cdex-temp
-  CommonExamples:
-    name: Common Examples
-    description: Examples used in both CDex Attachments and Task Based Approach Transactions
-    resources:
-      - Questionnaire/cdex-questionnaire-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example1
-      - QuestionnaireResponse/cdex-questionnaireresponse-example2
   InlineExamples:
     name: Inline Examples 
     description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can validate them against the CDex profile definitions.  Since they are used to illustrate "over-the-wire" transactions, the rendered narrative and id elements are often absent.
@@ -257,84 +263,84 @@ pages:
   index.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
     title: Home
   background.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
   # specification.md:
   #   exchanging-clinical-data.md:
   direct-query.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
   task-based-approach.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
   task-based-conformance.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
     title: Conforming to CDex Task Based Approach
   attachments.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
   solicited-unsolicited-attachments.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
     title: Solicited and Unsolicited Attachments
   sending-attachments.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
   requesting-attachments-code.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
     title: Requesting Attachments Using Attachments Codes
   requesting-attachments-questionnaire.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
     title: Requesting Attachments Using Questionnaires
   burden-reduction.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
     title: Using CDex Attachments with DaVinci PAS
   attachments-conformance.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
     title: Conforming to CDex Attachments
   signatures.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
   signed-searchset-bundle-example.md:
   signed-document-bundle-example.md:
   security.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: Trial-Use
+      valueCode: trial-use
     title: Security and Privacy
   downloads.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
   ImplementationGuide-hl7.fhir.us.davinci-cdex.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
     title: CDex ImplementationGuide Resource
   changes.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: Trial-Use
+    #   valueCode: trial-use
     title: Change Log
 
 parameters:
@@ -407,7 +413,7 @@ releaselabel: CI Build
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-  Home: #index.html
+  IG Home: #index.html
     Introduction: index.html
     About This Guide: index.html#about-this-guide
     How to read this Guide: index.html#how-to-read-this-guide
@@ -470,12 +476,13 @@ menu:
     Task Based Approach Terminology: artifacts.html#7
     Task Based Approach Examples: artifacts.html#8
     Direct Query Examples: artifacts.html#9
-    Signature Profiles: artifacts.html#10
-    Signature Terminology: artifacts.html#11
-    Signature Examples: artifacts.html#12
-    Common Terminology: artifacts.html#13
-    Common Examples: artifacts.html#14
-    Inline Examples: artifacts.html#15
+    Questionnaire Profiles: artifacts.html#10
+    Questionnaire Examples: artifacts.html#11
+    Signature Profiles: artifacts.html#12
+    Signature Terminology: artifacts.html#13
+    Signature Examples: artifacts.html#14
+    Common Terminology: artifacts.html#15
+    Inline Examples: artifacts.html#16
   Support:
    Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
