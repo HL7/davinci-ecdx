@@ -7,7 +7,7 @@
   "title": "Data Source Client CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2024-04-23T10:37:58.540316-08:00",
+  "date": "2024-09-10T14:37:40.292045-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -33,9 +33,18 @@
   "kind": "requirements",
   "instantiates": [
     "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|3.1.1",
-    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|6.1.0"
+    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|6.1.0",
+    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|7.0.0"
   ],
   "_instantiates": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
+        }
+      ]
+    },
     {
       "extension": [
         {
@@ -200,9 +209,27 @@
           ],
           "type": "DocumentReference",
           "supportedProfile": [
-            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
           ],
           "_supportedProfile": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+                  "valueCode": "SHALL"
+                }
+              ]
+            },
             {
               "extension": [
                 {

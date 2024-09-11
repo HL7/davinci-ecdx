@@ -17,7 +17,7 @@ fhirVersion: 4.0.1
 kind: resource
 abstract: false
 type: QuestionnaireResponse
-baseDefinition: 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse'
+baseDefinition: 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0'
 derivation: constraint
 
 differential:

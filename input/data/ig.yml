@@ -43,6 +43,10 @@ dependsOn:
   packageId: hl7.fhir.us.core
   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
   version: 6.1.0
+- id: uscore7
+  packageId: hl7.fhir.us.core.v700
+  uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  version: 7.0.0
 - id: hrex
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
@@ -63,10 +67,6 @@ dependsOn:
   packageId: hl7.fhir.uv.sdc
   uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
   version: 3.0.0
-- packageId: hl7.fhir.uv.extensions.r4
-  version: 5.1.0
-  uri: http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions
-  id: hl7_fhir_uv_extensions_r4
 - id: backport
   packageId: hl7.fhir.uv.subscriptions-backport.r4
   uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport

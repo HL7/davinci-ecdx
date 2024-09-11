@@ -1,13 +1,13 @@
-### Version = 2.1.0
-- Publication Date: TBD
-- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1>
+### Version = 2.1.0-snapshot
+- Publication Date: 2024-09-11
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot>
 - Based on FHIR version: 4.0.1
 
 This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community comments and edits to this guide.
 
 #### What's new in Version 2.1.0 of CDex:
 
-1. Added Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/).
+1. Added Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) and [US Core 7.0.0](https://hl7.org/fhir/us/core/STU7/).
 2. Updated guidance on [Using CDex Attachments with DaVinci PAS](burden-reduction.html#using-cdex-attachments-with-davinci-pas) page to align with Da Vinci PAS v 2.0.1 Guide's, [Request for Additional Information](https://hl7.org/fhir/us/davinci-pas/STU2/additionalinfo.html) page.
 3. Added a section on how to use [topic-based subscriptions](task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
 4. Updated guidance on [discovery of patient ids](direct-query.html#discovery-of-patient-fhir-ids) based on FAST's [Interoperable Digital Identity and Patient Matching](https://hl7.org/fhir/us/identity-matching/index.html) implementation guide.
@@ -70,7 +70,8 @@ These changes are the result of the trackers listed below.
 27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](security.html)
 29.  **Pre-Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](sending-attachments.html#submit-attachment-operation)
- 
+30.  **Pre-Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 and 7.0.0 [FHIR-47303](https://jira.hl7.org/browse/FHIR-47303)
+
 ### Version = 2.0.0
 - Publication Date: 2023-01-30
 - URL: <http://hl7.org/fhir/us/davinci-cdex/STU2>

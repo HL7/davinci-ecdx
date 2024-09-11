@@ -231,6 +231,7 @@ differential:
           targetProfile:
             - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1'
             - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0'
       mustSupport: true
   
     - id: Task.for.identifier

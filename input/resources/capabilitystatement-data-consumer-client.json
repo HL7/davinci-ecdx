@@ -7,7 +7,7 @@
   "title": "Data Consumer Client CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2024-05-13T20:40:17.336549-08:00",
+  "date": "2024-09-10T15:04:50.953692-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
@@ -33,9 +33,18 @@
   "kind": "requirements",
   "instantiates": [
     "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|3.1.1",
-    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|6.1.0"
+    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|6.1.0",
+    "http://hl7.org/fhir/us/core/CapabilityStatement/us-core-client|7.0.0"
   ],
   "_instantiates": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
+        }
+      ]
+    },
     {
       "extension": [
         {
@@ -92,11 +101,20 @@
   "implementationGuide": [
     "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|3.1.1",
     "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|6.1.0",
+    "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core|7.0.0",
     "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex|1.0.0",
     "http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr|2.0.1",
     "http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport|1.1.0"
   ],
   "_implementationGuide": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+          "valueCode": "SHOULD"
+        }
+      ]
+    },
     {
       "extension": [
         {

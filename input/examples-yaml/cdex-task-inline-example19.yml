@@ -95,7 +95,8 @@ meta:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: CDex Inline Task Example 19
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Task example used to create inline scenarios for the [requesting attachments using codes transaction](requesting-attachments-code.html#complete-solicited-attachment-transaction)
+    valueMarkdown: Task example used to create inline scenarios for the [requesting
+      attachments using codes transaction](requesting-attachments-code.html#complete-solicited-attachment-transaction)
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
 owner:

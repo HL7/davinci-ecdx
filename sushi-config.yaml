@@ -55,6 +55,12 @@ dependencies:
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore6
+
+  hl7.fhir.us.core.v700:
+    version: 7.0.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore7
+
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
     version: 1.1.0-ballot
@@ -75,7 +81,11 @@ dependencies:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
     version: 3.0.0
     id: sdc
-  hl7.fhir.uv.extensions.r4: 5.1.0 #5.1.0-ballot1  # <<<< If your WG is not in the older list, you need to add an explicit dependency to the current version of the extensions pack
+
+
+  hl7.fhir.extensions.r5:
+    version: 4.0.1
+  
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport 

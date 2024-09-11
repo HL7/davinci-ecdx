@@ -18,13 +18,14 @@
 [SMART App Launch]: http://www.hl7.org/fhir/smart-app-launch/
 [Terminology]: terminology.html "Terminology Page"
 [FHIR security guidance]:{{site.data.fhir.path}}security.html
-[US Core Condition Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-condition.html
+[US Core Condition Profile]: {{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-condition.html
 [US Core Encounter Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-encounter.html
-[US Core Location Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-location.html
-[US Core Patient Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-patient.html
+[US Core Location Profile]: {{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-location.html
+[US Core Patient Profile]: {{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-patient.html
 [OperationOutcome]: {{site.data.fhir.path}}operationoutcome.html
-[US Core Provenance Profile]: {{site.data.fhir.ver.uscore6}}/StructureDefinition-us-core-provenance.html
+[US Core Provenance Profile]: {{site.data.fhir.ver.uscore7}}/StructureDefinition-us-core-provenance.html
 [Da Vinci]: http://www.hl7.org/about/davinci/index.cfm?ref=common
+[US Core 7.0.0]: {{site.data.fhir.ver.uscore7}}/index.html
 [US Core 6.1.0]: {{site.data.fhir.ver.uscore6}}/index.html
 [US Core 3.1.1]: {{site.data.fhir.ver.uscore3}}/index.html
 
@@ -43,6 +44,7 @@
 [ONC United States Core Data for Interoperability (USCDI)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi
 [ONC United States Core Data for Interoperability V1 (USCDI V1)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi#uscdi-v1
 [ONC United States Core Data for Interoperability V3 (USCDI V3)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi#uscdi-v3
+[ONC United States Core Data for Interoperability V4 (USCDI V4)]: https://www.healthit.gov/isa/united-states-core-data-interoperability-uscdi#uscdi-v4
 [FHIR Asynchronous Request Patterns]: {{site.data.fhir.path}}async.html
 [Task]: {{site.data.fhir.path}}task.html
 [CommunicationRequest]: {{site.data.fhir.path}}communicationrequest.html
@@ -71,7 +73,7 @@
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: https://hl7.org/fhir/uv/security-label-ds4p/
 [FHIR id]: {{site.data.fhir.path}}references.html
-[Basic Provenance]: {{site.data.fhir.uscore6}}/basic-provenance.html
+[Basic Provenance]: {{site.data.fhir.uscore7}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
 [Da Vinci Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}

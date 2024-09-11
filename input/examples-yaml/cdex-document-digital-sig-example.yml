@@ -79,6 +79,7 @@ entry:
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0
 - fullUrl: urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570
   resource:
     asserter:
@@ -110,6 +111,7 @@ entry:
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0
 - fullUrl: urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112
   resource:
     class:
@@ -141,6 +143,7 @@ entry:
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0
+      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0
 - fullUrl: urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3
   resource:
     active: true
@@ -152,11 +155,9 @@ entry:
       postalCode: '01002'
       state: MA
     id: e37f004b-dc10-422b-b833-cdaa10a055a3
-
     identifier:
-      - system: 'http://hl7.org/fhir/sid/us-npi'
-        value: '1234567893'
-
+    - system: http://hl7.org/fhir/sid/us-npi
+      value: '1234567893'
     name: CDEX Example Organization
     resourceType: Organization
     telecom:

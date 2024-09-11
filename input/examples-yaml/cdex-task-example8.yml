@@ -31,6 +31,7 @@ contained:
         profile:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0
       id: cdex-documentreference-example1
       status: current
       subject:

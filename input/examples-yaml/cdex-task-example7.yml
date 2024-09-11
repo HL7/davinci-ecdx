@@ -53,6 +53,7 @@ contained:
         profile:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0
     search:
       mode: match
   - fullUrl: https://api.logicahealth.org/DaVinciCDexProvider/open/DocumentReference/cdex-example-doc2
@@ -84,6 +85,7 @@ contained:
         profile:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0
     search:
       mode: match
 status: completed

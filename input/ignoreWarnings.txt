@@ -9,11 +9,6 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/St
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
-
-# ===  the example demonstrate the legitimate use case for using free text instead of codes for requesting information using a Task-based Query ===
-
-No code provided, and a code should be provided from the value set 'US Core DocumentReference Type' (http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|6.1.0)
-
 # ===  these Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
@@ -32,12 +27,10 @@ A definition for CodeSystem 'http://example.org/lab-results' could not be found,
 # ===  === These examples uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content === ===
 
 The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
-The questionnaire 'http://example.org/cdex-questionnaire-example1' could not be resolved, so no validation can be performed against the base questionnaire
 
 
 # ===  === these CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===
 
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type|1.0.0
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
