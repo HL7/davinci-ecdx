@@ -43,8 +43,8 @@ copyright: >-
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: '2024-08-19'
-version: 2.1.0-snapshot
+date: '2024-11-01'
+version: 2.1.0
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core.3.1.1:
@@ -415,8 +415,8 @@ parameters:
   tabbed-snapshots: 'true'
   auto-oid-root: '2.16.840.1.113883.4.642.40.21'
 copyrightyear: '2024+'
-releaselabel: CI Build
-# releaselabel: STU2
+# releaselabel: CI Build
+releaselabel: STU2
 # releaselabel: Ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

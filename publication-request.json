@@ -5,7 +5,7 @@
     "mode": "working",
     "status" : "preview",
     "sequence": "STU2",
-    "descmd": "The changes in this STU update to Da Vinci CDEX include updates to be [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) compatible and change requests submitted by the Da Vinci and HL7 community. The HL7 International Payer/Provider Information Exchange (PIE) work group members have agreed to and voted on the resolution of the community comments. For a detailed list of the changes for this version, see the [Change Notes](http://hl7.org/fhir/us/core/STU7/changes.html).",
-    "desc": "The changes in this STU update to Da Vinci CDEX include updates with US Core 6.1.0 compatible and change requests submitted by the Da Vinci and HL7 community. The HL7 International Payer/Provider Information Exchange (PIE) work group members have agreed to and voted on the resolution of the community comments. For a detailed list of the changes for this version, see the Change Notes: http://hl7.org/fhir/us/core/STU7/changes.html.",
+    "descmd": "This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide. For a detailed list of the changes for this version, see the [Change Notes](http://hl7.org/fhir/us/core/STU7/changes.html).",
+    "desc": "This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide. For a detailed list of the changes for this version, see the Change Notes at http://hl7.org/fhir/us/core/STU7/changes.html.",
     "changes": "changes.html" 
 }

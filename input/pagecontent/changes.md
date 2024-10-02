@@ -3,7 +3,7 @@
 - URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1>
 - Based on FHIR version: 4.0.1
 
-This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide follows is the fourth published version of this guide. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community review comments and edits to this guide.
+This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide.
 
 #### What's new in Version 2.1.0 of CDex:
 
@@ -15,8 +15,9 @@ These changes are the result of the community review of the 2.1.0-snapshot versi
 
 **Status: Summary (Jira Issue) Link to Change**
 
-1. **Pre-Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](solicited-unsolicited-attachments.html) and [See Changes Here](burden-reduction.html)
+1. **Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](solicited-unsolicited-attachments.html) and [See Changes Here](burden-reduction.html)
 2. **Pre-Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](index.html#about-this-guide)
+3. **Resolved - change required**: (Enhancement) Update Figure [FHIR-48384](https://jira.hl7.org/browse/FHIR-48384) [See Changes Here](background.html#where-does-cdex-fit-in-the-da-vinci-project)
 
 ### Version = 2.1.0-snapshot
 - Publication Date: 2024-09-11
@@ -28,12 +29,12 @@ This Snapshot version of The Da Vinci Clinical Data Exchange (CDex) Implementati
 #### What's new in Version 2.1.0-snapshot of CDex:
 
 1. Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) and [US Core 7.0.0](https://hl7.org/fhir/us/core/STU7/).
-2. Updated guidance on [Using CDex Attachments with DaVinci PAS](burden-reduction.html#using-cdex-attachments-with-davinci-pas) page to align with Da Vinci PAS v 2.0.1 Guide's, [Request for Additional Information](https://hl7.org/fhir/us/davinci-pas/STU2/additionalinfo.html) page.
-3. A new section on [topic-based subscriptions](task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
-4. Updated guidance on [discovery of patient ids](direct-query.html#discovery-of-patient-fhir-ids) based on FAST's [Interoperable Digital Identity and Patient Matching](https://hl7.org/fhir/us/identity-matching/index.html) implementation guide.
+2. Updated guidance on [Using CDex Attachments with DaVinci PAS](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/burden-reduction.html#using-cdex-attachments-with-davinci-pas) page to align with Da Vinci PAS v 2.0.1 Guide's, [Request for Additional Information](https://hl7.org/fhir/us/davinci-pas/STU2/additionalinfo.html) page.
+3. A new section on [topic-based subscriptions](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
+4. Updated guidance on [discovery of patient ids](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/direct-query.html#discovery-of-patient-fhir-ids) based on FAST's [Interoperable Digital Identity and Patient Matching](https://hl7.org/fhir/us/identity-matching/index.html) implementation guide.
 5. Version 2.0.0 *Draft* content about using Questionnaires with the Task-based Approach and Attachments updated to *Trial Use*.
-6. A  new [design section](background.html#architectural-approach) explains the IG’s choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page.
-7. [Task state diagram](task-based-approach.html#task-state-machine) for the CDex Task profiles.
+6. A  new [design section](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/background.html#architectural-approach) explains the IG’s choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page.
+7. [Task state diagram](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#task-state-machine) for the CDex Task profiles.
 
 #### Changes:
 
@@ -41,55 +42,55 @@ These changes are the result of the trackers listed below.
 
 **Status: Summary (Jira Issue) Link to Change**
 
-1. **Applied:** (Correction) Update diagram to "Provider submitted requested attachments to the *Payer*"  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](solicited-unsolicited-attachments.html#solicited-attachments)
-3. **Applied:** (Enhancement) Add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](StructureDefinition-cdex-parameters-submit-attachment.html)
-4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
-5.  **Applied:** (Clarification) Clarify when to use CDex vs PAS for attachments [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](burden-reduction.html)
+1. **Applied:** (Correction) Update diagram to "Provider submitted requested attachments to the *Payer*"  [FHIR-38604](https://jira.hl7.org/browse/FHIR-38604) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/solicited-unsolicited-attachments.html#solicited-attachments)
+3. **Applied:** (Enhancement) Add profile for $submit-attachment Parameters resource [FHIR-41336](https://jira.hl7.org/browse/FHIR-41336) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-parameters-submit-attachment.html)
+4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-data-request.html)
+5.  **Applied:** (Clarification) Clarify when to use CDex vs PAS for attachments [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/burden-reduction.html)
 6.  **Applied:** (Enhancement) Include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) See Changes:
    - [CDex LOINC Attachment Codes Value Set](ValueSet-cdex-loinc-attachment-codes.html)
    - [CDex PWK01 Attachment Report Type Code Value Set](ValueSet-cdex-pwk01-attachment-report-type-code.html)
    - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
    - [CDex Parameters Submit Attachment Profile](StructureDefinition-cdex-parameters-submit-attachment.html)
    - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html)
-7.  **Applied:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/requesting-attachments-code.html#data-elements-for-requesting-attachments)
-8.  **Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-9.  **Applied:** (Clarification) Change Task.input "payer-url" to "PayerURL" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-10. **Applied:** (Clarification) Change Task.input "code" to "AttachmentsNeeded" to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example19.html)
-11. **Applied:** (Clarification) Change Task.input "questionnaire" slice to "QuestionnairesNeeded" to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](StructureDefinition-cdex-task-attachment-request.html) and [Here](Task-cdex-task-example22.html)
-12. **Applied:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](requesting-attachments-code.html#data-elements-for-requesting-attachments)
-13. **Applied:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](requesting-attachments-questionnaire.html)
+7.  **Applied:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+8.  **Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example19.html)
+9.  **Applied:** (Clarification) Change Task.input "payer-url" to "PayerURL" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example19.html)
+10. **Applied:** (Clarification) Change Task.input "code" to "AttachmentsNeeded" to align with PAS Task [FHIR-44884](https://jira.hl7.org/browse/FHIR-44884) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example19.html)
+11. **Applied:** (Clarification) Change Task.input "questionnaire" slice to "QuestionnairesNeeded" to align with PAS Task [FHIR-44885](https://jira.hl7.org/browse/FHIR-44885) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example22.html)
+12. **Applied:** (Clarification) Fix X12 277RFAI-v6020 mapping for Line Items [FHIR-45298](https://jira.hl7.org/browse/FHIR-45298) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#data-elements-for-requesting-attachments)
+13. **Applied:** (Correction) Add Business Status to Task [FHIR-45299](https://jira.hl7.org/browse/FHIR-45299) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-questionnaire.html)
 14. **Applied:** (Correction) Remove self referencing instantiates in CapabilityStatements [FHIR-45322](https://jira.hl7.org/browse/FHIR-45322) See Changes:
-   - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
-   - [Data Consumer Server CapabilityStatement](CapabilityStatement-data-consumer-server.html)
-   - [Data Source Client CapabilityStatement](CapabilityStatement-data-source-client.html)
-   - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
+   - [Data Consumer Client CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-consumer-client.html)
+   - [Data Consumer Server CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-consumer-server.html)
+   - [Data Source Client CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-source-client.html)
+   - [Data Source Server CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-source-server.html)
 15. **Applied:** (Enhancement) Update Version 2.0.0 Draft content to Trial Use [FHIR-45409](https://jira.hl7.org/browse/FHIR-45409)
 16. **Applied:** (Enhancement) update to support topic based subscriptions [FHIR-45628](https://jira.hl7.org/browse/FHIR-45628) See Changes:
-   - [Polling vs Subscriptions](task-based-approach.html#polling-vs-subscriptions)
-   - [Data Consumer Client CapabilityStatement](CapabilityStatement-data-consumer-client.html)
-   - [Data Source Server CapabilityStatement](CapabilityStatement-data-source-server.html)
-   - [Inline Subscription Task Scenario1 Subscription Requested](Subscription-cdex-task-inline-scenario1-subscription-requested.html)
-   - [Inline Subscription Task Scenario1 Subscription Active](Subscription-cdex-task-inline-scenario1-subscription-active.html)
-   - [Inline Subscription Task Scenario1 Subscription Notification](Bundle-cdex-task-inline-scenario1-subscription-notification.html)
-   - [CDex Capabilitystatement Inline Example](CapabilityStatement-cdex-capabilitystatement-inline-example.html)
-17. **Applied:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884) [See Changes Here](background.html#architectural-approach)
+   - [Polling vs Subscriptions](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#polling-vs-subscriptions)
+   - [Data Consumer Client CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-consumer-client.html)
+   - [Data Source Server CapabilityStatement](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-data-source-server.html)
+   - [Inline Subscription Task Scenario1 Subscription Requested](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Subscription-cdex-task-inline-scenario1-subscription-requested.html)
+   - [Inline Subscription Task Scenario1 Subscription Active](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Subscription-cdex-task-inline-scenario1-subscription-active.html)
+   - [Inline Subscription Task Scenario1 Subscription Notification](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Bundle-cdex-task-inline-scenario1-subscription-notification.html)
+   - [CDex Capabilitystatement Inline Example](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/CapabilityStatement-cdex-capabilitystatement-inline-example.html)
+17. **Applied:**(Enhancement) Add design section to background page [FHIR-45884](https://jira.hl7.org/browse/FHIR-45884) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/background.html#architectural-approach)
 18. **Applied:**(Enhancement) Add Task State diagram to specification [FHIR-46004](https://jira.hl7.org/browse/FHIR-46004) See Changes:
-   - [Task State Machine](task-based-approach.html#task-state-machine)
-   - [Requesting Attachments Using Attachment Codes](requesting-attachments-code.html#requesting-attachments-using-fhir)
-   - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#requesting-attachments-using-fhir)
-19. **Applied:**(Enhancement) Change Task.input:QuestionnairesNeeded max from 1 to * [FHIR-46093](https://jira.hl7.org/browse/FHIR-46093) See Changes [Here](StructureDefinition-cdex-task-attachment-request-definitions.html#diff_Task.input:QuestionnairesNeeded) and [Here](requesting-attachments-questionnaire.html)
-20. **Applied:**(Enhancement) Add Task Based approach as an option for the discovery of a member’s FHIR_ID [FHIR-45982](https://jira.hl7.org/browse/FHIR-45982) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids)
-21. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](direct-query.html#discovery-of-patient-fhir-ids) and [Here](task-based-approach.html#discovery-of-identifiers)
-22. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](index.html)
+   - [Task State Machine](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#task-state-machine)
+   - [Requesting Attachments Using Attachment Codes](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#requesting-attachments-using-fhir)
+   - [Requesting Attachments Using Questionnaires](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-questionnaire.html#requesting-attachments-using-fhir)
+19. **Applied:**(Enhancement) Change Task.input:QuestionnairesNeeded max from 1 to * [FHIR-46093](https://jira.hl7.org/browse/FHIR-46093) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request-definitions.html#diff_Task.input:QuestionnairesNeeded) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-questionnaire.html)
+20. **Applied:**(Enhancement) Add Task Based approach as an option for the discovery of a member’s FHIR_ID [FHIR-45982](https://jira.hl7.org/browse/FHIR-45982) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/direct-query.html#discovery-of-patient-fhir-ids)
+21. **Applied:**(Enhancement) Remove FAST STU note and add guidance on using FAST's The Interoperable Digital Identity and Patient Matching guide [FHIR-45985](https://jira.hl7.org/browse/FHIR-45985) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/direct-query.html#discovery-of-patient-fhir-ids) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#discovery-of-identifiers)
+22. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/index.html)
 23. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 [FHIR-46507](https://jira.hl7.org/browse/FHIR-46507)
-24. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](downloads.html#example-flow-chart-diagrams)
+24. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/downloads.html#example-flow-chart-diagrams)
 25. **Applied**: (Correction) Copy editing changes prior to comment period to ensure accuracy, clarity, and readability. [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) For example, See Changes: 
- - [How To Read This Guide](index.html#how-to-read-this-guide)
- - [Sensitive and Confidential Data](security.html#sensitive-and-confidential-data)
-26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
-27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
-28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](security.html)
-29. **Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](sending-attachments.html#submit-attachment-operation)
+ - [How To Read This Guide](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/index.html#how-to-read-this-guide)
+ - [Sensitive and Confidential Data](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/security.html#sensitive-and-confidential-data)
+26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-data-request.html)
+27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-data-request.html)
+28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/security.html)
+29. **Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/sending-attachments.html#submit-attachment-operation)
 30. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 and 7.0.0 [FHIR-47303](https://jira.hl7.org/browse/FHIR-47303)
 
 ### Version = 2.0.0
