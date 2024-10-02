@@ -1,19 +1,39 @@
+### Version = 2.1.0
+- Publication Date: 2024-11-1
+- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1>
+- Based on FHIR version: 4.0.1
+
+This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide follows is the fourth published version of this guide. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community review comments and edits to this guide.
+
+#### What's new in Version 2.1.0 of CDex:
+
+See the 2.1.0-snapshot version below
+
+#### Changes:
+
+These changes are the result of the community review of the 2.1.0-snapshot version
+
+**Status: Summary (Jira Issue) Link to Change**
+
+1. **Pre-Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](solicited-unsolicited-attachments.html) and [See Changes Here](burden-reduction.html)
+2. **Pre-Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](index.html#about-this-guide)
+
 ### Version = 2.1.0-snapshot
 - Publication Date: 2024-09-11
 - URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot>
 - Based on FHIR version: 4.0.1
 
-This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community comments and edits to this guide.
+This Snapshot version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the proposed STU update of this guide and is published for community review prior to final publication of version 2.1.0. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community comments and edits to this guide.
 
-#### What's new in Version 2.1.0 of CDex:
+#### What's new in Version 2.1.0-snapshot of CDex:
 
-1. Added Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) and [US Core 7.0.0](https://hl7.org/fhir/us/core/STU7/).
+1. Support for [US Core 6.1.0](https://hl7.org/fhir/us/core/STU6.1/) and [US Core 7.0.0](https://hl7.org/fhir/us/core/STU7/).
 2. Updated guidance on [Using CDex Attachments with DaVinci PAS](burden-reduction.html#using-cdex-attachments-with-davinci-pas) page to align with Da Vinci PAS v 2.0.1 Guide's, [Request for Additional Information](https://hl7.org/fhir/us/davinci-pas/STU2/additionalinfo.html) page.
-3. Added a section on how to use [topic-based subscriptions](task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
+3. A new section on [topic-based subscriptions](task-based-approach.html#subscription) based on the [Subscription R5 Backport Implementation Guide](http://hl7.org/fhir/uv/subscriptions-backport/STU1.1/index.html) implementation guide.
 4. Updated guidance on [discovery of patient ids](direct-query.html#discovery-of-patient-fhir-ids) based on FAST's [Interoperable Digital Identity and Patient Matching](https://hl7.org/fhir/us/identity-matching/index.html) implementation guide.
-5. Advanced all the version 2.0.0 DRAFT content about using Questionnaires with the Task-based Approach and Attachments to *Trial Use*.
-6. Added a [design section](background.html#architectural-approach) to the background page explaining the IG’s choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page.
-7. Added a [Task state diagram](task-based-approach.html#task-state-machine) for the CDex Task profiles.
+5. Version 2.0.0 *Draft* content about using Questionnaires with the Task-based Approach and Attachments updated to *Trial Use*.
+6. A  new [design section](background.html#architectural-approach) explains the IG’s choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page.
+7. [Task state diagram](task-based-approach.html#task-state-machine) for the CDex Task profiles.
 
 #### Changes:
 
@@ -69,8 +89,8 @@ These changes are the result of the trackers listed below.
 26. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 27. **Applied**: (Correction) Add Task.authoredOn to list of mandatory elements in the CDex Task Data Request Profile description. [FHIR-46296](https://jira.hl7.org/browse/FHIR-46296) [See Changes Here](StructureDefinition-cdex-task-data-request.html)
 28. **Applied**: (Correction) Change page statuses [FHIR-46563](https://jira.hl7.org/browse/FHIR-46563) For example [See Changes Here](security.html)
-29.  **Pre-Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](sending-attachments.html#submit-attachment-operation)
-30.  **Pre-Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 and 7.0.0 [FHIR-47303](https://jira.hl7.org/browse/FHIR-47303)
+29. **Applied**: (Enhancement) Add endpoint discovery guidance for *Unsolicited* Attachments [FHIR-46443](https://jira.hl7.org/browse/FHIR-46443) [See Changes Here](sending-attachments.html#submit-attachment-operation)
+30. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 and 7.0.0 [FHIR-47303](https://jira.hl7.org/browse/FHIR-47303)
 
 ### Version = 2.0.0
 - Publication Date: 2023-01-30

@@ -176,7 +176,7 @@ Preconditions and Assumptions are the same as in the previous example, except th
 
 ### Using Questionnaire as Task Input
 
-The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Coverage Requirements Discovery (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 8 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
+The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 8 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
 
 {% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 8" %} 
 

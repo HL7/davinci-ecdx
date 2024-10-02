@@ -2,7 +2,7 @@
 
 ### Introduction
 
-In [Da Vinci Prior Authorization Support (PAS)], a final decision is expected to be generated immediately and automatically in most cases. However, a payer may request additional information (aka attachments) from the Provider to support a prior authorization request. See the [Request for Additional Information] section in the PAS Implementation Guide.
+The Da Vinci Burden Reduction Implementation Guides (IGs), [Da Vinci Coverage Requirements Discovery (CRD)], [Da Vinci Documentation Templates and Rules (DTR)], and [Da Vinci Prior Authorization Support (PAS)], support an integrated workflow to enable automated submission of required documentation and prior authorization from EHR and payer systems respectively.  In [Da Vinci Prior Authorization Support (PAS)], a final decision is expected to be generated immediately and automatically in most cases. However, a payer may request additional information (aka attachments) from the Provider to support a prior authorization request. See the [Request for Additional Information] section in the PAS Implementation Guide.
 
 ### Differences between PAS and CDex
 

@@ -76,7 +76,8 @@
 [Basic Provenance]: {{site.data.fhir.uscore7}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
-[Da Vinci Coverage Requirements Discovery (DTR)]: {{site.data.fhir.ver.dtr}}
+[Da Vinci Coverage Requirements Discovery (CRD)]: https://hl7.org/fhir/us/davinci-crd/
+[Da Vinci Documentation Templates and Rules (DTR)]: {{site.data.fhir.ver.dtr}}
 [Da Vinci Prior Authorization Support (PAS)]: {{site.data.fhir.ver.pas}}
 [CDex Work Queue Value Set]: ValueSet-cdex-work-queue.html
 [What is Signed]: signatures.html#what-is-signed
