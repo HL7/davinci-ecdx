@@ -1,6 +1,6 @@
 ### Version = 2.1.0
 - Publication Date: 2024-11-1
-- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1>
+- URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
 - Based on FHIR version: 4.0.1
 
 This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide.
@@ -21,7 +21,7 @@ These changes are the result of the community review of the 2.1.0-snapshot versi
 
 ### Version = 2.1.0-snapshot
 - Publication Date: 2024-09-11
-- URL: <http://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot>
+- URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot>
 - Based on FHIR version: 4.0.1
 
 This Snapshot version of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the proposed STU update of this guide and is published for community review prior to final publication of version 2.1.0. The members of the sponsoring HL7 International Payer/Provider Information Exchange Work Group agreed to and voted on the resolution of the community comments and edits to this guide.
@@ -47,11 +47,11 @@ These changes are the result of the trackers listed below.
 4. **Applied:** (Correction) Update `meta.tag.system` cardinality to 1..1 [FHIR-43618](https://jira.hl7.org/browse/FHIR-43618) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-data-request.html)
 5.  **Applied:** (Clarification) Clarify when to use CDex vs PAS for attachments [FHIR-44870](https://jira.hl7.org/browse/FHIR-44870) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/burden-reduction.html)
 6.  **Applied:** (Enhancement) Include PWK01 attachment codes [FHIR-44871](https://jira.hl7.org/browse/FHIR-44871) See Changes:
-   - [CDex LOINC Attachment Codes Value Set](ValueSet-cdex-loinc-attachment-codes.html)
-   - [CDex PWK01 Attachment Report Type Code Value Set](ValueSet-cdex-pwk01-attachment-report-type-code.html)
-   - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
-   - [CDex Parameters Submit Attachment Profile](StructureDefinition-cdex-parameters-submit-attachment.html)
-   - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html)
+   - [CDex LOINC Attachment Codes Value Set](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/ValueSet-cdex-loinc-attachment-codes.html)
+   - [CDex PWK01 Attachment Report Type Code Value Set](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/ValueSet-cdex-pwk01-attachment-report-type-code.html)
+   - [CDex Task Attachment Request Profile](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html)
+   - [CDex Parameters Submit Attachment Profile](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-parameters-submit-attachment.html)
+   - [Requesting Attachments Using Attachments Codes](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html)
 7.  **Applied:** (Enhancement) Change the LineNumber Extension [FHIR-44875](https://jira.hl7.org/browse/FHIR-44875) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#data-elements-for-requesting-attachments)
 8.  **Applied:** (Clarification) Bind CDex Task Attachment Request Profile `Task.code` to DaVinci PAS Task Code [FHIR-44876](https://jira.hl7.org/browse/FHIR-44876) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example19.html)
 9.  **Applied:** (Clarification) Change Task.input "payer-url" to "PayerURL" to align with PAS Task [FHIR-44883](https://jira.hl7.org/browse/FHIR-44883) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/Task-cdex-task-example19.html)
@@ -303,8 +303,8 @@ These changes are the result of almost 60 trackers listed below. They include th
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/security.html#purpose-of-use)
 3. **Applied** Make Task.reasonReference.identifer 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/StructureDefinition-cdex-task-data-request.html)
-  - [Various examples such as Here](Task-cdex-task-example1.html)
-  - [Various example scenarios such as Here](task-based-approach.html#step-1---post-task-to-provider-endpoint)
+  - [Various examples such as Here](https://hl7.org/fhir/us/davinci-cdex/STU1.1/Task-cdex-task-example1.html)
+  - [Various example scenarios such as Here](https://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#step-1---post-task-to-provider-endpoint)
 6. **Applied:** Create page for change log ([FHIR-36727](https://jira.hl7.org/browse/FHIR-36727)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/changes.html)
 7. **Applied:** Change re-associate to associate ([FHIR-36733](https://jira.hl7.org/browse/FHIR-36733)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/attachments.html)
 8.  **Applied:** Fix Typo([FHIR-36736](https://jira.hl7.org/browse/FHIR-36736)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/signed-searchset-bundle-example.html)
