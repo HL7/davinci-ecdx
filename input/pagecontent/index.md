@@ -1,5 +1,5 @@
 
-{%include new-content-note.md %}
+<!-- {% raw %} {%include new-content-note.md %} {% endraw %} -->
 
 ### Introduction
 
@@ -15,24 +15,24 @@ In the context of this guide, "clinical data" means *any* information a provider
 
 By using the FHIR standard and implementing this guide, payers can be explicit about the data they are requesting instead of general requests, which avoids sending more information than necessary. As a result, the anticipated benefit of using FHIR is a more efficient and effective exchange of health record information in several areas, such as claims management, care coordination, risk adjustment, and quality reporting.  
 
-<div class="bg-success" markdown="1">
+
 This IG provides several *generic* examples to illustrate the Direct Query and Task-Based approaches to exchanging clinical data. It also documents and provides examples for Requesting and Sending Attachments for claims and prior authorization. We also plan to create *Clinical Data Exchange - Supplemental Guides*, which will document and provide examples for other specific use cases.
 {:.bg-info}
-</div><!-- new-content -->
+
 
 ### About This Guide
 
-The [Da Vinci] initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. <span class="bg-success" markdown="1">This guide and implementers of it **SHALL** adhere</span><!-- new-content --> to the [HL7 Da Vinci Guiding Principles] for exchanging patient health information. 
+The [Da Vinci] initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles] for exchanging patient health information. 
 
-<div class="bg-success" markdown="1">
+
 As illustrated in Figure 1 below, this version of CDex is based on FHIR R4, and much of its content is dependent upon the [[Da Vinci Health Record Exchange (HRex)], [US Core 3.1.1] (FHIR R4), [US Core 6.1.0] (FHIR R4), and , [US Core 7.0.0] (FHIR R4)implementation guides.
  For general [Background on FHIR], [Conformance Expectations], and [Security and Privacy] considerations, refer to the corresponding sections in HRex. US Core 3.1 meets regulatory requirements mandating support for [ONC United States Core Data for Interoperability V1 (USCDI V1)], US Core 6.1.0 meets regulatory requirements mandating support for [ONC United States Core Data for Interoperability V3 (USCDI V3)]], and US Core 7.0.0 meets regulatory requirements mandating support for [ONC United States Core Data for Interoperability V4 (USCDI V4)]].
  For Direct Query and Task-Based queries, US Core and HRex define the underlying content, and CDex provides additional context, definitions, and constraints. CDex provides more focused use cases by constraining profiles and extending functionality to cover gaps. For example, CDex defines all the content for Attachments.
-</div><!-- new-content -->
+
 
 {% include img.html img="profile-pyramid.svg" caption= "Figure 1: Relationship of CDex to Other FHIR Standards" %}
 
- The sponsoring HL7 [Payer/Provider Information Exchange] workgroup manages changes to this specification. Changes are incorporated as part of the standard HL7 balloting process  <span class="bg-success" markdown="1">and version updates.</span><!-- new-content --> You can suggest changes to this specification by clicking the [Propose a Change] link at the bottom of any page to create a *change request tracker*.
+ The sponsoring HL7 [Payer/Provider Information Exchange] workgroup manages changes to this specification. Changes are incorporated as part of the standard HL7 balloting process  and version updates. You can suggest changes to this specification by clicking the [Propose a Change] link at the bottom of any page to create a *change request tracker*.
 
 ### How To Read This Guide
 
@@ -42,35 +42,35 @@ Data Consumer
 : The term "Data Consumer" means both payer and provider systems when they request data.
 
 Data Source
-: <span class="bg-success" markdown="1">The term "Data Source", refers to an EHR, HIM, Practice Management System, Population Health, Registration, or other HIT system that stores the data and responds to data requests.</span><!-- new-content -->
+: The term "Data Source", refers to an EHR, HIM, Practice Management System, Population Health, Registration, or other HIT system that stores the data and responds to data requests.
 
 Payer
-: <span class="bg-success" markdown="1">"Payer" refers to the payer system (or an intermediary on behalf of a payer) and is used when they are requesting data.</span><!-- new-content -->
+: "Payer" refers to the payer system (or an intermediary on behalf of a payer) and is used when they are requesting data.
 
 Provider
 : "Provider" refers to the provider system and can be the Data Source or the Data Consumer.
 
 Attachments
-: <span class="bg-success" markdown="1">This guide uses the terms "attachments" and "additional information" to mean additional information needed for claims and prior authorization.  In the context of requesting and sending attachments using attachment codes, attachments are limited to the documents defined by the [LOINC Document Ontology] and [X12] attachment codes.  When requesting and sending attachments using [Questionnaire], attachments mean *any* additional information.</span><!-- new-content -->
+: This guide uses the terms "attachments" and "additional information" to mean additional information needed for claims and prior authorization.  In the context of requesting and sending attachments using attachment codes, attachments are limited to the documents defined by the [LOINC Document Ontology] and [X12] attachment codes.  When requesting and sending attachments using [Questionnaire], attachments mean *any* additional information.
 
 This guide is divided into several pages listed at the top of each page in the menu bar.
 
 - [IG Home]\: The home page introduces the Da Vinci Clinical Data Exchange Project and Implementation Guide.
-- [Background]\: <span class="bg-success" markdown="1">This page provides background for the Da Vinci Clinical Data Exchange Project and summarizes its scope.</span><!-- new-content -->
+- [Background]\: This page provides background for the Da Vinci Clinical Data Exchange Project and summarizes its scope.
 - [Direct Query]\: Documents how to exchange clinical data using the standard FHIR RESTful search.
 - [Task Based Approach]\: Documents exchanging clinical data using the FHIR Task resource. This approach supports asynchronous workflows and may require human involvement.
 - [Attachments]\: Documents exchanging attachments for claims or prior authorization using FHIR.
     - [Solicited and Unsolicited Attachments]\: Documents the differences and similarities between solicited and unsolicited attachments workflows and the CDex transactions for each.
     - [Sending Attachments]\: This page documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
-    - [Requesting Attachments Using Attachment Codes]\: <span class="bg-success" markdown="1">This page documents a FHIR-based approach for requesting attachments using LOINC attachment codes.</span><!-- new-content -->
-    - [Requesting Attachments Using Questionnaires]\: <span class="bg-success" markdown="1">This page documents the CDex Attachments transaction for requesting additional data for claims or prior authorization from a Provider using 
-FHIR Questionnaire and QuestionnaireResponse.</span><!-- new-content -->
-    - [Using CDex Attachments with DaVinci PAS]\: <span class="bg-success" markdown="1">This page summarizes the similarities and differences between CDEX and the [Da Vinci Prior Authorization Support (PAS)] guide.</span><!-- new-content -->
+    - [Requesting Attachments Using Attachment Codes]\: This page documents a FHIR-based approach for requesting attachments using LOINC attachment codes.
+    - [Requesting Attachments Using Questionnaires]\: This page documents the CDex Attachments transaction for requesting additional data for claims or prior authorization from a Provider using 
+FHIR Questionnaire and QuestionnaireResponse.
+    - [Using CDex Attachments with DaVinci PAS]\: This page summarizes the similarities and differences between CDEX and the [Da Vinci Prior Authorization Support (PAS)] guide.
     - [Conforming to CDex Attachments]\: Summary of interactions for each role and the conformance resource and terminology that makes them unique. 
 - [Signatures]\: This page provides specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - [Security and Privacy]\: This page provides general expectations to ensure the security, privacy, and safety of Da Vinci CDex exchanges.
-- [FHIR Artifacts]\: <span class="bg-success" markdown="1">This page lists all the FHIR resources (for example, FHIR Profiles, Operations, Valuesets)  that are defined and used within this guide.</span><!-- new-content -->
-- <span class="bg-success" markdown="1">Support\: This page includes links to the FHIR core specification and the US Core spec, as well as download links for this IG and guidance on tools and support for Da Vinci implementers.<!-- new-content -->
+- [FHIR Artifacts]\: This page lists all the FHIR resources (for example, FHIR Profiles, Operations, Valuesets)  that are defined and used within this guide.
+- Support\: This page includes links to the FHIR core specification and the US Core spec, as well as a [Downloads] page of IG tools and artifacts for Da Vinci implementers.<!-- new-content -->
 - [Change Log]\: This page documents the changes across the versions of CDex.
 
 ---

@@ -1,20 +1,35 @@
 {
-  "id": "cdex-task-inline-scenario1-subscription-active",
-  "resourceType": "Subscription",
-  "status": "active",
-  "reason": "R4 Example Topic-Based Subscription for CD Task based Queries",
-  "criteria": "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task",
-  "channel": {
-    "type": "rest-hook",
-    "endpoint": "http://example.org/FHIR/Payer/cdex-task-watch",
-    "payload": "application/fhir+json",
-    "_payload": {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
-          "valueCode": "id-only"
+    "id": "cdex-task-inline-scenario1-subscription-active",
+    "meta": {
+        "extension": [
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+                "valueString": "Inline Subscription Task Scenario1 Subscription Active"
+            },
+            {
+                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+                "valueMarkdown": "Subscription example used to create inline scenarios for the [example task based transaction using subscription](task-based-approach.html#example-task-based-transaction-using-subscription)"
+            }
+        ],
+        "profile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription"
+        ]
+    },
+    "resourceType": "Subscription",
+    "status": "active",
+    "reason": "R4 Example Topic-Based Subscription for CD Task based Queries",
+    "criteria": "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task",
+    "channel": {
+        "type": "rest-hook",
+        "endpoint": "http://example.org/FHIR/Payer/cdex-task-watch",
+        "payload": "application/fhir+json",
+        "_payload": {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-payload-content",
+                    "valueCode": "id-only"
+                }
+            ]
         }
-      ]
     }
-  }
 }

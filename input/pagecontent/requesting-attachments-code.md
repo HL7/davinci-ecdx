@@ -8,7 +8,7 @@ In the current state of healthcare data exchange, the Payer requests additional 
 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
-<div class="bg-success" markdown="1">
+
 
 
 ### Requesting Attachments Using FHIR
@@ -17,14 +17,14 @@ In the current state of healthcare data exchange, the Payer requests additional 
 
 ### Requesting Attachments Using Attachment Codes
 
-</div><!-- new-content -->
+
 The CDex Task Attachment Request Profile defines a specific `Task.code` that communicates that the Payer is requesting attachments for a claim or prior authorization using:
 - attachment codes or 
-- additional data <span class="bg-success" markdown="1">using FHIR Questionnaires.</span><!-- new-content -->
+- additional data using FHIR Questionnaires.
 
-Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. <span class= "bg-success" markdown="1">Using FHIR Questionnaires</span><!-- new-content --> to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
+Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using FHIR Questionnaires to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
-Requesting attachments using attachment codes defined by the LOINC Document Ontology <span class= "bg-success" markdown="1">or, for prior authorization, [X12] PWK01 Report Type Codes</span><!-- new-content --> is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
+Requesting attachments using attachment codes defined by the LOINC Document Ontology or, for prior authorization, [X12] PWK01 Report Type Codes is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 
 {% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 15" %}
 
@@ -47,7 +47,7 @@ In this scenario, a Provider creates a claim and sends it to the Payer. The Paye
 
  In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following information to complete the adjudication of the claim:
 
-- <span class="bg-success" markdown="1">The attachment code(s) for the requested documents.  These codes are [LOINC attachment codes] or, for prior authorization, [X12] PWK01 Report Type Codes</span><!-- new-content --> 
+- The attachment code(s) for the requested documents.  These codes are [LOINC attachment codes] or, for prior authorization, [X12] PWK01 Report Type Codes 
 - What line numbers on the claim the requested attachment (s) are for
 
 After receiving the attachment request, the Provider collects the documentation and returns it using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters: 
@@ -176,7 +176,7 @@ The Payer communicates the due date for submitting the attachment in the `Task.r
 
 ##### Communicating What Attachments are Needed
 
-The Payer supplies the attachment codes to communicate what attachments are needed. They may also provide the *line item numbers* to match the attachment to a line item in the claim or prior authorization. This information is represented in the `Task.input` "code" parameter. For example, the code snippet below shows a single request for line item 1 using a LOINC attachment code <span class= "bg-success" markdown="1">(for prior authorization, [X12] PWK01 Report Type Codes may also be used)</span><!-- new-content -->. When submitting the attachments, the Provider returns the codes and line items to the Payer.
+The Payer supplies the attachment codes to communicate what attachments are needed. They may also provide the *line item numbers* to match the attachment to a line item in the claim or prior authorization. This information is represented in the `Task.input` "code" parameter. For example, the code snippet below shows a single request for line item 1 using a LOINC attachment code (for prior authorization, [X12] PWK01 Report Type Codes may also be used). When submitting the attachments, the Provider returns the codes and line items to the Payer.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=94 count=20 linenumber=true rel=true %}

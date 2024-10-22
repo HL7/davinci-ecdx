@@ -16,8 +16,8 @@
 | Payer URL | (operation endpoint) | "PayerUrl" Task.input |
 | Organization ID | OrganizationId | PractitionerRole.practitioner.identifier |
 | Provider ID | ProviderId | PractitionerRole.organization.identifier |
-| Line Item(s) | Attachment.LineItem | <span class="bg-success" markdown="1">“AttachmentsNeeded” Task.input.extension</span><!-- new-content --> |
-| <span class="bg-success" markdown="1">Attachment Code<!-- new-content --> | Attachment.Code | <span class="bg-success" markdown="1">“AttachmentsNeeded” Task.input</span><!-- new-content --> |
+| Line Item(s) | Attachment.LineItem | “AttachmentsNeeded” Task.input.extension |
+| Attachment Code<!-- new-content --> | Attachment.Code | “AttachmentsNeeded” Task.input |
 | Date of Service | ServiceDate | “service-date” Task.input |
 | Member ID | MemberId | Patient.identifier |
 {:.grid}

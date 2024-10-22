@@ -79,7 +79,7 @@ Task-based queries require communicating a business identifier (such as a provid
 
 The patient's [FHIR id] is a prerequisite to performing FHIR RESTful Direct Queries. See [this section](direct-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
 
-<div class="bg-success" markdown="1">
+
 
 ### Task State Machine
 
@@ -89,7 +89,7 @@ Figure 8 below illustrates a "typical" state machine for CDex Task. The Data Con
 
 ### Fetching the Data
 
-</div><!-- new-content -->
+
 
 When the task is complete, its outputs are referenced by the `Task.output` element, and the `Task.status` is updated to "completed". The Task can refer to external resources, or it can refer to a search set Bundle [contained] within the Task resource itself, either of which the Data Consumer can subsequently fetch. As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. Note that a contained Bundle does not have an independent existence. However, by using a contained Bundle, the Data Source can provide information to Data Consumers who can not query the Data source directly via FHIR RESTful reads or searches. For example, only authorized Data Consumers can access patient data directly. Since the Data Source controls the release of information contained in the Bundle, patient privacy and security are maintained.
 
@@ -186,9 +186,9 @@ The [CDex Task Data Request Profile] supports requests for more detailed data us
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** <span class= "bg-success" markdown="1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->
+**Step 4:** DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.
 
-**Step 5:** <span class= "bg-success" markdown="1">The Data Source updates the Task to "completed" when the QuestionnaireResponse is completed. The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.</span><!-- new-content -->
+**Step 5:** The Data Source updates the Task to "completed" when the QuestionnaireResponse is completed. The Data Consumer retrieves the completed Task from the Data Source using polling or a previously created Subscription.
 
 **Step 6:** The Data Consumer retrieves the QuestionnaireResponse referenced by `Task.output`.
 
@@ -241,7 +241,7 @@ In this scenario, Payer A Seeks Insured Person/Patient B's glycated hemoglobin (
 
 ### Polling vs Subscriptions
 
-Task-based exchanges can take one of two forms - subscription or polling, as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] <span class= "bg-success" markdown="1">sections of the FHIR R5 core specification</span><!-- new-content -->. The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
+Task-based exchanges can take one of two forms - subscription or polling, as described in the [Exchanging with polling] and [Exchanging with FHIR Subscription] sections of the FHIR R5 core specification. The [Subscription Capabilities] section provides general guidance on polling vs. subscription.
 
 #### Polling
 
@@ -249,7 +249,7 @@ Polling is a mechanism for conveying new data to a Data Consumer as (or shortly 
 
 Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the   Data Source's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
 
-<div class="bg-success" markdown="1">
+
 
 #### Subscription
 
@@ -318,7 +318,7 @@ The following example repeats Scenario 1 above using Subscription instead of Pol
 
 {% include examplebutton_default.html example="task-scenario-4" b_title = 'Click Here To See Example Task Based Transaction using Subscription' %}
 
-</div><!-- new-content -->
+
 
 ---
 

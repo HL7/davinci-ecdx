@@ -41,17 +41,16 @@ For Security and Privacy considerations, refer to the [Security and Privacy] pag
 
 ### Where Does CDEX Fit in the Da Vinci Project
 
-The Da Vinci Project developed over a dozen use cases and implementation guides. Figure 2 illustrates how the Clinical Data Exchange (CDex) use case fits in the family of Da Vinci Use Cases/Implementation Guides. This guide provides a general solution to requesting specific information from a provider.  A table that summarizes the many areas of functional overlap between this guide and other Da Vinci guides is available [here](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex is not intended to supersede other Da Vinci guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
+[Da Vinci Use Cases] are interrelated, currently with five categories that have emerged: Quality Improvement, Coverage/Burden Reduction, Member Access, Process Improvement, and Clinical Data Exchange.  A table that summarizes the many areas of functional overlap between this guide and other Da Vinci guides is available [here](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex is not intended to supersede other Da Vinci guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
 
 - An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care. 
-- <span class="bg-success" markdown="1">There is a specific exchange that is not already addressed by one of the other IGs </span><!-- new-content -->
+- There is a specific exchange that is not already addressed by one of the other IGs 
 - The other IG has yet to be or can not be implemented for the use case. For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of quality measures. Implementers can use CDex when:
   1. A Provider has not yet implemented DEQM
   2. An audit of a quality measure requires additional information.
 
  The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges. 
 
-{% include img.html img="davinci-use-cases.svg" caption="Figure 2" %}
 ### Workflow Overview
 
 FHIR offers numerous architectural approaches for sharing data between systems. Each has pros and cons; the most appropriate one depends on the circumstances under which systems exchange data. (Review the [Architectural Approach](#architectural-approach) section below for more detail.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
@@ -118,7 +117,7 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 2. The Provider submits the attachments and metadata (for example, member id and claim id) for the association to the claim or prior authorization.
 3. The Payer system accepts attachments. (This guide does not cover the payer's method for associating attachments to claims or prior authorizations and processing them.)
 
-<div class="bg-success" markdown="1">
+
 
 ### Architectural Approach
 
@@ -182,6 +181,6 @@ Human intervention? **Yes** - There was an expectation the CDex Data Source may 
 - Synchronous? - **No** - It was presumed that the Task-based queries are *asynchronous*.
 - Push? - **Yes** - It was presumed that the CDex Data Source would *push* the clinical data to the CDex Data Consumer when the Task is complete. See the decision tree in the [Sending Attachments Using a FHIR Process Operation](#sending-attachments-using-a-fhir-process-operation) section above.
 
-</div><!-- new-content -->
+
 
 {% include link-list.md %}

@@ -183,3 +183,4 @@
 [Guidance on Identity Assurance]: https://hl7.org/fhir/us/identity-matching/guidance-on-identity-assurance.html
 [Interoperable Digital Identity and Patient Matching]: https://hl7.org/fhir/us/identity-matching/index.html
 [CQL]: https://cql.hl7.org/
+[Da Vinci Use Cases]: https://confluence.hl7.org/display/DVP/Da+Vinci+Use+Cases

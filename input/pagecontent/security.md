@@ -34,6 +34,6 @@ For CDex Task-based queries, the Data Consumer and Data Source **MAY** communica
 
 If a data-consuming system requests sensitive information, the data source must decide whether the requester is authorized to access some or all of this information. For example, suppose the level of confidentiality protection required for some or all of the information requested by a data-consuming system is more stringent than the "default" confidentiality protection provided for HIPAA PHI. In that case, the data source needs to be able to decide whether to provide the information at all or whether to filter the information.
 
-<span class="bg-success" markdown="1">The [FHIR Data Segmentation for Privacy] (ballot version) standardizes how guidance for applying security labels in FHIR. Once ONC or CMS adopts it or a suitable approach by regulation, a future version of this guide will reference it.</span><!-- new-content --> In the interim, implementers should consult with their compliance department to determine requirements and how best to satisfy them, whether with in-band or out-of-band communications.
+The [FHIR Data Segmentation for Privacy] (ballot version) standardizes how guidance for applying security labels in FHIR. Once ONC or CMS adopts it or a suitable approach by regulation, a future version of this guide will reference it. In the interim, implementers should consult with their compliance department to determine requirements and how best to satisfy them, whether with in-band or out-of-band communications.
 
 {% include link-list.md %}

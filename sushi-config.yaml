@@ -364,8 +364,8 @@ parameters:
     - input/intro-notes
     - fsh-generated/includes
   path-expansion-params: '../../input/_resources/exp-params.json'  # for using US ed of SNOMED
-  path-liquid: # list of relative paths that contains liquid templates for generating narrative
-    - liquid
+  # path-liquid: # list of relative paths that contains liquid templates for generating narrative
+  #   - liquid
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'

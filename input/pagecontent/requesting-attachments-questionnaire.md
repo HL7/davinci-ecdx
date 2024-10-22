@@ -1,10 +1,10 @@
 
 
-This page documents an *optional* solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR [Questionnaire].\* The Payer uses the Task-based [CDex Task Attachment Request Profile] to request a Provider to complete <span class= "bg-success" markdown="1">one or more questionnaires</span><!-- new-content -->. The Provider launches [Da Vinci DTR] to complete the <span class= "bg-success" markdown="1">questionnaires</span><!-- new-content --> and, as documented in the [Sending Attachments] page, submits the completed <span class= "bg-success" markdown="1">questionnaires</span><!-- new-content --> to the Payer using the [`$submit-attachment`] operation. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using attachment codes, it supports using FHIR Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages [Da Vinci DTR] functionality to fill out the FHIR Questionnaire, reducing the time spent reviewing documentation requirements.
+This page documents an *optional* solicited attachments transaction for requesting additional claims or prior authorization data from a Provider using FHIR [Questionnaire].\* The Payer uses the Task-based [CDex Task Attachment Request Profile] to request a Provider to complete one or more questionnaires. The Provider launches [Da Vinci DTR] to complete the questionnaires and, as documented in the [Sending Attachments] page, submits the completed questionnaires to the Payer using the [`$submit-attachment`] operation. In contrast to [Requesting Attachments Using Attachment Codes], a HIPAA-based request model using attachment codes, it supports using FHIR Questionnaire to define in more detail what data is missing. As a result, it avoids unnecessary documents. In addition, it leverages [Da Vinci DTR] functionality to fill out the FHIR Questionnaire, reducing the time spent reviewing documentation requirements.
 
 \* {% include see-conf.md %}
 
-<div class="bg-success" markdown="1">
+
 
 ### Requesting Attachments Using FHIR
 
@@ -12,9 +12,9 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 ### Requesting Attachments Using FHIR Questionnaires
 
-</div><!-- new-content -->
 
- In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references <span class= "bg-success" markdown="1">one or more FHIR Questionnaires </span><!-- new-content --> as input parameters, the Task represents a request for the Provider to complete the <span class= "bg-success" markdown="1">questionnaires.</span><!-- new-content --> The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
+
+ In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references one or more FHIR Questionnaires  as input parameters, the Task represents a request for the Provider to complete the questionnaires. The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
 {% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 17" %}
 
@@ -24,16 +24,16 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** <span class= "bg-success" markdown="1">DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.</span><!-- new-content -->.
+**Step 4:** DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created..
 
-**Step 5:**  <span class= "bg-success" markdown="1">When the QuestionnaireResponse is completed, the Provider "pushes" </span><!-- new-content --> the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
+**Step 5:**  When the QuestionnaireResponse is completed, the Provider "pushes"  the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
 
-<span class= "bg-success" markdown="1">**Step 6:** The Provider updates the Task to "completed" when complete - e.g., when the data has been submitted or the information gathered.</span><!-- new-content -->
+**Step 6:** The Provider updates the Task to "completed" when complete - e.g., when the data has been submitted or the information gathered.
 
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in Figure 18 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return <span class= "bg-success" markdown="1">one or more questionnaires</span><!-- new-content --> using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
+The sequence diagram in Figure 18 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return one or more questionnaires using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
 
 {% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 18" %}
 

@@ -41,7 +41,7 @@ The following example transactions show scenarios of using direct query to get c
 
 ##### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claim submission.
 
 **Preconditions and Assumptions:**
 
@@ -77,7 +77,7 @@ Following guidance in US Core searches for all HbA1c test results by a date rang
 
 ##### Scenario 3
 
-Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C <span class="bg-success">to support a claim submission</span>.
+Payer A Seeks Insured Person/Patient B's latest history and physical exam notes from Provider C to support a claim submission.
 
 **Preconditions and Assumptions:**
 
@@ -152,7 +152,7 @@ The sequence diagram in Figure 3 below summarizes the basic interaction between 
 In provider to provider transactions, there are situations where one must provide formal authorization for each individual data request. In payer to provider and some provider to provider transactions, an overall data sharing agreement make the need for such individual authorizations unnecessary.  Where such individual authorizations are not required, Task can be used alone.  When a formal request for the information to be shared is needed it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the `Task.basedOn` element.  Use cases with and without authorization are illustrated in the examples below.
 {:.new-content}
 
-The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. <span class="bg-success"> This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers.</span>  That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
+The [HL7 FHIR-I Workflow project] is working on a set of rules for in which circumstances it's sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a Request resource. This guidance is intended to be used in addition to the business practices to assist in the decision making of the information providers. That work is not complete, but so far the conclusion is that there will be some situations where Task can (and even should) exist without a Request resource and other situations where a Request will be required.
 {:.stu-note}
 
 #### Polling vs Subscriptions
@@ -165,7 +165,7 @@ Polling is a mechanism for conveying new data to a Payer as (or shortly after) t
 
 ##### Subscription
 
-Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance.  <span class="bg-success">Typically,</span> the notification *does not* expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
+Subscriptions allow a data source to notify interested data consumers when a specific event occurs.  In the Da Vinci CDex use case, the Payer is the subscriber and the Provider the publisher.  The Payer subscribes to a Task queue and filters on the Task resource id.  The Provider publishes notifications when there are changes to the Task instance. Typically, the notification *does not* expose the data itself.  The subscriber would then fetch the data using a FHIR RESTful query.
 
 <div markdown="1" class="bg-info">
 
@@ -179,7 +179,7 @@ This project recognizes the major revisions to the reworked R5 subscription "top
 
 #### Fetching the Data
 
-<span markdown="1" class="bg-success">It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions).</span> When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
+It is up to the EHR (Data Source) to set the status of each Task as appropriate. (see the [Task state machine] diagram in the FHIR specification for more background on Task transitions). When the task is completed, the Payer fetches the data of interest which is referenced by `Task.output`.  It can either refer to a 'contained' search set Bundle - because the Bundle is not something that would have any independent existence - or to external resources which are subsequently fetched by the Payer use a RESTful GET.
 
 <div markdown="1" class="new-content">
 
@@ -210,7 +210,7 @@ The following example transactions show scenarios using task based exchanges to 
 
 ##### Scenario 1
 
-Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C <span class="bg-success"> to support a claim submission.</span>
+Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to support a claim submission.
 
 Preconditions and Assumptions:
 - The Appropriateness of the request needs to be determined or access to the data is limited and there is human involvement needed to approve the release of the data:
@@ -269,7 +269,7 @@ Preconditions and Assumptions:
 
 ### Bulk Data
 
-Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using <span markdown='1' class="bg-success">`POST [base]/Group/$export`</span>.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
+Payers may request data for many patients/members or anticipate large payloads from the Provider. For example, requesting all the information related to  their members using `POST [base]/Group/$export`.  For these requests, the [FHIR Bulk Data Access] and the [FHIR Asynchronous Request Patterns] specifications may be considered.  However, there has not been enough implementation experience with this use case to provide specific guidance in this guide.
 {:.stu-note}
 
 <br />

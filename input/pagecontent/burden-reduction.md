@@ -1,4 +1,4 @@
-<div class="bg-success" markdown="1">
+
 
 ### Introduction
 
@@ -34,4 +34,3 @@ The decision tree in Figure 1 below summarizes when to Use PAS or CDex for reque
 
 {% include link-list.md %}
 
-</div><!-- new-content -->

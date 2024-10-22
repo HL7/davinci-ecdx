@@ -1,8 +1,7 @@
 ### Introduction
 
-<div class="new-content" markdown="1">
 For Direct Query, the Data Consumer directly queries the Data Source for specific data using the standard FHIR RESTful search. Refer to the base FHIR specification and the Da Vinci HRex Implementation Guide for more information and guidance on this interaction. For accessing the set of health data classes and data elements defined by the [ONC United States Core Data for Interoperability (USCDI)], refer to the [US Core 3.1.1], [US Core 6.1.0], or [US Core 7.0.0] Implementation guides.
-</div><!-- new-content -->
+
 
 ### Benefits
 
@@ -19,7 +18,7 @@ The sequence diagram in Figure 6 below outlines a successful interaction between
 {% include img.html img="search-sequencediagram.svg" caption="Figure 6" %}
 
 
-<div class="bg-success" markdown="1">
+
 
 ### Discovery of Patient FHIR IDs
 
@@ -44,7 +43,7 @@ In addition to using a patient business identifier such as an MRN or Member ID, 
 - [Guidance on Identity Assurance]
 </div><!-- bg-info"-->
 
-</div><!-- new-content -->
+
 
 ### Direct Query Transaction Scenarios
 
@@ -103,7 +102,7 @@ Getting the latest Progress note is typically a two-step process:
 2. Fetch the notes file
 
 Following the US Core Clinical Notes Guidance section, the Payer searches for the Progress note C-CDA documents using the combination of the patient and type search parameters. 
-<span class="bg-success" markdown="1">In addition, the combination of `_sort` and `_count` parameters limits the response to only the most recent data.</span><!-- new-content --> For example, with `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1`, the query returns the most current matching resource.
+In addition, the combination of `_sort` and `_count` parameters limits the response to only the most recent data. For example, with `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1`, the query returns the most current matching resource.
 
 `GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
 
