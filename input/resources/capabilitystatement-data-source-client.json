@@ -1,13 +1,14 @@
 {
   "resourceType": "CapabilityStatement",
   "id": "data-source-client",
+  
   "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/data-source-client",
   "version": "2.1.0-preview",
   "name": "DataSourceClientCapabilityStatement",
   "title": "Data Source Client CapabilityStatement",
   "status": "active",
   "experimental": false,
-  "date": "2024-09-10T14:37:40.292045-08:00",
+  "date": "2024-10-22T16:40:40.690801-08:00",
   "publisher": "HL7 International - Patient Care Work Group",
   "contact": [
     {
