@@ -51,7 +51,9 @@ entry:
     meta:
       lastUpdated: '2013-05-05T16:13:03Z'
       profile:
-      - http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
+        - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
     name:
     - family: Hancock
       given:

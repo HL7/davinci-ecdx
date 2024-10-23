@@ -117,7 +117,9 @@ parameter:
           meta:
             lastUpdated: '2013-05-05T16:13:03Z'
             profile:
-            - http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner
+                - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1
+                - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
+                - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
           text:
             status: generated
             div: '<div xmlns="http://www.w3.org/1999/xhtml"><a name="Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc">

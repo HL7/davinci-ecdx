@@ -253,10 +253,10 @@ differential:
       type:
         - code: Reference
           targetProfile:
-            - >-
-              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization
-            - >-
-              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0'
+            - 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization'
       mustSupport: true
 
     - id: Task.requester.identifier
@@ -274,10 +274,10 @@ differential:
       type:
         - code: Reference
           targetProfile:
-            - >-
-              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization
-            - >-
-              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitioner
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0'
+            - 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0'
+            - 'http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization'
       mustSupport: true
 
     - id: Task.owner.identifier

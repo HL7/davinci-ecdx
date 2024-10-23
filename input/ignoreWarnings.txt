@@ -57,11 +57,16 @@ WARNING: ValueSet.where(id = 'cdex-pwk01-attachment-report-type-code'): Error fr
 # === I have checked these files and these warnings are due publisher-generated rendering of the examples.  It should be corrected in a future version of the publisher.
 See: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/.E2.9C.94.20Duplicate.20anchor.20IDs.3F.3F.3F ===
 
-WARNING: /Users/ehaas/Documents/FHIR/davinci-ecdx/output/Bundle-cdex-document-digital-sig-example.html: The html source has duplicate anchor Ids: 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US,970af6c9-5bbd-4067-b6c1-d9b2c823aece,970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US,Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece,hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,hc970af6c9-5bbd-4067-b6c1-d9b2c823aece
-WARNING: /Users/ehaas/Documents/FHIR/davinci-ecdx/output/Bundle-cdex-electronic-sig-example.html: The html source has duplicate anchor Ids: 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US,970af6c9-5bbd-4067-b6c1-d9b2c823aece,970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US,Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece,hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,hc970af6c9-5bbd-4067-b6c1-d9b2c823aece
+The html source has duplicate anchor Ids: 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US,970af6c9-5bbd-4067-b6c1-d9b2c823aece,970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US,Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece,hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,hc970af6c9-5bbd-4067-b6c1-d9b2c823aece
+The html source has duplicate anchor Ids: 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US,970af6c9-5bbd-4067-b6c1-d9b2c823aece,970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US,Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece,hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76,hc970af6c9-5bbd-4067-b6c1-d9b2c823aece
 
 
 # === This error is inherited from the R4 Subscription Backport IG. This interversion should be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency  ===
 
 WARNING: Bundle/cdex-task-inline-scenario1-subscription-notification: Bundle.entry[0].resource/*Parameters/206a4372-a348-41d1-a82e-fc9ebe8825af*/.parameter[3].value.ofType(code): ValueSet 'http://hl7.org/fhir/ValueSet/subscription-notification-type' not found
 
+# === This warning is being modified to an informational message in  a future release of the ig publisher. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error ===
+
+WARNING: StructureDefinition/cdex-parameters-submit-attachment: StructureDefinition.differential.element[31].binding.extension[0].value.ofType(UsageContext): The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognised and may not be correct
+WARNING: StructureDefinition/cdex-parameters-submit-attachment: StructureDefinition.snapshot.element[90].binding.extension[0].value.ofType(UsageContext): The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognised and may not be correct
+WARNING: StructureDefinition/cdex-task-attachment-request: StructureDefinition.differential.element[33].binding.extension[0].value.ofType(UsageContext): The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognised and may not be correct
