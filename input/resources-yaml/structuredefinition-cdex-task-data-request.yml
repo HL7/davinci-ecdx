@@ -30,7 +30,7 @@ description: |-
   - A `Task.requester.reference.identifier` element representing the Data Consumer business identifier
   - A `Task.owner.reference.identifier` element representing the Provider business identifier
   - A `Task.reasonCode.text` to communicate why the data is being requested
-  - A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier
+  - A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier*
   - A "query" `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.*
   - A "code" `Task.input` element to communicate to the provider what information is needed using a LOINC code.*
     - For the "code" `Task.input` element, an extensible LOINC® Document types value set to communicate the specific information being requested
@@ -308,8 +308,9 @@ differential:
         - code: Reference
           targetProfile:
             - 'http://hl7.org/fhir/StructureDefinition/Claim'
-            - >-
-              http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-coverage
+            - 'http://hl7.org/fhir/StructureDefinition/Coverage'
+            - http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|6.1.0
+            - http://hl7.org/fhir/us/core/StructureDefinition/us-core-coverage|7.0.0
       mustSupport: true
 
     - id: Task.reasonReference.identifier
