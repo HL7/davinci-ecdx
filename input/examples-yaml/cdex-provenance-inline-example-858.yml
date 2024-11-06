@@ -7,7 +7,7 @@ agent:
       display: Author
       system: http://terminology.hl7.org/CodeSystem/provenance-participant-type
   who:
-    reference: Practitioner/min
+    reference: http://example.org/fhir/Practitioner/123
 id: cdex-provenance-inline-example-858
 meta:
   extension:

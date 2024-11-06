@@ -14,7 +14,7 @@
         ]
       },
       "who": {
-        "reference": "Practitioner/min"
+        "reference": "http://example.org/fhir/Practitioner/123"
       }
     }
   ],

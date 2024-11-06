@@ -50,11 +50,11 @@ dependsOn:
 - id: hrex
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
-  version: 1.1.0-ballot
+  version: current
 - id: pas
   packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
-  version: 2.0.1
+  version: current
 - id: c4bb
   packageId: hl7.fhir.us.carin-bb
   uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb
@@ -62,7 +62,7 @@ dependsOn:
 - id: dtr
   packageId: hl7.fhir.us.davinci-dtr
   uri: http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr
-  version: 2.0.1
+  version: current
 - id: sdc
   packageId: hl7.fhir.uv.sdc
   uri: http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc
@@ -541,7 +541,7 @@ definition:
       \ element representing the Data Consumer business identifier\n- A `Task.owner.reference.identifier`\
       \ element representing the Provider business identifier\n- A `Task.reasonCode.text`\
       \ to communicate why the data is being requested\n- A `Task.reasonReference.reference.identifier`\
-      \ for the claim, pre-auth or coverage business identifier\n- A \"query\" `Task.input`\
+      \ for the claim, pre-auth or coverage business identifier*\n- A \"query\" `Task.input`\
       \ element to communicate to the provider what information is needed using a\
       \ FHIR RESTful query.*\n- A \"code\" `Task.input` element to communicate to\
       \ the provider what information is needed using a LOINC code.*\n  - For the\
