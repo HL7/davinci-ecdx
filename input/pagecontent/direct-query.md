@@ -69,7 +69,7 @@ Following the guidance in US Core, a search for all active conditions uses the c
 
 #### Scenario 2
 
-Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C.
 
 **Preconditions and Assumptions:**
 

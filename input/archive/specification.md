@@ -59,7 +59,7 @@ Following guidance in US Core searches for all active conditions using the combi
 
 ##### Scenario 2
 
-Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C
 
 **Preconditions and Assumptions:**
 
@@ -245,7 +245,7 @@ Click on the buttons below to see example Task Requests for a Patient's Active C
 
 ##### Scenario 3
 
-Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
+Payer A Seeks Insured Person/Patient B’s glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider.
 
 Preconditions and Assumptions:
 

@@ -710,7 +710,7 @@
         "reference": {
           "reference": "Bundle/cdex-searchbundle-scenario2-example"
         },
-        "description": "Bundle example used in direct query [scenario 2](direct-query.html#scenario-2). Payer Seeks Insured Person/Patient HbA1c Test Results from Provider for quality reporting requirements and quality care scoring.",
+        "description": "Bundle example used in direct query [scenario 2](direct-query.html#scenario-2). Payer Seeks Insured Person/Patient HbA1c Test Results from Provider",
         "name": "Direct Query for Patient's HbA1c Test Results",
         "exampleBoolean": true,
         "groupingId": "DirectQueryExamples"

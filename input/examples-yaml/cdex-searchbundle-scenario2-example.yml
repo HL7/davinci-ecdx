@@ -7,8 +7,7 @@ meta:
     valueString: Direct Query for Patient's HbA1c Test Results
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: Bundle example used in direct query [scenario 2](direct-query.html#scenario-2).
-      Payer Seeks Insured Person/Patient HbA1c Test Results from Provider for quality
-      reporting requirements and quality care scoring.
+      Payer Seeks Insured Person/Patient HbA1c Test Results from Provider
 type: searchset
 total: 4
 link:

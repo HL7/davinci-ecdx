@@ -35,10 +35,8 @@ Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/claim-use|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
-Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0-preview
+Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
-
-
 
 # ===  The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
 
