@@ -223,8 +223,7 @@ If the Data Source was unsuccessful in completing the request for data, the Task
 
 #### Example Unsuccessful Task Based Transaction
 
-In this scenario, Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C for Quality reporting requirements and quality care scoring.
-
+In this scenario, Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test results after 2020-01-01 from Provider C.
 ##### Preconditions and Assumptions:
 
 1. {{ site.data.base-example-list[0] }}

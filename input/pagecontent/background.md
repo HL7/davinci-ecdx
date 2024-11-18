@@ -12,8 +12,8 @@ Payers require clinical data from providers who order or provide services. They 
   - For example, additional documentation to support medical necessity or a coverage rule.
 - Payer requests additional documentation to support a claims audit.
 - Payer requests patient health record information to support their Risk Adjustment submissions to the Centers for Medicare and Medicaid Services (CMS).
-- Payer requests patient health record information to support a [HEDIS] or CMS Five-Star Quality Measure Rating quality program.
 - Payer requests patient health record information to support their member records.
+- Payer requests additional information related to quality reporting.
 - Payers request patient health record information to meet new regulatory requirements (for example, promoting patient access).
 
 ### Provider to Provider Data Exchange
@@ -45,9 +45,6 @@ For Security and Privacy considerations, refer to the [Security and Privacy] pag
 
 - An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care. 
 - There is a specific exchange that is not already addressed by one of the other IGs 
-- The other IG has yet to be or can not be implemented for the use case. For example, the [Data Exchange For Quality Measures (DEQM) Implementation Guide] provides a standard method for automating the reporting of quality measures. Implementers can use CDex when:
-  1. A Provider has not yet implemented DEQM
-  2. An audit of a quality measure requires additional information.
 
  The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges. 
 
@@ -181,6 +178,8 @@ Human intervention? **Yes** - There was an expectation the CDex Data Source may 
 - Synchronous? - **No** - It was presumed that the Task-based queries are *asynchronous*.
 - Push? - **Yes** - It was presumed that the CDex Data Source would *push* the clinical data to the CDex Data Consumer when the Task is complete. See the decision tree in the [Sending Attachments Using a FHIR Process Operation](#sending-attachments-using-a-fhir-process-operation) section above.
 
+<!-- ### Implementer Support
 
+The [CDex Implementer Support page] provides further context on the detailed representation of the clinical data and data payload in a provider-to-payer exchange. FHIR examples demonstrating representation of this guidance are provided to illustrate the points made in the guide. It is possible that some of this content will be merged into the CRD FHIR Implementation Guides (IG) in a future release. -->
 
 {% include link-list.md %}

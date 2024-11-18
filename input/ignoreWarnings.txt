@@ -9,13 +9,13 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/St
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
-# ===  these Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
+# ===  These Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile
 
 
-# ===  === Thes example demonstrates DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. === ===
+# ===  === These examples demonstrate DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. === ===
 
 Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
@@ -29,7 +29,7 @@ A definition for CodeSystem 'http://example.org/lab-results' could not be found,
 The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
 
 
-# ===  === these CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===
+# ===  These CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===
 
 Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
 Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
@@ -38,7 +38,7 @@ Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0-preview
 
 
-# ===  ==== The Da Vinci Team is aware of this and will budget accordingly in a future publication cycle === ===
+# ===  The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
 
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 

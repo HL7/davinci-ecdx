@@ -7,9 +7,7 @@ This IG provides detailed guidance that helps implementers use FHIR-based intera
 
  - Requesting and Sending attachments for claims and prior authorization
  - Requesting documentation to support payer operations such as claims audits
- - Gathering information for Quality programs and Risk Adjustment between payers and providers
  - Exchanging clinical data between referring providers
-
 
 In the context of this guide, "clinical data" means *any* information a provider holds in a patient's health record. The data exchange format is not limited to FHIR resources but includes C-CDA documents, PDFs, text files, and other formats. Implementers can request and receive clinical records of care such as CCD Documents or [C-CDA on FHIR Documents], clinical data sets represented by a FHIR [Bundle], FHIR [QuestionnaireResponse], and other types of FHIR resources. 
 

@@ -47,27 +47,26 @@ date: '2024-11-01'
 version: 2.1.0
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core.3.1.1:
+  hl7.fhir.us.core.3.1.1:  # update new new package get from Lloyd
     version: 3.1.1
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore3
-  hl7.fhir.us.core:
+    id: uscore3  
+  hl7.fhir.us.core:   # update new new package get from Lloyd
     version: 6.1.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore6
-
-  hl7.fhir.us.core.v700:
+  hl7.fhir.us.core.v700:   # update new new package get from Lloyd
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore7
 
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: current #1.1.0-ballot  #1.1.0 for publication
+    version: current #1.1.0 for publication
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
-    version: current #2.0.1 #2.1.0 for publication
+    version: current  #2.1.0 for publication
     id: pas
   hl7.fhir.us.carin-bb:
     uri: 'http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb'
@@ -75,15 +74,14 @@ dependencies:
     id: c4bb
   hl7.fhir.us.davinci-dtr:
     uri: 'http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr'
-    version: current #2.1.0-preview #2.0.1 #2.1.0 for publication
+    version: current  #2.1.0 for publication
     id: dtr
   hl7.fhir.uv.sdc:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
     version: 3.0.0
     id: sdc
 
-
-  hl7.fhir.extensions.r5:
+  hl7.fhir.extensions.r4: 
     version: 4.0.1
   
   hl7.fhir.uv.subscriptions-backport.r4:
@@ -496,6 +494,7 @@ menu:
   Support:
    Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
+   Implementer Support: https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode
    Propose a Change: http://hl7.org/fhir-issues
    Downloads: downloads.html
   Change Log: changes.html
