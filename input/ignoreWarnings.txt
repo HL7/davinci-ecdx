@@ -36,6 +36,8 @@ Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/claim-use|4.0.1
 Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
 Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0-preview
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
+
 
 
 # ===  The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
@@ -59,7 +61,13 @@ WARNING: ValueSet.where(id = 'cdex-pwk01-attachment-report-type-code'): Error fr
 
 WARNING: Bundle/cdex-task-inline-scenario1-subscription-notification: Bundle.entry[0].resource/*Parameters/206a4372-a348-41d1-a82e-fc9ebe8825af*/.parameter[3].value.ofType(code): ValueSet 'http://hl7.org/fhir/ValueSet/subscription-notification-type' not found
 
-#  === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue  see chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307
+#  === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue  see chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307 ===
 
 The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognized so cannot be validated
+
+
+# ==== Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
+
+The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
+
 
