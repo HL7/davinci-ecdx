@@ -92,8 +92,15 @@ WARNING: DA VINCI: There must be a menu item under Background called Project and
 WARNING: DA VINCI: The third menu item should have the label Specification.
 WARNING: DA VINCI: There must be a menu item with the label Base Specs.
 
-# === Da Vinci Warning: applying these change cause errors ===
+# === Da Vinci Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
 
 WARNING: DA VINCI: The first menu item should have the label IG Home.
+
+
+# === Da Vinci Warning: applying this suggested link change causes  a build error ===
+
 WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=
 
+# === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
+
+WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
