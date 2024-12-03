@@ -254,16 +254,19 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Home</a>
+        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
       </li>
       <li>
-        <a href="https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex">Discussion Forum</a>
+        <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=40738757">Project Page</a>
       </li>
       <li>
         <a href="https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode">Implementer Support</a>
       </li>
       <li>
-        <a href="http://hl7.org/fhir-issues">Propose a Change</a>
+        <a href="https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801">Specification Dashboard</a>
+      </li>
+      <li>
+        <a href="https://jira.hl7.org/secure/">Propose a Change</a>
       </li>
       <li>
         <a href="downloads.html">Downloads</a>

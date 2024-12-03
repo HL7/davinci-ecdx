@@ -14,5 +14,5 @@
 13,Patient Name,"Loop: 2100D Segments :NM103, NM104, NM105, NM107 Notes: NM102 = ""1""","Loop: 2010C Segments: NM103, NM104 Notes: NM101 = id code qualifier","Loop: 1000D Segments: NM103, NM104, NM105 Notes: NM102 = ""1""",-,Patient.name,Patient demographic information for patient matching,Patient demographic information for patient matching,ClaimResponse.patient: Patient.name,"ClaimResponse = Bundle.entry[0].resource, Patient = Bundle.entry[n].resource referenced by ClaimResponse.patient"
 14,Patient Account No.,Loop: 2220D Segments: REF02 Notes: REF01= id code qualifier,"Loop: 2010C Segment: REF02 Notes: REF01 = ""EJ""",-,-,Patient.identifier,Patient Account Number is a provider-assigned identifier,Patient Account Number is a provider-assigned identifier,?,
 15,Date of Birth,-,Loop: 2010C Segment: DMG02 Notes: DMG01 = date format code,-,-,Patient.birthDate,Patient demographic information for patient matching,Patient demographic information for patient matching,ClaimResponse.patient: Patient.birthDate,"ClaimResponse = Bundle.entry[0].resource, Patient = Bundle.entry[n].resource referenced by ClaimResponse.patient"
-16,Questionnaire,,,,,"“QuestionnairesNeeded” Task.input,,,,
+16,Questionnaire,,,,,"“QuestionnaireContext” Task.input,,,,
 17,QuestionnaireResponse,,,,Attachment.Content,,,,,

@@ -39,7 +39,7 @@ differential:
       min: 1
       slicing:
         discriminator:
-          - type: pattern   # need identifier type for slicing
+          - type: value   # need identifier type for slicing
             path: $this
         rules: open
       mustSupport: true

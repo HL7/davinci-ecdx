@@ -68,4 +68,32 @@ The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflo
 
 The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
 
+# === Da Vinci Warning: This Ballot version did not have any Jira trackers assoicated with it ===
+
+WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 2.0.0-ballot
+
+# === Da Vinci Warning: These versions predated change logs in the CDex IG ===
+
+WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 1.1.0-ballot
+WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.2.0
+WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.1.0
+
+# === Da Vinci Warning: These sections will be added to CDex in the next version ===
+
+WARNING: DA VINCI: The home page (index.html) must include an h3 section called Content and Organization.
+WARNING: DA VINCI: The home page (index.html) must include an h3 section called Dependencies.
+WARNING: DA VINCI: The home page (index.html) must include an h3 section called Intellectual Property Considerations.
+
+# === Da Vinci Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
+
+WARNING: DA VINCI: The first menu item under Background should have the label Reading this IG.
+WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.
+WARNING: DA VINCI: There must be a menu item under Background called Project and Participants.
+WARNING: DA VINCI: The third menu item should have the label Specification.
+WARNING: DA VINCI: There must be a menu item with the label Base Specs.
+
+# === Da Vinci Warning: applying these change cause errors ===
+
+WARNING: DA VINCI: The first menu item should have the label IG Home.
+WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=
 

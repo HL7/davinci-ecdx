@@ -47,18 +47,39 @@ date: '2024-11-01'
 version: 2.1.0
 fhirVersion: 4.0.1
 dependencies:
-  hl7.fhir.us.core.3.1.1:  # update new new package get from Lloyd
-    version: 3.1.1
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore3  
-  hl7.fhir.us.core:   # update new new package get from Lloyd
-    version: 6.1.0
-    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-    id: uscore6
-  hl7.fhir.us.core.v700:   # update new new package get from Lloyd
+  # hl7.fhir.us.core.3.1.1:  # update new new package get from Lloyd
+  #   version: 3.1.1
+  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  #   id: uscore3  
+  # hl7.fhir.us.core:   # update new new package get from Lloyd
+  #   version: 6.1.0
+  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  #   id: uscore6
+  # hl7.fhir.us.core.v700:   # update new new package get from Lloyd
+  #   version: 7.0.0
+  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+  #   id: uscore7
+
+
+  hl7.fhir.us.core:
     version: 7.0.0
     uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
     id: uscore7
+    reason: |
+      Needed for systems supporting USCDI v4
+  hl7.fhir.us.core.v610:
+    version: 6.1.0
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore6
+    reason: |
+      Needed for systems supporting USCDI v3
+  hl7.fhir.us.core.v311:
+    version: 3.1.1
+    uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
+    id: uscore3
+    reason: |
+      Needed for systems supporting USCDI v1
+
 
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
@@ -272,7 +293,7 @@ pages:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     #   valueCode: trial-use
-    title: Home
+    title: IG Home
   background.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
@@ -492,10 +513,10 @@ menu:
     Common Terminology: artifacts.html#15
     Inline Examples: artifacts.html#16
   Support:
-   Project Home: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
+   Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757   
    Implementer Support: https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode
-   Propose a Change: http://hl7.org/fhir-issues
+   Specification Dashboard: https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801
+   Propose a Change: https://jira.hl7.org/secure/
    Downloads: downloads.html
   Change Log: changes.html
-

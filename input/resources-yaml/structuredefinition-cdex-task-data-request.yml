@@ -9,12 +9,12 @@ description: |-
 
   It constrains the following elements to be *mandatory* (min=1):
 
-  - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/2024Sep/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
+  - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
   - A `Task.intent` fixed to "order" (this element is a mandatory Task element)
   - A `Task.code` of "data-request-query", "data-request-code", or "data-request-questionnaire" communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.
     - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.
     - If the code is "data-request-code", the provider system returns data(s) identified by the LOINC code in the "code" input parameter.
-    - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2index.html) to complete the Questionnaire referenced in the "questionnaire" input parameter.
+    - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2.1/index.html) to complete the Questionnaire referenced in the "questionnaire" input parameter.
   - A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested
   - A `Task.authoredOn` to communicate the date and time this task was created
   - A `Task.requester` element communicating who is requesting the data
@@ -114,7 +114,7 @@ differential:
       path: 'Task.meta.tag'
       slicing:
         discriminator:
-          - type: pattern
+          - type: value
             path: $this
         rules: open
 
@@ -325,7 +325,7 @@ differential:
       path: Task.input
       slicing:
         discriminator:
-          - type: pattern
+          - type: value
             path: type
         rules: open
       min: 1
@@ -496,7 +496,7 @@ differential:
       path: Task.output
       slicing:
         discriminator:
-          - type: pattern
+          - type: value
             path: type
         rules: open
       condition:
