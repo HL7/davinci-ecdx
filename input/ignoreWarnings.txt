@@ -66,9 +66,8 @@ The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflo
 
 # ==== Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
 
-The discriminator type 'pattern' has been deprecated. Use type=fixed with a pattern[x] instead
 
-# === Da Vinci Warning: This Ballot version did not have any Jira trackers assoicated with it ===
+# === Da Vinci Warning: This Ballot version did not have any Jira trackers associated with it ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 2.0.0-ballot
 

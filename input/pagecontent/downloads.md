@@ -49,8 +49,7 @@ The following link to the [ImplementationGuide] resource defines the technical d
 
 The following links allow you to download various parts of other referenced implementation guides for local use:
 
-- The full [FHIR R4 core]({{site.data.fhir.path}}fhir-spec.zip) specifications and other [FHIR core downloads]({{site.data.fhir.path}}downloads.html)
-- A [validator](https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar) that can be used to check FHIR resource instance validity and [instructions on how to use it](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)
-
+- The full [FHIR R4 core] specifications and other [FHIR core downloads]
+- A [validator] that can be used to check FHIR resource instance validity and [instructions on how to use it]
 
 {% include link-list.md %}

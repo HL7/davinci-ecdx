@@ -184,3 +184,7 @@
 [Interoperable Digital Identity and Patient Matching]: https://hl7.org/fhir/us/identity-matching/index.html
 [CQL]: https://cql.hl7.org/
 [Da Vinci Use Cases]: https://confluence.hl7.org/display/DVP/Da+Vinci+Use+Cases
+[FHIR R4 core]: {{site.data.fhir.path}}fhir-spec.zip
+[FHIR core downloads]: {{site.data.fhir.path}}downloads.html
+[validator]: https://fhir.github.io/latest-ig-validator/org.hl7.fhir.validator.jar
+[instructions on how to use it]: https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator

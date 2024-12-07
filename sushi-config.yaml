@@ -47,19 +47,6 @@ date: '2024-11-01'
 version: 2.1.0
 fhirVersion: 4.0.1
 dependencies:
-  # hl7.fhir.us.core.3.1.1:  # update new new package get from Lloyd
-  #   version: 3.1.1
-  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-  #   id: uscore3  
-  # hl7.fhir.us.core:   # update new new package get from Lloyd
-  #   version: 6.1.0
-  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-  #   id: uscore6
-  # hl7.fhir.us.core.v700:   # update new new package get from Lloyd
-  #   version: 7.0.0
-  #   uri: http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
-  #   id: uscore7
-
 
   hl7.fhir.us.core:
     version: 7.0.0
