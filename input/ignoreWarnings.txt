@@ -67,23 +67,23 @@ The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflo
 # ==== Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
 
 
-# === Da Vinci Warning: This Ballot version did not have any Jira trackers associated with it ===
+# === Da Vinci Project Specific Warning: This Ballot version did not have any Jira trackers associated with it ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 2.0.0-ballot
 
-# === Da Vinci Warning: These versions predated change logs in the CDex IG ===
+# === Da Vinci Project Specific Warning: These versions predated change logs in the CDex IG ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 1.1.0-ballot
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.2.0
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.1.0
 
-# === Da Vinci Warning: These sections will be added to CDex in the next version ===
+# === Da Vinci Project Specific Warning: These sections will be added to CDex in the next version ===
 
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Content and Organization.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Dependencies.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Intellectual Property Considerations.
 
-# === Da Vinci Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
+# === Da Vinci Project Specific Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
 
 WARNING: DA VINCI: The first menu item under Background should have the label Reading this IG.
 WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.
@@ -91,15 +91,16 @@ WARNING: DA VINCI: There must be a menu item under Background called Project and
 WARNING: DA VINCI: The third menu item should have the label Specification.
 WARNING: DA VINCI: There must be a menu item with the label Base Specs.
 
-# === Da Vinci Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
+# === Da Vinci Project Specific Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
 
 WARNING: DA VINCI: The first menu item should have the label IG Home.
 
 
-# === Da Vinci Warning: applying this suggested link change causes  a build error ===
+# === Da Vinci Project Specific Warning: applying this suggested link change causes  a build error ===
 
 WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=
 
 # === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
 
-WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
+

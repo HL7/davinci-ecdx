@@ -95,13 +95,13 @@
       "id": "hrex",
       "packageId": "hl7.fhir.us.davinci-hrex",
       "uri": "http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex",
-      "version": "current"
+      "version": "1.1.0"
     },
     {
-      "id": "pas",
       "packageId": "hl7.fhir.us.davinci-pas",
       "uri": "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas",
-      "version": "current"
+      "version": "2.1.0",
+      "id": "hl7_fhir_us_davinci_pas"
     },
     {
       "id": "c4bb",
@@ -113,7 +113,7 @@
       "id": "dtr",
       "packageId": "hl7.fhir.us.davinci-dtr",
       "uri": "http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr",
-      "version": "current"
+      "version": "2.1.0"
     },
     {
       "id": "sdc",
@@ -1236,7 +1236,7 @@
       },
       {
         "code": "releaselabel",
-        "value": "STU2"
+        "value": "STU 2.1"
       },
       {
         "code": "path-resource",

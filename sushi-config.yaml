@@ -70,19 +70,18 @@ dependencies:
 
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: current #1.1.0 for publication
+    version: 1.1.0
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
-    version: current  #2.1.0 for publication
-    id: pas
+    version: 2.1.0 
   hl7.fhir.us.carin-bb:
     uri: 'http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb'
     version: 2.0.0
     id: c4bb
   hl7.fhir.us.davinci-dtr:
     uri: 'http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr'
-    version: current  #2.1.0 for publication
+    version: 2.1.0
     id: dtr
   hl7.fhir.uv.sdc:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
@@ -422,7 +421,7 @@ parameters:
   auto-oid-root: '2.16.840.1.113883.4.642.40.21'
 copyrightyear: '2024+'
 # releaselabel: CI Build
-releaselabel: STU2
+releaselabel: STU 2.1
 # releaselabel: Ballot
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮

@@ -53,7 +53,7 @@ parameter:
       id: cdex-document-digital-sig-example
       meta:
         profile:
-        - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0-preview
+        - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle|2.1.0
       identifier:
         system: urn:ietf:rfc:3986
         value: urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8
