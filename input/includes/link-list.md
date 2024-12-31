@@ -27,7 +27,7 @@
 [Da Vinci]: http://www.hl7.org/about/davinci/index.cfm?ref=common
 [US Core 7.0.0]: {{site.data.fhir.ver.uscore7}}/index.html
 [US Core 6.1.0]: {{site.data.fhir.ver.uscore6}}/index.html
-[US Core 3.1.1]: {{site.data.fhir.ver.uscore3}}/index.html
+[US Core 3.1.1]: https://hl7.org/fhir/us/core/STU3.1.1/index.html
 [Example Scenarios]: example-scenarios.html
 [Exchanging Clinical Data]: exchanging-clinical-data.html
 [Direct Query]: direct-query.html
