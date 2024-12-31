@@ -66,10 +66,10 @@ dependsOn:
   packageId: hl7.fhir.us.davinci-hrex
   uri: http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex
   version: 1.1.0
-- packageId: hl7.fhir.us.davinci-pas
+- id: pas
+  packageId: hl7.fhir.us.davinci-pas
   uri: http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas
   version: 2.1.0
-  id: hl7_fhir_us_davinci_pas
 - id: c4bb
   packageId: hl7.fhir.us.carin-bb
   uri: http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb

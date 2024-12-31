@@ -74,7 +74,8 @@ dependencies:
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
-    version: 2.1.0 
+    version: 2.1.0
+    id: pas
   hl7.fhir.us.carin-bb:
     uri: 'http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb'
     version: 2.0.0

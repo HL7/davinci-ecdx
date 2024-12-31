@@ -98,10 +98,10 @@
       "version": "1.1.0"
     },
     {
+      "id": "pas",
       "packageId": "hl7.fhir.us.davinci-pas",
       "uri": "http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas",
-      "version": "2.1.0",
-      "id": "hl7_fhir_us_davinci_pas"
+      "version": "2.1.0"
     },
     {
       "id": "c4bb",
