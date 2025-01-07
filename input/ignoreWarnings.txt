@@ -102,6 +102,6 @@ WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.or
 
 # === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
 
-WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1
+WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
 
 
