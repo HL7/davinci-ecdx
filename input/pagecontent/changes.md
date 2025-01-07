@@ -1,5 +1,5 @@
 ### Version = 2.1.0
-- Publication Date: 2024-11-1
+- Publication Date: 2025-1-15
 - URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
 - Based on FHIR version: 4.0.1
 
