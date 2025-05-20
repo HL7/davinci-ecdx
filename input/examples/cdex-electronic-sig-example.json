@@ -1,9 +1,6 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-electronic-sig-example",
-  "meta": {
-    "lastUpdated": "2021-10-25T20:16:29-07:00"
-  },
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
@@ -69,9 +66,6 @@
       "resource": {
         "resourceType": "Practitioner",
         "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-        "meta": {
-          "lastUpdated": "2013-05-05T16:13:03Z"
-        },
         "identifier": [
           {
             "system": "http://hl7.org/fhir/sid/us-npi",

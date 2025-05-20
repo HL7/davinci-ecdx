@@ -1,17 +1,6 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example12",
-  "meta": {
-    "versionId": "3",
-    "lastUpdated": "2020-10-26T04:04:52.000+00:00",
-    "source": "#tgH2FoPFuCq0yjw5",
-    "tag": [
-      {
-        "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-        "code": "orders"
-      }
-    ]
-  },
   "basedOn": [
     {
       "reference": "http://example.org/fhir/CommunicationRequest/cdex-example1-authorization"

@@ -5,8 +5,15 @@
     {
       "name": "TrackingId",
       "valueIdentifier": {
-        "system": "http://example.org/payer",
+        "system": "http://example.org/payer-acns",
         "value": "trackingid123"
+      }
+    },
+    {
+      "name": "AdminRefNumber",
+      "valueIdentifier": {
+        "system": "http://example.org/payer-refnos",
+        "value": "adminrefnumber4657"
       }
     },
     {

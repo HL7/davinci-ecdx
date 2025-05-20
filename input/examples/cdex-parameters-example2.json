@@ -139,9 +139,6 @@
                 "resource": {
                   "resourceType": "Practitioner",
                   "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-                  "meta": {
-                    "lastUpdated": "2013-05-05T16:13:03Z"
-                  },
                   "text": {
                     "status": "generated",
                     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><p><b>Generated Narrative: Practitioner</b><a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot; Updated &quot;2013-05-05 16:13:03+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-practitioner.html\">US Core Practitioner Profile (version 6.1.0)</a></p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339100</p><p><b>name</b>: John Hancock </p></div>"

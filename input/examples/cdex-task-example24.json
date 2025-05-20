@@ -78,6 +78,20 @@
       },
       "system": "http://example.org/payer",
       "value": "trackingid1012"
+    },
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+            "code": "admin-ref-number",
+            "display": "Administrative Reference Number"
+          }
+        ],
+        "text": "Administrative Reference Number"
+      },
+      "system": "http://example.org/payer",
+      "value": "adminrefnumber4657"
     }
   ],
   "status": "completed",

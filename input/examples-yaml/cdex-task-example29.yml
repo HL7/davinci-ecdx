@@ -54,6 +54,7 @@ contained:
     identifier:
       system: http://hl7.org/fhir/sid/us-npi
       value: '1234567893'
+
 identifier:
 - type:
     coding:
@@ -63,6 +64,18 @@ identifier:
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
   value: trackingid1056
+
+  # ========== add "administrative reference number ============
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: admin-ref-number
+      display: Administrative Reference Number
+    text: Administrative Reference Number
+  system: http://example.org/payer
+  value: adminrefnumber2112
+
+# ======================================================================
 status: completed
 intent: order
 code:

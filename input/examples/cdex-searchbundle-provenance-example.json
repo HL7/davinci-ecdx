@@ -1,9 +1,6 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-searchbundle-provenance-example",
-  "meta": {
-    "lastUpdated": "2020-10-23T04:54:56.048+00:00"
-  },
   "type": "searchset",
   "total": 1,
   "link": [
@@ -18,11 +15,6 @@
       "resource": {
         "resourceType": "Condition",
         "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
-        "meta": {
-          "versionId": "10",
-          "lastUpdated": "2020-04-28T20:28:00.008+00:00",
-          "source": "#cabiJIK51sD2iz4N"
-        },
         "clinicalStatus": {
           "coding": [
             {

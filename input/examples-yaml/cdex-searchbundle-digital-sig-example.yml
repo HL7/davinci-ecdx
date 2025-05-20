@@ -20,13 +20,13 @@ entry:
       reference: http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82
     id: 4ac41715-fcbd-421c-8796-9b2c9706dd3f
     meta:
-      lastUpdated: '2020-04-28T20:28:00.008+00:00'
+      
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0
-      source: '#cabiJIK51sD2iz4N'
-      versionId: '10'
+      
+      
     onsetDateTime: '2018-10-21T21:22:15-07:00'
     recordedDate: '2018-10-21T21:22:15-07:00'
     resourceType: Condition

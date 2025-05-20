@@ -9,24 +9,6 @@ kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
   Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after*  the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)
-
-  The input parameters are:
-  1. One or more attachments as FHIR Resources
-      - Optionally, one or more unique line item numbers associated with the attachment
-      - Optionally, the attachment code used to request the information
-  1. Data elements for the association to the claim/prior authorization
-      - A unique identifier that ties the attachment(s) back to the claim or prior authorization. (referred to as the "re-association tracking control numbers")
-      - What are the attachments for:
-        - Claims
-        - Prior Authorizations
-      - Optionally, a unique payer identifier
-      - A unique organization/location identifier (e.g., [Type 2 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf)) or unique provider identifier (e.g., [Type 1 NPI](https://www.cms.gov/Outreach-and-Education/Medicare-Learning-Network-MLN/MLNProducts/downloads/NPI-What-You-Need-To-Know.pdf))
-      - A unique Patient member identifier
-      - A Date of Service
-      - A Flag indicating whether the operation is the last attachment submission for the claim or prior authorization.
-
-  There are no output parameters.
-
 code: submit-attachment
 comment: |
  
@@ -59,9 +41,17 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "tracking control number"
+      An tracking identifier that ties the attachment(s) back to the claim or prior authorization. This value is commonly referred to as the "tracking control number" or "attachment control number (ACN)".
 
        In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.
+    type: Identifier
+
+  - name: AdminRefNumber
+    use: in
+    min: 0
+    max: "1"
+    documentation: >-
+      Used only for prior authorization *solicited* attachments, the payer may assign an administrative reference number *in addition to* the tracking control number/ACN. By using a combination of identifiers, the Payer can guarantee global uniqueness for associating attachments to the claim or prior authorization.
     type: Identifier
 
   - name: AttachTo

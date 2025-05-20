@@ -50,6 +50,7 @@ contained:
 for:
   reference: '#patient'
 id: cdex-task-inline-example22
+
 identifier:
 - system: http://example.org/payer
   type:
@@ -59,6 +60,17 @@ identifier:
       system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
     text: Re-Association Tracking Control Number
   value: trackingid1012
+# ========== add "administrative reference number ============
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: admin-ref-number
+      display: Administrative Reference Number
+    text: Administrative Reference Number
+  system: http://example.org/payer
+  value: adminrefnumber4657
+# ======================================================================
+
 input:
 - extension:
   - url: http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber

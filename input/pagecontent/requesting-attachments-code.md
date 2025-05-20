@@ -247,14 +247,18 @@ The attachments and metadata needed to associate the attachment to the claim or 
 {% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=0 count=3 linenumber=true rel=true %}
 ~~~
 
-##### Tracking ID and Indicating a Claim or Prior Authorization
-The "TrackingId" parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
+<div class="bg-success" markdown="1">
+
+##### Identifiers for Associating the Attachments to a Claim or Prior Authorization
+The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters represent Payer-assigned business identifiers that tie the requested attachments to the claim or prior authorization. The operation must also indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |TrackingID|Task.identifier|TrackingId|
+|AdminRefNumber|Task.identifier|AdminRefNumber|
 |Use|Task.reasonCode|AttachTo|
 {:.grid}
+</div><!-- new-content -->
 
 ~~~
 {% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=3 count=10 linenumber=true rel=true %}

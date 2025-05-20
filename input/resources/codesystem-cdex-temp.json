@@ -119,7 +119,12 @@
         {
             "code": "tracking-id",
             "display": "Tracking Id",
-            "definition": "A business identifier that ties requested attachments back to the claim or prior-authorization (referred to as the \u201cre-association tracking control numbers\u201d)."
+            "definition": "A Payer-assigned claim/prior authorization identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the \u201cre-association tracking control numbers\u201d or \"attachment control number (ACN)\"."
+        },
+        {
+            "code": "admin-ref-number",
+            "display": "Administrative reference number",
+            "definition": "A Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the \"administrative reference number\"."
         },
         {
             "code": "multiple-submits-flag",

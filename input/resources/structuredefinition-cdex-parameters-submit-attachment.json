@@ -60,6 +60,31 @@
                 "mustSupport": true
             },
             {
+                "id": "Parameters.parameter:AdminRefNumber",
+                "path": "Parameters.parameter",
+                "sliceName": "AdminRefNumber",
+                "min": 0,
+                "max": "1",
+                "mustSupport": true
+            },
+            {
+                "id": "Parameters.parameter:AdminRefNumber.name",
+                "path": "Parameters.parameter.name",
+                "fixedString": "AdminRefNumber",
+                "mustSupport": true
+            },
+            {
+                "id": "Parameters.parameter:AdminRefNumber.value[x]",
+                "path": "Parameters.parameter.value[x]",
+                "min": 1,
+                "type": [
+                    {
+                        "code": "Identifier"
+                    }
+                ],
+                "mustSupport": true
+            },
+            {
                 "id": "Parameters.parameter:AttachTo",
                 "path": "Parameters.parameter",
                 "sliceName": "AttachTo",

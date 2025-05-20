@@ -62,6 +62,18 @@ identifier:
     text: Re-Association Tracking Control Number
   system: http://example.org/payer
   value: trackingid789
+# ========== add "administrative reference number ============
+- type:
+    coding:
+    - system: http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp
+      code: admin-ref-number
+      display: Administrative Reference Number
+    text: Administrative Reference Number
+  system: http://example.org/payer
+  value: adminrefnumber123
+
+# ======================================================================
+
 status: requested
 intent: order
 code:

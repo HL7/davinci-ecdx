@@ -1,7 +1,7 @@
 resourceType: Bundle
 id: cdex-searchbundle-provenance-example
 meta:
-  lastUpdated: '2020-10-23T04:54:56.048+00:00'
+  
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Direct Query Response Including Provenance
@@ -21,8 +21,8 @@ entry:
     id: 4ac41715-fcbd-421c-8796-9b2c9706dd3f
     meta:
       versionId: '10'
-      lastUpdated: '2020-04-28T20:28:00.008+00:00'
-      source: '#cabiJIK51sD2iz4N'
+      
+      
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0

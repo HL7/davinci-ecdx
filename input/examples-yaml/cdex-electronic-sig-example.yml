@@ -10,7 +10,7 @@ meta:
       response to a Task-based request where an electronic signature was required.  If
       no signature was required, the response would typically be in the form of an
       individual resource.
-  lastUpdated: '2021-10-25T20:16:29-07:00'
+  
   profile:
   - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
 identifier:
@@ -55,7 +55,7 @@ entry:
     resourceType: Practitioner
     id: 0820c16d-91de-4dfa-a3a6-f140a516a9bc
     meta:
-      lastUpdated: '2013-05-05T16:13:03Z'
+      
       profile:
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1
         - http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0
