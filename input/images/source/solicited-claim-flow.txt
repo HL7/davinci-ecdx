@@ -1,0 +1,28 @@
+<!--
+#https://flowchart.js.org/
+# use inspector to copy and paste the generated svg
+#or use hackmd
+```flow
+
+st=>start: Provider files a claim that documents the services performed and the cost
+
+op3=>operation: Payer reviews the claim
+and all the documents
+e=>end: Payer processes the claim
+op5=>operation: Payer requests attachments
+(e.g.,more information)
+from the Provider
+op6=>operation: Provider submits requested
+attachments to the Payer
+op7=>operation: Payer associates submitted
+attachments with the claim
+cond1=>condition: claim and 
+documentation
+Complete?
+
+
+st->op3->cond1
+cond1(yes)->e
+cond1(no)->op5->op6->op7(right)->op3
+``` 
+ -->

@@ -1,0 +1,28 @@
+
+edit in HackMD and export as SVG from inspector
+
+```graphviz
+digraph Heirarchy {
+
+TREAT,COVERAGE,CLMATTCH,COVAUTH,HQUALIMP,HDM,COC [style=dotted]
+"treatment-noa","payment-noa","operations-noa","care-planning","social-risk"[style=dashed]
+HPAYMT,HOPERAT,TREAT[fontsize=20]
+HPAYMT[label=<<u>HPAYMT</u>>]
+HOPERAT[label=<<u>HOPERAT</u>>]
+Treatment,Payment,"Health Care Operations","45 CFR 164.506 Treatment, Payment, and Health Care Operations" [fontsize=24,style=bold]
+{Payment "Health Care Operations" Treatment}->"45 CFR 164.506 Treatment, Payment, and Health Care Operations"
+"treatment-noa"->Treatment
+"payment-noa"->Payment
+"operations-noa"->"Health Care Operations"
+COVERAGE->HPAYMT->Payment
+CLMATTCH->HPAYMT
+COVAUTH->HPAYMT
+HQUALIMP->HOPERAT->"Health Care Operations"
+HDM->HOPERAT
+COC->TREAT->Treatment
+"care-planning"->Treatment
+"care-planning"->"Health Care Operations"
+"social-risk"->Treatment
+"social-risk"->"Health Care Operations"
+}
+```

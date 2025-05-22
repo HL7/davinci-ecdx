@@ -144,15 +144,16 @@ The Payer communicates the provider ID as either a unique organization/location 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=37 count=15 linenumber=true rel=true %}
 ~~~
+<div class="bg-success" markdown="1">
 
-##### Supplying the Tracking ID
+##### Supplying Identifiers for Associating the Attachments to a Claim or Prior Authorization
 
-The mandatory `Task.identifier` *tracking-id* slice element represents the Payer tracking identifier. The tracking-id (the "re-association tracking control number") is an identifier that ties the attachments back to the claim or prior authorization. The Provider will echo it back to the Payer when submitting the attachments. 
-
+The mandatory `Task.identifier` *tracking-id* slice element, and, for prior authorization, the optional `Task.identifier` *admin-ref-number* slice element parameters represent payer tracking identifiers that tie the attachments back to the claim or prior authorization. The Provider will echo them back to the Payer when submitting the attachments.
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=53 count=12 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=53 count=24 linenumber=true rel=true %}
 ~~~
+</div><!-- new-content -->
 
 ##### Task *status* and *intent* Elements
 
@@ -164,7 +165,7 @@ These required Task infrastructure elements:
 convey the task status and the intent of the request.  The `Task.status` value of "request" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the [Task state machine]. `Task.intent` is fixed to "order".
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=65 count=2 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=77 count=2 linenumber=true rel=true %}
 ~~~
 
 ##### Task *code* Element
@@ -172,7 +173,7 @@ convey the task status and the intent of the request.  The `Task.status` value o
 The `Task.code` communicates that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire. If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "code" input parameter. If the code is "attachment-request-questionnaire", as it is in this scenario, the provider system uses Documentation Templates and Rules (DTR) to complete the Questionnaire referenced in the "questionnaire" input parameter. The provider system uses the $submit-attachment operation to return the information to the endpoint provided in the `Task.input` "payer-url" parameter.
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=67 count=7 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=79 count=7 linenumber=true rel=true %}
 ~~~
 
 ##### Identifying the Payer, Provider, and Patient
@@ -191,7 +192,7 @@ As discussed above, the patient ID is in the contained Patient resource, referen
 {: .grid}
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=74 count=14 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=86 count=14 linenumber=true rel=true %}
 ~~~
 
 ##### Claim Information
@@ -205,7 +206,7 @@ The Task communicates whether the attachments are for a claim or prior authoriza
 {: .grid}
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=88 count=16 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=101 count=16 linenumber=true rel=true %}
 ~~~
 
 ##### Attachment Due Date
@@ -213,7 +214,7 @@ The Task communicates whether the attachments are for a claim or prior authoriza
 The Payer communicates the due date for submitting the attachment in the `Task.restriction.period` element. Note that `Task.restriction.period.end` represents the time when the Provider should have submitted the attachments.
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=102 count=5 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=114 count=5 linenumber=true rel=true %}
 ~~~
 
 ##### Using Questionnaire to Communicate What Attachments Data is Needed
@@ -221,7 +222,7 @@ The Payer communicates the due date for submitting the attachment in the `Task.r
 In this scenario, the Payer supplies the URL of a questionnaire (FHIR Questionnaire) to communicate what attachments-related data is needed. They may also provide the *line item numbers* to match the attachment to a line item in the claim or prior authorization.  This information is represented in the "questionnaire" `Task.input` element. The Provider launches the Documentation Templates and Rules (DTR) application to complete the Questionnaire. The code snippet below contains a URL to a Home Oxygen Therapy Questionnaire.
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=107 count=13 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=119 count=13 linenumber=true rel=true %}
 ~~~
 
 <!-- {% raw %} ##### Communicating the Signature Requirements
@@ -239,7 +240,7 @@ The Payer supplies the URL endpoint in the `Task.input` "payer-url" parameter. T
 <!-- If no URL endpoint is supplied, the attachments are provided either as references or contained Task resources, and the requester needs to poll/subscribe to the Task to retrieve when done. -->
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=120 count=11 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=132 count=11 linenumber=true rel=true %}
 ~~~
 
 <!-- {% raw %} ##### Date of Service for the Claim
@@ -255,7 +256,7 @@ This `Task.input` element represents the service date or the service's starting 
 This optional `Task.input` element represents the request's purpose of use (POU).  This example supports a request for prior authorization, "COVAUTH".  When requesting attachments for a claim, it would be "CLMATTCH".
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=129 count=21 linenumber=true rel=true %}
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=141 count=21 linenumber=true rel=true %}
 ~~~
 
 #### Provider Launches DTR
@@ -275,7 +276,7 @@ GET [base]/Task/cdex-task-example22
 **Response Body**
 
 ~~~
-{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start="0,112" count="2,8" linenumber=true rel=true %}....
+{% include_relative includelines filename='Task-cdex-task-inline-example22.json' start="0,125" count="2,8" linenumber=true rel=true %}....
 ~~~
 
 ##### DTR SMART App Fetches Questionnaire
@@ -328,7 +329,7 @@ PUT [base]/Task/cdex-task-example-22
 **Request Body**
 
 ~~~
-{% include_relative includelines filename='cdex-task-inline-example22-updated.json' start="0,202" count="3,15" linenumber=true %}
+{% include_relative includelines filename='cdex-task-inline-example22-updated.json' start="0,217" count="3,15" linenumber=true %}
 ~~~
 
 
@@ -365,15 +366,14 @@ The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters repre
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |TrackingID|Task.identifier|TrackingId|
-|AdminRefNumber|Task.identifier|AdminRefNumber|
+|AdminRefNumber (prior authorizations only)|Task.identifier|AdminRefNumber|
 |Use|Task.reasonCode|AttachTo|
 {:.grid}
-</div><!-- new-content -->
 
 ~~~
-{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=3 count=11 linenumber=true rel=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=3 count=17 linenumber=true rel=true %}
 ~~~   
-
+</div><!-- new-content -->
 ##### Identifying the Payer, Provider, Organization, and Patient
 
 As documented above, The Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.
@@ -387,7 +387,7 @@ As documented above, The Payer uses business identifiers to identify itself, the
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=14 count=28 linenumber=true rel=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=20 count=28 linenumber=true rel=true %}
 ~~~ 
 
 
@@ -417,7 +417,7 @@ The completed QuestionnaireResponse and line item numbers are communicated as "A
 {:.grid}
 
 ~~~
-{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=42 count=69 linenumber=true rel=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=48 count=69 linenumber=true rel=true %}
 ~~~
 
 

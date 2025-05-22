@@ -10,13 +10,6 @@
       }
     },
     {
-      "name": "AdminRefNumber",
-      "valueIdentifier": {
-        "system": "http://example.org/payer-refnos",
-        "value": "adminrefnumber4657"
-      }
-    },
-    {
       "name": "AttachTo",
       "valueCode": "claim"
     },

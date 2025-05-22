@@ -9,16 +9,17 @@
   -->
 
 | Data Element | CDex Request Attachment Task Profile Element | X12 277RFAI-v6020 | X12n 278 Response-v5010 | Request Attachments Comments |
-|-------|---------|-------------------|------------------|--------------|
+|----|-----|--------------|--------------|---------|
 | Tracking ID | Task.identifier | Loop: 2200D Segment: TRN02 Notes: TRN01 = "1" | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level Segment: TRN02 Notes: TRN01 = “1”: Payer Supplied TRN01 = “2” : Provider Supplied (echoed back) | Payer-assigned tracking/control number |
+| Administrative Reference Number | Task.identifier | - | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level:REF02 where REF01 == "NT" | Payer-assigned administrative reference number |
 | Use | Task.reasonCode | Claim | Prior Auth | Choice of "claim" or "preauthorization" |
 | Payer ID | Task.requester.identifier | Loop: 2100A Segment: NM109 Notes: NM108 = "PI" | Loop: 2010A Segment: NM109 Notes: NM108 = "PI" | Payer ID |
 | Payer URL | "PayerUrl" Task.input | Loop: 2100A Segment: PER04 Notes: PER03 = "UR" | Loop: 2010A Segment: PER08 Notes: PER07 = "UR" | Payer endpoint where the attachments are submitted using the $submit-attachment operation |
 | Organization ID | PractitionerRole.practitioner.identifier | Loop: 2100B Segment: NM109 Notes: NM108 = id code qualifier | Loop: 2010B Segment: NM109 Notes: NM101 = id code qualifier, NM102 = "2" | Organization of provider who submitted claim/prior authorization |
 | Provider ID | PractitionerRole.organization.identifier | Loop: 2100C Segment: NM109 Notes: NM108 = id code qualifier | Loop: 2010EA Segment: NM109 Notes: NM101 = id code qualifier , NM102 = "1" | Provider who submitted claim/prior authorization |
 | Claim/PreAuth ID | Task.reasonReference.identifier | Loop: 2200D Segment: REF02 Notes: REF01="X1" | Loop: 2000F Segment: TRN02 Notes: TRN01 ="1" or TRN01 ="2" | Provider-assigned claim/prior authorization ID |
-| Line Item(s) | “AttachmentsNeeded” Task.input.extension | Note that this is an indirect mapping: Loop 2220D (Service Line Information) Segment SVC01 or SVC04 codes reference the claim service item, which contains the line item. | Loop: 2000F Segment: HL01<!-- new-content --> | Claim/prior authorization line item numbers |
-| Attachment Code<!-- new-content --> | “AttachmentsNeeded” Task.input | Loop: 2220D Segments: STC01-02, STC10-02, STC11-02 | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level Segment: HI (LOINC) or Segment: PWK01 Report Type Codes <!-- new-content --> | LOINC Attachment Code. For prior authorization, [X12] PWK01 Report Type Codes may also be used. |
+| Line Item(s) | “AttachmentsNeeded” Task.input.extension | Note that this is an indirect mapping: Loop 2220D (Service Line Information) Segment SVC01 or SVC04 codes reference the claim service item, which contains the line item. | Loop: 2000F Segment: HL01 | Claim/prior authorization line item numbers |
+| Attachment Code | “AttachmentsNeeded” Task.input | Loop: 2220D Segments: STC01-02, STC10-02, STC11-02 | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level Segment: HI (LOINC) or Segment: PWK01 Report Type Codes | LOINC Attachment Code. For prior authorization, [X12] PWK01 Report Type Codes may also be used. |
 | Due Date | Task.restriction.period | Loop: 2200D Segment: DTP03 Notes: DTP01 = "106", DTP02 = "D8" | - | Deadline for submitting attachments to Payer |
 | Date of Service | “service-date” Task.input | Loop: 2200D Segment: DTP03 Notes: DTP01 = "172", DTP02 = "D8" or DTP02 = "RD8" | Loop: 2000E (event level) or 2000F (line level) Segment: DTP03 Notes: DTP01="742" DTP02 = date format code | Date of service for claim/prior authorization |
 | Member ID | Patient.identifier | Loop: 2100C Segment: NM109 Notes: NM108 = id code qualifier | Loop: 2010C Segment: NM109 Notes: NM108 = id code qualifier | Payer assigned patient identifier |

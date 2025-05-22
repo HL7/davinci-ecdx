@@ -1,0 +1,26 @@
+<!--
+#https://flowchart.js.org/
+# use inspector to copy and paste the generated svg
+#or use hackmd
+
+```flow
+
+st=>start: Provider submits attachments
+to Payer for a claim
+or prior-authorization
+op7=>operation: Payer associates submitted attachments
+with the claim or prior authorization
+e=>end: Payer processes claim or prior authorization
+op5=>operation: Payer requests missing attachments
+(See solicited attachment section below)
+cond1=>condition: Claim
+or prior authorization
+documentation
+complete?
+
+
+st->op7->cond1
+cond1(yes)->e
+cond1(no)->op5
+```
+-->

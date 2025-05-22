@@ -1,0 +1,34 @@
+<!--
+#https://flowchart.js.org/
+# use inspector to copy and paste the generated svg
+#or use hackmd
+
+```flow
+st=>start: Provider seeks Payer approval for
+a recommended service by filing the Prior-Auth 
+and providing clinical documentation
+e=>end: Payer processes the Prior-Auth
+op3=>operation: Payer reviews the Prior-Auth
+and submitted documents/additional data
+op5=>operation: Payer creates a questionnaire
+specifying what additional
+information is needed
+op6=>operation: Payer requests Provider
+to complete the questionnaire
+op7=>operation: Provider launches DTR
+to complete the questionnaire
+op8=>operation: DTR completes the questionnaire
+op9=>operation: Provider submits questionnaire
+to Payer
+op10=>operation: Payer associates questionnaire
+responses with the Prior-Auth
+cond1=>condition: Prior-Auth and 
+documentation
+complete?
+
+st->op3->cond1
+cond1(yes)->e
+cond1(no)->op5->op6->op7->op8->op9(right)->op10(top)->op3
+```
+
+-->

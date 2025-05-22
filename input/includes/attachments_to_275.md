@@ -9,15 +9,16 @@
   -->
 
 | Data Element | CDex $submit-attachment Parameter | X12n 275-v6020 | Submit Attachments Comments |
-|-------|----|---------|--------------|
+|----|----|---------|---------------|
 | Tracking ID | TrackingId | Loop: 2000A Segment: TRN02 | For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number. |
+| Administrative Reference Number | AdminRefNumber | - | This payer assigned identifier is only for prior authorization solicited attachments. |
 | Use | AttachTo | Claim | Choice of "claim" or "preauthorization" |
 | Payer ID | PayerId | Loop: 1000A Segment: NM109 | Payer ID |
-| Payer URL | (operation endpoint) | - | Payer endpoint where the attachments are submitted using the $submit-attachment operation |
+| Payer URL | (operation endpoint) | - | See the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/endpoint-discovery.html) documented in the Da Vinci Health Record Exchange (HRex) Impelementation guide |
 | Organization ID | OrganizationId | Loop: 1000B Segment: NM109 Notes: NM108="46" | Organization of provider who submitted claim/prior authorization |
 | Provider ID | ProviderId | Loop: 1000C Segment: NM109 Notes: NM108="XX" | Provider who submitted claim/prior authorization |
 | Line Item(s) | Attachment.LineItem | Loop: 2000A Segment: STC10 Notes: Used to convey status of the entire claim or a specific service line | Claim/prior authorization line item numbers |
-| Attachment Code<!-- new-content --> | Attachment.Code | Loop: 2000A Segment: STC01-01 | LOINC Attachment Code. For prior authorization, [X12] PWK01 Report Type Codes may also be used. |
+| Attachment Code | Attachment.Code | Loop: 2000A Segment: STC01-01 | LOINC Attachment Code. For prior authorization, [X12] PWK01 Report Type Codes may also be used. |
 | Date of Service | ServiceDate | Loop: 2100A Segment: DTP03 | Date of service for claim/prior authorization |
 | Member ID | MemberId | Loop: 1000D Segment: NM109 Notes: NM108="MI" | Payer assigned patient identifier |
 {:.grid}

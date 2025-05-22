@@ -100,10 +100,12 @@ The Payer communicates the provider ID as a unique organization/location identif
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=24 count=16 linenumber=true rel=true %}
 ~~~
 
-##### Supplying the Tracking ID
+<div class="bg-success" markdown="1">
 
-The mandatory `Task.identifier` *tracking-id* slice element represents the Payer tracking identifier. The tracking-id (the "re-association tracking control number") is an identifier that ties the attachments back to the claim or prior authorization. The Provider will echo it back to the Payer when submitting the attachments. 
+##### Supplying Identifiers for Associating the Attachments to a Claim or Prior Authorization
 
+The mandatory `Task.identifier` *tracking-id* slice element, and, for prior authorization, the optional `Task.identifier` *admin-ref-number* slice element parameters represent payer tracking identifiers that tie the attachments back to the claim or prior authorization. The Provider will echo them back to the Payer when submitting the attachments.
+</div><!-- new-content -->
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=40 count=12 linenumber=true rel=true %}
@@ -255,13 +257,13 @@ The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters repre
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|
 |TrackingID|Task.identifier|TrackingId|
-|AdminRefNumber|Task.identifier|AdminRefNumber|
+|AdminRefNumber (prior authorizations only)|Task.identifier|AdminRefNumber|
 |Use|Task.reasonCode|AttachTo|
 {:.grid}
 </div><!-- new-content -->
 
 ~~~
-{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=3 count=10 linenumber=true rel=true %}
+{% include_relative includelines filename='Parameters-cdex-parameters-example3.json' start=3 count=6 linenumber=true rel=true %}
 ~~~   
 
 ##### Identifying the Payer, Provider, Organization, and Patient
