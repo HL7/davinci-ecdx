@@ -4,8 +4,8 @@
       - Optionally, one or more unique line item numbers associated with the attachment
       - Optionally, the attachment code used to request the information
   1. Data elements for the association to the claim/prior authorization
-      - An tracking identifier referred to as the "re-association tracking control number" or "attachment control number (ACN)" that ties the attachment(s) back to the claim or prior authorization.
-      - Optionally, a payer-assigned "administrative reference number" identifier.
+      - <span class="bg-success" markdown="1">A tracking identifier referred to as the "re-association tracking control number" or "attachment control number (ACN)" that ties the attachment(s) back to the claim or prior authorization.</span><!-- new-content -->
+      - <span class="bg-success" markdown="1">Optionally, a payer-assigned "administrative reference number" identifier.</span><!-- new-content -->
       - What are the attachments for:
         - Claims
         - Prior Authorizations

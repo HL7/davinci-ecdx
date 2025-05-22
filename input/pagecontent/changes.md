@@ -1,3 +1,54 @@
+### CI Build (Anticipated Version = 3.0.0-Ballot)
+
+- Publication Date: TBD
+- URL: <https://build.fhir.org/ig/HL7/davinci-ecdx/>
+- Based on FHIR version: 4.0.1
+
+#### What's new in Version 3.0.0-Ballot of CDex:
+
+The <Month> <year> ballot addresses the following:
+
+1. Added [a new $submit-attachment parameter](OperationDefinition-submit-attachment.html), a payer-assigned "administrative reference number" identifier. Used only for prior authorization solicited attachments, the payer may assign an administrative reference number in addition to the tracking control number/ACN. By using a combination of identifiers, the Payer can guarantee global uniqueness for associating attachments to the claim or prior authorization.
+
+#### Changes:
+
+Implementers submitted over NN trackers since the publication of 2.0.0 and 2.1.0.  We have addressed them and applied over NN changes listed below:
+
+**Tracker Status:** (Change Category) Summary [Jira Issue](#) [Link to Updated Content](#)
+
+1. **Triaged:** (Correction) Use same name style for naming slices in StructureDefinitions [FHIR-50933](https://jira.hl7.org/browse/FHIR-50933) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/StructureDefinition-cdex-task-attachment-request.html)
+2. **Triaged:** (Correction) Change Response to Post Task to 201 [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html#sequence-diagram)
+3. **Pre-Applied:** (Enhancement) Add a new $submit-attachment parameter for administrative reference number [FHIR-49828](https://jira.hl7.org/browse/FHIR-49828) See Changes
+   -  [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
+   -  [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
+   -  [Sending Attachments](sending-attachments.html)
+   -  [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html)
+   -  [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html)
+   -  [CDex Temporary Code System](CodeSystem-cdex-temp.html)
+   -  [CDex Parameters Example 5](Parameters-cdex-parameters-example5.html)
+   -  [CDex Task Example 20](Task-cdex-task-example20.html)
+   -  [CDex Task Example 22](Task-cdex-task-example22.html)
+   -  [CDex Task Example 23](Task-cdex-task-example23.html)
+   -  [CDex Task Example 24](Task-cdex-task-example24.html)
+   -  [CDex Task Example 25](Task-cdex-task-example25.html)
+   -  [CDex Task Example 28](Task-cdex-task-example28.html)
+   -  [CDex Task Example 29](Task-cdex-task-example29.html)
+4. **Triaged:** () Solicited/Unsolicited Attachments Rules and Relationship with PAS IG [FHIR-49194](https://jira.hl7.org/browse/FHIR-49194) See Changes [Here]()
+5. **Triaged:** (Clarification) $submit-attachment (PAS) Profile/Parameter [FHIR-49034](https://jira.hl7.org/browse/FHIR-49034) See Changes [Here]()
+6. **Triaged:** () Add documentation for Bulk Data transactions for requesting and sending information [FHIR-49025](https://jira.hl7.org/browse/FHIR-49025) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/)
+7. **Applied:** (Enhancement) Artifact descriptions should be *much* shorter [FHIR-48796](https://jira.hl7.org/browse/FHIR-48796) See Changes [Here](artifacts.html)
+8. **Triaged:** () submit-attachment member id should align with CRD + us core profile [FHIR-48437](https://jira.hl7.org/browse/FHIR-48437) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/StructureDefinition-cdex-parameters-submit-attachment.html)
+9.  **Resolved - change required:** (Clarification) clarification on TrackingId system [FHIR-48435](https://jira.hl7.org/browse/FHIR-48435) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-submit-attachment.html)
+10. **Triaged:** (Clarification) confusion on Figure 1 [FHIR-48407](https://jira.hl7.org/browse/FHIR-48407) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#requesting-attachments-background)
+11. **Triaged:** (Clarification) Require Purpose of Use  [FHIR-48403](https://jira.hl7.org/browse/FHIR-48403) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#purpose-of-use)
+12. **Triaged:** (Clarification) provide guidance when sending large payloads using $submit-attachment [FHIR-48271](https://jira.hl7.org/browse/FHIR-48271) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)
+13. **Triaged:** () add an explanation on how to communicate a decision reason in the form of a letter [FHIR-46630](https://jira.hl7.org/browse/FHIR-46630) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/#home)
+14. **Triaged:** (Correction) Need to sort out QuestionnaireResponse Profile between US Core, CDex and DTR and SDC [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/signatures.html#cdex-signature-profiles)
+15. **Triaged:** () Add section on using Task vs Bulk data for requesting large data sets [FHIR-45984](https://jira.hl7.org/browse/FHIR-45984) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html#task-based-approach)
+16. **Triaged:** () Update the guidance that the output can be non-FHIR [FHIR-45983](https://jira.hl7.org/browse/FHIR-45983) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html#task-inputs-and-outputs)
+17. **Triaged:** (Enhancement) Allow for Task to support multiple querys, codes, questionnaires [FHIR-45981](https://jira.hl7.org/browse/FHIR-45981) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html)
+
+
 ### Version = 2.1.0
 - Publication Date: 2025-1-15
 - URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
@@ -15,9 +66,9 @@ These changes are the result of the community review of the 2.1.0-snapshot versi
 
 **Status: Summary (Jira Issue) Link to Change**
 
-1. **Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](solicited-unsolicited-attachments.html) and [See Changes Here](burden-reduction.html)
-2. **Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](index.html#about-this-guide)
-3. **Applied**: (Enhancement) Update Figure [FHIR-48384](https://jira.hl7.org/browse/FHIR-48384) [See Changes Here](background.html#where-does-cdex-fit-in-the-da-vinci-project)
+1. **Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/solicited-unsolicited-attachments.html) and [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/burden-reduction.html)
+2. **Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/index.html#about-this-guide)
+3. **Applied**: (Enhancement) Update Figure [FHIR-48384](https://jira.hl7.org/browse/FHIR-48384) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/background.html#where-does-cdex-fit-in-the-da-vinci-project)
 4. **Applied**: (Clarification) Remove conflicting guidance on Quality Measure and Risk Adjustment [FHIR-48841](https://jira.hl7.org/browse/FHIR-48841)
 
 ### Version = 2.1.0-snapshot

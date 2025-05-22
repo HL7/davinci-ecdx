@@ -11,7 +11,7 @@ name: CDexTempCodes
 title: CDex Temporary Code System
 status: active
 experimental: false
-date: '2022-12-23'
+date: '2025-05-22'
 description: Codes temporarily defined as part of the CDex implementation guide.  These
   will eventually migrate into an officially maintained terminology (likely HL7's
   [UTG](https://terminology.hl7.org/codesystems.html) code systems).
@@ -102,8 +102,8 @@ concept:
   definition: A Payer-assigned claim/prior authorization identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the “re-association tracking control numbers” or "attachment control number (ACN)".
 
 - code: admin-ref-number
-  display: Administrative reference number
-  definition: A Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "administrative reference number".
+  display: Administrative Reference Number
+  definition: A Payer-assigned business identifier that ties the attachment(s) back to the prior authorization. This value is referred to as the "administrative reference number".
   
 - code: multiple-submits-flag
   display: Multiple Submits Flag

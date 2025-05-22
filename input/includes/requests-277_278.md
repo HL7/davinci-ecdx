@@ -9,9 +9,9 @@
   -->
 
 | Data Element | CDex Request Attachment Task Profile Element | X12 277RFAI-v6020 | X12n 278 Response-v5010 | Request Attachments Comments |
-|----|-----|--------------|--------------|---------|
+|---------|-------|--------------|--------------|---------|
 | Tracking ID | Task.identifier | Loop: 2200D Segment: TRN02 Notes: TRN01 = "1" | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level Segment: TRN02 Notes: TRN01 = “1”: Payer Supplied TRN01 = “2” : Provider Supplied (echoed back) | Payer-assigned tracking/control number |
-| Administrative Reference Number | Task.identifier | - | Loop: 2000E - Patient Event Level or Loop: 2000F Service Level:REF02 where REF01 == "NT" | Payer-assigned administrative reference number |
+| <span class="bg-success" markdown="1">Administrative Reference Number</span><!-- new-content --> | <span class="bg-success" markdown="1">Task.identifier</span><!-- new-content --> | <span class="bg-success" markdown="1">-</span><!-- new-content --> | <span class="bg-success" markdown="1">Loop: 2000E - Patient Event Level or Loop: 2000F Service Level:REF02 where REF01 == "NT"</span><!-- new-content --> | <span class="bg-success" markdown="1">Payer-assigned administrative reference number</span><!-- new-content --> |
 | Use | Task.reasonCode | Claim | Prior Auth | Choice of "claim" or "preauthorization" |
 | Payer ID | Task.requester.identifier | Loop: 2100A Segment: NM109 Notes: NM108 = "PI" | Loop: 2010A Segment: NM109 Notes: NM108 = "PI" | Payer ID |
 | Payer URL | "PayerUrl" Task.input | Loop: 2100A Segment: PER04 Notes: PER03 = "UR" | Loop: 2010A Segment: PER08 Notes: PER07 = "UR" | Payer endpoint where the attachments are submitted using the $submit-attachment operation |

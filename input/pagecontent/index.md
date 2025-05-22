@@ -1,5 +1,5 @@
 
-<!-- {% raw %} {%include new-content-note.md %} {% endraw %} -->
+{%include new-content-note.md %}
 
 ### Introduction
 

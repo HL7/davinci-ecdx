@@ -9,9 +9,9 @@
   -->
 
 | Data Element | CDex $submit-attachment Parameter | X12n 275-v6020 | Submit Attachments Comments |
-|----|----|---------|---------------|
+|---------|-------|---------|---------------|
 | Tracking ID | TrackingId | Loop: 2000A Segment: TRN02 | For *unsolicited* attachments, this is the provider-assigned tracking/control number. For *solicited* attachments, this is the payer-assigned tracking/control number. |
-| Administrative Reference Number | AdminRefNumber | - | This payer assigned identifier is only for prior authorization solicited attachments. |
+| <span class="bg-success" markdown="1">Administrative Reference Number</span><!-- new-content --> | <span class="bg-success" markdown="1">AdminRefNumber</span><!-- new-content --> | <span class="bg-success" markdown="1">-</span><!-- new-content --> | <span class="bg-success" markdown="1">This payer assigned identifier is only for prior authorization solicited attachments.</span><!-- new-content --> |
 | Use | AttachTo | Claim | Choice of "claim" or "preauthorization" |
 | Payer ID | PayerId | Loop: 1000A Segment: NM109 | Payer ID |
 | Payer URL | (operation endpoint) | - | See the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/endpoint-discovery.html) documented in the Da Vinci Health Record Exchange (HRex) Impelementation guide |

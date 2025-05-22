@@ -7,7 +7,7 @@ version: 1.0.0
 name: CDexParametersSubmitAttachment
 title: CDex Parameters Submit Attachment Profile
 status: active
-date: '2023-05-25'
+date: '2025-05-22'
 
 description: >-
   The Parameters profile for Da Vinci [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
@@ -190,7 +190,7 @@ differential:
       min: 1
       mustSupport: true
 
-    - id: 'Parameters.parameter:Attachment.part:Code'
+    - id: 'Parameters.parameter:Attachment.part:LineItem'
       path: Parameters.parameter.part
       sliceName: LineItem
       type:
