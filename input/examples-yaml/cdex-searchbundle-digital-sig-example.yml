@@ -1,66 +1,86 @@
-entry:
-- fullUrl: http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f
-  resource:
-    category:
-    - coding:
-      - code: encounter-diagnosis
-        display: Encounter Diagnosis
-        system: http://terminology.hl7.org/CodeSystem/condition-category
-    clinicalStatus:
-      coding:
-      - code: active
-        system: http://terminology.hl7.org/CodeSystem/condition-clinical
-    code:
-      coding:
-      - code: '122481008'
-        display: Hammer toe (disorder)
-        system: http://snomed.info/sct
-      text: Hammer Toe
-    encounter:
-      reference: http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82
-    id: 4ac41715-fcbd-421c-8796-9b2c9706dd3f
-    meta:
-      
-      profile:
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0
-      - http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0
-      
-      
-    onsetDateTime: '2018-10-21T21:22:15-07:00'
-    recordedDate: '2018-10-21T21:22:15-07:00'
-    resourceType: Condition
-    subject:
-      reference: http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
-    verificationStatus:
-      coding:
-      - code: confirmed
-        system: http://terminology.hl7.org/CodeSystem/condition-ver-status
-  search:
-    mode: match
-id: cdex-searchbundle-digital-sig-example
-link:
-- relation: self
-  url: http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b
-meta:
-  extension:
-  - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: CDEX SearchSet Bundle with Digital Signature Example
-  - url: http://hl7.org/fhir/StructureDefinition/instance-description
-    valueMarkdown: Digital signature example showing how it is used to sign a [search
-      set Bundle](direct-query.html#signatures).  The CDEX use case would be a response
-      to a Direct Query where a digital signature was required.
-  profile:
-  - http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
 resourceType: Bundle
-signature:
-  data: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpZEhsd0lqb2lTbGRVSWl3aWRYTmxJam9pYzJsbklpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuLlN4eW5HX25kcFRaT09TeHJnWXo4YWpPQlZnYmd4dmIwMjJBaUdqenA3dEVWdWVvZ3A5R18yY3FKZEtYSDQ4bzdVUGJNSVhvQk56UWtkRnRhX1ZRamh5V1paS2t4djBCVG5Ra0xpUElvcTYxYkYybEFvXzJZbzFCd3AtSFF0Z0dud3JNckdaaWNqMVZpajBpMG82YlZOT1RKamo4WWlhR0Z2RUZrbEMxazRIcTVYbHlwb2NrNjBjREV5Qll6cDdva2tER0RYV0dsZ1FCRFdZR0hjeHphR0Z3T0ZRNnhaWjRVeU5FeUN3M3RSLVVIcEJfNnJBNGhZWERVVkpPdU96TEJmaW9HRU55Q09OMEV5QVZUVlZselE2V1JJM1M2OS01WkVNSjFxLUk2aUUxd29YQUNHaVY3M2FJdVNKb2hXUnNlUEpHUXgwQlZ1eFlTVk5Yejh0bnJoU3NDa24xNk5ZbXJDN19zV1dZSTE2dGlLZ1d5d0ZyaThfeExycENfTGc0LVpMVTQwYml1cFhZVXE1STRIdzZQNkZVSzVabXp6aVRQNXdyQ09MdkVCWTlLT29NTE12d08ySW93M0pQcTFTUmFlRFdKMWxvYkdxaEZPcVRWbVRvWDNwZzYzTWktMFBrZnRGN0F0dVVSMTUwYUhjWjJaSE1SQl9WczN0MVllbHAz
-  type:
-  - code: 1.2.840.10065.1.12.1.5
-    display: Verification Signature
-    system: urn:iso-astm:E1762-95:2013
-  when: '2020-10-23T04:54:56.048+00:00'
-  who:
-    reference: Organization/min
-total: 1
 type: searchset
+total: 1
+link:
+    - 
+        relation: self
+        url: 'http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b'
+entry:
+    - 
+        fullUrl: 'http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f'
+        resource:
+            resourceType: Condition
+            id: 4ac41715-fcbd-421c-8796-9b2c9706dd3f
+            meta:
+                versionId: '10'
+                lastUpdated: '2020-04-28T20:28:00.008+00:00'
+            text:
+                status: generated
+                div: '<div xmlns="http://www.w3.org/1999/xhtml"><a name="Condition_4ac41715-fcbd-421c-8796-9b2c9706dd3f"> </a><p class="res-header-id"><b>Generated Narrative: Condition 4ac41715-fcbd-421c-8796-9b2c9706dd3f</b></p><a name="4ac41715-fcbd-421c-8796-9b2c9706dd3f"> </a><a name="hc4ac41715-fcbd-421c-8796-9b2c9706dd3f"> </a><a name="4ac41715-fcbd-421c-8796-9b2c9706dd3f-en-US"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">version: 10; Last updated: 2020-04-28 20:28:00+0000; </p><p style="margin-bottom: 0px">Information Source: #cabiJIK51sD2iz4N</p></div><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Active</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmed</span></p><p><b>category</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}">Encounter Diagnosis</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 122481008}">Hammer Toe</span></p><p><b>subject</b>: <a href="http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b">http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b</a></p><p><b>encounter</b>: <a href="http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82">http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82</a></p><p><b>onset</b>: 2018-10-21 21:22:15-0700</p><p><b>recordedDate</b>: 2018-10-21 21:22:15-0700</p></div>'
+            clinicalStatus:
+                coding:
+                    - 
+                        system: 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+                        code: active
+            verificationStatus:
+                coding:
+                    - 
+                        system: 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
+                        code: confirmed
+            category:
+                - 
+                    coding:
+                        - 
+                            system: 'http://terminology.hl7.org/CodeSystem/condition-category'
+                            code: encounter-diagnosis
+                            display: Encounter Diagnosis
+            code:
+                coding:
+                    - 
+                        system: 'http://snomed.info/sct'
+                        code: '122481008'
+                        display: Hammer toe (disorder)
+                text: Hammer Toe
+            subject:
+                reference: 'http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b'
+            encounter:
+                reference: 'http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82'
+            onsetDateTime: '2018-10-21T21:22:15-07:00'
+            recordedDate: '2018-10-21T21:22:15-07:00'
+        search:
+            mode: match
+id: cdex-searchbundle-digital-sig-example
+meta:
+    extension:
+        - 
+            url: 'http://hl7.org/fhir/StructureDefinition/instance-name'
+            valueString: CDEX SearchSet Bundle with Digital Signature Example
+        - 
+            url: 'http://hl7.org/fhir/StructureDefinition/instance-description'
+            valueMarkdown: 'Digital signature example showing how it is used to sign a [search set Bundle ](direct-query.html#signatures).  The CDEX use case would be a response to a Direct Query where a digital signature was required.'
+    profile:
+        - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle'
+signature:
+    type:
+        - 
+            system: 'urn:iso-astm:E1762-95:2013'
+            code: 1.2.840.10065.1.12.1.5
+            display: Verification Signature
+    when: '2020-10-23T04:54:56.048+00:00'
+    who:
+        identifier:
+            system: 'http://hl7.org/fhir/sid/us-npi'
+            type:
+                coding:
+                    - 
+                        system: 'http://terminology.hl7.org/CodeSystem/v2-0203'
+                        code: NPI
+            value: '9941339108'
+        display: Dr Signer
+    onBehalfOf:
+        identifier:
+            system: 'http://hl7.org/fhir/sid/us-npi'
+            value: '1184932014'
+    targetFormat: 'application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document'
+    sigFormat: application/jose
+    data: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXQwZVNJNklsSlRJaXdpYzJsblZDSTZJakl3TWpBdE1UQXRNak5VTURRNk5UUTZOVFl1TURRNEt6QXdPakF3SWl3aWRIbHdJam9pU2xkVUlpd2llRFZqSWpwYklrMUpTVVV6ZWtORFFUQmxaMEYzU1VKQlowbEtRVTlMUmxsMlRYZFNLM2xSVFVFd1IwTlRjVWRUU1dJelJGRkZRa04zVlVGTlNVZE9UVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkpWZDBWM1dVUldVVkZMUkVGNFNWcFhSbk5rUjJoc1VrZEdNRmxVUlhoR2VrRldRbWRPVmtKQlRVMUVhMVo1WVZkTloxTkhSbWhqZVhkblVrWmFUazFUVlhkSmQxbEtTMjlhU1doMlkwNUJVV3RDUm1oYWJHRkhSbWhqTUVKdldsZEdjMlJIYUd4YVIwWXdXVlJGZFdJelNtNU5RalJZUkZSSmVFMVVRWGxPZWtVelRrUkpkMDVHYjFoRVZFbDVUVlJCZVUxcVJUTk9SRWwzVGtadmQyZFpNSGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhHVkVGVVFtZE9Wa0pCYjAxRVJXaHNXVmQ0TUdGSFZrVlpXRkpvVFZSRldFMUNWVWRCTVZWRlFYZDNUMUpZU25CWmVVSkpXVmRHZWt4RFFrVldhekI0U2xSQmFrSm5hM0ZvYTJsSE9YY3dRa05SUlZkR2JWWnZXVmRHZWxGSGFHeFpWM2d3WVVkV2ExbFlVbWhOVXpWMlkyMWpkMmRuUjJsTlFUQkhRMU54UjFOSllqTkVVVVZDUVZGVlFVRTBTVUpxZDBGM1oyZEhTMEZ2U1VKblVVUndTMk5UYTI5QlRUWnpWekl4SzNaWFZHVkpWazlIZURFd1RWZGhjMUY1TjFaSWFXUTJlbmx4V0VGQ1RTdDZibVpDYmxobGJubFZNR294UmxSMlVHMVNaazlFYjA5RVdGWjFVRlYzUkc5dGFFTklhQ3RpWTJ4WE9VdE5NbTgxTmpOamVGSkxSWFpDYm1GSWNuTnFkelY1VG0xNFR6Vlpha1ZTWW1oMFNHUlJaWEZyZEdSM00xWlpSVkpTT1VodmVFeFBNMFpyYzNwU01qa3lTRlJDTkhoWE0zbFhiRll6WjFSclRWRnZlbEJUWTBwTFNETmlSemhRY1hFMlFWbFFTamRETkZsQ1NXeFZVMlJDVFZac00zRnVaVVZtWnpkbWRYaHBSbVpZYjJaa1ZGWnROM0pOYVdsSE4xZzVlalF6VUdacGJIRmhaV2x6Wm0xMFVuaEJiRkozUlU1WWNrZ3pUM1pQUkZCNVREQnlWRzVIT0VOellrRllXVlpKVFcxa1pFaGxORnBHT1hCc2FEazFjMm8wY0UxVWFFeDBZMHBZTDI4NVdFaE1hbWczUlcxYWVXZEtTRmRGVVhFMFVIZEdkMXBrYldKalptaERiVTl5T0RoSU9FSmlWWEoxTHpkV05ucGljMGN4VGpGRFYyeHVaR3hpVm5wdVRDc3pTVTFQY2pocldHRklZMkZ1Y1daamEyZEdWalJGY201bWFrWktjVEZQU1dGQmJYTk5hamcxZUUxcmFubFlUSGxqVEV3dmRUVnVNbTgyUW1jNU15OVZVbVp4ZFU5dlUwbEhUME5TTWpWRVlWcDZjSGN5YXpOek4yOUZPV1JOZDBWWFdIUm1XR2RaZEdneVlteHFlVFYwUmtnd1IycHdUMnQ0TURkcU4xcFVOVWh1ZUc1c2MwTkJkMFZCUVdGT1FVMUVOSGRFUVZsRVZsSXdWRUpCVlhkQmQwVkNMM3BCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRKVVZsRVZsSXdVa0pDYjNkSFNVbFhaRE5rTTB4dGFHeFpWM2d3WVVkV2ExbFlVbWhoVnpWcVRHMU9kbUpVUVU1Q1oydHhhR3RwUnpsM01FSkJVWE5HUVVGUFEwRlpSVUZEZFUxVlRuRTVZWGtySzJVMVdVTTNVVVpQT1RSeVpucDRSMUZ1UmpOSGEyeGFUa0ZZYlVseU4xQldSMlJwUjFreVIxUjRMemxTZEVoRGQxUkxlbXRNSzNsMlMyOXFaVm81WkZaTE9IZHlSMVpwVW10UEwycFZlVm9yUzJOWFVtOXJWV3B6TlRsdVkwcEhVazFUVTFKNGRHVkRVWFZxZERSb1pqSXJMM0ZXSzJZeWMwMVJkRVZ5ZDFCRk16QjJZbkZTV1ZWT1RrNUNWa1ZSY0dGUmVDOWhZMHBFVlhZNWRqZHpha2hwU2tSeFdIZFJLM0o2YWprMWFVaEJTV0ZsUlVoeFJpOU5jekl5Y0RKaVpWcDFjWFpKVVV0bFRXd3JjM1pXY1VoMGFYVjZWMjVHTkZVMlZrbHRjR3R5TkdKSWJEZGxaMVk1U0Rac05sUXlVMDFyYWpaeFJGVTFaVGxPWnpCYWJFeFVkRzl6YzJoQ1RHMXZjRVkzWlRkSWVYSlVSVUZ0Wms5UVMxRmxNRVZuT1VVeWRYSjZlSEZDZFVjMU5HczFNRWN5U2pCR2FWQnpVVXBCYUVacFRrZDNVMmMwVXpOSWVWWkVSemQxWlV0a01FdzVNM2RMVDA1UFdVZDJUVXRwZWtOSVFpdHdTM1pGVFVwdldqaDVPWFZwUWl0SVJsaGpjRGxTWVVweFNqazNTSEJhVkVWMksyeHBRM0F5VUZOWWVtTkxNSEl5TlZOamVXcEdObVJNYjNWTE1sTkNNekI0UVhaS09IUkZOVGcwSzJweFVUWkRSMlZqVlRsWWFuWnNRV3AxU21SRGNrUmxWbEJ6YW10dU4wOVFXRWNyT0ZoYVZUZDZjVWhhVG0xWVdERlpXVFJJTlhKblJVbzBPR3h5VlhKUU0wazRVaUpkZlEuZXlKbGJuUnllU0k2VzNzaVpuVnNiRlZ5YkNJNkltaDBkSEE2THk5b1lYQnBMbVpvYVhJdWIzSm5MMkpoYzJWU05DOURiMjVrYVhScGIyNHZOR0ZqTkRFM01UVXRabU5pWkMwME1qRmpMVGczT1RZdE9XSXlZemszTURaa1pETm1JaXdpY21WemIzVnlZMlVpT25zaVkyRjBaV2R2Y25raU9sdDdJbU52WkdsdVp5STZXM3NpWTI5a1pTSTZJbVZ1WTI5MWJuUmxjaTFrYVdGbmJtOXphWE1pTENKa2FYTndiR0Y1SWpvaVJXNWpiM1Z1ZEdWeUlFUnBZV2R1YjNOcGN5SXNJbk41YzNSbGJTSTZJbWgwZEhBNkx5OTBaWEp0YVc1dmJHOW5lUzVvYkRjdWIzSm5MME52WkdWVGVYTjBaVzB2WTI5dVpHbDBhVzl1TFdOaGRHVm5iM0o1SW4xZGZWMHNJbU5zYVc1cFkyRnNVM1JoZEhWeklqcDdJbU52WkdsdVp5STZXM3NpWTI5a1pTSTZJbUZqZEdsMlpTSXNJbk41YzNSbGJTSTZJbWgwZEhBNkx5OTBaWEp0YVc1dmJHOW5lUzVvYkRjdWIzSm5MME52WkdWVGVYTjBaVzB2WTI5dVpHbDBhVzl1TFdOc2FXNXBZMkZzSW4xZGZTd2lZMjlrWlNJNmV5SmpiMlJwYm1jaU9sdDdJbU52WkdVaU9pSXhNakkwT0RFd01EZ2lMQ0prYVhOd2JHRjVJam9pU0dGdGJXVnlJSFJ2WlNBb1pHbHpiM0prWlhJcElpd2ljM2x6ZEdWdElqb2lhSFIwY0RvdkwzTnViMjFsWkM1cGJtWnZMM05qZENKOVhTd2lkR1Y0ZENJNklraGhiVzFsY2lCVWIyVWlmU3dpWlc1amIzVnVkR1Z5SWpwN0luSmxabVZ5Wlc1alpTSTZJbWgwZEhBNkx5OWxlR0Z0Y0d4bExtOXlaeTlqWkdWNEwzQnliM1pwWkdWeUwyWm9hWEl2Ulc1amIzVnVkR1Z5THpWbVpUWXlZMlExTFdKbVkyWXROR1F6WWkxaE1XVTVMVGd3WkRabU56VmtObVk0TWlKOUxDSnBaQ0k2SWpSaFl6UXhOekUxTFdaalltUXROREl4WXkwNE56azJMVGxpTW1NNU56QTJaR1F6WmlJc0ltMWxkR0VpT25zaWJHRnpkRlZ3WkdGMFpXUWlPaUl5TURJd0xUQTBMVEk0VkRJd09qSTRPakF3TGpBd09Dc3dNRG93TUNJc0luWmxjbk5wYjI1SlpDSTZJakV3SW4wc0ltOXVjMlYwUkdGMFpWUnBiV1VpT2lJeU1ERTRMVEV3TFRJeFZESXhPakl5T2pFMUxUQTNPakF3SWl3aWNtVmpiM0prWldSRVlYUmxJam9pTWpBeE9DMHhNQzB5TVZReU1Ub3lNam94TlMwd056b3dNQ0lzSW5KbGMyOTFjbU5sVkhsd1pTSTZJa052Ym1ScGRHbHZiaUlzSW5OMVltcGxZM1FpT25zaWNtVm1aWEpsYm1ObElqb2lhSFIwY0RvdkwyVjRZVzF3YkdVdWIzSm5MMk5rWlhndmNISnZkbWxrWlhJdlptaHBjaTlRWVhScFpXNTBMekEyWlRGbU1HUmtMVFZtWW1VdE5EUTRNQzA1WW1JMExUWmlOVFJsWXpBeVpETXhZaUo5TENKMFpYaDBJanA3SW1ScGRpSTZJanhrYVhZZ2VHMXNibk05WENKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hvZEcxc1hDSS1QR0VnYm1GdFpUMWNJa052Ym1ScGRHbHZibDgwWVdNME1UY3hOUzFtWTJKa0xUUXlNV010T0RjNU5pMDVZakpqT1Rjd05tUmtNMlpjSWo0Z1BDOWhQanh3SUdOc1lYTnpQVndpY21WekxXaGxZV1JsY2kxcFpGd2lQanhpUGtkbGJtVnlZWFJsWkNCT1lYSnlZWFJwZG1VNklFTnZibVJwZEdsdmJpQTBZV00wTVRjeE5TMW1ZMkprTFRReU1XTXRPRGM1TmkwNVlqSmpPVGN3Tm1Sa00yWThMMkktUEM5d1BqeGhJRzVoYldVOVhDSTBZV00wTVRjeE5TMW1ZMkprTFRReU1XTXRPRGM1TmkwNVlqSmpPVGN3Tm1Sa00yWmNJajRnUEM5aFBqeGhJRzVoYldVOVhDSm9ZelJoWXpReE56RTFMV1pqWW1RdE5ESXhZeTA0TnprMkxUbGlNbU01TnpBMlpHUXpabHdpUGlBOEwyRS1QR0VnYm1GdFpUMWNJalJoWXpReE56RTFMV1pqWW1RdE5ESXhZeTA0TnprMkxUbGlNbU01TnpBMlpHUXpaaTFsYmkxVlUxd2lQaUE4TDJFLVBHUnBkaUJ6ZEhsc1pUMWNJbVJwYzNCc1lYazZJR2x1YkdsdVpTMWliRzlqYXpzZ1ltRmphMmR5YjNWdVpDMWpiMnh2Y2pvZ0kyUTVaVEJsTnpzZ2NHRmtaR2x1WnpvZ05uQjRPeUJ0WVhKbmFXNDZJRFJ3ZURzZ1ltOXlaR1Z5T2lBeGNIZ2djMjlzYVdRZ0l6aGtZVEZpTkRzZ1ltOXlaR1Z5TFhKaFpHbDFjem9nTlhCNE95QnNhVzVsTFdobGFXZG9kRG9nTmpBbFhDSS1QSEFnYzNSNWJHVTlYQ0p0WVhKbmFXNHRZbTkwZEc5dE9pQXdjSGhjSWo1MlpYSnphVzl1T2lBeE1Ec2dUR0Z6ZENCMWNHUmhkR1ZrT2lBeU1ESXdMVEEwTFRJNElESXdPakk0T2pBd0t6QXdNREE3SUR3dmNENDhjQ0J6ZEhsc1pUMWNJbTFoY21kcGJpMWliM1IwYjIwNklEQndlRndpUGtsdVptOXliV0YwYVc5dUlGTnZkWEpqWlRvZ0kyTmhZbWxLU1VzMU1YTkVNbWw2TkU0OEwzQS1QQzlrYVhZLVBIQS1QR0ktWTJ4cGJtbGpZV3hUZEdGMGRYTThMMkktT2lBOGMzQmhiaUIwYVhSc1pUMWNJa052WkdWek9udG9kSFJ3T2k4dmRHVnliV2x1YjJ4dloza3VhR3czTG05eVp5OURiMlJsVTNsemRHVnRMMk52Ym1ScGRHbHZiaTFqYkdsdWFXTmhiQ0JoWTNScGRtVjlYQ0ktUVdOMGFYWmxQQzl6Y0dGdVBqd3ZjRDQ4Y0Q0OFlqNTJaWEpwWm1sallYUnBiMjVUZEdGMGRYTThMMkktT2lBOGMzQmhiaUIwYVhSc1pUMWNJa052WkdWek9udG9kSFJ3T2k4dmRHVnliV2x1YjJ4dloza3VhR3czTG05eVp5OURiMlJsVTNsemRHVnRMMk52Ym1ScGRHbHZiaTEyWlhJdGMzUmhkSFZ6SUdOdmJtWnBjbTFsWkgxY0lqNURiMjVtYVhKdFpXUThMM053WVc0LVBDOXdQanh3UGp4aVBtTmhkR1ZuYjNKNVBDOWlQam9nUEhOd1lXNGdkR2wwYkdVOVhDSkRiMlJsY3pwN2FIUjBjRG92TDNSbGNtMXBibTlzYjJkNUxtaHNOeTV2Y21jdlEyOWtaVk41YzNSbGJTOWpiMjVrYVhScGIyNHRZMkYwWldkdmNua2daVzVqYjNWdWRHVnlMV1JwWVdkdWIzTnBjMzFjSWo1RmJtTnZkVzUwWlhJZ1JHbGhaMjV2YzJselBDOXpjR0Z1UGp3dmNENDhjRDQ4WWo1amIyUmxQQzlpUGpvZ1BITndZVzRnZEdsMGJHVTlYQ0pEYjJSbGN6cDdhSFIwY0RvdkwzTnViMjFsWkM1cGJtWnZMM05qZENBeE1qSTBPREV3TURoOVhDSS1TR0Z0YldWeUlGUnZaVHd2YzNCaGJqNDhMM0EtUEhBLVBHSS1jM1ZpYW1WamREd3ZZajQ2SUR4aElHaHlaV1k5WENKb2RIUndPaTh2WlhoaGJYQnNaUzV2Y21jdlkyUmxlQzl3Y205MmFXUmxjaTltYUdseUwxQmhkR2xsYm5Rdk1EWmxNV1l3WkdRdE5XWmlaUzAwTkRnd0xUbGlZalF0Tm1JMU5HVmpNREprTXpGaVhDSS1hSFIwY0RvdkwyVjRZVzF3YkdVdWIzSm5MMk5rWlhndmNISnZkbWxrWlhJdlptaHBjaTlRWVhScFpXNTBMekEyWlRGbU1HUmtMVFZtWW1VdE5EUTRNQzA1WW1JMExUWmlOVFJsWXpBeVpETXhZand2WVQ0OEwzQS1QSEEtUEdJLVpXNWpiM1Z1ZEdWeVBDOWlQam9nUEdFZ2FISmxaajFjSW1oMGRIQTZMeTlsZUdGdGNHeGxMbTl5Wnk5alpHVjRMM0J5YjNacFpHVnlMMlpvYVhJdlJXNWpiM1Z1ZEdWeUx6Vm1aVFl5WTJRMUxXSm1ZMll0TkdRellpMWhNV1U1TFRnd1pEWm1OelZrTm1ZNE1sd2lQbWgwZEhBNkx5OWxlR0Z0Y0d4bExtOXlaeTlqWkdWNEwzQnliM1pwWkdWeUwyWm9hWEl2Ulc1amIzVnVkR1Z5THpWbVpUWXlZMlExTFdKbVkyWXROR1F6WWkxaE1XVTVMVGd3WkRabU56VmtObVk0TWp3dllUNDhMM0EtUEhBLVBHSS1iMjV6WlhROEwySS1PaUF5TURFNExURXdMVEl4SURJeE9qSXlPakUxTFRBM01EQThMM0EtUEhBLVBHSS1jbVZqYjNKa1pXUkVZWFJsUEM5aVBqb2dNakF4T0MweE1DMHlNU0F5TVRveU1qb3hOUzB3TnpBd1BDOXdQand2WkdsMlBpSXNJbk4wWVhSMWN5STZJbWRsYm1WeVlYUmxaQ0o5TENKMlpYSnBabWxqWVhScGIyNVRkR0YwZFhNaU9uc2lZMjlrYVc1bklqcGJleUpqYjJSbElqb2lZMjl1Wm1seWJXVmtJaXdpYzNsemRHVnRJam9pYUhSMGNEb3ZMM1JsY20xcGJtOXNiMmQ1TG1oc055NXZjbWN2UTI5a1pWTjVjM1JsYlM5amIyNWthWFJwYjI0dGRtVnlMWE4wWVhSMWN5SjlYWDE5TENKelpXRnlZMmdpT25zaWJXOWtaU0k2SW0xaGRHTm9JbjE5WFN3aWJHbHVheUk2VzNzaWNtVnNZWFJwYjI0aU9pSnpaV3htSWl3aWRYSnNJam9pYUhSMGNEb3ZMMmhoY0drdVptaHBjaTV2Y21jdlltRnpaVkkwTDBOdmJtUnBkR2x2Ymo5d1lYUnBaVzUwUFRBMlpURm1NR1JrTFRWbVltVXRORFE0TUMwNVltSTBMVFppTlRSbFl6QXlaRE14WWlKOVhTd2ljbVZ6YjNWeVkyVlVlWEJsSWpvaVFuVnVaR3hsSWl3aWRHOTBZV3dpT2pFc0luUjVjR1VpT2lKelpXRnlZMmh6WlhRaWZRLkJvaEg5YW5sZkFyMjEwalhXaGlFcHgtVzBIYkdBdEc4Q25KY1BKaW0ydG5nWi1LZ01mVEVWMWhZXzRacTdIT2h2RVgwM3N4Y2F2MUlVYWxfN1Y0V1p1dWtMclFTRHFlNXJGeHhicS1CNnFvSWNnRFdvX0MtX1ZJTGZBVVF4d2pTWE5PdWFrYUdjcmFpMDFreDl5WHNQQmR3cU9wWHZKY3BqUTB6VkpJR1UwbzNCOW5rZEFyNGJvUnJZU0VsMmtnUUh3WUZQT2RCT3VUSnNOMjctdURWV1V3b1pxbmtYMzVxdW1xUlI0bzhTbXVDVWRWMkNzd2QySG5OSmRhS04xcEVpQ2hOemZSZFFhN2ZLV0IzZGl0dF90cTFqZXN3cDMxUEFhU0wtZzN1Y1RoOS1xMXVVUmtDdFMycmlxMXA3NURhN1lobEM0cEI3U1VJY2RZZVpQdXJMT25XZnBZc2lWdGRsTEloanlkOWNpNXBWWXpzMEc5cmlUdDM1UjhGZGJVeGhXSjlnUmdDZkdRSXJZd2pEdzRjTnFBb1FueExSSU1mWElXVWY4MkJwb3A1cGliZWRHaXR2eUpFa05jOUhxa01obkNGYVBtVFA2cHE0Zjl0X3hpWUlsY2tOSFV4RGt2RTUzWHlhYkJ2dVdsV0NZSmY5TFFVc1NhSFBFbXdHOElM

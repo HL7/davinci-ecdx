@@ -784,7 +784,7 @@ definition:
   - reference:
       reference: Bundle/cdex-searchbundle-digital-sig-example
     description: Digital signature example showing how it is used to sign a [search
-      set Bundle](direct-query.html#signatures).  The CDEX use case would be a response
+      set Bundle ](direct-query.html#signatures).  The CDEX use case would be a response
       to a Direct Query where a digital signature was required.
     name: CDEX SearchSet Bundle with Digital Signature Example
     exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle
