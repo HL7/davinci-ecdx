@@ -1,115 +1,103 @@
 {
-    "resourceType": "CapabilityStatement",
-    "id": "cdex-capabilitystatement-inline-example",
-    "meta": {
-        "extension": [
+  "resourceType": "CapabilityStatement",
+  "id": "cdex-capabilitystatement-inline-example",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/cdex-capabilitystatement-inline-example",
+  "status": "active",
+  "date": "2024-05-16",
+  "description": "R4 example of a CapabilityStatement advertising support for CDex Task Update topic-based subscription",
+  "kind": "requirements",
+  "instantiates": [
+    "http://hl7.org/fhir/uv/subscriptions-backport/CapabilityStatement/backport-subscription-server-r4|1.1.0"
+  ],
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "resource": [
+        {
+          "extension": [
             {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Capabilitystatement Inline Example"
+              "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
+              "valueCanonical": "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task"
+            }
+          ],
+          "type": "Subscription",
+          "supportedProfile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription|1.1.0"
+          ],
+          "interaction": [
+            {
+              "code": "read"
             },
             {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Capabilitystatement example used to create inline example to demonstrate using the CapabilityStatement SubscriptionTopic Canonical] extension to advertise the canonical URLs of topics available to clients"
+              "code": "create"
+            },
+            {
+              "code": "update"
             }
-        ]
-    },
-    "url": "http://hl7.org/fhir/us/davinci-cdex/CapabilityStatement/cdex-capabilitystatement-inline-example",
-    "status": "active",
-    "date": "2024-05-16",
-    "description": "R4 example of a CapabilityStatement advertising support for CDex Task Update topic-based subscription",
-    "kind": "requirements",
-    "instantiates": [
-        "http://hl7.org/fhir/uv/subscriptions-backport/CapabilityStatement/backport-subscription-server-r4|1.1.0"
-    ],
-    "fhirVersion": "4.0.1",
-    "format": [
-        "json"
-    ],
-    "rest": [
+          ],
+          "operation": [
+            {
+              "name": "status",
+              "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status"
+            }
+          ]
+        },
         {
-            "mode": "server",
-            "resource": [
-                {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/capabilitystatement-subscriptiontopic-canonical",
-                            "valueCanonical": "http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task"
-                        }
-                    ],
-                    "type": "Subscription",
-                    "supportedProfile": [
-                        "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription|1.1.0"
-                    ],
-                    "interaction": [
-                        {
-                            "code": "read"
-                        },
-                        {
-                            "code": "create"
-                        },
-                        {
-                            "code": "update"
-                        }
-                    ],
-                    "operation": [
-                        {
-                            "name": "status",
-                            "definition": "http://hl7.org/fhir/uv/subscriptions-backport/OperationDefinition/backport-subscription-status"
-                        }
-                    ]
-                },
-                {
-                    "type": "Patient",
-                    "interaction": [
-                        {
-                            "code": "read"
-                        },
-                        {
-                            "code": "create"
-                        },
-                        {
-                            "code": "update"
-                        },
-                        {
-                            "code": "delete"
-                        }
-                    ]
-                },
-                {
-                    "type": "Encounter",
-                    "interaction": [
-                        {
-                            "code": "read"
-                        },
-                        {
-                            "code": "create"
-                        },
-                        {
-                            "code": "update"
-                        },
-                        {
-                            "code": "delete"
-                        }
-                    ]
-                },
-                {
-                    "type": "Observation",
-                    "interaction": [
-                        {
-                            "code": "read"
-                        },
-                        {
-                            "code": "create"
-                        },
-                        {
-                            "code": "update"
-                        },
-                        {
-                            "code": "delete"
-                        }
-                    ]
-                }
-            ]
+          "type": "Patient",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            }
+          ]
+        },
+        {
+          "type": "Encounter",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            }
+          ]
+        },
+        {
+          "type": "Observation",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

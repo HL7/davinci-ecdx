@@ -1,131 +1,104 @@
 {
-    "resourceType": "Bundle",
-    "id": "cdex-searchbundle-provenance-example",
-    "meta": {
-        "extension": [
+  "resourceType": "Bundle",
+  "id": "cdex-searchbundle-provenance-example",
+  "type": "searchset",
+  "total": 1,
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+        "clinicalStatus": {
+          "coding": [
             {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "Direct Query Response Including Provenance"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Bundle example used in the [direct query scenario](direct-query.html#provenance) that includes the corresponding Provenance records. Payer Seeks Insured Person/Patient Active Conditions from Provider to support a claims audit."
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
             }
-        ]
-    },
-    "type": "searchset",
-    "total": 1,
-    "link": [
-        {
-            "relation": "self",
-            "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"
-        }
-    ],
-    "entry": [
-        {
-            "fullUrl": "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f",
-            "resource": {
-                "resourceType": "Condition",
-                "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
-                "meta": {
-                    "versionId": "10",
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0"
-                    ]
-                },
-                "clinicalStatus": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                            "code": "active"
-                        }
-                    ]
-                },
-                "verificationStatus": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                            "code": "confirmed"
-                        }
-                    ]
-                },
-                "category": [
-                    {
-                        "coding": [
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                                "code": "encounter-diagnosis",
-                                "display": "Encounter Diagnosis"
-                            }
-                        ]
-                    }
-                ],
-                "code": {
-                    "coding": [
-                        {
-                            "code": "122481008",
-                            "display": "Hammer toe (disorder)",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ],
-                    "text": "Hammer Toe"
-                },
-                "subject": {
-                    "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
-                },
-                "encounter": {
-                    "reference": "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
-                },
-                "onsetDateTime": "2018-10-21T21:22:15-07:00",
-                "recordedDate": "2018-10-21T21:22:15-07:00"
-            },
-            "search": {
-                "mode": "match"
-            }
+          ]
         },
-        {
-            "fullUrl": "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf",
-            "resource": {
-                "resourceType": "Provenance",
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|6.1.0",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|7.0.0"
-                    ]
-                },
-                "id": "b2ce4584-b213-411b-bdc9-d515dc92eadf",
-                "target": [
-                    {
-                        "reference": "Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"
-                    }
-                ],
-                "recorded": "2018-10-21T21:22:15-07:00",
-                "agent": [
-                    {
-                        "onBehalfOf": {
-                            "reference": "Organization/min"
-                        },
-                        "type": {
-                            "coding": [
-                                {
-                                    "code": "author",
-                                    "display": "Author",
-                                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
-                                }
-                            ]
-                        },
-                        "who": {
-                            "reference": "Practitioner/min"
-                        }
-                    }
-                ]
-            },
-            "search": {
-                "mode": "include"
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
             }
-        }
-    ]
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "122481008",
+              "display": "Hammer toe (disorder)",
+              "system": "http://snomed.info/sct"
+            }
+          ],
+          "text": "Hammer Toe"
+        },
+        "subject": {
+          "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+        },
+        "encounter": {
+          "reference": "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
+        },
+        "onsetDateTime": "2018-10-21T21:22:15-07:00",
+        "recordedDate": "2018-10-21T21:22:15-07:00"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf",
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "b2ce4584-b213-411b-bdc9-d515dc92eadf",
+        "target": [
+          {
+            "reference": "Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"
+          }
+        ],
+        "recorded": "2018-10-21T21:22:15-07:00",
+        "agent": [
+          {
+            "onBehalfOf": {
+              "reference": "Organization/min"
+            },
+            "type": {
+              "coding": [
+                {
+                  "code": "author",
+                  "display": "Author",
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
+                }
+              ]
+            },
+            "who": {
+              "reference": "Practitioner/min"
+            }
+          }
+        ]
+      },
+      "search": {
+        "mode": "include"
+      }
+    }
+  ]
 }
