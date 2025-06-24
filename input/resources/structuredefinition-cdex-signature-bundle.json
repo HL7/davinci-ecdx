@@ -6,7 +6,7 @@
     "title": "CDex Signature Bundle Profile",
     "status": "active",
     "date": "2023-01-15",
-    "description": "This Bundle profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)",
+    "description": "This Bundle profile supports the signatures as documented in the CDex guide. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)",
     "fhirVersion": "4.0.1",
     "kind": "resource",
     "abstract": false,

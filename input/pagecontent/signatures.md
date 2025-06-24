@@ -25,7 +25,7 @@ System-level and provider signatures represent different levels of attestation:
 
 ### What is Signed
 
-The data returned in CDEX is not limited to FHIR resources but may also include C-CDA documents, PDFs, text files, and other formats. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload. The following table summarizes what artifacts are signed:
+The data returned in CDEX is not limited to FHIR resources but may also include C-CDA documents, PDFs, text files, and other formats. <span class="bg-success" markdown="1">Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature].</span><!-- new-content --> The following table summarizes what artifacts are signed:
 
 |Data Type Returned|Location of Signature|
 |---|---|
@@ -40,11 +40,14 @@ The data returned in CDEX is not limited to FHIR resources but may also include 
 
 The corresponding sections on signatures for [Direct Query], [Task Based Approach], [Sending attachments], [Requesting Attachments Using Attachment Codes], and [Requesting Attachments Using Questionnaires] document how to indicate the signature requirement and how to respond with signed transactions. The sections below define the requirements for using *FHIR Signatures* to sign a Bundle or QuestionnaireResponse with electronic or digital signatures. Refer to the appropriate specifications for guidance on signing other documents, such as CDA or CCDA on FHIR Documents.
 
-### CDex *Enveloped* Signatures
+### CDex Signatures
 
-Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an [enveloped signature]. The FHIR Bundle is the envelope for Bundles, and the signature populates the [`Bundle.signature`] element. For QuestionnaireResponse, The envelope can be the resource, individual `QuestionnaireResponse.item` elements, or both, and the signature populates the QuestionnaireResponse's signature extension.\* The enveloped signatures must avoid including the signature element in calculating the digital signature.
+In previous versions of this implementation guide, the term "enveloping" was used incorrectly to describe CDex Signatures
+{:.stu-note}
 
-\* When using a FHIR Questionnaire to request data, the [DTR SDC Questionnaire] Profile is used to profile the Questionnaire. Both [CDex Task Attachment Request Profile] and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate that a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR Standard Questionnaire] profile supports many reasons for signatures, including verification signatures using the FHIR standard [signatureRequired] extension at the QuestionnaireResponse resource or `QuestionnareiResponse.item` level.
+Signatures in CDex are represented as an element in the signed Bundle or QuestionnaireResponse resource. For FHIR Documents and FHIR Search Bundles, the signature populates the [`Bundle.signature`] element. The signature applies to the entire Bundle, ensuring that all contained resources are authenticated as a single unit.  For QuestionnaireResponse, the signature populates the FHIR standard [signatureRequired] extension at the QuestionnaireResponse resource or `QuestionnareiResponse.item` level.\*
+
+\* When using a FHIR Questionnaire to request data, the [DTR Standard Questionnaire] Profile is used to profile the Questionnaire. Both [CDex Task Attachment Request Profile] and the [DTR Standard Questionnaire] profile have the overlapping capability to indicate that a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR Standard Questionnaire] profile supports many reasons for signatures, including verification signatures.
 {:.bg-warning}
 
 #### CDex Signature Profiles

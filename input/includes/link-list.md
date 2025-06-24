@@ -149,7 +149,7 @@
 [DTR SMART App Launch]: requesting-attachments-questionnaire.html#dtr-smart-app-launch
 [Conforming to CDex Task Based Approach]: task-based-conformance.html
 [Signature Extension]: http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature
-[DTR Standard Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-std-questionnaire.html
+[DTR Standard Questionnaire]: {{site.data.fhir.ver.dtr}}/StructureDefinition-dtr-std-questionnaire.html
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
 [CDex SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
