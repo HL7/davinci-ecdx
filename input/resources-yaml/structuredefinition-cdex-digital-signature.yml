@@ -1,0 +1,162 @@
+resourceType: StructureDefinition
+id: cdex-digital-signature
+url: "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature"
+name: CDexDigitalSignature
+title: CDex Digital Signature Profile
+status: active
+date: "2023-01-15"
+description: This Signature DataType profile enforces the various elements of digital signatures documented in [Digital Signature Rules and Guidance For CDEX Bundle and QuestionnaireResponse](https://hl7.org/fhir/us/davinci-cdex/signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse).
+
+  # - A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)
+  # - A `Signature.who` for the organization or practitioner who signed the Bundle which is either:
+  #   1. a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core Organization or
+  #   1. an NPI or Tax ID and name of the organization or practitioner
+  # - A `Signature.data` representing the base64 encoded Signature (JWS, image, etc)
+
+  # In addition, the following *mandatory* (min=1) element is inherited from the base standard:
+  # - `Signature.when` - a system timestamp when the signature was created
+
+fhirVersion: 4.0.1
+kind: complex-type
+
+abstract: false
+type: Signature
+baseDefinition: "http://hl7.org/fhir/StructureDefinition/Signature"
+derivation: constraint
+differential:
+  element:
+    - id: "Signature"
+      path: "Signature"
+      short: CDex Bundle and QuestionnaireResponse signature
+      definition: >-
+        A JWS digital signature along with supporting context. This Signature DataType profile enforces the various elements of digital signatures documented in Digital Signature Rules and Guidance For CDEX Bundle and QuestionnaireResponse](https://hl7.org/fhir/us/davinci-cdex/signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse).
+      # constraint:
+      #   - key: cdex-13
+      #     severity: error
+      #     human: The signature element must have either reference to the signer or the signer's identifier.
+      #     expression: >-
+      #       who.reference.exists() or who.identifier.exists()
+
+    - id: "Signature.type"
+      path: "Signature.type"
+      min: 1
+      slicing:
+        discriminator:
+          - type: value
+            path: $this
+        rules: open
+      mustSupport: true
+
+    - id: "Signature.type:verify"
+      path: "Signature.type"
+      sliceName: verify
+      short: Verification Signature
+      patternCoding:
+        system: "urn:iso-astm:E1762-95:2013"
+        code: 1.2.840.10065.1.12.1.5
+        display: Verification Signature
+      min: 1
+      max: "1"
+      mustSupport: true
+
+    - id: "Signature.when"
+      path: "Signature.when"
+      mustSupport: true
+
+    - id: "Signature.who"
+      path: "Signature.who"
+      short: Organization or practitioner who signed the Bundle
+      type:
+        - code: Reference
+          targetProfile:
+            - "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1"
+            - "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
+            - "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0"
+            - "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
+            - "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-practitionerrole"
+
+          _targetProfile:
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: true
+            - extension:
+                - url: >-
+                    http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support
+                  valueBoolean: false
+
+      mustSupport: true
+
+    # - id: Signature.who.reference
+    #   path: Signature.who.reference
+    #   # min: 0
+    #   # condition:
+    #   #   - cdex-13
+    #   mustSupport: true
+
+    - id: Signature.who.identifier
+      path: Signature.who.identifier
+      short: NPI or US Tax ID
+      definition: NPI or Tax ID representing the Provider or Organization
+      min: 1
+      # condition:
+      #   - cdex-13
+      mustSupport: true
+
+    # - id: Signature.who.identifier.type
+    #   path: Signature.who.identifier.type
+    #   min: 1
+    #   mustSupport: true
+    #   binding:
+    #     strength: required
+    #     valueSet: "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-identifier-types"
+
+    - id: Signature.who.identifier.system
+      path: Signature.who.identifier.system
+      min: 0
+      mustSupport: true
+
+    - id: Signature.who.identifier.value
+      path: Signature.who.identifier.value
+      min: 1
+      mustSupport: true
+
+    # - id: Signature.who.display
+    #   path: Signature.who.display
+    #   # min: 0
+    #   # condition:
+    #   #   - cdex-13
+    #   mustSupport: true
+
+    - id: "Signature.targetFormat"
+      path: "Signature.targetFormat"
+      short: Canonicalization method
+      min: 1
+      fixedCode: "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document"
+      mustSupport: true
+
+    - id: "Signature.sigFormat"
+      path: "Signature.sigFormat"
+      short: The JWS mime type
+      min: 1
+      fixedCode: "application/jose"
+      mustSupport: true
+
+    - id: "Signature.data"
+      path: "Signature.data"
+      # short: base64 encoded JWS-Signature
+      short: base64 encoded JSON Web Signature (JWS)
+      min: 1
+      mustSupport: true
