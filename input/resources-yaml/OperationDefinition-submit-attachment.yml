@@ -24,6 +24,8 @@ comment: |
   * When processing the operation, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
       * If the attachments can not be associated with an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.
+     
+      Note: FHIR operations are based on the RPC-like paradigm where the target is treated as a "Black Box", a system where the internal workings are not known. Therefore, the acceptance or failure of the $submit-attachment operation depends on the Payer server's internal business rules and workflow.
     * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation,
     * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.
     *  The server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.

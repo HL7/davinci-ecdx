@@ -207,11 +207,12 @@ groups:
         - Bundle/cdex-searchbundle-scenario3-example
         - Bundle/cdex-searchbundle-scenario2-example
 
-  QuestionnaireProfiles:
-    name: Questionnaire Profiles
-    description: Questionnaire profiles used in both CDex Attachments and Task Based Approach Transactions
-    resources:
-      - StructureDefinition/cdex-sdc-questionnaireresponse  
+  # QuestionnaireProfiles:
+  #   name: Questionnaire Profiles
+  #   description: Questionnaire profiles used in both CDex Attachments and Task Based Approach Transactions
+  #   resources:
+  #     - StructureDefinition/cdex-sdc-questionnaireresponse
+
   QuestionnaireExamples:
     name: Questionnaire Examples
     description: Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions
@@ -224,9 +225,9 @@ groups:
     name: Signature Profiles
     description: Profiles Associated with CDex Signatures
     resources:
-      - StructureDefinition/cdex-signature
+      - StructureDefinition/cdex-digital-signature
       - StructureDefinition/cdex-signature-bundle
-      # - StructureDefinition/cdex-sdc-questionnaireresponse
+      - StructureDefinition/cdex-sdc-questionnaireresponse
   SignatureTerminology:
     name: Signature Terminology
     description: ValueSets Associated with CDex Signatures
@@ -492,13 +493,13 @@ menu:
     Task Based Approach Terminology: artifacts.html#7
     Task Based Approach Examples: artifacts.html#8
     Direct Query Examples: artifacts.html#9
-    Questionnaire Profiles: artifacts.html#10
-    Questionnaire Examples: artifacts.html#11
-    Signature Profiles: artifacts.html#12
-    Signature Terminology: artifacts.html#13
-    Signature Examples: artifacts.html#14
-    Common Terminology: artifacts.html#15
-    Inline Examples: artifacts.html#16
+    # Questionnaire Profiles: artifacts.html#10
+    Questionnaire Examples: artifacts.html#10
+    Signature Profiles: artifacts.html#11
+    Signature Terminology: artifacts.html#12
+    Signature Examples: artifacts.html#13
+    Common Terminology: artifacts.html#14
+    Inline Examples: artifacts.html#15
   Support:
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
    Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757   

@@ -23,6 +23,7 @@
 <artifact id="ValueSet/cdex-claim-use" key="ValueSet-cdex-claim-use" name="CDex Claim Use Value Set"/>
 <artifact id="Condition/cdex-condition-inline-example-858" key="Condition-cdex-condition-inline-example-858" name="CDex Condition Inline Example 858"/>
 <artifact id="ValueSet/cdex-data-request-task-code" key="ValueSet-cdex-data-request-task-code" name="CDex Data Request Task Code Value Set"/>
+<artifact id="StructureDefinition/cdex-digital-signature" key="StructureDefinition-cdex-digital-signature" name="CDex Digital Signature Profile"/>
 <artifact id="ValueSet/cdex-identifier-types" key="ValueSet-cdex-identifier-types" name="CDex Identifier Types Value Set"/>
 <artifact id="OperationOutcome/cdex-operationoutcome-inline-example1" key="OperationOutcome-cdex-operationoutcome-inline-example1" name="CDex Inline OperationOutcome Example 1"/>
 <artifact id="Task/cdex-task-inline-example1" key="Task-cdex-task-inline-example1" name="CDex Inline Task Example 1"/>
@@ -57,7 +58,7 @@
 <artifact id="QuestionnaireResponse/cdex-questionnaireresponse-inline-example1" key="QuestionnaireResponse-cdex-questionnaireresponse-inline-example1" name="CDex Questionnaireresponse Inline Example 1"/>
 <artifact id="StructureDefinition/cdex-sdc-questionnaireresponse" key="StructureDefinition-cdex-sdc-questionnaireresponse" name="CDex SDC QuestionnaireResponse Profile"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
-<artifact id="StructureDefinition/cdex-signature" key="StructureDefinition-cdex-signature" name="CDex Signature Profile"/>
+<artifact deprecated="true" id="StructureDefinition/cdex-signature" key="StructureDefinition-cdex-signature" name="CDex Signature Profile"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
 <artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>

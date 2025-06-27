@@ -151,7 +151,7 @@
 [Signature Extension]: http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature
 [DTR Standard Questionnaire]: {{site.data.fhir.ver.dtr}}/StructureDefinition-dtr-std-questionnaire.html
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
-[CDex Signature Profile]: StructureDefinition-cdex-signature.html
+[CDex Digital Signature Profile]: StructureDefinition-cdex-digital-signature.html
 [CDex SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [QuestionnaireResponse]:  {{site.data.fhir.path}}questionnaireresponse.html
 [Topic-Based Subscriptions Framework]: http://hl7.org/fhir/2022Sep/subscriptions.html

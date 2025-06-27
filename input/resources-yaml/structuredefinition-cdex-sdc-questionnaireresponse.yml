@@ -11,7 +11,9 @@ date: '2023-01-15'
 description: >-
   This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following constraints:
 
-  - The signature extensions use the CDex Signature Profile
+  - The signature extensions use using:
+    1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html) for digital signatures
+    1. The base Signature datatype for other electronic signatures (picture, etc)
 fhirVersion: 4.0.1
 
 kind: resource
@@ -32,8 +34,8 @@ differential:
       type:
         - code: Signature
           profile:
-            - >-
-              http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature'
+            - 'http://hl7.org/fhir/StructureDefinition/Signature'
 
     - id: QuestionnaireResponse.item
       path: QuestionnaireResponse.item
@@ -48,7 +50,7 @@ differential:
       type:
         - code: Signature
           profile:
-            - >-
-              http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature
+            - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature'
+            - 'http://hl7.org/fhir/StructureDefinition/Signature'
 
  

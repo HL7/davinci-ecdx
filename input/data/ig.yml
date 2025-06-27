@@ -132,10 +132,6 @@ definition:
     name: Direct Query Examples
     description: Examples Associated with CDex Direct Query (FHIR RESTful search)
       Approach Transactions
-  - id: QuestionnaireProfiles
-    name: Questionnaire Profiles
-    description: Questionnaire profiles used in both CDex Attachments and Task Based
-      Approach Transactions
   - id: QuestionnaireExamples
     name: Questionnaire Examples
     description: Questionnaire examples used in both CDex Attachments and Task Based
@@ -709,17 +705,6 @@ definition:
     exampleBoolean: true
     groupingId: DirectQueryExamples
   - reference:
-      reference: StructureDefinition/cdex-sdc-questionnaireresponse
-    description: 'This profile is derived from the [US Core QuestionnaireResponse
-      Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)
-      profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html)
-      documented in the CDex guide. It adds the following constraints:
-
-      - The signature extensions use the CDex Signature Profile'
-    exampleBoolean: false
-    name: CDex SDC QuestionnaireResponse Profile
-    groupingId: QuestionnaireProfiles
-  - reference:
       reference: Questionnaire/cdex-questionnaire-example1
     description: This example is a simple data request Questionnaire used in the Task
       Based and Attachments transactions. It is adapted from the Da Vinci DTR IG.
@@ -746,31 +731,34 @@ definition:
     exampleCanonical: http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt
     groupingId: QuestionnaireExamples
   - reference:
-      reference: StructureDefinition/cdex-signature
-    description: "This Signature DataType profile enforces the various elements of\
-      \ [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented\
-      \ in the CDex guide. It adds the following *mandatory* (min=1) constraints:\n\
-      \n- A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = \u201C\
-      1.2.840.10065.1.12.1.5\u201D (Verification Signature)\n- A `Signature.who` for\
-      \ the organization or practitioner who signed the Bundle which is either:\n\
-      \  1. a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core\
-      \ Organization or\n  1. an NPI or Tax ID and name of the organization or practitioner\n\
-      - A `Signature.data` representing the base64 encoded Signature (JWS, image,\
-      \ etc)\n\nIn addition, the following *mandatory* (min=1) element is inherited\
-      \ from the base standard:\n- `Signature.when` - a system timestamp when the\
-      \ signature was created"
+      reference: StructureDefinition/cdex-digital-signature
+    description: This Signature DataType profile enforces the various elements of
+      digital signatures documented in [Digital Signature Rules and Guidance For CDEX
+      Bundle and QuestionnaireResponse](https://hl7.org/fhir/us/davinci-cdex/signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse).
     exampleBoolean: false
-    name: CDex Signature Profile
+    name: CDex Digital Signature Profile
     groupingId: SignatureProfiles
   - reference:
       reference: StructureDefinition/cdex-signature-bundle
-    description: 'This Bundle profile supports the signatures as documented in the
-      CDex guide. It adds the following *mandatory* (min=1) constraint:
-
-
-      - A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)'
+    description: "This Bundle profile supports the signatures as documented in the\
+      \ CDex guide. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature`\
+      \ element using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html)\
+      \ for digital signatures\n  1. The base Signature datatype for other electronic\
+      \ signatures (picture, etc)"
     exampleBoolean: false
     name: CDex Signature Bundle Profile
+    groupingId: SignatureProfiles
+  - reference:
+      reference: StructureDefinition/cdex-sdc-questionnaireresponse
+    description: "This profile is derived from the [US Core QuestionnaireResponse\
+      \ Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html)\
+      \ profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html)\
+      \ documented in the CDex guide. It adds the following constraints:\n- The signature\
+      \ extensions use using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html)\
+      \ for digital signatures\n  1. The base Signature datatype for other electronic\
+      \ signatures (picture, etc)"
+    exampleBoolean: false
+    name: CDex SDC QuestionnaireResponse Profile
     groupingId: SignatureProfiles
   - reference:
       reference: ValueSet/cdex-identifier-types

@@ -1,113 +1,98 @@
 {
-    "resourceType": "QuestionnaireResponse",
-    "id": "cdex-questionnaireresponse-example4",
-    "meta": {
-        "extension": [
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex QuestionnaireResponse Example4"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data and an electronic *digital* Verification signature is required. It is adapted from the Da Vinci DTR IG. The digital signature is a JSON [FHIR Signature](http://hl7.org/fhir/R4/signatures.html) in the QuestionnaireResponse signature extension. This example is adapted from the Da Vinci DTR IG."
-            }
+  "resourceType": "QuestionnaireResponse",
+  "id": "cdex-questionnaireresponse-example4",
+  "questionnaire": "http://example.org/cdex-questionnaire-example2",
+  "status": "completed",
+  "subject": {
+    "identifier": {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MB",
+            "display": "Member Number"
+          }
         ],
-        "profile": [
-            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
-        ]
+        "text": "Member Number"
+      },
+      "system": "http://example.org/cdex/payer/member-ids",
+      "value": "Member123"
     },
-    "questionnaire": "http://example.org/cdex-questionnaire-example2",
-    "status": "completed",
-    "subject": {
-        "identifier": {
-            "use": "usual",
-            "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                        "code": "MB",
-                        "display": "Member Number"
-                    }
-                ],
-                "text": "Member Number"
-            },
-            "system": "http://example.org/cdex/payer/member-ids",
-            "value": "Member123"
-        },
-        "display": "Amy Shaw"
+    "display": "Amy Shaw"
+  },
+  "authored": "2022-06-17",
+  "author": {
+    "identifier": {
+      "system": "http://hl7.org/fhir/sid/us-npi",
+      "value": "9941339100"
+    }
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Questionnaire Response Summary for Amy Shaw</h1><p><strong>Questionnaire: </strong><a href=\"http://example.org/cdex-questionnaire-example2\">CDEX Questionnaire Example2</a></p><p><strong>Date Completed: </strong>June 17, 2022</p><p><strong>Patient: </strong>Amy Shaw (Member Number: Member123)</p><h2>Questions and Answers</h2><ol><li><strong>Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy): </strong>Examplitis</li><li><strong>Order Reason: </strong>Replacement</li></ol></div>"
+  },
+  "item": [
+    {
+      "linkId": "1",
+      "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
+      "answer": [
+        {
+          "valueString": "Examplitis"
+        }
+      ]
     },
-    "authored": "2022-06-17",
-    "author": {
-        "identifier": {
+    {
+      "linkId": "2",
+      "text": "Order Reason",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://example.org",
+            "code": "4",
+            "display": "Replacement"
+          }
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature",
+      "valueSignature": {
+        "type": [
+          {
+            "system": "urn:iso-astm:E1762-95:2013",
+            "code": "1.2.840.10065.1.12.1.5",
+            "display": "Verification Signature"
+          }
+        ],
+        "when": "2020-10-23T04:54:56.048+00:00",
+        "who": {
+          "identifier": {
             "system": "http://hl7.org/fhir/sid/us-npi",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "NPI"
+                }
+              ]
+            },
             "value": "9941339100"
-        }
-    },
-    "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Questionnaire Response Summary for Amy Shaw</h1><p><strong>Questionnaire: </strong><a href=\"http://example.org/cdex-questionnaire-example2\">CDEX Questionnaire Example2</a></p><p><strong>Date Completed: </strong>June 17, 2022</p><p><strong>Patient: </strong>Amy Shaw (Member Number: Member123)</p><h2>Questions and Answers</h2><ol><li><strong>Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy): </strong>Examplitis</li><li><strong>Order Reason: </strong>Replacement</li></ol></div>"
-    },
-    "item": [
-        {
-            "linkId": "1",
-            "text": "Relevant Patient Diagnoses (conditions that might be expected to improve with oxygen therapy)",
-            "answer": [
-                {
-                    "valueString": "Examplitis"
-                }
-            ]
+          },
+          "display": "John Hancock, MD"
         },
-        {
-            "linkId": "2",
-            "text": "Order Reason",
-            "answer": [
-                {
-                    "valueCoding": {
-                        "system": "http://example.org",
-                        "code": "4",
-                        "display": "Replacement"
-                    }
-                }
-            ]
-        }
-    ],
-    "extension": [
-        {
-            "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature",
-            "valueSignature": {
-                "type": [
-                    {
-                        "system": "urn:iso-astm:E1762-95:2013",
-                        "code": "1.2.840.10065.1.12.1.5",
-                        "display": "Verification Signature"
-                    }
-                ],
-                "when": "2020-10-23T04:54:56.048+00:00",
-                "who": {
-                    "identifier": {
-                        "system": "http://hl7.org/fhir/sid/us-npi",
-                        "type": {
-                            "coding": [
-                                {
-                                    "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                                    "code": "NPI"
-                                }
-                            ]
-                        },
-                        "value": "9941339100"
-                    },
-                    "display": "John Hancock, MD"
-                },
-                "onBehalfOf": {
-                    "identifier": {
-                        "system": "http://hl7.org/fhir/sid/us-npi",
-                        "value": "1184932014"
-                    }
-                },
-                "targetFormat": "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document",
-                "sigFormat": "application/jose",
-                "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklqZGpNall3Tm1JMk5UQm1OemczTUdNMk1HUmtPRGhtTkRNMFptVmtZV0ZtWkRCbU0yWTNNemtpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJblI1Y0NJNklrcFhWQ0lzSW5nMVl5STZXeUpOU1VsR1YycERRMEU0UzJkQmQwbENRV2RKVlVwRlRqSXhUME14UlRSMmJWRlhMMDFUTjJoMk9ITnZWMEpuYzNkRVVWbEtTMjlhU1doMlkwNUJVVVZNUWxGQmQyZGFWWGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhJVkVGaVFtZE9Wa0pCYjAxR1JWWTBXVmN4ZDJKSFZXZFVNMHB1V1ZjMWNHVnRSakJoVnpsMVRWSnJkMFozV1VSV1VWRkVSRUpDUzJJeWFIVkpSV2hvWW0xT2Rsa3ljM05KUlRGRlRWTk5kMGxSV1VwTGIxcEphSFpqVGtGUmEwSkdhRkp4WVVkR2RWa3lPV3BoTUVKc1pVZEdkR05IZUd4TWJUbDVXbnBCWlVaM01IbE9WRUV5VFdwQmVVMXFSVEJPVkZaaFJuY3dlVTU2UVRKTlZFRjVUV3BGTUU1VVZtRk5TVWRXVFZGemQwTlJXVVJXVVZGSFJYZEtWbFY2UlZSTlFrVkhRVEZWUlVOQmQwdFJNa1p6WVZkYWRtTnROWEJaVkVWVFRVSkJSMEV4VlVWQ2QzZEtWVEpHTVdNeVJuTmhXRkoyVFZJd2QwZDNXVVJXVVZGTFJFSlNSbVZIUm5SalIzaHNTVVU1ZVZveVJuVmhXSEJvWkVkc2RtSnFSVnBOUW1OSFFURlZSVUYzZDFGVGJUbHZZbWxDU1ZsWE5XcGlNazV5VEVOQ1RsSkVSV3BOUTBWSFExTnhSMU5KWWpORVVVVktRVkpaVldGdGFHaGliVTUyV1RKMFFWcFlhR2hpV0VKeldsTTFkbU50WTNkblowZHBUVUV3UjBOVGNVZFRTV0l6UkZGRlFrRlJWVUZCTkVsQ2FuZEJkMmRuUjB0QmIwbENaMUZEYWtnMWEyMHJTU3M1Tm5GT2QwSkNUSGgwUlZseE0xRkRhMWs0YW01blJHSnFjRkI0UkRCWFJXeFhXRmRwWTBJMFozSTRaVGx3U0dFMlFVRXpjRkZqTkUxd1FtbFJkbFp1VlhNM1JHMW1iV3BPWTI5c2RuRnBlblp6WjFkYVEwOUVVVzAwY0VOaVFVUk9ZVTh2TUdORVZtRm5TRmhDYzBSblpHMUJlRVpTZUVoUVRXNWxWV0ZrZDB4aE1IQnZhMUpvUVZka01XaDVlakI0V0ZSaVpFVlRNVlpxYUZsblQwVkNNRGs0VlhFeWMyaEplblpKWm1NMFpFbEdWRkJUZVRoRmRDdEZjRkZCV204ekswUTJPRTVCWmxkR09XNDBVWGxGVm1jNFZFZzFXWGx4VUZWaFVXOUZWVXRHY2pKYWJUUXJTMFpxVmxjNVdIY3pjMmxXZFZZd2QxWXlaRWRqVlRKTU9WRm5SRzk0VDFnNE1USjBLMVZ2VEZoMVdFWlBXR1k1YzFKU2MxcGlNblZ1YlZZeFVsaFlSVkpEUlcxb1NFMXVRbUkwYjNkNE0yMTFUbXczYjNGTVRXZEdPVWhKU2s5dk16UXdTVTFuWW1SdVRVNXpXUzkyVXpkRkwyOUdSbnBuVVU1RFJqRjViV1ZhZUcxaGQwSkVaamcwYUVveE1qTnRlamxtYmpKS1MzVXdkMWRuWTNCMWRGTjFNMWRuUVVaRkx6SXJhV3hOT0dWUFNXaHdUVVJpU1Rsa05FSlBiRXhKYVdSWGRtZ3pMM1ZFTm5sbWJUY3JVMk5YV0VkTlkxQTBXbEZDT1ZWRE1sZHRPV3BUVDA5eldXRlhSVmxtYWl0blIyUkpNV0pvVmpKelVHWndkMFJVUjNGV1RrbzVTMDlYUlVGb2VVOTFOMFZEUVhkRlFVRmhUMEp1ZWtOQ2JrUkJUVUpuVGxaSVVrMUZRbFJCUkVGUlNDOU5RWE5IUVRGVlpFUjNVVVZCZDBsR05FUkNaMEpuVGxaSVVrVkZWMVJDV0dkbk9UTmtNMk4xV2xob2FHSllRbk5hVXpWMlkyMWxaMGRSV1VwWlNWcEpRVmxpTlZkM1VVZHZRWGROUTJwck5VNUVSWHBOZW10NFRVUkRSMHRYYURCa1NFSjZUMms0ZGxwWWFHaGlXRUp6V2xNMWRtTnRZM1phYldod1kyazVVV050Um1wa1Iyd3dZVmM1ZFZwWVNYWk5WRWw2VFVJd1IwRXhWV1JFWjFGWFFrSlNPRXBuWVRKVlVHVklSRWRFWkdsUVVUQXZkSEYyTUZCUU0wOVVRVTVDWjJ0eGFHdHBSemwzTUVKQlVYTkdRVUZQUTBGWlJVRkdPWFo1VTBaSU5tOW9iaXRUWlV0bFlsbDNWekpDZFRWeVoyc3dUMG93WW10TFVWbEpUWGxRVTJSQmNWSnJTVzFUYW1zMlpHSkNPVXhsWnpkalFURk5SREpLZUZGcmFIZExOVk5GZFdvMVlYbFZhaXRYV0ROQ1puTTVaamRyVUZWMFVtYzNabWhGZGpkRVJUVjRNbTVuUnpRMWJVUXhaell5TkdVeFRDOTRWbTVFYTA0dlVERjVXRlJYTWtoWE16aFlZMFpwYjI1WmRFWnpaRkZaT0dZMmVrOTJVbHBNWm5GRlRYUnViVmxxYWxSU2FscHNOV0pwUjBoMk9YVlNUMjFUWjFkaE0zbENWSEZrU1RNMmFqRlRaMjQzYUVKak16aFZTRFZGVFVaNlJUVjRUa0Z2TUZGSVYyOVBZVWRqZFU1bldYUnVNbGhLY3paaWJFaHJabFJGUmxONllVRnhla1pOYldjdlozTlJXa3RJV2xSWFFUVktiUzlXVWxKa04zY3ZjazVKUkZwNVEyMXRaR05TYVd3MmVGUmpkbWxXZEU1NVJqWXJNazAwZFhSSldrRlNZbEJRZEZac2FEVlNOMXBtTkZNd2FsSmxjV0pGY1ZaTE9IVlViRWxaWjFsMk1ETjFVSHA0Y1hadmRYZHBZVUUzZGpGb1dYaHVaRXQ1VUZKM2RtNXdWMGRDV21SRmQwZDNWVXBWYW5oeVVEY3habkF2Y1hCVVZURlNRV0pqYkVOV1RXRkRNRUowTlZSWk9HMTJUVE5GWVdrd2MxRXZhVU5CVlZsUWRrOU9aekJNWVdGc1MyNXpSMHBJZURCdGVqazFlUzlVTTNWcFpXb3lSRVpRU1N0Q1pVeHJUR0l5UkRSWFZtMUxkbHBaVEdObWFtdENkMHBNZFRjM1R5SmRmUS5leUpoZFhSb2IzSWlPbnNpYVdSbGJuUnBabWxsY2lJNmV5SnplWE4wWlcwaU9pSm9kSFJ3T2k4dmFHdzNMbTl5Wnk5bWFHbHlMM05wWkM5MWN5MXVjR2tpTENKMllXeDFaU0k2SWprNU5ERXpNemt4TURBaWZYMHNJbUYxZEdodmNtVmtJam9pTWpBeU1pMHdOaTB4TnlJc0ltbDBaVzBpT2x0N0ltRnVjM2RsY2lJNlczc2lkbUZzZFdWVGRISnBibWNpT2lKRmVHRnRjR3hwZEdsekluMWRMQ0pzYVc1clNXUWlPaUl4SWl3aWRHVjRkQ0k2SWxKbGJHVjJZVzUwSUZCaGRHbGxiblFnUkdsaFoyNXZjMlZ6SUNoamIyNWthWFJwYjI1eklIUm9ZWFFnYldsbmFIUWdZbVVnWlhod1pXTjBaV1FnZEc4Z2FXMXdjbTkyWlNCM2FYUm9JRzk0ZVdkbGJpQjBhR1Z5WVhCNUtTSjlMSHNpWVc1emQyVnlJanBiZXlKMllXeDFaVU52WkdsdVp5STZleUpqYjJSbElqb2lOQ0lzSW1ScGMzQnNZWGtpT2lKU1pYQnNZV05sYldWdWRDSXNJbk41YzNSbGJTSTZJbWgwZEhBNkx5OWxlR0Z0Y0d4bExtOXlaeUo5ZlYwc0lteHBibXRKWkNJNklqSWlMQ0owWlhoMElqb2lUM0prWlhJZ1VtVmhjMjl1SW4xZExDSnhkV1Z6ZEdsdmJtNWhhWEpsSWpvaWFIUjBjRG92TDJWNFlXMXdiR1V1YjNKbkwyTmtaWGd0Y1hWbGMzUnBiMjV1WVdseVpTMWxlR0Z0Y0d4bE1pSXNJbkpsYzI5MWNtTmxWSGx3WlNJNklsRjFaWE4wYVc5dWJtRnBjbVZTWlhOd2IyNXpaU0lzSW5OMFlYUjFjeUk2SW1OdmJYQnNaWFJsWkNJc0luTjFZbXBsWTNRaU9uc2laR2x6Y0d4aGVTSTZJa0Z0ZVNCVGFHRjNJaXdpYVdSbGJuUnBabWxsY2lJNmV5SnplWE4wWlcwaU9pSm9kSFJ3T2k4dlpYaGhiWEJzWlM1dmNtY3ZZMlJsZUM5d1lYbGxjaTl0WlcxaVpYSXRhV1J6SWl3aWRIbHdaU0k2ZXlKamIyUnBibWNpT2x0N0ltTnZaR1VpT2lKTlFpSXNJbVJwYzNCc1lYa2lPaUpOWlcxaVpYSWdUblZ0WW1WeUlpd2ljM2x6ZEdWdElqb2lhSFIwY0RvdkwzUmxjbTFwYm05c2IyZDVMbWhzTnk1dmNtY3ZRMjlrWlZONWMzUmxiUzkyTWkwd01qQXpJbjFkTENKMFpYaDBJam9pVFdWdFltVnlJRTUxYldKbGNpSjlMQ0oxYzJVaU9pSjFjM1ZoYkNJc0luWmhiSFZsSWpvaVRXVnRZbVZ5TVRJekluMTlMQ0owWlhoMElqcDdJbVJwZGlJNklqeGthWFlnZUcxc2JuTTlYQ0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUwzaG9kRzFzWENJLVBHZ3hQbEYxWlhOMGFXOXVibUZwY21VZ1VtVnpjRzl1YzJVZ1UzVnRiV0Z5ZVNCbWIzSWdRVzE1SUZOb1lYYzhMMmd4UGp4d1BqeHpkSEp2Ym1jLVVYVmxjM1JwYjI1dVlXbHlaVG9nUEM5emRISnZibWMtUEdFZ2FISmxaajFjSW1oMGRIQTZMeTlsZUdGdGNHeGxMbTl5Wnk5alpHVjRMWEYxWlhOMGFXOXVibUZwY21VdFpYaGhiWEJzWlRKY0lqNURSRVZZSUZGMVpYTjBhVzl1Ym1GcGNtVWdSWGhoYlhCc1pUSThMMkUtUEM5d1BqeHdQanh6ZEhKdmJtYy1SR0YwWlNCRGIyMXdiR1YwWldRNklEd3ZjM1J5YjI1blBrcDFibVVnTVRjc0lESXdNakk4TDNBLVBIQS1QSE4wY205dVp6NVFZWFJwWlc1ME9pQThMM04wY205dVp6NUJiWGtnVTJoaGR5QW9UV1Z0WW1WeUlFNTFiV0psY2pvZ1RXVnRZbVZ5TVRJektUd3ZjRDQ4YURJLVVYVmxjM1JwYjI1eklHRnVaQ0JCYm5OM1pYSnpQQzlvTWo0OGIydy1QR3hwUGp4emRISnZibWMtVW1Wc1pYWmhiblFnVUdGMGFXVnVkQ0JFYVdGbmJtOXpaWE1nS0dOdmJtUnBkR2x2Ym5NZ2RHaGhkQ0J0YVdkb2RDQmlaU0JsZUhCbFkzUmxaQ0IwYnlCcGJYQnliM1psSUhkcGRHZ2diM2g1WjJWdUlIUm9aWEpoY0hrcE9pQThMM04wY205dVp6NUZlR0Z0Y0d4cGRHbHpQQzlzYVQ0OGJHay1QSE4wY205dVp6NVBjbVJsY2lCU1pXRnpiMjQ2SUR3dmMzUnliMjVuUGxKbGNHeGhZMlZ0Wlc1MFBDOXNhVDQ4TDI5c1Bqd3ZaR2wyUGlJc0luTjBZWFIxY3lJNkltZGxibVZ5WVhSbFpDSjlmUS5ORXU1aXIyOVdjVjl6UkdaeXExdXdra2F5OXN0VXZiaE9hWkxhVldWRXJtc2JZQkEzX2pEeHdEcmdFeXh1dHhPRGpXMEhJWTI0eU9PUmxtOFJvM2xkUDVnZnA3MHhEangybUV2NXNCV2NCZXZOYWdZV1FhRnhqQ1M3NTQwcWxyQzhRWnYtVU5tNGhjdkRESmFMOG5lR1lyNjJtNmw3VHptazA1ekZmUGJrZ2g5UWFPRVFNLVAzWGM4Q2l1bHV1WHdGWVhFY3A0dmhnNFJjM1pCSkg2bXcyekVjR0s1YWxzaVRmY2lpRmQ0UzBBc3RlVjItVGNXSEpkd0tGZ1FSYU9wbElnYnZqUGZPZ3F5X0RPT2h0enhSMXg1WERGbUpRLVVWbzI5dExDTmpoWEhKRndTLS1ZYVZCOVBZb052UHdBcG9VNUZLWnJ2Q2JKUGRzU0NEZGFYb3l3VW5HMkNiUmQxdkdYalhJdko2d1NZVEVUOG9IRGhmMVUzeEZuaUFZdGd0cF83STBvalBwRC1EbXpoWHlFcGVZOGRfb3YtX0ZzUGhOdktaSWxyTWJ6N3pvN0lPb3o2S1RfQWJFblhNaURhZ3U3bl9MbTJDYVZhTFZ0cFYzcTVZVm9PSl9idnpLRmczWHdrT1poNlN4cnBHQ01YdGU0THdUb3lnYkNLeHpNOA=="
-            }
-        }
-    ]
+        "onBehalfOf": {
+          "identifier": {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1184932014"
+          }
+        },
+        "targetFormat": "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document",
+        "sigFormat": "application/jose",
+        "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklqZGpNall3Tm1JMk5UQm1OemczTUdNMk1HUmtPRGhtTkRNMFptVmtZV0ZtWkRCbU0yWTNNemtpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJblI1Y0NJNklrcFhWQ0lzSW5nMVl5STZXeUpOU1VsR1YycERRMEU0UzJkQmQwbENRV2RKVlVwRlRqSXhUME14UlRSMmJWRlhMMDFUTjJoMk9ITnZWMEpuYzNkRVVWbEtTMjlhU1doMlkwNUJVVVZNUWxGQmQyZGFWWGhEZWtGS1FtZE9Wa0pCV1ZSQmJGWlVUVkpOZDBWUldVUldVVkZKUkVGd1JGbFhlSEJhYlRsNVltMXNhRTFTU1hkRlFWbEVWbEZSU0VSQmJGUlpXRlo2V1ZkNGNHUkhPSGhJVkVGaVFtZE9Wa0pCYjAxR1JWWTBXVmN4ZDJKSFZXZFVNMHB1V1ZjMWNHVnRSakJoVnpsMVRWSnJkMFozV1VSV1VWRkVSRUpDUzJJeWFIVkpSV2hvWW0xT2Rsa3ljM05KUlRGRlRWTk5kMGxSV1VwTGIxcEphSFpqVGtGUmEwSkdhRkp4WVVkR2RWa3lPV3BoTUVKc1pVZEdkR05IZUd4TWJUbDVXbnBCWlVaM01IbE9WRUV5VFdwQmVVMXFSVEJPVkZaaFJuY3dlVTU2UVRKTlZFRjVUV3BGTUU1VVZtRk5TVWRXVFZGemQwTlJXVVJXVVZGSFJYZEtWbFY2UlZSTlFrVkhRVEZWUlVOQmQwdFJNa1p6WVZkYWRtTnROWEJaVkVWVFRVSkJSMEV4VlVWQ2QzZEtWVEpHTVdNeVJuTmhXRkoyVFZJd2QwZDNXVVJXVVZGTFJFSlNSbVZIUm5SalIzaHNTVVU1ZVZveVJuVmhXSEJvWkVkc2RtSnFSVnBOUW1OSFFURlZSVUYzZDFGVGJUbHZZbWxDU1ZsWE5XcGlNazV5VEVOQ1RsSkVSV3BOUTBWSFExTnhSMU5KWWpORVVVVktRVkpaVldGdGFHaGliVTUyV1RKMFFWcFlhR2hpV0VKeldsTTFkbU50WTNkblowZHBUVUV3UjBOVGNVZFRTV0l6UkZGRlFrRlJWVUZCTkVsQ2FuZEJkMmRuUjB0QmIwbENaMUZEYWtnMWEyMHJTU3M1Tm5GT2QwSkNUSGgwUlZseE0xRkRhMWs0YW01blJHSnFjRkI0UkRCWFJXeFhXRmRwWTBJMFozSTRaVGx3U0dFMlFVRXpjRkZqTkUxd1FtbFJkbFp1VlhNM1JHMW1iV3BPWTI5c2RuRnBlblp6WjFkYVEwOUVVVzAwY0VOaVFVUk9ZVTh2TUdORVZtRm5TRmhDYzBSblpHMUJlRVpTZUVoUVRXNWxWV0ZrZDB4aE1IQnZhMUpvUVZka01XaDVlakI0V0ZSaVpFVlRNVlpxYUZsblQwVkNNRGs0VlhFeWMyaEplblpKWm1NMFpFbEdWRkJUZVRoRmRDdEZjRkZCV204ekswUTJPRTVCWmxkR09XNDBVWGxGVm1jNFZFZzFXWGx4VUZWaFVXOUZWVXRHY2pKYWJUUXJTMFpxVmxjNVdIY3pjMmxXZFZZd2QxWXlaRWRqVlRKTU9WRm5SRzk0VDFnNE1USjBLMVZ2VEZoMVdFWlBXR1k1YzFKU2MxcGlNblZ1YlZZeFVsaFlSVkpEUlcxb1NFMXVRbUkwYjNkNE0yMTFUbXczYjNGTVRXZEdPVWhKU2s5dk16UXdTVTFuWW1SdVRVNXpXUzkyVXpkRkwyOUdSbnBuVVU1RFJqRjViV1ZhZUcxaGQwSkVaamcwYUVveE1qTnRlamxtYmpKS1MzVXdkMWRuWTNCMWRGTjFNMWRuUVVaRkx6SXJhV3hOT0dWUFNXaHdUVVJpU1Rsa05FSlBiRXhKYVdSWGRtZ3pMM1ZFTm5sbWJUY3JVMk5YV0VkTlkxQTBXbEZDT1ZWRE1sZHRPV3BUVDA5eldXRlhSVmxtYWl0blIyUkpNV0pvVmpKelVHWndkMFJVUjNGV1RrbzVTMDlYUlVGb2VVOTFOMFZEUVhkRlFVRmhUMEp1ZWtOQ2JrUkJUVUpuVGxaSVVrMUZRbFJCUkVGUlNDOU5RWE5IUVRGVlpFUjNVVVZCZDBsR05FUkNaMEpuVGxaSVVrVkZWMVJDV0dkbk9UTmtNMk4xV2xob2FHSllRbk5hVXpWMlkyMWxaMGRSV1VwWlNWcEpRVmxpTlZkM1VVZHZRWGROUTJwck5VNUVSWHBOZW10NFRVUkRSMHRYYURCa1NFSjZUMms0ZGxwWWFHaGlXRUp6V2xNMWRtTnRZM1phYldod1kyazVVV050Um1wa1Iyd3dZVmM1ZFZwWVNYWk5WRWw2VFVJd1IwRXhWV1JFWjFGWFFrSlNPRXBuWVRKVlVHVklSRWRFWkdsUVVUQXZkSEYyTUZCUU0wOVVRVTVDWjJ0eGFHdHBSemwzTUVKQlVYTkdRVUZQUTBGWlJVRkdPWFo1VTBaSU5tOW9iaXRUWlV0bFlsbDNWekpDZFRWeVoyc3dUMG93WW10TFVWbEpUWGxRVTJSQmNWSnJTVzFUYW1zMlpHSkNPVXhsWnpkalFURk5SREpLZUZGcmFIZExOVk5GZFdvMVlYbFZhaXRYV0ROQ1puTTVaamRyVUZWMFVtYzNabWhGZGpkRVJUVjRNbTVuUnpRMWJVUXhaell5TkdVeFRDOTRWbTVFYTA0dlVERjVXRlJYTWtoWE16aFlZMFpwYjI1WmRFWnpaRkZaT0dZMmVrOTJVbHBNWm5GRlRYUnViVmxxYWxSU2FscHNOV0pwUjBoMk9YVlNUMjFUWjFkaE0zbENWSEZrU1RNMmFqRlRaMjQzYUVKak16aFZTRFZGVFVaNlJUVjRUa0Z2TUZGSVYyOVBZVWRqZFU1bldYUnVNbGhLY3paaWJFaHJabFJGUmxONllVRnhla1pOYldjdlozTlJXa3RJV2xSWFFUVktiUzlXVWxKa04zY3ZjazVKUkZwNVEyMXRaR05TYVd3MmVGUmpkbWxXZEU1NVJqWXJNazAwZFhSSldrRlNZbEJRZEZac2FEVlNOMXBtTkZNd2FsSmxjV0pGY1ZaTE9IVlViRWxaWjFsMk1ETjFVSHA0Y1hadmRYZHBZVUUzZGpGb1dYaHVaRXQ1VUZKM2RtNXdWMGRDV21SRmQwZDNWVXBWYW5oeVVEY3habkF2Y1hCVVZURlNRV0pqYkVOV1RXRkRNRUowTlZSWk9HMTJUVE5GWVdrd2MxRXZhVU5CVlZsUWRrOU9aekJNWVdGc1MyNXpSMHBJZURCdGVqazFlUzlVTTNWcFpXb3lSRVpRU1N0Q1pVeHJUR0l5UkRSWFZtMUxkbHBaVEdObWFtdENkMHBNZFRjM1R5SmRmUS5leUpoZFhSb2IzSWlPbnNpYVdSbGJuUnBabWxsY2lJNmV5SnplWE4wWlcwaU9pSm9kSFJ3T2k4dmFHdzNMbTl5Wnk5bWFHbHlMM05wWkM5MWN5MXVjR2tpTENKMllXeDFaU0k2SWprNU5ERXpNemt4TURBaWZYMHNJbUYxZEdodmNtVmtJam9pTWpBeU1pMHdOaTB4TnlJc0ltbDBaVzBpT2x0N0ltRnVjM2RsY2lJNlczc2lkbUZzZFdWVGRISnBibWNpT2lKRmVHRnRjR3hwZEdsekluMWRMQ0pzYVc1clNXUWlPaUl4SWl3aWRHVjRkQ0k2SWxKbGJHVjJZVzUwSUZCaGRHbGxiblFnUkdsaFoyNXZjMlZ6SUNoamIyNWthWFJwYjI1eklIUm9ZWFFnYldsbmFIUWdZbVVnWlhod1pXTjBaV1FnZEc4Z2FXMXdjbTkyWlNCM2FYUm9JRzk0ZVdkbGJpQjBhR1Z5WVhCNUtTSjlMSHNpWVc1emQyVnlJanBiZXlKMllXeDFaVU52WkdsdVp5STZleUpqYjJSbElqb2lOQ0lzSW1ScGMzQnNZWGtpT2lKU1pYQnNZV05sYldWdWRDSXNJbk41YzNSbGJTSTZJbWgwZEhBNkx5OWxlR0Z0Y0d4bExtOXlaeUo5ZlYwc0lteHBibXRKWkNJNklqSWlMQ0owWlhoMElqb2lUM0prWlhJZ1VtVmhjMjl1SW4xZExDSnhkV1Z6ZEdsdmJtNWhhWEpsSWpvaWFIUjBjRG92TDJWNFlXMXdiR1V1YjNKbkwyTmtaWGd0Y1hWbGMzUnBiMjV1WVdseVpTMWxlR0Z0Y0d4bE1pSXNJbkpsYzI5MWNtTmxWSGx3WlNJNklsRjFaWE4wYVc5dWJtRnBjbVZTWlhOd2IyNXpaU0lzSW5OMFlYUjFjeUk2SW1OdmJYQnNaWFJsWkNJc0luTjFZbXBsWTNRaU9uc2laR2x6Y0d4aGVTSTZJa0Z0ZVNCVGFHRjNJaXdpYVdSbGJuUnBabWxsY2lJNmV5SnplWE4wWlcwaU9pSm9kSFJ3T2k4dlpYaGhiWEJzWlM1dmNtY3ZZMlJsZUM5d1lYbGxjaTl0WlcxaVpYSXRhV1J6SWl3aWRIbHdaU0k2ZXlKamIyUnBibWNpT2x0N0ltTnZaR1VpT2lKTlFpSXNJbVJwYzNCc1lYa2lPaUpOWlcxaVpYSWdUblZ0WW1WeUlpd2ljM2x6ZEdWdElqb2lhSFIwY0RvdkwzUmxjbTFwYm05c2IyZDVMbWhzTnk1dmNtY3ZRMjlrWlZONWMzUmxiUzkyTWkwd01qQXpJbjFkTENKMFpYaDBJam9pVFdWdFltVnlJRTUxYldKbGNpSjlMQ0oxYzJVaU9pSjFjM1ZoYkNJc0luWmhiSFZsSWpvaVRXVnRZbVZ5TVRJekluMTlMQ0owWlhoMElqcDdJbVJwZGlJNklqeGthWFlnZUcxc2JuTTlYQ0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh4T1RrNUwzaG9kRzFzWENJLVBHZ3hQbEYxWlhOMGFXOXVibUZwY21VZ1VtVnpjRzl1YzJVZ1UzVnRiV0Z5ZVNCbWIzSWdRVzE1SUZOb1lYYzhMMmd4UGp4d1BqeHpkSEp2Ym1jLVVYVmxjM1JwYjI1dVlXbHlaVG9nUEM5emRISnZibWMtUEdFZ2FISmxaajFjSW1oMGRIQTZMeTlsZUdGdGNHeGxMbTl5Wnk5alpHVjRMWEYxWlhOMGFXOXVibUZwY21VdFpYaGhiWEJzWlRKY0lqNURSRVZZSUZGMVpYTjBhVzl1Ym1GcGNtVWdSWGhoYlhCc1pUSThMMkUtUEM5d1BqeHdQanh6ZEhKdmJtYy1SR0YwWlNCRGIyMXdiR1YwWldRNklEd3ZjM1J5YjI1blBrcDFibVVnTVRjc0lESXdNakk4TDNBLVBIQS1QSE4wY205dVp6NVFZWFJwWlc1ME9pQThMM04wY205dVp6NUJiWGtnVTJoaGR5QW9UV1Z0WW1WeUlFNTFiV0psY2pvZ1RXVnRZbVZ5TVRJektUd3ZjRDQ4YURJLVVYVmxjM1JwYjI1eklHRnVaQ0JCYm5OM1pYSnpQQzlvTWo0OGIydy1QR3hwUGp4emRISnZibWMtVW1Wc1pYWmhiblFnVUdGMGFXVnVkQ0JFYVdGbmJtOXpaWE1nS0dOdmJtUnBkR2x2Ym5NZ2RHaGhkQ0J0YVdkb2RDQmlaU0JsZUhCbFkzUmxaQ0IwYnlCcGJYQnliM1psSUhkcGRHZ2diM2g1WjJWdUlIUm9aWEpoY0hrcE9pQThMM04wY205dVp6NUZlR0Z0Y0d4cGRHbHpQQzlzYVQ0OGJHay1QSE4wY205dVp6NVBjbVJsY2lCU1pXRnpiMjQ2SUR3dmMzUnliMjVuUGxKbGNHeGhZMlZ0Wlc1MFBDOXNhVDQ4TDI5c1Bqd3ZaR2wyUGlJc0luTjBZWFIxY3lJNkltZGxibVZ5WVhSbFpDSjlmUS5ORXU1aXIyOVdjVjl6UkdaeXExdXdra2F5OXN0VXZiaE9hWkxhVldWRXJtc2JZQkEzX2pEeHdEcmdFeXh1dHhPRGpXMEhJWTI0eU9PUmxtOFJvM2xkUDVnZnA3MHhEangybUV2NXNCV2NCZXZOYWdZV1FhRnhqQ1M3NTQwcWxyQzhRWnYtVU5tNGhjdkRESmFMOG5lR1lyNjJtNmw3VHptazA1ekZmUGJrZ2g5UWFPRVFNLVAzWGM4Q2l1bHV1WHdGWVhFY3A0dmhnNFJjM1pCSkg2bXcyekVjR0s1YWxzaVRmY2lpRmQ0UzBBc3RlVjItVGNXSEpkd0tGZ1FSYU9wbElnYnZqUGZPZ3F5X0RPT2h0enhSMXg1WERGbUpRLVVWbzI5dExDTmpoWEhKRndTLS1ZYVZCOVBZb052UHdBcG9VNUZLWnJ2Q2JKUGRzU0NEZGFYb3l3VW5HMkNiUmQxdkdYalhJdko2d1NZVEVUOG9IRGhmMVUzeEZuaUFZdGd0cF83STBvalBwRC1EbXpoWHlFcGVZOGRfb3YtX0ZzUGhOdktaSWxyTWJ6N3pvN0lPb3o2S1RfQWJFblhNaURhZ3U3bl9MbTJDYVZhTFZ0cFYzcTVZVm9PSl9idnpLRmczWHdrT1poNlN4cnBHQ01YdGU0THdUb3lnYkNLeHpNOA=="
+      }
+    }
+  ]
 }

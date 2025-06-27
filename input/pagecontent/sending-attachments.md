@@ -26,6 +26,13 @@ As shown below in Figure 13, the attachments are "pushed" using the [`$submit-at
 2. The Provider invokes [`$submit-attachment`] operation to submit attachments to the Payer
 3. The Payer responds with an HTTP response that accepts or rejects the transaction.
    - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.
+<div class="bg-success" markdown="1">
+
+  FHIR operations are based on the RPC-like paradigm where the target is treated as a "Black Box", a system where the internal workings are not known. Therefore, the acceptance or failure of the $submit-attachment operation depends on the Payer server's internal business rules and workflow.
+  {:.bg-info}
+  
+</div><!-- new-content -->
+
 4. The Payer associates the attachments to the claim or prior authorization and processes the claim.
 
 
