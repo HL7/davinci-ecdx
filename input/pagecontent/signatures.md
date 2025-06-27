@@ -61,7 +61,7 @@ This guide defines three profiles for using signatures:
 2. [CDex Signature Bundle Profile]
 3. [CDex SDC QuestionnaireResponse Profile]
 
-##### CDex Signature Datatype Profile
+##### CDex Digital Signature Datatype Profile
 
 {{ site.data.resources.['StructureDefinition/cdex-signature']['description'] }}
 
@@ -80,8 +80,6 @@ See the [CDex Signature Bundle Profile] formal definition for further details.
 
 See the [CDex SDC QuestionnaireResponse Profile] formal definition for further details.
 
-
-
 ### Electronic Signatures
 
 >The term "electronic signature" means an electronic sound, symbol, or process attached to or logically associated with a contract or other record and executed or adopted by a person with the intent to sign the record.[^third]
@@ -94,13 +92,15 @@ The various forms of electronic signatures include:
 
 This guide specifies how to implement digital signatures in the following sections. Specific guidance for other electronic signatures is an implementation detail that is out of scope for this guide.
 
-#### Electronic Signature Example
+#### Electronic Signature Examples
 
 In this example, a `Bundle.signature` is added to a FHIR Document. The electronic signature is a JPG Image that represents this handwritten signature:
 
 {% include img.html img="jh-signature.jpg" %}
 
 {% include examplebutton_default.html example="electronic-sig-example.md" b_title = "Click Here To See Electronic Signature Example" %}
+
+Several examples demonstrating the implementation and application of CDex Signatures are also provided on the [FHIR artifacts page](artifacts.html#signature-examples)
 
 ### Digital Signatures
 
@@ -203,6 +203,12 @@ The following steps outline the process for verifying the Signature.
     - Use the "Subject Public Key Info"
 9. Verify Issuer, Validity Dates, Subject, and KeyUsage of the certificate,
 10. Validate the JWS using the public key or the X.509 Certificate
+
+
+#### Digital Signature Examples
+
+Several examples demonstrating the implementation and application of CDex Signatures are provided on the [FHIR artifacts page](artifacts.html#signature-examples)
+
 </div><!-- new-content -->
 
 ##### Step-by-Step Examples  <span class="bg-success" markdown="1">TODO: update to meet new rules </span><!-- new-content -->
