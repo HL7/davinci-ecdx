@@ -161,9 +161,6 @@ The public key is listed in the first certificate in the `"x5c"` specified by th
        - The `"srCms"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements.
        - The `"Sigt"` header timestamp  **SHALL** match `Signature.when`
 
-    Although verifying the signing certificate helps confirm the identity of the entity signing the Bundle or QuestionnaireResponse, the `Bundle.signature` element is not included in the signature itself, so there is no signed statement about who signed the bundle. As a result, the signature's reliability is not 100% guaranteed.
-    {:.bg-warning}
-
 ##### Sender/Signer Steps
 
 The following steps outline the process for creating the Signature.
