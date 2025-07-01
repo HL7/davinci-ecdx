@@ -132,6 +132,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
  
       -  CDEX is pre-adopting the changes to FHIR R6 json canonicalization guidance and  **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. 
          - JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.
+         - Prior to canonicalizing the resource. the XHTML`text.div` narrative elements **SHALL** be canonicalized according to http://hl7.org/fhir/canonicalization/xml using the XML canonical method [Canonical XML 1.1](http://www.w3.org/TR/xmldsig-core1/#sec-Canonical).
       - `Bundle.id`, and `Bundle.meta`  **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
      - For signatures representing the entire QuestionnaireResponse, `QuestionnaireResponse.id`, and `QuestionnaireResponse.meta` elements **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements. 
      - For signatures representing an item in the QuestionnaireResponse, the `QuestionnaireResponse.item.id` **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements. 
