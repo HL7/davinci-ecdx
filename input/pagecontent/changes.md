@@ -49,7 +49,7 @@ Implementers submitted over NN trackers since the publication of 2.0.0 and 2.1.0
    - [Sending Attachments](https://hl7.org/fhir/us/davinci-cdex/sending-attachments.html#technical-workflow)
 18. **Pre-Applied:** (Correction) Remove he term "enveloping"  to describe CDex signatures  [FHIR-51112](https://jira.hl7.org/browse/FHIR-51112) See Changes [Here](signatures.html#cdex-signatures)
 19. **Pre-Applied:** (Enhancement) Update signature requirements for consistency and reliability  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes [Here](signatures.html#cdex-signatures)
-20. **Pre-Applied:** (Enhancement) Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set[FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
+20. **Pre-Applied:** (Enhancement) Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
   - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
   - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
   - [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html)
