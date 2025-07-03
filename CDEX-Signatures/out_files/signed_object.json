@@ -1,21 +1,5 @@
 {
   "resourceType": "Bundle",
-  "id": "cdex-document-digital-sig-example",
-  "meta": {
-    "extension": [
-      {
-        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-        "valueString": "CDEX Document with Digital Signature Example"
-      },
-      {
-        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-        "valueMarkdown": "Digital signature example showing how it is used to sign a FHIR Document.\\\nThe CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.\\\nIf no signature was required, the response would typically be in the form of an individual resource."
-      }
-    ],
-    "profile": [
-      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
-    ]
-  },
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
@@ -30,7 +14,7 @@
         "id": "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Composition 17a80a8d-4cf1-4deb-a1fd-2db1130e5f76</b></p><a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><a name=\"hc17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><a name=\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76-en-US\"> </a><p><b>status</b>: Final</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 11503-0}\">Medical records</span></p><p><b>encounter</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-5ce5c83a-000f-47d2-941c-039358cc9112\">Example Encounter</a></p><p><b>date</b>: 2021-10-25 20:16:29-0700</p><p><b>author</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\">Example Practitioner</a></p><p><b>title</b>: Active Conditions</p><h3>Attesters</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td style=\"display: none\">*</td><td>Legal</td><td>2021-10-25 20:16:29-0700</td><td><a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\">Example Practitioner</a></td></tr></table></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Medical Records Document</h3><p>This document, titled \"Active Conditions,\" was created on October 25, 2021, by Dr. John Hancock, who also legally attested to its accuracy on the same date. It summarizes the active medical conditions for a patient based on an emergency encounter on October 25, 2021. The document includes one section detailing an active condition: Type 2 Diabetes Mellitus.</p></div>"
         },
         "status": "final",
         "type": {
@@ -86,11 +70,16 @@
         "resourceType": "Practitioner",
         "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
         "meta": {
-          "lastUpdated": "2013-05-05T16:13:03Z"
+          "lastUpdated": "2013-05-05T16:13:03Z",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0"
+          ]
         },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Practitioner 0820c16d-91de-4dfa-a3a6-f140a516a9bc</b></p><a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><a name=\"hc0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><a name=\"0820c16d-91de-4dfa-a3a6-f140a516a9bc-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Last updated: 2013-05-05 16:13:03+0000</p></div><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/9941339100</p><p><b>name</b>: John Hancock </p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Practitioner Information</h3><p>Dr. John Hancock is a healthcare provider with National Provider Identifier (NPI) 9941339100. He authored and attested to the medical records document.</p></div>"
         },
         "identifier": [
           {
@@ -113,9 +102,16 @@
       "resource": {
         "resourceType": "Patient",
         "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
+          ]
+        },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Patient 970af6c9-5bbd-4067-b6c1-d9b2c823aece</b></p><a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><a name=\"hc970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><a name=\"970af6c9-5bbd-4067-b6c1-d9b2c823aece-en-US\"> </a><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">CDEX Example Patient Male, DoB Unknown ( Member Number)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr></table></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Patient Information</h3><p>CDEX Example Patient, a male, is identified by member ID Member123 in the payer system http://example.org/cdex/payer/member-ids. He is the subject of this medical records document. The patient said, \"I feel great!\"</p></div>"
         },
         "identifier": [
           {
@@ -149,9 +145,16 @@
       "resource": {
         "resourceType": "Condition",
         "id": "014a68ec-d691-49e0-b980-91b0d924e570",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0"
+          ]
+        },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Condition 014a68ec-d691-49e0-b980-91b0d924e570</b></p><a name=\"014a68ec-d691-49e0-b980-91b0d924e570\"> </a><a name=\"hc014a68ec-d691-49e0-b980-91b0d924e570\"> </a><a name=\"014a68ec-d691-49e0-b980-91b0d924e570-en-US\"> </a><p><b>identifier</b>: <code>urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1</code>/1</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category problem-list-item}\">Problem List Item</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 44054006}\">Type 2 Diabetes Mellitus</span></p><p><b>subject</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-970af6c9-5bbd-4067-b6c1-d9b2c823aece\">Bundle: identifier = UUID:c173535e-135e-48e3-ab64-38bacc68dba8; type = document; timestamp = 2021-10-25 20:16:29-0700</a></p><p><b>onset</b>: 2006</p><p><b>asserter</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\">Bundle: identifier = UUID:c173535e-135e-48e3-ab64-38bacc68dba8; type = document; timestamp = 2021-10-25 20:16:29-0700</a></p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Active Condition</h3><p>The patient has an active diagnosis of Type 2 Diabetes Mellitus (SNOMED CT: 44054006), first identified in 2006. This condition was documented by Dr. John Hancock and is listed as a problem on the patient\u2019s problem list.</p></div>"
         },
         "identifier": [
           {
@@ -202,9 +205,16 @@
       "resource": {
         "resourceType": "Encounter",
         "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"
+          ]
+        },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Encounter 5ce5c83a-000f-47d2-941c-039358cc9112</b></p><a name=\"5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><a name=\"hc5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><a name=\"5ce5c83a-000f-47d2-941c-039358cc9112-en-US\"> </a><p><b>status</b>: Finished</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/6.1.0/CodeSystem-v3-ActCode.html#v3-ActCode-EMER\">ActCode EMER</a>: emergency</p><p><b>type</b>: <span title=\"Codes:{http://snomed.info/sct 261665006}\">Unknown (qualifier value)</span></p><p><b>subject</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-970af6c9-5bbd-4067-b6c1-d9b2c823aece\">CDEX Example Patient</a></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Individual</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-0820c16d-91de-4dfa-a3a6-f140a516a9bc\">John Hancock</a></td></tr></table><p><b>period</b>: 2021-10-25 20:10:29-0700 --&gt; 2021-10-25 20:16:29-0700</p><p><b>serviceProvider</b>: <a href=\"Bundle-cdex-document-digital-sig-example.html#urn-uuid-e37f004b-dc10-422b-b833-cdaa10a055a3\">CDEX Example Organization</a></p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Encounter Details</h3><p>An emergency encounter occurred on October 25, 2021, from 8:10 PM to 8:16 PM, involving CDEX Example Patient and attended by Dr. John Hancock at CDEX Example Organization. The encounter type is unspecified (SNOMED CT: 261665006).</p></div>"
         },
         "status": "finished",
         "class": {
@@ -250,9 +260,14 @@
       "resource": {
         "resourceType": "Organization",
         "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
+          ]
+        },
         "text": {
           "status": "generated",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><p class=\"res-header-id\"><b>Generated Narrative: Organization e37f004b-dc10-422b-b833-cdaa10a055a3</b></p><a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><a name=\"hce37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><a name=\"e37f004b-dc10-422b-b833-cdaa10a055a3-en-US\"> </a><p><b>identifier</b>: <a href=\"http://terminology.hl7.org/5.3.0/NamingSystem-npi.html\" title=\"National Provider Identifier\">United States National Provider Identifier</a>/1234567893</p><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\"mailto:customer-service@example.org\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>"
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Organization Information</h3><p>CDEX Example Organization, located at 1 CDEX Lane, Boston, MA 01002, USA, is the service provider for the documented encounter. Contact details include phone: (+1) 555-555-5555 and email: customer-service@example.org. The organization's NPI is 1234567893.</p></div>"
         },
         "identifier": [
           {
@@ -286,6 +301,22 @@
       }
     }
   ],
+  "id": "cdex-document-digital-sig-example",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDEX Document with Digital Signature Example"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where a digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+    ]
+  },
   "signature": {
     "type": [
       {
@@ -318,6 +349,6 @@
     },
     "targetFormat": "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document",
     "sigFormat": "application/jose",
-    "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltSm1ZbVV6WlRWak1EUTNNRFEwTkRVM05qVTBPREV4TXpreU9HUTFaakZsTkdVelpqSmxaV0lpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJbk55UTIxeklqcGJleUpqYjIxdFNXUWlPbnNpWkdWell5STZJbFpsY21sbWFXTmhkR2x2YmlCVGFXZHVZWFIxY21VaUxDSnBaQ0k2SW5WeWJqcHZhV1E2TVM0eUxqZzBNQzR4TURBMk5TNHhMakV5TGpFdU5TSjlMQ0pqYjIxdFVYVmhiSE1pT2xzaVZtVnlhV1pwWTJGMGFXOXVJRzltSUcxbFpHbGpZV3dnY21WamIzSmtJR2x1ZEdWbmNtbDBlU0pkZlYwc0luUjVjQ0k2SWtwWFZDSXNJbmcxWXlJNld5Sk5TVWxHVm5wRFEwRTNLMmRCZDBsQ1FXZEpWVUp1TkROR05FOHhNVEI2Vms1SVVGVjBRbTV1V0dZek0wWlJkM2RFVVZsS1MyOWFTV2gyWTA1QlVVVk1RbEZCZDJkYVZYaERla0ZLUW1kT1ZrSkJXVlJCYkZaVVRWSk5kMFZSV1VSV1VWRkpSRUZ3UkZsWGVIQmFiVGw1WW0xc2FFMVNTWGRGUVZsRVZsRlJTRVJCYkZSWldGWjZXVmQ0Y0dSSE9IaElWRUZpUW1kT1ZrSkJiMDFHUlZZMFdWY3hkMkpIVldkVU0wcHVXVmMxY0dWdFJqQmhWemwxVFZKcmQwWjNXVVJXVVZGRVJFSkNTMkl5YUhWSlJXaG9ZbTFPZGxreWMzTkpSVEZGVFZOTmQwbFJXVXBMYjFwSmFIWmpUa0ZSYTBKR2FGSnhZVWRHZFZreU9XcGhNRUpzWlVkR2RHTkhlR3hNYlRsNVducEJaVVozTUhsT1ZFRXlUV3BWZVUxNlJYbE5lbXhoUm5jd2VVNTZRVEpOVkZWNVRYcEZlVTE2YkdGTlNVZFdUVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkl3ZDBkM1dVUldVVkZMUkVKU1JtVkhSblJqUjNoc1NVVTVlVm95Um5WaFdIQm9aRWRzZG1KcVJWcE5RbU5IUVRGVlJVRjNkMUZUYlRsdlltbENTVmxYTldwaU1rNXlURU5DVGxKRVJXcE5RMFZIUTFOeFIxTkpZak5FVVVWS1FWSlpWV0Z0YUdoaWJVNTJXVEowUVZwWWFHaGlXRUp6V2xNMWRtTnRZM2RuWjBkcFRVRXdSME5UY1VkVFNXSXpSRkZGUWtGUlZVRkJORWxDYW5kQmQyZG5SMHRCYjBsQ1oxRkRZMWh0ZGxnMk1FZEJOVWNyUkd3MGFWSnVPVlJUTDNkVVJqRkdWRWc1VW0xeVVESTVSelpZVTA5MVZrUkZaMGRhZDFWVVNra3ZUMnRTVEZCcUswcFZTM2t2YTAxWk0xbHROREZyTTBwU2NqaE9ja28zVldOcVpqTlVaVEpaTUhwdFVrMW1SMHRQTWxnM2NEQXhTV1E0Y2tkb2JtSnpWR3RYYW5ONlkyTnJha3RQVkdzM1JUUklXRTgzV0ZGdFZuWlNXbUZRY21wdVZsWnplalpoU1ZWdGJWVjVRbVZ0VlhoelVGRjRjV3RrTnpkNlVrdGxNVW9yWmsxaWNHSlRibUZHTWxNMVNEbEpOVWx3VVhVelpYSlRhazUzZFc1MWJVcEJMelZ6VGtGVFRWVm1LMXB5U3pWb2RIZFFabXh2Ym14V1FUbElSVkJ2Tms0MWRFcHpRMDFGV1RWeGExcEJXRVExTlZCVlltWTRTWGh5WkRNcmRERnBXRTVCWjAxa1dGQndPVTVxWm0xcmVtRklUM05TTlVWTU56aHZWbVowUzBnNFdFMW5jemxNSzFoWWFHTnRjQ3RUZFZOaVZWUXJiR0ZSUm01TFdsbzJOakZGUWpoVlZsRkhVR2h6U0dOMVdYbzNUUzhyUjBRM2JHdHRialYzTjJjMmFYcFpNRFZFY3pGMFpIUm9NMmhDSzBVeFpUQldPR0ZzTUN0SVdYaFlkRzFNTWpoUFluSjFjbHAwTlZaUFZEWXpObUZDVjJWaGF6TnRNV3gwSzBwTWFWUlhkMk5KV0hWeWFVcDNXRU5STjFjeVQyaEpjbXhsUW01ME5WbFNaRVl2Vm5kclFXWTFRbkEwTUVSTGNsbFRka0pVTDNnelVHRnlZbU5CY3pWeWRXRTBUV2w2ZEhwM2VrMURRWGRGUVVGaFQwSnVSRU5DYlZSQlNrSm5UbFpJVWsxRlFXcEJRVTFCYzBkQk1WVmtSSGRSUlVGM1NVWTBSRUpuUW1kT1ZraFNSVVZYVkVKWVoyYzVNMlF6WTNWYVdHaG9ZbGhDYzFwVE5YWmpiV1ZuUjFGWlNsbEpXa2xCV1dJMVYzZFJSMjlCZDAxRGFtczFUa1JGZWsxNmEzaE5SRU5IUzFkb01HUklRbnBQYVRoMldsaG9hR0pZUW5OYVV6VjJZMjFqZGxwdGFIQmphVGxSWTIxR2FtUkhiREJoVnpsMVdsaEpkazFVU1hwTlFqQkhRVEZWWkVSblVWZENRbE12ZG1vMVkwSklRa1ZTV0ZwVloxSlBVMnBXT0dWVWFqaDFObnBCVGtKbmEzRm9hMmxIT1hjd1FrRlJjMFpCUVU5RFFWbEZRV1pIYURCbWRqYzJRazE1VW5CcGJpODJiVEpPYms5QmQxbE9LMWRaVGxjMFduZFJTMUJ2YUN0cFFrWnFaMkl2WjFoYUwzZ3paRzVIY1RKU1ZXNVNTRXg1WW1OMmNVOTNRemgwTkN0TU1sRmhaVzUwZWk5NlUweG1Ra2xwU0ZBcmRuUmhkVlp2TkZscGNsVkxTVVpQTlU1clJHSlFVbmRGV0RaYWNHOTBkMUpGTW5BeldWQlBjVzFNYWxWd2RYRmxla3RTWm5WNlptWkZVMGxIUTFkbU5tSkJXbTlJT0c5MmVYcHJjRlZQZUZReWJHTktUREpaVVdkNFlVVkZLeTlOVDBWRWVHSjVMMGMxZEU1c1NGZFZNWEp0TWpsRVdrUTJhVlJ1T0VaSVRVOWlORVJCWlV4ek4yUmxWVUpMWlVGNGJVTk9NWGN3TjBsaVNHWlVXQ3M0ZUc5NlFtczRiVFJ5VVdGU1NUSkdZV05IWTA0dlV6UlBhMmxwYW14b2ExbHVSR1JpWWpaYWIwbENPVGxCVFVjdk1IUk5aMWRuYURVMVJrTk1PWGN5ZVhWaVJrUnpVaXN4ZVZwWE5YYzJlSFpXZFdKR2IzRXlja3RKV1U0MlFsUk5WRE0wT1U0clMxbEdVbFJpSzNCWU1EUlJSa1pEY1ZneFQzbDFVVVZLYWtwd1dtRjFURWxXVTIxVllWWjZSRmRrWVZKdGREQnlhMHhFTmxJNE5YUm9XVXB3VG5oTmNqUnZRWEp6ZVRWcGJEVk1NRXBXVFVWWVJ6RXhRMmhGZUZKRFNqZFljMmhyZEV4cWFpdEJPR3hrVlZKeVRFaFNWMWh2ZEhnMmJVNVdjRE1yVFc5cFEyaDROMUJtYmtkMlExQmhVSFpyVEZGeGFXVTRaRGh5YXpCbGFrNHpJbDE5Li5TcWowTndjRW1QZEh3T1I4NWI2cmJHNjNFM3VFMkh4d3plcExrdHBJX2I3bnZKVEZTeDZlT01XeXlVUW9MdG9ORzdtZXJDYWFxMnJrU1NBY1Fkcm1mSEZtcWZmVFV1MDRHRGNqcDJqS0tUS1hIUWpPQ3JqbDJRNGFaQ1ZmZVc3dzFyU1VlZlJXYTU1dU8tejBWSkxKUUlhNE1fZWs5V0ViX0xnQnI5MkJmdDJWZmk1TW1qZk5kc0tsdHEzX2hwR2FDbEVkMU9iaFZtU3RKMnpKcEZtQ3EwV0RjYkZFeXdJdTVRc3ZlNjRzblVESGdGXzA3SGpJLUtLTmp6eWExajBEZjhIN0RoZmYyYVFMRG8xZWpZZTRBc1FFZkE1cjgzbDJQeENRcnZHSFNjajBValJDd0E5dDBmNkR5RXZUN3hfdzh4VThucVFHVEQxR0NSekREZGNaTVd4eTB4aTMyUDAxMGg3MndBbXdiT0RvX045SDNrV2ZtNnkwZmdRNHN1SGp1YTFlaHh0Q3hXVlRueEEtQ3dmQ3NPai1FaGxUZGdySGVLRTNteW53VUx2ZFZNNmxCeUN5WU9kTjZod3p1VlUtdEVCaGhfU0xnZE5KSGFwSE9SMGdBb2dLUm1zdXpROVliRXBKdnpsZ084b3hMRUdnQWlGaHVLV1dmR2NyOFR4RA=="
+    "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltSm1ZbVV6WlRWak1EUTNNRFEwTkRVM05qVTBPREV4TXpreU9HUTFaakZsTkdVelpqSmxaV0lpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJbk55UTIxeklqcGJleUpqYjIxdFNXUWlPbnNpWkdWell5STZJbFpsY21sbWFXTmhkR2x2YmlCVGFXZHVZWFIxY21VaUxDSnBaQ0k2SW5WeWJqcHZhV1E2TVM0eUxqZzBNQzR4TURBMk5TNHhMakV5TGpFdU5TSjlMQ0pqYjIxdFVYVmhiSE1pT2xzaVZtVnlhV1pwWTJGMGFXOXVJRzltSUcxbFpHbGpZV3dnY21WamIzSmtJR2x1ZEdWbmNtbDBlU0pkZlYwc0luUjVjQ0k2SWtwWFZDSXNJbmcxWXlJNld5Sk5TVWxHVm5wRFEwRTNLMmRCZDBsQ1FXZEpWVUp1TkROR05FOHhNVEI2Vms1SVVGVjBRbTV1V0dZek0wWlJkM2RFVVZsS1MyOWFTV2gyWTA1QlVVVk1RbEZCZDJkYVZYaERla0ZLUW1kT1ZrSkJXVlJCYkZaVVRWSk5kMFZSV1VSV1VWRkpSRUZ3UkZsWGVIQmFiVGw1WW0xc2FFMVNTWGRGUVZsRVZsRlJTRVJCYkZSWldGWjZXVmQ0Y0dSSE9IaElWRUZpUW1kT1ZrSkJiMDFHUlZZMFdWY3hkMkpIVldkVU0wcHVXVmMxY0dWdFJqQmhWemwxVFZKcmQwWjNXVVJXVVZGRVJFSkNTMkl5YUhWSlJXaG9ZbTFPZGxreWMzTkpSVEZGVFZOTmQwbFJXVXBMYjFwSmFIWmpUa0ZSYTBKR2FGSnhZVWRHZFZreU9XcGhNRUpzWlVkR2RHTkhlR3hNYlRsNVducEJaVVozTUhsT1ZFRXlUV3BWZVUxNlJYbE5lbXhoUm5jd2VVNTZRVEpOVkZWNVRYcEZlVTE2YkdGTlNVZFdUVkZ6ZDBOUldVUldVVkZIUlhkS1ZsVjZSVlJOUWtWSFFURlZSVU5CZDB0Uk1rWnpZVmRhZG1OdE5YQlpWRVZUVFVKQlIwRXhWVVZDZDNkS1ZUSkdNV015Um5OaFdGSjJUVkl3ZDBkM1dVUldVVkZMUkVKU1JtVkhSblJqUjNoc1NVVTVlVm95Um5WaFdIQm9aRWRzZG1KcVJWcE5RbU5IUVRGVlJVRjNkMUZUYlRsdlltbENTVmxYTldwaU1rNXlURU5DVGxKRVJXcE5RMFZIUTFOeFIxTkpZak5FVVVWS1FWSlpWV0Z0YUdoaWJVNTJXVEowUVZwWWFHaGlXRUp6V2xNMWRtTnRZM2RuWjBkcFRVRXdSME5UY1VkVFNXSXpSRkZGUWtGUlZVRkJORWxDYW5kQmQyZG5SMHRCYjBsQ1oxRkRZMWh0ZGxnMk1FZEJOVWNyUkd3MGFWSnVPVlJUTDNkVVJqRkdWRWc1VW0xeVVESTVSelpZVTA5MVZrUkZaMGRhZDFWVVNra3ZUMnRTVEZCcUswcFZTM2t2YTAxWk0xbHROREZyTTBwU2NqaE9ja28zVldOcVpqTlVaVEpaTUhwdFVrMW1SMHRQTWxnM2NEQXhTV1E0Y2tkb2JtSnpWR3RYYW5ONlkyTnJha3RQVkdzM1JUUklXRTgzV0ZGdFZuWlNXbUZRY21wdVZsWnplalpoU1ZWdGJWVjVRbVZ0VlhoelVGRjRjV3RrTnpkNlVrdGxNVW9yWmsxaWNHSlRibUZHTWxNMVNEbEpOVWx3VVhVelpYSlRhazUzZFc1MWJVcEJMelZ6VGtGVFRWVm1LMXB5U3pWb2RIZFFabXh2Ym14V1FUbElSVkJ2Tms0MWRFcHpRMDFGV1RWeGExcEJXRVExTlZCVlltWTRTWGh5WkRNcmRERnBXRTVCWjAxa1dGQndPVTVxWm0xcmVtRklUM05TTlVWTU56aHZWbVowUzBnNFdFMW5jemxNSzFoWWFHTnRjQ3RUZFZOaVZWUXJiR0ZSUm01TFdsbzJOakZGUWpoVlZsRkhVR2h6U0dOMVdYbzNUUzhyUjBRM2JHdHRialYzTjJjMmFYcFpNRFZFY3pGMFpIUm9NMmhDSzBVeFpUQldPR0ZzTUN0SVdYaFlkRzFNTWpoUFluSjFjbHAwTlZaUFZEWXpObUZDVjJWaGF6TnRNV3gwSzBwTWFWUlhkMk5KV0hWeWFVcDNXRU5STjFjeVQyaEpjbXhsUW01ME5WbFNaRVl2Vm5kclFXWTFRbkEwTUVSTGNsbFRka0pVTDNnelVHRnlZbU5CY3pWeWRXRTBUV2w2ZEhwM2VrMURRWGRGUVVGaFQwSnVSRU5DYlZSQlNrSm5UbFpJVWsxRlFXcEJRVTFCYzBkQk1WVmtSSGRSUlVGM1NVWTBSRUpuUW1kT1ZraFNSVVZYVkVKWVoyYzVNMlF6WTNWYVdHaG9ZbGhDYzFwVE5YWmpiV1ZuUjFGWlNsbEpXa2xCV1dJMVYzZFJSMjlCZDAxRGFtczFUa1JGZWsxNmEzaE5SRU5IUzFkb01HUklRbnBQYVRoMldsaG9hR0pZUW5OYVV6VjJZMjFqZGxwdGFIQmphVGxSWTIxR2FtUkhiREJoVnpsMVdsaEpkazFVU1hwTlFqQkhRVEZWWkVSblVWZENRbE12ZG1vMVkwSklRa1ZTV0ZwVloxSlBVMnBXT0dWVWFqaDFObnBCVGtKbmEzRm9hMmxIT1hjd1FrRlJjMFpCUVU5RFFWbEZRV1pIYURCbWRqYzJRazE1VW5CcGJpODJiVEpPYms5QmQxbE9LMWRaVGxjMFduZFJTMUJ2YUN0cFFrWnFaMkl2WjFoYUwzZ3paRzVIY1RKU1ZXNVNTRXg1WW1OMmNVOTNRemgwTkN0TU1sRmhaVzUwZWk5NlUweG1Ra2xwU0ZBcmRuUmhkVlp2TkZscGNsVkxTVVpQTlU1clJHSlFVbmRGV0RaYWNHOTBkMUpGTW5BeldWQlBjVzFNYWxWd2RYRmxla3RTWm5WNlptWkZVMGxIUTFkbU5tSkJXbTlJT0c5MmVYcHJjRlZQZUZReWJHTktUREpaVVdkNFlVVkZLeTlOVDBWRWVHSjVMMGMxZEU1c1NGZFZNWEp0TWpsRVdrUTJhVlJ1T0VaSVRVOWlORVJCWlV4ek4yUmxWVUpMWlVGNGJVTk9NWGN3TjBsaVNHWlVXQ3M0ZUc5NlFtczRiVFJ5VVdGU1NUSkdZV05IWTA0dlV6UlBhMmxwYW14b2ExbHVSR1JpWWpaYWIwbENPVGxCVFVjdk1IUk5aMWRuYURVMVJrTk1PWGN5ZVhWaVJrUnpVaXN4ZVZwWE5YYzJlSFpXZFdKR2IzRXlja3RKV1U0MlFsUk5WRE0wT1U0clMxbEdVbFJpSzNCWU1EUlJSa1pEY1ZneFQzbDFVVVZLYWtwd1dtRjFURWxXVTIxVllWWjZSRmRrWVZKdGREQnlhMHhFTmxJNE5YUm9XVXB3VG5oTmNqUnZRWEp6ZVRWcGJEVk1NRXBXVFVWWVJ6RXhRMmhGZUZKRFNqZFljMmhyZEV4cWFpdEJPR3hrVlZKeVRFaFNWMWh2ZEhnMmJVNVdjRE1yVFc5cFEyaDROMUJtYmtkMlExQmhVSFpyVEZGeGFXVTRaRGh5YXpCbGFrNHpJbDE5Li5JU2JVQ3J5T29oQjB3U3RoSWdOVkhSaVNTLVBmcjh1dnRKb29ac3dSQlE0R3R0Vk4taG13c0VKQTNMcVE5Nmd3NkRWcHBfYkNsUy0yeDBZZWRvejJiT212REZLNmdrekhMdW83LXJVbHhfR0dZYUJNQ25qWjJNZnpZZmZLR3VzeGRqNHBYQzJlRHIyeHQyYlNJZG4wR3JnRnJxM21idFNXdmtvTTdRcVE5czZZQTZnSEI2RVJjcjVpREgteEhIZW0ydzNGRWNrWUpRODBiVVhxeVladS1MbGFYWnluNW11RW02MVVxeGFCMjdFeElkeGZJUnRIbGdPMUh3VldQYVZUa01hNzYwTXNwNmxzMDduQ0FKVnVrOFZ6VkFCbWg3M3FXZ3JEcC1UdU5DNWJiSzFSY3RXM1dWOXZteVE4MF84Z28xOE9ONjJZb2NLeGFWRWwxQzFzdGI2dW9oUE9kbU5CQUhxYzJtM2F6UlFxVU9rdkt0UHl5V3hlQkNoSVR6LWhqNmpCTS1ERDVZWERFdFVJd21OTDVnZXB1STdzZFZNemZtX2R4ZjcyM3Y4bEhFTjAyd1JXSUh3UldIWkFiMndpempsYVZJSEptUWJ5YXVyQi1BVUdvb0dNM2FGaC1YVkJLSFVIMVhwZldwRmtfS2thMmE1Vkw0bldrWG9VbXEyRw=="
   }
 }

@@ -1,130 +1,104 @@
 {
-    "entry": [
-        {
-            "fullUrl": "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f",
-            "resource": {
-                "category": [
-                    {
-                        "coding": [
-                            {
-                                "code": "encounter-diagnosis",
-                                "display": "Encounter Diagnosis",
-                                "system": "http://terminology.hl7.org/CodeSystem/condition-category"
-                            }
-                        ]
-                    }
-                ],
-                "clinicalStatus": {
-                    "coding": [
-                        {
-                            "code": "active",
-                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
-                        }
-                    ]
-                },
-                "code": {
-                    "coding": [
-                        {
-                            "code": "122481008",
-                            "display": "Hammer toe (disorder)",
-                            "system": "http://snomed.info/sct"
-                        }
-                    ],
-                    "text": "Hammer Toe"
-                },
-                "encounter": {
-                    "reference": "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
-                },
-                "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0"
-                    ]
-                },
-                "onsetDateTime": "2018-10-21T21:22:15-07:00",
-                "recordedDate": "2018-10-21T21:22:15-07:00",
-                "resourceType": "Condition",
-                "subject": {
-                    "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
-                },
-                "verificationStatus": {
-                    "coding": [
-                        {
-                            "code": "confirmed",
-                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status"
-                        }
-                    ]
-                }
-            },
-            "search": {
-                "mode": "match"
+  "entry": [
+    {
+      "fullUrl": "http://hapi.fhir.org/baseR4/Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis",
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+              }
+            ]
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
             }
+          ]
         },
-        {
-            "fullUrl": "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf",
-            "resource": {
-                "agent": [
-                    {
-                        "onBehalfOf": {
-                            "reference": "http://example.org/cdex/provider/fhir/Organization/good-health-54321"
-                        },
-                        "type": {
-                            "coding": [
-                                {
-                                    "code": "author",
-                                    "display": "Author",
-                                    "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
-                                }
-                            ]
-                        },
-                        "who": {
-                            "reference": "http://example.org/cdex/provider/fhir/Practitioner/Dr-Jones-12345"
-                        }
-                    }
-                ],
-                "id": "b2ce4584-b213-411b-bdc9-d515dc92eadf",
-                "recorded": "2020-04-28T20:28:00.008+00:00",
-                "resourceType": "Provenance",
-                "target": [
-                    {
-                        "reference": "Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"
-                    }
-                ],
-                "meta": {
-                    "profile": [
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|3.1.1",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|6.1.0",
-                        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-provenance|7.0.0"
-                    ]
-                }
-            },
-            "search": {
-                "mode": "include"
-            }
-        }
-    ],
-    "id": "cdex-bundle-inline-example-858p",
-    "link": [
-        {
-            "relation": "self",
-            "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"
-        }
-    ],
-    "meta": {
-        "extension": [
+        "code": {
+          "coding": [
             {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-                "valueString": "CDex Bundle Inline Example 858p"
-            },
-            {
-                "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-                "valueMarkdown": "Bundle example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)"
+              "code": "122481008",
+              "display": "Hammer toe (disorder)",
+              "system": "http://snomed.info/sct"
             }
-        ]
+          ],
+          "text": "Hammer Toe"
+        },
+        "encounter": {
+          "reference": "http://example.org/cdex/provider/fhir/Encounter/5fe62cd5-bfcf-4d3b-a1e9-80d6f75d6f82"
+        },
+        "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+        "onsetDateTime": "2018-10-21T21:22:15-07:00",
+        "recordedDate": "2018-10-21T21:22:15-07:00",
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "http://example.org/cdex/provider/fhir/Patient/06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "confirmed",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+            }
+          ]
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
     },
-    "resourceType": "Bundle",
-    "total": 1,
-    "type": "searchset"
+    {
+      "fullUrl": "http://hapi.fhir.org/baseR4/Provenance/b2ce4584-b213-411b-bdc9-d515dc92eadf",
+      "resource": {
+        "agent": [
+          {
+            "onBehalfOf": {
+              "reference": "http://example.org/cdex/provider/fhir/Organization/good-health-54321"
+            },
+            "type": {
+              "coding": [
+                {
+                  "code": "author",
+                  "display": "Author",
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
+                }
+              ]
+            },
+            "who": {
+              "reference": "http://example.org/cdex/provider/fhir/Practitioner/Dr-Jones-12345"
+            }
+          }
+        ],
+        "id": "b2ce4584-b213-411b-bdc9-d515dc92eadf",
+        "recorded": "2020-04-28T20:28:00.008+00:00",
+        "resourceType": "Provenance",
+        "target": [
+          {
+            "reference": "Condition/4ac41715-fcbd-421c-8796-9b2c9706dd3f"
+          }
+        ]
+      },
+      "search": {
+        "mode": "include"
+      }
+    }
+  ],
+  "id": "cdex-bundle-inline-example-858p",
+  "link": [
+    {
+      "relation": "self",
+      "url": "http://hapi.fhir.org/baseR4/Condition?patient=06e1f0dd-5fbe-4480-9bb4-6b54ec02d31b&clinical-status=active,recurrance,remission&_revinclude=Provenance:target"
+    }
+  ],
+  "resourceType": "Bundle",
+  "total": 1,
+  "type": "searchset"
 }
