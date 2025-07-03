@@ -83,7 +83,7 @@
                   "id": "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Medical Records Document</h3><p>This document, titled \"Active Conditions,\" was created on October 25, 2021, by Dr. John Hancock, who also legally attested to its accuracy on the same date. It summarizes the active medical conditions for a patient based on an emergency encounter on October 25, 2021. The document includes one section detailing an active condition: Type 2 Diabetes Mellitus.</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Composition_17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\"> </a><h3>Medical Records Document</h3><p>This document, titled \"Active Conditions,\" was created on October 25, 2021, by Dr. John Hancock, who also legally attested to its accuracy on the same date. It summarizes the active medical conditions for a patient based on an emergency encounter on October 25, 2021. The document includes one section detailing an active condition: Type 2 Diabetes Mellitus.</p></div>"
                   },
                   "status": "final",
                   "type": {
@@ -143,7 +143,7 @@
                   },
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Practitioner Information</h3><p>Dr. John Hancock is a healthcare provider with National Provider Identifier (NPI) 9941339100. He authored and attested to the medical records document.</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\"> </a><h3>Practitioner Information</h3><p>Dr. John Hancock is a healthcare provider with National Provider Identifier (NPI) 9941339100. He authored and attested to the medical records document.</p></div>"
                   },
                   "identifier": [
                     {
@@ -168,7 +168,7 @@
                   "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Patient Information</h3><p>CDEX Example Patient, a male, is identified by member ID Member123 in the payer system http://example.org/cdex/payer/member-ids. He is the subject of this medical records document. The patient said, \"I feel great!\"</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\"> </a><h3>Patient Information</h3><p>CDEX Example Patient, a male, is identified by member ID Member123 in the payer system http://example.org/cdex/payer/member-ids. He is the subject of this medical records document. The patient said, \"I feel great!\"</p></div>"
                   },
                   "identifier": [
                     {
@@ -204,7 +204,7 @@
                   "id": "014a68ec-d691-49e0-b980-91b0d924e570",
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Active Condition</h3><p>The patient has an active diagnosis of Type 2 Diabetes Mellitus (SNOMED CT: 44054006), first identified in 2006. This condition was documented by Dr. John Hancock and is listed as a problem on the patient’s problem list.</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Condition_014a68ec-d691-49e0-b980-91b0d924e570\"> </a><h3>Active Condition</h3><p>The patient has an active diagnosis of Type 2 Diabetes Mellitus (SNOMED CT: 44054006), first identified in 2006. This condition was documented by Dr. John Hancock and is listed as a problem on the patient’s problem list.</p></div>"
                   },
                   "identifier": [
                     {
@@ -257,7 +257,7 @@
                   "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Encounter Details</h3><p>An emergency encounter occurred on October 25, 2021, from 8:10 PM to 8:16 PM, involving CDEX Example Patient and attended by Dr. John Hancock at CDEX Example Organization. The encounter type is unspecified (SNOMED CT: 261665006).</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\"> </a><h3>Encounter Details</h3><p>An emergency encounter occurred on October 25, 2021, from 8:10 PM to 8:16 PM, involving CDEX Example Patient and attended by Dr. John Hancock at CDEX Example Organization. The encounter type is unspecified (SNOMED CT: 261665006).</p></div>"
                   },
                   "status": "finished",
                   "class": {
@@ -305,7 +305,7 @@
                   "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
                   "text": {
                     "status": "generated",
-                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Organization Information</h3><p>CDEX Example Organization, located at 1 CDEX Lane, Boston, MA 01002, USA, is the service provider for the documented encounter. Contact details include phone: (+1) 555-555-5555 and email: customer-service@example.org. The organization's NPI is 1234567893.</p></div>"
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><a name=\"Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\"> </a><h3>Organization Information</h3><p>CDEX Example Organization, located at 1 CDEX Lane, Boston, MA 01002, USA, is the service provider for the documented encounter. Contact details include phone: (+1) 555-555-5555 and email: customer-service@example.org. The organization's NPI is 1234567893.</p></div>"
                   },
                   "identifier": [
                     {
