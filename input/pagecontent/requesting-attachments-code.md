@@ -4,12 +4,9 @@ This page documents a FHIR-based approach for requesting attachments for claims 
 
 ### Requesting Attachments Background 
 
-In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities. The Provider can submit these *solicited* attachments using Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
+<span class="bg-success" markdown="1">Historically, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities. With CDex, the Provider can still submit solicited attachments using Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:</span><!-- new-content -->
 
 {% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
-
-
-
 
 ### Requesting Attachments Using FHIR
  

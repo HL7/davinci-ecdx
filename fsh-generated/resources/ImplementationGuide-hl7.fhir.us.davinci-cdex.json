@@ -179,7 +179,7 @@
       {
         "id": "AttachmentsExamples",
         "name": "Attachments Examples",
-        "description": "Examples Associated with CDex Attachments Transactions"
+        "description": "Examples Associated with CDex Attachments Transactions (see also \"Signature Examples\" below)"
       },
       {
         "id": "TaskBasedProfiles",
@@ -204,7 +204,7 @@
       {
         "id": "QuestionnaireExamples",
         "name": "Questionnaire Examples",
-        "description": "Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions"
+        "description": "Questionnaire examples used in both CDex Attachments and Task Based Approach Transaction (see also \"Signature Examples\" below)"
       },
       {
         "id": "SignatureProfiles",
@@ -219,7 +219,7 @@
       {
         "id": "SignatureExamples",
         "name": "Signature Examples",
-        "description": "Examples Associated with CDex Signatures (Several examples are in Task Based and Attachments Examples groupings as well)"
+        "description": "Examples Associated with CDex Signatures"
       },
       {
         "id": "CommonTerminology",
@@ -327,7 +327,7 @@
         "reference": {
           "reference": "ValueSet/cdex-loinc-attachment-codes"
         },
-        "description": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attahments](https://loinc.org/attachments/).",
+        "description": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attachments](https://loinc.org/attachments/).",
         "exampleBoolean": false,
         "name": "CDex LOINC Attachment Codes Value Set",
         "groupingId": "AttachmentsTerminology"
@@ -419,15 +419,6 @@
         },
         "description": "**CCDA Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a CCDA attachment and the necessary information needed to associate them to the claim.",
         "name": "CDex Parameters Example 1",
-        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
-        "groupingId": "AttachmentsExamples"
-      },
-      {
-        "reference": {
-          "reference": "Parameters/cdex-parameters-example2"
-        },
-        "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim.",
-        "name": "CDex Parameters Example 2",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "AttachmentsExamples"
       },
@@ -816,6 +807,15 @@
         "description": "Electronic signature example showing how an image file can be used to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource.",
         "name": "CDEX Document with Electronic Signature Example",
         "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
+        "groupingId": "SignatureExamples"
+      },
+      {
+        "reference": {
+          "reference": "Parameters/cdex-parameters-example2"
+        },
+        "description": "**Signed FHIR Document Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a Signed FHIR Document attachment and the necessary information needed to associate it to a claim.",
+        "name": "CDex Parameters Example 2",
+        "exampleCanonical": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment",
         "groupingId": "SignatureExamples"
       },
       {

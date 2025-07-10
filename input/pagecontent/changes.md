@@ -9,16 +9,35 @@
 The <Month> <year> ballot addresses the following:
 
 1. Added [a new $submit-attachment parameter](OperationDefinition-submit-attachment.html), a payer-assigned "administrative reference number" identifier. Used only for prior authorization solicited attachments, the payer may assign an administrative reference number in addition to the tracking control number/ACN. By using a combination of identifiers, the Payer can guarantee global uniqueness for associating attachments to the claim or prior authorization.
-
+2. Updated the signature requirements for consistency and reliability.
 #### Changes:
 
-Implementers submitted over NN trackers since the publication of 2.0.0 and 2.1.0.  We have addressed them and applied over NN changes listed below:
+Implementers submitted over two dozen trackers since the publication of 2.0.0 and 2.1.0.  We have addressed them and applied the changes listed below:
 
-**Tracker Status:** (Change Category) Summary [Jira Issue](#) [Link to Updated Content](#)
+Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
 
-1. **Partially Pre-Applied** (Correction) Use same name style for naming slices in StructureDefinitions [FHIR-50933](https://jira.hl7.org/browse/FHIR-50933) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/StructureDefinition-cdex-task-attachment-request.html)
-2. **Resolved - change required:** (Correction) Change Response to Post Task to 201 [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html#sequence-diagram)
-3. **Applied:** (Enhancement) Add a new $submit-attachment parameter for administrative reference number [FHIR-49828](https://jira.hl7.org/browse/FHIR-49828) See Changes
+TODO: 
+
+9. **Triaged:** (Correction) Need to sort out QuestionnaireResponse Profile between US Core, CDex and DTR and SDC (Correction) [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here](signatures.html#cdex-signature-profiles)
+10. **Triaged:**  Update LOINC Attachment code ValueSet (Correction) [FHIR-51430](https://jira.hl7.org/browse/FHIR-51430) See Changes [Here](TBD)
+
+**Non-Substantive Changes**
+
+1. **Applied:** Shorten Artifact descriptions (Enhancement)  [FHIR-48796](https://jira.hl7.org/browse/FHIR-48796) See Changes [Here](artifacts.html)
+2. **Applied:** Clarify the source of Tracking Id (Clarification) [FHIR-48435](https://jira.hl7.org/browse/FHIR-48435) See Changes [Here](OperationDefinition-submit-attachment.html)
+3.  **Applied:** Update the section "Requesting Attachments Background" (Clarification) [FHIR-48407](https://jira.hl7.org/browse/FHIR-48407) See Changes [Here](requesting-attachments-code.html#requesting-attachments-background)
+4.  **Applied:** Clarify Purpose of Use requirements (Clarification) [FHIR-48403](https://jira.hl7.org/browse/FHIR-48403) See Changes [Here](task-based-approach.html#purpose-of-use)
+5.  **Applied:**  Provide guidance when sending large payloads using $submit-attachment (Clarification) [FHIR-48271](https://jira.hl7.org/browse/FHIR-48271) See Changes [Here](OperationDefinition-submit-attachment.html)
+6. **Partially Pre-Applied** Use same name style for naming slices in StructureDefinitions (Correction) [FHIR-50933](https://jira.hl7.org/browse/FHIR-50933) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html)
+7. **Resolved - change required:**  Add rationale why Task supports only a single query, codes, or questionnaires (Clarification) [FHIR-45981](https://jira.hl7.org/browse/FHIR-45981) See Changes [Here](task-based-approach.html)
+8. **Applied:** Clarify language the nature of the operation what acceptance/failure (Clarification) [FHIR-51058](https://jira.hl7.org/browse/FHIR-51058) See Changes
+   - [OperationDefinition: Submit Attachment Operation](OperationDefinition-submit-attachment.html)
+   - [Sending Attachments](sending-attachments.html#technical-workflow)
+9. **Applied:**  Remove he term "enveloping"  to describe CDex signatures (Correction) [FHIR-51112](https://jira.hl7.org/browse/FHIR-51112) See Changes [Here](signatures.html#cdex-signatures)
+
+**Substantive Changes**
+
+1. **Applied:**  Add a new $submit-attachment parameter for administrative reference number (Enhancement) [FHIR-49828](https://jira.hl7.org/browse/FHIR-49828) See Changes
    -  [Submit Attachment Operation](OperationDefinition-submit-attachment.html)
    -  [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
    -  [Sending Attachments](sending-attachments.html)
@@ -33,32 +52,22 @@ Implementers submitted over NN trackers since the publication of 2.0.0 and 2.1.0
    -  [CDex Task Example 25](Task-cdex-task-example25.html)
    -  [CDex Task Example 28](Task-cdex-task-example28.html)
    -  [CDex Task Example 29](Task-cdex-task-example29.html)
-5. **Triaged:** (Clarification) $submit-attachment (PAS) Profile/Parameter [FHIR-49034](https://jira.hl7.org/browse/FHIR-49034) See Changes [Here]()
-6. **Triaged:** () Add documentation for Bulk Data transactions for requesting and sending information [FHIR-49025](https://jira.hl7.org/browse/FHIR-49025) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/)
-7. **Applied:** (Enhancement) Artifact descriptions should be *much* shorter [FHIR-48796](https://jira.hl7.org/browse/FHIR-48796) See Changes [Here](artifacts.html)
-8. **Triaged:** () submit-attachment member id should align with CRD + us core profile [FHIR-48437](https://jira.hl7.org/browse/FHIR-48437) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/StructureDefinition-cdex-parameters-submit-attachment.html)
-9. **Resolved - change required:** (Clarification) clarification on TrackingId system [FHIR-48435](https://jira.hl7.org/browse/FHIR-48435) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/OperationDefinition-submit-attachment.html)
-10. **Resolved - change required:**(Clarification) confusion on Figure 1 [FHIR-48407](https://jira.hl7.org/browse/FHIR-48407) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/requesting-attachments-code.html#requesting-attachments-background)
-11. **Resolved - change required:** (Clarification) Require Purpose of Use  [FHIR-48403](https://jira.hl7.org/browse/FHIR-48403) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/task-based-approach.html#purpose-of-use)
-12. **Resolved - change required:** (Clarification) provide guidance when sending large payloads using $submit-attachment [FHIR-48271](https://jira.hl7.org/browse/FHIR-48271) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/OperationDefinition-submit-attachment.html)
-13. **Triaged:** () add an explanation on how to communicate a decision reason in the form of a letter [FHIR-46630](https://jira.hl7.org/browse/FHIR-46630) See Changes [Here](https://build.fhir.org/ig/HL7/davinci-ecdx/#home)
-14. **Triaged:** (Correction) Need to sort out QuestionnaireResponse Profile between US Core, CDex and DTR and SDC [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/signatures.html#cdex-signature-profiles)
-17. **Resolved - change required:**  (Enhancement) Allow for Task to support multiple querys, codes, questionnaires [FHIR-45981](https://jira.hl7.org/browse/FHIR-45981) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/task-based-approach.html)
-17. **Pre-Applied:** (Clarification) Clarify language the nature of the operation what acceptance/failure [FHIR-51058](https://jira.hl7.org/browse/FHIR-51058) See Changes
-   - [OperationDefinition: Submit Attachment Operation](OperationDefinition-submit-attachment.html)
-   - [Sending Attachments](https://hl7.org/fhir/us/davinci-cdex/sending-attachments.html#technical-workflow)
-18. **Pre-Applied:** (Correction) Remove he term "enveloping"  to describe CDex signatures  [FHIR-51112](https://jira.hl7.org/browse/FHIR-51112) See Changes [Here](signatures.html#cdex-signatures)
-19. **Pre-Applied:** (Enhancement) Update signature requirements for consistency and reliability  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes [Here](signatures.html#cdex-signatures)
-20. **Pre-Applied:** (Enhancement) Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
+2. **Resolved - change required:** Change Response to Post Task to 201 (Correction) [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) See Changes [Here](task-based-approach.html#sequence-diagram)
+
+**Breaking Changes**
+
+1. **Part Applied:** Update signature requirements for consistency and reliability (Enhancement)  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes [Here](signatures.html#cdex-signatures)
+2. **Applied:**  Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set (Enhancement) [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
   - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
   - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
   - [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html)
+
+
 
 ### Version = 2.1.0
 - Publication Date: 2025-1-15
 - URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
 - Based on FHIR version: 4.0.1
-
 This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide.
 
 #### What's new in Version 2.1.0 of CDex:

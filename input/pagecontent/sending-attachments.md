@@ -72,7 +72,20 @@ This scenario is the same as Scenario 1a above, except the attachments are submi
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario2.md" b_title = "Click Here To See Example Laboratory Results Attachments" %}
 
----
+<div class="bg-success" markdown="1">
+
+### Large Payloads
+
+This section outlines the Payer server requirements and guidelines for managing large payloads in the $submit-attachment operation, specifying size limits, error handling, and alternative submission methods.
+
+1. Servers **SHALL** document in their Capability Statement's `CapabilityStatement,operation.documentation` element or payer-supplied documentation:
+   1. The payload endpoint size limits (e.g. 100MB )
+   2. Whether they support the $ submit-attachment's final input parameter
+
+1. When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages "Request Entity Too Large" or "Payload Too Large").
+
+1. Servers **SHALL** document instructions for the Client when the payload is  (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)
+</div><!-- new-content -->
 
 ### Signatures
 

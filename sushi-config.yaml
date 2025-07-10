@@ -136,7 +136,7 @@ groups:
       - ValueSet/cdex-pwk01-attachment-report-type-code
   AttachmentsExamples:
     name: Attachments Examples 
-    description: Examples Associated with CDex Attachments Transactions
+    description: Examples Associated with CDex Attachments Transactions (see also "Signature Examples" below)
     resources:
       - Task/cdex-task-example19
       - Task/cdex-task-example20
@@ -147,7 +147,7 @@ groups:
       - Task/cdex-task-example28
       - Task/cdex-task-example29
       - Parameters/cdex-parameters-example1
-      - Parameters/cdex-parameters-example2
+      # - Parameters/cdex-parameters-example2
       - Parameters/cdex-parameters-example3
       - Parameters/cdex-parameters-example4
       - Parameters/cdex-parameters-example5
@@ -215,7 +215,7 @@ groups:
 
   QuestionnaireExamples:
     name: Questionnaire Examples
-    description: Questionnaire examples used in both CDex Attachments and Task Based Approach Transactions
+    description: Questionnaire examples used in both CDex Attachments and Task Based Approach Transaction (see also "Signature Examples" below)
     resources:
       - Questionnaire/cdex-questionnaire-example1
       - QuestionnaireResponse/cdex-questionnaireresponse-example1
@@ -235,14 +235,16 @@ groups:
       - ValueSet/cdex-identifier-types
   SignatureExamples:
     name: Signature Examples
-    description: Examples Associated with CDex Signatures (Several examples are in Task Based and Attachments Examples groupings as well)
+    description: Examples Associated with CDex Signatures
     resources:
       - Bundle/cdex-searchbundle-digital-sig-example
       - Bundle/cdex-document-digital-sig-example
       - Bundle/cdex-electronic-sig-example
+      - Parameters/cdex-parameters-example2
       - Questionnaire/cdex-questionnaire-example2
       - QuestionnaireResponse/cdex-questionnaireresponse-example3
       - QuestionnaireResponse/cdex-questionnaireresponse-example4
+
   CommonTerminology:
     name: Common Terminology
     description: ValueSets and CodeSystems used in both CDex Attachments and Task Based Approach Transactions

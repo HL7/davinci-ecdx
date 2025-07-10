@@ -42,10 +42,14 @@ parameter:
     use: in
     min: 1
     max: "1"
-    documentation: >-
-      An tracking identifier that ties the attachment(s) back to the claim or prior authorization. This value is commonly referred to as the "tracking control number" or "attachment control number (ACN)".
+    documentation: |
+      A tracking identifier that ties the attachment(s) back to the claim or prior authorization. This value is commonly referred to as the "tracking control number" or "attachment control number (ACN)".
 
-       In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.
+      - For *unsolicited* attachments, the provider assigns the tracking control number they used on the claim or prior authorization
+
+      - For *solicited* attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for the claim or prior authorization.
+
+      The Identifier system element should be populated. Since no standard namespaces are defined, the namespace to use is an implementer decision.
     type: Identifier
 
   - name: AdminRefNumber
