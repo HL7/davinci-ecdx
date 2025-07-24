@@ -149,8 +149,6 @@
 <page key="security" name="Security and Privacy"/>
 <page key="sending-attachments" name="Sending Attachments"/>
 <page key="signatures" name="Signatures"/>
-<page key="signed-document-bundle-example" name="Signed Document Bundle Example"/>
-<page key="signed-searchset-bundle-example" name="Signed Searchset Bundle Example"/>
 <page key="solicited-unsolicited-attachments" name="Solicited and Unsolicited Attachments"/>
 <page deprecated="true" key="specification" name="Specification"/>
 <page key="toc" name="Table of Contents"/>
@@ -159,4 +157,6 @@
 <page key="burden-reduction" name="Using CDex Attachments with DaVinci PAS"/>
 <page deprecated="true" key="using-subscriptions" name="Using Subscriptions"/>
 <page deprecated="true" key="using-task" name="Using Task"/>
+<page key="signed-document-bundle-example" name="Worked Example: Signed Document Bundle"/>
+<page key="signed-searchset-bundle-example" name="Worked Example: Signed Searchset Bundle"/>
 </specification>

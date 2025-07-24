@@ -298,50 +298,58 @@ pages:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
       valueCode: trial-use
-  task-based-conformance.md:
-    extension:
-    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
-    title: Conforming to CDex Task Based Approach
+    task-based-conformance.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+      title: Conforming to CDex Task Based Approach
   attachments.md:
     # extension:
     # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     #   valueCode: trial-use
-  solicited-unsolicited-attachments.md:
-    # extension:
-    # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
-    title: Solicited and Unsolicited Attachments
-  sending-attachments.md:
-    extension:
-    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
-  requesting-attachments-code.md:
-    extension:
-    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
-    title: Requesting Attachments Using Attachments Codes
-  requesting-attachments-questionnaire.md:
-    extension:
-    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
-    title: Requesting Attachments Using Questionnaires
-  burden-reduction.md:
-    # extension:
-    # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-    #   valueCode: trial-use
-    title: Using CDex Attachments with DaVinci PAS
-  attachments-conformance.md:
-    extension:
-    - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-      valueCode: trial-use
-    title: Conforming to CDex Attachments
+    solicited-unsolicited-attachments.md:
+      # extension:
+      # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      #   valueCode: trial-use
+      title: Solicited and Unsolicited Attachments
+    sending-attachments.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+    requesting-attachments-code.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+      title: Requesting Attachments Using Attachments Codes
+    requesting-attachments-questionnaire.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+      title: Requesting Attachments Using Questionnaires
+    burden-reduction.md:
+      # extension:
+      # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      #   valueCode: trial-use
+      title: Using CDex Attachments with DaVinci PAS
+    attachments-conformance.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
+      title: Conforming to CDex Attachments
   signatures.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
       valueCode: trial-use
-  signed-searchset-bundle-example.md:
-  signed-document-bundle-example.md:
+    signed-searchset-bundle-example.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+      title: 'Worked Example: Signed Searchset Bundle'
+    signed-document-bundle-example.md:
+      extension:
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+      title: 'Worked Example: Signed Document Bundle'
   security.md:
     extension:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status

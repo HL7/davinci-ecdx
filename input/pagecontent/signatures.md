@@ -215,16 +215,16 @@ Several examples demonstrating the implementation and application of CDex Signat
 
 </div><!-- new-content -->
 
-##### Step-by-Step Examples  <span class="bg-success" markdown="1">TODO: update to meet new rules </span><!-- new-content -->
+##### Step-by-Step Examples  <span class="bg-success" markdown="1">
 
 Although [*self-signed* certificates] are used for these examples, they are not recommended for production systems.
 {:.bg-warning}
 
 In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate. Then, the `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value. Finally, the signature is verified.
 
-- [Signed SearchSet Bundle Example] : FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results.   In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
+- [Worked Example: Signed SearchSet Bundle] : FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results.   In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-- [Signed Document Bundle Example] : FHIR Document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required. The returned results are individual FHIR resources (in other words, not C-CDA, C-CDA on FHIR, or other binary formats referenced by DocumentReference). In this case, the digital signature represents a practitioner attesting that the information is true and accurate to the best of their knowledge.
+-  [Worked Example: Signed Document Bundle] : FHIR Document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required. The returned results are individual FHIR resources (in other words, not C-CDA, C-CDA on FHIR, or other binary formats referenced by DocumentReference). In this case, the digital signature represents a practitioner attesting that the information is true and accurate to the best of their knowledge.
 
 ---
 

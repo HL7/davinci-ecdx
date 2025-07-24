@@ -1,3 +1,5 @@
+<div class="bg-success" markdown="1">
+
 <!-- # Da Vinci CDEX Digital Signature Document Bundle Example -->
 
 This is a Jupyter Notebook which uses openSSL, Python 3.7, and the Python jcs and jose libraries to create a JSON Web Signature (JWS) (see RFC 7515), attach it to a FHIR Bundle and validate it. Its source code be found [here](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
@@ -1401,3 +1403,5 @@ except Exception as e:
        #     ######  #    #  #  #       #  ######  #####   ### 
 </pre>                                                               
 
+
+</div><!-- new-content -->

@@ -106,8 +106,8 @@
 [RFC 7517]: https://tools.ietf.org/html/rfc7517
 [RFC 8785]: https://datatracker.ietf.org/doc/rfc8785
 [*self-signed* certificates]: https://en.wikipedia.org/wiki/Self-signed_certificate
-[Signed SearchSet Bundle Example]: signed-searchset-bundle-example.html
-[Signed Document Bundle Example]: signed-document-bundle-example.html
+[Worked Example: Signed SearchSet Bundle]: signed-searchset-bundle-example.html
+[Worked Example: Signed Document Bundle]: signed-document-bundle-example.html
 [FHIR-36158]: https://jira.hl7.org/browse/FHIR-36158
 [Solicited and Unsolicited Attachments]: solicited-unsolicited-attachments.html
 [Sending Attachments]: sending-attachments.html
