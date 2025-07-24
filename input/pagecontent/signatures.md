@@ -122,21 +122,27 @@ Digital Signatures employ encryption technology and a digital certificate issued
    - The Signature.data is base64 encoded JWS-Signature [[RFC 7515]: JSON Web Signature (JWS)]
      - The JWS mime type `application/jose` **SHALL** be indicated in the `Signature.sigFormat` element.
      - > JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
-
-        Implementers that support XML must be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.
-        {:.bg-warning} 
    - The signature is a [Detached] Signature (where the content that is signed is removed from the JWS)
      - In other words, the `Bundle.signature` or the QuestionnaireResponse [signatureRequired] extension is removed before signing.
 
    - When FHIR Resources are signed, the signature is across the [Canonical JSON](https://hl7.org/fhir/6.0.0-ballot3/json.html#canonical) form of the resource(s)
  
-      -  CDEX is pre-adopting the changes to FHIR R6 json canonicalization guidance and  **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. 
-         - JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.
-         - Prior to canonicalizing the resource. the XHTML`text.div` narrative elements **SHALL** be canonicalized according to http://hl7.org/fhir/canonicalization/xml following the [FHIR R6 XML Canonicalization rules]((https://hl7.org/fhir/6.0.0-ballot3/xml.html#canonical))
+      -  CDEX is pre-adopting the changes to FHIR R6 json canonicalization guidance and  **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource.  JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.
+         - This canonicalization method is identified by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document` and **SHALL** be indicated in the `Signature.targetFormat` element.
+
+            <div class="bg-info" markdown="1">
+
+            Implementers that support both XML and JSON wire formats **MAY** support cross format signatures by:
+
+            - Validating the JSON Web Signatures in the JSON format.
+            - Canonicalizing the XHTML`text.div` narrative element following the [FHIR R6 XML Canonicalization rules](https://hl7.org/fhir/6.0.0-ballot3/xml.html#canonical) prior to the JSON canonicalization of the resource.
+            - identifying This canonicalization method by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json+xml#document` and **SHALL** indicate it in the `Signature.targetFormat` element.
+            </div><!-- new-info -->
+    
       - `Bundle.id`, and `Bundle.meta`  **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
      - For signatures representing the entire QuestionnaireResponse, `QuestionnaireResponse.id`, and `QuestionnaireResponse.meta` elements **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements. 
      - For signatures representing an item in the QuestionnaireResponse, the `QuestionnaireResponse.item.id` **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements. 
-     - This canonicalization method identified by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document` and **SHALL** be indicated in the `Signature.targetFormat` element.
+
   
    - The signature **SHALL** include a `"srCms"` signer commitments" header element for the Purpose(s) of the Signature (see [JAdES-B-T](https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf), page 17). The Purpose can be the action being attested to, or the role associated with the signature. The value shall come from ASTM E1762-95(2013).
      -  The `"srCms"` header **SHALL** contain an `"id": "urn:oid:1.2.840.10065.1.12.1.5"` (Verification Signature)

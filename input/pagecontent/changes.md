@@ -56,7 +56,13 @@ TODO:
 
 **Breaking Changes**
 
-1. **Part Applied:** Update signature requirements for consistency and reliability (Enhancement)  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes [Here](signatures.html#cdex-signatures)
+1. **Part Applied:** Update signature requirements for consistency and reliability (Enhancement)  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes 
+  - [Signatures](signatures.html#cdex-signatures)
+  - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
+  - [CDEX SearchSet Bundle with Digital Signature Example](Bundle-cdex-searchbundle-digital-sig-example.html)
+  - [CDEX Document with Digital Signature Example](Bundle-cdex-document-digital-sig-example.html)
+  - [CDex Parameters Example 2](Parameters-cdex-parameters-example2.html)
+  - [CDex QuestionnaireResponse Example 4](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
 2. **Applied:**  Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set (Enhancement) [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
   - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
   - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
