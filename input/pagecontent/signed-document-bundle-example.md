@@ -1,6 +1,18 @@
 <div class="bg-success" markdown="1">
 
-<!-- # Da Vinci CDEX Digital Signature Document Bundle Example -->
+<!-- 
+# Da Vinci CDEX Digital Signature Document Bundle Example 
+
+how to create this page:
+1. Update the Jupyter file at https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb
+2. Create Markdown version of file using command line instruction:
+ `jupyter nbconvert --to markdown ~/Digsig_Document_Bundle_Example.ipynb` 
+ Note need to use a compatible python environment to run this 
+3. Copy/paste the markdown file ~/Digsig_Document_Bundle_Example.md to ~/input/pagecontent/signed-document-bundle-example.md
+4. To render properly in the IGM, Manually:
+   1. Add `<pre style="border:0; background:white; overflow-wrap:break-word;"></pre>` to all the output fields 
+   2. Escape Html in the output fields where present, sections 3.2, 4. and 2. (To make render properly in the IG)
+-->
 
 This is a Jupyter Notebook which uses openSSL, Python 3.7, and the Python jcs and jose libraries to create a JSON Web Signature (JWS) (see RFC 7515), attach it to a FHIR Bundle and validate it. Its source code be found [here](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Document_Bundle_Example.ipynb)
 
@@ -617,7 +629,7 @@ payload
 
 
 <pre  style="border:0; background:white; overflow-wrap:break-word;">
-    b'{"entry":[{"fullUrl":"urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76","resource":{"attester":[{"mode":"legal","party":{"display":"Example Practitioner","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"},"time":"2021-10-25T20:16:29-07:00"}],"author":[{"display":"Example Practitioner","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"}],"date":"2021-10-25T20:16:29-07:00","encounter":{"display":"Example Encounter","reference":"urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"},"id":"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76","resourceType":"Composition","section":[{"entry":[{"reference":"urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"}],"title":"Active Condition 1"}],"status":"final","subject":{"display":"Example Patient","reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\\" </p></div><p><b>status</b>: final</p><p><b>type</b>: Medical records <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://loinc.org/\\">LOINC</a>#11503-0)</span></p><p><b>encounter</b>: <a href=\\"#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\\">See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)</a></p><p><b>date</b>: 2021-10-25T20:16:29-07:00</p><p><b>author</b>: <a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></p><p><b>title</b>: Active Conditions</p><h3>Attesters</h3><table class=\\"grid\\"><tr><td>-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td>*</td><td>legal</td><td>2021-10-25T20:16:29-07:00</td><td><a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></td></tr></table></div>","status":"generated"},"title":"Active Conditions","type":{"coding":[{"code":"11503-0","system":"http://loinc.org"}],"text":"Medical records"}}},{"fullUrl":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc","resource":{"id":"0820c16d-91de-4dfa-a3a6-f140a516a9bc","meta":{"lastUpdated":"2013-05-05T16:13:03Z"},"name":[{"family":"Hancock","given":["John"]}],"resourceType":"Practitioner","text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\\" Updated \\"2013-05-05T16:13:03Z\\" </p></div><p><b>name</b>: John Hancock </p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece","resource":{"active":true,"id":"970af6c9-5bbd-4067-b6c1-d9b2c823aece","name":[{"family":"Patient","given":["CDEX Example"],"text":"CDEX Example Patient"}],"resourceType":"Patient","text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Patient</p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570","resource":{"asserter":{"reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"},"category":[{"coding":[{"code":"55607006","display":"Problem","system":"http://snomed.info/sct"},{"code":"75326-9","display":"Problem","system":"http://loinc.org"}]}],"clinicalStatus":{"coding":[{"code":"active","system":"http://terminology.hl7.org/CodeSystem/condition-clinical"}]},"code":{"coding":[{"code":"44054006","display":"Type 2 Diabetes Mellitus","system":"http://snomed.info/sct"}]},"id":"014a68ec-d691-49e0-b980-91b0d924e570","identifier":[{"system":"urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1","value":"1"}],"onsetDateTime":"2006","resourceType":"Condition","subject":{"reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"014a68ec-d691-49e0-b980-91b0d924e570\\" </p></div><p><b>identifier</b>: id: 1</p><p><b>clinicalStatus</b>: Active <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\\">Condition Clinical Status Codes</a>#active)</span></p><p><b>category</b>: Problem <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#55607006; <a href=\\"https://loinc.org/\\">LOINC</a>#75326-9)</span></p><p><b>code</b>: Type 2 Diabetes Mellitus <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#44054006)</span></p><p><b>subject</b>: <a href=\\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)</a></p><p><b>onset</b>: 2006-01-01</p><p><b>asserter</b>: <a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)</a></p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112","resource":{"class":{"code":"EMER","system":"http://terminology.hl7.org/CodeSystem/v3-ActCode"},"id":"5ce5c83a-000f-47d2-941c-039358cc9112","participant":[{"individual":{"display":"John Hancock","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"}}],"period":{"end":"2021-10-25T20:16:29-07:00","start":"2021-10-25T20:10:29-07:00"},"resourceType":"Encounter","serviceProvider":{"display":"CDEX Example Organization","reference":"urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"},"status":"finished","subject":{"display":"CDEX Example Patient","reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"5ce5c83a-000f-47d2-941c-039358cc9112\\" </p></div><p><b>status</b>: finished</p><p><b>class</b>: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = \'emergency\', stated as \'null\')</p><p><b>type</b>: Unknown (qualifier value) <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#261665006)</span></p><p><b>subject</b>: <a href=\\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)</a></p><h3>Participants</h3><table class=\\"grid\\"><tr><td>-</td><td><b>Individual</b></td></tr><tr><td>*</td><td><a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)</a></td></tr></table><p><b>period</b>: 2021-10-25T20:10:29-07:00 --&gt; 2021-10-25T20:16:29-07:00</p><p><b>serviceProvider</b>: <a href=\\"#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\\">See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)</a></p></div>","status":"generated"},"type":[{"coding":[{"code":"261665006","display":"Unknown (qualifier value)","system":"http://snomed.info/sct"}],"text":"Unknown (qualifier value)"}]}},{"fullUrl":"urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3","resource":{"active":true,"address":[{"city":"Boston","country":"USA","line":["1 CDEX Lane"],"postalCode":"01002","state":"MA"}],"id":"e37f004b-dc10-422b-b833-cdaa10a055a3","name":"CDEX Example Organization","resourceType":"Organization","telecom":[{"system":"phone","value":"(+1) 555-555-5555"},{"system":"email","value":"customer-service@example.org"}],"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"e37f004b-dc10-422b-b833-cdaa10a055a3\\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\\"mailto:customer-service@example.org\\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>","status":"generated"}}}],"identifier":{"system":"urn:ietf:rfc:3986","value":"urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"},"resourceType":"Bundle","timestamp":"2021-10-25T20:16:29-07:00","type":"document"}'
+    b'{&quot;entry&quot;:[{&quot;fullUrl&quot;:&quot;urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,&quot;resource&quot;:{&quot;attester&quot;:[{&quot;mode&quot;:&quot;legal&quot;,&quot;party&quot;:{&quot;display&quot;:&quot;Example Practitioner&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;},&quot;time&quot;:&quot;2021-10-25T20:16:29-07:00&quot;}],&quot;author&quot;:[{&quot;display&quot;:&quot;Example Practitioner&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;}],&quot;date&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;encounter&quot;:{&quot;display&quot;:&quot;Example Encounter&quot;,&quot;reference&quot;:&quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;},&quot;id&quot;:&quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,&quot;resourceType&quot;:&quot;Composition&quot;,&quot;section&quot;:[{&quot;entry&quot;:[{&quot;reference&quot;:&quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;}],&quot;title&quot;:&quot;Active Condition 1&quot;}],&quot;status&quot;:&quot;final&quot;,&quot;subject&quot;:{&quot;display&quot;:&quot;Example Patient&quot;,&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Medical records &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://loinc.org/\\&quot;&gt;LOINC&lt;/a&gt;#11503-0)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: &lt;a href=\\&quot;#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\\&quot;&gt;See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\\&quot;grid\\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;legal&lt;/td&gt;&lt;td&gt;2021-10-25T20:16:29-07:00&lt;/td&gt;&lt;td&gt;&lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;},&quot;title&quot;:&quot;Active Conditions&quot;,&quot;type&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;11503-0&quot;,&quot;system&quot;:&quot;http://loinc.org&quot;}],&quot;text&quot;:&quot;Medical records&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,&quot;resource&quot;:{&quot;id&quot;:&quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,&quot;meta&quot;:{&quot;lastUpdated&quot;:&quot;2013-05-05T16:13:03Z&quot;},&quot;name&quot;:[{&quot;family&quot;:&quot;Hancock&quot;,&quot;given&quot;:[&quot;John&quot;]}],&quot;resourceType&quot;:&quot;Practitioner&quot;,&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot; Updated \\&quot;2013-05-05T16:13:03Z\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,&quot;resource&quot;:{&quot;active&quot;:true,&quot;id&quot;:&quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;Patient&quot;,&quot;given&quot;:[&quot;CDEX Example&quot;],&quot;text&quot;:&quot;CDEX Example Patient&quot;}],&quot;resourceType&quot;:&quot;Patient&quot;,&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Patient&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;,&quot;resource&quot;:{&quot;asserter&quot;:{&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;},&quot;category&quot;:[{&quot;coding&quot;:[{&quot;code&quot;:&quot;55607006&quot;,&quot;display&quot;:&quot;Problem&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;},{&quot;code&quot;:&quot;75326-9&quot;,&quot;display&quot;:&quot;Problem&quot;,&quot;system&quot;:&quot;http://loinc.org&quot;}]}],&quot;clinicalStatus&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;active&quot;,&quot;system&quot;:&quot;http://terminology.hl7.org/CodeSystem/condition-clinical&quot;}]},&quot;code&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;44054006&quot;,&quot;display&quot;:&quot;Type 2 Diabetes Mellitus&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;}]},&quot;id&quot;:&quot;014a68ec-d691-49e0-b980-91b0d924e570&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&quot;,&quot;value&quot;:&quot;1&quot;}],&quot;onsetDateTime&quot;:&quot;2006&quot;,&quot;resourceType&quot;:&quot;Condition&quot;,&quot;subject&quot;:{&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;014a68ec-d691-49e0-b980-91b0d924e570\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: Active &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\\&quot;&gt;Condition Clinical Status Codes&lt;/a&gt;#active)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Problem &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#55607006; &lt;a href=\\&quot;https://loinc.org/\\&quot;&gt;LOINC&lt;/a&gt;#75326-9)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Type 2 Diabetes Mellitus &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#44054006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006-01-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: &lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;,&quot;resource&quot;:{&quot;class&quot;:{&quot;code&quot;:&quot;EMER&quot;,&quot;system&quot;:&quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;},&quot;id&quot;:&quot;5ce5c83a-000f-47d2-941c-039358cc9112&quot;,&quot;participant&quot;:[{&quot;individual&quot;:{&quot;display&quot;:&quot;John Hancock&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;}}],&quot;period&quot;:{&quot;end&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;start&quot;:&quot;2021-10-25T20:10:29-07:00&quot;},&quot;resourceType&quot;:&quot;Encounter&quot;,&quot;serviceProvider&quot;:{&quot;display&quot;:&quot;CDEX Example Organization&quot;,&quot;reference&quot;:&quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;},&quot;status&quot;:&quot;finished&quot;,&quot;subject&quot;:{&quot;display&quot;:&quot;CDEX Example Patient&quot;,&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;5ce5c83a-000f-47d2-941c-039358cc9112\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = \'emergency\', stated as \'null\')&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Unknown (qualifier value) &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#261665006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\\&quot;grid\\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25T20:10:29-07:00 --&amp;gt; 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: &lt;a href=\\&quot;#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\\&quot;&gt;See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;},&quot;type&quot;:[{&quot;coding&quot;:[{&quot;code&quot;:&quot;261665006&quot;,&quot;display&quot;:&quot;Unknown (qualifier value)&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;}],&quot;text&quot;:&quot;Unknown (qualifier value)&quot;}]}},{&quot;fullUrl&quot;:&quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,&quot;resource&quot;:{&quot;active&quot;:true,&quot;address&quot;:[{&quot;city&quot;:&quot;Boston&quot;,&quot;country&quot;:&quot;USA&quot;,&quot;line&quot;:[&quot;1 CDEX Lane&quot;],&quot;postalCode&quot;:&quot;01002&quot;,&quot;state&quot;:&quot;MA&quot;}],&quot;id&quot;:&quot;e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,&quot;name&quot;:&quot;CDEX Example Organization&quot;,&quot;resourceType&quot;:&quot;Organization&quot;,&quot;telecom&quot;:[{&quot;system&quot;:&quot;phone&quot;,&quot;value&quot;:&quot;(+1) 555-555-5555&quot;},{&quot;system&quot;:&quot;email&quot;,&quot;value&quot;:&quot;customer-service@example.org&quot;}],&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;e37f004b-dc10-422b-b833-cdaa10a055a3\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\\&quot;mailto:customer-service@example.org\\&quot;&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}}],&quot;identifier&quot;:{&quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&quot;value&quot;:&quot;urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8&quot;},&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;timestamp&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;type&quot;:&quot;document&quot;}'
 </pre>
 
 
@@ -742,301 +754,301 @@ document_bundle['signature'] = sig_element
 print(dumps(document_bundle, indent=2))
 ```
 <pre  style="border:0; background:white; overflow-wrap:break-word;">
-    {
-      "entry": [
+     {
+      &quot;entry&quot;: [
         {
-          "fullUrl": "urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
-          "resource": {
-            "attester": [
+          &quot;fullUrl&quot;: &quot;urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,
+          &quot;resource&quot;: {
+            &quot;attester&quot;: [
               {
-                "mode": "legal",
-                "party": {
-                  "display": "Example Practitioner",
-                  "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+                &quot;mode&quot;: &quot;legal&quot;,
+                &quot;party&quot;: {
+                  &quot;display&quot;: &quot;Example Practitioner&quot;,
+                  &quot;reference&quot;: &quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;
                 },
-                "time": "2021-10-25T20:16:29-07:00"
+                &quot;time&quot;: &quot;2021-10-25T20:16:29-07:00&quot;
               }
             ],
-            "author": [
+            &quot;author&quot;: [
               {
-                "display": "Example Practitioner",
-                "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+                &quot;display&quot;: &quot;Example Practitioner&quot;,
+                &quot;reference&quot;: &quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;
               }
             ],
-            "date": "2021-10-25T20:16:29-07:00",
-            "encounter": {
-              "display": "Example Encounter",
-              "reference": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"
+            &quot;date&quot;: &quot;2021-10-25T20:16:29-07:00&quot;,
+            &quot;encounter&quot;: {
+              &quot;display&quot;: &quot;Example Encounter&quot;,
+              &quot;reference&quot;: &quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;
             },
-            "id": "17a80a8d-4cf1-4deb-a1fd-2db1130e5f76",
-            "resourceType": "Composition",
-            "section": [
+            &quot;id&quot;: &quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,
+            &quot;resourceType&quot;: &quot;Composition&quot;,
+            &quot;section&quot;: [
               {
-                "entry": [
+                &quot;entry&quot;: [
                   {
-                    "reference": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"
+                    &quot;reference&quot;: &quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;
                   }
                 ],
-                "title": "Active Condition 1"
+                &quot;title&quot;: &quot;Active Condition 1&quot;
               }
             ],
-            "status": "final",
-            "subject": {
-              "display": "Example Patient",
-              "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+            &quot;status&quot;: &quot;final&quot;,
+            &quot;subject&quot;: {
+              &quot;display&quot;: &quot;Example Patient&quot;,
+              &quot;reference&quot;: &quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;
             },
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\" </p></div><p><b>status</b>: final</p><p><b>type</b>: Medical records <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11503-0)</span></p><p><b>encounter</b>: <a href=\"#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\">See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)</a></p><p><b>date</b>: 2021-10-25T20:16:29-07:00</p><p><b>author</b>: <a href=\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></p><p><b>title</b>: Active Conditions</p><h3>Attesters</h3><table class=\"grid\"><tr><td>-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td>*</td><td>legal</td><td>2021-10-25T20:16:29-07:00</td><td><a href=\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></td></tr></table></div>",
-              "status": "generated"
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Medical records &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://loinc.org/\&quot;&gt;LOINC&lt;/a&gt;#11503-0)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: &lt;a href=\&quot;#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\&quot;&gt;See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a href=\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;legal&lt;/td&gt;&lt;td&gt;2021-10-25T20:16:29-07:00&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             },
-            "title": "Active Conditions",
-            "type": {
-              "coding": [
+            &quot;title&quot;: &quot;Active Conditions&quot;,
+            &quot;type&quot;: {
+              &quot;coding&quot;: [
                 {
-                  "code": "11503-0",
-                  "system": "http://loinc.org"
+                  &quot;code&quot;: &quot;11503-0&quot;,
+                  &quot;system&quot;: &quot;http://loinc.org&quot;
                 }
               ],
-              "text": "Medical records"
+              &quot;text&quot;: &quot;Medical records&quot;
             }
           }
         },
         {
-          "fullUrl": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-          "resource": {
-            "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
-            "meta": {
-              "lastUpdated": "2013-05-05T16:13:03Z"
+          &quot;fullUrl&quot;: &quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,
+          &quot;resource&quot;: {
+            &quot;id&quot;: &quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,
+            &quot;meta&quot;: {
+              &quot;lastUpdated&quot;: &quot;2013-05-05T16:13:03Z&quot;
             },
-            "name": [
+            &quot;name&quot;: [
               {
-                "family": "Hancock",
-                "given": [
-                  "John"
+                &quot;family&quot;: &quot;Hancock&quot;,
+                &quot;given&quot;: [
+                  &quot;John&quot;
                 ]
               }
             ],
-            "resourceType": "Practitioner",
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"0820c16d-91de-4dfa-a3a6-f140a516a9bc\" Updated \"2013-05-05T16:13:03Z\" </p></div><p><b>name</b>: John Hancock </p></div>",
-              "status": "generated"
+            &quot;resourceType&quot;: &quot;Practitioner&quot;,
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc\&quot; Updated \&quot;2013-05-05T16:13:03Z\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             }
           }
         },
         {
-          "fullUrl": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece",
-          "resource": {
-            "active": true,
-            "id": "970af6c9-5bbd-4067-b6c1-d9b2c823aece",
-            "name": [
+          &quot;fullUrl&quot;: &quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,
+          &quot;resource&quot;: {
+            &quot;active&quot;: true,
+            &quot;id&quot;: &quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,
+            &quot;name&quot;: [
               {
-                "family": "Patient",
-                "given": [
-                  "CDEX Example"
+                &quot;family&quot;: &quot;Patient&quot;,
+                &quot;given&quot;: [
+                  &quot;CDEX Example&quot;
                 ],
-                "text": "CDEX Example Patient"
+                &quot;text&quot;: &quot;CDEX Example Patient&quot;
               }
             ],
-            "resourceType": "Patient",
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"970af6c9-5bbd-4067-b6c1-d9b2c823aece\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Patient</p></div>",
-              "status": "generated"
+            &quot;resourceType&quot;: &quot;Patient&quot;,
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Patient&lt;/p&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             }
           }
         },
         {
-          "fullUrl": "urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570",
-          "resource": {
-            "asserter": {
-              "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+          &quot;fullUrl&quot;: &quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;,
+          &quot;resource&quot;: {
+            &quot;asserter&quot;: {
+              &quot;reference&quot;: &quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;
             },
-            "category": [
+            &quot;category&quot;: [
               {
-                "coding": [
+                &quot;coding&quot;: [
                   {
-                    "code": "55607006",
-                    "display": "Problem",
-                    "system": "http://snomed.info/sct"
+                    &quot;code&quot;: &quot;55607006&quot;,
+                    &quot;display&quot;: &quot;Problem&quot;,
+                    &quot;system&quot;: &quot;http://snomed.info/sct&quot;
                   },
                   {
-                    "code": "75326-9",
-                    "display": "Problem",
-                    "system": "http://loinc.org"
+                    &quot;code&quot;: &quot;75326-9&quot;,
+                    &quot;display&quot;: &quot;Problem&quot;,
+                    &quot;system&quot;: &quot;http://loinc.org&quot;
                   }
                 ]
               }
             ],
-            "clinicalStatus": {
-              "coding": [
+            &quot;clinicalStatus&quot;: {
+              &quot;coding&quot;: [
                 {
-                  "code": "active",
-                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+                  &quot;code&quot;: &quot;active&quot;,
+                  &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/condition-clinical&quot;
                 }
               ]
             },
-            "code": {
-              "coding": [
+            &quot;code&quot;: {
+              &quot;coding&quot;: [
                 {
-                  "code": "44054006",
-                  "display": "Type 2 Diabetes Mellitus",
-                  "system": "http://snomed.info/sct"
+                  &quot;code&quot;: &quot;44054006&quot;,
+                  &quot;display&quot;: &quot;Type 2 Diabetes Mellitus&quot;,
+                  &quot;system&quot;: &quot;http://snomed.info/sct&quot;
                 }
               ]
             },
-            "id": "014a68ec-d691-49e0-b980-91b0d924e570",
-            "identifier": [
+            &quot;id&quot;: &quot;014a68ec-d691-49e0-b980-91b0d924e570&quot;,
+            &quot;identifier&quot;: [
               {
-                "system": "urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1",
-                "value": "1"
+                &quot;system&quot;: &quot;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&quot;,
+                &quot;value&quot;: &quot;1&quot;
               }
             ],
-            "onsetDateTime": "2006",
-            "resourceType": "Condition",
-            "subject": {
-              "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+            &quot;onsetDateTime&quot;: &quot;2006&quot;,
+            &quot;resourceType&quot;: &quot;Condition&quot;,
+            &quot;subject&quot;: {
+              &quot;reference&quot;: &quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;
             },
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"014a68ec-d691-49e0-b980-91b0d924e570\" </p></div><p><b>identifier</b>: id: 1</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>category</b>: Problem <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#55607006; <a href=\"https://loinc.org/\">LOINC</a>#75326-9)</span></p><p><b>code</b>: Type 2 Diabetes Mellitus <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#44054006)</span></p><p><b>subject</b>: <a href=\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)</a></p><p><b>onset</b>: 2006-01-01</p><p><b>asserter</b>: <a href=\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)</a></p></div>",
-              "status": "generated"
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;014a68ec-d691-49e0-b980-91b0d924e570\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: Active &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\&quot;&gt;Condition Clinical Status Codes&lt;/a&gt;#active)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Problem &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://browser.ihtsdotools.org/\&quot;&gt;SNOMED CT&lt;/a&gt;#55607006; &lt;a href=\&quot;https://loinc.org/\&quot;&gt;LOINC&lt;/a&gt;#75326-9)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Type 2 Diabetes Mellitus &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://browser.ihtsdotools.org/\&quot;&gt;SNOMED CT&lt;/a&gt;#44054006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006-01-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: &lt;a href=\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             }
           }
         },
         {
-          "fullUrl": "urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112",
-          "resource": {
-            "class": {
-              "code": "EMER",
-              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+          &quot;fullUrl&quot;: &quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;,
+          &quot;resource&quot;: {
+            &quot;class&quot;: {
+              &quot;code&quot;: &quot;EMER&quot;,
+              &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;
             },
-            "id": "5ce5c83a-000f-47d2-941c-039358cc9112",
-            "participant": [
+            &quot;id&quot;: &quot;5ce5c83a-000f-47d2-941c-039358cc9112&quot;,
+            &quot;participant&quot;: [
               {
-                "individual": {
-                  "display": "John Hancock",
-                  "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+                &quot;individual&quot;: {
+                  &quot;display&quot;: &quot;John Hancock&quot;,
+                  &quot;reference&quot;: &quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;
                 }
               }
             ],
-            "period": {
-              "end": "2021-10-25T20:16:29-07:00",
-              "start": "2021-10-25T20:10:29-07:00"
+            &quot;period&quot;: {
+              &quot;end&quot;: &quot;2021-10-25T20:16:29-07:00&quot;,
+              &quot;start&quot;: &quot;2021-10-25T20:10:29-07:00&quot;
             },
-            "resourceType": "Encounter",
-            "serviceProvider": {
-              "display": "CDEX Example Organization",
-              "reference": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"
+            &quot;resourceType&quot;: &quot;Encounter&quot;,
+            &quot;serviceProvider&quot;: {
+              &quot;display&quot;: &quot;CDEX Example Organization&quot;,
+              &quot;reference&quot;: &quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;
             },
-            "status": "finished",
-            "subject": {
-              "display": "CDEX Example Patient",
-              "reference": "urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"
+            &quot;status&quot;: &quot;finished&quot;,
+            &quot;subject&quot;: {
+              &quot;display&quot;: &quot;CDEX Example Patient&quot;,
+              &quot;reference&quot;: &quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;
             },
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"5ce5c83a-000f-47d2-941c-039358cc9112\" </p></div><p><b>status</b>: finished</p><p><b>class</b>: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')</p><p><b>type</b>: Unknown (qualifier value) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#261665006)</span></p><p><b>subject</b>: <a href=\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)</a></p><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Individual</b></td></tr><tr><td>*</td><td><a href=\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)</a></td></tr></table><p><b>period</b>: 2021-10-25T20:10:29-07:00 --&gt; 2021-10-25T20:16:29-07:00</p><p><b>serviceProvider</b>: <a href=\"#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\">See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)</a></p></div>",
-              "status": "generated"
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;5ce5c83a-000f-47d2-941c-039358cc9112\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = 'emergency', stated as 'null')&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Unknown (qualifier value) &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://browser.ihtsdotools.org/\&quot;&gt;SNOMED CT&lt;/a&gt;#261665006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25T20:10:29-07:00 --&amp;gt; 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: &lt;a href=\&quot;#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\&quot;&gt;See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             },
-            "type": [
+            &quot;type&quot;: [
               {
-                "coding": [
+                &quot;coding&quot;: [
                   {
-                    "code": "261665006",
-                    "display": "Unknown (qualifier value)",
-                    "system": "http://snomed.info/sct"
+                    &quot;code&quot;: &quot;261665006&quot;,
+                    &quot;display&quot;: &quot;Unknown (qualifier value)&quot;,
+                    &quot;system&quot;: &quot;http://snomed.info/sct&quot;
                   }
                 ],
-                "text": "Unknown (qualifier value)"
+                &quot;text&quot;: &quot;Unknown (qualifier value)&quot;
               }
             ]
           }
         },
         {
-          "fullUrl": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
-          "resource": {
-            "active": true,
-            "address": [
+          &quot;fullUrl&quot;: &quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,
+          &quot;resource&quot;: {
+            &quot;active&quot;: true,
+            &quot;address&quot;: [
               {
-                "city": "Boston",
-                "country": "USA",
-                "line": [
-                  "1 CDEX Lane"
+                &quot;city&quot;: &quot;Boston&quot;,
+                &quot;country&quot;: &quot;USA&quot;,
+                &quot;line&quot;: [
+                  &quot;1 CDEX Lane&quot;
                 ],
-                "postalCode": "01002",
-                "state": "MA"
+                &quot;postalCode&quot;: &quot;01002&quot;,
+                &quot;state&quot;: &quot;MA&quot;
               }
             ],
-            "id": "e37f004b-dc10-422b-b833-cdaa10a055a3",
-            "name": "CDEX Example Organization",
-            "resourceType": "Organization",
-            "telecom": [
+            &quot;id&quot;: &quot;e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,
+            &quot;name&quot;: &quot;CDEX Example Organization&quot;,
+            &quot;resourceType&quot;: &quot;Organization&quot;,
+            &quot;telecom&quot;: [
               {
-                "system": "phone",
-                "value": "(+1) 555-555-5555"
+                &quot;system&quot;: &quot;phone&quot;,
+                &quot;value&quot;: &quot;(+1) 555-555-5555&quot;
               },
               {
-                "system": "email",
-                "value": "customer-service@example.org"
+                &quot;system&quot;: &quot;email&quot;,
+                &quot;value&quot;: &quot;customer-service@example.org&quot;
               }
             ],
-            "text": {
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"e37f004b-dc10-422b-b833-cdaa10a055a3\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\"mailto:customer-service@example.org\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>",
-              "status": "generated"
+            &quot;text&quot;: {
+              &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;e37f004b-dc10-422b-b833-cdaa10a055a3\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\&quot;mailto:customer-service@example.org\&quot;&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;&quot;,
+              &quot;status&quot;: &quot;generated&quot;
             }
           }
         }
       ],
-      "identifier": {
-        "system": "urn:ietf:rfc:3986",
-        "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
+      &quot;identifier&quot;: {
+        &quot;system&quot;: &quot;urn:ietf:rfc:3986&quot;,
+        &quot;value&quot;: &quot;urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8&quot;
       },
-      "resourceType": "Bundle",
-      "timestamp": "2021-10-25T20:16:29-07:00",
-      "type": "document",
-      "id": "cdex-document-digital-sig-example",
-      "meta": {
-        "extension": [
+      &quot;resourceType&quot;: &quot;Bundle&quot;,
+      &quot;timestamp&quot;: &quot;2021-10-25T20:16:29-07:00&quot;,
+      &quot;type&quot;: &quot;document&quot;,
+      &quot;id&quot;: &quot;cdex-document-digital-sig-example&quot;,
+      &quot;meta&quot;: {
+        &quot;extension&quot;: [
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
-            "valueString": "CDEX Document with Digital Signature Example"
+            &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/instance-name&quot;,
+            &quot;valueString&quot;: &quot;CDEX Document with Digital Signature Example&quot;
           },
           {
-            "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
-            "valueMarkdown": "Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
+            &quot;url&quot;: &quot;http://hl7.org/fhir/StructureDefinition/instance-description&quot;,
+            &quot;valueMarkdown&quot;: &quot;Digital signature example showing how it is used to sign a FHIR Document.  The CDEX use case would be the target resource in response to a Task-based request where an digital signature was required.  If no signature was required, the response would typically be in the form of an individual resource.&quot;
           }
         ]
       },
-      "signature": {
-        "type": [
+      &quot;signature&quot;: {
+        &quot;type&quot;: [
           {
-            "system": "urn:iso-astm:E1762-95:2013",
-            "code": "1.2.840.10065.1.12.1.5",
-            "display": "Verification Signature"
+            &quot;system&quot;: &quot;urn:iso-astm:E1762-95:2013&quot;,
+            &quot;code&quot;: &quot;1.2.840.10065.1.12.1.5&quot;,
+            &quot;display&quot;: &quot;Verification Signature&quot;
           }
         ],
-        "when": "2021-10-05T22:42:19-07:00",
-        "who": {
-          "identifier": {
-            "system": "http://hl7.org/fhir/sid/us-npi",
-            "type": {
-              "coding": [
+        &quot;when&quot;: &quot;2021-10-05T22:42:19-07:00&quot;,
+        &quot;who&quot;: {
+          &quot;identifier&quot;: {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/sid/us-npi&quot;,
+            &quot;type&quot;: {
+              &quot;coding&quot;: [
                 {
-                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                  "code": "NPI"
+                  &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v2-0203&quot;,
+                  &quot;code&quot;: &quot;NPI&quot;
                 }
               ]
             },
-            "value": "9941339100"
+            &quot;value&quot;: &quot;9941339100&quot;
           },
-          "display": "John Hancock, MD"
+          &quot;display&quot;: &quot;John Hancock, MD&quot;
         },
-        "onBehalfOf": {
-          "identifier": {
-            "system": "http://hl7.org/fhir/sid/us-npi",
-            "value": "1234567893"
+        &quot;onBehalfOf&quot;: {
+          &quot;identifier&quot;: {
+            &quot;system&quot;: &quot;http://hl7.org/fhir/sid/us-npi&quot;,
+            &quot;value&quot;: &quot;1234567893&quot;
           }
         },
-        "targetFormat": "application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document",
-        "sigFormat": "application/jose",
-        "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltVTJaV1prWWpNMU1HSTJPV0l6TmpsaE5ETmhaVFl3TVRVMFpURTNaak01WVdNM05XVmlOVGdpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJbk55UTIxeklqcGJleUpqYjIxdFNXUWlPbnNpWkdWell5STZJbFpsY21sbWFXTmhkR2x2YmlCVGFXZHVZWFIxY21VaUxDSnBaQ0k2SW5WeWJqcHZhV1E2TVM0eUxqZzBNQzR4TURBMk5TNHhMakV5TGpFdU5TSjlMQ0pqYjIxdFVYVmhiSE1pT2xzaVZtVnlhV1pwWTJGMGFXOXVJRzltSUcxbFpHbGpZV3dnY21WamIzSmtJR2x1ZEdWbmNtbDBlU0pkZlYwc0luUjVjQ0k2SWtwWFZDSXNJbmcxWXlJNld5Sk5TVWxHWlZSRFEwRXJSMmRCZDBsQ1FXZEpWVTlqUm5GTVQwSnRkRGRXVWpaNU5FWkhiakF3VVZOR1RWaEtaM2RFVVZsS1MyOWFTV2gyWTA1QlVVVk1RbEZCZDJkaFdYaERla0ZLUW1kT1ZrSkJXVlJCYkZaVVRWSlpkMFpCV1VSV1VWRkpSRUV4VGxsWVRucFpWMDV2WkZoT2JHUklVbnBOVVRoM1JGRlpSRlpSVVVoRVFWcERZak5PTUdJeU5IaElWRUZpUW1kT1ZrSkJiMDFHUlZZMFdWY3hkMkpIVldkVU0wcHVXVmMxY0dWdFJqQmhWemwxVFZOSmQwbEJXVVJXVVZGRVJFSnNSRkpGVmxsSlJWWTBXVmN4ZDJKSFZXZFVNMHB1V1ZjMWNHVnRSakJoVnpsMVRWTnpkMHRSV1VwTGIxcEphSFpqVGtGUmEwSkdhSGhxWkZoT01HSXlNV3hqYVRGNldsaEtNbUZYVG14UlIxWTBXVmN4ZDJKSFZYVmlNMHB1VFVJMFdFUlVTVEZOUkdONVRrUkZORTFVVVRCTlJtOVlSRlJKTWsxRVkzaFBWRVUwVFZSUk1FMUdiM2RuWVZsNFEzcEJTa0puVGxaQ1FWbFVRV3hXVkUxU1dYZEdRVmxFVmxGUlNVUkJNVTVaV0U1NldWZE9iMlJZVG14a1NGSjZUVkU0ZDBSUldVUldVVkZJUkVGYVEySXpUakJpTWpSNFNGUkJZa0puVGxaQ1FXOU5Sa1ZXTkZsWE1YZGlSMVZuVkROS2JsbFhOWEJsYlVZd1lWYzVkVTFUU1hkSlFWbEVWbEZSUkVSQ2JFUlNSVlpaU1VWV05GbFhNWGRpUjFWblZETktibGxYTlhCbGJVWXdZVmM1ZFUxVGMzZExVVmxLUzI5YVNXaDJZMDVCVVd0Q1JtaDRhbVJZVGpCaU1qRnNZMmt4ZWxwWVNqSmhWMDVzVVVkV05GbFhNWGRpUjFWMVlqTktiazFKU1VKdmFrRk9RbWRyY1docmFVYzVkekJDUVZGRlJrRkJUME5CV1RoQlRVbEpRbWxuUzBOQldVVkJjblI1U0VsbFJXMXRNVTFwTW1sU04yeFNWemxPVUhoQmVWTTVRbWc0VUhoRk1XSkdTMUJpVW04eFFsZGtSbGx2YzBSQlJFMWplR1JvT1dwMWVXTnphV2hHUlcwdmREbHVZMEpsUW1WTVNURlZkWHBGWWk5TEswWlhNV0ZLYm1acksyRmFla0V5TVhCbk1Yb3djbEpxTjJsVGFIQkxkemhtTUdGcGFIcGhWR2xoUWs5c1UzTmpiMWxFVjJWQ2VUZHdaVFZSTDJWTU4xWlNkWEZuYkZwb1ZtczNXa3hUY0hjNGVHSldWRzlHVUZsNU1rbG9OVFozYldRMGVDdDNORWs1UkZORGMyMXBSVVV4ZDNSWGRWcDBaVlpzWjJWalprMXpXUzlZZW05NlNFSlVhMnMwUm5Kb09GQjRhaTh6YTNaWlZGbFZOVEpxYzJONlFVbE1SR3h3VlVzMFoyRTNXRWROYnpJelVXOTFXR1JHV0ZkSk9FdE5ObGhtVDFKWFEzRlhWU3N5VmpSQ09VMXVhbXBIT0dweVR5dFBRMFJJVVVoS2NVSjRjbXROV1ZjclIydGlhRUp4T0ZsUGJtZFJVVWd2ZEZvNFEybzRkbVl3V2xoRlVXOTFNRXhYYlc5V1RtWmFXWFZ4UTBkRVNqVkpaekJzUVVSdGJTdHNRbmQwVTJWTk9WQndhbkV3WmxaWU5DOTFLeXR2YnpNMlRGbHBibmRPYjBKQmJUTnlVV3hDVGtrMVRWVjNWazl5Y25aUGFHbFhaRmwyV1ZOcU0yWjNRMnRpTVdGTFFtOW1SbkZRVFhJekwyNVRLek5XVDB4blIzQTNkamRoZEVOVVpsZEhOMlo0WmpWRk9IWm9NamQ1TVdweE0wWlFTMUJaTURCeVRuZHpObFl6VVZwMVRsaEJaMDFDUVVGSGFtZGFkM2RuV210M1ExRlpSRlpTTUZSQ1FVbDNRVVJCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRaUVZsRVZsSXdVa0pHYTNkV05FbFFaRE5rTTB4dFZqUlpWekYzWWtkVmRXSXpTbTV2UW10SFExZERSMU5CUjBjclZuTkZRbkZCVFVSQmIzaE5hazB3VGxSWk0wOUVhM3BvYVd4dlpFaFNkMk42YjNaTU1sWTBXVmN4ZDJKSFZYVmlNMHB1VERKYWIyRllTWFpVTTBwdVdWYzFjR1Z0UmpCaFZ6bDFUSHBGZVUxNlFXUkNaMDVXU0ZFMFJVWm5VVlUxZFM5aVRsRjBjSE15Yld0UGRWbENWazlHTDA5aGVERTJNV2QzUkZGWlNrdHZXa2xvZG1OT1FWRkZURUpSUVVSblowZENRVUpwVEU5Vk16bE9SWGxUZWxwVFIzb3lZVTVvWWsxNlZWWTFVbUZVZDNKd1JIaEVkbGxxUkZnemFrVlFMMnB6YldvMEwzQk9LMHcxVWxsQ1dITkNabGw0VTFWMVlsRk1aVloyYTJZMVpuWXJiMGR5YldWRFZ5dG1XRGg1UlRGeWJDdHhPREZEUTB3clVUaE1UMDk2UVZwR2RVVmxXVVU1YVdWamVsazNaazh4T0Uxd1JqaHVRekUwUTBSUllqWkVUakV3VVdGQmRHSm9WRVpoYTFwbFQzRmFZVlZuVkc5RVprbE9jMjQzYW5waEwySndkREZMWlhVMWRsVnpkVEZ4Um1kcVFYQjZRVFlyVFdGc1NVNVZhMGh0WVRKR1N5dDZNbGxtZVRCWEwwNW9kWEJpVEdOWFJXNHhVbmwxVlVKVVVYZHpjMjA1ZDFKUVJFVXZURzlUVlVFemNHMXRjVkJFYkRnM1pEbDBSMFpFU3k5NWJGRlVkV0Z4YkRWMFJqQXliR3A2T0hkWlVXbFRVbVkxYm5wNGNWUnRkRzVOUTIxMmFIbGhlRGMxYmpVd2RHOHZWRzQwYkdndmFqRnBhMjhyZDBOQlYxUk5RMDVyWWl0dE5FY3hiWE5rYjFWWmJrVlpiaTlVYVhwWE9YWkxNMHhvVmxSWE5WcGtTU3QxVm5saGMyUkNhRkpNYjNsc2QxbHBaRlZIUTJGb2RrcG1SRk5IYXpCNFV6YzBhRlZZWWpJeU0wRnRlbWxUUzBVelZFWlFlRk51V2tWMk0zcHBPRzFQYTNwelRWTjFZbXB1Y0VweGNtNVJXRzlDYms1Sk9ITXJhakJKZVZwUk1qbGFiV1E0UTB4TWNXMW5hMGxQVms5MVlXTkRiMnRZZGt0RVYydFZiV3RDZVZKUE5reDNRVDA5SWwxOS4uY0hiVlZWRDhGTjVlOWlWQ1dHUUNPeTlCbHBXS1pSZ3cteEd1WjFOM0pfdjN1Uk5sLUNzZ1piNElMcHFkbldzay1sMHJaUXNmTEI2NENrb2dCb2xobjYtWl9Zazl1d0ZBQmhzR0pWMjk2d2xTTlJsNW5iYXdJUGV1dG5zX2JZMVRLOUpMUFdUWE9iT0lHUEhXR0RnRUFsdk11WWJ1SnR6TXhlRUZlYlN5UHJfZWpvdnB4Ym1HVnh4bzVkcDJ1Nm56SUNzdUNqQjU5NHc0M2k1WWxrMWZDTXEzcVZnbVRRdWRhLWZFV0ZlaVRhWS1vbGc2dnZmN2hva29mR0Vod05hUFA4YWNYOFM2Ykt3OE1nOHVOS3ZSRU00QzJYVGlkaHNuMVYyNWFkU0xKWDZWYTBwNEpfOU1saFRsU2FPdWc1OFVyUVNia1UwZ0stUEQwU01xR0JRWktsdW0yZGdvclhlZkg2NXZBLURCZUtMUVA5LUFvOEtxRTRIbl95Mi1sdVF1bkotMVRQTFo2MGNoNktLazU0OFJCUlk0dUJTdGFIcFpKaGIzRXo5QTZzX0E0YXAxdFhPZV93UnNwWS1mblliY3l0a2FTTjk0NWdDRzQ4Ykh5d2w0Y1JwcV9xdjBNZE9Xd1FlVVhDdFdUcDdTaDU2WS00eDRubWhLWlRUZHhaMEg="
+        &quot;targetFormat&quot;: &quot;application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document&quot;,
+        &quot;sigFormat&quot;: &quot;application/jose&quot;,
+        &quot;data&quot;: &quot;ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltVTJaV1prWWpNMU1HSTJPV0l6TmpsaE5ETmhaVFl3TVRVMFpURTNaak01WVdNM05XVmlOVGdpTENKcmRIa2lPaUpTVXlJc0luTnBaMVFpT2lJeU1ESXdMVEV3TFRJelZEQTBPalUwT2pVMkxqQTBPQ3N3TURvd01DSXNJbk55UTIxeklqcGJleUpqYjIxdFNXUWlPbnNpWkdWell5STZJbFpsY21sbWFXTmhkR2x2YmlCVGFXZHVZWFIxY21VaUxDSnBaQ0k2SW5WeWJqcHZhV1E2TVM0eUxqZzBNQzR4TURBMk5TNHhMakV5TGpFdU5TSjlMQ0pqYjIxdFVYVmhiSE1pT2xzaVZtVnlhV1pwWTJGMGFXOXVJRzltSUcxbFpHbGpZV3dnY21WamIzSmtJR2x1ZEdWbmNtbDBlU0pkZlYwc0luUjVjQ0k2SWtwWFZDSXNJbmcxWXlJNld5Sk5TVWxHWlZSRFEwRXJSMmRCZDBsQ1FXZEpWVTlqUm5GTVQwSnRkRGRXVWpaNU5FWkhiakF3VVZOR1RWaEtaM2RFVVZsS1MyOWFTV2gyWTA1QlVVVk1RbEZCZDJkaFdYaERla0ZLUW1kT1ZrSkJXVlJCYkZaVVRWSlpkMFpCV1VSV1VWRkpSRUV4VGxsWVRucFpWMDV2WkZoT2JHUklVbnBOVVRoM1JGRlpSRlpSVVVoRVFWcERZak5PTUdJeU5IaElWRUZpUW1kT1ZrSkJiMDFHUlZZMFdWY3hkMkpIVldkVU0wcHVXVmMxY0dWdFJqQmhWemwxVFZOSmQwbEJXVVJXVVZGRVJFSnNSRkpGVmxsSlJWWTBXVmN4ZDJKSFZXZFVNMHB1V1ZjMWNHVnRSakJoVnpsMVRWTnpkMHRSV1VwTGIxcEphSFpqVGtGUmEwSkdhSGhxWkZoT01HSXlNV3hqYVRGNldsaEtNbUZYVG14UlIxWTBXVmN4ZDJKSFZYVmlNMHB1VFVJMFdFUlVTVEZOUkdONVRrUkZORTFVVVRCTlJtOVlSRlJKTWsxRVkzaFBWRVUwVFZSUk1FMUdiM2RuWVZsNFEzcEJTa0puVGxaQ1FWbFVRV3hXVkUxU1dYZEdRVmxFVmxGUlNVUkJNVTVaV0U1NldWZE9iMlJZVG14a1NGSjZUVkU0ZDBSUldVUldVVkZJUkVGYVEySXpUakJpTWpSNFNGUkJZa0puVGxaQ1FXOU5Sa1ZXTkZsWE1YZGlSMVZuVkROS2JsbFhOWEJsYlVZd1lWYzVkVTFUU1hkSlFWbEVWbEZSUkVSQ2JFUlNSVlpaU1VWV05GbFhNWGRpUjFWblZETktibGxYTlhCbGJVWXdZVmM1ZFUxVGMzZExVVmxLUzI5YVNXaDJZMDVCVVd0Q1JtaDRhbVJZVGpCaU1qRnNZMmt4ZWxwWVNqSmhWMDVzVVVkV05GbFhNWGRpUjFWMVlqTktiazFKU1VKdmFrRk9RbWRyY1docmFVYzVkekJDUVZGRlJrRkJUME5CV1RoQlRVbEpRbWxuUzBOQldVVkJjblI1U0VsbFJXMXRNVTFwTW1sU04yeFNWemxPVUhoQmVWTTVRbWc0VUhoRk1XSkdTMUJpVW04eFFsZGtSbGx2YzBSQlJFMWplR1JvT1dwMWVXTnphV2hHUlcwdmREbHVZMEpsUW1WTVNURlZkWHBGWWk5TEswWlhNV0ZLYm1acksyRmFla0V5TVhCbk1Yb3djbEpxTjJsVGFIQkxkemhtTUdGcGFIcGhWR2xoUWs5c1UzTmpiMWxFVjJWQ2VUZHdaVFZSTDJWTU4xWlNkWEZuYkZwb1ZtczNXa3hUY0hjNGVHSldWRzlHVUZsNU1rbG9OVFozYldRMGVDdDNORWs1UkZORGMyMXBSVVV4ZDNSWGRWcDBaVlpzWjJWalprMXpXUzlZZW05NlNFSlVhMnMwUm5Kb09GQjRhaTh6YTNaWlZGbFZOVEpxYzJONlFVbE1SR3h3VlVzMFoyRTNXRWROYnpJelVXOTFXR1JHV0ZkSk9FdE5ObGhtVDFKWFEzRlhWU3N5VmpSQ09VMXVhbXBIT0dweVR5dFBRMFJJVVVoS2NVSjRjbXROV1ZjclIydGlhRUp4T0ZsUGJtZFJVVWd2ZEZvNFEybzRkbVl3V2xoRlVXOTFNRXhYYlc5V1RtWmFXWFZ4UTBkRVNqVkpaekJzUVVSdGJTdHNRbmQwVTJWTk9WQndhbkV3WmxaWU5DOTFLeXR2YnpNMlRGbHBibmRPYjBKQmJUTnlVV3hDVGtrMVRWVjNWazl5Y25aUGFHbFhaRmwyV1ZOcU0yWjNRMnRpTVdGTFFtOW1SbkZRVFhJekwyNVRLek5XVDB4blIzQTNkamRoZEVOVVpsZEhOMlo0WmpWRk9IWm9NamQ1TVdweE0wWlFTMUJaTURCeVRuZHpObFl6VVZwMVRsaEJaMDFDUVVGSGFtZGFkM2RuV210M1ExRlpSRlpTTUZSQ1FVbDNRVVJCVEVKblRsWklVVGhGUWtGTlEwSmxRWGRaUVZsRVZsSXdVa0pHYTNkV05FbFFaRE5rTTB4dFZqUlpWekYzWWtkVmRXSXpTbTV2UW10SFExZERSMU5CUjBjclZuTkZRbkZCVFVSQmIzaE5hazB3VGxSWk0wOUVhM3BvYVd4dlpFaFNkMk42YjNaTU1sWTBXVmN4ZDJKSFZYVmlNMHB1VERKYWIyRllTWFpVTTBwdVdWYzFjR1Z0UmpCaFZ6bDFUSHBGZVUxNlFXUkNaMDVXU0ZFMFJVWm5VVlUxZFM5aVRsRjBjSE15Yld0UGRWbENWazlHTDA5aGVERTJNV2QzUkZGWlNrdHZXa2xvZG1OT1FWRkZURUpSUVVSblowZENRVUpwVEU5Vk16bE9SWGxUZWxwVFIzb3lZVTVvWWsxNlZWWTFVbUZVZDNKd1JIaEVkbGxxUkZnemFrVlFMMnB6YldvMEwzQk9LMHcxVWxsQ1dITkNabGw0VTFWMVlsRk1aVloyYTJZMVpuWXJiMGR5YldWRFZ5dG1XRGg1UlRGeWJDdHhPREZEUTB3clVUaE1UMDk2UVZwR2RVVmxXVVU1YVdWamVsazNaazh4T0Uxd1JqaHVRekUwUTBSUllqWkVUakV3VVdGQmRHSm9WRVpoYTFwbFQzRmFZVlZuVkc5RVprbE9jMjQzYW5waEwySndkREZMWlhVMWRsVnpkVEZ4Um1kcVFYQjZRVFlyVFdGc1NVNVZhMGh0WVRKR1N5dDZNbGxtZVRCWEwwNW9kWEJpVEdOWFJXNHhVbmwxVlVKVVVYZHpjMjA1ZDFKUVJFVXZURzlUVlVFemNHMXRjVkJFYkRnM1pEbDBSMFpFU3k5NWJGRlVkV0Z4YkRWMFJqQXliR3A2T0hkWlVXbFRVbVkxYm5wNGNWUnRkRzVOUTIxMmFIbGhlRGMxYmpVd2RHOHZWRzQwYkdndmFqRnBhMjhyZDBOQlYxUk5RMDVyWWl0dE5FY3hiWE5rYjFWWmJrVlpiaTlVYVhwWE9YWkxNMHhvVmxSWE5WcGtTU3QxVm5saGMyUkNhRkpNYjNsc2QxbHBaRlZIUTJGb2RrcG1SRk5IYXpCNFV6YzBhRlZZWWpJeU0wRnRlbWxUUzBVelZFWlFlRk51V2tWMk0zcHBPRzFQYTNwelRWTjFZbXB1Y0VweGNtNVJXRzlDYms1Sk9ITXJhakJKZVZwUk1qbGFiV1E0UTB4TWNXMW5hMGxQVms5MVlXTkRiMnRZZGt0RVYydFZiV3RDZVZKUE5reDNRVDA5SWwxOS4uY0hiVlZWRDhGTjVlOWlWQ1dHUUNPeTlCbHBXS1pSZ3cteEd1WjFOM0pfdjN1Uk5sLUNzZ1piNElMcHFkbldzay1sMHJaUXNmTEI2NENrb2dCb2xobjYtWl9Zazl1d0ZBQmhzR0pWMjk2d2xTTlJsNW5iYXdJUGV1dG5zX2JZMVRLOUpMUFdUWE9iT0lHUEhXR0RnRUFsdk11WWJ1SnR6TXhlRUZlYlN5UHJfZWpvdnB4Ym1HVnh4bzVkcDJ1Nm56SUNzdUNqQjU5NHc0M2k1WWxrMWZDTXEzcVZnbVRRdWRhLWZFV0ZlaVRhWS1vbGc2dnZmN2hva29mR0Vod05hUFA4YWNYOFM2Ykt3OE1nOHVOS3ZSRU00QzJYVGlkaHNuMVYyNWFkU0xKWDZWYTBwNEpfOU1saFRsU2FPdWc1OFVyUVNia1UwZ0stUEQwU01xR0JRWktsdW0yZGdvclhlZkg2NXZBLURCZUtMUVA5LUFvOEtxRTRIbl95Mi1sdVF1bkotMVRQTFo2MGNoNktLazU0OFJCUlk0dUJTdGFIcFpKaGIzRXo5QTZzX0E0YXAxdFhPZV93UnNwWS1mblliY3l0a2FTTjk0NWdDRzQ4Ykh5d2w0Y1JwcV9xdjBNZE9Xd1FlVVhDdFdUcDdTaDU2WS00eDRubWhLWlRUZHhaMEg=&quot;
       }
     }
 </pre>
@@ -1091,7 +1103,7 @@ canonical_bundle
 
 
 <pre  style="border:0; background:white; overflow-wrap:break-word;">
-    b'{"entry":[{"fullUrl":"urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76","resource":{"attester":[{"mode":"legal","party":{"display":"Example Practitioner","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"},"time":"2021-10-25T20:16:29-07:00"}],"author":[{"display":"Example Practitioner","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"}],"date":"2021-10-25T20:16:29-07:00","encounter":{"display":"Example Encounter","reference":"urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112"},"id":"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76","resourceType":"Composition","section":[{"entry":[{"reference":"urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570"}],"title":"Active Condition 1"}],"status":"final","subject":{"display":"Example Patient","reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\\" </p></div><p><b>status</b>: final</p><p><b>type</b>: Medical records <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://loinc.org/\\">LOINC</a>#11503-0)</span></p><p><b>encounter</b>: <a href=\\"#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\\">See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)</a></p><p><b>date</b>: 2021-10-25T20:16:29-07:00</p><p><b>author</b>: <a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></p><p><b>title</b>: Active Conditions</p><h3>Attesters</h3><table class=\\"grid\\"><tr><td>-</td><td><b>Mode</b></td><td><b>Time</b></td><td><b>Party</b></td></tr><tr><td>*</td><td>legal</td><td>2021-10-25T20:16:29-07:00</td><td><a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)</a></td></tr></table></div>","status":"generated"},"title":"Active Conditions","type":{"coding":[{"code":"11503-0","system":"http://loinc.org"}],"text":"Medical records"}}},{"fullUrl":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc","resource":{"id":"0820c16d-91de-4dfa-a3a6-f140a516a9bc","meta":{"lastUpdated":"2013-05-05T16:13:03Z"},"name":[{"family":"Hancock","given":["John"]}],"resourceType":"Practitioner","text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"0820c16d-91de-4dfa-a3a6-f140a516a9bc\\" Updated \\"2013-05-05T16:13:03Z\\" </p></div><p><b>name</b>: John Hancock </p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece","resource":{"active":true,"id":"970af6c9-5bbd-4067-b6c1-d9b2c823aece","name":[{"family":"Patient","given":["CDEX Example"],"text":"CDEX Example Patient"}],"resourceType":"Patient","text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"970af6c9-5bbd-4067-b6c1-d9b2c823aece\\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Patient</p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570","resource":{"asserter":{"reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"},"category":[{"coding":[{"code":"55607006","display":"Problem","system":"http://snomed.info/sct"},{"code":"75326-9","display":"Problem","system":"http://loinc.org"}]}],"clinicalStatus":{"coding":[{"code":"active","system":"http://terminology.hl7.org/CodeSystem/condition-clinical"}]},"code":{"coding":[{"code":"44054006","display":"Type 2 Diabetes Mellitus","system":"http://snomed.info/sct"}]},"id":"014a68ec-d691-49e0-b980-91b0d924e570","identifier":[{"system":"urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1","value":"1"}],"onsetDateTime":"2006","resourceType":"Condition","subject":{"reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"014a68ec-d691-49e0-b980-91b0d924e570\\" </p></div><p><b>identifier</b>: id: 1</p><p><b>clinicalStatus</b>: Active <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\\">Condition Clinical Status Codes</a>#active)</span></p><p><b>category</b>: Problem <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#55607006; <a href=\\"https://loinc.org/\\">LOINC</a>#75326-9)</span></p><p><b>code</b>: Type 2 Diabetes Mellitus <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#44054006)</span></p><p><b>subject</b>: <a href=\\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)</a></p><p><b>onset</b>: 2006-01-01</p><p><b>asserter</b>: <a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)</a></p></div>","status":"generated"}}},{"fullUrl":"urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112","resource":{"class":{"code":"EMER","system":"http://terminology.hl7.org/CodeSystem/v3-ActCode"},"id":"5ce5c83a-000f-47d2-941c-039358cc9112","participant":[{"individual":{"display":"John Hancock","reference":"urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"}}],"period":{"end":"2021-10-25T20:16:29-07:00","start":"2021-10-25T20:10:29-07:00"},"resourceType":"Encounter","serviceProvider":{"display":"CDEX Example Organization","reference":"urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3"},"status":"finished","subject":{"display":"CDEX Example Patient","reference":"urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece"},"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"5ce5c83a-000f-47d2-941c-039358cc9112\\" </p></div><p><b>status</b>: finished</p><p><b>class</b>: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = \'emergency\', stated as \'null\')</p><p><b>type</b>: Unknown (qualifier value) <span style=\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\"> (<a href=\\"https://browser.ihtsdotools.org/\\">SNOMED CT</a>#261665006)</span></p><p><b>subject</b>: <a href=\\"#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\">See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)</a></p><h3>Participants</h3><table class=\\"grid\\"><tr><td>-</td><td><b>Individual</b></td></tr><tr><td>*</td><td><a href=\\"#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\">See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)</a></td></tr></table><p><b>period</b>: 2021-10-25T20:10:29-07:00 --&gt; 2021-10-25T20:16:29-07:00</p><p><b>serviceProvider</b>: <a href=\\"#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\\">See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)</a></p></div>","status":"generated"},"type":[{"coding":[{"code":"261665006","display":"Unknown (qualifier value)","system":"http://snomed.info/sct"}],"text":"Unknown (qualifier value)"}]}},{"fullUrl":"urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3","resource":{"active":true,"address":[{"city":"Boston","country":"USA","line":["1 CDEX Lane"],"postalCode":"01002","state":"MA"}],"id":"e37f004b-dc10-422b-b833-cdaa10a055a3","name":"CDEX Example Organization","resourceType":"Organization","telecom":[{"system":"phone","value":"(+1) 555-555-5555"},{"system":"email","value":"customer-service@example.org"}],"text":{"div":"<div xmlns=\\"http://www.w3.org/1999/xhtml\\"><p><b>Generated Narrative</b></p><div style=\\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\"><p style=\\"margin-bottom: 0px\\">Resource \\"e37f004b-dc10-422b-b833-cdaa10a055a3\\" </p></div><p><b>active</b>: true</p><p><b>name</b>: CDEX Example Organization</p><p><b>telecom</b>: ph: (+1) 555-555-5555, <a href=\\"mailto:customer-service@example.org\\">customer-service@example.org</a></p><p><b>address</b>: 1 CDEX Lane Boston MA 01002 USA </p></div>","status":"generated"}}}],"identifier":{"system":"urn:ietf:rfc:3986","value":"urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"},"resourceType":"Bundle","timestamp":"2021-10-25T20:16:29-07:00","type":"document"}'
+    b'{&quot;entry&quot;:[{&quot;fullUrl&quot;:&quot;urn:uuid:17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,&quot;resource&quot;:{&quot;attester&quot;:[{&quot;mode&quot;:&quot;legal&quot;,&quot;party&quot;:{&quot;display&quot;:&quot;Example Practitioner&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;},&quot;time&quot;:&quot;2021-10-25T20:16:29-07:00&quot;}],&quot;author&quot;:[{&quot;display&quot;:&quot;Example Practitioner&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;}],&quot;date&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;encounter&quot;:{&quot;display&quot;:&quot;Example Encounter&quot;,&quot;reference&quot;:&quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;},&quot;id&quot;:&quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76&quot;,&quot;resourceType&quot;:&quot;Composition&quot;,&quot;section&quot;:[{&quot;entry&quot;:[{&quot;reference&quot;:&quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;}],&quot;title&quot;:&quot;Active Condition 1&quot;}],&quot;status&quot;:&quot;final&quot;,&quot;subject&quot;:{&quot;display&quot;:&quot;Example Patient&quot;,&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;17a80a8d-4cf1-4deb-a1fd-2db1130e5f76\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Medical records &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://loinc.org/\\&quot;&gt;LOINC&lt;/a&gt;#11503-0)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;encounter&lt;/b&gt;: &lt;a href=\\&quot;#Encounter_5ce5c83a-000f-47d2-941c-039358cc9112\\&quot;&gt;See above (urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112: Example Encounter)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;title&lt;/b&gt;: Active Conditions&lt;/p&gt;&lt;h3&gt;Attesters&lt;/h3&gt;&lt;table class=\\&quot;grid\\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Mode&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Time&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Party&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;legal&lt;/td&gt;&lt;td&gt;2021-10-25T20:16:29-07:00&lt;/td&gt;&lt;td&gt;&lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: Example Practitioner)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;},&quot;title&quot;:&quot;Active Conditions&quot;,&quot;type&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;11503-0&quot;,&quot;system&quot;:&quot;http://loinc.org&quot;}],&quot;text&quot;:&quot;Medical records&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,&quot;resource&quot;:{&quot;id&quot;:&quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;,&quot;meta&quot;:{&quot;lastUpdated&quot;:&quot;2013-05-05T16:13:03Z&quot;},&quot;name&quot;:[{&quot;family&quot;:&quot;Hancock&quot;,&quot;given&quot;:[&quot;John&quot;]}],&quot;resourceType&quot;:&quot;Practitioner&quot;,&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot; Updated \\&quot;2013-05-05T16:13:03Z\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: John Hancock &lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,&quot;resource&quot;:{&quot;active&quot;:true,&quot;id&quot;:&quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;,&quot;name&quot;:[{&quot;family&quot;:&quot;Patient&quot;,&quot;given&quot;:[&quot;CDEX Example&quot;],&quot;text&quot;:&quot;CDEX Example Patient&quot;}],&quot;resourceType&quot;:&quot;Patient&quot;,&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Patient&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:014a68ec-d691-49e0-b980-91b0d924e570&quot;,&quot;resource&quot;:{&quot;asserter&quot;:{&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;},&quot;category&quot;:[{&quot;coding&quot;:[{&quot;code&quot;:&quot;55607006&quot;,&quot;display&quot;:&quot;Problem&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;},{&quot;code&quot;:&quot;75326-9&quot;,&quot;display&quot;:&quot;Problem&quot;,&quot;system&quot;:&quot;http://loinc.org&quot;}]}],&quot;clinicalStatus&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;active&quot;,&quot;system&quot;:&quot;http://terminology.hl7.org/CodeSystem/condition-clinical&quot;}]},&quot;code&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;44054006&quot;,&quot;display&quot;:&quot;Type 2 Diabetes Mellitus&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;}]},&quot;id&quot;:&quot;014a68ec-d691-49e0-b980-91b0d924e570&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1&quot;,&quot;value&quot;:&quot;1&quot;}],&quot;onsetDateTime&quot;:&quot;2006&quot;,&quot;resourceType&quot;:&quot;Condition&quot;,&quot;subject&quot;:{&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;014a68ec-d691-49e0-b980-91b0d924e570\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: 1&lt;/p&gt;&lt;p&gt;&lt;b&gt;clinicalStatus&lt;/b&gt;: Active &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;http://terminology.hl7.org/3.0.0/CodeSystem-condition-clinical.html\\&quot;&gt;Condition Clinical Status Codes&lt;/a&gt;#active)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Problem &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#55607006; &lt;a href=\\&quot;https://loinc.org/\\&quot;&gt;LOINC&lt;/a&gt;#75326-9)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Type 2 Diabetes Mellitus &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#44054006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;onset&lt;/b&gt;: 2006-01-01&lt;/p&gt;&lt;p&gt;&lt;b&gt;asserter&lt;/b&gt;: &lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}},{&quot;fullUrl&quot;:&quot;urn:uuid:5ce5c83a-000f-47d2-941c-039358cc9112&quot;,&quot;resource&quot;:{&quot;class&quot;:{&quot;code&quot;:&quot;EMER&quot;,&quot;system&quot;:&quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;},&quot;id&quot;:&quot;5ce5c83a-000f-47d2-941c-039358cc9112&quot;,&quot;participant&quot;:[{&quot;individual&quot;:{&quot;display&quot;:&quot;John Hancock&quot;,&quot;reference&quot;:&quot;urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc&quot;}}],&quot;period&quot;:{&quot;end&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;start&quot;:&quot;2021-10-25T20:10:29-07:00&quot;},&quot;resourceType&quot;:&quot;Encounter&quot;,&quot;serviceProvider&quot;:{&quot;display&quot;:&quot;CDEX Example Organization&quot;,&quot;reference&quot;:&quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;},&quot;status&quot;:&quot;finished&quot;,&quot;subject&quot;:{&quot;display&quot;:&quot;CDEX Example Patient&quot;,&quot;reference&quot;:&quot;urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece&quot;},&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;5ce5c83a-000f-47d2-941c-039358cc9112\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: finished&lt;/p&gt;&lt;p&gt;&lt;b&gt;class&lt;/b&gt;: emergency (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code EMER = \'emergency\', stated as \'null\')&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: Unknown (qualifier value) &lt;span style=\\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\&quot;&gt; (&lt;a href=\\&quot;https://browser.ihtsdotools.org/\\&quot;&gt;SNOMED CT&lt;/a&gt;#261665006)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\\&quot;#Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece\\&quot;&gt;See above (urn:uuid:970af6c9-5bbd-4067-b6c1-d9b2c823aece: CDEX Example Patient)&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Participants&lt;/h3&gt;&lt;table class=\\&quot;grid\\&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Individual&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=\\&quot;#Practitioner_0820c16d-91de-4dfa-a3a6-f140a516a9bc\\&quot;&gt;See above (urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc: John Hancock)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;period&lt;/b&gt;: 2021-10-25T20:10:29-07:00 --&amp;gt; 2021-10-25T20:16:29-07:00&lt;/p&gt;&lt;p&gt;&lt;b&gt;serviceProvider&lt;/b&gt;: &lt;a href=\\&quot;#Organization_e37f004b-dc10-422b-b833-cdaa10a055a3\\&quot;&gt;See above (urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3: CDEX Example Organization)&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;},&quot;type&quot;:[{&quot;coding&quot;:[{&quot;code&quot;:&quot;261665006&quot;,&quot;display&quot;:&quot;Unknown (qualifier value)&quot;,&quot;system&quot;:&quot;http://snomed.info/sct&quot;}],&quot;text&quot;:&quot;Unknown (qualifier value)&quot;}]}},{&quot;fullUrl&quot;:&quot;urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,&quot;resource&quot;:{&quot;active&quot;:true,&quot;address&quot;:[{&quot;city&quot;:&quot;Boston&quot;,&quot;country&quot;:&quot;USA&quot;,&quot;line&quot;:[&quot;1 CDEX Lane&quot;],&quot;postalCode&quot;:&quot;01002&quot;,&quot;state&quot;:&quot;MA&quot;}],&quot;id&quot;:&quot;e37f004b-dc10-422b-b833-cdaa10a055a3&quot;,&quot;name&quot;:&quot;CDEX Example Organization&quot;,&quot;resourceType&quot;:&quot;Organization&quot;,&quot;telecom&quot;:[{&quot;system&quot;:&quot;phone&quot;,&quot;value&quot;:&quot;(+1) 555-555-5555&quot;},{&quot;system&quot;:&quot;email&quot;,&quot;value&quot;:&quot;customer-service@example.org&quot;}],&quot;text&quot;:{&quot;div&quot;:&quot;&lt;div xmlns=\\&quot;http://www.w3.org/1999/xhtml\\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\\&quot;&gt;&lt;p style=\\&quot;margin-bottom: 0px\\&quot;&gt;Resource \\&quot;e37f004b-dc10-422b-b833-cdaa10a055a3\\&quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: CDEX Example Organization&lt;/p&gt;&lt;p&gt;&lt;b&gt;telecom&lt;/b&gt;: ph: (+1) 555-555-5555, &lt;a href=\\&quot;mailto:customer-service@example.org\\&quot;&gt;customer-service@example.org&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 1 CDEX Lane Boston MA 01002 USA &lt;/p&gt;&lt;/div&gt;&quot;,&quot;status&quot;:&quot;generated&quot;}}}],&quot;identifier&quot;:{&quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&quot;value&quot;:&quot;urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8&quot;},&quot;resourceType&quot;:&quot;Bundle&quot;,&quot;timestamp&quot;:&quot;2021-10-25T20:16:29-07:00&quot;,&quot;type&quot;:&quot;document&quot;}'
 </pre>
 
 
