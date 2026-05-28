@@ -11,7 +11,7 @@ This guide uses a Task Based Approach to satisfy the Data Consumer's need to req
 - The Data Consumer requests the data using FHIR [Questionnaire].  
 - A Direct Query is otherwise not feasible
 
-In most situations, a provider or designated staff must find, aggregate, filter, or approve the release of the data. However, in other use cases, mutually agreed upon data sets for specific purposes can be automatically fulfilled without human intervention.
+In most situations, a provider or designated staff typically finds, aggregates, filters, or approves the release of the data. However, in other use cases, mutually agreed upon data sets for specific purposes can be automatically fulfilled without human intervention.
 
 ### Benefits
 
@@ -75,7 +75,7 @@ The sequence diagram in Figure 7 below summarizes the fundamental interaction be
 
 ### Discovery of Identifiers
 
-Task-based queries require communicating a business identifier (such as a provider NPI or member ID) or a [FHIR id] to uniquely identify providers, payers, and patients. Business identifiers are used in many payer-to-provider-based transactions today, and the CDex Task Data Request Profile requires them. However, there is currently no standard way to obtain these identifiers, and implementers must get them "out of band".
+Task-based queries require communicating a business identifier (such as a provider NPI or member ID) or a [FHIR id] to uniquely identify providers, payers, and patients. Business identifiers are used in many payer-to-provider-based transactions today, and the CDex Task Data Request Profile requires them. However, there is currently no standard way to obtain these identifiers, and implementers obtain these identifiers "out of band".
 
 The patient's [FHIR id] is a prerequisite to performing FHIR RESTful Direct Queries. See [this section](direct-query.html#discovery-of-patient-fhir-ids) for how to discover the patient's FHIR id.
 
@@ -135,7 +135,7 @@ This example is the same as above, except 'Task.input' uses free text to specify
 
 Preconditions and Assumptions:
 
-This example repeats the first, except Patient B's active conditions referenced in `Task.output` are *contained* resources within the Task resource. Therefore, the Payer must only perform a single RESTful GET operation to fetch the completed Task and the requested data.
+This example repeats the first, except Patient B's active conditions referenced in `Task.output` are *contained* resources within the Task resource. Therefore, the Payer performs only a single RESTful GET operation to fetch the completed Task and the requested data.
 
 {% include examplebutton_default.html example="task-scenario-1c" b_title ='Click Here To See Example Task Based Transaction (contained output)' %}
 
@@ -246,7 +246,7 @@ Task-based exchanges can take one of two forms - subscription or polling, as des
 
 Polling is a mechanism for conveying new data to a Data Consumer as (or shortly after) the data is created or updated without requiring the Data Source to be aware of the specific needs of the Data Consumer. The Data Consumer repeatedly queries the Data Source to see if there is new data. For example, in the Da Vinci CDex use case, the Data Consumer would poll the Data Source by fetching the Task resource to see if it has been updated. Polling is the *default option* if the Data Source does not support subscribing to the Task as described below.
 
-Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the   Data Source's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
+Data consumers can poll for a single Task or across several Tasks. The polling frequency balances responsiveness (short interval between data creation and consumer notification) against not over-taxing the Data Source's resources. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
 
 
 
@@ -323,9 +323,9 @@ The following example repeats Scenario 1 above using Subscription instead of Pol
 
 ### Formal Authorization
 
-In Provider to Provider transactions, there are situations where one must supply a formal authorization for each data request. In Payer to Provider and some Provider to Provider transactions, a general data-sharing agreement makes such individual authorizations unnecessary, and the Data Consumer can use the Task alone. When a formal request for the information to be shared is needed, it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the `Task.basedOn` element. The example below illustrates a use case with a formal authorization.
+In Provider to Provider transactions, there are situations when a formal authorization is needed to accompany each data request. In Payer to Provider and some Provider to Provider transactions, a general data-sharing agreement makes such individual authorizations unnecessary, and the Data Consumer can use the Task alone. When a formal request for the information to be shared is needed, it is represented by either a [CommunicationRequest] or [ServiceRequest] and referenced by Task using the `Task.basedOn` element. The example below illustrates a use case with a formal authorization.
 
-The [HL7 FHIR-I Workflow project] is working on a set of rules for when it is sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a separate formal authorization using a request resource. Their preliminary conclusion is that Task can (and even should) exist without a request resource for some situations. The FHIR-I Workflow project intends for these rules to be used in addition to the organization's business practices to assist in the decision-making of the information providers.
+The [HL7 FHIR-I Workflow project] is working on a set of rules for when it is sufficient to use Task alone to ask for an action to be performed and when the Task needs to be accompanied by a separate formal authorization using a request resource. Their preliminary conclusion is that Task can exist without a request resource, and that in some situations this is the preferred approach. The FHIR-I Workflow project intends for these rules to be used in addition to the organization's business practices to assist in the decision-making of the information providers.
 {:.stu-note}
 
 #### Example Task Based Transaction with a Formal Authorization

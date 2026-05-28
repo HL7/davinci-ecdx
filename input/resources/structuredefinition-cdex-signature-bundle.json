@@ -1,35 +1,35 @@
 {
-    "resourceType": "StructureDefinition",
-    "id": "cdex-signature-bundle",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
-    "name": "CDexSignatureBundle",
-    "title": "CDex Signature Bundle Profile",
-    "status": "active",
-    "date": "2023-01-15",
-    "description": "This Bundle profile supports the signatures as documented in the CDex guide. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature` element using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html) for digital signatures\n  1. The base Signature datatype for other electronic signatures (picture, etc)",
-    "fhirVersion": "4.0.1",
-    "kind": "resource",
-    "abstract": false,
-    "type": "Bundle",
-    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
-    "derivation": "constraint",
-    "differential": {
-        "element": [
-            {
-                "id": "Bundle.signature",
-                "path": "Bundle.signature",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "Signature",
-                        "profile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
-                            "http://hl7.org/fhir/StructureDefinition/Signature"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            }
-        ]
-    }
+  "resourceType": "StructureDefinition",
+  "id": "cdex-signature-bundle",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle",
+  "name": "CDexSignatureBundle",
+  "title": "CDex Signature Bundle Profile",
+  "status": "active",
+  "date": "2023-01-15",
+  "description": "This Bundle profile supports the signatures as documented in the CDex guide. It adds the following *mandatory* (min=1) constraint:\n\n- A `Bundle.signature` element using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html) for digital signatures\n  1. The base Signature datatype for other electronic signatures (picture, etc)",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.signature",
+        "path": "Bundle.signature",
+        "min": 1,
+        "type": [
+          {
+            "code": "Signature",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
+              "http://hl7.org/fhir/StructureDefinition/Signature"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
 }

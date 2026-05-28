@@ -31,6 +31,21 @@
       "text": "Order Reason"
     }
   ],
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Questionnaireresponse Inline Example 1"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "QuestionnaireResponse example example used to create inline task based scenarios [using questionnaire as task input](task-based-approach.html#using-questionnaire-as-task-input)"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+    ]
+  },
   "questionnaire": "http://example.org/cdex-questionnaire-example1",
   "resourceType": "QuestionnaireResponse",
   "status": "completed",

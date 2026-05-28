@@ -1,104 +1,104 @@
 {
-    "resourceType": "StructureDefinition",
-    "id": "cdex-patient-demographics",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics",
-    "name": "CDexPatientDemographics",
-    "title": "CDex Patient Demographics Profile",
-    "status": "active",
-    "description": "This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (such as verifying patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier [slice](https://hl7.org/fhir/R4/profiling.html#slicing)\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
-    "fhirVersion": "4.0.1",
-    "kind": "resource",
-    "abstract": false,
-    "type": "Patient",
-    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
-    "derivation": "constraint",
-    "differential": {
-        "element": [
+  "resourceType": "StructureDefinition",
+  "id": "cdex-patient-demographics",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics",
+  "name": "CDexPatientDemographics",
+  "title": "CDex Patient Demographics Profile",
+  "status": "active",
+  "description": "This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile or CDex Task Data Request Profile.  It is referenced when additional patient demographic data is communicated for a clinical data request (such as verifying patient identity for HIPAA compliance regulations).  It constrains the following elements to be *mandatory* (min=1):\n\n- A default resource ID of \"patient\"\n- A member ID identifier [slice](https://hl7.org/fhir/R4/profiling.html#slicing)\n- A patient's name\n\nand the following element to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):\n\n- A patient account number identifier slice  \n- A date of birth",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.id",
+        "path": "Patient.id",
+        "short": "Resource ID Default Value",
+        "min": 1,
+        "max": "1",
+        "fixedId": "patient",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "min": 1,
+        "slicing": {
+          "discriminator": [
             {
-                "id": "Patient.id",
-                "path": "Patient.id",
-                "short": "Resource ID Default Value",
-                "min": 1,
-                "max": "1",
-                "fixedId": "patient",
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.identifier",
-                "path": "Patient.identifier",
-                "min": 1,
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "value",
-                            "path": "$this"
-                        }
-                    ],
-                    "rules": "open"
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.identifier.value",
-                "path": "Patient.identifier.value",
-                "min": 1,
-                "max": "1",
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.identifier:mb",
-                "path": "Patient.identifier",
-                "sliceName": "mb",
-                "short": "Unique Member Identifier",
-                "definition": "The unique member identifier for this patient.",
-                "min": 1,
-                "max": "1",
-                "patternIdentifier": {
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                                "code": "MB"
-                            }
-                        ]
-                    }
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.identifier:pac",
-                "path": "Patient.identifier",
-                "sliceName": "pat",
-                "short": "Provider Assigned Patient Account Number",
-                "definition": "This is the unique patient identifier assigned by the provider when they submit a Claim or Prior Authorization.",
-                "comment": "The unique patient identifier for this patient.",
-                "min": 0,
-                "max": "1",
-                "patternIdentifier": {
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
-                                "code": "pat"
-                            }
-                        ]
-                    }
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.name",
-                "path": "Patient.name",
-                "min": 1,
-                "max": "1",
-                "mustSupport": true
-            },
-            {
-                "id": "Patient.birthDate",
-                "path": "Patient.birthDate",
-                "min": 1,
-                "mustSupport": true
+              "type": "value",
+              "path": "$this"
             }
-        ]
-    }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier.value",
+        "path": "Patient.identifier.value",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:mb",
+        "path": "Patient.identifier",
+        "sliceName": "mb",
+        "short": "Unique Member Identifier",
+        "definition": "The unique member identifier for this patient.",
+        "min": 1,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "MB"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.identifier:pac",
+        "path": "Patient.identifier",
+        "sliceName": "pat",
+        "short": "Provider Assigned Patient Account Number",
+        "definition": "This is the unique patient identifier assigned by the provider when they submit a Claim or Prior Authorization.",
+        "comment": "The unique patient identifier for this patient.",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType",
+                "code": "pat"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
 }

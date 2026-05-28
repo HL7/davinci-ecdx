@@ -5,7 +5,7 @@
 
 ### Introduction
 
-CDex Task-based transactions have many optional capabilities. Systems may choose some or all of these capabilities and implement any combination. Refer to the CDex [CapabilityStatements] resources for conformance expectations for the various actors and roles. In contrast to the expectations in the CDex CapabilityStatements, Systems should define what they support in their local capability statement in one or more of the following ways:
+CDex Task-based transactions have many optional capabilities. Systems may choose some or all of these capabilities and implement any combination. Refer to the CDex [CapabilityStatements] resources for conformance expectations for the various actors and roles. In contrast to the expectations in the CDex CapabilityStatements, Systems **SHOULD** define what they support in their local capability statement in one or more of the following ways:
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Data Request Profile]
 2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.

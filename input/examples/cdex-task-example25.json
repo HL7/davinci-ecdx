@@ -1,10 +1,30 @@
 {
   "resourceType": "Task",
   "id": "cdex-task-example25",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Task Example 25"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "**Completed Request for Additional Data Using an Adaptive Questionnaire:**  Completed Task for CDex Task Example 23. This example has a status of \"completed\" and a \"lastModified\" date of 6/17/2022. The \"reasonCode\" is \"request additional data\" and the \"output\" is a QuestionnaireResponse."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request"
+    ]
+  },
   "contained": [
     {
       "resourceType": "Patient",
       "id": "patient",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
+        ]
+      },
       "identifier": [
         {
           "use": "usual",
@@ -50,6 +70,11 @@
     {
       "resourceType": "PractitionerRole",
       "id": "practitionerrole",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
+        ]
+      },
       "practitioner": {
         "identifier": {
           "system": "http://hl7.org/fhir/sid/us-npi",

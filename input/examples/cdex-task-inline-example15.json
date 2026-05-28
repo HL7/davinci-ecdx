@@ -58,6 +58,21 @@
   ],
   "intent": "order",
   "lastModified": "2020-10-26T02:58:55.179Z",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Inline Task Example 15"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Task example used to create inline [requests for provenance using task based transaction](task-based-approach.html#example-requests-for-provenance-using-task-based-transaction)"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+    ]
+  },
   "owner": {
     "identifier": {
       "system": "http://hl7.org/fhir/sid/us-npi",

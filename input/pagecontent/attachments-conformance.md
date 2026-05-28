@@ -10,7 +10,7 @@ CDex attachments are intended to be compatible with the X12n transactions and de
 - The optional and required capabilities for CDex Attachments transactions.
 - The optional and required `$submit-attachment` Parameters
 
-Systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they should define what they support in their local capability statement in one or more of the following ways:
+Systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they **SHOULD** define what they support in their local capability statement in one or more of the following ways:
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Attachment Request Profile]
 2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.

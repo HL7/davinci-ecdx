@@ -1,893 +1,893 @@
 {
-    "resourceType": "StructureDefinition",
-    "id": "cdex-task-attachment-request",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
-    "name": "CDexTaskAttachmentRequest",
-    "title": "CDex Task Attachment Request Profile",
-    "date": "2025-05-22",
-    "status": "active",
-    "description": "Payers use this [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (\"attachments\") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by [Da Vinci Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/index.html).\n",
-    "fhirVersion": "4.0.1",
-    "kind": "resource",
-    "abstract": false,
-    "type": "Task",
-    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Task",
-    "derivation": "constraint",
-    "differential": {
-        "element": [
-            {
-                "id": "Task",
-                "path": "Task",
-                "definition": "This Task profile is used to request additional documentation (\"attachments\") for claims or prior authorizations.",
-                "constraint": [
-                    {
-                        "key": "cdex-1",
-                        "severity": "error",
-                        "human": "The \"ServiceDate\" input SHALL be present if the attachment is for a claim.",
-                        "expression": "Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()"
-                    },
-                    {
-                        "key": "cdex-4",
-                        "severity": "error",
-                        "human": "If code = \"attachment-request-code\", must have one or more \"AttachmentsNeeded\" inputs.",
-                        "expression": "Task.code.coding.code.where($this='attachment-request-code').exists() implies Task.input.type.coding.code.where($this='attachments-needed').exists()"
-                    },
-                    {
-                        "key": "cdex-5",
-                        "severity": "error",
-                        "human": "If code = \"attachment-request-questionnaire\", must have one or more \"QuestionnaireContext\" inputs.",
-                        "expression": "Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-context').exists()"
-                    },
-                    {
-                        "key": "cdex-6",
-                        "severity": "error",
-                        "human": "Must have only \"AttachmentsNeeded\" or \"QuestionnaireContext\" inputs not both.",
-                        "expression": "Task.input.type.coding.code.where($this='attachments-needed').exists() implies Task.input.type.coding.code.where($this='questionnaire-context').empty()"
-                    },
-                    {
-                        "key": "cdex-10",
-                        "severity": "warning",
-                        "human": "If code = \"attachment-request-questionnaire\" and status = \"completed\", should have one or more \"questionnaire-context\" outputs referencing the QuestionnaireResponse.",
-                        "expression": "(Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaire-context').exists()"
-                    },
-                    {
-                        "key": "tdr-2",
-                        "severity": "error",
-                        "human": "Task statusReason SHALL be populated if status is 'rejected' or 'failed'",
-                        "expression": "(status = 'rejected' or status = 'failed') implies statusReason.exists()"
-                    }
-                ]
-            },
-            {
-                "id": "Task.contained",
-                "path": "Task.contained",
-                "min": 2,
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "type",
-                            "path": "$this"
-                        }
-                    ],
-                    "rules": "open"
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.contained:practitionerrole",
-                "path": "Task.contained",
-                "sliceName": "practitionerrole",
-                "definition": "The contained practitionerrole profile communicates the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.",
-                "short": "Contained PractitionerRole resource",
-                "min": 1,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "PractitionerRole",
-                        "profile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.contained:patient",
-                "path": "Task.contained",
-                "sliceName": "patient",
-                "definition": "The contained patient profile represents the patient data elements used to verify patient identity.",
-                "short": "Contained Patient resource",
-                "min": 1,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "Patient",
-                        "profile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier",
-                "path": "Task.identifier",
-                "min": 1,
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "value",
-                            "path": "$this"
-                        }
-                    ],
-                    "rules": "open"
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:TrackingId",
-                "path": "Task.identifier",
-                "sliceName": "TrackingId",
-                "short": "Re-association tracking control number",
-                "definition": "A Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the \u201cre-association tracking control numbers\u201d or \"attachment control number (ACN)\".",
-                "min": 1,
-                "max": "1",
-                "patternIdentifier": {
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                                "code": "tracking-id"
-                            }
-                        ]
-                    }
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:TrackingId.system",
-                "path": "Task.identifier.system",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:TrackingId.value",
-                "path": "Task.identifier.value",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:AdminRefNumber",
-                "path": "Task.identifier",
-                "sliceName": "AdminRefNumber",
-                "short": "Administrative reference number",
-                "definition": "A secondary Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the \"administrative reference number\".",
-                "min": 0,
-                "max": "1",
-                "patternIdentifier": {
-                    "type": {
-                        "coding": [
-                            {
-                                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                                "code": "admin-ref-number"
-                            }
-                        ]
-                    }
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:AdminRefNumber.system",
-                "path": "Task.identifier.system",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.identifier:AdminRefNumber.value",
-                "path": "Task.identifier.value",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.status",
-                "path": "Task.status",
-                "condition": [
-                    "cdex-10",
-                    "tdr-2"
-                ],
-                "mustSupport": true,
-                "binding": {
-                    "strength": "required",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status"
-                }
-            },
-            {
-                "id": "Task.statusReason",
-                "path": "Task.statusReason",
-                "requirements": "Indicates why task failed or was rejected.",
-                "condition": [
-                    "tdr-2"
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.statusReason.text",
-                "path": "Task.statusReason.text",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.intent",
-                "path": "Task.intent",
-                "fixedCode": "order",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.code",
-                "path": "Task.code",
-                "short": "attachment-request-code | attachment-request-questionnaire",
-                "definition": "The code element is used to indicate the type of attachment request. The code element is a required element and must be populated with one of the following values: \"attachment-request-code\" or \"attachment-request-questionnaire\".",
-                "min": 1,
-                "condition": [
-                    "cdex-4",
-                    "cdex-5",
-                    "cdex-10"
-                ],
-                "mustSupport": true,
-                "binding": {
-                    "strength": "required",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-pas/ValueSet/PASTaskCodes"
-                }
-            },
-            {
-                "id": "Task.code.coding",
-                "path": "Task.code.coding",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.code.coding.system",
-                "path": "Task.code.coding.system",
-                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.code.coding.code",
-                "path": "Task.code.coding.code",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.for",
-                "path": "Task.for",
-                "short": "Contained Patient.",
-                "definition": "Reference to a contained Patient resource defined by the CDex Patient Demographics Profile. It represents the member who is subject of the claim or preauthorization and demographic data elements that are used by the Provider to verify member identity.",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "Reference",
-                        "targetProfile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
-                        ],
-                        "aggregation": [
-                            "contained"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.for.reference",
-                "path": "Task.for.reference",
-                "short": "Contained resource reference",
-                "min": 1,
-                "fixedString": "#patient",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.requester",
-                "path": "Task.requester",
-                "short": "Payer asking for attachments",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "Reference",
-                        "targetProfile": [
-                            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.requester.identifier",
-                "path": "Task.requester.identifier",
-                "short": "Payer ID",
-                "definition": "business identifier representing the Payer ID",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.owner",
-                "path": "Task.owner",
-                "short": "Provider who submitted claim or preauthorization",
-                "comment": "The term \"Provider\" means a person or organization that provided the health care services to a patient.",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "Reference",
-                        "targetProfile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
-                        ],
-                        "aggregation": [
-                            "contained"
-                        ]
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.owner.reference",
-                "path": "Task.owner.reference",
-                "short": "Contained resource reference",
-                "min": 1,
-                "fixedString": "#practitionerrole",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode",
-                "path": "Task.reasonCode",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode.coding",
-                "path": "Task.reasonCode.coding",
-                "min": 1,
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "value",
-                            "path": "$this"
-                        }
-                    ],
-                    "rules": "open"
-                },
-                "condition": [
-                    "cdex-1"
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode.coding:use",
-                "path": "Task.reasonCode.coding",
-                "sliceName": "use",
-                "min": 1,
-                "max": "*",
-                "binding": {
-                    "strength": "required",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use"
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode.coding:use.system",
-                "path": "Task.reasonCode.coding.system",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode.coding:use.code",
-                "path": "Task.reasonCode.coding.code",
-                "short": "claim | preauthorization",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonCode.text",
-                "path": "Task.reasonCode.text",
-                "short": "claim | preauthorization",
-                "binding": {
-                    "strength": "required",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use"
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonReference",
-                "path": "Task.reasonReference",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.reasonReference.identifier",
-                "path": "Task.reasonReference.identifier",
-                "short": "Claim or prior authorization ID",
-                "definition": "The business identifier representing the claim or prior authorization ID",
-                "min": 1,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.restriction",
-                "path": "Task.restriction",
-                "min": 0,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.restriction.period",
-                "path": "Task.restriction.period",
-                "short": "Attachments due date",
-                "definition": "due date for the attachments",
-                "min": 0,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input",
-                "path": "Task.input",
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "value",
-                            "path": "type"
-                        }
-                    ],
-                    "rules": "open"
-                },
-                "min": 2,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded",
-                "path": "Task.input",
-                "sliceName": "AttachmentsNeeded",
-                "short": "Attachment Code",
-                "definition": "A code indicating the type of data/document to be returned",
-                "comment": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.  For prior authorization, [X12](https://x12.org/) PWK01 Report Type Codes may also be used.",
-                "binding": {
-                    "extension": [
-                        {
-                            "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding",
-                            "extension": [
-                                {
-                                    "url": "purpose",
-                                    "valueCode": "extensible"
-                                },
-                                {
-                                    "url": "valueSet",
-                                    "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code"
-                                },
-                                {
-                                    "url": "documentation",
-                                    "valueMarkdown": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions."
-                                },
-                                {
-                                    "url": "usage",
-                                    "valueUsageContext": {
-                                        "code": {
-                                            "system": "http://terminology.hl7.org/ValueSet/usage-context-type",
-                                            "code": "workflow"
-                                        },
-                                        "valueCodeableConcept": {
-                                            "coding": [
-                                                {
-                                                    "system": "http://hl7.org/fhir/claim-use",
-                                                    "code": "preauthorization",
-                                                    "display": "Preauthorization"
-                                                }
-                                            ],
-                                            "text": "A payer request for additional information from the provider to support a prior authorization request"
-                                        }
-                                    }
-                                },
-                                {
-                                    "url": "any",
-                                    "valueBoolean": true
-                                }
-                            ]
-                        }
-                    ],
-                    "strength": "extensible",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes"
-                },
-                "condition": [
-                    "cdex-4",
-                    "cdex-6"
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded.extension",
-                "path": "Task.input.extension",
-                "min": 0,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded.extension.url",
-                "path": "Task.input.extension.url",
-                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded.extension.value[x]",
-                "path": "Task.input.extension.value[x]",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "integer"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                            "code": "attachments-needed"
-                        }
-                    ]
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:AttachmentsNeeded.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Attachment code value",
-                "type": [
-                    {
-                        "code": "CodeableConcept"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:QuestionnaireContext",
-                "path": "Task.input",
-                "sliceName": "QuestionnaireContext",
-                "short": "Data Request questionnaire",
-                "definition": "Indicates the questionnaire to be completed.",
-                "condition": [
-                    "cdex-5",
-                    "cdex-6"
-                ]
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.extension",
-                "path": "Task.input.extension",
-                "min": 0,
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.extension.url",
-                "path": "Task.input.extension.url",
-                "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.extension.value[x]",
-                "path": "Task.input.extension.value[x]",
-                "min": 1,
-                "type": [
-                    {
-                        "code": "integer"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.type",
-                "path": "Task.input.type",
-                "min": 1,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "CodeableConcept"
-                    }
-                ],
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                            "code": "questionnaire-context"
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "URL",
-                "min": 1,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "canonical",
-                        "targetProfile": [
-                            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire",
-                            "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt"
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "Task.input:QuestionnaireContext.value[x].extension:questionnaireDisplay",
-                "path": "Task.input.value[x].extension",
-                "sliceName": "questionnaireDisplay",
-                "comment": "This can be handy for commonly used questionnaires with a recognizable name.",
-                "min": 0,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "Extension",
-                        "profile": [
-                            "http://hl7.org/fhir/StructureDefinition/display"
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "Task.input:PayerUrl",
-                "path": "Task.input",
-                "sliceName": "PayerUrl",
-                "short": "Payer Url",
-                "definition": "The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.",
-                "min": 1,
-                "max": "1",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:PayerUrl.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                            "code": "payer-url"
-                        }
-                    ]
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:PayerUrl.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Payer url value",
-                "type": [
-                    {
-                        "code": "url"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:ServiceDate",
-                "path": "Task.input",
-                "sliceName": "ServiceDate",
-                "short": "Service Date",
-                "definition": "Date of service or starting date of the service for the claim or prior authorization. This element SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization.",
-                "max": "1",
-                "condition": [
-                    "cdex-1"
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:ServiceDate.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                            "code": "service-date"
-                        }
-                    ]
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:ServiceDate.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Service Date value",
-                "type": [
-                    {
-                        "code": "date"
-                    }
-                ],
-                "condition": [
-                    "cdex-2"
-                ],
-                "constraint": [
-                    {
-                        "key": "cdex-2",
-                        "severity": "error",
-                        "human": "Date must be to day.",
-                        "expression": "$this.toString().length() = 10"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:Signature",
-                "path": "Task.input",
-                "sliceName": "Signature",
-                "short": "Signature flag",
-                "definition": "Flag to indicate whether the requested data requires a signature.",
-                "max": "1",
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:Signature.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                            "code": "signature-flag"
-                        }
-                    ]
-                },
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:Signature.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Signature flag value",
-                "type": [
-                    {
-                        "code": "boolean"
-                    }
-                ],
-                "mustSupport": true
-            },
-            {
-                "id": "Task.input:POU",
-                "path": "Task.input",
-                "sliceName": "POU",
-                "short": "Purpose of use code'",
-                "definition": "Represent the purpose of use for the requested data.",
-                "max": "1"
-            },
-            {
-                "id": "Task.input:POU.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                            "code": "purpose-of-use"
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "Task.input:POU.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Purpose of use value",
-                "type": [
-                    {
-                        "code": "CodeableConcept"
-                    }
-                ],
-                "binding": {
-                    "strength": "extensible",
-                    "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU"
-                }
-            },
-            {
-                "id": "Task.input:MultipleSubmits",
-                "path": "Task.input",
-                "sliceName": "MultipleSubmits",
-                "short": "Multiple submits flag",
-                "definition": "Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = \"false\" -  all the requested data should be submitted in a single transaction.",
-                "max": "1"
-            },
-            {
-                "id": "Task.input:MultipleSubmits.type",
-                "path": "Task.input.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-                            "code": "multiple-submits-flag"
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "Task.input:MultipleSubmits.value[x]",
-                "path": "Task.input.value[x]",
-                "short": "Multiple submits flag value",
-                "type": [
-                    {
-                        "code": "boolean"
-                    }
-                ]
-            },
-            {
-                "id": "Task.output",
-                "path": "Task.output",
-                "slicing": {
-                    "discriminator": [
-                        {
-                            "type": "value",
-                            "path": "type"
-                        }
-                    ],
-                    "rules": "open"
-                }
-            },
-            {
-                "id": "Task.output:AttachmentsNeeded",
-                "path": "Task.output",
-                "sliceName": "AttachmentsNeeded",
-                "short": "Requested attachments",
-                "definition": "FHIR resource(s) representing the result(s) of the attachments request.",
-                "comment": "Note that all returned attachments SHOULD comply with appropriate US-Core and/or Da Vinci profiles. The \"questionnaire-response\" output type is for a QuestionnaireResponse resulting from the request."
-            },
-            {
-                "id": "Task.output:AttachmentsNeeded.type",
-                "path": "Task.output.type",
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                            "code": "attachments-needed"
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "Task.output:AttachmentsNeeded.value[x]",
-                "path": "Task.output.value[x]",
-                "short": "AttachmentsNeeded reference",
-                "type": [
-                    {
-                        "code": "Reference"
-                    }
-                ]
-            },
-            {
-                "id": "Task.output:QuestionnaireContext",
-                "path": "Task.output",
-                "sliceName": "QuestionnaireContext",
-                "definition": "Indicates the questionnaire QuestionnaireContext resulting from the request.",
-                "max": "1",
-                "condition": [
-                    "cdex-10"
-                ]
-            },
-            {
-                "id": "Task.output:QuestionnaireContext.type",
-                "path": "Task.output.type",
-                "type": [
-                    {
-                        "code": "CodeableConcept"
-                    }
-                ],
-                "patternCodeableConcept": {
-                    "coding": [
-                        {
-                            "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
-                            "code": "questionnaire-context"
-                        }
-                    ]
-                }
-            },
-            {
-                "id": "Task.output:QuestionnaireContext.value[x]",
-                "path": "Task.output.value[x]",
-                "short": "Reference to the QuestionnaireResponse",
-                "min": 1,
-                "max": "1",
-                "type": [
-                    {
-                        "code": "Reference",
-                        "targetProfile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
-                            "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
-                        ]
-                    }
-                ]
-            }
+  "resourceType": "StructureDefinition",
+  "id": "cdex-task-attachment-request",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request",
+  "name": "CDexTaskAttachmentRequest",
+  "title": "CDex Task Attachment Request Profile",
+  "date": "2025-05-22",
+  "status": "active",
+  "description": "Payers use this [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (\"attachments\") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by [Da Vinci Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/index.html).\n",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Task",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Task",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Task",
+        "path": "Task",
+        "definition": "This Task profile is used to request additional documentation (\"attachments\") for claims or prior authorizations.",
+        "constraint": [
+          {
+            "key": "cdex-1",
+            "severity": "error",
+            "human": "The \"ServiceDate\" input SHALL be present if the attachment is for a claim.",
+            "expression": "Task.reasonCode.coding.code.where($this='claim').exists() implies Task.input.type.coding.code.where($this='service-date').exists()"
+          },
+          {
+            "key": "cdex-4",
+            "severity": "error",
+            "human": "If code = \"attachment-request-code\", must have one or more \"AttachmentsNeeded\" inputs.",
+            "expression": "Task.code.coding.code.where($this='attachment-request-code').exists() implies Task.input.type.coding.code.where($this='attachments-needed').exists()"
+          },
+          {
+            "key": "cdex-5",
+            "severity": "error",
+            "human": "If code = \"attachment-request-questionnaire\", must have one or more \"QuestionnaireContext\" inputs.",
+            "expression": "Task.code.coding.code.where($this='attachment-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire-context').exists()"
+          },
+          {
+            "key": "cdex-6",
+            "severity": "error",
+            "human": "Must have only \"AttachmentsNeeded\" or \"QuestionnaireContext\" inputs not both.",
+            "expression": "Task.input.type.coding.code.where($this='attachments-needed').exists() implies Task.input.type.coding.code.where($this='questionnaire-context').empty()"
+          },
+          {
+            "key": "cdex-10",
+            "severity": "warning",
+            "human": "If code = \"attachment-request-questionnaire\" and status = \"completed\", should have one or more \"questionnaire-context\" outputs referencing the QuestionnaireResponse.",
+            "expression": "(Task.code.coding.code.where($this='attachment-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaire-context').exists()"
+          },
+          {
+            "key": "tdr-2",
+            "severity": "error",
+            "human": "Task statusReason SHALL be populated if status is 'rejected' or 'failed'",
+            "expression": "(status = 'rejected' or status = 'failed') implies statusReason.exists()"
+          }
         ]
-    }
+      },
+      {
+        "id": "Task.contained",
+        "path": "Task.contained",
+        "min": 2,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.contained:practitionerrole",
+        "path": "Task.contained",
+        "sliceName": "practitionerrole",
+        "definition": "The contained practitionerrole profile communicates the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.",
+        "short": "Contained PractitionerRole resource",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "PractitionerRole",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.contained:patient",
+        "path": "Task.contained",
+        "sliceName": "patient",
+        "definition": "The contained patient profile represents the patient data elements used to verify patient identity.",
+        "short": "Contained Patient resource",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier",
+        "path": "Task.identifier",
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:TrackingId",
+        "path": "Task.identifier",
+        "sliceName": "TrackingId",
+        "short": "Re-association tracking control number",
+        "definition": "A Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the “re-association tracking control numbers” or \"attachment control number (ACN)\".",
+        "min": 1,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "tracking-id"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:TrackingId.system",
+        "path": "Task.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:TrackingId.value",
+        "path": "Task.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:AdminRefNumber",
+        "path": "Task.identifier",
+        "sliceName": "AdminRefNumber",
+        "short": "Administrative reference number",
+        "definition": "A secondary Payer-assigned business identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the \"administrative reference number\".",
+        "min": 0,
+        "max": "1",
+        "patternIdentifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+                "code": "admin-ref-number"
+              }
+            ]
+          }
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:AdminRefNumber.system",
+        "path": "Task.identifier.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.identifier:AdminRefNumber.value",
+        "path": "Task.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.status",
+        "path": "Task.status",
+        "condition": [
+          "cdex-10",
+          "tdr-2"
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-hrex/ValueSet/hrex-task-status"
+        }
+      },
+      {
+        "id": "Task.statusReason",
+        "path": "Task.statusReason",
+        "requirements": "Indicates why task failed or was rejected.",
+        "condition": [
+          "tdr-2"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.statusReason.text",
+        "path": "Task.statusReason.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.intent",
+        "path": "Task.intent",
+        "fixedCode": "order",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.code",
+        "path": "Task.code",
+        "short": "attachment-request-code | attachment-request-questionnaire",
+        "definition": "The code element is used to indicate the type of attachment request. The code element is a required element and must be populated with one of the following values: \"attachment-request-code\" or \"attachment-request-questionnaire\".",
+        "min": 1,
+        "condition": [
+          "cdex-4",
+          "cdex-5",
+          "cdex-10"
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-pas/ValueSet/PASTaskCodes"
+        }
+      },
+      {
+        "id": "Task.code.coding",
+        "path": "Task.code.coding",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.code.coding.system",
+        "path": "Task.code.coding.system",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.code.coding.code",
+        "path": "Task.code.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.for",
+        "path": "Task.for",
+        "short": "Contained Patient.",
+        "definition": "Reference to a contained Patient resource defined by the CDex Patient Demographics Profile. It represents the member who is subject of the claim or preauthorization and demographic data elements that are used by the Provider to verify member identity.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics"
+            ],
+            "aggregation": [
+              "contained"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.for.reference",
+        "path": "Task.for.reference",
+        "short": "Contained resource reference",
+        "min": 1,
+        "fixedString": "#patient",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.requester",
+        "path": "Task.requester",
+        "short": "Payer asking for attachments",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.requester.identifier",
+        "path": "Task.requester.identifier",
+        "short": "Payer ID",
+        "definition": "business identifier representing the Payer ID",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.owner",
+        "path": "Task.owner",
+        "short": "Provider who submitted claim or preauthorization",
+        "comment": "The term \"Provider\" means a person or organization that provided the health care services to a patient.",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole"
+            ],
+            "aggregation": [
+              "contained"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.owner.reference",
+        "path": "Task.owner.reference",
+        "short": "Contained resource reference",
+        "min": 1,
+        "fixedString": "#practitionerrole",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode",
+        "path": "Task.reasonCode",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode.coding",
+        "path": "Task.reasonCode.coding",
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "condition": [
+          "cdex-1"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode.coding:use",
+        "path": "Task.reasonCode.coding",
+        "sliceName": "use",
+        "min": 1,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode.coding:use.system",
+        "path": "Task.reasonCode.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode.coding:use.code",
+        "path": "Task.reasonCode.coding.code",
+        "short": "claim | preauthorization",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonCode.text",
+        "path": "Task.reasonCode.text",
+        "short": "claim | preauthorization",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonReference",
+        "path": "Task.reasonReference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.reasonReference.identifier",
+        "path": "Task.reasonReference.identifier",
+        "short": "Claim or prior authorization ID",
+        "definition": "The business identifier representing the claim or prior authorization ID",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.restriction",
+        "path": "Task.restriction",
+        "min": 0,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.restriction.period",
+        "path": "Task.restriction.period",
+        "short": "Attachments due date",
+        "definition": "due date for the attachments",
+        "min": 0,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input",
+        "path": "Task.input",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded",
+        "path": "Task.input",
+        "sliceName": "AttachmentsNeeded",
+        "short": "Attachment Code",
+        "definition": "A code indicating the type of data/document to be returned",
+        "comment": "This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional documentation. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments.  For prior authorization, [X12](https://x12.org/) PWK01 Report Type Codes may also be used.",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/additional-binding",
+              "extension": [
+                {
+                  "url": "purpose",
+                  "valueCode": "extensible"
+                },
+                {
+                  "url": "valueSet",
+                  "valueCanonical": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code"
+                },
+                {
+                  "url": "documentation",
+                  "valueMarkdown": "In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions."
+                },
+                {
+                  "url": "usage",
+                  "valueUsageContext": {
+                    "code": {
+                      "system": "http://terminology.hl7.org/ValueSet/usage-context-type",
+                      "code": "workflow"
+                    },
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/claim-use",
+                          "code": "preauthorization",
+                          "display": "Preauthorization"
+                        }
+                      ],
+                      "text": "A payer request for additional information from the provider to support a prior authorization request"
+                    }
+                  }
+                },
+                {
+                  "url": "any",
+                  "valueBoolean": true
+                }
+              ]
+            }
+          ],
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes"
+        },
+        "condition": [
+          "cdex-4",
+          "cdex-6"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded.extension",
+        "path": "Task.input.extension",
+        "min": 0,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded.extension.url",
+        "path": "Task.input.extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded.extension.value[x]",
+        "path": "Task.input.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+              "code": "attachments-needed"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:AttachmentsNeeded.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Attachment code value",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:QuestionnaireContext",
+        "path": "Task.input",
+        "sliceName": "QuestionnaireContext",
+        "short": "Data Request questionnaire",
+        "definition": "Indicates the questionnaire to be completed.",
+        "condition": [
+          "cdex-5",
+          "cdex-6"
+        ]
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.extension",
+        "path": "Task.input.extension",
+        "min": 0,
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.extension.url",
+        "path": "Task.input.extension.url",
+        "fixedUri": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-paLineNumber",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.extension.value[x]",
+        "path": "Task.input.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.type",
+        "path": "Task.input.type",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+              "code": "questionnaire-context"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "URL",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire",
+              "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Task.input:QuestionnaireContext.value[x].extension:questionnaireDisplay",
+        "path": "Task.input.value[x].extension",
+        "sliceName": "questionnaireDisplay",
+        "comment": "This can be handy for commonly used questionnaires with a recognizable name.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/display"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Task.input:PayerUrl",
+        "path": "Task.input",
+        "sliceName": "PayerUrl",
+        "short": "Payer Url",
+        "definition": "The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:PayerUrl.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+              "code": "payer-url"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:PayerUrl.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Payer url value",
+        "type": [
+          {
+            "code": "url"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:ServiceDate",
+        "path": "Task.input",
+        "sliceName": "ServiceDate",
+        "short": "Service Date",
+        "definition": "Date of service or starting date of the service for the claim or prior authorization. This element SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization.",
+        "max": "1",
+        "condition": [
+          "cdex-1"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:ServiceDate.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+              "code": "service-date"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:ServiceDate.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Service Date value",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "condition": [
+          "cdex-2"
+        ],
+        "constraint": [
+          {
+            "key": "cdex-2",
+            "severity": "error",
+            "human": "Date must be to day.",
+            "expression": "$this.toString().length() = 10"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:Signature",
+        "path": "Task.input",
+        "sliceName": "Signature",
+        "short": "Signature flag",
+        "definition": "Flag to indicate whether the requested data requires a signature.",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:Signature.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+              "code": "signature-flag"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:Signature.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Signature flag value",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Task.input:POU",
+        "path": "Task.input",
+        "sliceName": "POU",
+        "short": "Purpose of use code'",
+        "definition": "Represent the purpose of use for the requested data.",
+        "max": "1"
+      },
+      {
+        "id": "Task.input:POU.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+              "code": "purpose-of-use"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Task.input:POU.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Purpose of use value",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-POU"
+        }
+      },
+      {
+        "id": "Task.input:MultipleSubmits",
+        "path": "Task.input",
+        "sliceName": "MultipleSubmits",
+        "short": "Multiple submits flag",
+        "definition": "Flag to indicate whether the requested data can be submitted in multiple submissions. The default meaning when this input is omitted is multiple-submits = \"false\" -  all the requested data should be submitted in a single transaction.",
+        "max": "1"
+      },
+      {
+        "id": "Task.input:MultipleSubmits.type",
+        "path": "Task.input.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+              "code": "multiple-submits-flag"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Task.input:MultipleSubmits.value[x]",
+        "path": "Task.input.value[x]",
+        "short": "Multiple submits flag value",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Task.output",
+        "path": "Task.output",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Task.output:AttachmentsNeeded",
+        "path": "Task.output",
+        "sliceName": "AttachmentsNeeded",
+        "short": "Requested attachments",
+        "definition": "FHIR resource(s) representing the result(s) of the attachments request.",
+        "comment": "Note that all returned attachments SHOULD comply with appropriate US-Core and/or Da Vinci profiles. The \"questionnaire-response\" output type is for a QuestionnaireResponse resulting from the request."
+      },
+      {
+        "id": "Task.output:AttachmentsNeeded.type",
+        "path": "Task.output.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+              "code": "attachments-needed"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Task.output:AttachmentsNeeded.value[x]",
+        "path": "Task.output.value[x]",
+        "short": "AttachmentsNeeded reference",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "Task.output:QuestionnaireContext",
+        "path": "Task.output",
+        "sliceName": "QuestionnaireContext",
+        "definition": "Indicates the questionnaire QuestionnaireContext resulting from the request.",
+        "max": "1",
+        "condition": [
+          "cdex-10"
+        ]
+      },
+      {
+        "id": "Task.output:QuestionnaireContext.type",
+        "path": "Task.output.type",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+              "code": "questionnaire-context"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Task.output:QuestionnaireContext.value[x]",
+        "path": "Task.output.value[x]",
+        "short": "Reference to the QuestionnaireResponse",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
+              "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

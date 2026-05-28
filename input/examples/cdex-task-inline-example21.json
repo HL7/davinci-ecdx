@@ -53,6 +53,21 @@
   ],
   "intent": "order",
   "lastModified": "2020-10-27T11:05:34-07:00",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Inline Task Example 21"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Task example used to create inline task based scenarios for [surgical notes as ccda documents](task-based-approach.html#surgical-notes-as-ccda-documents)"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+    ]
+  },
   "owner": {
     "reference": "http://example.org/fhir/Organization/cdex-example-provider"
   },

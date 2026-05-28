@@ -16,6 +16,18 @@
     }
   ],
   "id": "cdex-task-inline-communicationrequest-example1",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Inline CDex Task Inline Communicationrequest Example 1"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "CommunicationRequest example used to create inline scenarios for this guide."
+      }
+    ]
+  },
   "occurrenceDateTime": "2020-10-27T09:34:53-07:00",
   "payload": [
     {

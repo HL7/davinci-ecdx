@@ -15,7 +15,7 @@ extension:
 definition:
   extension:
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
-      valueCode: hl7.fhir.us.davinci-cdex#2.0.0 
+      valueCode: hl7.fhir.us.davinci-cdex#2.0.0
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
       valueCode: hl7.fhir.us.davinci-cdex#2.0.0-ballot
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
@@ -89,12 +89,12 @@ dependencies:
     version: 3.0.0
     id: sdc
 
-  hl7.fhir.extensions.r4: 
+  hl7.fhir.extensions.r4:
     version: 4.0.1
-  
+
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
-    uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport 
+    uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
     id: backport
 
 # Groups can control certain aspects of the IG generation.  The IG
@@ -135,7 +135,7 @@ groups:
       - ValueSet/cdex-loinc-attachment-codes
       - ValueSet/cdex-pwk01-attachment-report-type-code
   AttachmentsExamples:
-    name: Attachments Examples 
+    name: Attachments Examples
     description: Examples Associated with CDex Attachments Transactions (see also "Signature Examples" below)
     resources:
       - Task/cdex-task-example19
@@ -252,7 +252,7 @@ groups:
       - ValueSet/cdex-POU
       - CodeSystem/cdex-temp
   InlineExamples:
-    name: Inline Examples 
+    name: Inline Examples
     description: These examples are used in the inline example scenarios throughout the guide. They are listed here so the implementation guide's publication tooling can validate them against the CDex profile definitions.  Since they are used to illustrate "over-the-wire" transactions, the rendered narrative and id elements are often absent.
     resources:
       - Task/cdex-task-inline-example1
@@ -371,18 +371,19 @@ pages:
     title: Change Log
 
 parameters:
-  path-resource:
-    - input/resources
-    - fsh-generated/resources
-    - input/examples
-    # - input/fexamples-inline
+  # path-resource:
+    # - input/resources
+    # - fsh-generated/resources
+    # - input/examples
+    # - input/examples-inline
   path-pages:
     - input/pagecontent
     - input/intro-notes
     - fsh-generated/includes
-  path-expansion-params: '../../input/_resources/exp-params.json'  # for using US ed of SNOMED
+  path-expansion-params: 'input/resources/exp-params.json'  # for using US ed of SNOMED
   # path-liquid: # list of relative paths that contains liquid templates for generating narrative
   #   - liquid
+
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'
@@ -428,9 +429,10 @@ parameters:
     - Bundle/cdex-bundle-inline-example-858p
 
   suppressed-ids: Parameters/cdex-parameters-example1,Parameters/cdex-parameters-example2,Parameters/cdex-parameters-example3,Parameters/cdex-parameters-example4,Parameters/cdex-parameters-example5,Task/cdex-task-inline-example1,Subscription/cdex-task-inline-scenario1-subscription-requested,Task/cdex-task-inline-example4,Task/cdex-task-inline-example6,Task/cdex-task-inline-example21,Task/cdex-task-inline-example10,Task/cdex-task-inline-example11,Task/cdex-task-inline-example13,Task/cdex-task-inline-example15,Task/cdex-task-inline-example17,Task/cdex-task-inline-example26,QuestionnaireResponse/cdex-questionnaireresponse-inline-example1,Task/cdex-task-inline-example19,Task/cdex-task-inline-example22,OperationOutcome/cdex-operationoutcome-inline-example1
-  
+
   tabbed-snapshots: 'true'
   auto-oid-root: '2.16.840.1.113883.4.642.40.21'
+  pin-canonicals: pin-all #<<<< comment out to speed up build by 30 minutes
 copyrightyear: '2024+'
 # releaselabel: CI Build
 releaselabel: STU 2.1
@@ -512,7 +514,7 @@ menu:
     Inline Examples: artifacts.html#15
   Support:
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
-   Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757   
+   Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757
    Implementer Support: https://confluence.hl7.org/display/DVP/CDex+Implementer+Support?src=contextnavpagetreemode
    Specification Dashboard: https://jira.hl7.org/secure/Dashboard.jspa?selectPageId=11801
    Propose a Change: https://jira.hl7.org/secure/

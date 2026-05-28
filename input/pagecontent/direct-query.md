@@ -114,7 +114,7 @@ The `DocumentReference.content.attachment.url` element references the actual CCD
 
 ### Provenance
 
-To the extent that the Data Source keeps a record of the provenance of the data, the FHIR Provenance Resource can be requested as documented on US Core's [Basic Provenance] page. When returning provenance, they should use the [HRex Provenance Profile]. The following example illustrates this transaction.
+To the extent that the Data Source keeps a record of the provenance of the data, the FHIR Provenance Resource can be requested as documented on US Core's [Basic Provenance] page. When returning provenance, they **SHOULD** use the [HRex Provenance Profile]. The following example illustrates this transaction.
 
 #### Example of Direct Query Response Including Provenance
 
@@ -150,7 +150,7 @@ Some data consumers may require that the data they receive be signed. When signa
 
 <div markdown="1" class="bg-warning" id="read-warning">
 
-When signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. If the Data Consumer attempts to fetch a resource with a read and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error. The following HTTP response and OperationOutcome illustrate this.
+When signatures are required, the Data Consumer **SHALL** use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. If the Data Consumer attempts to fetch a resource with a read and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error. The following HTTP response and OperationOutcome illustrate this.
 
  ~~~
  HTTP/1.1 400 Bad Request

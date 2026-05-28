@@ -125,6 +125,7 @@
 <artifact deprecated="true" id="Task/cdex-example3-query-requested" key="Task-cdex-example3-query-requested" name="Scenario 4 Task Example"/>
 <artifact id="OperationDefinition/submit-attachment" key="OperationDefinition-submit-attachment" name="Submit Attachment Operation"/>
 <artifact id="CapabilityStatement/cdex-capabilitystatement-inline-example" key="CapabilityStatement-cdex-capabilitystatement-inline-example" name="cdex-capabilitystatement-inline-example"/>
+<artifact id="Parameters/exp-params" key="Parameters-exp-params" name="exp-params"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>

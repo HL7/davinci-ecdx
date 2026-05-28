@@ -1,6 +1,21 @@
 {
   "resourceType": "QuestionnaireResponse",
   "id": "cdex-questionnaireresponse-example4",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex QuestionnaireResponse Example4"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data and an electronic *digital* Verification signature is required. It is adapted from the Da Vinci DTR IG. The digital signature is a JSON [FHIR Signature](http://hl7.org/fhir/R4/signatures.html) in the QuestionnaireResponse signature extension. This example is adapted from the Da Vinci DTR IG."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+    ]
+  },
   "questionnaire": "http://example.org/cdex-questionnaire-example2",
   "status": "completed",
   "subject": {

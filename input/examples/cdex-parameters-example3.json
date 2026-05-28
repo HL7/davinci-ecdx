@@ -1,6 +1,21 @@
 {
   "resourceType": "Parameters",
   "id": "cdex-parameters-example3",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Parameters Example 3"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "**PDF Attachment Example:** Parameters Resource example showing how it is used to submit attachments using the `$submit-attachment` operation. It contains a PDF attachment and the necessary information needed to associate them to the claim."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment"
+    ]
+  },
   "parameter": [
     {
       "name": "TrackingId",
@@ -108,7 +123,14 @@
                   "title": "sample2.pdf"
                 }
               }
-            ]
+            ],
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
+              ]
+            }
           }
         }
       ]

@@ -1,6 +1,21 @@
 {
   "resourceType": "Questionnaire",
   "id": "cdex-questionnaire-example2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire"
+    ],
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Questionnaire Example2"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "This example is a simple data request Questionnaire used in the Task Based and Attachments transactions. It indicates that a verification signature is needed when completing the QuestionnaireResponse.  It is adapted from the Da Vinci DTR IG."
+      }
+    ]
+  },
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired",

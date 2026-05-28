@@ -1,6 +1,21 @@
 {
   "resourceType": "QuestionnaireResponse",
   "id": "cdex-questionnaireresponse-example1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse"
+    ],
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex QuestionnaireResponse Example1"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "This Questionnaire Response example demonstrates the response to a CDEX Data Query or Attachments that uses a Questionnaire to request the data.  It is adapted from the Da Vinci DTR IG."
+      }
+    ]
+  },
   "questionnaire": "http://example.org/cdex-questionnaire-example1",
   "status": "completed",
   "subject": {

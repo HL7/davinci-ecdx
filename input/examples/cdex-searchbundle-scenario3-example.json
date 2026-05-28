@@ -1,6 +1,18 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-searchbundle-scenario3-example",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Direct Query for Patient's Progress Notes"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Bundle example used in direct query [scenario 3](direct-query.html#scenario-3). Payer Seeks Insured Person/Patient Progress Notes from Provider to support a claim submission."
+      }
+    ]
+  },
   "type": "searchset",
   "total": 1,
   "link": [
@@ -15,6 +27,13 @@
       "resource": {
         "resourceType": "DocumentReference",
         "id": "cdex-HP-example1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
+          ]
+        },
         "identifier": [
           {
             "system": "urn:ietf:rfc:3986",

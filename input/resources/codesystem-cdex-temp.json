@@ -1,155 +1,155 @@
 {
-    "resourceType": "CodeSystem",
-    "id": "cdex-temp",
-    "extension": [
-        {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-            "valueCode": "trial-use"
-        },
-        {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-            "valueInteger": 1
-        }
-    ],
-    "url": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
-    "name": "CDexTempCodes",
-    "title": "CDex Temporary Code System",
-    "status": "active",
-    "experimental": false,
-    "date": "2025-05-22",
-    "description": "Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).",
-    "caseSensitive": true,
-    "content": "complete",
-    "concept": [
-        {
-            "code": "claims-processing",
-            "display": "Claim Processing",
-            "definition": "Request for data necessary from payers to support claims for services."
-        },
-        {
-            "code": "preauth-processing",
-            "display": "Pre-authorization Processing",
-            "definition": "Request for data necessary from payers to support pre-authorization for services."
-        },
-        {
-            "code": "risk-adjustment",
-            "display": "Risk Adjustment",
-            "definition": "Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided."
-        },
-        {
-            "code": "quality-metrics",
-            "display": "Quality Metrics",
-            "definition": "Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures."
-        },
-        {
-            "code": "referral",
-            "display": "Referral",
-            "definition": "Request for additional clinical information from referring provider to support performing the requested service."
-        },
-        {
-            "code": "social-care",
-            "display": "Social Care",
-            "definition": "Request for data from payers to support the non-medical social needs of individuals, especially the elderly, vulnerable or with special needs."
-        },
-        {
-            "code": "authorization-other",
-            "display": "Other Authorization",
-            "definition": "Request for data from payers for other authorization request not otherwise specified."
-        },
-        {
-            "code": "care-coordination",
-            "display": "Care Coordination",
-            "definition": "Request for data from payers to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care."
-        },
-        {
-            "code": "documentation-general",
-            "display": "General Documentation",
-            "definition": "Request for data used from payers or providers for general documentation."
-        },
-        {
-            "code": "orders",
-            "display": "Orders",
-            "definition": "Request for additional clinical information from referring provider to support orders."
-        },
-        {
-            "code": "patient-status",
-            "display": "Patient Status",
-            "definition": "Requests for patient health record information from payers to support their payer member records."
-        },
-        {
-            "code": "signature",
-            "display": "Signature",
-            "definition": "Request for signatures from payers or providers on requested data."
-        },
-        {
-            "code": "care-planning",
-            "display": "Care Planning",
-            "definition": "Request for data from payers or providers to determine how to deliver care for a particular patient, group or community."
-        },
-        {
-            "code": "social-risk",
-            "display": "Social Risk",
-            "definition": "Request for data from payers or other providers to assess of social risk, establishing coded health concerns/problems, creating patient driven goals, managing interventions, and measuring outcomes."
-        },
-        {
-            "code": "operations-noe",
-            "display": "Operations Not Otherwise Enumerated",
-            "definition": "Existing concepts do not define a more detailed [Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
-        },
-        {
-            "code": "payment-noe",
-            "display": "Payment Not Otherwise Enumerated",
-            "definition": "[Existing concepts do not define a more detailed [Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
-        },
-        {
-            "code": "treatment-noe",
-            "display": "Treatment Not Otherwise Enumerated",
-            "definition": "Existing concepts do not define a more detailed [Treatment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
-        },
-        {
-            "code": "purpose-of-use",
-            "display": "Purpose Of Use",
-            "definition": "Purpose of use for the requested data."
-        },
-        {
-            "code": "signature-flag",
-            "display": "Signature Flag",
-            "definition": "Flag to indicate whether the requested data requires a signature."
-        },
-        {
-            "code": "tracking-id",
-            "display": "Tracking Id",
-            "definition": "A Payer-assigned claim/prior authorization identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the \u201cre-association tracking control numbers\u201d or \"attachment control number (ACN)\"."
-        },
-        {
-            "code": "admin-ref-number",
-            "display": "Administrative Reference Number",
-            "definition": "A Payer-assigned business identifier that ties the attachment(s) back to the prior authorization. This value is referred to as the \"administrative reference number\"."
-        },
-        {
-            "code": "multiple-submits-flag",
-            "display": "Multiple Submits Flag",
-            "definition": "Flag to indicate whether the requested data can be submitted in multiple transactions.  If true the data can be submitted in separate transactions.  if false *all* the data should be submitted in a single transaction."
-        },
-        {
-            "code": "service-date",
-            "display": "Service Date",
-            "definition": "Date of service or starting date of the service for the claim or prior authorization."
-        },
-        {
-            "code": "data-request-code",
-            "display": "Data Request Code",
-            "definition": "A Task requesting data using a code."
-        },
-        {
-            "code": "data-request-query",
-            "display": "Data Request Query",
-            "definition": "A Task requesting data using FHIR query syntax."
-        },
-        {
-            "code": "data-request-questionnaire",
-            "display": "Data Request Questionnaire",
-            "definition": "A Task requesting data using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html))."
-        }
-    ]
+  "resourceType": "CodeSystem",
+  "id": "cdex-temp",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp",
+  "name": "CDexTempCodes",
+  "title": "CDex Temporary Code System",
+  "status": "active",
+  "experimental": false,
+  "date": "2025-05-22",
+  "description": "Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).",
+  "caseSensitive": true,
+  "content": "complete",
+  "concept": [
+    {
+      "code": "claims-processing",
+      "display": "Claim Processing",
+      "definition": "Request for data necessary from payers to support claims for services."
+    },
+    {
+      "code": "preauth-processing",
+      "display": "Pre-authorization Processing",
+      "definition": "Request for data necessary from payers to support pre-authorization for services."
+    },
+    {
+      "code": "risk-adjustment",
+      "display": "Risk Adjustment",
+      "definition": "Request for data from payers to calculate differences in beneficiary-level risk factors that can affect quality outcomes or medical costs, regardless of the care provided."
+    },
+    {
+      "code": "quality-metrics",
+      "display": "Quality Metrics",
+      "definition": "Request for data used for aggregation, calculation and analysis, and ultimately reporting of quality measures."
+    },
+    {
+      "code": "referral",
+      "display": "Referral",
+      "definition": "Request for additional clinical information from referring provider to support performing the requested service."
+    },
+    {
+      "code": "social-care",
+      "display": "Social Care",
+      "definition": "Request for data from payers to support the non-medical social needs of individuals, especially the elderly, vulnerable or with special needs."
+    },
+    {
+      "code": "authorization-other",
+      "display": "Other Authorization",
+      "definition": "Request for data from payers for other authorization request not otherwise specified."
+    },
+    {
+      "code": "care-coordination",
+      "display": "Care Coordination",
+      "definition": "Request for data from payers to create a complete clinical record for each of their members to improve care coordination and provide optimum medical care."
+    },
+    {
+      "code": "documentation-general",
+      "display": "General Documentation",
+      "definition": "Request for data used from payers or providers for general documentation."
+    },
+    {
+      "code": "orders",
+      "display": "Orders",
+      "definition": "Request for additional clinical information from referring provider to support orders."
+    },
+    {
+      "code": "patient-status",
+      "display": "Patient Status",
+      "definition": "Requests for patient health record information from payers to support their payer member records."
+    },
+    {
+      "code": "signature",
+      "display": "Signature",
+      "definition": "Request for signatures from payers or providers on requested data."
+    },
+    {
+      "code": "care-planning",
+      "display": "Care Planning",
+      "definition": "Request for data from payers or providers to determine how to deliver care for a particular patient, group or community."
+    },
+    {
+      "code": "social-risk",
+      "display": "Social Risk",
+      "definition": "Request for data from payers or other providers to assess of social risk, establishing coded health concerns/problems, creating patient driven goals, managing interventions, and measuring outcomes."
+    },
+    {
+      "code": "operations-noe",
+      "display": "Operations Not Otherwise Enumerated",
+      "definition": "Existing concepts do not define a more detailed [Healthcare Operations as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
+    },
+    {
+      "code": "payment-noe",
+      "display": "Payment Not Otherwise Enumerated",
+      "definition": "[Existing concepts do not define a more detailed [Payment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
+    },
+    {
+      "code": "treatment-noe",
+      "display": "Treatment Not Otherwise Enumerated",
+      "definition": "Existing concepts do not define a more detailed [Treatment as defined by HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/disclosures-treatment-payment-health-care-operations/index.html). Therefore, implicit in using this code is that an implementer must supply an additional, alternate code."
+    },
+    {
+      "code": "purpose-of-use",
+      "display": "Purpose Of Use",
+      "definition": "Purpose of use for the requested data."
+    },
+    {
+      "code": "signature-flag",
+      "display": "Signature Flag",
+      "definition": "Flag to indicate whether the requested data requires a signature."
+    },
+    {
+      "code": "tracking-id",
+      "display": "Tracking Id",
+      "definition": "A Payer-assigned claim/prior authorization identifier that ties the attachment(s) back to the claim or prior authorization. This value referred to as the “re-association tracking control numbers” or \"attachment control number (ACN)\"."
+    },
+    {
+      "code": "admin-ref-number",
+      "display": "Administrative Reference Number",
+      "definition": "A Payer-assigned business identifier that ties the attachment(s) back to the prior authorization. This value is referred to as the \"administrative reference number\"."
+    },
+    {
+      "code": "multiple-submits-flag",
+      "display": "Multiple Submits Flag",
+      "definition": "Flag to indicate whether the requested data can be submitted in multiple transactions.  If true the data can be submitted in separate transactions.  if false *all* the data should be submitted in a single transaction."
+    },
+    {
+      "code": "service-date",
+      "display": "Service Date",
+      "definition": "Date of service or starting date of the service for the claim or prior authorization."
+    },
+    {
+      "code": "data-request-code",
+      "display": "Data Request Code",
+      "definition": "A Task requesting data using a code."
+    },
+    {
+      "code": "data-request-query",
+      "display": "Data Request Query",
+      "definition": "A Task requesting data using FHIR query syntax."
+    },
+    {
+      "code": "data-request-questionnaire",
+      "display": "Data Request Questionnaire",
+      "definition": "A Task requesting data using a data request questionnaire ([FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html))."
+    }
+  ]
 }

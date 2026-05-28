@@ -1,60 +1,60 @@
 {
-    "resourceType": "StructureDefinition",
-    "id": "cdex-sdc-questionnaireresponse",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
-    "name": "CDEXSDCQuestionnaireResponse",
-    "title": "CDex SDC QuestionnaireResponse Profile",
-    "status": "active",
-    "date": "2023-01-15",
-    "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following constraints:\n- The signature extensions use using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html) for digital signatures\n  1. The base Signature datatype for other electronic signatures (picture, etc)",
-    "fhirVersion": "4.0.1",
-    "kind": "resource",
-    "abstract": false,
-    "type": "QuestionnaireResponse",
-    "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0",
-    "derivation": "constraint",
-    "differential": {
-        "element": [
-            {
-                "id": "QuestionnaireResponse.extension:signature",
-                "path": "QuestionnaireResponse.extension",
-                "sliceName": "signature"
-            },
-            {
-                "id": "QuestionnaireResponse.extension:signature.value[x]",
-                "path": "QuestionnaireResponse.extension.value[x]",
-                "type": [
-                    {
-                        "code": "Signature",
-                        "profile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
-                            "http://hl7.org/fhir/StructureDefinition/Signature"
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "QuestionnaireResponse.item",
-                "path": "QuestionnaireResponse.item"
-            },
-            {
-                "id": "QuestionnaireResponse.item.extension:ItemSignature",
-                "path": "QuestionnaireResponse.item.extension",
-                "sliceName": "ItemSignature"
-            },
-            {
-                "id": "QuestionnaireResponse.item.extension:ItemSignature.value[x]",
-                "path": "QuestionnaireResponse.item.extension.value[x]",
-                "type": [
-                    {
-                        "code": "Signature",
-                        "profile": [
-                            "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
-                            "http://hl7.org/fhir/StructureDefinition/Signature"
-                        ]
-                    }
-                ]
-            }
+  "resourceType": "StructureDefinition",
+  "id": "cdex-sdc-questionnaireresponse",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-sdc-questionnaireresponse",
+  "name": "CDEXSDCQuestionnaireResponse",
+  "title": "CDex SDC QuestionnaireResponse Profile",
+  "status": "active",
+  "date": "2023-01-15",
+  "description": "This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following constraints:\n- The signature extensions use using:\n  1. The [CDex Digital Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-digital-signature.html) for digital signatures\n  1. The base Signature datatype for other electronic signatures (picture, etc)",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaireresponse|7.0.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse.extension:signature",
+        "path": "QuestionnaireResponse.extension",
+        "sliceName": "signature"
+      },
+      {
+        "id": "QuestionnaireResponse.extension:signature.value[x]",
+        "path": "QuestionnaireResponse.extension.value[x]",
+        "type": [
+          {
+            "code": "Signature",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
+              "http://hl7.org/fhir/StructureDefinition/Signature"
+            ]
+          }
         ]
-    }
+      },
+      {
+        "id": "QuestionnaireResponse.item",
+        "path": "QuestionnaireResponse.item"
+      },
+      {
+        "id": "QuestionnaireResponse.item.extension:ItemSignature",
+        "path": "QuestionnaireResponse.item.extension",
+        "sliceName": "ItemSignature"
+      },
+      {
+        "id": "QuestionnaireResponse.item.extension:ItemSignature.value[x]",
+        "path": "QuestionnaireResponse.item.extension.value[x]",
+        "type": [
+          {
+            "code": "Signature",
+            "profile": [
+              "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-digital-signature",
+              "http://hl7.org/fhir/StructureDefinition/Signature"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

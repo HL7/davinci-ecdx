@@ -1,6 +1,21 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-electronic-sig-example",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDEX Document with Electronic Signature Example"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Electronic signature example showing how an image file can be used to sign a document Bundle.  The CDEX use case would be the target resource in response to a Task-based request where an electronic signature was required.  If no signature was required, the response would typically be in the form of an individual resource."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-signature-bundle"
+    ]
+  },
   "identifier": {
     "system": "urn:ietf:rfc:3986",
     "value": "urn:uuid:c173535e-135e-48e3-ab64-38bacc68dba8"
@@ -66,6 +81,13 @@
       "resource": {
         "resourceType": "Practitioner",
         "id": "0820c16d-91de-4dfa-a3a6-f140a516a9bc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0"
+          ]
+        },
         "identifier": [
           {
             "system": "http://hl7.org/fhir/sid/us-npi",
@@ -111,7 +133,14 @@
               "CDEX Example"
             ]
           }
-        ]
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
+          ]
+        }
       }
     },
     {
@@ -160,6 +189,13 @@
         "onsetDateTime": "2006",
         "asserter": {
           "reference": "urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0"
+          ]
         }
       }
     },
@@ -204,6 +240,13 @@
         "serviceProvider": {
           "reference": "urn:uuid:e37f004b-dc10-422b-b833-cdaa10a055a3",
           "display": "CDEX Example Organization"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"
+          ]
         }
       }
     },
@@ -240,7 +283,12 @@
             "postalCode": "01002",
             "country": "USA"
           }
-        ]
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-organization"
+          ]
+        }
       }
     }
   ],

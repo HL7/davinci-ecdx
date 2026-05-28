@@ -1,6 +1,18 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-searchbundle-scenario1-example",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Direct Query for Patient's Active Conditions"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Bundle example used in direct query transactions [scenario 1](direct-query.html#scenario-1) and in task based transactions - for example, [scenario 1a](task-based-approach.html#scenario-1)."
+      }
+    ]
+  },
   "type": "searchset",
   "total": 1,
   "link": [
@@ -15,6 +27,13 @@
       "resource": {
         "resourceType": "Condition",
         "id": "4ac41715-fcbd-421c-8796-9b2c9706dd3f",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0"
+          ]
+        },
         "clinicalStatus": {
           "coding": [
             {

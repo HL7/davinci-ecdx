@@ -38,6 +38,23 @@
       "value": "1"
     }
   ],
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Condition Inline Example 858"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Condition example used to create inline scenarios for this guide"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition|3.1.1",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0",
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0"
+    ]
+  },
   "onsetDateTime": "2006",
   "resourceType": "Condition",
   "subject": {

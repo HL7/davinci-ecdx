@@ -1,26 +1,26 @@
 {
-    "resourceType": "ValueSet",
-    "id": "cdex-identifier-types",
-    "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-identifier-types",
-    "name": "CDexIdentifierTypes",
-    "title": "CDex Identifier Types Value Set",
-    "status": "active",
-    "experimental": false,
-    "date": "2022-10-24",
-    "description": "Identifier types for providers and organizations. It includes the codes \u201cTAX\u201d and \u201cNPI\u201d.",
-    "compose": {
-        "include": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-                "concept": [
-                    {
-                        "code": "TAX"
-                    },
-                    {
-                        "code": "NPI"
-                    }
-                ]
-            }
+  "resourceType": "ValueSet",
+  "id": "cdex-identifier-types",
+  "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-identifier-types",
+  "name": "CDexIdentifierTypes",
+  "title": "CDex Identifier Types Value Set",
+  "status": "active",
+  "experimental": false,
+  "date": "2022-10-24",
+  "description": "Identifier types for providers and organizations. It includes the codes “TAX” and “NPI”.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "concept": [
+          {
+            "code": "TAX"
+          },
+          {
+            "code": "NPI"
+          }
         ]
-    }
+      }
+    ]
+  }
 }

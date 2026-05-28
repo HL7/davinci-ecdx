@@ -1,6 +1,18 @@
 {
   "resourceType": "Bundle",
   "id": "cdex-searchbundle-scenario2-example",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Direct Query for Patient's HbA1c Test Results"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Bundle example used in direct query [scenario 2](direct-query.html#scenario-2). Payer Seeks Insured Person/Patient HbA1c Test Results from Provider"
+      }
+    ]
+  },
   "type": "searchset",
   "total": 4,
   "link": [
@@ -15,6 +27,13 @@
       "resource": {
         "resourceType": "Observation",
         "id": "cdex-2020-01-23-hba1c-example",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+          ]
+        },
         "status": "final",
         "category": [
           {
@@ -75,6 +94,13 @@
       "resource": {
         "resourceType": "Observation",
         "id": "cdex-2020-04-23-hba1c-example",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+          ]
+        },
         "status": "final",
         "category": [
           {
@@ -135,6 +161,13 @@
       "resource": {
         "resourceType": "Observation",
         "id": "cdex-2020-10-23-hba1c-example",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+          ]
+        },
         "status": "final",
         "category": [
           {
@@ -195,6 +228,13 @@
       "resource": {
         "resourceType": "Observation",
         "id": "cdex-2020-07-23-hba1c-example",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+          ]
+        },
         "status": "final",
         "category": [
           {

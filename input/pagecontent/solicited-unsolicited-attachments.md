@@ -1,7 +1,7 @@
 
 Currently, claims and prior authorization requests can come through [X12 transactions] or portal submissions. Payers may need additional information or "attachments" from a Provider to determine if the service being billed (for claims) or requested (for prior authorizations) is supported by medical or policy benefits. In this guide, the term "attachments" includes a subset of additional information represented in document form defined by the [LOINC Document Ontology] and [X12]. When requesting and sending attachments using [Questionnaire], attachments mean *any* additional information. Attachments for claims or prior authorization can be divided into *solicited* and *unsolicited* workflows. The sections below document the differences and similarities between these workflows and define the CDex transactions that implementers can use for solicited and unsolicited prior authorization and claims attachments. See the [Conforming to CDex Attachments] for guidance on how systems define their support for each.
 
-The Da Vinci Burden Reduction Implementation Guides (IGs), [Da Vinci Coverage Requirements Discovery (CRD)], [Da Vinci Documentation Templates and Rules (DTR)], and [Da Vinci Prior Authorization Support (PAS)], support an integrated workflow to enable automated submission of required documentation and prior authorization from EHR and payer systems respectively. Although the PAS guide leverages CDex, implementers should follow the Burden Reduction IGs to request additional information for prior authorization. See [Using CDex Attachments with DaVinci PAS] page for more details.
+The Da Vinci Burden Reduction Implementation Guides (IGs), [Da Vinci Coverage Requirements Discovery (CRD)], [Da Vinci Documentation Templates and Rules (DTR)], and [Da Vinci Prior Authorization Support (PAS)], support an integrated workflow to enable automated submission of required documentation and prior authorization from EHR and payer systems respectively. Although the PAS guide leverages CDex, implementers **SHOULD** follow the Burden Reduction IGs to request additional information for prior authorization. See [Using CDex Attachments with DaVinci PAS] page for more details.
 {:.bg-info}
 
 ### *Unsolicited* Attachments
@@ -12,7 +12,7 @@ For *unsolicited* attachments, the Payer does not explicitly request them - inst
 
 1. A set of predefined rules, made by the Payer or state mandates, necessitates that the Provider submit additional information without a specific request.
 2. A Provider believes the Payer will need additional information to process a claim.
-3. A Provider is under review and must provide additional documentation for all claims.
+3. A Provider under review is required to provide additional documentation for all claims.
 
 The flow diagram below shows this transaction:
 

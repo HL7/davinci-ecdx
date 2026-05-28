@@ -1,0 +1,23 @@
+# ===========Configuration for TSA timestamp ===========
+# =================== update configuration manually with your values =======================
+[ tsa ]
+default_tsa = tsa_config
+
+[ tsa_config ]
+dir = /Users/ehaas/Documents/FHIR/davinci-ecdx/CDEX-Signatures/example_org_cert
+serial = /serial
+crypto_device = builtin
+signer_cert = /cert.pem
+certs = /cert.pem
+signer_key = /private-key.pem
+signer_digest = sha256
+default_policy = 1.2.3.4.1
+other_policies = 1.2.3.4.2, 1.2.3.4.3
+digests = sha256
+accuracy = secs:1, millisecs:500, microsecs:100
+ordering = yes
+tsa_name = yes
+ess_cert_id_chain = no
+
+# EOF
+# don't edit the previous line

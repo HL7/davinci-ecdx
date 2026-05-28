@@ -45,6 +45,21 @@
   ],
   "intent": "order",
   "lastModified": "2020-10-27T11:05:34-07:00",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Inline Task Example 10"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "Task example used to create inline task based scenarios for and [example unsuccessful task based transaction](task-based-approach.html#example-unsuccessful-task-based-transaction)"
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request"
+    ]
+  },
   "owner": {
     "reference": "http://example.org/fhir/Organization/cdex-example-provider"
   },

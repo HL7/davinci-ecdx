@@ -1,6 +1,21 @@
 {
   "resourceType": "Parameters",
   "id": "cdex-parameters-example4",
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "CDex Parameters Example 4"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "**Laboratory Results Attachment Example:** Parameters Resource example showing how it is used to submit multiple attachments using the `$submit-attachment` operation. It contains 3 Hemoglobin A1c results as attachments and the necessary information needed to associate them to the claim."
+      }
+    ],
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-parameters-submit-attachment"
+    ]
+  },
   "parameter": [
     {
       "name": "TrackingId",
@@ -117,6 +132,13 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
+            },
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+              ]
             }
           }
         }
@@ -194,6 +216,13 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
+            },
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+              ]
             }
           }
         }
@@ -271,6 +300,13 @@
               "unit": "%",
               "system": "http://unitsofmeasure.org",
               "code": "%"
+            },
+            "meta": {
+              "profile": [
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|3.1.1",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0",
+                "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
+              ]
             }
           }
         }
