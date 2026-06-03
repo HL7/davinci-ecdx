@@ -13,8 +13,6 @@ how to create this page:
    2. Escape Html in the output fields where present, sections 3.2, 4. and 2. (To make render properly in the IG)
 -->
 
-<div class="bg-success" markdown="1">
-
 This is a Jupyter Notebook which uses openSSL, Python 3.7, and the Python jcs and jose libraries to create a JSON Web Signature (JWS)(see RFC 7515), attach it to a FHIR Bundle and validate it. Its source code be found [here](https://github.com/HL7/davinci-ecdx/blob/master/CDEX-Signatures/Digsig_Serachset_Bundle_Example.ipynb)
 
 *Although self-signed certificates are used for the purpose of these examples, they are not recommended for production systems.*
@@ -1013,6 +1011,3 @@ except Exception as e:
       # #    #       #   #   #  #       #  #       #    #  ###
        #     ######  #    #  #  #       #  ######  #####   ###
 </pre>
-
-
-</div><!-- new-content -->
