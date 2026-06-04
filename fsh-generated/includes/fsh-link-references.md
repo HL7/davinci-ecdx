@@ -1,7 +1,9 @@
 [cdex-bundle-inline-example-858p]: Bundle-cdex-bundle-inline-example-858p.html
 [CDexClaimUseCodes]: ValueSet-cdex-claim-use.html
 [cdex-condition-inline-example-858]: Condition-cdex-condition-inline-example-858.html
+[CDexDataConsumerRequirements]: Requirements-cdex-data-consumer.html
 [CDexDataRequestTaskCode]: ValueSet-cdex-data-request-task-code.html
+[CDexDataSourceRequirements]: Requirements-cdex-data-source.html
 [CDexDigitalSignature]: StructureDefinition-cdex-digital-signature.html
 [cdex-document-digital-sig-example]: Bundle-cdex-document-digital-sig-example.html
 [cdex-electronic-sig-example]: Bundle-cdex-electronic-sig-example.html
@@ -26,6 +28,7 @@
 [cdex-parameters-example5]: Parameters-cdex-parameters-example5.html
 [CDexParametersSubmitAttachment]: StructureDefinition-cdex-parameters-submit-attachment.html
 [CDexPatientDemographics]: StructureDefinition-cdex-patient-demographics.html
+[CDexPayerRequirements]: Requirements-cdex-payer.html
 [CDexPractitionerRole]: StructureDefinition-cdex-practitionerrole.html
 [cdex-provenance-inline-example-858]: Provenance-cdex-provenance-inline-example-858.html
 [CDexPOUCodes]: ValueSet-cdex-POU.html
@@ -40,6 +43,7 @@
 [CDEXSDCQuestionnaireResponse]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [cdex-searchbundle-digital-sig-example]: Bundle-cdex-searchbundle-digital-sig-example.html
 [CDexSignatureBundle]: StructureDefinition-cdex-signature-bundle.html
+[CDexSignerRequirements]: Requirements-cdex-signer.html
 [CDexTaskAttachmentRequest]: StructureDefinition-cdex-task-attachment-request.html
 [CDexTaskDataRequest]: StructureDefinition-cdex-task-data-request.html
 [cdex-task-example1]: Task-cdex-task-example1.html
@@ -75,6 +79,7 @@
 [cdex-task-example9]: Task-cdex-task-example9.html
 [cdex-task-inline-example6]: Task-cdex-task-inline-example6.html
 [CDexTempCodes]: CodeSystem-cdex-temp.html
+[CDexVerifierRequirements]: Requirements-cdex-verifier.html
 [CDexWorkQueueCodes]: ValueSet-cdex-work-queue.html
 [cdex-capabilitystatement-inline-example]: CapabilityStatement-cdex-capabilitystatement-inline-example.html
 [DataConsumerClientCapabilityStatement]: CapabilityStatement-data-consumer-client.html

@@ -49,4 +49,11 @@ CDex Task-based transactions have many optional capabilities. Systems may choose
 
 {% include must-support.md %}
 
+
+### CDex Task Based Approach Requirements
+
+{% include conformance-requirements.md category="Task Based Approach" %}
+
+<br />
+
 {% include link-list.md %}

@@ -29,11 +29,11 @@ In addition to using a patient business identifier such as an MRN or Member ID, 
 
 2. Search the Patient using a Direct Query.
    - For example:
-   
+
       `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
    - CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
-    
+
 3. Use the [Task Based Approach] to request the Patient resource.
 
 <div class="bg-info" markdown="1">
@@ -101,7 +101,7 @@ Getting the latest Progress note is typically a two-step process:
 1. Query DocumentReference, which references the actual notes file
 2. Fetch the notes file
 
-Following the US Core Clinical Notes Guidance section, the Payer searches for the Progress note C-CDA documents using the combination of the patient and type search parameters. 
+Following the US Core Clinical Notes Guidance section, the Payer searches for the Progress note C-CDA documents using the combination of the patient and type search parameters.
 In addition, the combination of `_sort` and `_count` parameters limits the response to only the most recent data. For example, with `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1`, the query returns the most current matching resource.
 
 `GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
@@ -183,5 +183,11 @@ This example is the same as Scenario 1 above, except it includes a digital signa
 `GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
 
 {% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example Signed Direct Query Response" %}
+
+### Conforming to CDex Direct Query
+
+{% include conformance-requirements.md category="Direct Query" %}
+
+<br />
 
 {% include link-list.md %}

@@ -6,7 +6,7 @@
 ### Introduction
 
 CDex attachments are intended to be compatible with the X12n transactions and designed to work for both solicited and unsolicited claims and prior authorization. Refer to the CDex [CapabilityStatements] resources for conformance expectations for the various actors and roles. The tables below show:
-- The CDex Attachments interaction for each role and the conformance resource and terminology that makes it unique to help clarify the different use cases. 
+- The CDex Attachments interaction for each role and the conformance resource and terminology that makes it unique to help clarify the different use cases.
 - The optional and required capabilities for CDex Attachments transactions.
 - The optional and required `$submit-attachment` Parameters
 
@@ -53,7 +53,7 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
  Task.reasonCode Terminology|-|`claim`|-|`preauthorization`
 {:.grid}
 
-{{OK}}: Conformance resource used in the transaction  
+{{OK}}: Conformance resource used in the transaction
 {{X}}: Conformance resource not used in the transaction
 
 ### Capabilities for Requesting Attachments
@@ -89,5 +89,11 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire|{{OK}}(Servers SHOULD support other FHIR types)|
 |Attachment.Final||{{OK}}|
 {:.grid}
+
+### CDex Attachments Requirements
+
+{% include conformance-requirements.md category="Attachments" %}
+
+<br />
 
 {% include link-list.md %}

@@ -95,9 +95,9 @@ definition:
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
       valueCode: hl7.fhir.us.davinci-cdex#0.1.0
   grouping:
-    - id: CapabilityStatements
-      name: CDex Capability Statements
-      description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+    - id: Conformance
+      name: CDex Capability Statements and Requirements
+      description: The following artifacts define the specific capabilities and requirements that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements and meet the specific requirements compliant with the implementation guide.
     - id: AttachmentsProfiles
       name: Attachments Profiles
       description: Profiles Associated with CDex Attachments Transactions
@@ -160,11 +160,23 @@ definition:
       exampleCanonical: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
       groupingId: InlineExamples
     - reference:
+        reference: Requirements/cdex-data-consumer
+      description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Data Consumer requirements defined in the narrative sections of this IG.
+      exampleBoolean: false
+      name: CDex Data Consumer Requirements
+      groupingId: Conformance
+    - reference:
         reference: ValueSet/cdex-data-request-task-code
       description: Codes used to identify the type of data request. It includes the codes “data-request-query”, “data-request-code”, and “data-request-questionnaire”.
       exampleBoolean: false
       name: CDex Data Request Task Code Value Set
       groupingId: TaskBasedTerminology
+    - reference:
+        reference: Requirements/cdex-data-source
+      description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Data Source requirements defined in the narrative sections of this IG.
+      exampleBoolean: false
+      name: CDex Data Source Requirements
+      groupingId: Conformance
     - reference:
         reference: StructureDefinition/cdex-digital-signature
       description: This Signature DataType profile enforces the various elements of digital signatures documented in [Digital Signature Rules and Guidance For CDEX Bundle and QuestionnaireResponse](https://hl7.org/fhir/us/davinci-cdex/signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse).
@@ -310,6 +322,12 @@ definition:
       name: CDex Patient Demographics Profile
       groupingId: AttachmentsProfiles
     - reference:
+        reference: Requirements/cdex-payer
+      description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Payer requirements defined in the narrative sections of this IG.
+      exampleBoolean: false
+      name: CDex Payer Requirements
+      groupingId: Conformance
+    - reference:
         reference: StructureDefinition/cdex-practitionerrole
       description: |-
         This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as a unique organization/location identifier (e.g., Type 2 NPI), or unique provider identifier (e.g., Type 1 NPI), or both. It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0).:
@@ -412,6 +430,12 @@ definition:
       exampleBoolean: false
       name: CDex Signature Bundle Profile
       groupingId: SignatureProfiles
+    - reference:
+        reference: Requirements/cdex-signer
+      description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Signer requirements defined in the narrative sections of this IG.
+      exampleBoolean: false
+      name: CDex Signer Requirements
+      groupingId: Conformance
     - reference:
         reference: StructureDefinition/cdex-task-attachment-request
       description: |
@@ -624,6 +648,12 @@ definition:
       name: CDex Temporary Code System
       groupingId: CommonTerminology
     - reference:
+        reference: Requirements/cdex-verifier
+      description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Verifier requirements defined in the narrative sections of this IG.
+      exampleBoolean: false
+      name: CDex Verifier Requirements
+      groupingId: Conformance
+    - reference:
         reference: ValueSet/cdex-work-queue
       description: The set work queue tags that the provider may use in their workflow to process requests. This code set is composed of codes defined by this Guide.
       exampleBoolean: false
@@ -648,7 +678,7 @@ definition:
            - Requesting Attachments Using Questionnaires
       exampleBoolean: false
       name: Data Consumer Client CapabilityStatement
-      groupingId: CapabilityStatements
+      groupingId: Conformance
     - reference:
         reference: CapabilityStatement/data-consumer-server
       description: |-
@@ -658,7 +688,7 @@ definition:
         1. Responding to  the `$submit-attachment` operation.
       exampleBoolean: false
       name: Data Consumer Server CapabilityStatement
-      groupingId: CapabilityStatements
+      groupingId: Conformance
     - reference:
         reference: CapabilityStatement/data-source-client
       description: |-
@@ -669,13 +699,13 @@ definition:
         4. Post a subscription notification to a Data Consumer endpoint updating the status of a task.
       exampleBoolean: false
       name: Data Source Client CapabilityStatement
-      groupingId: CapabilityStatements
+      groupingId: Conformance
     - reference:
         reference: CapabilityStatement/data-source-server
       description: "This CapabilityStatement describes the expected capabilities of a Da Vinci CDex Data Source in *Server* mode when responding to a Data Consumer during clinical data exchange. The capabilities include one or more of the following interactions:\n\n1. Responding to a FHIR RestFul Query for Clinical Data \n2. Responding to a Task-based query request for clinical data\nincluding:\n   -  Polling or Subscription requests for Task update notifications\n1. Responding to\n   - Requesting Attachments Using Attachments Codes\n   - Requesting Attachments Using Questionnaires"
       exampleBoolean: false
       name: Data Source Server CapabilityStatement
-      groupingId: CapabilityStatements
+      groupingId: Conformance
     - reference:
         reference: Bundle/cdex-searchbundle-scenario1-example
       description: Bundle example used in direct query transactions [scenario 1](direct-query.html#scenario-1) and in task based transactions - for example, [scenario 1a](task-based-approach.html#scenario-1).

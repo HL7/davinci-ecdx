@@ -1,0 +1,26 @@
+resourceType: Requirements
+id: cdex-verifier
+url: http://hl7.org/fhir/us/davinci-cdex/Requirements/cdex-verifier
+name: CDexVerifierRequirements
+title: CDex Verifier Requirements
+description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Verifier requirements defined in the narrative sections of this IG.
+statement:
+  - key: CONF-053
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHALL
+    requirement: '- One of the certificate Subject Alternative Name (SAN)) **SHALL** match `Signature.who.identifier` to verify the identity of the entity signing'
+  - key: CONF-054
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHALL
+    requirement: '- The `"srCms"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements.'
+  - key: CONF-055
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHALL
+    requirement: '- The `"sigT"` header timestamp  **SHALL** match `Signature.when`'
+    conditionality: true

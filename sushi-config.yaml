@@ -105,14 +105,19 @@ dependencies:
 # resource entries with the corresponding groupIds.
 groups:
 
-  CapabilityStatements:
-    name: CDex Capability Statements
-    description: The following artifacts define the specific capabilities that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements.
+  Conformance:
+    name: CDex Capability Statements and Requirements
+    description: The following artifacts define the specific capabilities and requirements that different types of systems are expected to have in order to comply with this implementation guide. Systems conforming to this implementation guide are expected to declare conformance to one or more of the following capability statements and meet the specific requirements compliant with the implementation guide.
     resources:
       - CapabilityStatement/data-consumer-client
       - CapabilityStatement/data-consumer-server
       - CapabilityStatement/data-source-client
       - CapabilityStatement/data-source-server
+      - Requirements/cdex-data-source
+      - Requirements/cdex-data-consumer
+      - Requirements/cdex-verifier
+      - Requirements/cdex-signer
+      - Requirements/cdex-payer
 
   AttachmentsProfiles:
     name: Attachments Profiles
@@ -463,6 +468,7 @@ menu:
     Direct Query Transaction Scenarios: direct-query.html#direct-query-transaction-scenarios
     Provenance: direct-query.html#provenance
     Signatures: direct-query.html#signatures
+    Conforming to CDex Direct Query: direct-query.html#conforming-to-cdex-direct-query
   Task Based Approach: #task-based-approach.html
     Introduction: task-based-approach.html
     Benefits: task-based-approach.html#benefits
@@ -493,10 +499,11 @@ menu:
     CDex Signatures: signatures.html#cdex-signatures
     Electronic Signatures: signatures.html#electronic-signatures
     Digital Signatures: signatures.html#digital-signatures
+    Conforming to Signatures: signatures.html#conforming-to-cdex-signatures
   Security and Privacy: security.html
   FHIR Artifacts:
     Artifacts Summary: artifacts.html
-    CDex Capability Statements: artifacts.html#1
+    CDex Capability Statements and Requirements: artifacts.html#1
     Attachments Profiles: artifacts.html#2
     Attachments Operations: artifacts.html#3
     Attachments Terminology: artifacts.html#4

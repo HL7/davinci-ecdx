@@ -22,7 +22,9 @@
 <artifact id="Bundle/cdex-bundle-inline-example-858p" key="Bundle-cdex-bundle-inline-example-858p" name="CDex Bundle Inline Example 858p"/>
 <artifact id="ValueSet/cdex-claim-use" key="ValueSet-cdex-claim-use" name="CDex Claim Use Value Set"/>
 <artifact id="Condition/cdex-condition-inline-example-858" key="Condition-cdex-condition-inline-example-858" name="CDex Condition Inline Example 858"/>
+<artifact id="Requirements/cdex-data-consumer" key="Requirements-cdex-data-consumer" name="CDex Data Consumer Requirements"/>
 <artifact id="ValueSet/cdex-data-request-task-code" key="ValueSet-cdex-data-request-task-code" name="CDex Data Request Task Code Value Set"/>
+<artifact id="Requirements/cdex-data-source" key="Requirements-cdex-data-source" name="CDex Data Source Requirements"/>
 <artifact id="StructureDefinition/cdex-digital-signature" key="StructureDefinition-cdex-digital-signature" name="CDex Digital Signature Profile"/>
 <artifact id="ValueSet/cdex-identifier-types" key="ValueSet-cdex-identifier-types" name="CDex Identifier Types Value Set"/>
 <artifact id="OperationOutcome/cdex-operationoutcome-inline-example1" key="OperationOutcome-cdex-operationoutcome-inline-example1" name="CDex Inline OperationOutcome Example 1"/>
@@ -46,6 +48,7 @@
 <artifact id="Parameters/cdex-parameters-example5" key="Parameters-cdex-parameters-example5" name="CDex Parameters Example 5"/>
 <artifact id="StructureDefinition/cdex-parameters-submit-attachment" key="StructureDefinition-cdex-parameters-submit-attachment" name="CDex Parameters Submit Attachment Profile"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
+<artifact id="Requirements/cdex-payer" key="Requirements-cdex-payer" name="CDex Payer Requirements"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="Provenance/cdex-provenance-inline-example-858" key="Provenance-cdex-provenance-inline-example-858" name="CDex Provenance Inline Example 858"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>
@@ -59,6 +62,7 @@
 <artifact id="StructureDefinition/cdex-sdc-questionnaireresponse" key="StructureDefinition-cdex-sdc-questionnaireresponse" name="CDex SDC QuestionnaireResponse Profile"/>
 <artifact id="StructureDefinition/cdex-signature-bundle" key="StructureDefinition-cdex-signature-bundle" name="CDex Signature Bundle Profile"/>
 <artifact deprecated="true" id="StructureDefinition/cdex-signature" key="StructureDefinition-cdex-signature" name="CDex Signature Profile"/>
+<artifact id="Requirements/cdex-signer" key="Requirements-cdex-signer" name="CDex Signer Requirements"/>
 <artifact deprecated="true" id="Parameters/cdex-submit-attachment-example" key="Parameters-cdex-submit-attachment-example" name="CDex Submit Attachment Parameters Resource Example"/>
 <artifact id="StructureDefinition/cdex-task-attachment-request" key="StructureDefinition-cdex-task-attachment-request" name="CDex Task Attachment Request Profile"/>
 <artifact id="StructureDefinition/cdex-task-data-request" key="StructureDefinition-cdex-task-data-request" name="CDex Task Data Request Profile"/>
@@ -95,6 +99,7 @@
 <artifact id="Task/cdex-task-example9" key="Task-cdex-task-example9" name="CDex Task Example 9"/>
 <artifact id="Task/cdex-task-inline-example6" key="Task-cdex-task-inline-example6" name="CDex Task Inline Example 6"/>
 <artifact id="CodeSystem/cdex-temp" key="CodeSystem-cdex-temp" name="CDex Temporary Code System"/>
+<artifact id="Requirements/cdex-verifier" key="Requirements-cdex-verifier" name="CDex Verifier Requirements"/>
 <artifact id="ValueSet/cdex-work-queue" key="ValueSet-cdex-work-queue" name="CDex Work Queue Value Set"/>
 <artifact id="CapabilityStatement/data-consumer-client" key="CapabilityStatement-data-consumer-client" name="Data Consumer Client CapabilityStatement"/>
 <artifact id="CapabilityStatement/data-consumer-server" key="CapabilityStatement-data-consumer-server" name="Data Consumer Server CapabilityStatement"/>

@@ -1,0 +1,74 @@
+resourceType: Requirements
+id: cdex-payer
+url: http://hl7.org/fhir/us/davinci-cdex/Requirements/cdex-payer
+name: CDexPayerRequirements
+title: CDex Payer Requirements
+description: This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Payer requirements defined in the narrative sections of this IG.
+statement:
+  - key: CONF-012
+    reference:
+      - requesting-attachments-code.html#date-of-service-for-the-claim
+    conformance:
+      - SHALL
+    requirement: This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for a prior authorization.
+    conditionality: true
+  - key: CONF-022
+    reference:
+      - sending-attachments.html#large-payloads
+    conformance:
+      - SHALL
+    requirement: '1. Servers **SHALL** document in their Capability Statement''s `CapabilityStatement,operation.documentation` element or payer-supplied documentation:'
+  - key: CONF-023
+    reference:
+      - sending-attachments.html#large-payloads
+    conformance:
+      - SHALL
+    requirement: 1. When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages "Request Entity Too Large" or "Payload Too Large").
+    conditionality: true
+  - key: CONF-024
+    reference:
+      - sending-attachments.html#large-payloads
+    conformance:
+      - SHALL
+    requirement: 1. Servers **SHALL** document instructions for the Client when the payload is  (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)
+    conditionality: true
+  - key: CONF-025
+    reference:
+      - sending-attachments.html#the-payer-requirements
+    conformance:
+      - SHALL
+    requirement: '- If the signatures fail verification when processing the [`$submit-attachment`] operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.'
+    conditionality: true
+  - key: CONF-079
+    reference:
+      - StructureDefinition-cdex-task-attachment-request.html
+    conformance:
+      - SHALL
+    requirement: '- A "ServiceDate" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.'
+    conditionality: true
+  - key: CONF-098
+    reference:
+      - requesting-attachments-code.html#cdex-attachment-request-profile
+    conformance:
+      - SHALL
+    requirement: '**For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile] to solicit information from a Provider.**'
+  - key: CONF-099
+    reference:
+      - requesting-attachments-questionnaire.html#cdex-attachment-request-profile
+    conformance:
+      - SHALL
+    requirement: '**For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile] to solicit information from a Provider.**'
+  - key: CONF-003
+    reference:
+      - attachments-conformance.html#submit-attachment-parameters-for-sending-attachments
+    conformance:
+      - SHOULD
+    requirement: '|Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire|{{OK}}(Servers SHOULD support other FHIR types)|'
+    conditionality: true
+  - key: CONF-021
+    reference:
+      - sending-attachments.html#technical-workflow
+    conformance:
+      - SHOULD
+    requirement: '- The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.'
+    conditionality: true
