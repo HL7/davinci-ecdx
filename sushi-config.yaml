@@ -341,14 +341,14 @@ pages:
     - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
       valueCode: trial-use
     signed-searchset-bundle-example.md:
-      extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+      # extension:
+      # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      #   valueCode: informative
       title: 'Worked Example: Signed Searchset Bundle'
     signed-document-bundle-example.md:
-      extension:
-      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-        valueCode: informative
+      # extension:
+      # - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+      #   valueCode: informative
       title: 'Worked Example: Signed Document Bundle'
   security.md:
     extension:

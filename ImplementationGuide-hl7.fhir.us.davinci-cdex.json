@@ -1200,24 +1200,12 @@
             {
               "nameUrl": "signed-searchset-bundle-example.html",
               "title": "Worked Example: Signed Searchset Bundle",
-              "generation": "markdown",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                  "valueCode": "informative"
-                }
-              ]
+              "generation": "markdown"
             },
             {
               "nameUrl": "signed-document-bundle-example.html",
               "title": "Worked Example: Signed Document Bundle",
-              "generation": "markdown",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-                  "valueCode": "informative"
-                }
-              ]
+              "generation": "markdown"
             }
           ]
         },
