@@ -8,7 +8,7 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 ### Requesting Attachments Using FHIR
 
-{% include task-based-sections-to-review.md %}
+{% include task-based-sections-to-review.md %}<sup>[§][CONF-099]</sup>
 
 ### Requesting Attachments Using FHIR Questionnaires
 

@@ -1,6 +1,6 @@
 ### Da Vinci HRex Security and Privacy Requirements
 
-This implementation guide inherits all of the mandatory requirements and recommendations defined in the [HRex Security and Privacy] specification.   Implementers **SHALL** read and adhere to the guidance for the following topics:
+This implementation guide inherits all of the mandatory requirements and recommendations defined in the [HRex Security and Privacy] specification.   Implementers **SHALL** read and adhere to the guidance for the following topics:<sup>[§][CONF-014]</sup>
 
 - Da Vinci's Guiding Principles
 - Statutes, Regulations
@@ -17,15 +17,15 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 
 
-1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer. Organizational user access scopes are typically pre-negotiated and documented via business agreements. Data Sources shall translate these agreements into the appropriate SMART App Launch scopes.
+1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer. Organizational user access scopes are typically pre-negotiated and documented via business agreements. Data Sources shall translate these agreements into the appropriate SMART App Launch scopes.<sup>[§][CONF-015]</sup>
 
-1. Audit mechanisms **SHALL** be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.
+1. Audit mechanisms **SHALL** be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.<sup>[§][CONF-016]</sup>
 
 #### Purpose of Use
 
 The purpose for which data may be used by or on behalf of an organization is known as the Purpose of Use (POU). It is an integral part of the data-sharing agreement between Data Consumers and Data Sources because privacy policies and consent directives dictate data requests' responses. Typically, a single POU is assigned for a client application when the app is registered and broadly defined POU types such as those listed in the [NHIN Purpose Of Use Code System]. For example, a Payer's typical POU is "OPERATIONS," and a Provider's typical POU is "TREATMENT". Therefore, it is implicit when the Data Consumer makes a direct query or an "automatically fulfilled" Task to the Data Source using that app.
 
-<span class="bg-success" markdown="1">CDex Task-based queries enable Data Consumers to dynamically define POUs when requesting data. Data Consumer and Data Source **MAY** communicate the POU for the requested data for each Task using codes from the [CDex Purpose of Use Value Set] in the POU `Task.input` element. The Data Consumer and Data Source **SHALL** use it to communicate the POU for the requested data when trading partner agreements require the POU to be exchanged.</span><!-- new-content -->
+<span class="bg-success" markdown="1">CDex Task-based queries enable Data Consumers to dynamically define POUs when requesting data. Data Consumer and Data Source **MAY** communicate the POU for the requested data for each Task using codes from the [CDex Purpose of Use Value Set] in the POU `Task.input` element. The Data Consumer and Data Source **SHALL** use it to communicate the POU for the requested data when trading partner agreements require the POU to be exchanged.<sup>[§][CONF-017]</sup><sup>[§][CONF-018]</sup></span><!-- new-content -->
 
 #### Sensitive and Confidential Data
 

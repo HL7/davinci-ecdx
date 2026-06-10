@@ -1,6 +1,6 @@
 
 
-This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request. 
+This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request.
 
 {% include see-conf.md %}
 
@@ -25,12 +25,12 @@ As shown below in Figure 13, the attachments are "pushed" using the [`$submit-at
 1. The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
 2. The Provider invokes [`$submit-attachment`] operation to submit attachments to the Payer
 3. The Payer responds with an HTTP response that accepts or rejects the transaction.
-   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.
+   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.<sup>[§][CONF-021]</sup>
 <div class="bg-success" markdown="1">
 
   FHIR operations are based on the RPC-like paradigm where the target is treated as a "Black Box", a system where the internal workings are not known. Therefore, the acceptance or failure of the $submit-attachment operation depends on the Payer server's internal business rules and workflow.
   {:.bg-info}
-  
+
 </div><!-- new-content -->
 
 4. The Payer associates the attachments to the claim or prior authorization and processes the claim.
@@ -38,7 +38,7 @@ As shown below in Figure 13, the attachments are "pushed" using the [`$submit-at
 
 ### Data Elements for Sending Attachments
 
-When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 elements in the following table. {% include X12_IP.md %}  
+When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 elements in the following table. {% include X12_IP.md %}
 
 {% include attachments_to_275.md %}
 
@@ -78,13 +78,13 @@ This scenario is the same as Scenario 1a above, except the attachments are submi
 
 This section outlines the Payer server requirements and guidelines for managing large payloads in the $submit-attachment operation, specifying size limits, error handling, and alternative submission methods.
 
-1. Servers **SHALL** document in their Capability Statement's `CapabilityStatement,operation.documentation` element or payer-supplied documentation:
+1. Servers **SHALL** document in their Capability Statement's `CapabilityStatement.operation.documentation` element or payer-supplied documentation:<sup>[§][CONF-022]</sup>
    1. The payload endpoint size limits (e.g. 100MB )
    2. Whether they support the $ submit-attachment's final input parameter
 
-1. When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages "Request Entity Too Large" or "Payload Too Large").
+1. When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages "Request Entity Too Large" or "Payload Too Large").<sup>[§][CONF-023]</sup>
 
-1. Servers **SHALL** document instructions for the Client when the payload is  (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)
+1. Servers **SHALL** document instructions for the Client when the payload is (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)<sup>[§][CONF-024]</sup>
 </div><!-- new-content -->
 
 ### Signatures
@@ -105,11 +105,11 @@ Some data consumers may require that the data they receive be signed. When signa
   1. *all* attachments
   2. or *only* for attachments where the attachment request communicates the signature requirement using the `Task.input` "signature" input parameter.
 - The Payer/Requester follows the documentation on the [Signatures] page to validate signatures.
-  - If the signatures fail verification when processing the [`$submit-attachment`] operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.
+  - If the signatures fail verification when processing the [`$submit-attachment`] operation, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome declaring that the signature was invalid.<sup>[§][CONF-025]</sup>
 
 #### Provider Requirements
 
-{% include data-source-sig-rules.md %}
+{% include data-source-sig-rules.md %}<sup>[§][CONF-084]</sup>
 
 - In this example, the Provider submits a patient's active conditions to the Payer to support a claim.
 Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a digitally signed FHIR Document bundle.

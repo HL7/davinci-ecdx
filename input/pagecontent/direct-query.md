@@ -25,14 +25,14 @@ The sequence diagram in Figure 6 below outlines a successful interaction between
 In addition to using a patient business identifier such as an MRN or Member ID, the FHIR Patient.id is often a prerequisite to performing FHIR RESTful Direct Queries and other transactions described in this guide. However, the requester is not required to know the FHIR Patient.id before the exchange. With sufficient demographic information or identifiers, any of the following FHIR transactions can be used to discover the FHIR Patient.id:
 
 1. Call the patient [`$match`] operation to ask an MPI to match a patient.*
-   - CDex Data Source servers **SHOULD** support the patient match operation and declare it in their CapabilityStatement.
+   - CDex Data Source servers **SHOULD** support the patient match operation and declare it in their CapabilityStatement.<sup>[§][CONF-006]</sup>
 
 2. Search the Patient using a Direct Query.
    - For example:
 
       `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
-   - CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
+   - CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.<sup>[§][CONF-007]</sup>
 
 3. Use the [Task Based Approach] to request the Patient resource.
 
@@ -114,7 +114,7 @@ The `DocumentReference.content.attachment.url` element references the actual CCD
 
 ### Provenance
 
-To the extent that the Data Source keeps a record of the provenance of the data, the FHIR Provenance Resource can be requested as documented on US Core's [Basic Provenance] page. When returning provenance, they **SHOULD** use the [HRex Provenance Profile]. The following example illustrates this transaction.
+To the extent that the Data Source keeps a record of the provenance of the data, the FHIR Provenance Resource can be requested as documented on US Core's [Basic Provenance] page. When returning provenance, they **SHOULD** use the [HRex Provenance Profile]. The following example illustrates this transaction.<sup>[§][CONF-008]</sup>
 
 #### Example of Direct Query Response Including Provenance
 
@@ -150,7 +150,7 @@ Some data consumers may require that the data they receive be signed. When signa
 
 <div markdown="1" class="bg-warning" id="read-warning">
 
-When signatures are required, the Data Consumer **SHALL** use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. If the Data Consumer attempts to fetch a resource with a read and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error. The following HTTP response and OperationOutcome illustrate this.
+When signatures are required, the Data Consumer **SHALL** use a [FHIR RESTful search] instead of [FHIR RESTful read]. There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. If the Data Consumer attempts to fetch a resource with a read and a signature is required, the Data Source/Responder **SHALL** return an HTTP `400 Bad Request` *and* an OperationOutcome describing the business rule error. The following HTTP response and OperationOutcome illustrate this.<sup>[§][CONF-009]</sup><sup>[§][CONF-010]</sup>
 
  ~~~
  HTTP/1.1 400 Bad Request

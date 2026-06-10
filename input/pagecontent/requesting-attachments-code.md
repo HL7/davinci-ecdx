@@ -10,7 +10,7 @@ This page documents a FHIR-based approach for requesting attachments for claims 
 
 ### Requesting Attachments Using FHIR
  
-{% include task-based-sections-to-review.md %}
+{% include task-based-sections-to-review.md %}<sup>[§][CONF-098]</sup>
 
 ### Requesting Attachments Using Attachment Codes
 
@@ -205,7 +205,7 @@ The Payer supplies the URL endpoint in the `Task.input` "payer-url" parameter. T
 
 ##### Date of Service for the claim
 
-This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for a prior authorization.  
+This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for a prior authorization.<sup>[§][CONF-012]</sup>  
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=132 count=9 linenumber=true rel=true %}

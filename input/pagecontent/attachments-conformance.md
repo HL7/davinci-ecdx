@@ -10,7 +10,7 @@ CDex attachments are intended to be compatible with the X12n transactions and de
 - The optional and required capabilities for CDex Attachments transactions.
 - The optional and required `$submit-attachment` Parameters
 
-Systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they **SHOULD** define what they support in their local capability statement in one or more of the following ways:
+Systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they **SHOULD** define what they support in their local capability statement in one or more of the following ways:<sup>[§][CONF-001]</sup>
 
 1. (Preferred) Formally derived implementable profile from [CDex Task Attachment Request Profile]
 2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.
@@ -71,7 +71,7 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 
 ### CDex Must Support Definition
 
-{% include must-support.md %}
+{% include must-support.md %}<sup>[§][CONF-086]</sup><sup>[§][CONF-088]</sup><sup>[§][CONF-090]</sup><sup>[§][CONF-092]</sup><sup>[§][CONF-094]</sup><sup>[§][CONF-096]</sup>
 
 ### $submit-attachment Parameters for Sending Attachments
 
@@ -85,8 +85,8 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |MemberId|{{OK}}||
 |ServiceDate|{{OK}}(claims)|{{OK}}(prior authorization)|
 |Attachment.LineItem||{{OK}}|
-|Attachment.Code||{{OK}}(It SHOULD be present when submitting unsolicited attachments)|
-|Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire|{{OK}}(Servers SHOULD support other FHIR types)|
+|Attachment.Code||{{OK}}(It SHOULD be present when submitting unsolicited attachments)|<sup>[§][CONF-002]</sup>
+|Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire|{{OK}}(Servers SHOULD support other FHIR types)|<sup>[§][CONF-003]</sup>
 |Attachment.Final||{{OK}}|
 {:.grid}
 

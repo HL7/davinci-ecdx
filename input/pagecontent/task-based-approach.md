@@ -30,7 +30,7 @@ In most situations, a provider or designated staff typically finds, aggregates, 
 ### The Task Resource
 
 
-**For CDex Task-based transactions, the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled. For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.
+**For CDex Task-based transactions, the [CDex Task Data Request Profile] SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled. For a detailed description of all the mandatory, [*must support*], and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile] page.<sup>[§][CONF-057]</sup>
 
 #### Task Inputs and Outputs
 
@@ -64,7 +64,7 @@ The [CDex Work Queue Value Set] is a set of work queue tags that the provider ma
 
 #### Task Reason
 
-When known, `Task.reasonCode` or `Task.reasonReference` **SHALL** reference the object that directly leads to the task - a particular claim, for example.
+When known, `Task.reasonCode` or `Task.reasonReference` **SHALL** reference the object that directly leads to the task - a particular claim, for example.<sup>[§][CONF-058]</sup>
 
 ### Sequence Diagram
 
@@ -83,7 +83,7 @@ The patient's [FHIR id] is a prerequisite to performing FHIR RESTful Direct Quer
 
 ### Task State Machine
 
-Figure 8 below illustrates a "typical" state machine for CDex Task. The Data Consumer creates the Task with a status of "requested". The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.
+Figure 8 below illustrates a "typical" state machine for CDex Task. The Data Consumer creates the Task with a status of "requested". The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.<sup>[§][CONF-059]</sup><sup>[§][CONF-060]</sup><sup>[§][CONF-061]</sup>
 
 {% include img.html img="task-state-machine.svg" caption="Figure 8" %} 
 
@@ -246,7 +246,7 @@ Task-based exchanges can take one of two forms - subscription or polling, as des
 
 Polling is a mechanism for conveying new data to a Data Consumer as (or shortly after) the data is created or updated without requiring the Data Source to be aware of the specific needs of the Data Consumer. The Data Consumer repeatedly queries the Data Source to see if there is new data. For example, in the Da Vinci CDex use case, the Data Consumer would poll the Data Source by fetching the Task resource to see if it has been updated. Polling is the *default option* if the Data Source does not support subscribing to the Task as described below.
 
-Data consumers can poll for a single Task or across several Tasks. The polling frequency balances responsiveness (short interval between data creation and consumer notification) against not over-taxing the Data Source's resources. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
+Data consumers can poll for a single Task or across several Tasks. The polling frequency balances responsiveness (short interval between data creation and consumer notification) against not over-taxing the Data Source's resources. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.<sup>[§][CONF-062]</sup> 
 
 
 
@@ -258,13 +258,13 @@ When using subscriptions in CDex, implementers **SHALL** use topic-based subscri
 
 In the subscription mechanism, instead of the Data Consumer regularly querying the Data Source to see if there are changes to existing Tasks, the Data Consumer creates a Subscription instance on the Data Source server. (It's also possible for the data source to configure subscriptions for clients; in other words, it can create subscriptions administratively. However, these implementation details are out of scope for this guide.) The Subscription indicates that the Data Consumer wants to be notified about changes to Tasks and provides filters describing what subset of Tasks the Data Consumer is interested in. The Data Source will then push notifications when there are new or updated Tasks and the Data Consumer can then query for the specific Tasks that have changed.
 
-Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the [Subscription R5 Backport Implementation Guide] and the Da Vinci Health Record Exchange (HRex) [Subscription requirements](https://build.fhir.org/ig/HL7/davinci-ehrx/task.html#subscription) for subscribing to Task updates. These implementation guides "pre-adopt" the FHIR R5 topic-based subscription approach in R4 implementations since most U.S. EHR vendors have agreed to support it.
+Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the [Subscription R5 Backport Implementation Guide] and the Da Vinci Health Record Exchange (HRex) [Subscription requirements](https://build.fhir.org/ig/HL7/davinci-ehrx/task.html#subscription) for subscribing to Task updates. These implementation guides "pre-adopt" the FHIR R5 topic-based subscription approach in R4 implementations since most U.S. EHR vendors have agreed to support it.<sup>[§][CONF-064]</sup>
 
 ##### HRex Task Subscription Topic 
 
 The Da Vinci Health Record Exchange (HRex) guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
 
-- The Data Source **SHALL** support the HRex Task Subscription Topic and **MAY** support other subscription topics.
+- The Data Source **SHALL** support the HRex Task Subscription Topic and **MAY** support other subscription topics.<sup>[§][CONF-065]</sup><sup>[§][CONF-066]</sup>
 
 Note that supporting the FHIR SubscriptionTopic resource nor the equivalent Basic resource versions described in the R5 Backport Implementation Guides is NOT required by this guide to support subscriptions.
 {:.bg-warning}
@@ -273,8 +273,8 @@ Note that supporting the FHIR SubscriptionTopic resource nor the equivalent Basi
 
 The R5 Backport Implementation Guide defines the [CapabilityStatement SubscriptionTopic Canonical] extension to allow CDex Data Consumers to discover CDex Data Sources' supported subscription topics. This extension enables servers to advertise the canonical URLs of subscription topics available to clients and allows clients to see the list of supported topics on a server. If a Data Source supports subscriptions:
 
-- The Data Source **SHALL** support discovery of the CDex Task Update Subscription Topic canonical URL
-- The Data Source **SHOULD** support discovery using the CapabilityStatement SubscriptionTopic Canonical extension and **MAY** support discovery by some other method.
+- The Data Source **SHALL** support discovery of the CDex Task Update Subscription Topic canonical URL<sup>[§][CONF-067]</sup>
+- The Data Source **SHOULD** support discovery using the CapabilityStatement SubscriptionTopic Canonical extension and **MAY** support discovery by some other method.<sup>[§][CONF-068]</sup><sup>[§][CONF-069]</sup>
 
 The example CapabilityStatement snippet shows a Data Source advertising the CDex Task Update Subscription Topic canonical URL with the CapabilityStatement SubscriptionTopic Canonical extension:
 
@@ -385,7 +385,7 @@ Some Data Consumers may require that the data they receive be signed. When signa
    - If the signatures fail verification, the Data Consumer notifies the Data Source that the signature is invalid or absent. Currently, there is no standard way to communicate this, and it needs to be done "out of band".
 
 #### Data Source Requirements
-{% include data-source-sig-rules.md %}
+{% include data-source-sig-rules.md %}<sup>[§][CONF-085]</sup>
 
 #### Example of a *Signed* Task Based Transaction
 

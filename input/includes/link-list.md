@@ -1,4 +1,9 @@
-
+<!-- Requirements links -->
+{% include conformance-link-list.md %}
+<!-- FHIR Core Resources -->
+<!-- {% raw %} {% include r4-link-list.md %} {% endraw %} -->
+<!-- IG Pages (Including IG Artifacts -->
+<!-- {% raw %} {% include page-link-list.md %} {% endraw %} -->
 [Bundle]: {{site.data.fhir.path}}bundle.html
 [CapabilityStatements]: artifacts.html#13
 [Downloads]: downloads.html "Downloads Page"

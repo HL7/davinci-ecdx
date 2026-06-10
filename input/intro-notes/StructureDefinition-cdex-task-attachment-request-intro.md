@@ -25,7 +25,7 @@
   - A "AttachmentsNeeded" `Task.input` element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*
   - A "AttachmentsNeeded" or "QuestionnaireContext" `Task.input` element extension that communicates claim or prior authorization line item numbers associated with the attachment or questionnaire.
   - A "Signature" `Task.input` element. This is a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).
-  - A "ServiceDate" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.
+  - A "ServiceDate" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.<sup>[§][CONF-079]</sup>
 
   It defines the following *optional* elements:
 
