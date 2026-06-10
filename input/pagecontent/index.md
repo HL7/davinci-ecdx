@@ -20,7 +20,7 @@ This IG provides several *generic* examples to illustrate the Direct Query and T
 
 ### About This Guide
 
-The [Da Vinci] initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles] for exchanging patient health information.<sup>[§][CONF-011]</sup> 
+The [Da Vinci] initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles] for exchanging patient health information. 
 
 
 As illustrated in Figure 1 below, this version of CDex is based on FHIR R4, and much of its content is dependent upon the [[Da Vinci Health Record Exchange (HRex)], [US Core 3.1.1] (FHIR R4), [US Core 6.1.0] (FHIR R4), and , [US Core 7.0.0] (FHIR R4)implementation guides.

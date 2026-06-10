@@ -6,7 +6,7 @@ The Da Vinci Burden Reduction Implementation Guides (IGs), [Da Vinci Coverage Re
 
 ### Differences between PAS and CDex
 
-The PAS guide leverages CDex to request additional information for prior authorization:
+<span class="bg-success" markdown="1">This section highlights the similarities and differences between PAS and CDex in how they use the [`$submit-attachment`] operation to exchange attachments for prior authorization.</span><!-- new-content -->
 
 - PAS and CDex use the [`$submit-attachment`] operation to push the attachments to the Payer.
 - PAS and CDex request attachments using Codes or Questionnaires.
