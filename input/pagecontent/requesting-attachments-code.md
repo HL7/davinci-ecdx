@@ -167,7 +167,7 @@ The Task communicates whether the attachments are for a claim or prior authoriza
 
 ##### Attachment Due Date
 
-The Payer communicates the due date for submitting the attachment in the `Task.restriction.period` element. Note that `Task.restriction.period.end` represents the deadline by which the Provider was expected to submit the attachments.
+The Payer communicates the due date for submitting the attachment in the `Task.restriction.period` element. Note that `Task.restriction.period.end` represents <span class="bg-success" markdown="1">the deadline by which the Provider was expected to submit the attachments</span><!-- new-content -->.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=89 count=5 linenumber=true rel=true %}
@@ -183,7 +183,7 @@ The Payer supplies the attachment codes to communicate what attachments are need
 
 ##### Communicating the Signature Requirements
 
-This Task.input `signature-flag` indicates whether a signature is required. For more information about using signatures in CDex, see the [Signatures] and [Sending Attachments] pages.
+<span class="bg-success" markdown="1">This Task.input `signature-flag` indicates whether a signature is required.</span><!-- new-content --> For more information about using signatures in CDex, see the [Signatures] and [Sending Attachments] pages.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=114 count=9 linenumber=true rel=true %}
@@ -249,7 +249,7 @@ The attachments and metadata needed to associate the attachment to the claim or 
 <div class="bg-success" markdown="1">
 
 ##### Identifiers for Associating the Attachments to a Claim or Prior Authorization
-The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters represent Payer-assigned business identifiers that tie the requested attachments to the claim or prior authorization. The required operation parameter, `AttachTo`, indicates whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
+The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters represent Payer-assigned business identifiers that tie the requested attachments to the claim or prior authorization. <span class="bg-success" markdown="1">The required operation parameter, `AttachTo`, indicates whether the attachments are for claim or prior authorization.</span><!-- new-content --> These data elements are taken from the CDex request as follows:
 
 |Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
 |---|---|---|

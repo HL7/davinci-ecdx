@@ -1,0 +1,22 @@
+{
+  "resourceType": "Parameters",
+  "id": "exp-params",
+  "parameter": [
+    {
+      "name": "system-version",
+      "valueCanonical": "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+    }
+  ],
+  "meta": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-name",
+        "valueString": "Terminology Parameters"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/instance-description",
+        "valueMarkdown": "In HL7 FHIR, terminology parameters are special query parameters that you can pass to a ValueSet $expand operation to control and customize how the ValueSet is expanded (i.e., how the full list of codes/concepts is generated from the ValueSet definition)."
+      }
+    ]
+  }
+}

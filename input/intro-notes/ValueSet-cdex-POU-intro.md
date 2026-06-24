@@ -40,7 +40,7 @@ The *Not OtherWise Enumerated Codes*:
  - payment-noa
  - operations-noa
 
-do not define the detailed POU, and the implementer **SHALL** supply an additional, alternate code. The resource fragment below shows their use:<sup>[§][CONF-083]</sup>
+do not define the detailed POU, and <span class="bg-success" markdown="1">the implementer **SHALL** supply an additional, alternate code.<sup>[§][CONF-083]</sup></span><!-- new-content --> The resource fragment below shows their use:
 
 {% include noe-fragment.md %}
 

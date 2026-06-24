@@ -14,7 +14,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "- One of the certificate Subject Alternative Name (SAN)) **SHALL** match `Signature.who.identifier` to verify the identity of the entity signing"
+      "requirement": "One of the certificate Subject Alternative Name (SAN)) **SHALL** match `Signature.who.identifier` to verify the identity of the entity signing"
     },
     {
       "key": "CONF-054",
@@ -24,7 +24,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "- The `\"srCms\"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements."
+      "requirement": "The `\"srCms\"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements."
     },
     {
       "key": "CONF-055",
@@ -34,7 +34,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "- The `\"sigT\"` header timestamp  **SHALL** match `Signature.when`",
+      "requirement": "The `\"sigT\"` header timestamp  **SHALL** match `Signature.when`",
       "conditionality": true
     }
   ]

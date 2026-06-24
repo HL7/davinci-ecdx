@@ -18,7 +18,8 @@ with the following columns:
 - comment: notes and comments about the conformance statement
 -
 The link target page is derived from the category column:
-
+- IG Home             -> index.html
+- Background          -> background.html
 - Direct Query        -> direct-query.html
 - Attachments         -> attachments-conformance.html
 - Security and Privacy -> security.html
@@ -34,6 +35,8 @@ The link target page is derived from the category column:
   | where_exp: "item", "item.conformance != 'DEPRECATED'" -%}
 {% for item in rows -%}
 {% case item.category -%}
+{% when 'IG Home' %}{% assign target = 'index.html' %}
+{% when 'Background' %}{% assign target = 'background.html' %}
 {% when 'Direct Query' %}{% assign target = 'direct-query.html' %}
 {%- when 'Attachments' %}{% assign target = 'attachments-conformance.html' %}
 {%- when 'Security and Privacy' %}{% assign target = 'security.html' %}

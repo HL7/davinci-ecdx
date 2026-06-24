@@ -1,7 +1,7 @@
 resourceType: Bundle
 id: cdex-searchbundle-scenario3-example
 meta:
-  
+
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
     valueString: Direct Query for Patient's Progress Notes
@@ -20,9 +20,9 @@ entry:
     resourceType: DocumentReference
     id: cdex-HP-example1
     meta:
-      
-      
-      
+
+
+
       profile:
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|3.1.1
       - http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0
@@ -54,7 +54,7 @@ entry:
     content:
     - attachment:
         contentType: text/plain
-        url: /Binary/cdex-example-hpnote
+        url: http://example.org/Binary/cdex-example-hpnote
         title: 'Uri where the data can be found: [base]/Binary/1-note'
       format:
         system: http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes

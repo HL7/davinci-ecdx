@@ -79,7 +79,7 @@
           {
             "attachment": {
               "contentType": "text/plain",
-              "url": "/Binary/cdex-example-hpnote",
+              "url": "http://example.org/Binary/cdex-example-hpnote",
               "title": "Uri where the data can be found: [base]/Binary/1-note"
             },
             "format": {

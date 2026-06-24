@@ -70,28 +70,25 @@ dependencies:
 
   hl7.fhir.us.davinci-hrex:
     uri: 'http://hl7.org/fhir/us/davinci-hrex/ImplementationGuide/hl7.fhir.us.davinci-hrex'
-    version: 1.1.0
+    version: 1.2.0
     id: hrex
   hl7.fhir.us.davinci-pas:
     uri: 'http://hl7.org/fhir/us/davinci-pas/ImplementationGuide/hl7.fhir.us.davinci-pas'
-    version: 2.1.0
+    version: 2.2.1
     id: pas
   hl7.fhir.us.carin-bb:
     uri: 'http://hl7.org/fhir/us/carin-bb/ImplementationGuide/hl7.fhir.us.carin-bb'
-    version: 2.0.0
+    version: 2.2.0
     id: c4bb
   hl7.fhir.us.davinci-dtr:
     uri: 'http://hl7.org/fhir/us/davinci-dtr/ImplementationGuide/hl7.fhir.us.davinci-dtr'
-    version: 2.1.0
+    version: 2.2.0
     id: dtr
   hl7.fhir.uv.sdc:
     uri: 'http://hl7.org/fhir/uv/sdc/ImplementationGuide/hl7.fhir.uv.sdc'
-    version: 3.0.0
+    version: 4.0.0
     id: sdc
-
-  hl7.fhir.extensions.r4:
-    version: 4.0.1
-
+  hl7.fhir.uv.extensions.r4: 5.3.0
   hl7.fhir.uv.subscriptions-backport.r4:
     version: 1.1.0
     uri: http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport
@@ -282,6 +279,11 @@ groups:
       - QuestionnaireResponse/cdex-questionnaireresponse-inline-example1
       - OperationOutcome/cdex-operationoutcome-inline-example1
       - CapabilityStatement/cdex-capabilitystatement-inline-example
+  TerminologyParameters:
+    name: Terminology Parameters
+    description: In HL7 FHIR, terminology parameters are special query parameters that you can pass to a ValueSet $expand operation to control and customize how the ValueSet is expanded (i.e., how the full list of codes/concepts is generated from the ValueSet definition).
+    resources:
+      - Parameters/exp-params
 
 pages:
   index.md:
@@ -385,7 +387,7 @@ parameters:
     - input/pagecontent
     - input/intro-notes
     - fsh-generated/includes
-  path-expansion-params: 'input/resources/exp-params.json'  # for using US ed of SNOMED
+  path-expansion-params: 'input/examples/exp-params.json'  # for using US ed of SNOMED
   # path-liquid: # list of relative paths that contains liquid templates for generating narrative
   #   - liquid
 
@@ -410,6 +412,7 @@ parameters:
      - 2.0.0
   bundle-references-resolve: false
   no-narrative:
+    - Parameters/exp-params
     - Parameters/cdex-parameters-example4
     - Parameters/cdex-parameters-example5
     - Parameters/cdex-parameters-example1
@@ -519,6 +522,7 @@ menu:
     Signature Examples: artifacts.html#13
     Common Terminology: artifacts.html#14
     Inline Examples: artifacts.html#15
+    Terminology Parameters: artifacts.html#16
   Support:
    Discussion Forum: https://chat.fhir.org/#narrow/stream/180805-Da-Vinci-CDex
    Project Page: https://confluence.hl7.org/pages/viewpage.action?pageId=40738757

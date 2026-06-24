@@ -49,7 +49,7 @@ Source columns (see also the Conventions section of the extraction script):
                       e.g. "Signatures". This is the filter key for the
                       include.
   - actor             (inherited) Actor(s) the requirement constrains, e.g.
-                      "Data Source", "Data Consumer", "Payer". MAY be a
+                      "Data Source", "Data Consumer". MAY be a
                       comma-separated list (e.g. "Data Source,Data Consumer"),
                       in which case the requirement appears in every listed
                       actor's table.
@@ -98,7 +98,7 @@ when narrative requirements change, and also feeds the Requirements Resources.
 
 {%- assign h = include.heading | default: "####" -%}
 
-This section lists all narrative conformance statements in the {{ include.category }} section of this IG. The tables offer a concise summary for implementers to identify essential requirements and support evaluation and testing. The data is also available as [CSV] and [Excel] files, as well as in [CDex Requirements Resources].
+This section lists all narrative conformance statements in the {{ include.category }} section of this IG. The tables offer a concise summary for implementers to identify essential requirements and support evaluation and testing. The data is also available as [CSV](../tables/conformance-cdex.csv) and [Excel](../tables/conformance-cdex.xlsx) files, as well as in [CDex Requirements Resources](artifacts.html#cdex-capability-statements-and-requirements).
 
 {%- if include.legend -%}
 **Legend:**
@@ -113,6 +113,17 @@ This section lists all narrative conformance statements in the {{ include.catego
 {%- for actor in actors -%}
   {%- assign actor = actor | strip -%}
 
+  {%- comment -%} Heading label only — keep `actor` as the match key so it
+       continues to compare against the raw CSV value. {%- endcomment -%}
+  {%- assign actor_label = actor -%}
+  {%- if include.category == "Attachments" -%}
+    {%- if actor == "Data Consumer" -%}
+      {%- assign actor_label = "Payer (Data Consumer)" -%}
+    {%- elsif actor == "Data Source" -%}
+      {%- assign actor_label = "Provider (Data Source)" -%}
+    {%- endif -%}
+  {%- endif -%}
+
   {%- comment -%} Count matches first so empty actor tables are skipped {%- endcomment -%}
   {%- assign match_count = 0 -%}
   {%- for item in cat_rows -%}
@@ -124,7 +135,7 @@ This section lists all narrative conformance statements in the {{ include.catego
   {%- endfor -%}
 
   {%- if match_count > 0 %}
-{{ h }} {{ actor }} Requirements
+{{ h }} {{ actor_label }} Requirements
 <table class="grid">
 <thead>
   <tr>

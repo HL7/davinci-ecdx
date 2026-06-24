@@ -6,7 +6,7 @@
 
 #### What's new in Version 3.0.0-Ballot of CDex:
 
-The <Month> <year> ballot addresses the following:
+The  \<Month\> \<year\> ballot addresses the following:
 
 1. Added [a new $submit-attachment parameter](OperationDefinition-submit-attachment.html), a payer-assigned "administrative reference number" identifier. Used only for prior authorization solicited attachments, the payer may assign an administrative reference number in addition to the tracking control number/ACN. By using a combination of identifiers, the Payer can guarantee global uniqueness for associating attachments to the claim or prior authorization.
 2. Updated the signature requirements for consistency and reliability.
@@ -16,24 +16,23 @@ Implementers submitted over two dozen trackers since the publication of 2.0.0 an
 
 Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
 
-TODO:
+**Breaking Changes**
 
-9. **Triaged:** (Correction) Need to sort out QuestionnaireResponse Profile between US Core, CDex and DTR and SDC (Correction) [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here](signatures.html#cdex-signature-profiles)
-10. **Triaged:**  Update LOINC Attachment code ValueSet (Correction) [FHIR-51430](https://jira.hl7.org/browse/FHIR-51430) See Changes [Here](TBD)
+1. **Part Applied:** Update signature requirements for consistency and reliability (Enhancement)  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes
+  - [Signatures](signatures.html#cdex-signatures)
+  - [Worked Example: Signed SearchSet Bundle](signed-searchset-bundle-example.html)
+  - [Worked Example: Signed Document Bundle](signed-document-bundle-example.html)
+  - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
+  - [CDEX SearchSet Bundle with Digital Signature Example](Bundle-cdex-searchbundle-digital-sig-example.html)
+  - [CDEX Document with Digital Signature Example](Bundle-cdex-document-digital-sig-example.html)
+  - [CDex Parameters Example 2](Parameters-cdex-parameters-example2.html)
+  - [CDex QuestionnaireResponse Example 4](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
+2. **Applied:**  Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set (Enhancement) [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
+  - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
+  - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
+  - [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html)
+1. **Triaged:** Non-compatible (Correction) Derive CDex QuestionnaireResponse Profile from DTR [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here]($6)
 
-**Non-Substantive Changes**
-
-1. **Applied:** Shorten Artifact descriptions (Enhancement)  [FHIR-48796](https://jira.hl7.org/browse/FHIR-48796) See Changes [Here](artifacts.html)
-2. **Applied:** Clarify the source of Tracking Id (Clarification) [FHIR-48435](https://jira.hl7.org/browse/FHIR-48435) See Changes [Here](OperationDefinition-submit-attachment.html)
-3.  **Applied:** Update the section "Requesting Attachments Background" (Clarification) [FHIR-48407](https://jira.hl7.org/browse/FHIR-48407) See Changes [Here](requesting-attachments-code.html#requesting-attachments-background)
-4.  **Applied:** Clarify Purpose of Use requirements (Clarification) [FHIR-48403](https://jira.hl7.org/browse/FHIR-48403) See Changes [Here](task-based-approach.html#purpose-of-use)
-5.  **Applied:**  Provide guidance when sending large payloads using $submit-attachment (Clarification) [FHIR-48271](https://jira.hl7.org/browse/FHIR-48271) See Changes [Here](OperationDefinition-submit-attachment.html)
-6. **Partially Pre-Applied** Use same name style for naming slices in StructureDefinitions (Correction) [FHIR-50933](https://jira.hl7.org/browse/FHIR-50933) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html)
-7. **Resolved - change required:**  Add rationale why Task supports only a single query, codes, or questionnaires (Clarification) [FHIR-45981](https://jira.hl7.org/browse/FHIR-45981) See Changes [Here](task-based-approach.html)
-8. **Applied:** Clarify language the nature of the operation what acceptance/failure (Clarification) [FHIR-51058](https://jira.hl7.org/browse/FHIR-51058) See Changes
-   - [OperationDefinition: Submit Attachment Operation](OperationDefinition-submit-attachment.html)
-   - [Sending Attachments](sending-attachments.html#technical-workflow)
-9. **Applied:**  Remove he term "enveloping"  to describe CDex signatures (Correction) [FHIR-51112](https://jira.hl7.org/browse/FHIR-51112) See Changes [Here](signatures.html#cdex-signatures)
 
 **Substantive Changes**
 
@@ -53,25 +52,60 @@ TODO:
    -  [CDex Task Example 28](Task-cdex-task-example28.html)
    -  [CDex Task Example 29](Task-cdex-task-example29.html)
 2. **Resolved - change required:** Change Response to Post Task to 201 (Correction) [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) See Changes [Here](task-based-approach.html#sequence-diagram)
-3. **Pre-Applied:** Correct Guidance for when to use PAS [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) See Changes [Here](burden-reduction.html)
+3. **Triaged:** Compatible, substantive (Enhancement) Update LOINC Attachment code ValueSet [FHIR-51430](https://jira.hl7.org/browse/FHIR-51430) See Changes [Here]($6)
+4. **Pre-Applied:** Compatible, substantive (Correction) Correct PAS Guidance [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) See Changes [Here](burden-reduction.html)
+5. **Pre-Applied:** Compatible, substantive (Clarification) Update to SHALL/SHOULD conformance clauses [FHIR-57464](https://jira.hl7.org/browse/FHIR-57464) See Changes:
+  - [Conforming to CDex Attachments](attachments-conformance.html#introduction)
+  - [Conforming to CDex Task Based Approach](task-based-conformance.html#introduction)
+  - [Background — Where Does CDEX Fit in the Da Vinci Project](background.html#where-does-cdex-fit-in-the-da-vinci-project)
+  - [Direct Query — Provenance](direct-query.html#provenance)
+  - [Task-Based Approach — Data Source Requirements](task-based-approach.html#data-source-requirements) / [Sending Attachments — Provider Requirements](sending-attachments.html#provider-requirements)
+  - [Security — General Considerations](security.html#general-considerations)
+  - [Direct Query — Data Source/Responder Requirements](direct-query.html#data-sourceresponder-requirements)
+  - [Signatures — CDex Signatures](signatures.html#cdex-signatures)
+  - [CDex Purpose of Use Value Set — Using Not Otherwise Enumerated Codes](ValueSet-cdex-POU.html#using-not-otherwise-enumerated-codes)
+  - [Solicited and Unsolicited Attachments](solicited-unsolicited-attachments.html)
+6. **Triaged:** Compatible, substantive (Correction) Correct misapplied additional bindings [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) See Changes [Here]($6)
+  - [Conforming to CDex Attachments](https://build.fhir.org/ig/HL7/davinci-ecdx/en/attachments-conformance.html#introduction)
+  - [Conforming to CDex Task Based Approach](https://build.fhir.org/ig/HL7/davinci-ecdx/en/task-based-conformance.html#introduction)
 
-**Breaking Changes**
+**Non-Substantive Changes**
 
-1. **Part Applied:** Update signature requirements for consistency and reliability (Enhancement)  [FHIR-51143](https://jira.hl7.org/browse/FHIR-51143) See Changes
-  - [Signatures](signatures.html#cdex-signatures)
-  - [Worked Example: Signed SearchSet Bundle](signed-searchset-bundle-example.html)
-  - [Worked Example: Signed Document Bundle](signed-document-bundle-example.html)
-  - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
-  - [CDEX SearchSet Bundle with Digital Signature Example](Bundle-cdex-searchbundle-digital-sig-example.html)
-  - [CDEX Document with Digital Signature Example](Bundle-cdex-document-digital-sig-example.html)
-  - [CDex Parameters Example 2](Parameters-cdex-parameters-example2.html)
-  - [CDex QuestionnaireResponse Example 4](QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
-
-2. **Applied:**  Limit Signature Profile to digital signatures and remove the CDex Identifier Types Value Set (Enhancement) [FHIR-51146](https://jira.hl7.org/browse/FHIR-51146) See Changes
-  - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
-  - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
-  - [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html)
-
+1. **Applied:** Shorten Artifact descriptions (Enhancement)  [FHIR-48796](https://jira.hl7.org/browse/FHIR-48796) See Changes [Here](artifacts.html)
+2. **Applied:** Clarify the source of Tracking Id (Clarification) [FHIR-48435](https://jira.hl7.org/browse/FHIR-48435) See Changes [Here](OperationDefinition-submit-attachment.html)
+3.  **Applied:** Update the section "Requesting Attachments Background" (Clarification) [FHIR-48407](https://jira.hl7.org/browse/FHIR-48407) See Changes [Here](requesting-attachments-code.html#requesting-attachments-background)
+4.  **Applied:** Clarify Purpose of Use requirements (Clarification) [FHIR-48403](https://jira.hl7.org/browse/FHIR-48403) See Changes [Here](task-based-approach.html#purpose-of-use)
+5.  **Applied:**  Provide guidance when sending large payloads using $submit-attachment (Clarification) [FHIR-48271](https://jira.hl7.org/browse/FHIR-48271) See Changes [Here](OperationDefinition-submit-attachment.html)
+6. **Partially Pre-Applied** Use same name style for naming slices in StructureDefinitions (Correction) [FHIR-50933](https://jira.hl7.org/browse/FHIR-50933) See Changes [Here](StructureDefinition-cdex-task-attachment-request.html)
+7. **Resolved - change required:**  Add rationale why Task supports only a single query, codes, or questionnaires (Clarification) [FHIR-45981](https://jira.hl7.org/browse/FHIR-45981) See Changes [Here](task-based-approach.html)
+8. **Applied:** Clarify language the nature of the operation what acceptance/failure (Clarification) [FHIR-51058](https://jira.hl7.org/browse/FHIR-51058) See Changes
+   - [OperationDefinition: Submit Attachment Operation](OperationDefinition-submit-attachment.html)
+   - [Sending Attachments](sending-attachments.html#technical-workflow)
+9. **Applied:**  Remove the term "enveloping"  to describe CDex signatures (Correction) [FHIR-51112](https://jira.hl7.org/browse/FHIR-51112) See Changes [Here](signatures.html#cdex-signatures)
+10. **Pre-Applied:** Non-substantive (Enhancement) Add Requirements Table and Resources [FHIR-57451](https://jira.hl7.org/browse/FHIR-57451) See Changes
+  - [CDex Capability Statements and Requirements](artifacts.html#cdex-capability-statements-and-requirements)
+  - [Conforming to CDex Direct Query](direct-query.html#conforming-to-cdex-direct-query)
+  - [CDex Task Based Approach Requirements](task-based-conformance.html#cdex-task-based-approach-requirements)
+  - [CDex Attachments Requirements](attachments-conformance.html#cdex-attachments-requirements)
+  - [Conforming to CDex Signature](signatures.html#conforming-to-cdex-signatures)
+  - [Conforming to CDex Security and Privacy](security.html#conforming-to-cdex-security-and-privacy)
+11. **Pre-Applied:** Non-substantive (Clarification) Rephrase conformance-like clauses [FHIR-57463](https://jira.hl7.org/browse/FHIR-57463) See Changes:
+  - [Security — Sensitive and Confidential Data](security.html#sensitive-and-confidential-data)
+  - [Task-Based Approach — Introduction](task-based-approach.html#introduction)
+  - [Task-Based Approach — Discovery of Identifiers](task-based-approach.html#discovery-of-identifiers)
+  - [Task-Based Approach — Contained Task Outputs](task-based-approach.html#contained-task-outputs)
+  - [Task-Based Approach — Polling](task-based-approach.html#polling)
+  - [Task-Based Approach — Formal Authorization](task-based-approach.html#formal-authorization)
+  - [Requesting Attachments Using Questionnaires — Attachment Due Date](requesting-attachments-questionnaire.html#attachment-due-date) / [Requesting Attachments Using Attachment Codes — Attachment Due Date](requesting-attachments-code.html#attachment-due-date)
+  - [Requesting Attachments Using Attachment Codes — Communicating the Signature Requirements](requesting-attachments-code.html#communicating-the-signature-requirements)
+  - [Requesting Attachments Using Questionnaires — Identifiers for Associating the Attachments to a Claim or Prior Authorization](requesting-attachments-questionnaire.html#identifiers-for-associating-the-attachments-to-a-claim-or-prior-authorization) / [Requesting Attachments Using Attachment Codes — Identifiers for Associating the Attachments to a Claim or Prior Authorization](requesting-attachments-code.html#identifiers-for-associating-the-attachments-to-a-claim-or-prior-authorization)
+  - [Solicited and Unsolicited Attachments — Example Scenarios](solicited-unsolicited-attachments.html#example-scenarios)
+  - [Signatures — Digital Signature Rules and Guidance for CDEX Bundle and QuestionnaireResponse](signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse)
+  - [Signatures — Receiver/Validation Steps](signatures.html#receivervalidation-steps)
+  - [Conforming to CDex Attachments](attachments-conformance.html) / [Conforming to CDex Task Based Approach](task-based-conformance.html)
+12. **Pre-Applied:** Non-substantive (Clarification) Profile-specific guidance on interpreting Must Support for slices [FHIR-57708](https://jira.hl7.org/browse/FHIR-57708) See Changes:
+  - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
+  - [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
 
 
 ### Version = 2.1.0

@@ -43,10 +43,10 @@ For Security and Privacy considerations, refer to the [Security and Privacy] pag
 
 [Da Vinci Use Cases] are interrelated, currently with five categories that have emerged: Quality Improvement, Coverage/Burden Reduction, Member Access, Process Improvement, and Clinical Data Exchange.  A table that summarizes the many areas of functional overlap between this guide and other Da Vinci guides is available [here](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex is not intended to supersede other Da Vinci guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
 
-- An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers **SHOULD NOT** use this transaction when there is a requirement for real-time response to facilitate patient care. 
-- There is a specific exchange that is not already addressed by one of the other IGs 
+- An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. <span class="bg-success" markdown="1">However, implementers **SHOULD NOT** use this transaction when there is a requirement for real-time response to facilitate patient care.<sup>[§][CONF-004]</sup></span><!-- new-content -->
+- There is a specific exchange that is not already addressed by one of the other IGs
 
- The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges. 
+ The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges.
 
 ### Workflow Overview
 
@@ -63,7 +63,7 @@ Payers may request data for many patients/members or anticipate large payloads f
 
 #### Direct Query and Task-Based Workflows
 
-Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query* and *Task-Based* workflows.  
+Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query* and *Task-Based* workflows.
 
 {% include img.html img="workflow-overview.svg" caption="Figure 3" %}
 
@@ -99,7 +99,7 @@ Figure 4 below illustrates the exchange of clinical data between a Provider syst
 ###### Steps
 
 1. The Provider submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
-   - attachments are submitted **without an explicit request** as *unsolicited* attachments. 
+   - attachments are submitted **without an explicit request** as *unsolicited* attachments.
 2. The Payer system accepts attachments. (This guide does not cover the payer's method for associating attachments to claims or prior authorizations and processing them.)
 ##### Solicited Attachments Workflow
 
@@ -128,7 +128,7 @@ Direct Query is the standard FHIR RESTful search and is the simplest, most adopt
 
 - Consumer initiates? - **Yes** - The CDex Data Consumer systems initiate the transaction when it needs clinical information from the CDex Data Source.
 - Direct Connection? - **Yes** - It was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system.
-- Human intervention? - **No** - There was no expectation the CDex Data Source would need human intervention to return the information. 
+- Human intervention? - **No** - There was no expectation the CDex Data Source would need human intervention to return the information.
 - Is data pre-existing? - **Yes** - Generally, it was presumed the CDex Data Source has data about a patient/member.
 - Return FHIR resources? - **Yes** - The CDex Data Source could return FHIR resources.
 - Ad-hoc query? - **Yes** - It was presumed that CDex Data Consumer would create Ad-hoc RESTful queries to get the data from the CDex Data Source.
@@ -142,7 +142,7 @@ Although not as widely adopted as the FHIR RESTful approach, the Task-Based appr
 
 - Consumer initiates? - **Yes** - The CDex Data Consumer systems initiate the transaction when clinical information from the CDex Data Source is needed.
 - Direct Connection? - **Yes** - It was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system to create Tasks and fetch resources.
-- Human intervention? - **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information. 
+- Human intervention? - **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information.
 - Is data pre-existing? - **Yes** - Generally, it was presumed the CDex Data Source has data about a patient/member.
 - Return FHIR resources? - **Yes** - The CDex Data Source could return FHIR resources.
 - Ad-hoc query? - **Yes** - It was presumed that CDex Data Consumer would create an Ad-hoc data request using `Task.input` to get the data from the CDex Data Source.
@@ -171,7 +171,7 @@ Requesting Attachment using Task is a specialization of the [Task-Based Workflow
 
 - Consumer initiates? - **Yes** -  The CDex Data Consumer systems initiate the transaction when clinical information from the CDex Data Source is needed.
 - Direct Connection? - **Yes** - It was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system to create Tasks and fetch resources.
-Human intervention? **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information. 
+Human intervention? **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information.
 - Is data pre-existing? - **Yes** - Generally, it was presumed the CDex Data Source has data about a patient/member.
 - Return FHIR resources? - **Yes** - The CDex Data Source could return FHIR resources.
 - Ad-hoc query? - **Yes** - It was presumed that CDex Data Consumer would create Ad-hoc data requests using `Task.input` to get the data from the CDex Data Source.

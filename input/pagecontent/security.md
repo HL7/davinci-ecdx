@@ -15,11 +15,9 @@ This implementation guide inherits all of the mandatory requirements and recomme
 
 #### General Considerations
 
-
-
 1. User scopes **SHALL** be used as defined in [SMART App Launch] to restrict access to the relevant patients for a given Data Consumer. Organizational user access scopes are typically pre-negotiated and documented via business agreements. Data Sources shall translate these agreements into the appropriate SMART App Launch scopes.<sup>[§][CONF-015]</sup>
 
-1. Audit mechanisms **SHALL** be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.<sup>[§][CONF-016]</sup>
+1. <span class="bg-success" markdown="1">Audit mechanisms **SHALL** be in place so that exchange mechanisms *with or without human intervention* can be subject to review/oversight.<sup>[§][CONF-016]</sup></span><!-- new-content -->
 
 #### Purpose of Use
 
@@ -29,9 +27,9 @@ The purpose for which data may be used by or on behalf of an organization is kno
 
 #### Sensitive and Confidential Data
 
-If a data-consuming system requests sensitive information, the data source decides whether the requester is authorized to access some or all of this information. For example, suppose the level of confidentiality protection required for some or all of the information requested by a data-consuming system is more stringent than the "default" confidentiality protection provided for HIPAA PHI. In that case, the data source decides whether to provide the information at all or whether to filter the information.
+If a data-consuming system requests sensitive information, <span class="bg-success" markdown="1">the data source decides whether the requester is authorized to access some or all of this information</span><!-- new-content -->. For example, suppose the level of confidentiality protection required for some or all of the information requested by a data-consuming system is more stringent than the "default" confidentiality protection provided for HIPAA PHI. In that case, <span class="bg-success" markdown="1">the data source decides whether to provide the information at all or whether to filter the information</span><!-- new-content -->.
 
-The [FHIR Data Segmentation for Privacy] (ballot version) standardizes how guidance for applying security labels in FHIR. Once ONC or CMS adopts it or a suitable approach by regulation, a future version of this guide will reference it. In the interim, implementers are encouraged to consult their compliance department to determine requirements and how best to satisfy them, whether with in-band or out-of-band communications.
+The [FHIR Data Segmentation for Privacy] (ballot version) standardizes how to apply security labels in FHIR. Once ONC or CMS adopts it or a suitable approach by regulation, a future version of this guide will reference it. In the interim, <span class="bg-success" markdown="1">implementers are encouraged to consult their compliance department to determine requirements and how best to satisfy them</span><!-- new-content -->, whether with in-band or out-of-band communications.
 
 
 ### Conforming to CDex Security and Privacy

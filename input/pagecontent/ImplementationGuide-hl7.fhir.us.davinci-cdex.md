@@ -1,4 +1,4 @@
-{% assign ig-resource1 = 'ImplementationGuide-' | append: site.data.ig.id %}  
+{% assign ig-resource1 = 'ImplementationGuide-' | append: site.data.ig.id %}
 {% assign ig-resource2 = 'ImplementationGuide/' | append: site.data.ig.id %}
 
 
@@ -34,6 +34,11 @@ This IG Contains the following dependencies on other IGs.
 
 {{ ip-statement | remove: '<p>' | remove: '</p>'}}
 
+### Terminology (Expansion) Parameters
+
+In HL7 FHIR, terminology parameters are special query parameters that you can pass to a ValueSet $expand operation to control and customize how the ValueSet is expanded (i.e., how the full list of codes/concepts is generated from the ValueSet definition).  CDex uses the following parameters.
+
+{% include expansion-params.xhtml %}
 
 ### Parameter Settings
 

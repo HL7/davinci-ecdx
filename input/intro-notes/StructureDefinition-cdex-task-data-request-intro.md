@@ -1,6 +1,9 @@
 <!-- StructureDefinition-cdex-task-data-request-intro.md -->
 
-  It constrains the following elements to be *mandatory* (min=1):
+Although the CDex Task Data Request Profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request), this profile is technically non-conformant with it because of the questionnaire input parameter. The CDex editors made a change request [FHIR-39686](https://jira.hl7.org/browse/FHIR-39686) to update the HRex Profile. If the change request is approved and applied, a future version of this profile will be derived from HRex.
+{:.stu-note}
+
+**It constrains the following elements to be *mandatory* (min=1):**
 
   - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
   - A `Task.intent` fixed to "order" (this element is a mandatory Task element)
@@ -13,7 +16,7 @@
   - A `Task.requester` element communicating who is requesting the data
   - A `Task.owner` element representing the Provider who is being asked to provide the data
 
-  It constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
+ **It constrains the following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):***
 
   - A `Task.identifier` element representing the unique data request identifier
   - A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request
@@ -23,37 +26,37 @@
   - A `Task.requester.reference.identifier` element representing the Data Consumer business identifier
   - A `Task.owner.reference.identifier` element representing the Provider business identifier
   - A `Task.reasonCode.text` to communicate why the data is being requested
-  - A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier*
-  - A "query" `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.*
-  - A "code" `Task.input` element to communicate to the provider what information is needed using a LOINC code.*
+  - A `Task.reasonReference.reference.identifier` for the claim, pre-auth or coverage business identifier.‡
+  - A "query" `Task.input` element to communicate to the provider what information is needed using a FHIR RESTful query.†
+  - A "code" `Task.input` element to communicate to the provider what information is needed using a LOINC code.†
     - For the "code" `Task.input` element, an extensible LOINC® Document types value set to communicate the specific information being requested
   - A `Task.input` element representing a flag to indicate whether the requested data requires a signature
   - A "data" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.
 
-  It defines the following elements to be *optional*:
+  **It defines the following elements to be *optional*:***
   - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.
-  - A "questionnaire" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
+  - A "questionnaire" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).†
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
   - A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)
   - A "response" `Task.output` element which is a local reference to the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
 
-  It prohibits the following elements (max=0):
+  **It prohibits the following elements (max=0):**
   - `Task.focus`
 
-  \* Either a "query", "code", or "questionnaire" `Task.input` element is required
+**Implementer notes:**
 
+\* <span class="bg-success" markdown="1">Even if the parent element is marked as Must Support, each slice is explicitly tagged with the Must Support property to define that slice's conformance strength. If no Must Support property is defined for the slice, then support for that slice's definition is optional.</span><!-- new-content -->
 
-Although the CDex Task Data Request Profile is based upon the [Da Vinci HRex Task Data Request](http://hl7.org/fhir/us/davinci-hrex/StructureDefinition/hrex-task-data-request), this profile is technically non-conformant with it because of the questionnaire input parameter. The CDex editors made a change request [FHIR-39686](https://jira.hl7.org/browse/FHIR-39686) to update the HRex Profile. If the change request is approved and applied, a future version of CDex will be derived from HRex.
-{:.stu-note}
+† Either a "query", "code", or "questionnaire" `Task.input` element is required
 
-*The `Task.reasonReference` `DocumentReference.author` is a *Must Support* element with four target profiles and three Coverage profiles. Servers **SHALL** support at least one of them, and when supporting a Coverage profile, **SHALL** support the Coverage Profile based on the US Core version as follows:<sup>[§][CONF-080]</sup><sup>[§][CONF-081]</sup>
+‡ The `Task.reasonReference` element is a *Must Support* element with four target profiles and three Coverage profiles. Servers **SHALL** support at least one of them, and when supporting a Coverage profile, **SHALL** support the Coverage Profile based on the US Core version as follows:<sup>[§][CONF-080]</sup><sup>[§][CONF-081]</sup>
 
-|US Core Version|Coverage Profile (version)|
-|---|---|
-|3.1.1|[Coverage]|
-|6.1.0|[US Core Coverage Profile (6.1.0)](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-coverage.html)
-|7.0.0|[US Core Coverage Profile (7.0.0)](https://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-coverage.html)
-{:.grid}
+  |US Core Version|Coverage Profile (version)|
+  |---|---|
+  |3.1.1|[Coverage]|
+  |6.1.0|[US Core Coverage Profile (6.1.0)](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-coverage.html)
+  |7.0.0|[US Core Coverage Profile (7.0.0)](https://hl7.org/fhir/us/core/STU7/StructureDefinition-us-core-coverage.html)
+  {:.grid}
 
 Clients **SHALL** support all four profiles.<sup>[§][CONF-082]</sup>
 

@@ -1,89 +1,97 @@
 == Suppressed Messages ==
 
-# ===  CDex needs a contained patient for 3 specific demographic elements US Core variance approved: https://jira.hl7.org/browse/FHIR-46780 ===
+# 1. === CDex needs a contained patient for 3 specific demographic elements. US Core variance approved: https://jira.hl7.org/browse/FHIR-46780 ===
 
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# ===  CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 reference. A Jira ticket has been lodged for Task to allow for >1 task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-46779 ===
+# 2. === CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 reference. A Jira ticket has been lodged for Task to allow for >1 Task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-46779 ===
 
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
-# ===  These Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
+# 3. === These Profiles are used in the attachment request examples CDex Task Example 19 and CDex Task Example 20 as contained resources. ===
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile
 
 
-# ===  === These examples demonstrate DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. === ===
+# 4. === These examples demonstrate DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it adds little value for the cost of adding it. ===
 
-Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+%Constraint failed: dom-6: 'A resource should have narrative for robust management%
 
 
-# ===  === These examples use example.org code system to show how translations ( i.e. local codes) could be used in addition to standard code systems. === ===
+# 5. === These examples use example.org code system to show how translations (i.e., local codes) could be used in addition to standard code systems. ===
 
 A definition for CodeSystem 'http://example.org/lab-results' could not be found, so the code cannot be validated
 
-# ===  === These examples uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content === ===
+# 6. === These examples use example.org to reference a base questionnaire URI from which it is derived, to demonstrate the structure, not the content ===
 
 The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
 
 
-# ===  These CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===
+# 7. === These CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors ===
 
-Reference to draft CodeSystem http://hl7.org/fhir/task-status|4.0.1
-Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|4.0.1
-Reference to draft CodeSystem http://hl7.org/fhir/claim-use|4.0.1
-Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|3.0.0
-Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|2.1.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|1.0.0
+Reference to draft CodeSystem http://hl7.org/fhir/task-status|%
+Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|%
+Reference to draft CodeSystem http://hl7.org/fhir/claim-use|%
+Reference to draft CodeSystem http://hl7.org/fhir/uv/sdc/CodeSystem/temp|%
+Reference to draft CodeSystem http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes|%
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|%
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/conformance-expectation|%
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActReason|%
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/v3-ActCode|%
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type|%
 
-# ===  The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
+# 8. === The Da Vinci Team is aware of this and plans to move them in a future publication cycle ===
 
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# ===  These examples use example.org code system to show fictitious claim to demonstrate the structure and transaction and not the content  ===
+# 9. === These examples use example.org code system to show a fictitious claim to demonstrate the structure and transaction and not the content ===
 
 A definition for CodeSystem 'http://example.org/fhir/communication-category' could not be found, so the code cannot be validated
 
-# ==== FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error which is has been corrected in the FHIR R5. The guide is referencing the "HL7 ValueSet of Format Codes for use with Document Sharing" that is used in R5 ===
+# 10. === FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error, which has been corrected in FHIR R5. The guide is referencing the "HL7 ValueSet of Format Codes for use with Document Sharing" that is used in R5 ===
 
 INFORMATION: Bundle/cdex-searchbundle-scenario3-example: Bundle.entry[0].resource/*DocumentReference/cdex-HP-example1*/.content[0].format: The Coding provided (http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes#urn:hl7-org:sdwg:ccda-structuredBody:2.1) was not found in the value set 'DocumentReference Format Code Set' (http://hl7.org/fhir/ValueSet/formatcodes|4.0.1), and a code is recommended to come from this value set.  (error message = The provided code 'http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes#urn:hl7-org:sdwg:ccda-structuredBody:2.1: 'ccda-structuredBody:2.1'' was not found in the value set 'http://hl7.org/fhir/ValueSet/formatcodes|4.0.1')
 
-# === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
+# 11. === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
 
 WARNING: ValueSet.where(id = 'cdex-pwk01-attachment-report-type-code'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/005010/755
 
 
-# === This error is inherited from the R4 Subscription Backport IG. This interversion should be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency  ===
+# 12. === This error is inherited from the R4 Subscription Backport IG. This inter-version issue should be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency ===
 
 WARNING: Bundle/cdex-task-inline-scenario1-subscription-notification: Bundle.entry[0].resource/*Parameters/206a4372-a348-41d1-a82e-fc9ebe8825af*/.parameter[3].value.ofType(code): ValueSet 'http://hl7.org/fhir/ValueSet/subscription-notification-type' not found
 
-#  === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue  see chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307 ===
+# 13. === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue. See chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307 ===
 
 The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognized so cannot be validated
 
 
-# ==== Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
+# 14. === We will consider updating these extgensions in a future release ===
+
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+The extension http://hl7.org/fhir/StructureDefinition/regex|5.3.0 is deprecated with the note: 'This was deprecated in favor of using a constraint on the element using FHIRPath, since constraints allow for the provision of a human readable message associated with the regex'
+The extension http://hl7.org/fhir/StructureDefinition/ordinalValue|5.3.0 is deprecated with the note: 'Replaced by [[[http://hl7.org/fhir/StructureDefinition/itemWeight]]]'
 
 
-# === Da Vinci Project Specific Warning: This Ballot version did not have any Jira trackers associated with it ===
+# 15. === Da Vinci Project Specific Warning: This Ballot version did not have any Jira trackers associated with it ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 2.0.0-ballot
 
-# === Da Vinci Project Specific Warning: These versions predated change logs in the CDex IG ===
+# 16. === Da Vinci Project Specific Warning: These versions predated change logs in the CDex IG ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 1.1.0-ballot
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.2.0
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.1.0
 
-# === Da Vinci Project Specific Warning: These sections will be added to CDex in the next version ===
+# 17. === Da Vinci Project Specific Warning: These sections will be added to CDex in the next version ===
 
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Content and Organization.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Dependencies.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Intellectual Property Considerations.
 
-# === Da Vinci Project Specific Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
+# 18. === Da Vinci Project Specific Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
 
 WARNING: DA VINCI: The first menu item under Background should have the label Reading this IG.
 WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.
@@ -91,17 +99,138 @@ WARNING: DA VINCI: There must be a menu item under Background called Project and
 WARNING: DA VINCI: The third menu item should have the label Specification.
 WARNING: DA VINCI: There must be a menu item with the label Base Specs.
 
-# === Da Vinci Project Specific Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
+# 19. === Da Vinci Project Specific Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on its validation rules of a top-level link ===
 
 WARNING: DA VINCI: The first menu item should have the label IG Home.
 
 
-# === Da Vinci Project Specific Warning: applying this suggested link change causes  a build error ===
+# 20. === Da Vinci Project Specific Warning: applying this suggested link change causes a build error ===
 
 WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=
 
-# === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
+# 21. === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the example matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
 
 WARNING: Bundle/cdex-electronic-sig-example: Bundle.signature.who: Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|3.1.1, http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|7.0.0
+
+# 22. === This value set is inherited from the Base R5 Requirements resource. ===
+
+Reference to deprecated ValueSet http://hl7.org/fhir/5.0/ValueSet/jurisdiction|5.0.0
+
+# 23. ===  Da Vinci Project Specific Warning: This is a spurious warning. The Downloads page section 8.2 contains the link to downloadable version of this IG. ===
+
+WARNING: DA VINCI: The Downloads page (downloads.html) must include a link to the full content of this IG: full-ig.zip
+
+# 24. === These are not marked as a conformance clause, because they are rendered elements from Conformance resources and not narrative guidance. ===
+
+INFORMATION: en/CapabilityStatement-data-consumer-client.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/CapabilityStatement-data-consumer-server.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/CapabilityStatement-data-source-client.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/CapabilityStatement-data-source-server.html: The html source contains the word 'SHOULD'
+INFORMATION: en/CapabilityStatement-data-source-server.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/OperationDefinition-submit-attachment.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/StructureDefinition-cdex-practitionerrole.html: The html source contains the word 'SHALL'%
+
+# 25. === These are not marked as a conformance clause, because they are change log items and not conformance clauses. ===
+
+INFORMATION: en/changes.html: The html source contains the word 'SHALL'%
+
+# 26. === These are not marked as a conformance clause, because they are in a worked example and not conformance clauses. ===
+
+INFORMATION: en/signed-document-bundle-example.html: The html source contains the word 'SHALL'%
+INFORMATION: en/signed-searchset-bundle-example.html: The html source contains the word 'SHALL'%
+
+# 26. === These conformance clauses are marked as a conformance clause with a markup the validator does not recognize - a superscripted "§" at the end of the phrase. ===
+
+INFORMATION: en/attachments-conformance.html: The html source contains the word%
+INFORMATION: en/background.html: The html source contains the word
+INFORMATION: en/background.html: The html source contains the word 'SHOULD NOT'%
+INFORMATION: en/direct-query.html: The html source contains the word%
+INFORMATION: en/index.html: The html source contains the word
+INFORMATION: en/index.html: The html source contains the word 'SHALL'%
+INFORMATION: en/requesting-attachments-code.html: The html source contains the word%
+INFORMATION: en/requesting-attachments-questionnaire.html: The html source contains the word%
+INFORMATION: en/security.html: The html source contains the word%
+INFORMATION: en/sending-attachments.html: The html source contains the word
+INFORMATION: en/sending-attachments.html: The html source contains the word 'SHOULD'%
+INFORMATION: en/signatures.html: The html source contains the word%
+INFORMATION: en/solicited-unsolicited-attachments.html: The html source contains the word%
+INFORMATION: en/StructureDefinition-cdex-task-attachment-request.html: The html source contains the word%
+INFORMATION: en/StructureDefinition-cdex-task-data-request.html: The html source contains the word%
+INFORMATION: en/task-based-approach.html: The html source contains the word%
+INFORMATION: en/task-based-conformance.html: The html source contains the word%
+INFORMATION: en/ValueSet-cdex-POU.html: The html source contains the word%
+
+# 27. === The duplicate Patient_970af6c9... anchor is a rendering artifact of the IG Publisher's document narrative generator (subject rendered inline plus as an entry). ===
+
+WARNING: /Users/ehaas/Documents/FHIR/davinci-ecdx/output/en/Parameters-cdex-parameters-example2.html: The html source has duplicate anchor Ids: Patient_970af6c9-5bbd-4067-b6c1-d9b2c823aece
+
+# 28. ===  CDex "pins" the published version to the latest versions of conformance artifacts. ===
+
+Pinned the version of http://hl7.org/fhir/claim-use to 4.0.1
+Pinned the version of http://hl7.org/fhir/OperationDefinition/%
+Pinned the version of http://hl7.org/fhir/StructureDefinition%
+Pinned the version of http://hl7.org/fhir/us/core/StructureDefinition%
+Pinned the version of http://hl7.org/fhir/us/core/ValueSet%
+Pinned the version of http://hl7.org/fhir/us/davinci-cdex/CodeSystem/%
+Pinned the version of http://hl7.org/fhir/us/davinci-cdex/OperationDefinition%
+Pinned the version of http://hl7.org/fhir/us/davinci-cdex/StructureDefinition%
+Pinned the version of http://hl7.org/fhir/us/davinci-cdex/ValueSet/%
+Pinned the version of http://hl7.org/fhir/us/davinci-dtr%
+Pinned the version of http://hl7.org/fhir/us/davinci-hrex/StructureDefinition%
+Pinned the version of http://hl7.org/fhir/us/davinci-hrex/ValueSet%
+Pinned the version of http://hl7.org/fhir/us/davinci-pas/ValueSet%
+Pinned the version of http://hl7.org/fhir/uv/sdc/StructureDefinition%
+Pinned the version of http://hl7.org/fhir/ValueSet%
+Pinned the version of http://terminology.hl7.org/CodeSystem/%
+
+# 29. ===  As stated on the home page's  "About this Guide" Section, CDex is dependent upon US Core 3.1.1 (FHIR R4), US Core 6.1.0 (FHIR R4), and , US Core 7.0.0 (FHIR R4)implementation guides. ===
+
+The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is 9.0.0. This reference is getting old and the more recent version should be considered
+
+# 30. === This extension is used to define the expectation for CapabilityStatement.instantiates. Since its context is not scoped for this element, the validator is generating these errors. The tracker, FHIR-57719 to extend its context to these SearchParameter elements was created and we anticipate the next release of the HL7 Extensions IG will resolve these errors.===
+
+The extension http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation v5.3.0 is not allowed to be used at this point (this element is [CapabilityStatement.instantiates, canonical]%
+
+
+# 31. ===  The Requirements​.statement​.reference element is defined as "A reference to another artifact that created this requirement. This could be a Profile, etc., or external regulation, or business requirements expressed elsewhere." In this case it is a relative reference to the location within the IG. The FHIR R6 tracker, FHIR-57720 to clarify that relative context are allowed has been submitted.  We anticipate these warnings to be removed as a result ===
+
+No definition could be found for URL value 'direct-query.html%
+No definition could be found for URL value 'security.html%
+No definition could be found for URL value 'task-based-approach.html%
+No definition could be found for URL value 'attachments-conformance.html'%
+No definition could be found for URL value 'task-based-conformance.html'%
+No definition could be found for URL value 'background.html%
+No definition could be found for URL value 'attachments-conformance.html%
+No definition could be found for URL value 'solicited-unsolicited-attachments.html'%
+No definition could be found for URL value 'task-based-conformance.html%
+No definition could be found for URL value 'sending-attachments.html'%
+No definition could be found for URL value 'task-based-approach.html'%
+No definition could be found for URL value 'requesting-attachments-code.html%
+No definition could be found for URL value 'sending-attachments.html%
+No definition could be found for URL value 'requesting-attachments-questionnaire.html%
+No definition could be found for URL value 'signatures.html%
+
+# 32. ===  We provide Profile specific guidance on interpreting Must Support for slices where we state "Even if the parent element is marked as Must Support, each slice is explicitly tagged with the Must Support/Additional USCDI property to define that slice's conformance strength. If no Must Support/Additional USCDI property is defined for the slice, then support for that slice's definition is optional." ===
+
+The slice 'QuestionnaireContext' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+The slice 'POU' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+The slice 'MultipleSubmits' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+The slice 'questionnaire' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+The slice 'response' on path 'Task.output' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
+
+# 33. ===  Informational qa messages for signed resources ===
+
+Signature Verification is a work in progress. Feedback welcome at https://chat.fhir.org/#narrow/channel/179247-Security-and-Privacy/topic/Signature/with/524324965
+The content claims to have been signed by 1.2.840.113549.1.9.1=#16146a68616e636f636b406578616d706c652e6f7267,CN=John Hancock\, MD,O=Example Organization,L=Sausalito,ST=California,C=US,1.2.840.113549.1.9.1=#16146a68616e636f636b406578616d706c652e6f7267,cn=john hancock\, md,o=example organization,l=sausalito,st=california,c=us,2.16.840.1.113883.4.6,9941339100,OID.1.2.840.113549.1.9.1=jhancock@example.org, CN="John Hancock, MD", O=Example Organization, L=Sausalito, ST=California, C=US,https://example.org/fhir/Practitioner/123, but this has not been verified
+The content claims to have been signed at 2020-10-23T04:54:56.048+00:00, but this has not been verified
+The content claims that it was signed for the purpose of Verification Signature (urn:oid:1.2.840.10065.1.12.1.5), but this has not been verified
+Signing Certificate Details: Subject='1.2.840.113549.1.9.1=#16146a68616e636f636b406578616d706c652e6f7267,CN=John Hancock\, MD,O=Example Organization,L=Sausalito,ST=California,C=US', Issuer='1.2.840.113549.1.9.1=#16146a68616e636f636b406578616d706c652e6f7267,CN=John Hancock\, MD,O=Example Organization,L=Sausalito,ST=California,C=US', Serial='67E371783B5D74CD53473D4B419E75DFDF7150C'
+Signing Certificate Source: -----BEGIN CERTIFICATE-----MIIFVzCCA7+gAwIBAgIUBn43F4O110zVNHPUtBnnXf33FQwwDQYJKoZIhvcNAQELBQAwgZUxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRIwEAYDVQQHDAlTYXVzYWxpdG8xHTAbBgNVBAoMFEV4YW1wbGUgT3JnYW5pemF0aW9uMRkwFwYDVQQDDBBKb2huIEhhbmNvY2ssIE1EMSMwIQYJKoZIhvcNAQkBFhRqaGFuY29ja0BleGFtcGxlLm9yZzAeFw0yNTA2MjUyMzEyMzlaFw0yNzA2MTUyMzEyMzlaMIGVMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTESMBAGA1UEBwwJU2F1c2FsaXRvMR0wGwYDVQQKDBRFeGFtcGxlIE9yZ2FuaXphdGlvbjEZMBcGA1UEAwwQSm9obiBIYW5jb2NrLCBNRDEjMCEGCSqGSIb3DQEJARYUamhhbmNvY2tAZXhhbXBsZS5vcmcwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQCcXmvX60GA5G+Dl4iRn9TS/wTF1FTH9RmrP29G6XSOuVDEgGZwUTJI/OkRLPj+JUKy/kMY3Ym41k3JRr8NrJ7Ucjf3Te2Y0zmRMfGKO2X7p01Id8rGhnbsTkWjszcckjKOTk7E4HXO7XQmVvRZaPrjnVVsz6aIUmmUyBemUxsPQxqkd77zRKe1J+fMbpbSnaF2S5H9I5IpQu3erSjNwunumJA/5sNASMUf+ZrK5htwPflonlVA9HEPo6N5tJsCMEY5qkZAXD55PUbf8Ixrd3+t1iXNAgMdXPp9NjfmkzaHOsR5EL78oVftKH8XMgs9L+XXhcmp+SuSbUT+laQFnKZZ661EB8UVQGPhsHcuYz7M/+GD7lkmn5w7g6izY05Ds1tdth3hB+E1e0V8al0+HYxXtmL28ObrurZt5VOT636aBWeak3m1lt+JLiTWwcIXuriJwXCQ7W2OhIrleBnt5YRdF/VwkAf5Bp40DKrYSvBT/x3ParbcAs5rua4MiztzwzMCAwEAAaOBnDCBmTAJBgNVHRMEAjAAMAsGA1UdDwQEAwIF4DBgBgNVHREEWTBXgg93d3cuZXhhbXBsZS5vcmegGQYJYIZIAYb5WwQGoAwMCjk5NDEzMzkxMDCGKWh0dHBzOi8vZXhhbXBsZS5vcmcvZmhpci9QcmFjdGl0aW9uZXIvMTIzMB0GA1UdDgQWBBS/vj5cBHBERXZUgROSjV8eTj8u6zANBgkqhkiG9w0BAQsFAAOCAYEAfGh0fv76BMyRpin/6m2NnOAwYN+WYNW4ZwQKPoh+iBFjgb/gXZ/x3dnGq2RUnRHLybcvqOwC8t4+L2Qaentz/zSLfBIiHP+vtauVo4YirUKIFO5NkDbPRwEX6ZpotwRE2p3YPOqmLjUpuqezKRfuzffESIGCWf6bAZoH8ovyzkpUOxT2lcJL2YQgxaEE+/MOEDxby/G5tNlHWU1rm29DZD6iTn8FHMOb4DAeLs7deUBKeAxmCN1w07IbHfTX+8xozBk8m4rQaRI2FacGcN/S4OkiijlhkYnDdbb6ZoIB99AMG/0tMgWgh55FCL9w2yubFDsR+1yZW5w6xvVubFoq2rKIYN6BTMT349N+KYFRTb+pX04QFFCqX1OyuQEJjJpZauLIVSmUaVzDWdaRmt0rkLD6R85thYJpNxMr4oArsy5il5L0JVMEXG11ChExRCJ7XshktLjj+A8ldURrLHRWXotx6mNVp3+MoiChx7PfnGvCPaPvkLQqie8d8rk0ejN3-----END CERTIFICATE-----
+The signature verified OK
+The content was signed by 1.2.840.113549.1.9.1=#161c637573746f6d65722d73657276696365406578616d706c652e6f7267,CN=CDEX Example Organization,O=Example Organization,L=Boston,ST=Massachusetts,C=US,1.2.840.113549.1.9.1=#161c637573746f6d65722d73657276696365406578616d706c652e6f7267,cn=cdex example organization,o=example organization,l=boston,st=massachusetts,c=us,1234567893,2.16.840.1.113883.4.6,OID.1.2.840.113549.1.9.1=customer-service@example.org, CN=CDEX Example Organization, O=Example Organization, L=Boston, ST=Massachusetts, C=US,https://example.org/fhir/Organization/123 (and this has been verified by the signature)
+The content was signed at 2020-10-23T04:54:56.048+00:00 (and this has been verified by the signature)
+The content was signed for the purpose of Verification Signature (urn:oid:1.2.840.10065.1.12.1.5) (and this has been verified by the signature)
+Signing Certificate Details: Subject='1.2.840.113549.1.9.1=#161c637573746f6d65722d73657276696365406578616d706c652e6f7267,CN=CDEX Example Organization,O=Example Organization,L=Boston,ST=Massachusetts,C=US', Issuer='1.2.840.113549.1.9.1=#161c637573746f6d65722d73657276696365406578616d706c652e6f7267,CN=CDEX Example Organization,O=Example Organization,L=Boston,ST=Massachusetts,C=US', Serial='7BE46865F052B6A297B82C693F671C244D16675E'
+Signing Certificate Source: -----BEGIN CERTIFICATE-----MIIFeTCCA+GgAwIBAgIUe+RoZfBStqKXuCxpP2ccJE0WZ14wDQYJKoZIhvcNAQELBQAwgaYxCzAJBgNVBAYTAlVTMRYwFAYDVQQIDA1NYXNzYWNodXNldHRzMQ8wDQYDVQQHDAZCb3N0b24xHTAbBgNVBAoMFEV4YW1wbGUgT3JnYW5pemF0aW9uMSIwIAYDVQQDDBlDREVYIEV4YW1wbGUgT3JnYW5pemF0aW9uMSswKQYJKoZIhvcNAQkBFhxjdXN0b21lci1zZXJ2aWNlQGV4YW1wbGUub3JnMB4XDTI1MDcyNDE2MjkyMloXDTI3MDcxNDE2MjkyMlowgaYxCzAJBgNVBAYTAlVTMRYwFAYDVQQIDA1NYXNzYWNodXNldHRzMQ8wDQYDVQQHDAZCb3N0b24xHTAbBgNVBAoMFEV4YW1wbGUgT3JnYW5pemF0aW9uMSIwIAYDVQQDDBlDREVYIEV4YW1wbGUgT3JnYW5pemF0aW9uMSswKQYJKoZIhvcNAQkBFhxjdXN0b21lci1zZXJ2aWNlQGV4YW1wbGUub3JnMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAuG3hmTls4TlJ2pFASNZWzZGlF0pIYJlcrvGFsqHNQv47R4otcogtZwpe2ipXiOI1UKuX6zaVzDXBzfO1CMHmqq5yR1pu2m1KuA/QCqVSvw6zh9CyGFmRoodGFLbckpvgh9M0GwQiOyAqewSTYLgWBaQd3pDxuRfRfSQLC8py4MT6J4fUjg6RlplyMNbtrg4EmFSwlz3VhRbIxkG84ZexdZpzZxxvW+CvvnJghDlp0obTZnRYlhxTxKHiomWCKD5Y7LGWwnfh0tFXzyGdAHcgerlO/PTgzLrgGaRVfHkKmH4HNiXLhNObh31BScDKqp68Gwbs4ccd77OwLmsdaRwW8WJNKes2+yWqSwspmTqTxaBJrtv52ZStlQ6owWlEfnBjWEuR7m9WadUEYpndAFmAOjNuaAPIX59EHN4VRpcXSezyBnxONdCqEdC0AWEyejO7uDf3FB5s10Do7hkD3r8BJacC8VOcrtGoS87ETMVKVZDbzRbO+8eCHci9G5DsBpnPAgMBAAGjgZwwgZkwCQYDVR0TBAIwADALBgNVHQ8EBAMCBeAwYAYDVR0RBFkwV4IPd3d3LmV4YW1wbGUub3JnoBkGCWCGSAGG+VsEBqAMDAoxMjM0NTY3ODkzhilodHRwczovL2V4YW1wbGUub3JnL2ZoaXIvT3JnYW5pemF0aW9uLzEyMzAdBgNVHQ4EFgQUSrc/X2m80TNujJDaPHr4OgoMsKAwDQYJKoZIhvcNAQELBQADggGBAHCZ1Dma1nl63334ZGyh+q31ivHt/K4hOCmQ8Ki0GueDab/2cllLT2hYNRZFLdbtWHxczuLVhirE2QQ+VucfisO6Y8WKX+zAQJ0ceGrUi48mrYeX/BHHGE2YDrhysF1VEAYABQuRbc2qv7xq2MGh1gFkCEZLn2GRYRhaIV80dM0/uN2KqOU4ZEMDtyhC6fvPb5MQP0GVOCKUKxc2kgbgvIHBJOZfOQBn2otvcLAt/bLQ1ftvA66PXakR8hVJpFZQ4LJu8YuNms6XYmzDnIhOxhm2o8f/w1iMuHqJ4gAHK22tcxHybMvvicvOCAdSp/HnJ5KaYEu5yw3afcHYOYx2UvHtI45/ZwveC/pIoHxx3aJJ0R7H3BRIadm50vYioesOLyc09g3jf51bTTy/XbnY3QldgoMgnb8YfUS8AAoHtdYX0jsUBwhEQEn6M335kpcKKh7g6AvXngtAbESUOE3wLJWqElqsptogYdmbpdOC0lWQ23B/gFr2lsBAAo6WNJjylQ==-----END CERTIFICATE-----
 
 

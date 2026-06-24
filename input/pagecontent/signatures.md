@@ -157,7 +157,7 @@ The public key is listed in the first certificate in the `"x5c"` specified by th
     2. **SHALL** include a `"srCms"` signer commitments as defined above.<sup>[§][CONF-044]</sup>
 1.  **SHOULD** use the hashing algorithm SHA256. The signature validation policy will apply to the signature and determine the acceptability<sup>[§][CONF-045]</sup>
 2. **SHALL** support JWS compact serialization format for single signatures<sup>[§][CONF-046]</sup>
-    - Note that the complete JWS is in the form *Header.Payload.Signature* with a period `.` character between the base64_url encoded parts. This `Signature.data` value is base64 encoded *again* as indicated above; otherwise, validation fails because the base64Binary regex `(\s*([0-9a-zA-Z\+\=]){4}\s*)+` does not include the period character.
+    - Note that the complete JWS is in the form *Header.Payload.Signature* with a period `.` character between the base64_url encoded parts. <span class="bg-success" markdown="1">This `Signature.data` value is base64 encoded *again* as indicated above; otherwise, validation fails because the base64Binary regex `(\s*([0-9a-zA-Z\+\=]){4}\s*)+` does not include the period character.</span><!-- new-content -->
 3. **SHOULD** support [JWS JSON Serialization] format to represent multiple signatures with identical parameter values except `"x5c"`.<sup>[§][CONF-047]</sup>
     - The signer may have more than one certificate (for example, the signer participates in more than one trust community)
 4. The certificate **SHALL** include a Subject Alternative Name (SAN) which **SHALL** match the `Signature.who.identifier`<sup>[§][CONF-048]</sup><sup>[§][CONF-049]</sup>
@@ -194,8 +194,8 @@ The following steps outline the process for verifying the Signature.
 1. Retrieve and store the Bundle or QuestionnaireResponse :
    1. The search set Bundle is the response for a direct query.
    2. For Task-based requests, the completed `Task.output` is either:
-      -  a contained FHIR Document.
-      -  a reference to a FHIR Document.
+      -  <span class="bg-success" markdown="1">a contained FHIR Document.</span><!-- new-content -->
+      -  <span class="bg-success" markdown="1">a reference to a FHIR Document.</span><!-- new-content -->
    3. A FHIR Document Bundle or QuestionnaireResponse is submitted as part of the operation payload for Attachments.
 2. Remove the `id`, `meta` and `.signature` element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item.
 3. Canonicalize the resource.
