@@ -25,7 +25,7 @@ As shown below in Figure 13, the attachments are "pushed" using the [`$submit-at
 1. The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
 2. The Provider invokes [`$submit-attachment`] operation to submit attachments to the Payer
 3. The Payer responds with an HTTP response that accepts or rejects the transaction.
-   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.<sup>[§][CONF-021]</sup>
+   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.<sup>[§][CONF-021]</sup> An OperationOutcome example is used in Scenario 1b below.
 <div class="bg-success" markdown="1">
 
   FHIR operations are based on the RPC-like paradigm where the target is treated as a "Black Box", a system where the internal workings are not known. Therefore, the acceptance or failure of the $submit-attachment operation depends on the Payer server's internal business rules and workflow.
@@ -80,7 +80,7 @@ This section outlines the Payer server requirements and guidelines for managing 
 
 1. Servers **SHALL** document in their Capability Statement's `CapabilityStatement.operation.documentation` element or payer-supplied documentation:<sup>[§][CONF-022]</sup>
    1. The payload endpoint size limits (e.g. 100MB )
-   2. Whether they support the $ submit-attachment's final input parameter
+   2. Whether they support the $submit-attachment's `Final` input parameter
 
 1. When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages "Request Entity Too Large" or "Payload Too Large").<sup>[§][CONF-023]</sup>
 
@@ -109,7 +109,7 @@ Some data consumers may require that the data they receive be signed. When signa
 
 #### Provider Requirements
 
-{% include data-source-sig-rules.md %}<sup>[§][CONF-084]</sup>
+{% include data-source-sig-rules.md conf_key="CONF-084" %}
 
 - In this example, the Provider submits a patient's active conditions to the Payer to support a claim.
 Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a digitally signed FHIR Document bundle.

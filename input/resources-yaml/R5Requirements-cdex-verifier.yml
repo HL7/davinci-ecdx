@@ -10,17 +10,35 @@ statement:
       - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
     conformance:
       - SHALL
-    requirement: One of the certificate Subject Alternative Name (SAN)) **SHALL** match `Signature.who.identifier` to verify the identity of the entity signing
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse] One of the certificate Subject Alternative Name (SAN)) **SHALL** match `Signature.who.identifier` to verify the identity of the entity signing'
   - key: CONF-054
     reference:
       - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
     conformance:
       - SHALL
-    requirement: The `"srCms"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements.
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse] The `"srCms"` Signer Commitments header ids **SHALL** match the `Signature.type.code` elements.'
   - key: CONF-055
     reference:
       - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
     conformance:
       - SHALL
-    requirement: The `"sigT"` header timestamp  **SHALL** match `Signature.when`
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse] The `"sigT"` header timestamp  **SHALL** match `Signature.when`'
     conditionality: true
+  - key: CONF-050
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHOULD
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse.] The certificate Issuer **SHOULD** be a trusted CA for the Consumer'
+  - key: CONF-051
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHOULD
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse] The certificate KeyUsage **SHOULD** include ''DigitalSignature'''
+  - key: CONF-052
+    reference:
+      - signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse
+    conformance:
+      - SHOULD
+    requirement: '[To verify the identity of the entity signing the Bundle or QuestionnaireResponse] The certificate Validity Dates **SHOULD** be appropriate/long enough as determined by the business partners'

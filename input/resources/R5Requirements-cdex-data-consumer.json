@@ -14,7 +14,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "When signatures are required, the Data Consumer **SHALL** use a [FHIR RESTful search](http://hl7.org/fhir/R4/http.html#search) instead of [FHIR RESTful read](http://hl7.org/fhir/R4/http.html#read). There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle. If the Data Consumer attempts to fetch a resource with a read and a signature is required, the Data Source/Responder",
+      "requirement": "When signatures are required, the Data Consumer **SHALL** use a [FHIR RESTful search](http://hl7.org/fhir/R4/http.html#search) instead of [FHIR RESTful read](http://hl7.org/fhir/R4/http.html#read). There is no CDex support for signatures on a FHIR RESTful read because it fetches a single instance of a resource instead of a Bundle.",
       "conditionality": true
     },
     {
@@ -25,18 +25,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "The [Da Vinci](http://www.hl7.org/about/davinci/index.cfm?ref=common) initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles](https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf) for exchanging patient health information."
-    },
-    {
-      "key": "CONF-012",
-      "reference": [
-        "requesting-attachments-code.html#date-of-service-for-the-claim"
-      ],
-      "conformance": [
-        "SHALL"
-      ],
-      "requirement": "This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for a prior authorization.",
-      "conditionality": true
+      "requirement": "The [Da Vinci](http://www.hl7.org/about/davinci/index.cfm?ref=common) initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7¬Æ FHIR¬Æ) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles](https://confluence.hl7.org/display/DVP/Da+Vinci+Clinical+Advisory+Council+Members?preview=/66940155/66942916/Guiding%20Principles%20for%20Da%20Vinci%20Implementation%20Guides.pdf) for exchanging patient health information."
     },
     {
       "key": "CONF-014",
@@ -46,7 +35,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "This implementation guide inherits all of the mandatory requirements and recommendations defined in the [HRex Security and Privacy](http://hl7.org/fhir/us/davinci-hrex/1.2.0/security.html) specification.   Implementers **SHALL** read and adhere to the guidance for the following topics:"
+      "requirement": "Implementers **SHALL** read and adhere to the guidance for the following topics in the [HRex Security and Privacy](http://hl7.org/fhir/us/davinci-hrex/1.2.0/security.html):<sup>[§][CONF-014]</sup>\n\n- Da Vinci's Guiding Principles\n- Statutes, Regulations\n- Clinical Safety Guidelines\n- FHIR Security and Implementation Guidance\n- Security/Privacy-Related Technologies, Including Explicit Consent and Security - Labels\n- Exchange Security\n- Additionally Protected Information\n- Security Contexts for Da Vinci IGs"
     },
     {
       "key": "CONF-015",
@@ -56,7 +45,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "User scopes **SHALL** be used as defined in [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch/) to restrict access to the relevant patients for a given Data Consumer. Organizational user access scopes are typically pre-negotiated and documented via business agreements. Data Sources shall translate these agreements into the appropriate SMART App Launch scopes."
+      "requirement": "User scopes **SHALL** be used as defined in [SMART App Launch](http://www.hl7.org/fhir/smart-app-launch/) to restrict access to the relevant patients for a given Data Consumer."
     },
     {
       "key": "CONF-016",
@@ -76,7 +65,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "communicate the POU for the requested data for each Task using codes from the [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html) in the POU `Task.input` element. The Data Consumer and Data Source **SHALL** use it to communicate the POU for the requested data when trading partner agreements require the POU to be exchanged.",
+      "requirement": "The Data Consumer and Data Source **SHALL** use it [codes from the CDex Purpose of Use Value Set in the POU Task.input element.] to communicate the POU for the requested data when trading partner agreements require the POU to be exchanged.",
       "conditionality": true
     },
     {
@@ -87,7 +76,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "Servers **SHALL** document in their Capability Statement's `CapabilityStatement,operation.documentation` element or payer-supplied documentation:"
+      "requirement": "[For managing large payloads in the $submit-attachment operation,] Servers **SHALL** document in their Capability Statement's `CapabilityStatement.operation.documentation` element or payer-supplied documentation:\n   1. The payload endpoint size limits (e.g. 100MB )\n   2. Whether they support the $submit-attachment's `Final` input parameter"
     },
     {
       "key": "CONF-023",
@@ -97,7 +86,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "When the payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages \"Request Entity Too Large\" or \"Payload Too Large\").",
+      "requirement": "When the [$submit-attachment] payload is too big, the Server **SHALL** use The HTTP `413 Content Too Large` client error response status code (alternate status messages \"Request Entity Too Large\" or \"Payload Too Large\").",
       "conditionality": true
     },
     {
@@ -108,7 +97,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "Servers **SHALL** document instructions for the Client when the payload is  (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)",
+      "requirement": "Servers **SHALL** document instructions for the Client when the  [$submit-attachment] payload is  (or is anticipated to be) too big. (for example, send a URL + authorization information, offload to external storage, split multiple files into multiple operations)",
       "conditionality": true
     },
     {
@@ -130,7 +119,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "**For CDex Task-based transactions, the [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html) SHALL be used by the Data Consumer to solicit information from a system.** It represents *both* the data request and the returned data and provides information such as why it needs to be completed, who is to complete it, who is asking for it, when it is due, etc. The Task's status is updated as the task is fulfilled. For a detailed description of all the mandatory, [*must support*](http://hl7.org/fhir/us/davinci-hrex/1.2.0/conformance.html), and optional elements, as well as formal definitions and profile views, see the [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html) page.",
+      "requirement": "For CDex Task-based transactions, the [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html) **SHALL** be used by the Data Consumer to solicit information from a system.",
       "conditionality": true
     },
     {
@@ -145,17 +134,6 @@
       "conditionality": true
     },
     {
-      "key": "CONF-079",
-      "reference": [
-        "StructureDefinition-cdex-task-attachment-request.html"
-      ],
-      "conformance": [
-        "SHALL"
-      ],
-      "requirement": "A \"ServiceDate\" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.",
-      "conditionality": true
-    },
-    {
       "key": "CONF-082",
       "reference": [
         "StructureDefinition-cdex-task-data-request.html"
@@ -163,7 +141,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "Clients **SHALL** support all four profiles."
+      "requirement": "The `Task.reasonReference` `DocumentReference.author` is a  *Must Support*  element with four target profile and three Coverage profiles….Clients **SHALL** support all four profiles."
     },
     {
       "key": "CONF-083",
@@ -183,7 +161,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "The CDex Profile elements consist of Mandatory, Must Support, and Optional elements. Elements that are neither Mandatory or Must Support are Optional. Mandatory elements are elements with a minimum cardinality greater than 0. [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and **SHALL** be interpreted as follows:"
+      "requirement": "[Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and **SHALL** be interpreted [by the Task Source and Task Consumer] as follows in CONF-088, CONF-090, CONF-092, CONF-094, CONF-096."
     },
     {
       "key": "CONF-087",
@@ -193,7 +171,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "The CDex Profile elements consist of Mandatory, Must Support, and Optional elements. Elements that are neither Mandatory or Must Support are Optional. Mandatory elements are elements with a minimum cardinality greater than 0. [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and **SHALL** be interpreted as follows:"
+      "requirement": "[Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and **SHALL** be interpreted [by the Task Source and Task Consumer] as follows in CONF-089, CONF-091, CONF-093, CONF-095, CONF-097."
     },
     {
       "key": "CONF-088",
@@ -203,7 +181,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "element is *required* and the Task Source **SHALL** populating the data element with value unless:",
+      "requirement": "[for [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and ] the minimum cardinality of an element is greater than 0, the\n  element is *required* and the Task Source **SHALL** populatie the data element with a value unless {CONF-091].",
       "conditionality": true
     },
     {
@@ -214,7 +192,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "element is *required* and the Task Source **SHALL** populating the data element with value unless:",
+      "requirement": "[for [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and ] the minimum cardinality of an element is greater than 0, the\n  element is *required* and the Task Source **SHALL** populatie the data element with a value unless {CONF-091].",
       "conditionality": true
     },
     {
@@ -225,7 +203,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "Source **SHALL** use that extension to communicate the reason for missing data."
+      "requirement": "[For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and ] the minimum cardinality of an element is greater than 0, the\n  element is *required* unless the profile references a dataAbsentReason (DAR) extension, then the Task Source **SHALL** use that extension to communicate the reason for missing data."
     },
     {
       "key": "CONF-091",
@@ -235,7 +213,8 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "Source **SHALL** use that extension to communicate the reason for missing data."
+      "requirement": "[For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag and ] the minimum cardinality of an element is greater than 0, the\n  element is *required* unless the profile references a dataAbsentReason (DAR) extension, then the Task Source **SHALL** use that extension to communicate the reason for missing data.",
+      "conditionality": true
     },
     {
       "key": "CONF-092",
@@ -245,7 +224,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "If the minimum cardinality of an element is equal to 0, the Task Source **SHALL** be capable of populating the data element when sharing Task compliant with a CDex profile. Although the system needs to demonstrate it is capable of populating and sharing of the element, it is acceptable to omit the element if the system doesn't have values in a particular instance. A system that is incapable of ever sharing the",
+      "requirement": "[For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements marked with the *mustSupport* flag and ] the minimum cardinality of an element is equal to 0, the Task Source **SHALL** be capable of populating the data element when sharing Task compliant with a CDex profile.",
       "conditionality": true
     },
     {
@@ -256,7 +235,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "If the minimum cardinality of an element is equal to 0, the Task Source **SHALL** be capable of populating the data element when sharing Task compliant with a CDex profile. Although the system needs to demonstrate it is capable of populating and sharing of the element, it is acceptable to omit the element if the system doesn't have values in a particular instance. A system that is incapable of ever sharing the",
+      "requirement": "[For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements marked with the *mustSupport* flag and ] the minimum cardinality of an element is equal to 0, the Task Source **SHALL** be capable of populating the data element when sharing Task compliant with a CDex profile.",
       "conditionality": true
     },
     {
@@ -267,7 +246,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "The Task Consumer **SHALL** be capable of processing Task instances"
+      "requirement": "[ For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag , the] ... Task Consumer **SHALL** be capable of processing Task instances  containing the data elements without generating an error or causing\n  the application to fail."
     },
     {
       "key": "CONF-095",
@@ -277,7 +256,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "The Task Consumer **SHALL** be capable of processing Task instances"
+      "requirement": "[ For [Must Support](http://hl7.org/fhir/R4/profiling.html#mustsupport) elements are marked with the *mustSupport* flag , the] ... Task Consumer **SHALL** be capable of processing Task instances  containing the data elements without generating an error or causing\n  the application to fail."
     },
     {
       "key": "CONF-098",
@@ -287,17 +266,7 @@
       "conformance": [
         "SHALL"
       ],
-      "requirement": "**For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html) to solicit information from a Provider.**"
-    },
-    {
-      "key": "CONF-099",
-      "reference": [
-        "requesting-attachments-questionnaire.html#cdex-attachment-request-profile"
-      ],
-      "conformance": [
-        "SHALL"
-      ],
-      "requirement": "**For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html) to solicit information from a Provider.**"
+      "requirement": "For CDex attachment requests transactions, the Payer SHALL use the [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html) to solicit information from a Provider."
     },
     {
       "key": "CONF-005",
@@ -321,7 +290,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "Systems may choose some or all of these capabilities and implement any combination of unsolicited or solicited attachments for prior authorization, claims, or both. Therefore, in contrast to the expectations in the CDex CapabilityStatements, they **SHOULD** define what they support in their local capability statement in one or more of the following ways:"
+      "requirement": "Systems ...**SHOULD** define what they support in their local capability statement in one or more of the following ways:\n\n1. (Preferred) Formally derived implementable profile from [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)\n2. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.\n3. (Preferred) Formal [OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html) derived from [`$submit-attachment`](OperationDefinition-submit-attachment.html)\n4. Document their systems' capabilities for submitting attachments in `CapabilityStatement.rest.documentation`"
     },
     {
       "key": "CONF-002",
@@ -331,7 +300,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "When submitting unsolicited attachments, the Provider **SHOULD** populate `Attachment.Code`.",
+      "requirement": "When submitting unsolicited attachments [using the $submit-attachment operation], the [Data Source/]Provider  **SHOULD** populate `Attachment.Code`[parameter].",
       "conditionality": true
     },
     {
@@ -342,7 +311,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "Servers **SHOULD** support `Attachment.Content` types beyond `DocumentReference` and `QuestionnaireResponse`.",
+      "requirement": "[When submitting unsolicited attachments using the $submit-attachment operation] Servers **SHOULD** support `Attachment.Content` types beyond  [the required types, ] `DocumentReference` and `QuestionnaireResponse`.",
       "conditionality": true
     },
     {
@@ -353,7 +322,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.",
+      "requirement": "The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization.",
       "conditionality": true
     },
     {
@@ -364,7 +333,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "The Da Vinci Burden Reduction Implementation Guides (IGs), [Da Vinci Coverage Requirements Discovery (CRD)](https://hl7.org/fhir/us/davinci-crd/), [Da Vinci Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/2.2.0), and [Da Vinci Prior Authorization Support (PAS)](http://hl7.org/fhir/us/davinci-pas/2.2.1), support an integrated workflow to enable automated submission of required documentation and prior authorization from EHR and payer systems respectively. Although the PAS guide leverages CDex, implementers **SHOULD** follow the Burden Reduction IGs to request additional information for prior authorization. See [Using CDex Attachments with DaVinci PAS](burden-reduction.html) page for more details."
+      "requirement": " Although the PAS guide leverages CDex, implementers **SHOULD** follow the Burden Reduction IGs to request additional information for prior authorization."
     },
     {
       "key": "CONF-062",
@@ -374,7 +343,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "Data consumers can poll for a single Task or across several Tasks. The polling frequency balances responsiveness (short interval between data creation and consumer notification) against not over-taxing the Data Source's resources. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that."
+      "requirement": "Data Consumers **SHOULD** … [poll for Task updates] in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that."
     },
     {
       "key": "CONF-078",
@@ -384,7 +353,7 @@
       "conformance": [
         "SHOULD"
       ],
-      "requirement": "CDex Task-based transactions have many optional capabilities. Systems may choose some or all of these capabilities and implement any combination. Refer to the CDex [CapabilityStatements](artifacts.html#13) resources for conformance expectations for the various actors and roles. In contrast to the expectations in the CDex CapabilityStatements, Systems **SHOULD** define what they support in their local capability statement in one or more of the following ways:"
+      "requirement": "Systems **SHOULD** define what they support in their local capability statement in one or more of the following ways:\n\n1. (Preferred) Formally derived implementable profile from [CDex Task Data Request Profile]\n(StructureDefinition-cdex-task-data-request.html)\n1. Document their systems' capabilities for requesting attachments in `CapabilityStatement.rest.resource.documentation` for the Task resource.\n2. (Preferred) Formal [OperationDefinition](http://hl7.org/fhir/R4/operationdefinition.html) derived from [`$submit-attachment`](OperationDefinition-submit-attachment.html)\n3. Document their systems' capabilities for submitting attachments in `CapabilityStatement.rest.documentation`"
     },
     {
       "key": "CONF-004",
@@ -394,7 +363,7 @@
       "conformance": [
         "SHOULD-NOT"
       ],
-      "requirement": "An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers **SHOULD NOT** use this transaction when there is a requirement for real-time response to facilitate patient care.",
+      "requirement": "CDex is not intended to supersede other Da Vinci guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when an alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers **SHOULD NOT** use this transaction when there is a requirement for real-time response to facilitate patient care.",
       "conditionality": true
     },
     {
@@ -405,7 +374,7 @@
       "conformance": [
         "SHOULD-NOT"
       ],
-      "requirement": "data - and receivers **SHOULD NOT** reject instances that contain unexpected data elements if those elements are not [modifier elements](http://hl7.org/fhir/R4/conformance-rules.html#isModifier). However, Task Sources cannot rely on Task Consumers to store, process, or do anything other than ignore data that is not marked as *mustSupport*.",
+      "requirement": "[Data Consumers] ...**SHOULD NOT** reject instances that contain unexpected data elements if those elements are not [modifier elements](http://hl7.org/fhir/R4/conformance-rules.html#isModifier).",
       "conditionality": true
     },
     {
@@ -416,7 +385,7 @@
       "conformance": [
         "SHOULD-NOT"
       ],
-      "requirement": "data - and receivers **SHOULD NOT** reject instances that contain unexpected data elements if those elements are not [modifier elements](http://hl7.org/fhir/R4/conformance-rules.html#isModifier). However, Task Sources cannot rely on Task Consumers to store, process, or do anything other than ignore data that is not marked as *mustSupport*.",
+      "requirement": "[Data Consumers] ...**SHOULD NOT** reject instances that contain unexpected data elements if those elements are not [modifier elements](http://hl7.org/fhir/R4/conformance-rules.html#isModifier).",
       "conditionality": true
     },
     {
@@ -427,8 +396,18 @@
       "conformance": [
         "MAY"
       ],
-      "requirement": "CDex Task-based queries enable Data Consumers to dynamically define POUs when requesting data. Data Consumer and Data Source **MAY** communicate the POU for the requested data for each Task using codes from the [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html) in the POU `Task.input` element. The Data Consumer and Data Source",
+      "requirement": "Data Consumer and Data Source **MAY** communicate the POU for the requested data for each Task using codes from the [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html) in the POU `Task.input` element. ",
       "conditionality": true
+    },
+    {
+      "key": "CONF-019",
+      "reference": [
+        "security.html#general-considerations"
+      ],
+      "conformance": [
+        "SHALL"
+      ],
+      "requirement": "Organizational user access scopes are typically pre-negotiated and documented via business agreements. Data Sources **SHALL** translate these agreements into the appropriate SMART App Launch scopes."
     }
   ]
 }

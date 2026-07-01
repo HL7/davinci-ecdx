@@ -31,7 +31,7 @@ Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
   - [CDex Digital Signature Profile](StructureDefinition-cdex-digital-signature.html)
   - [CDex Signature Bundle Profile](StructureDefinition-cdex-signature-bundle.html)
   - [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html)
-1. **Triaged:** Non-compatible (Correction) Derive CDex QuestionnaireResponse Profile from DTR [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here]($6)
+1. **Triaged:** Non-compatible (Correction) Derive CDex QuestionnaireResponse Profile from DTR [FHIR-46527](https://jira.hl7.org/browse/FHIR-46527) See Changes [Here](#)
 
 
 **Substantive Changes**

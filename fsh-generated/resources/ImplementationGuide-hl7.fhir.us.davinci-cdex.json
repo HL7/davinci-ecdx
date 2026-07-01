@@ -318,15 +318,6 @@
       },
       {
         "reference": {
-          "reference": "Requirements/cdex-payer"
-        },
-        "description": "This [Requirements](https://hl7.org/fhir/R5/requirements.html) resource lists all the CDex Payer requirements defined in the narrative sections of this IG.",
-        "exampleBoolean": false,
-        "name": "CDex Payer Requirements",
-        "groupingId": "Conformance"
-      },
-      {
-        "reference": {
           "reference": "StructureDefinition/cdex-task-attachment-request"
         },
         "description": "Payers use this [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (\"attachments\") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by [Da Vinci Documentation Templates and Rules (DTR)](http://hl7.org/fhir/us/davinci-dtr/index.html).\n",

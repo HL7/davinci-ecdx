@@ -48,7 +48,6 @@
 <artifact id="Parameters/cdex-parameters-example5" key="Parameters-cdex-parameters-example5" name="CDex Parameters Example 5"/>
 <artifact id="StructureDefinition/cdex-parameters-submit-attachment" key="StructureDefinition-cdex-parameters-submit-attachment" name="CDex Parameters Submit Attachment Profile"/>
 <artifact id="StructureDefinition/cdex-patient-demographics" key="StructureDefinition-cdex-patient-demographics" name="CDex Patient Demographics Profile"/>
-<artifact id="Requirements/cdex-payer" key="Requirements-cdex-payer" name="CDex Payer Requirements"/>
 <artifact id="StructureDefinition/cdex-practitionerrole" key="StructureDefinition-cdex-practitionerrole" name="CDex PractitionerRole Profile"/>
 <artifact id="Provenance/cdex-provenance-inline-example-858" key="Provenance-cdex-provenance-inline-example-858" name="CDex Provenance Inline Example 858"/>
 <artifact id="ValueSet/cdex-POU" key="ValueSet-cdex-POU" name="CDex Purpose of Use Value Set"/>

@@ -6,7 +6,6 @@
 [CDexDataConsumerRequirements]: Requirements-cdex-data-consumer.html
 [CDexVerifierRequirements]: Requirements-cdex-verifier.html
 [CDexSignerRequirements]: Requirements-cdex-signer.html
-[CDexPayerRequirements]: Requirements-cdex-payer.html
 [CDexTaskAttachmentRequest]: StructureDefinition-cdex-task-attachment-request.html
 [CDexPractitionerRole]: StructureDefinition-cdex-practitionerrole.html
 [CDexPatientDemographics]: StructureDefinition-cdex-patient-demographics.html

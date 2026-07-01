@@ -114,7 +114,6 @@ groups:
       - Requirements/cdex-data-consumer
       - Requirements/cdex-verifier
       - Requirements/cdex-signer
-      - Requirements/cdex-payer
 
   AttachmentsProfiles:
     name: Attachments Profiles

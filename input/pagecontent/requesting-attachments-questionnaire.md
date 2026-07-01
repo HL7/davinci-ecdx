@@ -8,11 +8,9 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 ### Requesting Attachments Using FHIR
 
-{% include task-based-sections-to-review.md %}<sup>[§][CONF-099]</sup>
+{% include task-based-sections-to-review.md conf_key="CONF-098" %}
 
 ### Requesting Attachments Using FHIR Questionnaires
-
-
 
  In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references one or more FHIR Questionnaires  as input parameters, the Task represents a request for the Provider to complete the questionnaires. The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
@@ -63,7 +61,7 @@ Preconditions and Assumptions:
   - "patient/*.rs"
   - "patient/Task.u"
   - "patient/QuestionnaireResponse.cu"
-  
+
 **Step 6,7:** Assuming the authorization is granted, The DTR app requests an access token
 
 **Step 8:** The DTR App obtains an access token and the launch contexts in the "fhirContext" array, including a local reference to the Task in step 2.
@@ -131,7 +129,7 @@ The following data elements are used to verify the patient's identity. (This gui
 {: .grid}
 
 \* Patient Account Number is a Provider assigned identifier
- 
+
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=2 count=35 linenumber=true rel=true %}
@@ -245,7 +243,7 @@ The Payer supplies the URL endpoint in the `Task.input` "payer-url" parameter. T
 
 <!-- {% raw %} ##### Date of Service for the Claim
 
-This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization.  It is optional if the attachment is for a prior authorization.  If the attachment is for a claim, it **SHALL** be present and precise to the day. 
+This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization.  It is optional if the attachment is for a prior authorization.  If the attachment is for a claim, it **SHALL** be present and precise to the day.
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=174 count=13 linenumber=true rel=true %}
@@ -372,7 +370,7 @@ The "TrackingId" and, for prior authorization, "AdminRefNumber" parameters repre
 
 ~~~
 {% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=3 count=17 linenumber=true rel=true %}
-~~~   
+~~~
 </div><!-- new-content -->
 ##### Identifying the Payer, Provider, Organization, and Patient
 
@@ -388,7 +386,7 @@ As documented above, The Payer uses business identifiers to identify itself, the
 
 ~~~
 {% include_relative includelines filename='Parameters-cdex-parameters-example5.json' start=20 count=28 linenumber=true rel=true %}
-~~~ 
+~~~
 
 
 <!-- {% raw %} ##### The Service Date

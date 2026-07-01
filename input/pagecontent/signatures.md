@@ -49,7 +49,7 @@ In previous versions of this implementation guide, the term "enveloping" was use
 
 Signatures in CDex are represented as an element in the signed Bundle or QuestionnaireResponse resource. For FHIR Documents and FHIR Search Bundles, the signature populates the [`Bundle.signature`] element. The signature applies to the entire Bundle, ensuring that all contained resources are authenticated as a single unit.  For QuestionnaireResponse, the signature populates the FHIR standard [signatureRequired] extension at the QuestionnaireResponse resource or `QuestionnareiResponse.item` level.\*
 
-\* When using a FHIR Questionnaire to request data, both the [DTR Questionnaire For Adaptive Form] and [DTR Standard Questionnaire] have the overlapping capabilities with the [CDex Task Attachment Request Profile] to indicate that a signature is required. Signers **SHALL** meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The Questionnaire profiles support many reasons for signatures, including verification signatures.<sup>[§][CONF-026]</sup>
+\* When using a FHIR Questionnaire to request data, both the [DTR Questionnaire For Adaptive Form] and [DTR Standard Questionnaire] have the overlapping capabilities with the [CDex Task Attachment Request Profile] to indicate that a signature is required. Signers **SHALL** meet both the Task *and* Questionnaire signature expectations.<sup>[§][CONF-026]</sup> The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The Questionnaire profiles support many reasons for signatures, including verification signatures.
 {:.bg-warning}
 
 </div><!-- new-content -->
@@ -116,17 +116,17 @@ Digital Signatures employ encryption technology and a digital certificate issued
 
 #### Digital Signature Rules and Guidance For CDEX Bundle and QuestionnaireResponse
 
-1.  **SHALL** use the [CDex Digital Signature Profile] with the [CDex Signature Bundle Profile] for digitally signed Bundles and with the [CDex SDC QuestionnaireResponse Profile] for digitally signed QuestionnaireResponse.  This Signature DataType profile enforces the various elements of digital signatures documented in this section.<sup>[§][CONF-027]</sup>
+1.  **SHALL** use the [CDex Digital Signature Profile] with the [CDex Signature Bundle Profile] for digitally signed Bundles and with the [CDex SDC QuestionnaireResponse Profile] for digitally signed QuestionnaireResponse.<sup>[§][CONF-027]</sup> This Signature DataType profile enforces the various elements of digital signatures documented in this section.
 
-1. Implementers **SHALL** follow the following FHIR R6 [JSON Signature rules](https://hl7.org/fhir/6.0.0-ballot3/datatypes.html#JSON)<sup>[§][CONF-028]</sup>
-   - The Signature.data is base64 encoded JWS-Signature [[RFC 7515]: JSON Web Signature (JWS)]
+1. Implementers **SHALL** follow the following FHIR R6 [JSON Signature rules](https://hl7.org/fhir/6.0.0-ballot3/datatypes.html#JSON)
+   - The Signature.data is base64 encoded JWS-Signature [[RFC 7515]: JSON Web Signature (JWS)]<sup>[§][CONF-028]</sup>
      - The JWS mime type `application/jose` **SHALL** be indicated in the `Signature.sigFormat` element.<sup>[§][CONF-029]</sup>
      > JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
-   - The signature is a [Detached] Signature (where the content that is signed is removed from the JWS)
+   - The signature is a [Detached] Signature (where the content that is signed is removed from the JWS)<sup>[§][CONF-070]</sup>
 
-   - The `Bundle.signature` or the QuestionnaireResponse [signatureRequired] extension is removed before signing.
+   - The `Bundle.signature` or the QuestionnaireResponse [signatureRequired] extension is removed before signing.<sup>[§][CONF-071]</sup>
 
-   - When FHIR Resources are signed, the signature is across the [Canonical JSON](https://hl7.org/fhir/6.0.0-ballot3/json.html#canonical) form of the resource(s)
+   - When FHIR Resources are signed, the signature is across the [Canonical JSON](https://hl7.org/fhir/6.0.0-ballot3/json.html#canonical) form of the resource(s)<sup>[§][CONF-072]</sup>
 
       -  CDEX is pre-adopting the changes to FHIR R6 json canonicalization guidance and  **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource.  JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.<sup>[§][CONF-030]</sup>
          - This canonicalization method is identified by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json#document` and **SHALL** be indicated in the `Signature.targetFormat` element.<sup>[§][CONF-031]</sup>
@@ -137,7 +137,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
 
             - Validating the JSON Web Signatures in the JSON format.
             - Canonicalizing the XHTML`text.div` narrative element following the [FHIR R6 XML Canonicalization rules](https://hl7.org/fhir/6.0.0-ballot3/xml.html#canonical) prior to the JSON canonicalization of the resource.
-            - identifying this canonicalization method by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json+xml#document` and **SHALL** indicate it in the `Signature.targetFormat` element.<sup>[§][CONF-033]</sup>
+            - identifying this canonicalization method by the URI `application/fhir+json;canonicalization=http://hl7.org/fhir/canonicalization/json+xml#document` in the `Signature.targetFormat` element.
             </div><!-- new-info -->
 
       - `Bundle.id`, and `Bundle.meta`  **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.<sup>[§][CONF-034]</sup>
@@ -151,7 +151,7 @@ Digital Signatures employ encryption technology and a digital certificate issued
 2. The signature Header:
     1. **SHALL** include an `"alg"` parameter for the JSON Web Algorithms (JWA) (see [RFC 7518]). `"alg": "RS256"` is preferred.<sup>[§][CONF-040]</sup>
     <!-- 2. **SHALL** include a `"kty"` parameter corresponding to the cryptographic algorithm family in `"alg"` ( e.g., `"kty": "RSA"` for `"alg": "RS256"` ) -->
-    3. **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).<sup>[§][CONF-042]</sup>
+    2. **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).<sup>[§][CONF-042]</sup>
 The public key is listed in the first certificate in the `"x5c"` specified by the entry's "Modulus" and "Exponent" parameters.
     1. **SHALL** include a `"sigT"` header parameter with a timestamp of the signature.<sup>[§][CONF-043]</sup>
     2. **SHALL** include a `"srCms"` signer commitments as defined above.<sup>[§][CONF-044]</sup>
