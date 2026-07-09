@@ -49,11 +49,13 @@ CDex Task-based transactions have many optional capabilities. Systems might choo
 
 {% include must-support.md conf_keys="CONF-087,CONF-089,CONF-091,CONF-093,CONF-095,CONF-097" %}
 
+<div class="bg-success" markdown="1">
 
 ### CDex Task Based Approach Requirements
 
 {% include conformance-requirements.md category="Task Based Approach" %}
 
+</div><!-- new-content -->
 <br />
 
 {% include link-list.md %}

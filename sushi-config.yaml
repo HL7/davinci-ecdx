@@ -133,6 +133,7 @@ groups:
     description: ValueSets Associated with CDex Attachments Transactions
     resources:
       - ValueSet/cdex-claim-use
+      - ValueSet/cdex-attachment-codes
       - ValueSet/cdex-loinc-attachment-codes
       - ValueSet/cdex-pwk01-attachment-report-type-code
   AttachmentsExamples:
@@ -389,7 +390,7 @@ parameters:
   path-expansion-params: 'input/examples/exp-params.json'  # for using US ed of SNOMED
   # path-liquid: # list of relative paths that contains liquid templates for generating narrative
   #   - liquid
-
+  # toggle-changes: 'false'
   active-tables: 'false'
   apply-contact: 'true'
   apply-jurisdiction: 'true'

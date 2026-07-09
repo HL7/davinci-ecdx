@@ -184,10 +184,13 @@ This example is the same as Scenario 1 above, except it includes a digital signa
 
 {% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example Signed Direct Query Response" %}
 
+<div class="bg-success" markdown="1">
+
 ### Conforming to CDex Direct Query
 
 {% include conformance-requirements.md category="Direct Query" %}
 
+</div><!-- new-content -->
 <br />
 
 {% include link-list.md %}

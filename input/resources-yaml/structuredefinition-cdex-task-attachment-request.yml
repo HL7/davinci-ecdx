@@ -60,7 +60,7 @@ differential:
     #   path: Task.meta
     #   min: 1
     #   mustSupport: true
-      
+
     # - id: 'Task.meta.profile'
     #   path: 'Task.meta.profile'
     #   slicing:
@@ -92,7 +92,7 @@ differential:
     #   # type:
     #   #   - code: canonical
     #   fixedCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request
-    #   mustSupport: true 
+    #   mustSupport: true
 
     - id: Task.contained
       path: Task.contained
@@ -164,7 +164,7 @@ differential:
       min: 1
       max: '1'
       patternIdentifier:
-        type:         
+        type:
           coding:
             - system: 'http://hl7.org/fhir/us/davinci-cdex/CodeSystem/cdex-temp'
               code: tracking-id
@@ -227,7 +227,7 @@ differential:
       path: Task.statusReason.text
       min: 1
       mustSupport: true
-  
+
     - id: Task.intent
       path: Task.intent
       fixedCode: order
@@ -275,14 +275,14 @@ differential:
           aggregation:
             - contained
       mustSupport: true
-  
+
     - id: Task.for.reference
       path: Task.for.reference
       short: Contained resource reference
       min: 1
       fixedString: '#patient'
       mustSupport: true
-      # add invariant  
+      # add invariant
 
     # - id: Task.for.identifier     # Currently ms 0..1 in data profile!!
     #   path: Task.for.identifier
@@ -291,7 +291,7 @@ differential:
     #   min: 1
     #   mustSupport: true
     #  identifier on the contained patient
- 
+
     - id: Task.requester
       path: Task.requester
       short: Payer asking for attachments
@@ -322,7 +322,7 @@ differential:
         - code: Reference
           targetProfile:
             - 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'
-          aggregation: 
+          aggregation:
             - contained
       mustSupport: true
 
@@ -337,7 +337,7 @@ differential:
     #   path: Task.owner.identifier
     #   short: Provider ID
     #   definition: business identifier representing the Provider
-    #   min: 1 
+    #   min: 1
     #   mustSupport: true
 
     - id: Task.reasonCode
@@ -364,7 +364,7 @@ differential:
       max: '*'
       binding:
         strength: required
-        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use' 
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-claim-use'
       mustSupport: true
 
     - id: Task.reasonCode.coding:use.system
@@ -395,14 +395,14 @@ differential:
       short: Claim or prior authorization ID
       definition: The business identifier representing the claim or prior authorization ID
       min: 1
-      mustSupport: true    
-      # add invariant 
+      mustSupport: true
+      # add invariant
 
     - id: Task.restriction
       path: Task.restriction
       min: 0
       mustSupport: true
-    
+
     - id: Task.restriction.period
       path: Task.restriction.period
       short: Attachments due date
@@ -431,36 +431,36 @@ differential:
       # max: '*'
       binding:
 
-  # ====== New R5 additional Binding Element Here ====
-        extension:
-        - url: http://hl7.org/fhir/tools/StructureDefinition/additional-binding
-          extension:
-          - url: purpose
-            valueCode: extensible
-          - url: valueSet
-            valueCanonical: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code
-          - url: documentation
-            valueMarkdown: In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions.
-          - url: usage
-            valueUsageContext:
-                code:
-                  system: 'http://terminology.hl7.org/ValueSet/usage-context-type'
-                  code: workflow
-                valueCodeableConcept:
-                  coding:
-                    - system: http://hl7.org/fhir/claim-use
-                      code: preauthorization
-                      display: Preauthorization
-                  text: A payer request for additional information from the provider to support a prior authorization request
-          - url: any
-            valueBoolean: true
+  # # ====== New R5 additional Binding Element Here ====
+  #       extension:
+  #       - url: http://hl7.org/fhir/tools/StructureDefinition/additional-binding
+  #         extension:
+  #         - url: purpose
+  #           valueCode: extensible
+  #         - url: valueSet
+  #           valueCanonical: http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code
+  #         - url: documentation
+  #           valueMarkdown: In addition to using LOINC attachment codes, a payer may request for additional information from the provider to support a prior authorization request using X12's PWK01 Attachment Report Type Code.  Note that the PWK01 codes will not be published in this guide due to X12's IP restrictions.
+  #         - url: usage
+  #           valueUsageContext:
+  #               code:
+  #                 system: 'http://terminology.hl7.org/ValueSet/usage-context-type'
+  #                 code: workflow
+  #               valueCodeableConcept:
+  #                 coding:
+  #                   - system: http://hl7.org/fhir/claim-use
+  #                     code: preauthorization
+  #                     display: Preauthorization
+  #                 text: A payer request for additional information from the provider to support a prior authorization request
+  #         - url: any
+  #           valueBoolean: true
 
 
-  # ====== New R5 additional Binding Element Here ====
+  # # ====== New R5 additional Binding Element Here ====
 
 
         strength: extensible
-        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-loinc-attachment-codes' 
+        valueSet: 'http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-attachment-codes'
         # valueSet: 'http://loinc.org/vs/valid-hl7-attachment-requests'
       condition:
         - cdex-4
@@ -484,7 +484,7 @@ differential:
       type:
         - code: integer
       mustSupport: true
- 
+
 
     - id: 'Task.input:AttachmentsNeeded.type'
       path: Task.input.type
@@ -500,7 +500,7 @@ differential:
       type:
         - code: CodeableConcept
       mustSupport: true
-      
+
     - id: 'Task.input:QuestionnaireContext' # struct copied from SDC except using DTR Q/AQ profiles
       path: Task.input
       sliceName: QuestionnaireContext
@@ -573,7 +573,7 @@ differential:
       definition: The Payer Endpoint URL for submitting attachments using the $submit-attachment operation.
       min: 1
       max: '1'
-      mustSupport: true     
+      mustSupport: true
 
     - id: 'Task.input:PayerUrl.type'
       path: Task.input.type
@@ -596,7 +596,7 @@ differential:
       short: Service Date
       definition: Date of service or starting date of the service for the claim or prior authorization. This element SHALL be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization.
       max: '1'
-      condition: 
+      condition:
         - cdex-1
       mustSupport: true
 
@@ -613,7 +613,7 @@ differential:
       short: Service Date value
       type:
         - code: date
-      condition: 
+      condition:
         - cdex-2
       constraint:
         - key: cdex-2

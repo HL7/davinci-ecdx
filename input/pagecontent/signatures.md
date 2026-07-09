@@ -234,11 +234,13 @@ In these examples, a detached JWS signature is created using a signer's private 
 [^third]: "15 U.S. Code § 7006 - Definitions", LII / Legal Information Institute". Law.cornell.edu. Retrieved 2021-10-06. <https://www.law.cornell.edu/uscode/text/15/7006#5>
 [^fourth]: [RFC 7515] Jones, M., et al., "JSON Web Signature (JWS)", RFC 7515, ISSN: 2070-1721, May 2015, <https://tools.ietf.org/html/rfc7515>
 
+<div class="bg-success" markdown="1">
 
 ### Conforming to CDex Signatures
 
 {% include conformance-requirements.md category="Signatures" %}
 
+</div><!-- new-content -->
 <br />
 
 {% include link-list.md %}

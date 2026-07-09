@@ -90,10 +90,13 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |Attachment.Final||{{OK}}|
 {:.grid}
 
+<div class="bg-success" markdown="1">
+
 ### CDex Attachments Requirements
 
 {% include conformance-requirements.md category="Attachments" %}
 
 <br />
+</div><!-- new-content -->
 
 {% include link-list.md %}

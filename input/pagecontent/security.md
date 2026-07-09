@@ -31,10 +31,13 @@ If a data-consuming system requests sensitive information, <span class="bg-succe
 
 The [FHIR Data Segmentation for Privacy] (ballot version) standardizes how to apply security labels in FHIR. Once ONC or CMS adopts it or a suitable approach by regulation, a future version of this guide will reference it. In the interim, <span class="bg-success" markdown="1">implementers are encouraged to consult their compliance department to determine requirements and how best to satisfy them</span><!-- new-content -->, whether with in-band or out-of-band communications.
 
+<div class="bg-success" markdown="1">
 
 ### Conforming to CDex Security and Privacy
 
 {% include conformance-requirements.md category="Security and Privacy" %}
+
+</div><!-- new-content -->
 
 <br />
 

@@ -54,7 +54,7 @@ Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
 2. **Resolved - change required:** Change Response to Post Task to 201 (Correction) [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) See Changes [Here](task-based-approach.html#sequence-diagram)
 3. **Triaged:** Compatible, substantive (Enhancement) Update LOINC Attachment code ValueSet [FHIR-51430](https://jira.hl7.org/browse/FHIR-51430) See Changes [Here]($6)
 4. **Pre-Applied:** Compatible, substantive (Correction) Correct PAS Guidance [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) See Changes [Here](burden-reduction.html)
-5. **Pre-Applied:** Compatible, substantive (Clarification) Update to SHALL/SHOULD conformance clauses [FHIR-57464](https://jira.hl7.org/browse/FHIR-57464) See Changes:
+5. **Pre-Applied:** Compatible, substantive (Clarification) Update to SHALL/SHOULD conformance clauses [FHIR-57464](https://jira.hl7.org/browse/FHIR-57464),[FHIR-57794](https://jira.hl7.org/browse/FHIR-57794) See Changes:
   - [Conforming to CDex Attachments](attachments-conformance.html#introduction)
   - [Conforming to CDex Task Based Approach](task-based-conformance.html#introduction)
   - [Background — Where Does CDEX Fit in the Da Vinci Project](background.html#where-does-cdex-fit-in-the-da-vinci-project)
@@ -65,9 +65,10 @@ Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
   - [Signatures — CDex Signatures](signatures.html#cdex-signatures)
   - [CDex Purpose of Use Value Set — Using Not Otherwise Enumerated Codes](ValueSet-cdex-POU.html#using-not-otherwise-enumerated-codes)
   - [Solicited and Unsolicited Attachments](solicited-unsolicited-attachments.html)
-6. **Triaged:** Compatible, substantive (Correction) Correct misapplied additional bindings [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) See Changes [Here]($6)
-  - [Conforming to CDex Attachments](https://build.fhir.org/ig/HL7/davinci-ecdx/en/attachments-conformance.html#introduction)
-  - [Conforming to CDex Task Based Approach](https://build.fhir.org/ig/HL7/davinci-ecdx/en/task-based-conformance.html#introduction)
+6. **Pre-Applied:** Compatible, substantive (Correction) Correct misapplied additional bindings [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) See Changes Here:
+  - [CDex Attachment Codes Value Set](ValueSet-cdex-attachment-codes.html)
+  - [CDex Parameters Submit Attachment Profile](StructureDefinition-cdex-parameters-submit-attachment.html)
+  - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
 
 **Non-Substantive Changes**
 
@@ -106,6 +107,7 @@ Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
 12. **Pre-Applied:** Non-substantive (Clarification) Profile-specific guidance on interpreting Must Support for slices [FHIR-57708](https://jira.hl7.org/browse/FHIR-57708) See Changes:
   - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
   - [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
+13. **Pre-Applied:** Non-substantive (Enhancement) Add a Plain Language Summary to the home page [FHIR-57784](https://jira.hl7.org/browse/FHIR-57784) See Changes [Here](index.html)
 
 
 ### Version = 2.1.0

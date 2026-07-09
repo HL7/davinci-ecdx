@@ -12,6 +12,7 @@
 [CDexParametersSubmitAttachment]: StructureDefinition-cdex-parameters-submit-attachment.html
 [SubmitAttachment]: OperationDefinition-submit-attachment.html
 [CDexClaimUseCodes]: ValueSet-cdex-claim-use.html
+[CDexAttachmentCodesValueSet]: ValueSet-cdex-attachment-codes.html
 [CDexLOINCAttachmentCodesValueSet]: ValueSet-cdex-loinc-attachment-codes.html
 [CDexPWK01AttachmentReportTypeCodeValueSet]: ValueSet-cdex-pwk01-attachment-report-type-code.html
 [cdex-task-example19]: Task-cdex-task-example19.html

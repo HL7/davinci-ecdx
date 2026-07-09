@@ -2,16 +2,6 @@
   "resourceType": "ValueSet",
   "id": "cdex-pwk01-attachment-report-type-code",
   "url": "http://hl7.org/fhir/us/davinci-cdex/ValueSet/cdex-pwk01-attachment-report-type-code",
-  "identifier": [
-    {
-      "system": "http://loinc.org",
-      "value": "valid-hl7-attachment-requests"
-    },
-    {
-      "system": "urn:ietf:rfc:3986",
-      "value": "urn:oid:1.3.6.1.4.1.12009.10.2.6"
-    }
-  ],
   "name": "CDexPWK01AttachmentReportTypeCodeValueSet",
   "title": "CDex PWK01 Attachment Report Type Code Value Set",
   "status": "active",

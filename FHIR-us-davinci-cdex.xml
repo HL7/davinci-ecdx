@@ -17,6 +17,7 @@
 <artifact id="Bundle/cdex-document-digital-sig-example" key="Bundle-cdex-document-digital-sig-example" name="CDEX Document with Digital Signature Example"/>
 <artifact id="Bundle/cdex-electronic-sig-example" key="Bundle-cdex-electronic-sig-example" name="CDEX Document with Electronic Signature Example"/>
 <artifact id="Bundle/cdex-searchbundle-digital-sig-example" key="Bundle-cdex-searchset-digital-sig-example" name="CDEX SearchSet Bundle with Digital Signature Example"/>
+<artifact id="ValueSet/cdex-attachment-codes" key="ValueSet-cdex-attachment-codes" name="CDex Attachment Codes Value Set"/>
 <artifact deprecated="true" id="ValueSet/cdex-attachment-reason" key="ValueSet-cdex-attachment-reason" name="CDex Attachment Reason Value Set"/>
 <artifact deprecated="true" id="ValueSet/cdex-attachment-task-code" key="ValueSet-cdex-attachment-task-code" name="CDex Attachment Task Code Value Set"/>
 <artifact id="Bundle/cdex-bundle-inline-example-858p" key="Bundle-cdex-bundle-inline-example-858p" name="CDex Bundle Inline Example 858p"/>

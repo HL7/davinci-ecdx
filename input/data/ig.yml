@@ -258,6 +258,13 @@ definition:
       name: CDex Claim Use Value Set
       groupingId: AttachmentsTerminology
     - reference:
+        reference: ValueSet/cdex-attachment-codes
+      description: |
+        This set of concepts describes the type of attachments needed to support a claim or prior authorizations. This value set includes LOINC attachment codes and X12's PWK01 Attachment Report Type Code which can be used to support a prior authorization requests.
+      exampleBoolean: false
+      name: CDex Attachment Codes Value Set
+      groupingId: AttachmentsTerminology
+    - reference:
         reference: ValueSet/cdex-loinc-attachment-codes
       description: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attachments](https://loinc.org/attachments/).
       exampleBoolean: false
