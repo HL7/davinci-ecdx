@@ -104,9 +104,9 @@ Summary (Change Category) [Jira Issue](#), [Link to Updated Content](#)
   - [Signatures — Digital Signature Rules and Guidance for CDEX Bundle and QuestionnaireResponse](signatures.html#digital-signature-rules-and-guidance-for-cdex-bundle-and-questionnaireresponse)
   - [Signatures — Receiver/Validation Steps](signatures.html#receivervalidation-steps)
   - [Conforming to CDex Attachments](attachments-conformance.html) / [Conforming to CDex Task Based Approach](task-based-conformance.html)
-12. **Pre-Applied:** Non-substantive (Clarification) Profile-specific guidance on interpreting Must Support for slices [FHIR-57708](https://jira.hl7.org/browse/FHIR-57708) See Changes:
-  - [CDex Task Attachment Request Profile](StructureDefinition-cdex-task-attachment-request.html)
-  - [CDex Task Data Request Profile](StructureDefinition-cdex-task-data-request.html)
+12. **Pre-Applied:** Non-substantive (Clarification) Guidance on interpreting Must Support for slices, referencing the US Core "Must Support - Slices" discussion [FHIR-57708](https://jira.hl7.org/browse/FHIR-57708) See Changes:
+  - [Conforming to CDex Task Based Approach — Must Support Definition](task-based-conformance.html#cdex-must-support-definition)
+  - [Conforming to CDex Attachments — Must Support Definition](attachments-conformance.html#cdex-must-support-definition)
 13. **Pre-Applied:** Non-substantive (Enhancement) Add a Plain Language Summary to the home page [FHIR-57784](https://jira.hl7.org/browse/FHIR-57784) See Changes [Here](index.html)
 
 

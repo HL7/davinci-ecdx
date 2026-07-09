@@ -19,3 +19,9 @@ Task Consumer
 
 NOTE: *mustSupport* indicates what Da Vinci CDex conformant systems are expected to be able to handle. Systems are free to include additional
 data - and receivers **SHOULD NOT** reject instances that contain unexpected data elements if those elements are not [modifier elements].<sup>[§][{{conf_keylist[5]}}]</sup> However, <span class="bg-success" markdown="1">Task Sources cannot rely on Task Consumers to store, process, or do anything other than ignore data that is not marked as *mustSupport*.</span><!-- new-content -->
+
+<div class="bg-success" markdown="1">
+
+The rules above are consistent with, and additional to, the general Da Vinci-wide Must Support expectations [defined in HRex]({{site.data.fhir.ver.hrex}}/conformance.html#mustsupport). For a detailed discussion of how to interpret Must Support for primitive, complex, and choice elements, references, and slices in this guide — see the [US Core Must Support]({{site.data.fhir.ver.uscore7}}/must-support.html) rules.  For content profiled in other guides, see the Must Support rules in those guides.
+
+</div><!-- new-content -->

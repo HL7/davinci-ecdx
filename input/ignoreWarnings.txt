@@ -210,7 +210,7 @@ No definition could be found for URL value 'sending-attachments.html%
 No definition could be found for URL value 'requesting-attachments-questionnaire.html%
 No definition could be found for URL value 'signatures.html%
 
-# 32. ===  We provide Profile specific guidance on interpreting Must Support for slices where we state "Even if the parent element is marked as Must Support, each slice is explicitly tagged with the Must Support/Additional USCDI property to define that slice's conformance strength. If no Must Support/Additional USCDI property is defined for the slice, then support for that slice's definition is optional." ===
+# 32. ===  Slice Must Support inheritance is addressed in the CDex Must Support Definition section (task-based-conformance.html / attachments-conformance.html), which references the US Core "Must Support - Slices" guidance: a slicer's Must Support flag is not inherited by its slices, and each slice is explicitly tagged with its own Must Support property (or is optional if untagged). ===
 
 The slice 'QuestionnaireContext' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true
 The slice 'POU' on path 'Task.input' is not marked as 'must-support' which is not consistent with the element that defines the slicing, where 'must-support' is true

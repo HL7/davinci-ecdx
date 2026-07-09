@@ -18,7 +18,7 @@
   - A `Task.reasonReference`.reference referencing the claim or prior authorization ID (business Identifier).
   - A "PayerUrl" `Task.input` element representing the Payer endpoint URL the provider uses when submitting attachments with the `[$submit-attachment`](OperationDefinition-submit-attachment.html) operation.
 
-**It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):***
+**It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):**
   - <span class="bg-success" markdown="1">For prior authorization, the Payer may assign an administrative reference number *in addition to* the tracking control number/ACN. By using a combination of identifiers, the Payer can guarantee global uniqueness for associating attachments to the claim or prior authorization.</span><!-- new-content -->
   - A `Task.Restriction.period` element representing the due date for submitting the attachments
   - A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)
@@ -27,7 +27,7 @@
   - A "Signature" `Task.input` element. This is a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).
   - A "ServiceDate" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It is required if the attachment is for a claim.
 
-**It defines the following *optional* elements:***
+**It defines the following *optional* elements:**
 
   - A "QuestionnaireContext" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).†
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
@@ -37,7 +37,5 @@
   - A "QuestionnaireContext" `Task.output` element which references the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
 
 **Implementer Notes:**
-
-\* <span class="bg-success" markdown="1">Even if the parent element is marked as Must Support, each slice is explicitly tagged with the Must Support property to define that slice's conformance strength. If no Must Support property is defined for the slice, then support for that slice's definition is optional.</span><!-- new-content -->
 
 † Either a "AttachmentsNeeded" or a "QuestionnaireContext" `Task.input` element is required

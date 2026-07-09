@@ -16,7 +16,7 @@ Although the CDex Task Data Request Profile is based upon the [Da Vinci HRex Tas
   - A `Task.requester` element communicating who is requesting the data
   - A `Task.owner` element representing the Provider who is being asked to provide the data
 
- **It constrains the following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):***
+ **It constrains the following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):**
 
   - A `Task.identifier` element representing the unique data request identifier
   - A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request
@@ -33,7 +33,7 @@ Although the CDex Task Data Request Profile is based upon the [Da Vinci HRex Tas
   - A `Task.input` element representing a flag to indicate whether the requested data requires a signature
   - A "data" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.
 
-  **It defines the following elements to be *optional*:***
+  **It defines the following elements to be *optional*:**
   - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.
   - A "questionnaire" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).†
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
@@ -44,8 +44,6 @@ Although the CDex Task Data Request Profile is based upon the [Da Vinci HRex Tas
   - `Task.focus`
 
 **Implementer notes:**
-
-\* <span class="bg-success" markdown="1">Even if the parent element is marked as Must Support, each slice is explicitly tagged with the Must Support property to define that slice's conformance strength. If no Must Support property is defined for the slice, then support for that slice's definition is optional.</span><!-- new-content -->
 
 † Either a "query", "code", or "questionnaire" `Task.input` element is required
 
