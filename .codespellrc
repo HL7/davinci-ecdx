@@ -1,0 +1,3 @@
+[codespell]
+# EHR (Electronic Health Record) is flagged as a misspelling of "her".
+ignore-words-list = ehr,ehrs

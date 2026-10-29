@@ -1,3 +1,26 @@
+<div class="bg-success" markdown="1">
+### Version = 2.1.1
+- Publication Date: TBD, coordinated with the Da Vinci technical corrections
+- URL: `https://hl7.org/fhir/us/davinci-cdex/STU2.1.1` (not yet published)
+- Based on FHIR version: 4.0.1
+
+This Technical Correction of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide corrects errors in version 2.1.0. It does not change conformance requirements.
+
+#### Changes: {#changes-2-1-1}
+
+**Status: Summary (Jira Issue) Link to Change**
+
+No Jira trackers are applied yet. The candidates for this release are [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211), [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707), [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448), and [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526).
+
+The corrections below have no Jira tracker. They fix errors reported by the current publisher and validator.
+
+1. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
+2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group
+3. **Applied**: (Correction) Correct heading levels on the Sending Attachments page, so the attachment scenarios are siblings [See Changes Here](sending-attachments.html)
+4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
+
+</div><!-- new-content -->
+
 ### Version = 2.1.0
 - Publication Date: 2025-1-15
 - URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
@@ -15,9 +38,9 @@ These changes are the result of the community review of the 2.1.0-snapshot versi
 
 **Status: Summary (Jira Issue) Link to Change**
 
-1. **Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](solicited-unsolicited-attachments.html) and [See Changes Here](burden-reduction.html)
-2. **Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](index.html#about-this-guide)
-3. **Applied**: (Enhancement) Update Figure [FHIR-48384](https://jira.hl7.org/browse/FHIR-48384) [See Changes Here](background.html#where-does-cdex-fit-in-the-da-vinci-project)
+1. **Applied**: (Enhancement) Add guidance that should not bypass BR guides [FHIR-48404](https://jira.hl7.org/browse/FHIR-48404) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/solicited-unsolicited-attachments.html) and [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/burden-reduction.html)
+2. **Applied**: (Enhancement) Require adherence to Da Vinci Guiding Principles [FHIR-48406](https://jira.hl7.org/browse/FHIR-48406) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/index.html#about-this-guide)
+3. **Applied**: (Enhancement) Update Figure [FHIR-48384](https://jira.hl7.org/browse/FHIR-48384) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1/background.html#where-does-cdex-fit-in-the-da-vinci-project)
 4. **Applied**: (Clarification) Remove conflicting guidance on Quality Measure and Risk Adjustment [FHIR-48841](https://jira.hl7.org/browse/FHIR-48841)
 
 ### Version = 2.1.0-snapshot
@@ -301,7 +324,7 @@ These changes are the result of almost 60 trackers listed below. They include th
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#purpose-of-use)
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/security.html#general-considerations)
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/security.html#purpose-of-use)
-3. **Applied** Make Task.reasonReference.identifer 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
+3. **Applied** Make Task.reasonReference.identifier 0…1 MS ([FHIR-35151](https://jira.hl7.org/browse/FHIR-35151)) See Changes:
   - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/StructureDefinition-cdex-task-data-request.html)
   - [Various examples such as Here](https://hl7.org/fhir/us/davinci-cdex/STU1.1/Task-cdex-task-example1.html)
   - [Various example scenarios such as Here](https://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#step-1---post-task-to-provider-endpoint)
@@ -401,7 +424,7 @@ January 2021 Ballot comments and links to the updated content are below::
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html)
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/direct-query.html)
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1/task-based-approach.html#provenance)
-11. **Applied**: Referennce clinical safety section in HREX ([FHIR-30490](https://jira.hl7.org/browse/FHIR-30490)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/security.html#da-vinci-hrex-security-and-privacy-requirements)
+11. **Applied**: Reference clinical safety section in HREX ([FHIR-30490](https://jira.hl7.org/browse/FHIR-30490)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/security.html#da-vinci-hrex-security-and-privacy-requirements)
 12. **Applied**: Delete use of word "complete" ([FHIR-30494](https://jira.hl7.org/browse/FHIR-30494)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/background.html#what-do-payers-do-with-clinical-information)
 13. **Applied**: Explicitly reference the Da Vinci Guiding Principles in new Privacy and Security section. ([FHIR-30498](https://jira.hl7.org/browse/FHIR-30498)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/security.html)
 14. **Applied**: Update Figure 1 ([FHIR-30500](https://jira.hl7.org/browse/FHIR-30500)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/background.html#where-does-cdex-fit-in-the-da-vinci-project)
@@ -433,7 +456,7 @@ January 2021 Ballot comments and links to the updated content are below::
 29. **Applied**: Modify CapabilityStatement Rest summary table ([FHIR-30831](https://jira.hl7.org/browse/FHIR-30831)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/CapabilityStatement-data-consumer-server.html#resource--details)
 30. **Applied**: Add hyperlinks. ([FHIR-30834](https://jira.hl7.org/browse/FHIR-30834)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/specification.html)
 31. **Applied**: Add benefit of transition towards direct queries to Task benefits. ([FHIR-30835](https://jira.hl7.org/browse/FHIR-30835)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/task-based-approach.html
-32. **Appied**: Update section on Authoization requirements ([FHIR-30836](https://jira.hl7.org/browse/FHIR-30836)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/task-based-approach.html
+32. **Applied**: Update section on Authorization requirements ([FHIR-30836](https://jira.hl7.org/browse/FHIR-30836)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/task-based-approach.html
 33. **Applied**: Typo ([FHIR-30840](https://jira.hl7.org/browse/FHIR-30840)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html#home)
 34. **Applied**: Typo ([FHIR-30841](https://jira.hl7.org/browse/FHIR-30841)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html#home)
 35. **Applied**: Typo ([FHIR-30842](https://jira.hl7.org/browse/FHIR-30842)) [See Change Here](http://hl7.org/fhir/us/davinci-cdex/STU1/index.html#home)

@@ -1,11 +1,11 @@
 {
     "package-id": "hl7.fhir.us.davinci-cdex",
-    "version": "2.1.0",
-    "path": "http://hl7.org/fhir/us/davinci-cdex/STU2.1",
-    "mode": "milestone",
+    "version": "2.1.1",
+    "path": "http://hl7.org/fhir/us/davinci-cdex/STU2.1.1",
+    "mode": "technical-correction",
     "status" : "trial-use",
     "sequence": "STU 2.1",
-    "descmd": "This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring [HL7 International Payer/Provider Information Exchange Work Group](http://www.hl7.org/Special/committees/claims) members agreed to and voted on the resolution of the community review comments and edits to this guide. For a detailed list of the changes for this version, see the [Change Notes](http://hl7.org/fhir/us/davinci-cdex/STU2.1/changes.html).",
-    "desc": "This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide. For a detailed list of the changes for this version, see the Change Notes at http://hl7.org/fhir/us/davinci-cdex/STU2.1/changes.html.",
-    "changes": "changes.html" 
+    "descmd": "The changes in this technical correction have been reviewed and commented upon by the public through the HL7 errata process. The [HL7 International Payer/Provider Information Exchange Work Group](http://www.hl7.org/Special/committees/claims) members agreed to and voted on the resolution of the community review comments and edits to this guide. For a detailed list of the changes for this version, see the [Change Notes](http://hl7.org/fhir/us/davinci-cdex/STU2.1.1/changes.html).",
+    "desc": "The changes in this technical correction have been reviewed and commented upon by the public through the HL7 errata process. The HL7 International Payer/Provider Information Exchange Work Group members have agreed to and voted on the resolution of the community comments and edits to this guide. For a detailed list of the changes for this version, see the Change Notes at http://hl7.org/fhir/us/davinci-cdex/STU2.1.1/changes.html.",
+    "changes": "changes.html"
 }

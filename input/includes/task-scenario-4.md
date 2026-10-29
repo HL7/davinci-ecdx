@@ -1,5 +1,5 @@
 
-###### Step 1 - Subscribe to Task
+##### Step 1 - Subscribe to Task
 
 The Payer subscribes to the Provider's Subscription endpoint to receive "id-only" notifications when submitted Tasks are updated. The subscription resource uses the canonical URL `http://hl7.org/fhir/us/davinci-hrex/SubscriptionTopic/Task`. The Provider accepts the Subscription and returns it in the response body with an "active" status. 
 
@@ -51,7 +51,7 @@ Location: http://example.org/FHIR/Subscription/cdex-example1-query-subscription/
 ~~~
 
 
-###### Step 2 - POST Task to Provider endpoint
+##### Step 2 - POST Task to Provider endpoint
 
 
 **Request**
@@ -94,7 +94,7 @@ Location: http://example.org/FHIR/Task/cdex-task-example2/_history/1
 
 
 
-###### Step 3 - Receive Notification
+##### Step 3 - Receive Notification
 
 When the task status is "completed", it triggers a notification to the Payer. As defined in the [Subscription R5 Backport Implementation Guide], the notification is a *history Bundle*. The first entry of the bundle is a Parameters resource that communicates the subscription status information. In addition to the subscription status information, Task IDs are listed in the "focus" part parameter.
 
@@ -119,7 +119,7 @@ Post http://example.org/FHIR/Payer/cdex-task-watch
 {% include response-headers.md %}
 
 
-###### Step 4 - Fetch Task
+##### Step 4 - Fetch Task
 
 Fetch the Task using the Task id returned in the subscription notification in step 3.
 
@@ -148,7 +148,7 @@ GET [base]Task/cdex-task-example2
 ~~~
 
 
-###### Step 5 - Fetch Task Output
+##### Step 5 - Fetch Task Output
 
 Fetch the resources referenced in the `Task.output` from the Task returned in step 4.
 

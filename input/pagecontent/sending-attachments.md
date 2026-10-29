@@ -43,7 +43,7 @@ In the following examples, a Provider creates a claim and sends *unsolicited att
 
 `POST [base]/$submit-attachment`
 
-##### Scenario 1a: CCDA Document Attachments
+#### Scenario 1a: CCDA Document Attachments
 
 - Based on the Payer's pre-defined rules, the Provider submits C-CDA Documents as additional documentation for a claim.
   - Typically, when the attachments are C-CDA documents, as in this scenario, they are already digitally signed and supply provenance information. Therefore, FHIR signatures and external Provenance resources are not needed.
@@ -59,7 +59,7 @@ This scenario is the same as Scenario 1a above, except the attachments are submi
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario1b.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
-##### Scenario 2: Laboratory Results Attachments
+#### Scenario 2: Laboratory Results Attachments
 
  This scenario is the same as Scenario 1a, except the Provider submits laboratory results supporting a claim. There are multiple attachments, each populated with a FHIR Observation resource. If a signature were required, the provider system would convert it to a signed FHIR document, as shown in the example in the signatures section.
 

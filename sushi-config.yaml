@@ -15,6 +15,8 @@ extension:
 definition:
   extension:
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
+      valueCode: hl7.fhir.us.davinci-cdex#2.1.0
+    - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency
       valueCode: hl7.fhir.us.davinci-cdex#2.0.0 
     - url: http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency  #<<<<< these are to inform the publisher link checker that links to this IG mostly in the change log are valid
       valueCode: hl7.fhir.us.davinci-cdex#2.0.0-ballot
@@ -43,8 +45,8 @@ copyright: >-
 description: >-
   This IG provides detailed guidance that helps implementers use FHIR-based interactions to support specific exchanges of clinical data between providers and payers (or other providers).
 license: CC0-1.0
-date: '2024-11-01'
-version: 2.1.0
+date: '2026-10-28'  # refresh at publication freeze
+version: 2.1.1
 fhirVersion: 4.0.1
 dependencies:
 
@@ -369,7 +371,7 @@ parameters:
     - input/pagecontent
     - input/intro-notes
     - fsh-generated/includes
-  path-expansion-params: '../../input/_resources/exp-params.json'  # for using US ed of SNOMED
+  path-expansion-params: 'input/_resources/exp-params.json'  # for using US ed of SNOMED (path is relative to the IG resource named in ig.ini, now at the repo root)
   # path-liquid: # list of relative paths that contains liquid templates for generating narrative
   #   - liquid
   active-tables: 'false'
@@ -382,6 +384,7 @@ parameters:
   # excludexml: 'false'
   # excludejson: 'false'
   excludettl: 'true'
+  old-artifacts: 'true'  # use the old static artifacts layout so the FHIR Artifacts menu anchors resolve
   # excludemap: 'true'
   # excludeexample: 'true'
   generate:

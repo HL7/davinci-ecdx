@@ -1,9 +1,9 @@
 
 [Bundle]: {{site.data.fhir.path}}bundle.html
-[CapabilityStatements]: artifacts.html#13
+[CapabilityStatements]: artifacts.html#1
 [Downloads]: downloads.html "Downloads Page"
 [ElementDefinition.mustSupport]: {{site.data.fhir.path}}elementdefinition-definitions.html#ElementDefinition.mustSupport
-[Examples]: artifacts.html#6
+[Examples]: artifacts.html
 [FHIR Artifacts]: artifacts.html
 [FHIR at Scale Taskforce (FAST)]: https://oncprojectracking.healthit.gov/wiki/pages/viewpage.action?pageId=43614268
 [FHIR Data Segmentation for Privacy project]: https://www.hl7.org/special/Committees/projman/searchableProjectIndex.cfm?action=edit&ProjectNumber=1549
