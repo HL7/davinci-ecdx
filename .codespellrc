@@ -1,3 +1,12 @@
 [codespell]
 # EHR (Electronic Health Record) is flagged as a misspelling of "her".
 ignore-words-list = ehr,ehrs
+
+# The two signed-bundle example pages are committed exports of
+# CDEX-Signatures/Digsig_*.ipynb, and most of their content is the digitally
+# signed Bundle payload plus the canonicalized bytes that were signed.
+# "Correcting" a spelling inside that payload invalidates the signature the
+# example exists to demonstrate (e.g. "recurrance" appears in the signed search
+# URL and in the signed canonical bytes). Genuine prose typos in these pages
+# must be fixed in the notebook and re-exported, not edited here.
+skip = *signed-document-bundle-example.md,*signed-searchset-bundle-example.md

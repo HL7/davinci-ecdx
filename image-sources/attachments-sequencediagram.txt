@@ -1,4 +1,5 @@
 #text for https://sequencediagram.org/
+#for input/images/attachments-sequencediagram.svg
 
 participant Provider (Data Source)
 

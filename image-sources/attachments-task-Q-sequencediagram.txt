@@ -1,4 +1,5 @@
 #text for https://sequencediagram.org/
+#for input/images/attachments-task-Q-sequencediagram.svg
 ```sequence
 title Requesting Attachments Using FHIR Questionnaire
 participant Payer

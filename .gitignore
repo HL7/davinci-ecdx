@@ -17,3 +17,11 @@ CLAUDE.md
 /.claude
 CDex-v2.1.1-technical-correction-plan.md
 .qa-eslintcompact_previous.txt
+
+# IG Publisher spec-internals output (regenerated every build; nothing in the repo consumes it)
+FHIR-us-davinci-cdex.xml
+
+# IG Publisher / SUSHI output that is not a build input (see CLAUDE.md)
+Requirements-fromNarrative.json
+/fsh-generated/data/
+/fsh-generated/fsh-index.txt

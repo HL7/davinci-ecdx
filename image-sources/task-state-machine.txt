@@ -1,6 +1,7 @@
 digraph cdex_task_state_machine {
   label="CDex Task State Diagram";
   // use https://www.devtoolsdaily.com/graphviz/ to generate and download svg image
+  // for input/images/task-state-machine.svg
   
   // Define special nodes representing the start and end points with a point shape
   node [shape=point]; START, END;
