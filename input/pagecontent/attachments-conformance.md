@@ -39,7 +39,7 @@ Submit Attachment Operation|{{OK}}|{{OK}}|{{OK}}|{{OK}}
 
 #### Payer Data Consumer Server Role
 
-Data Consumer Client|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
+Data Consumer Server|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
 |:---:|:---:|:---:|:---:|:---:|
 Submit Attachment Operation|{{OK}}|{{OK}}|{{OK}}|{{OK}}
  AttachTo parameter Terminology|`claim`|`claim`|`preauthorization`|`preauthorization`
@@ -47,7 +47,7 @@ Submit Attachment Operation|{{OK}}|{{OK}}|{{OK}}|{{OK}}
 
 #### Payer Data Consumer Client Role
 
-Data Consumer Server|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
+Data Consumer Client|Unsolicited Claims|Solicited Claims|Unsolicited Prior Authorization|Solicited Prior Authorization
 |:---:|:---:|:---:|:---:|:---:|
 CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
  Task.reasonCode Terminology|-|`claim`|-|`preauthorization`
@@ -64,7 +64,7 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |Requesting Attachments Using Questionnaire||{{OK}}|
 |Signatures|{{OK}}||
 |Representing The Purpose Of Use (POU) For The Requested Data||{{OK}}|
-|Ability to submit attachments data in multiple submissions||{{OK}}|
+|Ability to submit attachment data in multiple submissions||{{OK}}|
 {:.grid}
 
 \* See the next section
@@ -78,7 +78,7 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |Parameter|Required|Optional|
 |:---:|:---:|:---:|
 |TrackingId|{{OK}}||
-|AttachTo|{{OK}}(see above)|
+|AttachTo|{{OK}}(see above)||
 |PayerId||{{OK}}|
 |OrganizationId|{{OK}}||
 |ProviderId|{{OK}}||
@@ -86,7 +86,7 @@ CDex Task Attachment Request Profile |{{X}}|{{OK}}|{{X}}|{{OK}}
 |ServiceDate|{{OK}}(claims)|{{OK}}(prior authorization)|
 |Attachment.LineItem||{{OK}}|
 |Attachment.Code||{{OK}}(It SHOULD be present when submitting unsolicited attachments)|
-|Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire|{{OK}}(Servers SHOULD support other FHIR types)|
+|Attachment.Content|{{OK}}(DocumentReference, QuestionnaireResponse if support Requesting Attachments Using Questionnaire)|{{OK}}(Servers SHOULD support other FHIR types)|
 |Attachment.Final||{{OK}}|
 {:.grid}
 

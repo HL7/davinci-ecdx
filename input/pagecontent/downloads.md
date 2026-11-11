@@ -32,7 +32,7 @@ Schematrons are also available for download:
 
 ### Example Flow Chart Diagrams:
 
-These example flow chart diagrams were created to assist the TestScript and Reference Implementation development team and are provided here to assist developers in implementing CDEX transactions. They are examples only, and actual workflows may differ from them. 
+These example flow chart diagrams were created to assist the TestScript and Reference Implementation development team and are provided here to assist developers in implementing CDex transactions. They are examples only, and actual workflows may differ from them. 
 
 
  - [Example Flow Chart Diagrams (compressed folder)](flowcharts.zip)

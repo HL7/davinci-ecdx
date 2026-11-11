@@ -19,7 +19,7 @@
 | Line Item(s) | Attachment.LineItem | Loop: 2000A Segment: STC10 Notes: Used to convey status of the entire claim or a specific service line | Claim/prior authorization line item numbers |
 | Attachment Code<!-- new-content --> | Attachment.Code | Loop: 2000A Segment: STC01-01 | LOINC Attachment Code. For prior authorization, [X12] PWK01 Report Type Codes may also be used. |
 | Date of Service | ServiceDate | Loop: 2100A Segment: DTP03 | Date of service for claim/prior authorization |
-| Member ID | MemberId | Loop: 1000D Segment: NM109 Notes: NM108="MI" | Payer assigned patient identifier |
+| Member ID | MemberId | Loop: 1000D Segment: NM109 Notes: NM108="MI" | Payer-assigned patient identifier |
 {:.grid}
 
 The data element mapping table is available as a [CSV](data-element-mapping.csv) and [Excel](data-element-mapping.xlsx) file.

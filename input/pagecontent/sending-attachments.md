@@ -1,6 +1,6 @@
 
 
-This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12n 275 transaction, the X12 N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request. 
+This page documents a FHIR-based approach to sending attachments for claims or prior authorization directly to a Payer.\* This transaction is used for both *solicited* and *unsolicited* attachments. It is intended to be compatible with the X12N 275 transaction, the X12N 837I and 837P for claims purposes, and the 278 response for authorizations (for more information on X12 defined transactions, see [X12 Transaction Sets]). Compatibility assumes that the appropriate identifiers are supported in the submission to facilitate the association of the attachment with the claim submission or authorization request. 
 
 {% include see-conf.md %}
 
@@ -11,27 +11,27 @@ This guide defines [`$submit-attachment`], a simple RESTful interaction for exch
 See the [`$submit-attachment`] operation definition for further details.
 
 <div class="stu-note " markdown="1">
-Based upon additional testing, we intend to to upgrade the Endpoint Discovery Strategy guidance (**SHOULD**) to  a requirement (**SHALL**) in the next version of CDex
+Based upon additional testing, the editors intend to upgrade the Endpoint Discovery Strategy guidance (**SHOULD**) to a requirement (**SHALL**) in the next version of CDex.
 </div><!-- stu-note -->
 
 ### Technical Workflow
 
-As shown below in Figure 13, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
+As shown below in Figure 14, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 
-{% include img.html img="attachments-sequencediagram.svg" caption="Figure 13" %}
+{% include img.html img="attachments-sequencediagram.svg" caption="Figure 14" %}
 
 
 1. The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization
 2. The Provider invokes [`$submit-attachment`] operation to submit attachments to the Payer
 3. The Payer responds with an HTTP response that accepts or rejects the transaction.
-   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments can not be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.
+   - The Payer **SHOULD** return an informational OperationOutcome with the HTTP accept response if the attachments cannot be associated with a *current* claim or prior authorization and are being held for association with a *future* claim or prior authorization. An OperationOutcome example is used in Scenario 1b below.
 4. The Payer associates the attachments to the claim or prior authorization and processes the claim.
 
 
 ### Data Elements for Sending Attachments
 
-When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the [`$submit-attachment`] parameters and their corresponding x12n 275 elements in the following table. {% include X12_IP.md %}  
+When sending attachments, the following data elements are needed to associate an attachment to a claim or prior authorization. They are mapped to the [`$submit-attachment`] parameters and their corresponding X12N 275 elements in the following table. {% include X12_IP.md %}  
 
 {% include attachments_to_275.md %}
 
@@ -53,7 +53,7 @@ In the following examples, a Provider creates a claim and sends *unsolicited att
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario1a.md" b_title = "Click Here To See Example CCDA Document Attachments" %}
 
-#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to claim
+#### Scenario 1b: CCDA Document Attachments Submitted *Prior* to Claim
 
 This scenario is the same as Scenario 1a above, except the attachments are submitted *prior* to the claim. The Payer accepts the attachments and returns an OperationOutcome informing the Provider system that the attachments are waiting for the claim.
 
@@ -78,7 +78,7 @@ Some data consumers may require that the data they receive be signed. When signa
 
 {% include signature-disclaimer.md %}
 
-#### The Payer Requirements
+#### Payer Requirements
 
 - For *Unsolicited* Attachments, the Payer *pre-negotiates* with the Provider whether electronic or digital signatures are required. If signatures are required, *all* attachments will be signed by the provider submitting them.
 - For *Solicited* Attachments, the Payer *pre-negotiates* with the Provider whether electronic or digital signatures are required for:
@@ -91,6 +91,8 @@ Some data consumers may require that the data they receive be signed. When signa
 
 {% include data-source-sig-rules.md %}
 
+#### Example: Signed FHIR Resource Attachments
+
 - In this example, the Provider submits a patient's active conditions to the Payer to support a claim.
 Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA attachment, FHIR resources representing the patient's active conditions are transformed into a digitally signed FHIR Document bundle.
 - See the [Signatures] page for a detailed explanation of how the signature was created and verified.
@@ -99,7 +101,7 @@ Unlike Scenario 1, which uses DocumentReference resources to index the C-CDA att
 
 #### Example: The Signature Cannot Be Verified
 
-This example is the same as the previous one, except the digital signature cannot be verified.  However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
+This example is the same as the previous one, except the digital signature cannot be verified. However, the interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
 
 - In this example, the Provider submits the patient's active conditions to the Payer to support a claim.
 - Unlike the previous example, the Payer cannot verify the signature because the certificate is expired.
@@ -109,10 +111,10 @@ This example is the same as the previous one, except the digital signature canno
 
 #### Example: Signature Missing
 
-This example is the same as Scenario 1 above, except a digital signature is required but is absent.  The interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
+This example is the same as Scenario 1 above, except a digital signature is required but is absent. The interaction it illustrates would be the same whether the attachment was a digitally signed C-CDA, FHIR Document, or QuestionnaireResponse.
 
-- The Provider submits CCDA Documents as additional documentation for a claim.
-- The attachment is an *unsigned* CCDA document, and the Payer requires a digital signature in this scenario.
+- The Provider submits C-CDA Documents as additional documentation for a claim.
+- The attachment is an *unsigned* C-CDA document, and the Payer requires a digital signature in this scenario.
 - An HTTP `400 Bad Request` and OperationOutcome are returned.
 
 {% include examplebutton_default.html example="unsolicited-attachment-scenario4.md" b_title = "Click Here To See an Example Where the Signature is Missing" %}

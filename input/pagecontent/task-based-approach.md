@@ -1,14 +1,14 @@
 
 ### Introduction
 
-This guide uses a Task Based Approach to satisfy the Data Consumer's need to request the information it needs when it can not perform a direct query. The following factors determine whether to use this approach:
+This guide uses a Task Based Approach to satisfy the Data Consumer's need to request the information it needs when it cannot perform a direct query. The following factors determine whether to use this approach:
 
 - Access to the data is restricted, and specific authorization is needed (for example, due to patient privacy concerns, the data needs to be reviewed or filtered)
 - The appropriateness of the request needs to be determined
 - The data needed is described in an unstructured or non-computable form. For example:
   - The Data Consumer may not know specific codes or identifiers to make a direct query
   - The Data Consumer can only request the data using free text - there is no way to describe the data in a structured format.
-- The Data Consumer requests the data using FHIR [Questionnaire].  
+- The Data Consumer requests the data using FHIR [Questionnaire]
 - A Direct Query is otherwise not feasible
 
 In most situations, a provider or designated staff must find, aggregate, filter, or approve the release of the data. However, in other use cases, mutually agreed upon data sets for specific purposes can be automatically fulfilled without human intervention.
@@ -22,7 +22,7 @@ In most situations, a provider or designated staff must find, aggregate, filter,
 - Allows conveying the 'status' of a request in progress
    - Monitoring for status does not require a change in workflow from monitoring for final results - i.e., there is no increase in complexity for the receiver whether status updates occur or not
    - Note that fully automated processes typically will not have status updates.
-- Provides the ability to represent the needed data using a FHIR [Questionnaire] 
+- Provides the ability to represent the needed data using a FHIR [Questionnaire]
 - Provides the ability to represent the Purpose of Use in the Task
 - Provides the ability to supply work queue hints to the Task recipient
 - Enables referencing the object that directly leads to the task - a particular claim, for example
@@ -41,18 +41,18 @@ In most situations, a provider or designated staff must find, aggregate, filter,
   4. referencing a FHIR [Questionnaire]
 
 Implementers of this guide [*must support*] search syntax and coded inputs. However, free text and Questionnaire input are optional capabilities. See the [Conforming to CDex Task Based Approach] page for how systems declare what they support for the various actors and roles.
-   
+
 `Task.output` represents the requested data that is returned. This output is a FHIR reference to:
    - FHIR Search Bundle (e.g., a query response)
    - FHIR Documents (e.g., C-CDA on FHIR)
    - Other data formats attached to or referenced by a FHIR [DocumentReference] resource (e.g., a C-CDA document)
-   - a FHIR [QuestionnaireResponse] 
+   - a FHIR [QuestionnaireResponse]
    - Other Individual FHIR resources (e.g., Condition)
 
 
 #### Purpose of Use
 
-The current state of healthcare data exchange is typically limited to a single, well-known, and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element representing a new way to dynamically provide additional granularity for the POU using codes defined in the [CDex Purpose of Use Value Set]. The value set page documents and illustrates the hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts.  
+The current state of healthcare data exchange is typically limited to a single, well-known, and pre-established purpose-of-use (POU). The CDex Task Data Request Profile defines an optional element representing a new way to dynamically provide additional granularity for the POU using codes defined in the [CDex Purpose of Use Value Set]. The value set page documents and illustrates the hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts.
 
 If the Data Source supports this element, a transaction-level POU permits more discrimination than "Treatment, Payment, or Health Care Operations (TPO)" which systems use today. It also enables a POU that differs from the default purpose of use for that data-consuming system. It allows the Data Source to make necessary decisions about whether to provide the information or whether/how to filter the information. The example transactions below illustrate the usage of the POU element.
 
@@ -85,13 +85,13 @@ The patient's [FHIR id] is a prerequisite to performing FHIR RESTful Direct Quer
 
 Figure 8 below illustrates a "typical" state machine for CDex Task. The Data Consumer creates the Task with a status of "requested". The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.
 
-{% include img.html img="task-state-machine.svg" caption="Figure 8" %} 
+{% include img.html img="task-state-machine.svg" caption="Figure 8" %}
 
 ### Fetching the Data
 
 
 
-When the task is complete, its outputs are referenced by the `Task.output` element, and the `Task.status` is updated to "completed". The Task can refer to external resources, or it can refer to a search set Bundle [contained] within the Task resource itself, either of which the Data Consumer can subsequently fetch. As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. Note that a contained Bundle does not have an independent existence. However, by using a contained Bundle, the Data Source can provide information to Data Consumers who can not query the Data source directly via FHIR RESTful reads or searches. For example, only authorized Data Consumers can access patient data directly. Since the Data Source controls the release of information contained in the Bundle, patient privacy and security are maintained.
+When the task is complete, its outputs are referenced by the `Task.output` element, and the `Task.status` is updated to "completed". The Task can refer to external resources, or it can refer to a search set Bundle [contained] within the Task resource itself, either of which the Data Consumer can subsequently fetch. As documented [here](direct-query.html#read-warning), when signatures are required, the Data Consumer must use a [FHIR RESTful search] instead of [FHIR RESTful read]. Note that a contained Bundle does not have an independent existence. However, by using a contained Bundle, the Data Source can provide information to Data Consumers who cannot query the Data source directly via FHIR RESTful reads or searches. For example, only authorized Data Consumers can access patient data directly. Since the Data Source controls the release of information contained in the Bundle, patient privacy and security are maintained.
 
 #### How Long is the Data Available
 
@@ -99,7 +99,7 @@ The Data Source determines how long the Data Consumer can access the completed T
 
 ### Example Transactions Based on Query Code and Free Text Inputs
 
-Following the guidance in this guide and HRex, getting clinical data from the Data Source is typically a two-to-five-step process for the Data Consumer. The following example transactions show two scenarios using task-based exchanges to request and retrieve clinical data from a Data Source(HIT). The Task examples in scenario 1 use a FHIR RESTful query syntax and a free text input. The scenario 2 example uses a coded input in the Task. The following section documents an example transaction in which the Task input is a FHIR Questionnaire. 
+Following the guidance in this guide and HRex, getting clinical data from the Data Source is typically a two-to-five-step process for the Data Consumer. The following example transactions show two scenarios using task-based exchanges to request and retrieve clinical data from a Data Source (HIT). The Task examples in scenario 1 use a FHIR RESTful query syntax and a free text input. The scenario 2 example uses a coded input in the Task. The following section documents an example transaction in which the Task input is a FHIR Questionnaire.
 
 #### Scenario 1
 
@@ -143,13 +143,11 @@ This example repeats the first, except Patient B's active conditions referenced 
 
 #### Scenario 2
 
-This scenario demonstrates requesting a non-FHIR document (PDF, C-CDA) using a coded input :
-
-Payer A Seeks the insured Person/Patient B's latest progress notes from Provider C to improve care coordination.
+This scenario demonstrates requesting a non-FHIR document (PDF, C-CDA) using a coded input:
 
 ##### Progress note Exam Notes as PDF
 
-Payer A Seeks the Insured Person/Patient B's latest progress notes from Provider C to improve care coordination.
+Payer A Seeks the insured Person/Patient B's latest progress notes from Provider C to improve care coordination.
 
 Preconditions and Assumptions:
 
@@ -157,7 +155,7 @@ Preconditions and Assumptions:
 1. {{ site.data.base-example-list[8] }}
 1. {{ site.data.base-example-list[9] }}
 1. {{ site.data.base-example-list[4] }}
-2. {{ site.data.base-example-list[5] }} the LOINC attachment code 11506-3, History & Physical Note, is used for the actual request.
+2. {{ site.data.base-example-list[5] }} the LOINC attachment code 11506-3, Progress note, is used for the actual request.
 3. Patient B's documents referenced by Task.output are "contained resources", and the actual documents are base64 pdf files in the `DocumentReference.content.attachment.data` elements. By polling the Task, the Payer already has the data when the completed Task is fetched, and there is no need to perform an additional RESTful GET.
 
 
@@ -176,13 +174,13 @@ Preconditions and Assumptions are the same as in the previous example, except th
 
 ### Using Questionnaire as Task Input
 
-The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 8 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
+The [CDex Task Data Request Profile] supports requests for more detailed data using Questionnaire. When a Data Consumer references a FHIR Questionnaire as an input parameter, the Task represents a request for the Data Source to complete the questionnaire (form). CDex defines a specific `Task.code` that directs the Data Source to launch a [Da Vinci Documentation Templates and Rules (DTR)] application to use the Data Consumer provided Questionnaire and results from any CQL execution to generate a QuestionnaireResponse resource containing the necessary information. Figure 9 summarizes the steps for requesting and completing a questionnaire using a CDex Task-Based request and DTR. The sequence diagram in the next section illustrates these transactions in more detail:
 
-{% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 8" %} 
+{% include img.html img="taskbased-task-Q-summary.svg" caption="Figure 9" %}
 
 **Step 1:** The Data Consumer POSTs a Task directly to the Data Source. The Task is a request to complete a questionnaire.
 
-**Step 2:** If the Task.code is "data-request-questionnaire", the Data Source launches DTR and shares the Task as a launch parameter (i.e., DTR has access to read and update the Task and access to other resources to complete the QuestionnaireResponse in Step 3)
+**Step 2:** If the `Task.code` is "data-request-questionnaire", the Data Source launches DTR and shares the Task as a launch parameter (i.e., DTR has access to read and update the Task and access to other resources to complete the QuestionnaireResponse in Step 3).
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
@@ -194,9 +192,9 @@ The [CDex Task Data Request Profile] supports requests for more detailed data us
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in Figure 9 below depicts the FHIR RESTful transactions and processes involved between the Data Consumer, Data Source, and DTR application needed to request, fill, and return a questionnaire using the CDex Task-based approach. It references a "DTR Launch". If DTR is a native EHR application, the launch is implementation specific. If it is a SMART on FHIR Application, the [DTR SMART App Launch] section documents the launch sequence and parameters.
+The sequence diagram in Figure 10 below depicts the FHIR RESTful transactions and processes involved between the Data Consumer, Data Source, and DTR application needed to request, fill, and return a questionnaire using the CDex Task-based approach. It references a "DTR Launch". If DTR is a native EHR application, the launch is implementation specific. If it is a SMART on FHIR Application, the [DTR SMART App Launch] section documents the launch sequence and parameters.
 
-{% include img.html img="taskbased-task-Q-sequencediagram.svg" caption="Figure 9" %}
+{% include img.html img="taskbased-task-Q-sequencediagram.svg" caption="Figure 10" %}
 
 #### Example of Requesting Data Using A FHIR Questionnaire
 
@@ -209,7 +207,7 @@ Preconditions and Assumptions:
 3. {{ site.data.base-example-list[3] }}
 4. {{ site.data.base-example-list[4] }}
 5. The Payer POSTS a Task to the Provider endpoint requesting the Provider to complete the referenced Questionnaire.
-6. The Provider uses a  DTR SMART App or EHR native application to complete the Questionnaire.
+6. The Provider uses a DTR SMART App or EHR native application to complete the Questionnaire.
 7. {{ site.data.base-example-list[6] }}
 8. The Payer fetches the QuestionnaireResponse referenced by `Task.output`.
 
@@ -231,7 +229,7 @@ In this scenario, Payer A Seeks Insured Person/Patient B's glycated hemoglobin (
 1. {{ site.data.base-example-list[11] }}
 2. {{ site.data.base-example-list[15] }}
 3. Payer A knows the appropriate LOINC codes (4548-4 Hemoglobin A1c/Hemoglobin.total in Blood)
-4. {{ site.data.base-example-list[16] }} 
+4. {{ site.data.base-example-list[16] }}
 
 
 {% include examplebutton_default.html example="task-scenario-3" b_title = 'Click Here To See Example Unsuccessful Task Based Transaction' %}
@@ -246,7 +244,7 @@ Task-based exchanges can take one of two forms - subscription or polling, as des
 
 Polling is a mechanism for conveying new data to a Data Consumer as (or shortly after) the data is created or updated without requiring the Data Source to be aware of the specific needs of the Data Consumer. The Data Consumer repeatedly queries the Data Source to see if there is new data. For example, in the Da Vinci CDex use case, the Data Consumer would poll the Data Source by fetching the Task resource to see if it has been updated. Polling is the *default option* if the Data Source does not support subscribing to the Task as described below.
 
-Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the   Data Source's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that. 
+Data consumers can poll for a single Task or across several Tasks. The frequency must be often enough that the time between when the relevant data is created and when the Data Consumer receives it is sufficiently short for the Data Consumer's needs. However, it must be infrequent enough that the Data Source's resources are not over-taxed by the repeated query. Data Consumers **SHOULD** perform this operation in an automated/background manner after 1 minute to return automated responses and no more than every 5 minutes for the first 30 minutes and no more frequently than once every hour after that.
 
 
 
@@ -260,13 +258,13 @@ In the subscription mechanism, instead of the Data Consumer regularly querying t
 
 Da Vinci CDex Data Sources who choose to support Subscription **SHALL** comply with the [Subscription R5 Backport Implementation Guide] and the Da Vinci Health Record Exchange (HRex) [Subscription requirements](https://build.fhir.org/ig/HL7/davinci-ehrx/task.html#subscription) for subscribing to Task updates. These implementation guides "pre-adopt" the FHIR R5 topic-based subscription approach in R4 implementations since most U.S. EHR vendors have agreed to support it.
 
-##### HRex Task Subscription Topic 
+##### HRex Task Subscription Topic
 
-The Da Vinci Health Record Exchange (HRex) guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR 4B and later versions.
+The Da Vinci Health Record Exchange (HRex) guide formally defines the [HRex Task Subscription Topic](https://build.fhir.org/ig/HL7/davinci-ehrx/SubscriptionTopic-Task.html) Subscription Topic as a [SubscriptionTopic], a resource defined in FHIR R4B and later versions.
 
 - The Data Source **SHALL** support the HRex Task Subscription Topic and **MAY** support other subscription topics.
 
-Note that supporting the FHIR SubscriptionTopic resource nor the equivalent Basic resource versions described in the R5 Backport Implementation Guides is NOT required by this guide to support subscriptions.
+Note that this guide does not require support for the FHIR SubscriptionTopic resource or the equivalent Basic resource versions described in the R5 Backport Implementation Guides in order to support subscriptions.
 {:.bg-warning}
 
 ##### Discovery
@@ -280,14 +278,14 @@ The example CapabilityStatement snippet shows a Data Source advertising the CDex
 
 {% include examplebutton_default.html example="advertise-topic.md" b_title = 'Click Here To See CapabilityStatement Advertising the CDex Task Update Subscription Topic' %}
 
-<!-- 
+<!--
 ##### Subscription Resource
 
 To dynamically request notifications for CDex Task updates (and other topics the Data Source supports), Data Consumers RESTfully POST a Subscription resource with the Data Source. The Subscription resource **SHALL** conform to the [R4/B Topic-Based Subscription Profile].
 
 <div class="bg-info" markdown="1">
 Subscriptions need not be created dynamically by the Data Consumer. It's also possible for the Data Source to configure subscriptions for clients, in other words, create subscriptions administratively. However, these implementation details are out of scope for this guide.
-</div> 
+</div>
 
 ###### Channel Types
 
@@ -295,7 +293,7 @@ The subscription requires information about where to send notifications, such as
 
 ###### Payload Types
 
-When specifying the contents of a notification, there are three options available: "empty," "id-only," and "full-resource." Because the Data Source can not guarantee who has access to the nominated subscription endpoint, the notification typically uses "id-only" to return the Task resource ID. By omitting the payload, the Data Consumer is forced to authenticate before accessing the data using a FHIR RESTful read or search, which mitigates privacy and security risks for the Data Source.
+When specifying the contents of a notification, there are three options available: "empty," "id-only," and "full-resource." Because the Data Source cannot guarantee who has access to the nominated subscription endpoint, the notification typically uses "id-only" to return the Task resource ID. By omitting the payload, the Data Consumer is forced to authenticate before accessing the data using a FHIR RESTful read or search, which mitigates privacy and security risks for the Data Source.
 
 - The Data Consumer **SHALL** use the canonical URL in the `Subscription.criteria` element to subscribe to the Data Source's Server [base]/Subscription endpoint'
 - The Data Source **SHOULD** support the "rest-hook" channel and **MAY** support other channel types.
@@ -330,7 +328,7 @@ The [HL7 FHIR-I Workflow project] is working on a set of rules for when it is su
 
 #### Example Task Based Transaction with a Formal Authorization
 
-In this scenario, a referred-to Provider Seeks Patient B's Active Conditions from referring the Provider to support performing the requested service.
+In this scenario, a Referred-To Provider Seeks Patient B's Active Conditions from the referring Provider to support performing the requested service.
 
 ##### Preconditions and Assumptions:
 
@@ -339,11 +337,11 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 1. {{ site.data.base-example-list[18] }}
 1. {{ site.data.base-example-list[12] }}
 2. The Referred-To Provider creates a CommunicationRequest formally authorizing information to be gathered on Patient B.
-   - Note that in this example, the Referred-To-Provider (Data Consumer) is both the requester and the data recipient. The requester could also be a third party.
-1. The  Referred-To-Provider POSTS a Task to the Referring Provider endpoint requesting Patient B's Active Conditions. The CommunicationRequest is referenced in `Task.basedOn`. For the actual request, the FHIR RESTful query syntax is used.
+   - Note that in this example, the Referred-To Provider (Data Consumer) is both the requester and the data recipient. The requester could also be a third party.
+1. The Referred-To Provider POSTS a Task to the Referring Provider endpoint requesting Patient B's Active Conditions. The CommunicationRequest is referenced in `Task.basedOn`. For the actual request, the FHIR RESTful query syntax is used.
 3. The Referring Provider fetches and inspects the CommunicationRequest to review the authorization.
-4. The Referred-To-Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
-5. The Referred-To-Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
+4. The Referred-To Provider polls the Task resource until the `Task.status` indicates it is completed, rejected, or failed.
+5. The Referred-To Provider fetches Patient B's Active Conditions referenced by `Task.output` as *external* resources.
 
 {% include examplebutton_default.html example="task-scenario-5" b_title = "Click Here To See Example Task Based Transaction with a Formal Authorization" %}
 
@@ -351,7 +349,7 @@ In this scenario, a referred-to Provider Seeks Patient B's Active Conditions fro
 
 ### Provenance
 
-To the extent that the Data Source keeps a record of the data's provenance, the FHIR Provenance Resource can be requested using Task. The input parameter is a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance"). The examples below show how to request and receive provenance using either method. Alternatively, When `Task.output` represents individual FHIR resources, the Data Receiver could query for its associated Provenance resources when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](direct-query.html#provenance)). Typically, requesting external Provenance for FHIR Documents and other formats, such as C-CDA, is unnecessary because their contents implicitly or explicitly supply their provenance.
+To the extent that the Data Source keeps a record of the data's provenance, the FHIR Provenance Resource can be requested using Task. The input parameter is a FHIR RESTful query syntax or free text (i.e., "give me this data and its provenance"). The examples below show how to request and receive provenance using either method. Alternatively, when `Task.output` represents individual FHIR resources, the Data Consumer could query for its associated Provenance resources when fetching the resource referenced in `Task.output` (see the Direct Query for [examples](direct-query.html#provenance)). Typically, requesting external Provenance for FHIR Documents and other formats, such as C-CDA, is unnecessary because their contents implicitly or explicitly supply their provenance.
 
 #### Example Requests for Provenance using Task Based Transaction
 
@@ -390,7 +388,7 @@ Some Data Consumers may require that the data they receive be signed. When signa
 #### Example of a *Signed* Task Based Transaction
 
 The following example repeats Scenario 1 above; however, the Payer requires a signature.
-  - The Provider creates a FHIR Document bundle that includes the FHIR resources representing the clinical data and signs the Bundle.
+- The Provider creates a FHIR Document bundle that includes the FHIR resources representing the clinical data and signs the Bundle.
 - See the [Signatures] page for a detailed explanation of how the signature was created and verified.
 
 {% include examplebutton_default.html example="task-scenario-7" b_title = 'Click Here To See Example Signed Task Based Transaction' %}

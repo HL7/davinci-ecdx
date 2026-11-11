@@ -14,9 +14,9 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 
 
- In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references one or more FHIR Questionnaires  as input parameters, the Task represents a request for the Provider to complete the questionnaires. The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci - Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a  QuestionnaireResponse. Figure 17 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
+ In contrast to [Requesting Attachments Using Attachment Codes], when a Payer references one or more FHIR Questionnaires as input parameters, the Task represents a request for the Provider to complete the questionnaires. The [CDex Task Attachment Request Profile] defines a specific `Task.code` that directs the Provider to launch a [Da Vinci Documentation Templates and Rules (DTR)] application to use the Payer provided Questionnaires and results from any CQL execution to generate and complete a QuestionnaireResponse. Figure 18 below summarizes the steps for requesting and completing a questionnaire using CDex Attachments and DTR, and the sequence diagram in the following section illustrates these transactions in more detail:
 
-{% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 17" %}
+{% include img.html img="attachments-task-Q-summary.svg" caption = "Figure 18" %}
 
 **Step 1:** The Payer POSTs a Task to the Provider. The Task is a request to complete a questionnaire.
 
@@ -24,22 +24,22 @@ This page documents an *optional* solicited attachments transaction for requesti
 
 **Step 3:** DTR fetches the Task, which contains the link to the Questionnaire. Then, it fetches the Questionnaire (and any CQL rules defined within it) and completes the QuestionnaireResponse. Refer to the [Da Vinci DTR] Implementation Guide for more information on how it generates a QuestionnaireResponse.
 
-**Step 4:** DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created..
+**Step 4:** DTR creates and updates the QuestionnaireResponse directly to the Data Source's FHIR Server and updates `Task.output` to reference the QuestionnaireResponse it created.
 
-**Step 5:**  When the QuestionnaireResponse is completed, the Provider "pushes"  the QuestionnaireResponse directly to the Payer-defined endpoint using the $submit-attachments operation. See the [Sending Attachments] page for Implementation Guide for more information on this transaction.
+**Step 5:** When the QuestionnaireResponse is completed, the Provider "pushes" the QuestionnaireResponse directly to the Payer-defined endpoint using the [`$submit-attachment`] operation. See the [Sending Attachments] page for more information on this transaction.
 
 **Step 6:** The Provider updates the Task to "completed" when complete - e.g., when the data has been submitted or the information gathered.
 
 
 #### Using [Da Vinci DTR] to Complete the Questionnaire
 
-The sequence diagram in Figure 18 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application application needed to request, fill, and return one or more questionnaires using using CDex Attachments.  It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
+The sequence diagram in Figure 19 below depicts the FHIR RESTful transactions and processes involved between the Payer, Provider, and DTR application needed to request, fill, and return one or more questionnaires using CDex Attachments. It references a "DTR Launch". If the DTR is a native EHR application, the launch is implementation specific. If DTR is a SMART on FHIR Application, the next ([DTR SMART App Launch]) section documents the launch sequence and parameters.
 
-{% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 18" %}
+{% include img.html img="attachments-task-Q-sequencediagram.svg" caption = "Figure 19" %}
 
 ##### DTR SMART App Launch
 
-The sequence diagram in Figure 19 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.
+The sequence diagram in Figure 20 below depicts the transactions between the DTR Client, FHIR Server, and DTR application needed to launch a DTR SMART App.
 
 Preconditions and Assumptions:
 - The DTR Client and FHIR Server are Provider (Data Source) roles.
@@ -48,7 +48,7 @@ Preconditions and Assumptions:
 
 <!-- {% raw %} {% include img.html img= "SMART App Launch for DTR from CDEX.png" caption=" Figure 19: My Notes on SMART App Launch for DTR from CDEX" %} {% endraw %} -->
 
-{% include img.html img="dtr-launch.svg" caption="Figure 19" %}
+{% include img.html img="dtr-launch.svg" caption="Figure 20" %}
 
 **Step 1 (Optional):** The DTR App registers with DTR Client (may be out of band)
 
@@ -64,7 +64,7 @@ Preconditions and Assumptions:
   - "patient/Task.u"
   - "patient/QuestionnaireResponse.cu"
   
-**Step 6,7:** Assuming the authorization is granted, The DTR app requests an access token
+**Step 6,7:** Assuming the authorization is granted, the DTR app requests an access token
 
 **Step 8:** The DTR App obtains an access token and the launch contexts in the "fhirContext" array, including a local reference to the Task in step 2.
 
@@ -78,26 +78,26 @@ The [Requesting Attachments Using Attachment Codes] page documents the data elem
 
 <div class="bg-info" markdown="1">
 
-In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how:
+In the following sections, a detailed look at an example *Solicited* attachment transaction illustrates how:
 - The Payer uses a FHIR Questionnaire to communicate to the Provider what additional attachments-related data is needed.
 - The Payer uses the CDex Task Attachment Request Profile to communicate to the Provider to complete the Questionnaire.
 - The Provider launches DTR to fill out the FHIR Questionnaire using QuestionnaireResponse.
-- The DTR completes the QuestionaireResponse and updates the Task.
+- The DTR completes the QuestionnaireResponse and updates the Task.
 - The Provider uses the $submit-attachment operation to communicate the completed QuestionnaireResponse to the Payer.
 </div><!-- bg-info -->
 
-In this scenario, a Provider creates a prior authorization and sends it to the Payer. The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR, which completes a QuestionnaireResponse. The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram in figure 20 below illustrates the scenario.
+In this scenario, a Provider creates a prior authorization and sends it to the Payer. The Payer reviews the prior authorization and responds with a request to fill out a questionnaire for attachments-related data using the *CDex Task Attachment Request Profile*. After receiving the attachment request, the Provider launches DTR, which completes a QuestionnaireResponse. The Provider returns the QuestionnaireResponse using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The flow diagram in Figure 21 below illustrates the scenario.
 
 
-{% include img.html img="cdex-request-questionnaire-priorauth-flow.svg" caption=" Figure 20: CDex Request Attachment for Prior-Auth Using Questionnaires" %}
+{% include img.html img="cdex-request-questionnaire-priorauth-flow.svg" caption=" Figure 21: CDex Request Attachment for Prior-Auth Using Questionnaires" %}
 
-In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following details about what information is necessary to complete the adjudication of the claim:
+In addition to the information needed to submit and associate the attachments to the prior authorization successfully, the Payer supplies the following details about what information is necessary to complete the adjudication of the prior authorization:
 
 - A link to the Questionnaire(s)
 - Line numbers on the claim the requested attachment(s) are for
 - The specific purpose of use (POU) for the request
 
-The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters:
+The table below summarizes the mapping between the CDex Task Attachment Request Profile elements and the [`$submit-attachment`] parameters:
 
 {% include q-attachments_to_requests.md %}
 
@@ -121,16 +121,16 @@ POST [base]/Task
 
 ##### Verifying Patient Identity
 
-The following data elements are used to verify the patient's identity. (This guide does not cover how the Provider system verifies the patient's identity.) They are communicated in a  *contained* Patient resource using the [CDex Patient Demographics Profile]. The contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".
+The following data elements are used to verify the patient's identity. (This guide does not cover how the Provider system verifies the patient's identity.) They are communicated in a *contained* Patient resource using the [CDex Patient Demographics Profile]. The contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".
 
-|Data|HRex Patient Demographics Profile.|
+|Data|CDex Patient Demographics Profile|
 |---|---|
 |Member ID or Patient Account No.*|`Patient.identifier`|
 |Patient Name|`Patient.name`|
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account Number is a Provider assigned identifier
+\* Patient Account Number is a Provider-assigned identifier
  
 
 ~~~
@@ -161,7 +161,7 @@ These required Task infrastructure elements:
 - `Task.status`
 - `Task.intent`
 
-convey the task status and the intent of the request.  The `Task.status` value of "request" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the [Task state machine]. `Task.intent` is fixed to "order".
+convey the task status and the intent of the request.  The `Task.status` value of "requested" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the [Task state machine]. `Task.intent` is fixed to "order".
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=65 count=2 linenumber=true rel=true %}
@@ -179,11 +179,11 @@ The `Task.code` communicates that the Payer is requesting attachments for a clai
 
 The attachment request will be directed to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim, and these identifiers are echoed back to the Payer when submitting the attachments.
 
-As discussed above, the patient ID is in the contained Patient resource, referenced by the `Task.for` element, and the provider ID is in the contained PractitionerRole resource, referenced by the `Task.owner` element. The provider ID can be a Practitioner identifier (i.e., a Type1 NPI), the Practitioner's Organization identifier (i.e., a Type2 NPI), or both.
+As discussed above, the patient ID is in the contained Patient resource, referenced by the `Task.for` element, and the provider ID is in the contained PractitionerRole resource, referenced by the `Task.owner` element. The provider ID can be a Practitioner identifier (i.e., a Type 1 NPI), the Practitioner's Organization identifier (i.e., a Type 2 NPI), or both.
 
 (note the various Task dates in the request fragment below)
 
-|Actor|CDex Request Attachment Task Profile Element|
+|Actor|CDex Task Attachment Request Profile Element|
 |---|---|
 |payer ID|`Task.requester.identifier`|
 |provider ID|(contained)PractitionerRole.practitioner. identifier or PractitionerRole.Organization.identifier|
@@ -198,7 +198,7 @@ As discussed above, the patient ID is in the contained Patient resource, referen
 
 The Task communicates whether the attachments are for a claim or prior authorization, and the Payer identifies the claim or prior authorization with its business identifier.
 
-|Data|CDex Request Attachment Task Profile Element|
+|Data|CDex Task Attachment Request Profile Element|
 |---|---|
 |Claim or Prior Authorization|`Task.reasonCode`|
 |Claim or Prior Authorization ID|`Task.reasonReference.identifier`|
@@ -252,7 +252,7 @@ This `Task.input` element represents the service date or the service's starting 
 
 ##### Purpose of Use for the Request
 
-This optional `Task.input` element represents the request's purpose of use (POU).  This example supports a request for prior authorization, "COVAUTH".  When requesting attachments for a claim, it would be "CLMATTCH".
+This optional `Task.input` element represents the request's purpose of use (POU). This example supports a request for prior authorization, "COVAUTH". When requesting attachments for a claim, it would be "CLMATTCH".
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example22.json' start=129 count=21 linenumber=true rel=true %}
@@ -260,7 +260,7 @@ This optional `Task.input` element represents the request's purpose of use (POU)
 
 #### Provider Launches DTR
 
-The Payer used a Questionnaire to ask for specific attachments-related data. They indicated it with a `Task.code` "attachment-request-questionnaire" and supplied the URL of the questionnaire (FHIR Questionnaire) as an input parameter. Becasue these conditions are met, the Payer launches [Da Vinci DTR], a SMART on FHIR App or native EHR application. If the Provider launches a DTR within an EHR native application, skip to the step [DTR App Updates Task](#dtr-app-updates-task) below. If the Provider Launches DTR as a SMART on FHIR Application, it follows the [DTR SMART App Launch] with the Task as the launch content. The next several steps describe the DTR SMART App functionality.
+The Payer used a Questionnaire to ask for specific attachments-related data. They indicated it with a `Task.code` "attachment-request-questionnaire" and supplied the URL of the questionnaire (FHIR Questionnaire) as an input parameter. Because these conditions are met, the Provider launches [Da Vinci DTR], a SMART on FHIR App or native EHR application. If the Provider launches a DTR within an EHR native application, skip to the step [DTR App Updates Task](#dtr-app-updates-task) below. If the Provider launches DTR as a SMART on FHIR Application, it follows the [DTR SMART App Launch] with the Task as the launch context. The next several steps describe the DTR SMART App functionality.
 
 ##### DTR SMART App Fetches Task
 
@@ -285,7 +285,7 @@ Upon discovery of the Questionnaire URL, the DTR App fetches the Questionnaire.
 **Request**
 
 ~~~
-GET http://example.org/FHIR/Questionnare/cdex-questionnaire-example1
+GET http://example.org/FHIR/Questionnaire/cdex-questionnaire-example1
 ~~~
 
 **Response Body**
@@ -307,7 +307,7 @@ The completed QuestionnaireResponse is saved in the Provider's FHIR Server.
 **Request**
 
 ~~~
-POST [base]/$QuestionnaireResponse
+POST [base]/QuestionnaireResponse
 ~~~
 
 **Request Body**
@@ -318,11 +318,11 @@ POST [base]/$QuestionnaireResponse
 
 ##### DTR App Updates Task
 
-The DTR SMART App or EHR native application Updates `Task.output` to Reference the completed QuestionnaireResponse.
+The DTR SMART App or EHR native application updates `Task.output` to reference the completed QuestionnaireResponse.
 
 
 ~~~
-PUT [base]/Task/cdex-task-example-22
+PUT [base]/Task/cdex-task-example22
 ~~~
 
 **Request Body**
@@ -334,11 +334,11 @@ PUT [base]/Task/cdex-task-example-22
 
 #### Provider Submits Solicited Attachments
 
-When the Task is completed, the Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint communicated in the `Task.input` "payer-url" parameter. The operation payload contains the completed QuestionnaireResponse(s) and echoes many data elements sent in the request. The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters. The documentation below describes and demonstrates the [`$submit-attachment`] parameters.
+When the Task is completed, the Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint communicated in the `Task.input` "payer-url" parameter. The operation payload contains the completed QuestionnaireResponse(s) and echoes many data elements sent in the request. The table in the introduction to this section summarizes the mapping between the CDex Task Attachment Request Profile elements and the [`$submit-attachment`] parameters. The documentation below describes and demonstrates the [`$submit-attachment`] parameters.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|Payer URL|"payer-url"Task.input|(operation endpoint)|
+|Payer URL|"payer-url" Task.input|(operation endpoint)|
 {:.grid}
 
 **Request**
@@ -358,9 +358,9 @@ The attachments and metadata needed to associate the attachment to the claim or 
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The TrackingId parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
+The TrackingId parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for a claim or prior authorization. These data elements are taken from the CDex request as follows:
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
 |TrackingID|Task.identifier|TrackingId|
 |Use|Task.reasonCode|AttachTo|
@@ -372,9 +372,9 @@ The TrackingId parameter represents the identifier that ties the attachments to 
 
 ##### Identifying the Payer, Provider, Organization, and Patient
 
-As documented above, The Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.
+As documented above, the Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
 |Payer ID|Task.requester.identifier|PayerId|
 |Organization ID|PractitionerRole.organization.identifier|OrganizationId|
@@ -392,9 +392,9 @@ As documented above, The Payer uses business identifiers to identify itself, the
 The service date parameter is taken from the "service-date" `Task.input` element in the CDex Attachment request.
 
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|Date of Service|“service-date” Task.input|ServiceDate|
+|Date of Service|"service-date" Task.input|ServiceDate|
 {:.grid}
 
 ~~~
@@ -406,10 +406,10 @@ The service date parameter is taken from the "service-date" `Task.input` element
 
 The completed QuestionnaireResponse and line item numbers are communicated as "Attachment" parameter parts. The QuestionnaireResponse is in the `Attachment.Content` parameter part as an inline FHIR resource, and the line item numbers associated with it are sent in the `Attachment.LineItem` parameter part.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|line item(s)|“code”Task.input.extension|Attachment.LineItem|
-|QuestionnaireResponse|-|Attachment.content
+|line item(s)|"code" Task.input.extension|Attachment.LineItem|
+|QuestionnaireResponse|-|Attachment.Content|
 {:.grid}
 
 ~~~
@@ -420,7 +420,7 @@ The completed QuestionnaireResponse and line item numbers are communicated as "A
 
 ### Complete *Solicited* Attachment Transaction
 
-The example below shows the complete *solicited* attachment transaction. A Payer uses the CDex Task Attachment Request Profile to request the attachment using an attachment code, and the Provider uses the [`$submit-attachment`] operation to submit the attachments to the Payer:
+The example below shows the complete *solicited* attachment transaction. A Payer uses the CDex Task Attachment Request Profile to request the attachment using a Questionnaire, and the Provider uses the [`$submit-attachment`] operation to submit the attachments to the Payer:
 
 {% include examplebutton_default.html example="solicited-attachment-scenario-2.md" b_title = "Click Here To See FHIR Based Solicited Attachment Example" %}
 

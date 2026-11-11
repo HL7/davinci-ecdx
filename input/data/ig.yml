@@ -189,14 +189,53 @@ definition:
       groupingId: CapabilityStatements
     - reference:
         reference: StructureDefinition/cdex-task-attachment-request
-      description: "Payers use this [Task](http://hl7.org/StructureDefinition/Task) based profile to request additional documentation (\"attachments\") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and CCDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.\n\nIt constrains the following elements to be *mandatory* (min=1):\n\n- A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](StructureDefinition-cdex-patient-demographics.html) and communicating additional patient demographic data elements.\n- A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](StructureDefinition-cdex-practitionerrole.html) to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.\n- A `Task.identifier` element representing the payers tracking identifier (referred to as the “re-association tracking control numbers”)\n- A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider cannot complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).\n- A `Task.intent` element that is fixed to \"order\" (this element is a mandatory Task element)\n- A `Task.code` of either \"attachment-request-code\" or \"attachment-request-questionnaire\"  communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.\n  - If the code is \"attachment-request-code\", the provider system returns attachment(s) identified by the attachment code(s) in the \"AttachmentsNeeded\" input parameter.\n  - If the code is \"attachment-request-questionnaire\", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/index.html) to complete the Questionnaire(s) referenced in the \"QuestionnaireContext\" input parameter.\n  - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in the \"PayerUrl\" input parameter.    \n- A `Task.requester`.identifier element representing the Payer ID\n- A `Task.owner`.reference element that is fixed to \"\\#practionerrole\" -  a reference to the contained PractitionerRole Resource that represents the Provider ID.\n- A `Task.for`.reference element that is fixed to \"\\#patient\" - a reference to the contained Patient Resource that represents patient demographic data.\n- A `Task.reasonCode` to communicate whether the attachments are for a claim or prior authorization.\n- A `Task.reasonReference`.reference referencing the claim or prior authorization ID (business Identifier).\n- A \"PayerUrl\" `Task.input` element representing the Payer endpoint URL the provider uses when submitting attachments with the `[$submit-attachment`](OperationDefinition-submit-attachment.html) operation.\n\nIt constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):\n\n- A `Task.Restriction.period` element representing the due date for submitting the attachments\n- A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)\n- A \"AttachmentsNeeded\" `Task.input` element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*\n- A \"AttachmentsNeeded\" or \"QuestionnaireContext\" `Task.input` element extension that communicates claim or prior authorization line item numbers associated with the attachment or questionnaire.\n- A \"signature\" `Task.input` element. This is a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).\n- A \"service-date\" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.\n\nIt defines the following *optional* elements:\n\n- A \"QuestionnaireContext\" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*\n  - A questionnaireDisplay extension to communicate the display name of the Questionnaire\n- A \"POU\" `Task.input` element that is used to indicate the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html). Refer to the [Purpose of Use section](task-based-approach.html#purpose-of-use) For more information about sending purpose POU codes.\n- A \"multiple-submits\" `Task.input` element that is a flag to indicate whether the requested data can be sent in multiple submissions\n- A \"AttachmentsNeeded\" `Task.output` element that references the result(s) of the data request code.\n- A \"QuestionnaireContext\" `Task.output` element which references the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).\n\n\\* Either a \"AttachmentsNeeded\" or a \"QuestionnaireContext\" `Task.input` element is required"
+      description: |-
+        Payers use this [Task](http://hl7.org/fhir/R4/task.html) based profile to request additional documentation ("attachments") for claims or prior authorizations. It constrains the Task resource to minimal necessary data elements needed to request attachments and respond in a way that is compatible with existing X12 277 RFAI and 278 response transactions to allow for association and requests for (typically PDF and C-CDA) documents using LOINC and X12 standard codes. It also supports requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse, as supported by Da Vinci DTR.
+
+        It constrains the following elements to be *mandatory* (min=1):
+
+        - A [contained](http://hl7.org/fhir/R4/references.html) Patient Resource defined by the [CDex Patient Demographics Profile](StructureDefinition-cdex-patient-demographics.html) and communicating additional patient demographic data elements.
+        - A [contained](http://hl7.org/fhir/R4/references.html) PractitionerRole Resource defined by the [CDex PractitionerRole Profile](StructureDefinition-cdex-practitionerrole.html) to communicate the provider ID as either a unique organization/location identifier (e.g., Type 2 NPI) or unique provider identifier (e.g., Type 1 NPI) or both.
+        - A `Task.identifier` element representing the payer's tracking identifier (referred to as the "re-association tracking control numbers")
+        - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider cannot complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
+        - A `Task.intent` element that is fixed to "order" (this element is a mandatory Task element)
+        - A `Task.code` of either "attachment-request-code" or "attachment-request-questionnaire" communicating that the Payer is requesting attachments for a claim or prior authorization using a code or data request questionnaire.
+          - If the code is "attachment-request-code", the provider system returns attachment(s) identified by the attachment code(s) in the "AttachmentsNeeded" input parameter.
+          - If the code is "attachment-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2.1/index.html) to complete the Questionnaire(s) referenced in the "QuestionnaireContext" input parameter.
+          - When either code is present, the provider system uses the $submit-attachment operation to return the information to the endpoint provided in the "PayerUrl" input parameter.
+        - A `Task.requester`.identifier element representing the Payer ID
+        - A `Task.owner`.reference element that is fixed to "\#practitionerrole" - a reference to the contained PractitionerRole Resource that represents the Provider ID.
+        - A `Task.for`.reference element that is fixed to "\#patient" - a reference to the contained Patient Resource that represents patient demographic data.
+        - A `Task.reasonCode` to communicate whether the attachments are for a claim or prior authorization.
+        - A `Task.reasonReference`.reference referencing the claim or prior authorization ID (business Identifier).
+        - A "PayerUrl" `Task.input` element representing the Payer endpoint URL the provider uses when submitting attachments with the [`$submit-attachment`](OperationDefinition-submit-attachment.html) operation.
+
+        It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):
+
+        - A `Task.restriction.period` element representing the due date for submitting the attachments
+        - A `Task.statusReason.text` to communicate the reason for the status (for example, if the Task is rejected or failed)
+        - An "AttachmentsNeeded" `Task.input` element to communicate to the provider what attachments are needed using LOINC or X12 attachment codes.*
+        - An "AttachmentsNeeded" or "QuestionnaireContext" `Task.input` element extension that communicates claim or prior authorization line item numbers associated with the attachment or questionnaire.
+        - A "signature" `Task.input` element. This is a flag to indicate whether the requested data requires a signature. For more information about requiring and requesting signatures, refer to the [Signatures section](sending-attachments.html#signatures).
+        - A "service-date" `Task.input` element representing the date of service or starting date of the service for the claim or prior authorization. It **SHALL** be present if the attachment is for a claim.
+
+        It defines the following *optional* elements:
+
+        - A "QuestionnaireContext" Task.input element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
+          - A questionnaireDisplay extension to communicate the display name of the Questionnaire
+        - A "POU" `Task.input` element that is used to indicate the purpose of use (POU) for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html). Refer to the [Purpose of Use section](task-based-approach.html#purpose-of-use) for more information about sending POU codes.
+        - A "multiple-submits" `Task.input` element that is a flag to indicate whether the requested data can be sent in multiple submissions
+        - An "AttachmentsNeeded" `Task.output` element that references the result(s) of the data request code.
+        - A "QuestionnaireContext" `Task.output` element which references the [FHIR QuestionnaireResponse](http://hl7.org/fhir/questionnaireresponse.html) resulting from the data request Questionnaire. The QuestionnaireResponse conforms to the [CDex SDC QuestionnaireResponse Profile](StructureDefinition-cdex-sdc-questionnaireresponse.html) or the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt).
+
+        \* Either an "AttachmentsNeeded" or a "QuestionnaireContext" `Task.input` element is required
       exampleBoolean: false
       name: CDex Task Attachment Request Profile
       groupingId: AttachmentsProfiles
     - reference:
         reference: StructureDefinition/cdex-practitionerrole
       description: |-
-        This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as a unique organization/location identifier (e.g., Type 2 NPI), or unique provider identifier (e.g., Type 1 NPI), or both. It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0).:
+        This Profile is defined as a [contained](http://hl7.org/fhir/R4/references.html) resource within the CDex Task Attachment Request Profile.  It is referenced by `Task.owner` to communicate the provider ID as a unique organization/location identifier (e.g., Type 2 NPI), or unique provider identifier (e.g., Type 1 NPI), or both. It constrains the following elements to be [*must support*](attachments-conformance.html#cdex-must-support-definition) (min=0):
 
         - A default resource ID of "practitionerrole"
         - A `practitioner.identifier`
@@ -221,7 +260,7 @@ definition:
     - reference:
         reference: OperationDefinition/submit-attachment
       description: |-
-        Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after*  the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)
+        Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after* the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)
 
         The input parameters are:
         1. One or more attachments as FHIR Resources
@@ -250,7 +289,7 @@ definition:
       groupingId: AttachmentsTerminology
     - reference:
         reference: ValueSet/cdex-loinc-attachment-codes
-      description: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attahments](https://loinc.org/attachments/).
+      description: This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at [LOINC Attachments](https://loinc.org/attachments/).
       exampleBoolean: false
       name: CDex LOINC Attachment Codes Value Set
       groupingId: AttachmentsTerminology
@@ -344,22 +383,22 @@ definition:
     - reference:
         reference: StructureDefinition/cdex-task-data-request
       description: |-
-        This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned "data request".  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
+        This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned data. Data requests are supplied as codes, free-text, or FHIR RESTful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
 
         It constrains the following elements to be *mandatory* (min=1):
 
         - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
         - A `Task.intent` fixed to "order" (this element is a mandatory Task element)
         - A `Task.code` of "data-request-query", "data-request-code", or "data-request-questionnaire" communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.
-          - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.
-          - If the code is "data-request-code", the provider system returns data(s) identified by the LOINC code in the "code" input parameter.
+          - If the code is "data-request-query", the provider system returns data identified by the FHIR RESTful query in the "query" input parameter.
+          - If the code is "data-request-code", the provider system returns data identified by the LOINC code in the "code" input parameter.
           - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2.1/index.html) to complete the Questionnaire referenced in the "questionnaire" input parameter.
-        - A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested
+        - A `Task.for` element representing the member (i.e., patient) for whom the data is being requested
         - A `Task.authoredOn` to communicate the date and time this task was created
         - A `Task.requester` element communicating who is requesting the data
         - A `Task.owner` element representing the Provider who is being asked to provide the data
 
-        It constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
+        It constrains the following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
 
         - A `Task.identifier` element representing the unique data request identifier
         - A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request
@@ -377,7 +416,7 @@ definition:
         - A "data" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.
 
         It defines the following elements to be *optional*:
-        - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.
+        - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section for more information about work-queue hint codes.
         - A "questionnaire" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
           - A questionnaireDisplay extension to communicate the display name of the Questionnaire
         - A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)
@@ -398,7 +437,7 @@ definition:
       groupingId: TaskBasedTerminology
     - reference:
         reference: ValueSet/cdex-data-request-task-code
-      description: Codes used to identify the type of data request. It includes the codes “data-request-query”, “data-request-code”, and “data-request-questionnaire”.
+      description: Codes used to identify the type of data request. It includes the codes "data-request-query", "data-request-code", and "data-request-questionnaire".
       exampleBoolean: false
       name: CDex Data Request Task Code Value Set
       groupingId: TaskBasedTerminology
@@ -567,7 +606,7 @@ definition:
     - reference:
         reference: StructureDefinition/cdex-sdc-questionnaireresponse
       description: |-
-        This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) profile and enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:
+        This profile is derived from the [US Core QuestionnaireResponse Profile](https://hl7.org/fhir/us/core/STU6.1/StructureDefinition-us-core-questionnaireresponse.html) and enforces the various elements of [signature](signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following constraints:
         - The signature extensions use the CDex Signature Profile
       exampleBoolean: false
       name: CDex SDC QuestionnaireResponse Profile
@@ -593,13 +632,13 @@ definition:
     - reference:
         reference: StructureDefinition/cdex-signature
       description: |-
-        This Signature DataType profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:
+        This Signature DataType profile enforces the various elements of [signature](signatures.html) documented in the CDex guide. It adds the following *mandatory* (min=1) constraints:
 
-        - A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = “1.2.840.10065.1.12.1.5” (Verification Signature)
+        - A `Signature.type` fixed to ASTM Standard, E1762-95(2013) code = "1.2.840.10065.1.12.1.5" (Verification Signature)
         - A `Signature.who` for the organization or practitioner who signed the Bundle which is either:
-          1. a reference to US-Core Practitioner, US-Core PractitionerRole, or US-Core Organization or
+          1. a reference to US Core Practitioner, US Core PractitionerRole, or US Core Organization or
           1. an NPI or Tax ID and name of the organization or practitioner
-        - A `Signature.data` representing the base64 encoded Signature (JWS, image, etc)
+        - A `Signature.data` representing the base64 encoded Signature (JWS, image, etc.)
 
         In addition, the following *mandatory* (min=1) element is inherited from the base standard:
         - `Signature.when` - a system timestamp when the signature was created
@@ -609,15 +648,15 @@ definition:
     - reference:
         reference: StructureDefinition/cdex-signature-bundle
       description: |-
-        This Bundle profile enforces the various elements of [signature](https://hl7.org/fhir/us/davinci-cdex/signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following *mandatory* (min=1) constraint:
+        This Bundle profile enforces the various elements of [signature](signatures.html) documented in the CDex guide to represent an enveloped signature. It adds the following *mandatory* (min=1) constraint:
 
-        - A `Bundle.signature` element using the [CDex Signature Profile](https://hl7.org/fhir/us/davinci-cdex/StructureDefinition-cdex-signature.html)
+        - A `Bundle.signature` element using the [CDex Signature Profile](StructureDefinition-cdex-signature.html)
       exampleBoolean: false
       name: CDex Signature Bundle Profile
       groupingId: SignatureProfiles
     - reference:
         reference: ValueSet/cdex-identifier-types
-      description: Identifier types for providers and organizations. It includes the codes “TAX” and “NPI”.
+      description: Identifier types for providers and organizations. It includes the codes "TAX" and "NPI".
       exampleBoolean: false
       name: CDex Identifier Types Value Set
       groupingId: SignatureTerminology
@@ -665,7 +704,7 @@ definition:
       groupingId: CommonTerminology
     - reference:
         reference: CodeSystem/cdex-temp
-      description: Codes temporarily defined as part of the CDex implementation guide.  These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).
+      description: Codes temporarily defined as part of the CDex implementation guide. These will eventually migrate into an officially maintained terminology (likely HL7's [UTG](https://terminology.hl7.org/codesystems.html) code systems).
       exampleBoolean: false
       name: CDex Temporary Code System
       groupingId: CommonTerminology
@@ -684,7 +723,7 @@ definition:
     - reference:
         reference: Task/cdex-task-inline-example6
       description: Task example used to create inline task based scenario for [progress note exam notes as PDF](task-based-approach.html#progress-note-exam-notes-as-pdf)
-      name: CDex Task Inline Example 6
+      name: CDex Inline Task Example 6
       exampleCanonical: http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-data-request
       groupingId: InlineExamples
     - reference:

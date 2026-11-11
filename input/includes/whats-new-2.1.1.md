@@ -1,0 +1,2 @@
+
+ The candidates for this release are [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211), [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707), [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448), and [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526).

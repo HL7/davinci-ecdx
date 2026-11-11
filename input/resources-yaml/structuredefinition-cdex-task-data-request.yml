@@ -5,22 +5,22 @@ name: CDexTaskDataRequest
 title: CDex Task Data Request Profile
 status: active
 description: |-
-  This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned "data request".  Data requests are supplied as codes, free-text, or FHIR Restful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
+  This Task profile is used to solicit information from a system. The Data Consumer uses it when direct query transactions are not an option, and the transaction may require human intervention. It represents both the data request and the returned data. Data requests are supplied as codes, free-text, or FHIR RESTful queries. It can also support requests for more detailed missing data using Questionnaire, CQL, and QuestionnaireResponse as supported by Da Vinci DTR.
 
   It constrains the following elements to be *mandatory* (min=1):
 
   - A `Task.status` with a required binding to HRex [Task Status ValueSet](http://hl7.org/fhir/us/davinci-hrex/STU1.1/ValueSet-hrex-task-status.html) (this element is a mandatory Task element). For guidance when the provider is not able to complete the Task, refer to the [When The Task Cannot Be Completed section](task-based-approach.html#when-the-task-cannot-be-completed).
   - A `Task.intent` fixed to "order" (this element is a mandatory Task element)
   - A `Task.code` of "data-request-query", "data-request-code", or "data-request-questionnaire" communicating that the Data Consumer is requesting data using a FHIR RESTful query, a code (or free text), or a data request questionnaire.
-    - If the code is "data-request-query", the provider system returns data(s) identified by the FHIR RESTful query in the "query" input parameter.
-    - If the code is "data-request-code", the provider system returns data(s) identified by the LOINC code in the "code" input parameter.
+    - If the code is "data-request-query", the provider system returns data identified by the FHIR RESTful query in the "query" input parameter.
+    - If the code is "data-request-code", the provider system returns data identified by the LOINC code in the "code" input parameter.
     - If the code is "data-request-questionnaire", the provider system uses [Documentation Templates and Rules (DTR)](https://hl7.org/fhir/us/davinci-dtr/STU2.1/index.html) to complete the Questionnaire referenced in the "questionnaire" input parameter.
-  - A `Task.for` element representing the member (i.e.,patient) for whom the data is being requested
+  - A `Task.for` element representing the member (i.e., patient) for whom the data is being requested
   - A `Task.authoredOn` to communicate the date and time this task was created
   - A `Task.requester` element communicating who is requesting the data
   - A `Task.owner` element representing the Provider who is being asked to provide the data
 
-  It constrains following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
+  It constrains the following elements to be [*must support*](task-based-conformance.html#cdex-must-support-definition) (min=0):
 
   - A `Task.identifier` element representing the unique data request identifier
   - A `Task.basedOn` element to communicate the order (ServiceRequest, CommunicationRequest, etc.) that authorizes the data request
@@ -38,7 +38,7 @@ description: |-
   - A "data" `Task.output` element referring to FHIR resource(s) representing the result(s) of the data request.
 
   It defines the following elements to be *optional*:
-  - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section For more information about work-queue hint codes.
+  - A `meta.tag` element representing work-queue hints. Refer to the [Work Queues](task-based-approach.html#work-queues) section for more information about work-queue hint codes.
   - A "questionnaire" `Task.input` element to communicate to the provider a URL of a data request [FHIR Questionnaire](http://hl7.org/fhir/questionnaire.html) that conforms to the [DTR Standard Questionnaire Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-std-questionnaire) or the [DTR Questionnaire for Adaptive Form Profile](http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/dtr-questionnaire-adapt).*
     - A questionnaireDisplay extension to communicate the display name of the Questionnaire
   - A `Task.input` element representing the purpose of use for the requested data using an extensible [CDex Purpose of Use Value Set](ValueSet-cdex-POU.html)
@@ -61,7 +61,7 @@ differential:
     - id: Task
       path: Task
       definition: >-
-        This Task profile is used by the CDex Data Consumer (e.g. Payer or other Provider) to solicit information from a Data Source (e.g., Provider) asynchronously where human involvement to find/aggregate/filter/approve requests may be required.
+        This Task profile is used by the CDex Data Consumer (e.g., Payer or other Provider) to solicit information from a Data Source (e.g., Provider) asynchronously where human involvement to find/aggregate/filter/approve requests may be required.
       constraint:
 
         - key: cdex-7
@@ -83,7 +83,7 @@ differential:
             Task.code.coding.code.where($this='data-request-questionnaire').exists() implies Task.input.type.coding.code.where($this='questionnaire').exists()
         - key: cdex-9
           severity: error
-          human: Must have exactly one input that is data-query or data-code or questionnaire  #note this conflicts with HREX tdr-1
+          human: Must have exactly one input that is query or code or questionnaire  #note this conflicts with HREX tdr-1
           expression: >-
             Task.input.type.coding.code.where($this='data-query' or $this='data-code' or $this='questionnaire').count()=1
 
@@ -103,7 +103,7 @@ differential:
 
         - key: cdex-11
           severity: warning
-          human: If code = "data-request-questionnaire" and status = "completed", should have one "questionnaire-response" output referencing the QuestionnaireResponse.
+          human: If code = "data-request-questionnaire" and status = "completed", should have one "response" output referencing the QuestionnaireResponse.
           expression: >-
             (Task.code.coding.code.where($this='data-request-questionnaire').exists() and Task.status.where($this='completed').exists()) implies Task.output.type.coding.code.where($this='questionnaire-response').exists()
             
@@ -171,8 +171,8 @@ differential:
       short: For example, 'waiting on internal review'
       comment: >-
         Conveys the internal business progress of the request and provides more
-        nuance than the overall status.  There is no expectation this will be
-        coded, but negotiation of agreed codes can be used between partners
+        nuance than the overall status. There is no expectation this will be
+        coded, but negotiation of agreed codes can be used between partners.
       requirements: Indicates progress in retrieving the data
       mustSupport: true
     - id: Task.businessStatus.text
@@ -188,7 +188,7 @@ differential:
       path: Task.code
       short:  data-request-query | data-request-code | data-request-questionnaire
       definition: >-
-        The code element is used to indicate that Task is a request for data and whether the data request is FHIR query syntax, a code, or a questionnaire.  The code element is a required element and must be populated with one of the following values: "data-request-query", data-request-code", or "data-request-questionnaire".
+        The code element is used to indicate that Task is a request for data and whether the data request is FHIR query syntax, a code, or a questionnaire. The code element is a required element and must be populated with one of the following values: "data-request-query", "data-request-code", or "data-request-questionnaire".
       min: 1
       condition:
         - cdex-7
@@ -237,7 +237,7 @@ differential:
     - id: Task.for.identifier
       path: Task.for.identifier
       short: Patient Member ID
-      definition: business identifier representing the Patient
+      definition: Business identifier representing the Patient
       # min: 0
       mustSupport: true    
 
@@ -262,7 +262,7 @@ differential:
     - id: Task.requester.identifier
       path: Task.requester.identifier
       short: Data Consumer ID
-      definition: business identifier representing the Data Consumer
+      definition: Business identifier representing the Data Consumer
       # min: 0
       mustSupport: true
 
@@ -283,7 +283,7 @@ differential:
     - id: Task.owner.identifier
       path: Task.owner.identifier
       short: Provider ID
-      definition: business identifier representing the Provider
+      definition: Business identifier representing the Provider
       # min: 
       mustSupport: true 
 
@@ -316,8 +316,8 @@ differential:
     - id: Task.reasonReference.identifier
       path: Task.reasonReference.identifier
       short: Coverage or Claim ID
-      definition: business identifier representing the coverage, claim, or prior-authorization ID
-      comment: Most payer systems will not expose their claim and prior authorization records as a FHIR resource. They will provide a unique business identifier for the claim or prior authorization using `Task.reasonReference.identifier`.  This could be a payer-assigned or provider-assigned identifier which **SHOULD** be communicated in `Task.reasonReference.identifier.type` using the "FILL" for the payer and "PLAC" for the provider.
+      definition: Business identifier representing the coverage, claim, or prior-authorization ID
+      comment: Most payer systems will not expose their claim and prior authorization records as a FHIR resource. They will provide a unique business identifier for the claim or prior authorization using `Task.reasonReference.identifier`. This could be a payer-assigned or provider-assigned identifier which **SHOULD** be communicated in `Task.reasonReference.identifier.type` using the "FILL" for the payer and "PLAC" for the provider.
       # min: 1 
       mustSupport: true
 
@@ -365,9 +365,9 @@ differential:
       definition: A code indicating the type of data/document to be returned
       comment: >-
         This might be a document code or other code describing the requested
-        information.  If no appropriate standard code exists, local codes may be
+        information. If no appropriate standard code exists, local codes may be
         used between partners, or a human-readable textual description of the
-        desired data can be provided.  Downstream profiles may tighten
+        desired data can be provided. Downstream profiles may tighten
         expectations for this element.
       max: '1'
       condition:
@@ -383,7 +383,7 @@ differential:
       mustSupport: true
     - id: 'Task.input:code.value[x]'
       path: 'Task.input.value[x]'
-      short: query value
+      short: code value
       type:
         - code: CodeableConcept
       min: 1
@@ -469,7 +469,7 @@ differential:
       path: Task.input
       sliceName: POU
       short: Purpose of use code
-      definition: Represent the purpose of use for the requested data.
+      definition: Represents the purpose of use for the requested data.
       max: '1'
       # mustSupport: true
 
@@ -507,9 +507,9 @@ differential:
       sliceName: data
       short: Requested data
       definition: >-
-        The data content requested.  Multiple repetitions are permitted in the
+        The data content requested. Multiple repetitions are permitted in the
         event that a single request returns multiple instances and packaging in
-        a Bundle is not necessary/appropriate.  Also, in most cases Provenance
+        a Bundle is not necessary/appropriate. Also, in most cases Provenance
         instances should accompany returned data so that the requester can best
         integrate and allocate trust/confidence to the provided data.
       mustSupport: true
@@ -527,8 +527,8 @@ differential:
         The referenced data might be contained within the Task (if it doesn't
         have/shouldn't have independent persistence), but can also refer to data
         stored elsewhere - either on the owner's system or some other system. 
-        Note that all returned data SHOULD comply with appropriate US-Core
-        and/or Da Vinci profiles. The "questionnaire-response" output type is for a QuestionnaireResponse resulting from the request.
+        Note that all returned data SHOULD comply with appropriate US Core
+        and/or Da Vinci profiles. The "response" output type is for a QuestionnaireResponse resulting from the request.
       type:
         - code: Reference
       mustSupport: true

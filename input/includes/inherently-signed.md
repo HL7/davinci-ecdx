@@ -1,4 +1,4 @@
 - The returned information is either:
-   -  inherently signed (for example, a wet signature on a PDF or a digitally signed CCDA)
-   -  or Transformed into a signed [FHIR Document] with the signature in the `Bundle.signature`
+  -  inherently signed (for example, a wet signature on a PDF or a digitally signed C-CDA)
+  -  or transformed into a signed [FHIR Document] with the signature in the `Bundle.signature`
   -  or a signed [QuestionnaireResponse] with the signature in the  [Signature Extension].  

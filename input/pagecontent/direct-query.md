@@ -30,7 +30,7 @@ In addition to using a patient business identifier such as an MRN or Member ID, 
 2. Search the Patient using a Direct Query.
    - For example:
    
-      `Get /Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
+      `GET [base]/Patient?identifier=[member_id]&birthdate=[date]&name=[name]&gender=[gender]`
 
    - CDex Data Source servers **SHALL** support resolving logical identifiers for the Patient resource.
     
@@ -61,7 +61,7 @@ Payer A Seeks Insured Person/Patient B's Active Conditions from Provider C to su
 
 Following the guidance in US Core, a search for all active conditions uses the combination of the patient and clinical-status search parameters:
 
-`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrence,remission`
 
 {% include examplebutton_default.html example="direct-query1-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions" %}
 
@@ -75,9 +75,9 @@ Payer A Seeks Insured Person/Patient B's glycated hemoglobin (HbA1c) test result
 
 - Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
 - Payer A knows the FHIR id of the Patient resource for Patient B
-- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g., 4548-5 *Hemoglobin A1c/Hemoglobin.total in Blood*)
+- Payer A knows the appropriate LOINC codes for searching for HbA1c test results (e.g., 4548-4 *Hemoglobin A1c/Hemoglobin.total in Blood*)
 
-Following the guidance in US Core searches for all HbA1c test results by a date range using the combination of the patient and code and date search parameters:
+Following the guidance in US Core, a search for all HbA1c test results by a date range uses the combination of the patient, code, and date search parameters:
 
 `GET [base]/Observation?patient=[FHIR id]&code=[code]&date=gt[date]`
 
@@ -93,8 +93,8 @@ Payer A Seeks Insured Person/Patient B's latest Progress notes from Provider C t
 
 - Payer A is authorized and has the appropriate scopes to access the health records of Patient B from Provider C using FHIR RESTful Queries
 - Payer A knows the FHIR id of the Patient resource for Patient B
-- Payer A knows the appropriate LOINC codes for searching for Progress note CCDA documents (11506-3 *History & Physical Note*)
-- Provider C supports the standard FHIR search parameters, `_search` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent Progress notes from the query results.)
+- Payer A knows the appropriate LOINC codes for searching for Progress note CCDA documents (11506-3 *Progress note*)
+- Provider C supports the standard FHIR search parameters, `_sort` and `_count` (if this is not the case, then the Payer can search using the date parameter and select the most recent Progress notes from the query results.)
 
 Getting the latest Progress note is typically a two-step process:
 
@@ -102,11 +102,11 @@ Getting the latest Progress note is typically a two-step process:
 2. Fetch the notes file
 
 Following the US Core Clinical Notes Guidance section, the Payer searches for the Progress note C-CDA documents using the combination of the patient and type search parameters. 
-In addition, the combination of `_sort` and `_count` parameters limits the response to only the most recent data. For example, with `_sort=-period` (sort by the `date` parameter in descending order) and `_count=1`, the query returns the most current matching resource.
+In addition, the combination of `_sort` and `_count` parameters limits the response to only the most recent data. For example, with `_sort=-period` (sort by the `period` parameter in descending order) and `_count=1`, the query returns the most current matching resource.
 
 `GET [base]/DocumentReference?patient=[FHIR id]&type=[type-code]&_sort=-period&_count=1`
 
-The `DocumentReference.content.attachment.url` element references the actual CCDA document, and the Payer fetches it using a RESTful GET.
+The `DocumentReference.content.attachment.url` element references the actual C-CDA document, and the Payer fetches it using a RESTful GET.
 
 `GET [base]/[url]`
 
@@ -120,7 +120,7 @@ To the extent that the Data Source keeps a record of the provenance of the data,
 
 This example is the same as Scenario 1 above, except it includes the corresponding Provenance records.
 
-`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission&_revinclude=Provenance:target`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrence,remission&_revinclude=Provenance:target`
 
 {% include examplebutton_default.html example="direct-query1p-scenario" b_title = "Click Here To See Example Direct Query for Patient's Active Conditions and Provenance records" %}
 
@@ -136,7 +136,7 @@ Some data consumers may require that the data they receive be signed. When signa
 - The `Bundle.signature` element on the FHIR search set Bundle is used to exchange the signature.
 
 {% include signature-disclaimer.md %}
-#### The Data Consumer/Requester Requirements
+#### Data Consumer/Requester Requirements
 
 - The Data Consumer/Requester *pre-negotiates* with the Data Source/Responder whether electronic or digital signatures are required. If signatures are required, *all* search query response data will be signed by the sending organization.
 - The Data Consumer/Requester follows the documentation on the [Signatures] page for validating signatures.
@@ -146,7 +146,7 @@ Some data consumers may require that the data they receive be signed. When signa
 
 - If signatures are required, the Data Source/Responder returns a *signed FHIR search set Bundle* using the `Bundle.signature` element for the signature signed by the organization responding to the query.
 - The Data Source/Responder follows the documentation on the [Signatures] page for producing signatures.
-- As discussed in the [What is Signed] section, a signed search bundle could also have individually signed entries. Therefore, if the Data Consumer incorrectly assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g., CCDA, PDF, Image, CDA on FHIR ), they can re-request it using a Task-based request and specify that it be signed (see [Signatures for Task Based Requests]).
+- As discussed in the [What is Signed] section, a signed search bundle could also have individually signed entries. Therefore, if the Data Consumer incorrectly assumed there would be a signature (wet, electronic, or digital) on an individual returned object within the search set Bundle (e.g., C-CDA, PDF, Image, CDA on FHIR), they can re-request it using a Task-based request and specify that it be signed (see [Signatures for Task Based Requests]).
 
 <div markdown="1" class="bg-warning" id="read-warning">
 
@@ -165,7 +165,7 @@ When signatures are required, the Data Consumer must use a [FHIR RESTful search]
  "details": {
  "text": "signed FHIR RESTful read response is not supported."
  },
- "diagnostics": "Resubmit the request as a FHIR RESTful search'"
+ "diagnostics": "Resubmit the request as a FHIR RESTful search"
  }
  ]
  }
@@ -180,7 +180,7 @@ This example is the same as Scenario 1 above, except it includes a digital signa
 **Preconditions and Assumptions:**
 - In addition to the Scenario 1 assumptions above, Payer A pre-negotiated with Provider B that direct query responses require digital signatures.
 
-`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrance,remission`
+`GET [base]/Condition?patient=[FHIR id]&clinical-status=active,recurrence,remission`
 
 {% include examplebutton_default.html example="direct-query1s-scenario" b_title = "Click Here To See Example Signed Direct Query Response" %}
 

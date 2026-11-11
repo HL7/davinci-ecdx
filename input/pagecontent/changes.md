@@ -1,32 +1,35 @@
 <div class="bg-success" markdown="1">
+
 ### Version = 2.1.1
 - Publication Date: TBD, coordinated with the Da Vinci technical corrections
-- URL: `https://hl7.org/fhir/us/davinci-cdex/STU2.1.1` (not yet published)
+- URL: https://hl7.org/fhir/us/davinci-cdex/STU2.1.1
 - Based on FHIR version: 4.0.1
 
-This Technical Correction of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide corrects errors in version 2.1.0. It does not change conformance requirements.
+The changes in this technical correction have been reviewed and commented upon by the public through the HL7 errata process. The [HL7 International Payer/Provider Information Exchange Work Group](http://www.hl7.org/Special/committees/claims) members agreed to and voted on the resolution of the community review comments and edits to this guide.
 
 #### Changes: {#changes-2-1-1}
 
-**Status: Summary (Jira Issue) Link to Change**
+#### What's new in Version 2.1.1 of CDex:
 
-No Jira trackers are applied yet. The candidates for this release are [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211), [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707), [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448), and [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526).
+{% include whats-new-2.1.1.md %}
+
+**Status: Summary (Jira Issue) Link to Change**
 
 The corrections below have no Jira tracker. They fix errors reported by the current publisher and validator.
 
 1. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
-2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group
+2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group [See Changes Here](artifacts.html)
 3. **Applied**: (Correction) Correct heading levels on the Sending Attachments page, so the attachment scenarios are siblings [See Changes Here](sending-attachments.html)
 4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
 
 </div><!-- new-content -->
 
 ### Version = 2.1.0
-- Publication Date: 2025-1-15
+- Publication Date: 2025-01-15
 - URL: <https://hl7.org/fhir/us/davinci-cdex/STU2.1>
 - Based on FHIR version: 4.0.1
 
-This STU Update of The Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide.
+This STU Update of the Da Vinci Clinical Data Exchange (CDex) Implementation Guide is the fourth published version of this guide. The sponsoring HL7 International Payer/Provider Information Exchange Work Group members agreed to and voted on the resolution of the community review comments and edits to this guide.
 
 #### What's new in Version 2.1.0 of CDex:
 
@@ -107,7 +110,7 @@ These changes are the result of the trackers listed below.
 21. **Applied:**(Enhancement) Add "Support" menu item [FHIR-46349](https://jira.hl7.org/browse/FHIR-46349) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/index.html)
 22. **Applied**: (Enhancement) Support both US-Core 3.1.1 and 6.1.0 [FHIR-46507](https://jira.hl7.org/browse/FHIR-46507)
 23. **Applied**: (Enhancement) Add link to flowcharts images to downloads page [FHIR-46508](https://jira.hl7.org/browse/FHIR-46508) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/downloads.html#example-flow-chart-diagrams)
-24. **Applied**: (Correction) Copy editing changes prior to comment period to ensure accuracy, clarity, and readability. [FHIR-46509](https://jira.hl7.org/browse/FHIR-46509) For example, See Changes: 
+24. **Applied**: (Correction) Copy editing changes prior to comment period to ensure accuracy, clarity, and readability. [FHIR-46509](https://jira.hl7.org/browse/FHIR-46509) For example, See Changes:
  - [How To Read This Guide](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/index.html#how-to-read-this-guide)
  - [Sensitive and Confidential Data](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/security.html#sensitive-and-confidential-data)
 25. **Applied**: (Correction) Fix Typo and ordering in Task Data Request Profile [FHIR-46294](https://jira.hl7.org/browse/FHIR-46294) [See Changes Here](https://hl7.org/fhir/us/davinci-cdex/STU2.1-snapshot/StructureDefinition-cdex-task-data-request.html)
@@ -163,11 +166,11 @@ These changes are the result of over 60 trackers listed below. They include the 
 22. **Applied**: Update Grammar ([FHIR-38187](https://jira.hl7.org/browse/FHIR-38187)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#supply-the-requested-attachments-for-each-line-item-and-code)
 23. **Applied**: Clarify that signature support is not required ([FHIR-38188](https://jira.hl7.org/browse/FHIR-38188)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/signatures.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/sending-attachments.html#signatures)
 24. **Applied**: Clarify in operation that either an OrganizationId or ProviderId is required. Allow for both Ids to be sent in request.([FHIR-38189](https://jira.hl7.org/browse/FHIR-38189)) See Changes:[
-   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html) 
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html)
    - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-practitionerrole.html)
-   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) 
+   - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html)
    - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#identifying-the-payer-provider-and-patient)
-25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#date-of-service-for-the-claim) 
+25. **Applied**: Change Task service date input parameter to min = 0 and required only for claims ([FHIR-38191](https://jira.hl7.org/browse/FHIR-38191)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#date-of-service-for-the-claim)
 26. **Applied**: Clarify conformance expectations ([FHIR-38192](https://jira.hl7.org/browse/FHIR-38192)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/attachments-conformance.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-conformance.html)
 27. **Applied**: Clarify patient account number ([FHIR-38194](https://jira.hl7.org/browse/FHIR-38194)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
 28. **Applied**: Task Infrastructure Elements ([FHIR-38195](https://jira.hl7.org/browse/FHIR-38195)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#task-status-intent-and-code-elements)
@@ -205,7 +208,7 @@ These changes are the result of over 60 trackers listed below. They include the 
       - [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/QuestionnaireResponse-cdex-questionnaireresponse-example4.html)
 35. **Applied**: Clarify when human involvement needed ([FHIR-38242](https://jira.hl7.org/browse/FHIR-38242)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/task-based-approach.html#sequence-diagram)
 36. **Applied**: Add link to PAS Guidance on pended results ([FHIR-38244](https://jira.hl7.org/browse/FHIR-38244)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/burden-reduction.html)
-37. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#purpose-of-use-for-the-request) 
+37. **Applied**: Add POU for Attachment Request as optional input parameter ([FHIR-38245](https://jira.hl7.org/browse/FHIR-38245)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/StructureDefinition-cdex-task-attachment-request.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#purpose-of-use-for-the-request)
 38. **Applied**: Correct operation name ([FHIR-38253](https://jira.hl7.org/browse/FHIR-38253)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/requesting-attachments-code.html#data-elements-for-requesting-attachments)
 39. **Applied**: Change *only accepts* to *only accept*([FHIR-38255](https://jira.hl7.org/browse/FHIR-38255)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/OperationDefinition-submit-attachment.html)
 40. **Applied**: Clarify use of cdex-temp code system ([FHIR-38259](https://jira.hl7.org/browse/FHIR-38259)) See Changes [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/ValueSet-cdex-POU.html) and [Here](https://hl7.org/fhir/us/davinci-cdex/STU2/CodeSystem-cdex-temp.html)
@@ -257,13 +260,13 @@ This STU1.1 version of The Da Vinci Clinical Data Exchange (CDex) Implementation
     - A [Sending Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/sending-attachments.html) page that documents a FHIR-based approach for sending attachments for claims or prior authorization directly to a Payer.
     - A [Requesting Attachments](https://hl7.org/fhir/us/davinci-cdex/STU1.1/requesting-attachments.html) page to document a FHIR-based approach for requesting attachments for claims or prior authorization from a Provider.
     - A [Using CDex Attachments with DaVinci PAS](https://hl7.org/fhir/us/davinci-cdex/STU1.1/requesting-attachments.html) page that illustrates where in the PAS workflow the Payer could use CDEX to request attachments and the Provider could use CDEX to submit attachments.
-- [Signatures](https://hl7.org/fhir/us/davinci-cdex/STU1.1/signatures.html) page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures. 
+- [Signatures](https://hl7.org/fhir/us/davinci-cdex/STU1.1/signatures.html) page sections for each transaction in CDex to provide specific guidance and rules to exchange *signed* data using FHIR and non-FHIR signatures.
 - A [Change Log](https://hl7.org/fhir/us/davinci-cdex/STU1.1/changes.html) page to document the changes across the versions of CDex
 - More [examples](https://hl7.org/fhir/us/davinci-cdex/STU1.1/artifacts.html#6) and example scenarios
-  
+
 #### Changes:
 
-These changes are the result of almost 60 trackers listed below. They include the 2022 May HL7 balloting process, non-ballot issue, and *Draft* new content to meet anticipated Attachments legislation and rules. 
+These changes are the result of almost 60 trackers listed below. They include the 2022 May HL7 balloting process, non-ballot issue, and *Draft* new content to meet anticipated Attachments legislation and rules.
 
 ##### May 2022 Ballot comments and links to the updated content are below::
 
@@ -272,7 +275,7 @@ These changes are the result of almost 60 trackers listed below. They include th
 1. **Applied:** Typo ([FHIR-36819](https://jira.hl7.org/browse/FHIR-36819))
 2. **Applied:** Typo ([FHIR-36820](https://jira.hl7.org/browse/FHIR-36820))
 3. **Applied:** Typo ([FHIR-36821](https://jira.hl7.org/browse/FHIR-36821))
-6. **Applied:** Add guidance when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes:   
+6. **Applied:** Add guidance when Signatures fail verification ([FHIR-36842](https://jira.hl7.org/browse/FHIR-36842)) See Changes:
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/direct-query.html#signatures)
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#signatures)
    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/sending-attachments.html#signatures)
@@ -372,9 +375,9 @@ These changes are the result of almost 60 trackers listed below. They include th
     - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/Task-cdex-task-example19.html)
     - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/Task-cdex-task-example20.html)
 30. **Applied:** Add CCDA example and Correct PDF example ([FHIR-37655](https://jira.hl7.org/browse/FHIR-37655)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#scenario-2)
-31. **Applied:** Rewrite section on Discovery of FHIR IDs ([FHIR-37652] (https://jira.hl7.org/browse/FHIR-37652)) See Changes:  
+31. **Applied:** Rewrite section on Discovery of FHIR IDs ([FHIR-37652] (https://jira.hl7.org/browse/FHIR-37652)) See Changes:
     - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#discovery-of-providers-payer-and-patient-ids)
-    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/direct-query.html#discovery-of-patient-fhir-ids) 
+    - [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/direct-query.html#discovery-of-patient-fhir-ids)
 32. **Applied:** Document how implementers locate the proper identifier ([FHIR-37651](https://jira.hl7.org/browse/FHIR-37651)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/OperationDefinition-submit-attachment.html)
 33. **Applied:** Clarify how to fetch data if can not perform a direct query. ([FHIR-37649](https://jira.hl7.org/browse/FHIR-37649)) See Changes [Here](http://hl7.org/fhir/us/davinci-cdex/STU1.1/task-based-approach.html#fetching-the-data)
 

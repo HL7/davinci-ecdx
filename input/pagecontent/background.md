@@ -1,6 +1,6 @@
 ### About the Da Vinci Project
 
-Da Vinci is a private sector initiative that addresses the needs of the Value-Based Care Community by leveraging the HL7 FHIR platform. For more information about the Da Vinci Project, its use cases, members, and updates, see the [Da Vinci Overview]
+Da Vinci is a private sector initiative that addresses the needs of the Value-Based Care Community by leveraging the HL7 FHIR platform. For more information about the Da Vinci Project, its use cases, members, and updates, see the [Da Vinci Overview].
 
 ### What Do Payers Do with Clinical Information
 
@@ -39,22 +39,22 @@ A sampling of the type of information needed by Payers includes:
 
 For Security and Privacy considerations, refer to the [Security and Privacy] page.
 
-### Where Does CDEX Fit in the Da Vinci Project
+### Where Does CDex Fit in the Da Vinci Project
 
 [Da Vinci Use Cases] are interrelated, currently with five categories that have emerged: Quality Improvement, Coverage/Burden Reduction, Member Access, Process Improvement, and Clinical Data Exchange.  A table that summarizes the many areas of functional overlap between this guide and other Da Vinci guides is available [here](https://confluence.hl7.org/display/DVP/CDEX+Overlap+with+Other+DaVinci+IGs). CDex is not intended to supersede other Da Vinci guides, which focus on a particular use case and define how to share clinical information. However, CDex may be used to request clinical data from a provider when:
 
-- An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use case specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care. 
+- An alternative is needed to cover some aspects of an exchange. For example, suppose the provider's data release process does not allow the automatic request for information specified in a use-case-specific IG. In that case, CDex provides an asynchronous process that allows manual review before releasing the information. However, implementers should not use this transaction when there is a requirement for real-time response to facilitate patient care. 
 - There is a specific exchange that is not already addressed by one of the other IGs 
 
- The use of CDex **SHALL NOT** be considered compliant with any use case specific IG where CDex is not explicitly required as part of the supported exchanges. 
+ The use of CDex **SHALL NOT** be considered compliant with any use-case-specific IG where CDex is not explicitly required as part of the supported exchanges. 
 
 ### Workflow Overview
 
-FHIR offers numerous architectural approaches for sharing data between systems. Each has pros and cons; the most appropriate one depends on the circumstances under which systems exchange data. (Review the [Architectural Approach](#architectural-approach) section below for more detail.)  This guide focuses on **three** FHIR transaction approaches for requesting information:
+FHIR offers numerous architectural approaches for sharing data between systems. Each has pros and cons; the most appropriate one depends on the circumstances under which systems exchange data. (Review the [Architectural Approach](#architectural-approach) section below for more detail.) This guide focuses on **three** FHIR transaction approaches for requesting information:
 
 1. **[Direct Query]:** A Payer or external Provider system directly queries the Provider system for specific data using the standard FHIR RESTful search.
 2. **[Task Based Approach]:** A Payer or external Provider system requests data using the FHIR *Task* resource. The Provider system supplies the data. Human involvement may be needed to find/aggregate/filter/approve it.
-3. **[Solicited and Unsolicited Attachments]** The payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. The Provider system uses a “push” based FHIR operation to submit attachments to the Payer.
+3. **[Solicited and Unsolicited Attachments]** The payer system requests attachments (additional documentation) for claims or prior authorization using the FHIR *Task* resource. The Provider system uses a "push" based FHIR operation to submit attachments to the Payer.
 
 <div markdown="1" class="stu-note">
 
@@ -99,8 +99,9 @@ Figure 4 below illustrates the exchange of clinical data between a Provider syst
 ###### Steps
 
 1. The Provider submits the attachments and metadata for the association to the claim or prior authorization (for example, member id and claim id).
-   - attachments are submitted **without an explicit request** as *unsolicited* attachments. 
+   - Attachments are submitted **without an explicit request** as *unsolicited* attachments. 
 2. The Payer system accepts attachments. (This guide does not cover the payer's method for associating attachments to claims or prior authorizations and processing them.)
+
 ##### Solicited Attachments Workflow
 
 Figure 5 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited Attachments* workflow.
@@ -110,7 +111,7 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 ###### Steps
 
 1. For *solicited* attachments, the Payer initiates a request for attachments for a claim or prior authorization.
-    - This can be a FHIR or non-FHIR-based transaction
+    - This can be a FHIR or non-FHIR-based transaction.
 2. The Provider submits the attachments and metadata (for example, member id and claim id) for the association to the claim or prior authorization.
 3. The Payer system accepts attachments. (This guide does not cover the payer's method for associating attachments to claims or prior authorizations and processing them.)
 
@@ -118,7 +119,7 @@ Figure 5 below illustrates the exchange of clinical data between a Payer system 
 
 ### Architectural Approach
 
-All Da Vinci IGs that define [CapababilityStatements]({{site.data.fhir.path}}capabilitystatement.html) setting expectations for support for specific FHIR interactions, operations, or other exchange mechanisms include this section explaining the IG's choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page documented in the FHIR version R5 specification.
+All Da Vinci IGs that define [CapabilityStatements]({{site.data.fhir.path}}capabilitystatement.html) setting expectations for support for specific FHIR interactions, operations, or other exchange mechanisms include this section explaining the IG's choice of exchange architecture in terms of the [Approaches to Exchanging FHIR Data](https://hl7.org/fhir/exchanging.html) page documented in the FHIR version R5 specification.
 
 #### Direct Query
 
@@ -153,7 +154,7 @@ Although not as widely adopted as the FHIR RESTful approach, the Task-Based appr
 
 ##### Sending Attachments Using a FHIR Process Operation
 
-The CDex Data Source  (i.e., the Provider) uses the [`$submit-attachment`] operation to *push* clinical data to the CDex Data Consumer (i.e., the Payer) in both solicited and solicited attachment transactions. This transaction is specialized to the CDex Attachments use case and is not reusable for other clinical data exchanges.
+The CDex Data Source (i.e., the Provider) uses the [`$submit-attachment`] operation to *push* clinical data to the CDex Data Consumer (i.e., the Payer) in both solicited and unsolicited attachment transactions. This transaction is specialized to the CDex Attachments use case and is not reusable for other clinical data exchanges.
 
 ###### Decision Tree
 
@@ -163,7 +164,7 @@ The CDex Data Source  (i.e., the Provider) uses the [`$submit-attachment`] opera
 - Data source directs consumer persistence? - **No** - It was presumed that the CDex Data Consumer is unaware of the existing data and would share all the clinical data for all transactions.
 - Is message-like? - **No** - It was presumed that there is no need for explicit support for routing and that Operations are a lighter-weight solution.
 
-##### Requesting Attachment using Task
+##### Requesting Attachments Using Task
 
 Requesting Attachment using Task is a specialization of the [Task-Based Workflow](#task-based-workflow) transaction. In contrast to the Task Based Workflow, it is not reusable for other clinical data exchanges. Additionally, the CDex Data Source (i.e., the Provider) *pushes* the data to the Payer-supplied endpoint using the [`$submit-attachment`] operation documented in the [Sending Attachments Using a FHIR Process Operation](#sending-attachments-using-a-fhir-process-operation) section above.
 
@@ -171,7 +172,7 @@ Requesting Attachment using Task is a specialization of the [Task-Based Workflow
 
 - Consumer initiates? - **Yes** -  The CDex Data Consumer systems initiate the transaction when clinical information from the CDex Data Source is needed.
 - Direct Connection? - **Yes** - It was presumed that CDex Data Consumer systems could connect directly with the CDex Data Source system to create Tasks and fetch resources.
-Human intervention? **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information. 
+- Human intervention? - **Yes** - There was an expectation the CDex Data Source may need human intervention to return the information. 
 - Is data pre-existing? - **Yes** - Generally, it was presumed the CDex Data Source has data about a patient/member.
 - Return FHIR resources? - **Yes** - The CDex Data Source could return FHIR resources.
 - Ad-hoc query? - **Yes** - It was presumed that CDex Data Consumer would create Ad-hoc data requests using `Task.input` to get the data from the CDex Data Source.

@@ -16,7 +16,7 @@ For *unsolicited* attachments, the Payer does not explicitly request them - inst
 
 The flow diagram below shows this transaction:
 
-{% include img.html img="unsolicited-flow.svg" caption="Figure 10: Unsolicited Attachments Flow Diagram" %}
+{% include img.html img="unsolicited-flow.svg" caption="Figure 11: Unsolicited Attachments Flow Diagram" %}
 
 See the [Sending Attachments] page for information on how Providers can use CDex to support unsolicited attachment transactions.
 
@@ -24,12 +24,12 @@ See the [Sending Attachments] page for information on how Providers can use CDex
 
 For a *solicited* attachment, the Provider will submit attachments to support a claim or prior authorization *in response to* a Payer's request for additional documentation. The Payer associates the submitted attachments with the claim or prior authorization. The flow diagrams below show this transaction:
 
-{% include img.html img="solicited-claim-flow.svg" caption="Figure 11: Solicited Attachments for a Claim" %}
+{% include img.html img="solicited-claim-flow.svg" caption="Figure 12: Solicited Attachments for a Claim" %}
 
 ---
 
-{% include img.html img="solicited-prior-auth-flow.svg" caption="Figure 12: Solicited Attachments for a Prior Authorization" %}
+{% include img.html img="solicited-prior-auth-flow.svg" caption="Figure 13: Solicited Attachments for a Prior Authorization" %}
 
-In addition to using CDEX to request attachments, a Payer can request them via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform. See the [Requesting Attachments Using Attachment Codes], [Requesting Attachments Using Questionnaires], and [Sending Attachments] pages for how Payers and Providers can use CDex to support  *solicited* attachment transactions.
+In addition to using CDex to request attachments, a Payer can request them via a non-CDex-FHIR-based request such as an X12 transaction, fax, portal, or other platform. See the [Requesting Attachments Using Attachment Codes], [Requesting Attachments Using Questionnaires], and [Sending Attachments] pages for how Payers and Providers can use CDex to support  *solicited* attachment transactions.
 
 {% include link-list.md %}

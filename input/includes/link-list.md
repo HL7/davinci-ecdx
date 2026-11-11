@@ -72,7 +72,7 @@
 [FHIR SMART v2 (Granular Controls)]: https://confluence.hl7.org/pages/viewpage.action?pageId=97479739
 [FHIR Data Segmentation for Privacy]: https://hl7.org/fhir/uv/security-label-ds4p/
 [FHIR id]: {{site.data.fhir.path}}references.html
-[Basic Provenance]: {{site.data.fhir.uscore7}}/basic-provenance.html
+[Basic Provenance]: {{site.data.fhir.ver.uscore7}}/basic-provenance.html
 [HRex Provenance Profile]: {{site.data.fhir.ver.hrex}}/StructureDefinition-hrex-provenance.html
 [CDex Purpose of Use Value Set]: ValueSet-cdex-POU.html
 [Da Vinci Coverage Requirements Discovery (CRD)]: https://hl7.org/fhir/us/davinci-crd/
@@ -152,6 +152,7 @@
 [DTR Standard Questionnaire]: {{site.data.fhir.ver.dtr}}StructureDefinition-dtr-std-questionnaire.html
 [signatureRequired]: http://hl7.org/fhir/StructureDefinition/questionnaire-signatureRequired
 [CDex Signature Profile]: StructureDefinition-cdex-signature.html
+[CDex Signature Datatype Profile]: StructureDefinition-cdex-signature.html
 [CDex SDC QuestionnaireResponse Profile]: StructureDefinition-cdex-sdc-questionnaireresponse.html
 [QuestionnaireResponse]:  {{site.data.fhir.path}}questionnaireresponse.html
 [Topic-Based Subscriptions Framework]: http://hl7.org/fhir/2022Sep/subscriptions.html

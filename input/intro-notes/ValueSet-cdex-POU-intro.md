@@ -8,7 +8,7 @@ The process for submitting the CDex Temporary Code System POU Codes for inclusio
 
 The current state of healthcare data exchange is typically limited to a single, well-known, and pre-established purpose-of-use (POU). The CDex Purpose of Use Value Set defines POU with a greater level of discrimination at the transaction level. These codes form a hierarchy where the child concepts have an IS-A relationship with the parents that rolls up to the [45 CFR 164.506 Treatment, Payment, and Health Care Operations (TPO)] concepts. The table and figure below illustrate this hierarchy:
 
-|TPO|HL7 ACTReason POU TPO Codes|CDEX POU Codes|
+|TPO|HL7 ACTReason POU TPO Codes|CDex POU Codes|
 |---|---|---|
 |T|TREAT|TREAT*|
 |T||treatment-noa**|
@@ -29,13 +29,13 @@ The current state of healthcare data exchange is typically limited to a single, 
 \* HL7 ACTReason CodeSystem  
 \*\* CDex Temporary Code System Codes
 
-{% include img.html img="POU-rollup.svg" caption = "CDex Purpose of Use Value Set Heirarchy" %}
+{% include img.html img="POU-rollup.svg" caption = "CDex Purpose of Use Value Set Hierarchy" %}
 
 {% include img.html img="POU-rollup-legend.svg" caption = "Legend" %}
 
-### Using Not OtherWise Enumerated Codes
+### Using Not Otherwise Enumerated Codes
 
-The *Not OtherWise Enumerated Codes*:
+The *Not Otherwise Enumerated Codes*:
  - treatment-noa
  - payment-noa
  - operations-noa

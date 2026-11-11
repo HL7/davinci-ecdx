@@ -8,7 +8,7 @@ status: active
 kind: operation
 date: "2021-12-02T20:24:41-08:00"
 description: |-
-  Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after*  the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)
+  Providers use this [operation](http://hl7.org/fhir/operations.html) to submit *solicited* and *unsolicited* attachments or additional information for claims or prior authorization. The $submit-attachment operation accepts the clinical/administrative attachments and the information required to associate them with the claim or prior authorization and returns an HTTP response. For *unsolicited* attachments, the Provider invokes this operation *before, concurrently, or after* the claim or pre-authorization transaction. For *solicited* attachments, the Provider invokes it when responding to a Payer request for attachments or additional information. Any HTTP endpoint can use $submit-attachment, not just FHIR RESTful server endpoints. Implementers of CDex's *Unsolicited* Attachments **SHOULD** support the [Endpoint Discovery Strategy](https://hl7.org/fhir/us/davinci-hrex/STU1.1/endpoint-discovery.html) defined in the Da Vinci HRex specification to allow discovery of the endpoint for this operation. For *Solicited Attachments*, the $submit-attachment endpoint is supplied in the [CDex Task Attachment Request Profile](http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-task-attachment-request)
 
   The input parameters are:
   1. One or more attachments as FHIR Resources
@@ -33,18 +33,18 @@ comment: |
   The following rules apply when using `$submit-attachment`:
   * The operation's endpoint **SHALL** only accept `POST` transactions - any other HTTP method **SHALL** result in an HTTP error.
   * A ProviderId parameter, OrganizationId parameter, or both **SHALL** be present.
-  * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.
-  * The `Attachment.LineItem` and `Attachment.Code` parameters are associated with the attachments in `Attachment.Content`.   If `Attachment.LineItem` is absent, the attachment is associated with the entire claim or prior authorization.
-  * For the `Attachment.Content` parameter, Servers **SHALL** support [DocumentReference](http://hl7.org/fhir/documentreference.html) resource type and **SHOULD** support other types.  If Servers support requesting attachments with [Questionnaire](http://hl7.org/fhir/questionnaire.html), then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported.
-    * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`.  The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
+  * The ServiceDate parameter **SHALL** be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization.
+  * The `Attachment.LineItem` and `Attachment.Code` parameters are associated with the attachments in `Attachment.Content`. If `Attachment.LineItem` is absent, the attachment is associated with the entire claim or prior authorization.
+  * For the `Attachment.Content` parameter, Servers **SHALL** support [DocumentReference](http://hl7.org/fhir/documentreference.html) resource type and **SHOULD** support other types. If Servers support requesting attachments with [Questionnaire](http://hl7.org/fhir/questionnaire.html), then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported.
+    * The DocumentReference resources can represent the referenced content using either an address where the document can be retrieved using `DocumentReference.attachment.url` or the content as inline base64 encoded data using `DocumentReference.attachment.data`. The server system is not required to support both an address and inline base64 encoded data, but **SHALL** support at least one of these elements.
     * These capabilities **SHOULD** be discoverable and documented by the server (for example, in the CapabilityStatement for FHIR Servers).
   * When the `Final` parameter is omitted, the default meaning is Final="true" - the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.
   * When processing the operation, a server may return one of several status codes:
     * **200 OK**: Indicates that the server has accepted the clinical attachments.
-      * If the attachments can not be associated with an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.
-    * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation,
+      * If the attachments cannot be associated with an *existing* claim or member, the server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) to inform the Data Source that they are being held for a subsequent association with a future claim or prior authorization.
+    * **4xx**: Indicates some error in the submission. The client **SHOULD** interpret a 4xx response to indicate that there is no point in resubmitting the unaltered operation.
     * **5xx**: Indicates some system error. The client **SHOULD** interpret a 5xx response to indicate an unexpected error occurred on the part of the server, with the implication that it may be appropriate to resubmit the original operation.
-    *  The server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.
+    * The server **SHOULD** return an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) with additional error information if the response code is 400 or greater. For example, if the payer does not know the claim or prior authorization, the OperationOutcome can alert the submitter to check whether they sent it to the wrong payer.
 
   See the [Attachments](attachments.html) page for additional guidance and examples.
 resource:
@@ -59,9 +59,9 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "tracking control number"
+      An identifier that ties the attachment(s) back to the claim or prior authorization. This value is referred to as the "tracking control number".
 
-       In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider assigned when the attachments are sent upon prior auth generation as *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.
+       In *unsolicited* claim attachments, the provider assigns the tracking control number on the claim and also on the submitted attachments for that claim for association. In *solicited* claim attachments, the payer assigns the tracking control number and sends it to the provider with the request for additional information for that specific claim. Similarly, for prior authorizations, the prior-auth tracking control number is provider-assigned when the attachments are sent upon prior auth generation as *unsolicited* attachments, and the prior auth tracking control number is assigned and communicated by the payer when the attachments are in response to a request for additional documentation.
     type: Identifier
 
   - name: AttachTo
@@ -69,7 +69,7 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      A value of either "claim" or "preauthorization" to communicate what the additional information is needed for.  This is known by the provider when submitting *unsolicited* attachments and communicated to the provider through the request for *solicited* attachments.
+      A value of either "claim" or "preauthorization" to communicate what the additional information is needed for. This is known by the provider when submitting *unsolicited* attachments and communicated to the provider through the request for *solicited* attachments.
     type: code
     binding:
       strength: required
@@ -80,7 +80,7 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      The receiving payer identifier. It may be required, because the endpoint may support multiple payers.  Currently, there is no standard way to obtain the payer identifiers and implementers will need to obtain them “out of band” when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
+      The receiving payer identifier. It may be required because the endpoint may support multiple payers. Currently, there is no standard way to obtain the payer identifiers and implementers will need to obtain them "out of band" when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: Identifier
 
   - name: OrganizationId
@@ -95,7 +95,7 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      Sending provider identifier (e.g.,Type 1 NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both **SHALL** be present.
+      Sending provider identifier (e.g., Type 1 NPI). This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. A ProviderId parameter or OrganizationId parameter or both **SHALL** be present.
     type: Identifier
 
   - name: MemberId
@@ -103,7 +103,7 @@ parameter:
     min: 1
     max: "1"
     documentation: >-
-      Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.  This identifier can be either the Payer assigned Member ID or a provider assigned "Patient Account Number" for an *unsolicited* attachment for prior authorization.
+      Patient member identifier. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request. This identifier can be either the Payer-assigned Member ID or a provider-assigned "Patient Account Number" for an *unsolicited* attachment for prior authorization.
     type: Identifier
 
   - name: ServiceDate
@@ -111,7 +111,7 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      Date of service or starting date of the service for the claim or prior authorization.  This parameter **SHALL** be present and precise to the day if the attachment is for a claim.  It is optional if the attachment is for prior authorization.  This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
+      Date of service or starting date of the service for the claim or prior authorization. This parameter **SHALL** be present and precise to the day if the attachment is for a claim. It is optional if the attachment is for prior authorization. This is assumed to be known by the provider when submitting *unsolicited* attachments. For *solicited* attachments this value is communicated to the provider through the request.
     type: dateTime
 
   - name: Attachment
@@ -119,7 +119,7 @@ parameter:
     min: 1
     max: "*"
     documentation: >-
-      The attachments that are communicated for a claim or prior authorization. They are applied to the LineItem (line items) and/or Code parameters if present.  If no LineItem is present, then the attachment is applied to the entire claim or prior authorization.
+      The attachments that are communicated for a claim or prior authorization. They are applied to the LineItem (line items) and/or Code parameters if present. If no LineItem is present, then the attachment is applied to the entire claim or prior authorization.
 
     part:
 
@@ -128,7 +128,7 @@ parameter:
       min: 0
       max: "*"
       documentation: >-
-        Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments.  For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request.
+        Claim/prior authorization line item for service in the claim or prior authorization. It may be present when submitting *unsolicited* attachments. For a *solicited* claim or claim authorization attachment, this value is the same as the line items communicated in the request.
       type: string
 
     - name: Code
@@ -136,7 +136,7 @@ parameter:
       min: 0
       max: "1"
       documentation: >-
-        Code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report).  This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group.  More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/.  PWK01 Report Type Codes may also be used.  It **SHOULD** be present when submitting *unsolicited* attachments. For *solicited* attachments, this value is the same as the attachment code communicated when requesting attachments. When requesting attachments using Questionnaire, there is no code in the request and the code is typically not present in the response.
+        Code to identify the specific kind of information being communicated (e.g., a discharge summary or diagnostic imaging report). This value set includes LOINC terms that can be sent by a payer as part of an HL7 attachment request for additional information. It has been curated by the HL7 Payer/Provider Information Exchange (PIE) Work Group. More information about using LOINC in HIPAA attachments and the source of this value set can be found at https://loinc.org/attachments/. PWK01 Report Type Codes may also be used. It **SHOULD** be present when submitting *unsolicited* attachments. For *solicited* attachments, this value is the same as the attachment code communicated when requesting attachments. When requesting attachments using Questionnaire, there is no code in the request and the code is typically not present in the response.
       type: CodeableConcept
       binding:
         strength: extensible
@@ -148,7 +148,7 @@ parameter:
       min: 1
       max: "1"
       documentation: >-
-        Attachment as a FHIR resource.  Non-FHIR attachment data is conveyed using the [DocumentReference](http://hl7.org/fhir/documentreference.html) or [Binary](http://hl7.org/fhir/binary.html) resource. Servers **SHALL** support the DocumentReference resource type and **SHOULD** support other types. If Servers support requesting attachments with Questionnaire, then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported.
+        Attachment as a FHIR resource. Non-FHIR attachment data is conveyed using the [DocumentReference](http://hl7.org/fhir/documentreference.html) or [Binary](http://hl7.org/fhir/binary.html) resource. Servers **SHALL** support the DocumentReference resource type and **SHOULD** support other types. If Servers support requesting attachments with Questionnaire, then the [SDC Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse) **SHALL** be supported and the [SDC Adaptive Questionnaire Response Profile](http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaireresponse-adapt) **SHOULD** be supported.
       type: Resource
 
   - name: Final
@@ -156,5 +156,5 @@ parameter:
     min: 0
     max: "1"
     documentation: >-
-      Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization.  If Final = "true", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = "false", the Data Source expects to submit more attachments in subsequent operations.   Payers typically anticipate a single submission and may discourage multiple submissions.
+      Flag to indicate whether the operation is the last attachment submission (solicited or unsolicited) for the claim or prior authorization. If Final = "true", the Data Source has no more attachments to submit. This is the default meaning if this parameter is omitted. If Final = "false", the Data Source expects to submit more attachments in subsequent operations. Payers typically anticipate a single submission and may discourage multiple submissions.
     type: boolean

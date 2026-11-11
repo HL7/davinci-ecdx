@@ -29,7 +29,7 @@ lastModified: '2020-10-27T11:05:34-07:00'
 meta:
   extension:
   - url: http://hl7.org/fhir/StructureDefinition/instance-name
-    valueString: CDex Task Inline Example 6
+    valueString: CDex Inline Task Example 6
   - url: http://hl7.org/fhir/StructureDefinition/instance-description
     valueMarkdown: Task example used to create inline task based scenario for [progress note exam notes as PDF](task-based-approach.html#progress-note-exam-notes-as-pdf)
   profile:

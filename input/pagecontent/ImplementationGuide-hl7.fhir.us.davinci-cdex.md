@@ -20,7 +20,7 @@
 
 ### IG Dependencies
 
-This IG Contains the following dependencies on other IGs.
+This IG contains the following dependencies on other IGs.
 
 {% include dependency-table.xhtml %}
 

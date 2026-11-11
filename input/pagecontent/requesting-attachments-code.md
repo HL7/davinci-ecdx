@@ -6,7 +6,7 @@ This page documents a FHIR-based approach for requesting attachments for claims 
 
 In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities. The Provider can submit these *solicited* attachments using Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
 
-{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
+{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 15: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
 
 
@@ -24,9 +24,9 @@ The CDex Task Attachment Request Profile defines a specific `Task.code` that com
 
 Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using FHIR Questionnaires to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
-Requesting attachments using attachment codes defined by the LOINC Document Ontology or, for prior authorization, [X12] PWK01 Report Type Codes is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or CCDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
+Requesting attachments using attachment codes defined by the LOINC Document Ontology or, for prior authorization, [X12] PWK01 Report Type Codes is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or C-CDA). The sequence diagram in Figure 16 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 
-{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 15" %}
+{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 16" %}
 
 
 
@@ -38,19 +38,19 @@ When requesting attachments, the following data elements are needed to associate
 
 ### *Step-by-Step* Solicited Attachment Transaction
 
-In the following sections, A detailed look at an example *Solicited* attachment transaction illustrates how the Payer uses the CDex Task Attachment Request Profile to communicate the required data elements to the Provider and how they use the $submit-attachment to communicate the response back to the Payer.
+In the following sections, a detailed look at an example *Solicited* attachment transaction illustrates how the Payer uses the CDex Task Attachment Request Profile to communicate the required data elements to the Provider and how they use the [`$submit-attachment`] operation to communicate the response back to the Payer.
 {: .bg-info}
 
-In this scenario, a Provider creates a claim and sends it to the Payer. The Payer reviews the claim and responds with a request for supporting documentation/attachments using the  CDex Attachment Request Profile. The flow diagram for this transaction is shown in Figure 16 below:
+In this scenario, a Provider creates a claim and sends it to the Payer. The Payer reviews the claim and responds with a request for supporting documentation/attachments using the CDex Task Attachment Request Profile. The flow diagram for this transaction is shown in Figure 17 below:
 
-{% include img.html img="cdex-request-attach-claim-flow.svg" caption=" Figure 16: CDex Request Attachments for Claims Using Attachments Codes" %}
+{% include img.html img="cdex-request-attach-claim-flow.svg" caption=" Figure 17: CDex Request Attachments for Claims Using Attachments Codes" %}
 
  In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following information to complete the adjudication of the claim:
 
-- The attachment code(s) for the requested documents.  These codes are [LOINC attachment codes] or, for prior authorization, [X12] PWK01 Report Type Codes 
-- What line numbers on the claim the requested attachment (s) are for
+- The attachment code(s) for the requested documents. These codes are [LOINC attachment codes] or, for prior authorization, [X12] PWK01 Report Type Codes 
+- What line numbers on the claim the requested attachment(s) are for
 
-After receiving the attachment request, the Provider collects the documentation and returns it using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The table below summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters: 
+After receiving the attachment request, the Provider collects the documentation and returns it using the [`$submit-attachment`] operation, posting it to the endpoint supplied in the request. The table below summarizes the mapping between the CDex Task Attachment Request Profile elements and the [`$submit-attachment`] parameters: 
 
 
 {% include attachments_to_requests.md %}
@@ -78,14 +78,14 @@ POST [base]/Task
 
 The following data elements are used to verify the patient's identity. (This guide does not cover how the Provider system verifies the patient's identity.) They are communicated in a  *contained* Patient resource using the [CDex Patient Demographics Profile]. The contained Patient is referenced in `Task.for.reference` using a fixed reference value of "#patient".
 
-|Data|HRex Patient Demographics Profile.|
+|Data|CDex Patient Demographics Profile|
 |---|---|
 |Member ID or Patient Account No.*|`Patient.identifier`|
 |Patient Name|`Patient.name`|
 |Patient DOB (optional)|`Patient.birthDate`|
 {: .grid}
 
-\* Patient Account Number is a Provider assigned identifier 
+\* Patient Account Number is a Provider-assigned identifier 
 
 
 ~~~
@@ -109,7 +109,7 @@ The mandatory `Task.identifier` *tracking-id* slice element represents the Payer
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=40 count=12 linenumber=true rel=true %}
 ~~~
 
-##### Task *status* *intent* and *code* Elements
+##### Task *status*, *intent*, and *code* Elements
 
 These required Task infrastructure elements:
 
@@ -117,7 +117,7 @@ These required Task infrastructure elements:
 - `Task.intent`
 - `Task.code`
 
-convey what the task is about, its status, and the intent of the request. The `Task.status` value of "request" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the [Task state machine]. `Task.intent` is fixed to "order".
+convey what the task is about, its status, and the intent of the request. The `Task.status` value of "requested" is typical when POSTing the Task-based attachment request. The status will change as the Task moves through the workflow based on the [Task state machine]. `Task.intent` is fixed to "order".
 
 ~~~
 {% include_relative includelines filename='Task-cdex-task-inline-example19.json' start=52 count=2 linenumber=true rel=true %}
@@ -136,16 +136,16 @@ The `Task.code` communicates that the Payer is requesting attachments for a clai
 
 The Payer directs the attachment request to the same Provider who submitted the claim or prior authorization. Business identifiers are used to identify the Patient, the Payer, and the Provider who submitted the claim. The Provider echoes them back to the Payer when submitting the attachments.
 
-As discussed above, the Patient ID is in the contained Patient resource, referenced by the `Task.for` element, and the Provider ID is in the contained PractitionerRole resource referenced by the `Task.owner` element. The Provider ID can be a Practitioner identifier (i.e., a Type1 NPI), a Practitioner's Organization identifier (i.e., a Type2 NPI), or both.
+As discussed above, the Patient ID is in the contained Patient resource, referenced by the `Task.for` element, and the Provider ID is in the contained PractitionerRole resource referenced by the `Task.owner` element. The Provider ID can be a Practitioner identifier (i.e., a Type 1 NPI), a Practitioner's Organization identifier (i.e., a Type 2 NPI), or both.
 
 (note the various Task dates in the request fragment below)
 
 
-|Actor|CDex Request Attachment Task Profile Element|
+|Actor|CDex Task Attachment Request Profile Element|
 |---|---|
 |payer ID|`Task.requester.identifier`|
-|provider ID|(contained)PractitionerRole.practitioner. identifier or PractitionerRole.Organization.identifier|
-|patient member ID or Patient Account No|(contained)Patient.identifier|
+|provider ID|(contained) PractitionerRole.practitioner.identifier or PractitionerRole.organization.identifier|
+|patient member ID or Patient Account No|(contained) Patient.identifier|
 {: .grid}
 
 ~~~
@@ -156,7 +156,7 @@ As discussed above, the Patient ID is in the contained Patient resource, referen
 
 The Task communicates whether the attachments are for a claim or prior authorization, and the Payer identifies the claim or prior authorization with its business identifier.
 
-|Data|CDex Request Attachment Task Profile Element|
+|Data|CDex Task Attachment Request Profile Element|
 |---|---|
 |Claim or Prior Authorization|`Task.reasonCode`|
 |Claim or Prior Authorization ID|`Task.reasonReference.identifier`|
@@ -204,7 +204,7 @@ The Payer supplies the URL endpoint in the `Task.input` "payer-url" parameter. T
 
 
 
-##### Date of Service for the claim
+##### Date of Service for the Claim
 
 This `Task.input` element represents the service date or the service's starting date for the claim or prior authorization. If the attachment is for a claim, it **SHALL** be present and precise to the day. It is optional if the attachment is for a prior authorization.  
 
@@ -224,11 +224,11 @@ This optional `Task.input` element represents the request's purpose of use (POU)
 
 #### Provider Submits Solicited Attachments
 
-When the Task is completed, the Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint communicated in the `Task.input` "payer-url" parameter. The operation payload contains the requested attachments and echoes many data elements sent in the request. The table in the introduction to this section summarizes the mapping between the CDex Request Attachment Profile elements and the [`$submit-attachment`] parameters. The documentation below describes and demonstrates the [`$submit-attachment`] parameters.
+When the Task is completed, the Provider POSTs the [`$submit-attachment`] operation and its payload to the Payer's endpoint communicated in the `Task.input` "payer-url" parameter. The operation payload contains the requested attachments and echoes many data elements sent in the request. The table in the introduction to this section summarizes the mapping between the CDex Task Attachment Request Profile elements and the [`$submit-attachment`] parameters. The documentation below describes and demonstrates the [`$submit-attachment`] parameters.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|Payer URL|"payer-url"Task.input|(operation endpoint)|
+|Payer URL|"payer-url" Task.input|(operation endpoint)|
 {:.grid}
 
 **Request**
@@ -248,9 +248,9 @@ The attachments and metadata needed to associate the attachment to the claim or 
 ~~~
 
 ##### Tracking ID and Indicating a Claim or Prior Authorization
-The "TrackingId" parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for claim or prior authorization. These data elements are taken from the CDex request as follows:
+The "TrackingId" parameter represents the identifier that ties the attachments to the claim or prior authorization. It is often referred to as the "re-association tracking control number". The operation must indicate whether the attachments are for a claim or prior authorization. These data elements are taken from the CDex request as follows:
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
 |TrackingID|Task.identifier|TrackingId|
 |Use|Task.reasonCode|AttachTo|
@@ -262,9 +262,9 @@ The "TrackingId" parameter represents the identifier that ties the attachments t
 
 ##### Identifying the Payer, Provider, Organization, and Patient
 
-As documented above, The Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.
+As documented above, the Payer uses business identifiers to identify itself, the Patient, the Provider (i.e., the practitioner), and the Organization (i.e., the provider organization) who submitted the claim or prior authorization. The Provider uses these same identifiers when submitting the attachments.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
 |Payer ID|Task.requester.identifier|PayerId|
 |Organization ID|PractitionerRole.organization.identifier|OrganizationId|
@@ -281,9 +281,9 @@ As documented above, The Payer uses business identifiers to identify itself, the
 
 The service date parameter is taken from the "service-date" `Task.input` element in the CDex Attachment request.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|Date of Service|“service-date” Task.input|ServiceDate|
+|Date of Service|"service-date" Task.input|ServiceDate|
 {:.grid}
 
 ~~~
@@ -293,13 +293,13 @@ The service date parameter is taken from the "service-date" `Task.input` element
 
 ##### Supply the Requested Attachments for Each Line Item and Code
 
-The requested attachments, the corresponding coded requests, and line item numbers are communicated as "Attachment" parameter parts. The attachment is communicated as a FHIR resource in the `Attachment.Content` parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The attachment code(s) in the `Task.input` "code" slice defines the document(s) that are to be returned via submit_attachment and are communicated in the `Attachment.Code`. Line item numbers associated with a requested item are sent in the `Attachment.LineItem` parameter part.
+The requested attachments, the corresponding coded requests, and line item numbers are communicated as "Attachment" parameter parts. The attachment is communicated as a FHIR resource in the `Attachment.Content` parameter part, often a [DocumentReference] containing Base64 encoded FHIR and non-FHIR documents. The attachment code(s) in the `Task.input` "code" slice defines the document(s) that are to be returned via the [`$submit-attachment`] operation and are communicated in the `Attachment.Code`. Line item numbers associated with a requested item are sent in the `Attachment.LineItem` parameter part.
 
-|Data Element|CDex Request Attachment Task Profile Element|CDex #submit-attachment Parameter|
+|Data Element|CDex Task Attachment Request Profile Element|CDex $submit-attachment Parameter|
 |---|---|---|
-|line item(s)|“code”Task.input.extension|Attachment.LineItem|
-|Attachment Code|“code”Task.input|Attachment.Code|
-|Attachments|-|Attachment.Content
+|line item(s)|"code" Task.input.extension|Attachment.LineItem|
+|Attachment Code|"code" Task.input|Attachment.Code|
+|Attachments|-|Attachment.Content|
 {:.grid}
 
 ~~~

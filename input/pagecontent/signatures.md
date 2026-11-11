@@ -3,11 +3,11 @@
 
 {% include signature-support.md %}
 
-Data Consumers such as Payers may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider's claim, the submitted information needs to be signed.[^first][^second]  In direct query transactions without human intervention, Data Consumers may require signatures from Data Sources attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions. 
- 
+Data Consumers such as Payers may require signatures from a Data Source to attest to the information being exchanged. For example, for a Centers for Medicare and Medicaid Services (CMS) worker to adequately review a Provider's claim, the submitted information needs to be signed.[^first][^second] In direct query transactions without human intervention, Data Consumers may require signatures from Data Sources attesting that they supplied the information. To comply with these signature requirements, this page documents how to create and verify FHIR Digital Signatures when using CDex Transactions.
+
 ### The Signer
 
-As illustrated in the table below, the signatory depends on the transaction. For synchronous or automated transactions, it is a system-level signature; for asynchronous transactions involving a human, it is a provider signature. 
+As illustrated in the table below, the signatory depends on the transaction. For synchronous or automated transactions, it is a system-level signature; for asynchronous transactions involving a human, it is a provider signature.
 
 ||Direct Query|Task Based Query|Attachments|
 |---|---|---|---|
@@ -25,12 +25,12 @@ System-level and provider signatures represent different levels of attestation:
 
 ### What is Signed
 
-The data returned in CDEX is not limited to FHIR resources but may also include C-CDA documents, PDFs, text files, and other formats. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload. The following table summarizes what artifacts are signed:
+The data returned in CDex is not limited to FHIR resources but may also include C-CDA documents, PDFs, text files, and other formats. Depending on the data type and format returned, the signature may be in the actual payload or a [FHIR Signature] in the Bundle that envelopes the payload. The following table summarizes what artifacts are signed:
 
 |Data Type Returned|Location of Signature|
 |---|---|
-|Non-FHIR data formats attached to or referenced by DocumentReference (e.g., CCDA)|Referenced or attached data|
-|FHIR Documents (e.g., CCDA on FHIR, Task-based request\*, Unsolicited Attachment\*)|Document Bundle|
+|Non-FHIR data formats attached to or referenced by DocumentReference (e.g., C-CDA)|Referenced or attached data|
+|FHIR Documents (e.g., C-CDA on FHIR, Task-based request\*, Unsolicited Attachment\*)|Document Bundle|
 |FHIR Search Bundle (e.g., a query response)|Search Bundle|
 |FHIR QuestionnaireResponse (e.g., a query response) |QuestionnaireResponse |
 |Combination of above  (e.g., FHIR Search Bundle, FHIR Documents, or binary files referenced by DocumentReference)|Combination of Above|
@@ -38,20 +38,20 @@ The data returned in CDEX is not limited to FHIR resources but may also include 
 
 \* A *signed [FHIR Document]* is sent for task-based requests and some attachments transactions when the artifact would otherwise, if unsigned, be individual FHIR resources.
 
-The corresponding sections on signatures for [Direct Query], [Task Based Approach], [Sending attachments], [Requesting Attachments Using Attachment Codes], and [Requesting Attachments Using Questionnaires] document how to indicate the signature requirement and how to respond with signed transactions. The sections below define the requirements for using *FHIR Signatures* to sign a Bundle or QuestionnaireResponse with electronic or digital signatures. Refer to the appropriate specifications for guidance on signing other documents, such as CDA or CCDA on FHIR Documents.
+The corresponding sections on signatures for [Direct Query], [Task Based Approach], [Sending attachments], [Requesting Attachments Using Attachment Codes], and [Requesting Attachments Using Questionnaires] document how to indicate the signature requirement and how to respond with signed transactions. The sections below define the requirements for using *FHIR Signatures* to sign a Bundle or QuestionnaireResponse with electronic or digital signatures. Refer to the appropriate specifications for guidance on signing other documents, such as CDA or C-CDA on FHIR Documents.
 
 ### CDex *Enveloped* Signatures
 
-Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an [enveloped signature]. The FHIR Bundle is the envelope for Bundles, and the signature populates the [`Bundle.signature`] element. For QuestionnaireResponse, The envelope can be the resource, individual `QuestionnaireResponse.item` elements, or both, and the signature populates the QuestionnaireResponse's signature extension.\* The enveloped signatures must avoid including the signature element in calculating the digital signature.
+Signatures in CDex are an element in the signed Bundle or QuestionnaireResponse resource. This type of signature is referred to as an [enveloped signature]. The FHIR Bundle is the envelope for Bundles, and the signature populates the [`Bundle.signature`] element. For QuestionnaireResponse, the envelope can be the resource, individual `QuestionnaireResponse.item` elements, or both, and the signature populates the QuestionnaireResponse's signature extension.\* The enveloped signatures must avoid including the signature element in calculating the digital signature.
 
-\* When using a FHIR Questionnaire to request data, the [DTR SDC Questionnaire] Profile is used to profile the Questionnaire. Both [CDex Task Attachment Request Profile] and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate that a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR Standard Questionnaire] profile supports many reasons for signatures, including verification signatures using the FHIR standard [signatureRequired] extension at the QuestionnaireResponse resource or `QuestionnareiResponse.item` level.
+\* When using a FHIR Questionnaire to request data, the [DTR SDC Questionnaire] Profile is used to profile the Questionnaire. Both [CDex Task Attachment Request Profile] and the [DTR SDC Questionnaire] profile have the overlapping capability to indicate that a signature is required. Signers must meet both the Task *and* Questionnaire signature expectations. The Task's signature input parameter represents the need for a verification signature for the QuestionnaireResponse. The [DTR Standard Questionnaire] profile supports many reasons for signatures, including verification signatures using the FHIR standard [signatureRequired] extension at the QuestionnaireResponse resource or `QuestionnaireResponse.item` level.
 {:.bg-warning}
 
 #### CDex Signature Profiles
 
 This guide defines three profiles for using signatures:
 
-1. [CDex Signature Profile] 
+1. [CDex Signature Datatype Profile]
 2. [CDex Signature Bundle Profile]
 3. [CDex SDC QuestionnaireResponse Profile]
 
@@ -68,7 +68,7 @@ See the [CDex Signature Profile] formal definition for further details.
 See the [CDex Signature Bundle Profile] formal definition for further details.
 
 
-##### CDex SDC Questionnaire Response Profile
+##### CDex SDC QuestionnaireResponse Profile
 
 {{ site.data.resources.['StructureDefinition/cdex-sdc-questionnaireresponse']['description'] }}
 
@@ -100,22 +100,22 @@ In this example, a `Bundle.signature` is added to a FHIR Document. The electroni
 
 *Digital Signatures* are a type of *Electronic signature* that meet the following functional requirements:
 
-1. authentication  - They verify the identity of a person.
-2. integrity -  They ensure the signed document has not been altered.
-3. non-repudiation - The signer can not dispute their authorship (For example, if there is subsequent legal activity related to the signed document).
+1. authentication - They verify the identity of a person.
+2. integrity - They ensure the signed document has not been altered.
+3. non-repudiation - The signer cannot dispute their authorship (For example, if there is subsequent legal activity related to the signed document).
 
-Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensures the signee has attested to the integrity of the data. A certificate issued by a CA that the Data Consumer trusts, ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
+Digital Signatures employ encryption technology and a digital certificate issued by a certification authority (CA). The encryption ensures the signer has attested to the integrity of the data. A certificate issued by a CA that the Data Consumer trusts ensures that the Data Consumer can trust that the signature is authentic and non-repudiable.
 
-#### Digital Signature Rules For CDEX FHIR Bundle and QuestionnaireResponse 
+#### Digital Signature Rules For CDex FHIR Bundle and QuestionnaireResponse
 
-1. **SHALL** use the [CDex Signature Bundle Profile] or [CDex SDC QuestionnaireResponse Profile] 
-2. **SHALL** use JSON Web Signature (JWS)(see [RFC 7515])
+1. **SHALL** use the [CDex Signature Bundle Profile] or [CDex SDC QuestionnaireResponse Profile]
+2. **SHALL** use JSON Web Signature (JWS) (see [RFC 7515])
     >JSON Web Signature (JWS) is a means of representing content secured with digital signatures or Hash-based Message Authentication Codes (HMACs) using JSON data structures. Cryptographic algorithms and identifiers used with this specification are enumerated in the separate JSON Web Algorithms (JWA). [^fourth]
 
     Implementers that support XML must be aware that JSON Web Signatures can only be created and validated in the original native JSON. Transforms to and from XML will invalidate signatures.
-    {:.bg-warning} 
+    {:.bg-warning}
 
-3. [JSON Signature rules](http://hl7.org/fhir/datatypes.html#JSON) specified in the FHIR specification. (reproduced below for reader convenience):
+3. [JSON Signature rules]({{site.data.fhir.path}}datatypes.html#JSON) specified in the FHIR specification (reproduced below for reader convenience):
     >When the signature is a JSON Digital Signature (contentType = application/jose), the following rules apply:
     >- The Signature.data is base64 encoded JWS-Signature [RFC 7515: JSON Web Signature (JWS)]
     >- The signature is a [Detached] Signature (where the content that is signed is removed from the JWS)
@@ -138,8 +138,8 @@ Digital Signatures employ encryption technology and a digital certificate issued
          - The Validity Dates **SHOULD** be appropriate/long enough as determined by the business partners.
     - **SHALL** use the IETF JSON Canonicalization Scheme (JCS) (see [RFC 8785]) to generate the canonical form of the resource. JCS is a well-documented standardized canonicalization algorithm with multiple open-source implementations across several programming languages.
         - The `id`, `meta`, and `signature` elements on the root Bundle resource **SHALL** be removed before canonicalization. In other words, everything in a Bundle is signed *except* for these elements.
-        - For signatures representing the entire QuestionnaireResponse, the `id`, `meta`, and the signature extension on the root QuestionnaireResponse resource **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements. 
-        - For signatures representing an item in the QuestionnaireResponse, the `id` and the signature extension on the item resource **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements. 
+        - For signatures representing the entire QuestionnaireResponse, the `id`, `meta`, and the signature extension on the root QuestionnaireResponse resource **SHALL** be removed before canonicalization. In other words, everything in a QuestionnaireResponse is signed *except* for these elements.
+        - For signatures representing an item in the QuestionnaireResponse, the `id` and the signature extension on the item resource **SHALL** be removed before canonicalization. In other words, everything in the `QuestionnaireResponse.item` is signed *except* for these elements.
 
 ##### Sender/Signer Steps
 
@@ -148,18 +148,17 @@ The following steps outline the process for creating the Signature.
 1. Prepare JWS Header
     1. **SHALL** have `"alg": "RS256"` (preferred) or some other JSON Web Algorithms (JWA) (see [RFC 7518])
     2. **SHALL** have `"kty": "RS"`
-    3. **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]).
-The public key is listed in the first certificate in the `"x5c"` specified by the entry's "Modulus" and "Exponent" parameters.
+    3. **SHALL** have `"x5c"` (X.509 certificate chain) equal to an array of one or more base64-encoded (not base64url-encoded) DER representations of the public certificate or certificate chain (see [RFC 7517]). The public key is listed in the first certificate in the `"x5c"` specified by the entry's "Modulus" and "Exponent" parameters.
 1. Prepare JWS Payload
-    1. Prepare a valid FHIR Bundle or QuestionnaireResponse or QuestionnaireResponse.item 
+    1. Prepare a valid FHIR Bundle or QuestionnaireResponse or QuestionnaireResponse.item
     2. Remove the `id` and `meta` elements.
-    3. Canonicalize the Bundle or QuestionnaireResponse or QuestionnaireResponse.item 
+    3. Canonicalize the Bundle or QuestionnaireResponse or QuestionnaireResponse.item
     4. base64_url encode the payload
 2. Create the JWS signature using the supported algorithm.
 3. Remove the payload element from the JWS.
 4. base64 encode the JWS
 5. Add the Signature element to the Bundle or the signature extension in the QuestionnaireResponse or QuestionnaireResponse.item and populate the mandatory Signature datatype elements and actual signature content:
-    -  `Signature.type`  - Fixed to code =  "1.2.840.10065.1.12.1.5" [(Verification Signature)](http://hl7.org/fhir/valueset-signature-type.html)
+    -  `Signature.type`  - Fixed to code =  "1.2.840.10065.1.12.1.5" [(Verification Signature)]
     -  `Signature.when` - System timestamp when signature created
     -  `Signature.who`  -  Reference or identifier of the organization or practitioner who signed it
     -  `Signature.data`  - base64 encoded JWS
@@ -171,22 +170,22 @@ The public key is listed in the first certificate in the `"x5c"` specified by th
 
 The following steps outline the process for verifying the Signature.
 
-1. Retrieve and store the Bundle or QuestionnaireResponse :
+1. Retrieve and store the Bundle or QuestionnaireResponse:
    1. The search set Bundle is the response for a direct query.
    2. For Task-based requests, the completed `Task.output` is either:
       -  a contained FHIR Document that must be extracted from the containing Task resource.
       -  a reference to a FHIR Document that must be fetched from the referenced endpoint.
    3. A FHIR Document Bundle or QuestionnaireResponse is submitted as part of the operation payload for Attachments.
-2. Remove the `id`, `meta` and `Bundle.signature` element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item. 
+2. Remove the `id`, `meta`, and `Bundle.signature` element from the Bundle resource or the signature extension(s) from the QuestionnaireResponse or QuestionnaireResponse.item.
 3. Canonicalize the resource.
 4. Transform the canonicalized JSON to a base64-url format.
-5. Get the base64 encoded JWS  from the `signature.data`  element
+5. Get the base64 encoded JWS from the `signature.data` element
 6. Base64 decode the encoded JWS
 7. Insert the base64 encoded Bundle, QuestionnaireResponse, or QuestionnaireResponse.item into the JWS payload element.
 8. Obtain the public key from the first certificate in the JWS header `"x5c"` key
     - base64 decode the key value
     - Use the "Subject Public Key Info"
-9. Verify Issuer, Validity Dates, Subject, and KeyUsage of the certificate,
+9. Verify Issuer, Validity Dates, Subject, and KeyUsage of the certificate.
 10. Validate the JWS using the public key or the X.509 Certificate
 
 ##### Step-by-Step Examples
@@ -196,9 +195,9 @@ Although [*self-signed* certificates] are used for these examples, they are not 
 
 In these examples, a detached JWS signature is created using a signer's private key and self-signed certificate. Then, the `Bundle.signature` element is added to the Bundle with the base64 encoded JWS Signature as the `signature.data` property value. Finally, the signature is verified.
 
-- [Signed SearchSet Bundle Example] : FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results.   In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
+- [Signed SearchSet Bundle Example]: FHIR search-set bundle signatures occur when performing direct queries where signatures are required on the returned results. In this case, the digital signature represents a system-level attestation by the sending organization that they are the source of the information.
 
-- [Signed Document Bundle Example] : FHIR Document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required. The returned results are individual FHIR resources (in other words, not C-CDA, C-CDA on FHIR, or other binary formats referenced by DocumentReference). In this case, the digital signature represents a practitioner attesting that the information is true and accurate to the best of their knowledge.
+- [Signed Document Bundle Example]: FHIR Document bundle signatures occur when performing Task-based requests or Attachment transactions where signatures are required. The returned results are individual FHIR resources (in other words, not C-CDA, C-CDA on FHIR, or other binary formats referenced by DocumentReference). In this case, the digital signature represents a practitioner attesting that the information is true and accurate to the best of their knowledge.
 
 ---
 
