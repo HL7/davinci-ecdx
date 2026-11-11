@@ -15,12 +15,13 @@ The changes in this technical correction have been reviewed and commented upon b
 
 **Status: Summary (Jira Issue) Link to Change**
 
-The corrections below have no Jira tracker. They fix errors reported by the current publisher and validator.
+Items 1-4 below have no Jira tracker. They fix errors reported by the current publisher and validator.
 
 1. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
 2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group [See Changes Here](artifacts.html)
 3. **Applied**: (Correction) Correct heading levels on the Sending Attachments page, so the attachment scenarios are siblings [See Changes Here](sending-attachments.html)
 4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
+5. **Applied**: (Correction) Replace the LOINC value set identifier with the correct OID, `urn:oid:2.16.840.1.113883.6.255.755` [FHIR-59820](https://jira.hl7.org/browse/FHIR-59820) [See Changes Here](ValueSet-cdex-pwk01-attachment-report-type-code.html)
 
 </div><!-- new-content -->
 
