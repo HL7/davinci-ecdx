@@ -23,6 +23,7 @@ Items below without a Jira tracker reference fix errors reported by the current 
 4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
 5. **Applied**: (Correction) Replace the LOINC value set identifier with the correct OID, `urn:oid:2.16.840.1.113883.6.255.755` [FHIR-59820](https://jira.hl7.org/browse/FHIR-59820) [See Changes Here](ValueSet-cdex-pwk01-attachment-report-type-code.html)
 6. **Applied**: (Correction) Re-sign the digital signature examples so each signature verifies against its own current content, and add `Signature.targetFormat` to declare the JSON canonicalization used. The signed content is now pinned so a future build cannot invalidate it. [See Changes Here](Bundle-cdex-searchbundle-digital-sig-example.html) and [See Changes Here](Bundle-cdex-document-digital-sig-example.html)
+7. **Applied**: (Correction) Return `201 Created` instead of `200 OK` in response to a POST of Task in the documented scenarios and the task-based sequence diagram, since creating a Task is an HTTP create interaction [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) [See Changes Here](task-based-approach.html#sequence-diagram)
 
 </div><!-- new-content -->
 

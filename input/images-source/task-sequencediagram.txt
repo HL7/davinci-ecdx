@@ -15,7 +15,7 @@ note over Data Consumer:1) Data Consumer needs Clinical Information
 
 Data Consumer->Data Source:2) POST Task to indicating\n the "type" of data needed
 
-Data Source-->Data Consumer:3) Return HTTP 200 code to indicate acceptance
+Data Source-->Data Consumer:3) Return HTTP 201 code to indicate acceptance
 
 note over Data Consumer,Data Source: 4) Data Consumer polls or subscribes to Task to see if data request is completed
 

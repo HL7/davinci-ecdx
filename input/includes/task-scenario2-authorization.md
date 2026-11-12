@@ -26,7 +26,7 @@ POST [base]/Task
 **Response Headers**
 
 ~~~
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 Server: CDEX Example Server
 Location: http://example.org/FHIR/Task/cdex-example1-query-completed/_history/1
 ...(other headers)

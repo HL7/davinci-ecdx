@@ -81,7 +81,7 @@ POST [base]/Task
 
 ~~~
 
-HTTP/1.1 200 OK
+HTTP/1.1 201 Created
 
 Server: CDEX Example Server
 
