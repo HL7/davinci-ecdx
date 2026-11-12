@@ -15,15 +15,25 @@ The changes in this technical correction have been reviewed and commented upon b
 
 **Status: Summary (Jira Issue) Link to Change**
 
+##### Non-compatible
+
 1. **Applied**: (Correction) Replace the LOINC value set identifier with the correct OID. [FHIR-59820](https://jira.hl7.org/browse/FHIR-59820) [See Changes Here](ValueSet-cdex-pwk01-attachment-report-type-code.html)
+
+##### Compatible, substantive
+
 2. **Applied**: (Correction) Return `201 Created` instead of `200 OK` in response to a POST of Task. [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) [See Changes Here](task-based-approach.html#sequence-diagram)
 3. **Applied**: (Correction) Correct the guidance on when to use PAS or CDex for requesting prior authorization attachments. [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) [See Changes Here](burden-reduction.html)
-4.  **Applied**: (Correction) Replace the misapplied additional binding on the attachment code element of the CDex Task Attachment Request and CDex Parameters Submit Attachment with a new grouped value set of LOINC attachment codes and X12 PWK01 Report Type Codes. [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) [See Changes Here](ValueSet-cdex-attachment-codes.html)
+4. **Applied**: (Correction) Replace the misapplied additional binding on the attachment code element of the CDex Task Attachment Request and CDex Parameters Submit Attachment with a new grouped value set of LOINC attachment codes and X12 PWK01 Report Type Codes. [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) [See Changes Here](ValueSet-cdex-attachment-codes.html)
+{:start="2"}
+
+##### Non-substantive
+
 5. **Applied**: (Correction) Clarify CDex Task Creation for PAS Solicited Attachments [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526) See Changes:
    - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html#who-requests-the-information-and-who-creates-the-task)
    - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#who-requests-the-information-and-who-creates-the-task)
    - [Task Based Approach](task-based-approach.html#sequence-diagram)
 6. **Applied**: (Correction) Remove the informational guidance advertising future supplemental guides [FHIR-59822](https://jira.hl7.org/browse/FHIR-59822) [See Changes Here](index.html)
+{:start="5"}
 
 
 Items below without a Jira tracker reference fix errors reported by the current publisher and validator.
