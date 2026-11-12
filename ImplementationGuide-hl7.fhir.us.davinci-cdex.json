@@ -1332,6 +1332,18 @@
       },
       {
         "code": "no-narrative",
+        "value": "Bundle/cdex-searchbundle-digital-sig-example"
+      },
+      {
+        "code": "no-narrative",
+        "value": "Bundle/cdex-document-digital-sig-example"
+      },
+      {
+        "code": "no-narrative",
+        "value": "QuestionnaireResponse/cdex-questionnaireresponse-example4"
+      },
+      {
+        "code": "no-narrative",
         "value": "Parameters/cdex-parameters-example4"
       },
       {
