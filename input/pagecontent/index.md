@@ -16,11 +16,6 @@ In the context of this guide, "clinical data" means *any* information a provider
 
 By using the FHIR standard and implementing this guide, payers can be explicit about the data they are requesting instead of general requests, which avoids sending more information than necessary. As a result, the anticipated benefit of using FHIR is a more efficient and effective exchange of health record information in several areas, such as claims management, care coordination, risk adjustment, and quality reporting.
 
-
-This IG provides several *generic* examples to illustrate the Direct Query and Task-Based approaches to exchanging clinical data. It also documents and provides examples for Requesting and Sending Attachments for claims and prior authorization. The editors also plan to create *Clinical Data Exchange - Supplemental Guides*, which will document and provide examples for other specific use cases.
-{:.bg-info}
-
-
 ### About This Guide
 
 The [Da Vinci] initiative supports this implementation guide. Da Vinci is a private effort to accelerate the adoption of Health Level Seven International Fast Healthcare Interoperability Resources (HL7® FHIR®) as the standard to support and integrate value-based care (VBC) data exchange across communities. This guide and implementers of it **SHALL** adhere to the [HL7 Da Vinci Guiding Principles] for exchanging patient health information.

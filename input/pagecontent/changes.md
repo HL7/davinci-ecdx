@@ -23,6 +23,7 @@ The changes in this technical correction have been reviewed and commented upon b
    - [Requesting Attachments Using Attachments Codes](requesting-attachments-code.html#who-requests-the-information-and-who-creates-the-task)
    - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#who-requests-the-information-and-who-creates-the-task)
    - [Task Based Approach](task-based-approach.html#sequence-diagram)
+6. **Applied**: (Correction) Remove the informational guidance advertising future supplemental guides [FHIR-59822](https://jira.hl7.org/browse/FHIR-59822) [See Changes Here](index.html)
 
 
 Items below without a Jira tracker reference fix errors reported by the current publisher and validator.
@@ -33,7 +34,7 @@ Items below without a Jira tracker reference fix errors reported by the current 
 4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
 5. **Applied**: (Correction) Re-sign the digital signature examples so each signature verifies against its own current content, and add `Signature.targetFormat` to declare the JSON canonicalization used. The signed content is now pinned so a future build cannot invalidate it. [See Changes Here](Bundle-cdex-searchbundle-digital-sig-example.html) and [See Changes Here](Bundle-cdex-document-digital-sig-example.html)
 6. update links to technical corrections.
-{:start="6"}
+{:start="7"}
 
 
 </div><!-- new-content -->
