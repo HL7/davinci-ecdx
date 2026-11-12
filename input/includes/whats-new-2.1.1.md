@@ -1,2 +1,5 @@
+In addition to copy edits and technical QA corrections:
 
- The candidates for this release are [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211), [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707), [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448), and [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526).
+- We corrected the [guidance](burden-reduction.html) on when to use PAS or CDex for requesting prior authorization attachments. The previous guidance was too restrictive on using PAS instead of CDex
+- We clarified that the CDex Task workflow is distinct from the PAS Task workflow since they differ on who initiates the Task.
+- We corrected the attachments code binding to align with the intent of using a PWK01 code or LOINC attachment code.

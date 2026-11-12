@@ -7,25 +7,31 @@
 
 The changes in this technical correction have been reviewed and commented upon by the public through the HL7 errata process. The [HL7 International Payer/Provider Information Exchange Work Group](http://www.hl7.org/Special/committees/claims) members agreed to and voted on the resolution of the community review comments and edits to this guide.
 
-#### Changes: {#changes-2-1-1}
-
 #### What's new in Version 2.1.1 of CDex:
 
 {% include whats-new-2.1.1.md %}
 
+#### Changes: {#changes-2-1-1}
+
 **Status: Summary (Jira Issue) Link to Change**
+
+1. **Applied**: (Correction) Replace the LOINC value set identifier with the correct OID. [FHIR-59820](https://jira.hl7.org/browse/FHIR-59820) [See Changes Here](ValueSet-cdex-pwk01-attachment-report-type-code.html)
+2. **Applied**: (Correction) Return `201 Created` instead of `200 OK` in response to a POST of Task. [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) [See Changes Here](task-based-approach.html#sequence-diagram)
+3. **Applied**: (Correction) Correct the guidance on when to use PAS or CDex for requesting prior authorization attachments. [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) [See Changes Here](burden-reduction.html)
+4.  **Applied**: (Correction) Replace the misapplied additional binding on the attachment code element of the CDex Task Attachment Request and CDex Parameters Submit Attachment with a new grouped value set of LOINC attachment codes and X12 PWK01 Report Type Codes. [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) [See Changes Here](ValueSet-cdex-attachment-codes.html)
+5. **Applied**: (Correction) Clarify CDex Task Creation for PAS Solicited Attachments [FHIR-58526](https://jira.hl7.org/browse/FHIR-58526) [See Changes Here](requesting-attachments-code.html#who-requests-the-information-and-who-creates-the-task) and [See Changes Here](requesting-attachments-questionnaire.html#who-requests-the-information-and-who-creates-the-task) and [See Changes Here](task-based-approach.html#task-state-machine)
+
 
 Items below without a Jira tracker reference fix errors reported by the current publisher and validator.
 
-1. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
+6. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
 2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group [See Changes Here](artifacts.html)
 3. **Applied**: (Correction) Correct heading levels on the Sending Attachments page, so the attachment scenarios are siblings [See Changes Here](sending-attachments.html)
 4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
-5. **Applied**: (Correction) Replace the LOINC value set identifier with the correct OID, `urn:oid:2.16.840.1.113883.6.255.755` [FHIR-59820](https://jira.hl7.org/browse/FHIR-59820) [See Changes Here](ValueSet-cdex-pwk01-attachment-report-type-code.html)
-6. **Applied**: (Correction) Re-sign the digital signature examples so each signature verifies against its own current content, and add `Signature.targetFormat` to declare the JSON canonicalization used. The signed content is now pinned so a future build cannot invalidate it. [See Changes Here](Bundle-cdex-searchbundle-digital-sig-example.html) and [See Changes Here](Bundle-cdex-document-digital-sig-example.html)
-7. **Applied**: (Correction) Return `201 Created` instead of `200 OK` in response to a POST of Task in the documented scenarios and the task-based sequence diagram, since creating a Task is an HTTP create interaction [FHIR-50211](https://jira.hl7.org/browse/FHIR-50211) [See Changes Here](task-based-approach.html#sequence-diagram)
-8. **Applied**: (Correction) Correct the guidance on when to use PAS or CDex for requesting prior authorization attachments. PAS handles both the initial and subsequent requests for additional information, so the decision tree and its section are removed and the introduction states that CDex applies only when the provider requests prior authorization through non-standard channels [FHIR-57448](https://jira.hl7.org/browse/FHIR-57448) [See Changes Here](burden-reduction.html)
-9. **Applied**: (Correction) Correct the misapplied additional binding on the attachment code element of the CDex Task Attachment Request and CDex Parameters Submit Attachment profiles. The element is now bound to a new grouped value set of LOINC attachment codes and X12 PWK01 Report Type Codes, so either code system can be used rather than requiring both [FHIR-57707](https://jira.hl7.org/browse/FHIR-57707) [See Changes Here](ValueSet-cdex-attachment-codes.html)
+5. **Applied**: (Correction) Re-sign the digital signature examples so each signature verifies against its own current content, and add `Signature.targetFormat` to declare the JSON canonicalization used. The signed content is now pinned so a future build cannot invalidate it. [See Changes Here](Bundle-cdex-searchbundle-digital-sig-example.html) and [See Changes Here](Bundle-cdex-document-digital-sig-example.html)
+6. update links to technical corrections.
+{:start="6"}
+
 
 </div><!-- new-content -->
 
