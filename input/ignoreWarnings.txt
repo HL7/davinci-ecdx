@@ -1,36 +1,36 @@
 == Suppressed Messages ==
 
-# ===  CDex needs a contained patient for 3 specific demographic elements US Core variance approved: https://jira.hl7.org/browse/FHIR-46780 ===
+# 01. === CDex needs a contained patient for 3 specific demographic elements US Core variance approved: https://jira.hl7.org/browse/FHIR-46780 ===
 
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics').baseDefinition: US FHIR Usage rules require that all profiles on Patient derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
-# ===  CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 reference. A Jira ticket has been lodged for Task to allow for >1 task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-46779 ===
+# 02. === CDex needs a contained PractitionerRole to communicate the identifiers for both the provider practitioner and organization using Task.owner which is limited to max=1 reference. A Jira ticket has been lodged for Task to allow for >1 task.for element to address this issue.  This is the appropriate use of contained because the content referred to in the contained resource does not have an independent existence apart from the resource that contains it.  Furthermore, US Core does not require but recommends that contained resource conform to US Core.  US Core variance approved: https://jira.hl7.org/browse/FHIR-46779 ===
 
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole').baseDefinition: US FHIR Usage rules require that all profiles on PractitionerRole derive from the core US profile. See https://confluence.hl7.org/display/CGP/US+Core+Variance+Request+Process
 
 
-# ===  These Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
+# 03. === These Profiles are used in the attachment requests examples Cdex Task Example 19, CDex Task Example 20 as a contained resources. ===
 
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-patient-demographics'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'http://hl7.org/fhir/us/davinci-cdex/StructureDefinition/cdex-practitionerrole'): The Implementation Guide contains no explicitly linked examples for this profile
 
 
-# ===  === These examples demonstrate DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. === ===
+# 04. === These examples demonstrate DocumentReference Payloads for an operation. The actual content is inline base64 encoded data. Since the narrative would be the human-readable metadata about the document which is easily parsed, we think it add little value for the cost of adding it. ===
 
 %Constraint failed: dom-6: 'A resource should have narrative for robust management%
 
 
-# ===  === These examples use example.org code system to show how translations ( i.e. local codes) could be used in addition to standard code systems. === ===
+# 05. === These examples use example.org code system to show how translations ( i.e. local codes) could be used in addition to standard code systems. ===
 
 %A definition for CodeSystem 'http://example.org/lab-results' could not be found%
 %A definition for the code system 'http://example.org/lab-results' could not be found%
 
-# ===  === These examples uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content === ===
+# 06. === These examples uses example.org to reference a base questionnaire URI from which it is derived to code system to demonstrate the structure not the content ===
 
 The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to in the derivation could not be found
 
 
-# ===  These CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors  === ===
+# 07. === These CodeSystems and ValueSets are in FHIR Core/THO and not under the direct control of Da Vinci editors ===
 
 %Reference to draft CodeSystem http://hl7.org/fhir/task-status|%
 %Reference to draft CodeSystem urn:iso-astm:E1762-95:2013|%
@@ -40,53 +40,53 @@ The questionnaire 'http://example.org/base_adaptive_questionnaire' referred to i
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|%
 %Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/provenance-participant-type|%
 
-# ===  The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
+# 08. === The Da Vinci Team is aware of this plans to move them in a future publication cycle ===
 
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# ===  These examples use example.org code system to show fictitious claim to demonstrate the structure and transaction and not the content  ===
+# 09. === These examples use example.org code system to show fictitious claim to demonstrate the structure and transaction and not the content  ===
 
 %A definition for CodeSystem 'http://example.org/fhir/communication-category' could not be found%
 %A definition for the code system 'http://example.org/fhir/communication-category' could not be found%
 
-# ==== FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error which is has been corrected in the FHIR R5. The guide is referencing the "HL7 ValueSet of Format Codes for use with Document Sharing" that is used in R5 ===
+# 10. === FHIR R4 http://hl7.org/fhir/ValueSet/formatcodes is in error which is has been corrected in the FHIR R5. The guide is referencing the "HL7 ValueSet of Format Codes for use with Document Sharing" that is used in R5 ===
 
 %The Coding provided (http://terminology.hl7.org/CodeSystem/v3-HL7DocumentFormatCodes#urn:hl7-org:sdwg:ccda-structuredBody:2.1) was not found in the value set 'DocumentReference Format Code Set'%
 
-# === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
+# 11. === X12 Code Systems are referenced in the guide but not freely available due to IP issues ===
 
 WARNING: ValueSet.where(id = 'cdex-pwk01-attachment-report-type-code'): Error from http://tx.fhir.org/r4: Unable to provide support for code system https://codesystem.x12.org/005010/755
 
 
-# === This error is inherited from the R4 Subscription Backport IG. This interversion should be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency  ===
+# 12. === This error is inherited from the R4 Subscription Backport IG. This interversion should be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency  ===
 
 WARNING: Bundle/cdex-task-inline-scenario1-subscription-notification: Bundle.entry[0].resource/*Parameters/206a4372-a348-41d1-a82e-fc9ebe8825af*/.parameter[3].value.ofType(code): ValueSet 'http://hl7.org/fhir/ValueSet/subscription-notification-type' not found
 
-#  === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue  see chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307 ===
+# 13. === The Valueset: https://terminology.hl7.org/5.1.0/ValueSet-usage-context-type.html and code "workflow" are valid and this is a validation issue  see chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/additional.20binding.20usagecontext.20valueset.20error/near/478379307 ===
 
 The Usage Context http://terminology.hl7.org/ValueSet/usage-context-type#workflow is not recognized so cannot be validated
 
 
-# ==== Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
+# 14. === Since FMG approval for publication, the latest ig-publisher emits a new warning about a deprecation slicing pattern.  We will correct it in the next release. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/deprecated.20pattern.20slicing ===
 
 
-# === Da Vinci Project Specific Warning: This Ballot version did not have any Jira trackers associated with it ===
+# 15. === Da Vinci Project Specific Warning: This Ballot version did not have any Jira trackers associated with it ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 2.0.0-ballot
 
-# === Da Vinci Project Specific Warning: These versions predated change logs in the CDex IG ===
+# 16. === Da Vinci Project Specific Warning: These versions predated change logs in the CDex IG ===
 
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 1.1.0-ballot
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.2.0
 WARNING: DA VINCI: The Change Log page (changes.html) does not include any Jira tracker items links for the section with title Version = 0.1.0
 
-# === Da Vinci Project Specific Warning: These sections will be added to CDex in the next version ===
+# 17. === Da Vinci Project Specific Warning: These sections will be added to CDex in the next version ===
 
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Content and Organization.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Dependencies.
 WARNING: DA VINCI: The home page (index.html) must include an h3 section called Intellectual Property Considerations.
 
-# === Da Vinci Project Specific Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
+# 18. === Da Vinci Project Specific Warning: The existing sections will need to be reordered in the next version to meet these requirements ===
 
 WARNING: DA VINCI: The first menu item under Background should have the label Reading this IG.
 WARNING: DA VINCI: The second menu item under Background should have the label Use Cases.
@@ -94,21 +94,21 @@ WARNING: DA VINCI: There must be a menu item under Background called Project and
 WARNING: DA VINCI: The third menu item should have the label Specification.
 WARNING: DA VINCI: There must be a menu item with the label Base Specs.
 
-# === Da Vinci Project Specific Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
+# 19. === Da Vinci Project Specific Warning: This conflicts with the CDex menu navigation style of using submenu for enhanced navigation and cannot be implemented based on it validation rules of a top top level link ===
 
 WARNING: DA VINCI: The first menu item should have the label IG Home.
 
 
-# === Da Vinci Project Specific Warning: applying this suggested link change causes  a build error ===
+# 20. === Da Vinci Project Specific Warning: applying this suggested link change causes  a build error ===
 
 WARNING: DA VINCI: The Propose a Change link must start with https://jira.hl7.org/secure/CreateIssueDetails!init.jspa?pid=10405&issuetype=10600&customfield_11302=
 
-# === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
+# 21. === The profile definitions conform to 3 versions of US Core Practitioner via `meta.profile'. This warning means the examples matches all of them, which is the intent.  Listing of all US conformant US Core profiles is an alternative to creating a single CDex Profile for Patient and Practitioner (or choosing a single US Core Profile) that conforms to  all three US Core versions.  We chose this option because it is direct (vs indirection) and thus easier to understand.  See related chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/multiple.20version.20of.20IG.20in.20meta.20profile.20warning ===
 
 %Found multiple matching profiles for urn:uuid:0820c16d-91de-4dfa-a3a6-f140a516a9bc among choices:%
 
 
-# === CDex declares three parallel US Core versions (7.0.0, 6.1.0, 3.1.1) so that one guide covers USCDI v4, v3, and v1. The 6.1.0 and 3.1.1 dependencies are declared through the hl7.fhir.us.core.v610 and hl7.fhir.us.core.v311 variant packages, which by design state a canonical that differs from their packageId. The same arrangement means a canonical URL legitimately resolves in more than one US Core version. ===
+# 22. === CDex declares three parallel US Core versions (7.0.0, 6.1.0, 3.1.1) so that one guide covers USCDI v4, v3, and v1. The 6.1.0 and 3.1.1 dependencies are declared through the hl7.fhir.us.core.v610 and hl7.fhir.us.core.v311 variant packages, which by design state a canonical that differs from their packageId. The same arrangement means a canonical URL legitimately resolves in more than one US Core version. ===
 
 The packageId hl7.fhir.us.core.v311 points to the canonical http://hl7.org/fhir/us/core/v311 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
 The packageId hl7.fhir.us.core.v610 points to the canonical http://hl7.org/fhir/us/core/v610 which is inconsistent with the stated canonical of http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core
@@ -116,7 +116,7 @@ The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.co
 The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core points to the package hl7.fhir.us.core which is inconsistent with the stated packageId of hl7.fhir.us.core.v610
 %There are multiple different potential matches for the url%
 
-# === 2.1.1 is a technical correction. Every dependency stays pinned at the version published in 2.1.0, so the publisher's advice to move to a newer release does not apply to this release. The trailing wildcard absorbs the "most recent appropriate version" value, which changes as those guides publish. ===
+# 23. === 2.1.1 is a technical correction. Every dependency stays pinned at the version published in 2.1.0, so the publisher's advice to move to a newer release does not apply to this release. The trailing wildcard absorbs the "most recent appropriate version" value, which changes as those guides publish. ===
 
 %The ImplementationGuide uses package hl7.fhir.us.core#7.0.0 released on 2024-05-08, but the most recent appropriate version is%
 %The ImplementationGuide uses package hl7.fhir.us.davinci-hrex#1.1.0 released on 2024-12-10, but the most recent appropriate version is%
@@ -125,7 +125,7 @@ The canonical URL http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.co
 %The ImplementationGuide uses package hl7.fhir.us.carin-bb#2.0.0 released on 2022-11-28, but the most recent appropriate version is%
 %The ImplementationGuide uses package hl7.fhir.uv.sdc#3.0.0 released on 2022-03-08, but the most recent appropriate version is%
 
-# === These are inherited from the R4 Subscription Backport IG, which is built on FHIR 4.0.0 rather than 4.0.1, so its profiles and extensions cannot be resolved from a 4.0.1 guide. This inter-version issue has to be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency ===
+# 24. === These are inherited from the R4 Subscription Backport IG, which is built on FHIR 4.0.0 rather than 4.0.1, so its profiles and extensions cannot be resolved from a 4.0.1 guide. This inter-version issue has to be fixed in a future release of the Backport IG. See this chat: https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/validation.20error.20with.20subscription.20backport.20dependency ===
 
 %Unable to find profile http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription nominated as the profile for which resource%
 %Unable to find profile http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4 nominated as the profile for which resource%
@@ -136,55 +136,55 @@ This IG is version 4.0.1, while the IG 'hl7.fhir.uv.subscriptions-backport.r4' i
 The canonical URL http://hl7.org/fhir/uv/subscriptions-backport/ImplementationGuide/hl7.fhir.uv.subscriptions-backport doesn't point to an actual ImplementationGuide resource
 %Profile reference 'http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription%
 
-# === These URL values are illustrative endpoints and identifiers in examples, not resolvable canonicals. The hapi.fhir.org queries show the over-the-wire search used in a scenario, and the urn:oid and /Binary values stand in for a local system's identifier and attachment. ===
+# 25. === These URL values are illustrative endpoints and identifiers in examples, not resolvable canonicals. The hapi.fhir.org queries show the over-the-wire search used in a scenario, and the urn:oid and /Binary values stand in for a local system's identifier and attachment. ===
 
 %No definition could be found for URL value 'http://hapi.fhir.org/baseR4/%
 No definition could be found for URL value 'urn:oid:1.3.6.1.4.1.22812.4.111.0.4.1.2.1'
 No definition could be found for URL value '/Binary/cdex-example-hpnote'
 
-# === X12 Code Systems are referenced in the guide but not freely available due to IP issues. The validator now reports the unresolvable code system as an unresolved URL value as well. ===
+# 26. === X12 Code Systems are referenced in the guide but not freely available due to IP issues. The validator now reports the unresolvable code system as an unresolved URL value as well. ===
 
 No definition could be found for URL value 'https://codesystem.x12.org/005010/755'
 
-# === These examples retain the meta.source value recorded by the server they were captured from. A meta.source is a URI identifying the source system, not a reference into the resource, so the leading "#" is not an internal target. ===
+# 27. === These examples retain the meta.source value recorded by the server they were captured from. A meta.source is a URI identifying the source system, not a reference into the resource, so the leading "#" is not an internal target. ===
 
 %might be wrong because it appears to point to an internal target, but there is no matching target%
 
-# === These extensions are inherited from the HL7 Extensions IG. CDex will consider replacing them in a future release; a technical correction does not change element definitions. The version is wildcarded because it tracks the Extensions IG release. ===
+# 28. === These extensions are inherited from the HL7 Extensions IG. CDex will consider replacing them in a future release; a technical correction does not change element definitions. The version is wildcarded because it tracks the Extensions IG release. ===
 
 %The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|%
 %The extension http://hl7.org/fhir/StructureDefinition/regex|%
 %The extension http://hl7.org/fhir/StructureDefinition/ordinalValue|%
 
-# === Adding a key to an additional binding changes a terminology binding, which is out of scope for a technical correction. CDex will add the keys in the next release. ===
+# 29. === Adding a key to an additional binding changes a terminology binding, which is out of scope for a technical correction. CDex will add the keys in the next release. ===
 
 %Constraint failed: ext-ab-1: 'Additional Bindings SHOULD have a key%
 
-# === Da Vinci Project Specific Warning: The Downloads page does link the full content of this IG. Because pages now render under /en/, the link is written as ../full-ig.zip, which this check does not recognize. ===
+# 30. === Da Vinci Project Specific Warning: The Downloads page does link the full content of this IG. Because pages now render under /en/, the link is written as ../full-ig.zip, which this check does not recognize. ===
 
 DA VINCI: The Downloads page (downloads.html) must include a link to the full content of this IG: full-ig.zip
 
-# === Da Vinci Project Specific Warning: CDex does not override this. The template already supplies shownav as "y" (see _data/info.json), but this check tests for the literal value "true", so it reports a missing parameter that is in fact set. There is no override to remove. ===
+# 31. === Da Vinci Project Specific Warning: CDex does not override this. The template already supplies shownav as "y" (see _data/info.json), but this check tests for the literal value "true", so it reports a missing parameter that is in fact set. There is no override to remove. ===
 
 DA VINCI: Must have the IG parameter shownav=true (which is the default for Da Vinci, so remove the override setting it to false).
 
-# === The duplicate anchor Ids are a rendering artifact of the IG Publisher's document narrative generator, which renders the subject inline and again as a Bundle entry. ===
+# 32. === The duplicate anchor Ids are a rendering artifact of the IG Publisher's document narrative generator, which renders the subject inline and again as a Bundle entry. ===
 
 %The html source has duplicate anchor Ids: 970af6c9-5bbd-4067-b6c1-d9b2c823aece%
 
-# === The display name shipped in this ValueSet matches the LOINC release current when it was authored. The valid displays listed come from a newer LOINC release. ===
+# 33. === The display name shipped in this ValueSet matches the LOINC release current when it was authored. The valid displays listed come from a newer LOINC release. ===
 
 %Wrong Display Name 'FHIR previous cancer therapy medical record' for http://loinc.org#103567-4%
 
-# === These parameter names are defined by the Subscriptions R5 Backport OperationDefinitions, not by CDex. ===
+# 34. === These parameter names are defined by the Subscriptions R5 Backport OperationDefinitions, not by CDex. ===
 
 %has the same name as a parameter for at least one operation in the core specification%
 
-# === CDex "pins" the published version of conformance artifacts it depends on. ===
+# 35. === CDex "pins" the published version of conformance artifacts it depends on. ===
 
 %Pinned the version of http://terminology.hl7.org/CodeSystem/%
 
-# === These are not marked as a conformance clause, because they are rendered elements from conformance resources and not narrative guidance. ===
+# 36. === These are not marked as a conformance clause, because they are rendered elements from conformance resources and not narrative guidance. ===
 
 INFORMATION: en/CapabilityStatement-data-consumer-client.html: The html source contains the word 'SHOULD'%
 INFORMATION: en/CapabilityStatement-data-consumer-server.html: The html source contains the word 'SHOULD'%
@@ -192,11 +192,11 @@ INFORMATION: en/CapabilityStatement-data-source-client.html: The html source con
 INFORMATION: en/CapabilityStatement-data-source-server.html: The html source contains the word 'SHOULD'%
 INFORMATION: en/StructureDefinition-cdex-task-data-request.html: The html source contains the word 'SHALL'%
 
-# === These are not marked as a conformance clause, because they are change log items and not conformance clauses. ===
+# 37. === These are not marked as a conformance clause, because they are change log items and not conformance clauses. ===
 
 INFORMATION: en/changes.html: The html source contains the word 'SHALL'%
 
-# === These conformance clauses are marked with a markup the validator does not recognize - a superscripted "§" at the end of the phrase. ===
+# 38. === These conformance clauses are marked with a markup the validator does not recognize - a superscripted "§" at the end of the phrase. ===
 
 INFORMATION: en/attachments-conformance.html: The html source contains the word 'SHALL'%
 INFORMATION: en/background.html: The html source contains the word 'SHALL NOT'%
@@ -210,10 +210,29 @@ INFORMATION: en/signatures.html: The html source contains the word 'SHALL'%
 INFORMATION: en/task-based-approach.html: The html source contains the word 'SHALL'%
 INFORMATION: en/task-based-conformance.html: The html source contains the word 'SHALL'%
 
-# === The old-artifacts parameter is honoured by the Da Vinci template (it reaches the template as site.data.info.oldartifacts and selects the static artifacts layout), but the publisher does not carry it in its list of known parameter codes. ===
+# 39. === The old-artifacts parameter is honoured by the Da Vinci template (it reaches the template as site.data.info.oldartifacts and selects the static artifacts layout), but the publisher does not carry it in its list of known parameter codes. ===
 
 Unknown Parameters: [old-artifacts=true]
 
-# === The static artifacts layout selected by old-artifacts does not render a terminology parameters section, so the expansion parameters fragment the publisher generates is not included on any page. The expansion parameters themselves still apply to value set expansion. ===
+# 40. === The static artifacts layout selected by old-artifacts does not render a terminology parameters section, so the expansion parameters fragment the publisher generates is not included on any page. The expansion parameters themselves still apply to value set expansion. ===
 
 The HTML fragment 'expansion-params.xhtml' is not included anywhere in the produced implementation guide
+
+# 41. === Informational and Warning QA messages for signed resources - note that this version predates the FHIR R6 FHIR Signatures rules and Guidance. We will update  CDex signature guidance and example to comply with FHIR R6 signatures, or, if it gets superseded by another Implementation Guide, deprecate the CDex guidance and comply with the guidance that replaces it. ===
+
+%There is no value for sigFormat. In the absence of a stated signature format, the signature cannot be interpreted reliably (or validated)%
+%Signature looks like application/jose, so validating accordingly%
+%Signature Verification is a work in progress. Feedback welcome at %
+%The signature does not have a signing time (sigT in the header)%
+%A certificate subject identifier should also be found in Signature.who.identifier %
+%The content claims to have been signed by %
+%The content was signed by %
+%The content claims that it was signed for the purpose of %
+%The content was signed for the purpose of %
+%The content claims to have been signed at %
+%The content was signed at %
+%The signature verified OK%
+%Signing Certificate Details: Subject=%
+%Signing Certificate Source: -----BEGIN CERTIFICATE-----%
+%No canonicalization found, so using http://hl7.org/fhir/canonicalization/json#document%
+%No canonicalization found, so using http://hl7.org/fhir/canonicalization/json%
