@@ -16,10 +16,10 @@ Based upon additional testing, the editors intend to upgrade the Endpoint Discov
 
 ### Technical Workflow
 
-As shown below in Figure 14, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
+As shown below in Figure 13, the attachments are "pushed" using the [`$submit-attachment`] operation directly to the Payer or an Intermediary.
 
 
-{% include img.html img="attachments-sequencediagram.svg" caption="Figure 14" %}
+{% include img.html img="attachments-sequencediagram.svg" caption="Figure 13" %}
 
 
 1. The Provider assembles the attachments and metadata to associate the attachments to a claim or prior authorization

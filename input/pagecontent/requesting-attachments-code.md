@@ -6,7 +6,7 @@ This page documents a FHIR-based approach for requesting attachments for claims 
 
 In the current state of healthcare data exchange, the Payer requests additional documentation to support a claim or prior authorization using an X12 transaction, fax, portal, or other capabilities. The Provider can submit these *solicited* attachments using Non-FHIR methods or can use the [`$submit-attachment`] operation to "push" the attachments directly to the Payer, as documented in the [Sending Attachments] page:
 
-{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 15: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
+{% include img.html img="request-attachments-nonfhir-sequencediagram.svg" caption=" Figure 14: Request Attachment Sequence Diagram For Non-FHIR Requests" %}
 
 
 
@@ -24,9 +24,9 @@ The CDex Task Attachment Request Profile defines a specific `Task.code` that com
 
 Systems using CDex Attachments [*must support*] requesting attachments using attachment codes. ({% include see-conf.md %}) The rest of this page documents *solicited* attachment transactions using attachment codes. Using FHIR Questionnaires to request additional data is optional and covered on the [Requesting Attachments Using Questionnaires] page.
 
-Requesting attachments using attachment codes defined by the LOINC Document Ontology or, for prior authorization, [X12] PWK01 Report Type Codes is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or C-CDA). The sequence diagram in Figure 16 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
+Requesting attachments using attachment codes defined by the LOINC Document Ontology or, for prior authorization, [X12] PWK01 Report Type Codes is a HIPAA-based request model. The Payer communicates the missing information for a claim or prior authorization with these codes, which typically represent data in document form (e.g., a PDF or C-CDA). The sequence diagram in Figure 15 below summarizes the interaction between the Payer and Provider to request and receive attachments using the combination of the [CDex Task Attachment Request Profile] using attachment codes and the [`$submit-attachment`] operation.
 
-{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 16" %}
+{% include img.html img="request-attachments-cdex-sequencediagram.svg" caption="Figure 15" %}
 
 
 
@@ -41,9 +41,9 @@ When requesting attachments, the following data elements are needed to associate
 In the following sections, a detailed look at an example *Solicited* attachment transaction illustrates how the Payer uses the CDex Task Attachment Request Profile to communicate the required data elements to the Provider and how they use the [`$submit-attachment`] operation to communicate the response back to the Payer.
 {: .bg-info}
 
-In this scenario, a Provider creates a claim and sends it to the Payer. The Payer reviews the claim and responds with a request for supporting documentation/attachments using the CDex Task Attachment Request Profile. The flow diagram for this transaction is shown in Figure 17 below:
+In this scenario, a Provider creates a claim and sends it to the Payer. The Payer reviews the claim and responds with a request for supporting documentation/attachments using the CDex Task Attachment Request Profile. The flow diagram for this transaction is shown in Figure 16 below:
 
-{% include img.html img="cdex-request-attach-claim-flow.svg" caption=" Figure 17: CDex Request Attachments for Claims Using Attachments Codes" %}
+{% include img.html img="cdex-request-attach-claim-flow.svg" caption=" Figure 16: CDex Request Attachments for Claims Using Attachments Codes" %}
 
  In addition to the information needed to submit and associate the attachments to the claim successfully, the Payer supplies the following information to complete the adjudication of the claim:
 

@@ -63,9 +63,9 @@ Payers may request data for many patients/members or anticipate large payloads f
 
 #### Direct Query and Task-Based Workflows
 
-Figure 3 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query* and *Task-Based* workflows.  
+Figure 2 below illustrates the exchange of clinical data between a Payer (or Provider) system and a Provider system using the *Direct Query* and *Task-Based* workflows.  
 
-{% include img.html img="workflow-overview.svg" caption="Figure 3" %}
+{% include img.html img="workflow-overview.svg" caption="Figure 2" %}
 
 ##### Actors and Roles
 
@@ -92,9 +92,9 @@ This specification divides attachments for claims or prior authorization into so
 
 ##### Unsolicited Attachments Workflow
 
-Figure 4 below illustrates the exchange of clinical data between a Provider system and a Payer system using the *Unsolicited Attachments* workflow.
+Figure 3 below illustrates the exchange of clinical data between a Provider system and a Payer system using the *Unsolicited Attachments* workflow.
 
-{% include img.html img="workflow-unsolicited-attachments.svg" caption="Figure 4" %}
+{% include img.html img="workflow-unsolicited-attachments.svg" caption="Figure 3" %}
 
 ###### Steps
 
@@ -104,9 +104,9 @@ Figure 4 below illustrates the exchange of clinical data between a Provider syst
 
 ##### Solicited Attachments Workflow
 
-Figure 5 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited Attachments* workflow.
+Figure 4 below illustrates the exchange of clinical data between a Payer system and a Provider system using the *Solicited Attachments* workflow.
 
-{% include img.html img="workflow-solicited-attachments.svg" caption="Figure 5" %}
+{% include img.html img="workflow-solicited-attachments.svg" caption="Figure 4" %}
 
 ###### Steps
 
