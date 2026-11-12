@@ -68,10 +68,11 @@ When known, `Task.reasonCode` or `Task.reasonReference` **SHALL** reference the 
 
 ### Sequence Diagram
 
-The sequence diagram in Figure 6 below summarizes the fundamental interaction between the Data Consumer and Data Source when querying and retrieving data using the Task-based transaction. The following sections discuss the options and variations associated with the Task-based Exchange API.
+The sequence diagram in Figure 6 below summarizes the fundamental interaction between the Data Consumer and Data Source when querying and retrieving data using the Task-based transaction.<sup>†</sup> The following sections discuss the options and variations associated with the Task-based Exchange API.
 
 {% include img.html img="task-sequencediagram.svg" caption="Figure 6" %}
 
+<sup>†</sup><span class="bg-success" markdown="1"> The CDex Task Based Approach assumes that the actor requesting the information and the actor creating the Task are the same, but implementers that use the CDex Task model can define a different Task creation workflow. For example, in the [Da Vinci Prior Authorization Support (PAS)] solicited attachment workflow, the Provider creates the Task in response to the Payer's request for additional information. See the [Request for Additional Information] section of the PAS Implementation Guide.</span><!-- new-content -->
 
 ### Discovery of Identifiers
 
@@ -83,11 +84,11 @@ The patient's [FHIR id] is a prerequisite to performing FHIR RESTful Direct Quer
 
 ### Task State Machine
 
-Figure 7 below illustrates a "typical" state machine for CDex Task. In the CDex Task Based Approach, the Data Consumer creates the Task with a status of "requested".<sup>†</sup> The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.
+Figure 7 below illustrates a "typical" state machine for CDex Task. In the CDex Task Based Approach, the Data Consumer creates the Task with a status of "requested". The Data Source updates the status of the Task as appropriate. The Data Source **SHALL** support *all* the statuses in the [HRex Task Status ValueSet]. The Data Source **MAY** support additional transitions, including transitions from terminal states (e.g., back to "in-progress" from "failed" or "completed"). The Data Source **MAY** use [`Task.businessStatus`] to track intermediate business statuses for their specific implementation.
 
 {% include img.html img="task-state-machine.svg" caption="Figure 7" %}
 
-<sup>†</sup><span class="bg-success" markdown="1">Profiles and workflows that use the CDex Task model can define a different Task creation pattern. For example, in the [Da Vinci Prior Authorization Support (PAS)] solicited attachment workflow, the Provider creates the Task in response to the Payer's request for additional information. See the [Request for Additional Information] section of the PAS Implementation Guide.</span><!-- new-content -->
+
 
 ### Fetching the Data
 
