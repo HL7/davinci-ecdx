@@ -397,7 +397,6 @@ parameters:
   bundle-references-resolve: false
   no-narrative:
     - Bundle/cdex-searchbundle-digital-sig-example
-    - Bundle/cdex-document-digital-sig-example
     - QuestionnaireResponse/cdex-questionnaireresponse-example4
     - Parameters/cdex-parameters-example4
     - Parameters/cdex-parameters-example5
