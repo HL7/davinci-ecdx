@@ -33,19 +33,8 @@ The changes in this technical correction have been reviewed and commented upon b
    - [Requesting Attachments Using Questionnaires](requesting-attachments-questionnaire.html#who-requests-the-information-and-who-creates-the-task)
    - [Task Based Approach](task-based-approach.html#sequence-diagram)
 6. **Applied**: (Correction) Remove the informational guidance advertising future supplemental guides [FHIR-59822](https://jira.hl7.org/browse/FHIR-59822) [See Changes Here](index.html)
-{:start="5"}
-
-
-Items below without a Jira tracker reference fix errors reported by the current publisher and validator.
-
-1. **Applied**: (Correction) Correct the download links on the Downloads page, which did not resolve after pages moved under a language folder [See Changes Here](downloads.html)
-2. **Applied**: (Correction) Correct the FHIR Artifacts cross-reference link, which pointed to the Signature Terminology group instead of the CDex Capability Statements group [See Changes Here](artifacts.html)
-3. **Applied**: (Correction) Correct heading levels on the Sending Attachments page, so the attachment scenarios are siblings [See Changes Here](sending-attachments.html)
-4. **Applied**: (Correction) Correct heading levels in the subscription example transaction on the Task Based Approach page [See Changes Here](task-based-approach.html)
-5. **Applied**: (Correction) Re-sign the digital signature examples so each signature verifies against its own current content, and add `Signature.targetFormat` to declare the JSON canonicalization used. The signed content is now pinned so a future build cannot invalidate it. [See Changes Here](Bundle-cdex-searchbundle-digital-sig-example.html) and [See Changes Here](Bundle-cdex-document-digital-sig-example.html)
-6. update links to technical corrections.
-{:start="7"}
-
+7. **Applied**: (Correction) Copy-editing changes to correct typos and grammar [FHIR-60014](https://jira.hl7.org/browse/FHIR-60014)
+8. **Applied**: (Correction) Various fixes to address errors reported by the current publisher and validator [FHIR-60015](https://jira.hl7.org/browse/FHIR-60015)
 
 </div><!-- new-content -->
 
